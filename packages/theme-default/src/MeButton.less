@@ -1,0 +1,86 @@
+@import "./variable.less";
+
+// 按钮类型白色字体
+.me-btn-type-white(@borderColor, @backGround: @color-default, @Color: @color-default) {
+  color: @Color;
+  border-color: @borderColor;
+  background: @backGround;
+
+  .me-icon {
+    color: @Color;
+  }
+
+  &.me-btn-plain {
+    background: @color-default;
+    color: @borderColor;
+
+    .me-icon {
+      color: @borderColor;
+    }
+
+    &.disabled {
+      color: lighten(@borderColor, 20%);
+      background: lighten(@color-default, 20%);
+
+      .me-icon {
+        color: lighten(@borderColor, 20%);
+      }
+    }
+  }
+
+  &.disabled {
+    @color-lighten-20: lighten(@Color, 20%);
+    color: @color-lighten-20;
+    border-color: lighten(@borderColor, 20%);
+    background: lighten(@backGround, 20%);
+    cursor: not-allowed;
+
+    .me-icon {
+      color: @color-lighten-20;
+    }
+  }
+
+}
+
+.me-btn {
+  .clamp;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: @border-radius-default;
+  padding: 0 15px;
+  font-size: @font-size;
+  line-height: 38px;
+  text-align: center;
+
+  &.me-btn-default {
+    .me-btn-type-white(@border-color-default, @color-default, @font-color);
+  }
+
+  &.me-btn-primary {
+    .me-btn-type-white(@color-primary, @color-primary);
+  }
+
+  &.me-btn-success {
+    .me-btn-type-white(@color-success, @color-success);
+  }
+
+  &.me-btn-info {
+    .me-btn-type-white(@color-info, @color-info);
+  }
+
+  &.me-btn-warning {
+    .me-btn-type-white(@color-warning, @color-warning);
+  }
+
+  &.me-btn-danger {
+    .me-btn-type-white(@color-danger, @color-danger);
+  }
+
+  .me-icon {
+    margin-right: 5px;
+  }
+}

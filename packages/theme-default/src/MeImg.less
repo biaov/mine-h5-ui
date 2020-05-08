@@ -1,0 +1,21 @@
+@import "./variable.less";
+
+.me-img {
+  .inline-block;
+
+  .same-style {
+    display: block;
+    width: @img-size;
+    overflow: hidden;
+  }
+
+  img {
+    .same-style;
+    height: auto;
+  }
+
+  span {
+    .same-style;
+    height: 40px;
+  }
+}
