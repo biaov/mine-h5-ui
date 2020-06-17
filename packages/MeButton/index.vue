@@ -1,14 +1,23 @@
 <template>
   <!-- 按钮 -->
-  <div class="me-btn" :class="`me-btn-${type} ${plain?'me-btn-plain':''} ${disabled?'disabled':''}`" :style="`width:${width}; color:${type==='default'||plain?color:'#fff'}; background:${!plain?color:'#fff'}; border-color:${color};`" @click="$emit('on-click')">
-    <me-icon :name="icon" :color="`${type==='default'||plain?color:'#fff'}`" v-if="!!icon"></me-icon>
+  <button :type="nativeType" class="me-btn" :class="`me-btn-${type} ${plain?'me-btn-plain':''} ${disabled?'disabled':''}`" :style="`width:${width}; color:${type==='default'||plain?color:'#fff'}; background:${!plain?color:'#fff'}; border-color:${color};`" @click="$emit('on-click')">
+    <me-icon :name="icon" :color="`${type==='default'||plain?color:'#fff'}`" size="16px" v-if="!!icon"></me-icon>
     <slot></slot>
-  </div>
+  </button>
 </template>
 <script>
+import MeIcon from "~/MeIcon";
 export default {
   name: "MeButton",
+  components: {
+    MeIcon
+  },
   props: {
+    // 原生 button 标签的 type 属性
+    nativeType: {
+      type: String,
+      default: "button" // button|reset|submit
+    },
     // 宽度
     width: {
       type: String,

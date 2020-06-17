@@ -1,3 +1,7 @@
+/**
+  * 按钮
+*/
+
 @import "./variable.less";
 
 // 按钮类型白色字体
@@ -49,13 +53,17 @@
   vertical-align: middle;
   max-width: 100%;
   height: 40px;
+  line-height: 38px;
   border: 1px solid transparent;
   border-radius: @border-radius-default;
   padding: 0 15px;
-  font-size: @font-size;
-  line-height: 38px;
   text-align: center;
+  font-size: @font-size;
+  font-style: normal;
+  outline: none;
 
+
+  /* 主题样式 start */
   &.me-btn-default {
     .me-btn-type-white(@border-color-default, @color-default, @font-color);
   }
@@ -80,6 +88,9 @@
     .me-btn-type-white(@color-danger, @color-danger);
   }
 
+  /* 主题样式 end */
+
+  // 图标样式
   .me-icon {
     margin-right: 5px;
   }

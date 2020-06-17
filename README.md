@@ -6,15 +6,15 @@
 
 <p align="center">
     <a href="https://mineh5ui.biaov.cn/">
-        <img src="./examples/assets/logo.svg" width="200px" title="mineh5ui" alt="mineh5ui">
+        <img src="https://mineh5ui.biaov.cn/logo.svg" width="200px" title="mineh5ui" alt="mineh5ui">
     </a>
 </p>
 
 # MINEH5UI
 
-一款轻量级、模块化基于VUE的H5前端UI组件库
+一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库
 
-<h2 style="text-align:center;"><a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/badge/npm-1.0.0-blue" /></a></h2>
+<h2 style="text-align:center;"><a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/badge/npm-1.1.0-blue" /></a></h2>
 
 ## 文档
 

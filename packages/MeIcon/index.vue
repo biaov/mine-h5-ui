@@ -27,8 +27,8 @@ export default {
   },
   methods: {
     // 点击图标
-    onClick() {
-      this.$emit("on-click");
+    onClick(e) {
+      this.$emit("on-click", e);
     }
   }
 };

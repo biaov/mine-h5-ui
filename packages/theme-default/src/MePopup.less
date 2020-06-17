@@ -1,3 +1,7 @@
+/**
+  * 弹出层
+*/
+
 @import "./variable.less";
 
 .me-popup {
@@ -37,6 +41,7 @@
     bottom: 0;
   }
 
+  /* 位置样式 start */
   .center {
     .width-max;
     .height-max;
@@ -75,6 +80,9 @@
     transform: translateX(-100%);
   }
 
+  /* 位置样式 end */
+
+  /* 显示位置样式 start */
   &.show {
     .center {
       transform: translate(-50%, -50%) scale(1);
@@ -107,4 +115,6 @@
       color: @font-color-reduce;
     }
   }
+
+  /* 显示位置样式 end */
 }

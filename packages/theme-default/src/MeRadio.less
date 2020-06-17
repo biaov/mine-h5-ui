@@ -1,0 +1,46 @@
+/**
+  * 单选框
+*/
+
+@import "./variable.less";
+
+// aria设置样式
+.color-important {
+  color: lighten(@font-color-reduce, 10%) !important;
+}
+
+.me-radio {
+  display: flex;
+  align-items: center;
+
+  // 未选中样式
+  &[aria-checked="false"] {
+    .me-icon {
+      .color-important;
+    }
+  }
+
+  // 禁用样式
+  &[aria-disabled="true"] {
+    .me-icon {
+      .color-important;
+    }
+
+    .u-value {
+      .color-important;
+    }
+  }
+
+  // 图标样式
+  .me-icon {
+    margin: 0 4px -2px 0;
+    color: @color-primary;
+    transition: color 0.2s;
+  }
+
+  // value值样式
+  .u-value {
+    color: @font-color;
+    font-size: @font-size-large;
+  }
+}

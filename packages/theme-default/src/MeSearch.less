@@ -1,0 +1,61 @@
+/**
+  * 搜索
+*/
+
+@import "./variable.less";
+
+.same-height(@height: 40px) {
+  height: 40px;
+  line-height: 40px;
+}
+
+.me-search {
+  .same-height;
+  display: flex;
+  width: 100%;
+  background: @bg-color;
+  color: @font-color;
+
+  // 图标
+  .me-icon {
+    .same-height;
+    padding: 0 10px;
+    background: transparent;
+    color: inherit;
+  }
+
+  // 输入框
+  .u-input {
+    .same-height;
+    flex-grow: 1;
+    display: block;
+    width: 50%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-size: @font-size;
+    appearance: none;
+
+    &::-webkit-input-placeholder {
+      color: inherit;
+      opacity: 0.6;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  // 按钮
+  .u-btn {
+    .same-height;
+    padding: 0 10px;
+    background: transparent;
+    text-align: center;
+    color: inherit;
+    font-size: @font-size;
+  }
+
+}

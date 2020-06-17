@@ -4,6 +4,7 @@ const { vueMarkdown, addStyleResource } = require("./build");
 module.exports = {
   lintOnSave: true,
   devServer: {
+    port: 8888,
     // 配置eslint的warning and error
     overlay: {
       warnings: false,

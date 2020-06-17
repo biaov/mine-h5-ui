@@ -1,0 +1,117 @@
+/**
+  * 上传图片
+*/
+
+@import "./variable.less";
+
+.me-upload {
+  font-size: 0;
+
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+  }
+
+  // 相同的大小
+  .same-size {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  // 相同的位置
+  .same-position {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // 展示图片
+  .m-imgs {
+    .same-position;
+    margin: 0 8px 8px 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .u-img {
+      .same-size;
+    }
+
+    .me-icon {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      background: @color-default;
+      text-align: center;
+    }
+  }
+
+  // 上传图片按钮
+  .m-upload {
+    .same-position;
+    .same-size;
+    margin-bottom: 10px;
+    background: @bg-img;
+
+    .me-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .u-file {
+      .same-size;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  // 预览图片
+  .m-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: fade(@bg-pull, 80%);
+
+    .u-num {
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      color: @color-default;
+      font-size: @font-size;
+    }
+
+    // 轮播图
+    .m-slider {
+      flex-grow: 1;
+      height: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      >li {
+        position: absolute;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}

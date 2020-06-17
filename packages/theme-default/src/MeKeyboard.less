@@ -1,0 +1,65 @@
+/**
+  * 数字键盘
+*/
+
+@import "./variable.less";
+
+.me-keyboard-padding {
+  padding-bottom: 236px;
+}
+
+.me-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  z-index: 99;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 236px;
+  padding: 10px;
+  overflow: hidden;
+  transition: transform 0.4s;
+  transform: translateY(100%);
+
+  &.show {
+    transform: translateY(0%);
+  }
+
+  // gray皮肤
+  &.me-keyboard-gray {
+    background: #d6d9de;
+    color: #000;
+
+    >li {
+      background: @color-default;
+    }
+  }
+
+  // dark皮肤
+  &.me-keyboard-dark {
+    background: #0b0b0f;
+    color: #fff;
+
+    >li {
+      background: #565658;
+
+    }
+  }
+
+  // 列表样式
+  >li {
+    width: 32%;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 5px;
+    text-align: center;
+    color: inherit;
+    font-size: @font-size-delete;
+
+    .me-icon {
+      color: inherit;
+    }
+  }
+}

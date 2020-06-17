@@ -6,8 +6,12 @@
   </div>
 </template>
 <script>
+import MeIcon from "~/MeIcon";
 export default {
   name: "MeToast",
+  components:{
+    MeIcon
+  },
   data() {
     return {
       message: "", // 提示语

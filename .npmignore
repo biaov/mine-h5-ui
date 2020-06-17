@@ -1,37 +1,20 @@
 # 忽略目录
+.git/
+build/
+dist/
 examples/
+mobile/
+node_modules/
 packages/
 public/
-build/
-mobile/
 tests/
+
 # 忽略指定文件
-vue.config.js
-babel.config.js
-*.map
-demo.html
-dist/
-.DS_Store
-node_modules
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw*
-.eslintignore
 .editorconfig
+.eslintignore
 .eslintrc.js
-CHANGELOG.md
 .gitignore
+babel.config.js
+formate.vue
+vue.config.js
+lib/demo.html

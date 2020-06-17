@@ -19,7 +19,7 @@ module.exports = {
   plugins: ["vue"],
   // add your custom rules here
   rules: {
-    // allow async-await
+    // 强制 generator 函数中 * 号周围使用一致的空格
     "generator-star-spacing": "off",
     // allow debugger during development
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
@@ -27,7 +27,7 @@ module.exports = {
     quotes: "off",
     // 使用未声明的变量
     "no-undef": "off",
-    // 禁止console
+    // 禁止 console
     "no-console": "off",
     // 要求或禁止文件末尾存在空行
     "eol-last": "off",

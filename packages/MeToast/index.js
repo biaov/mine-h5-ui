@@ -8,7 +8,7 @@ class Toast extends Vue.extend(MeToast) {
     const type = Object.prototype.toString.call(options);
     this.vm = this.$mount(); // 赋值虚拟节点
     // 判断options类型
-    if (type === "[object String]") {
+    if (type === "[object String]" || type === "[object Number]") {
       this.message = options;
     } else if (type === "[object Object]") {
       // 循环遍历，设置该类属性

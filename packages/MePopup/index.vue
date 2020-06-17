@@ -8,8 +8,12 @@
   </div>
 </template>
 <script>
+import MeIcon from "~/MeIcon";
 export default {
   name: "MePopup",
+  components:{
+    MeIcon
+  },
   model: {
     prop: "visible",
     event: "input"
