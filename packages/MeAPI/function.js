@@ -99,22 +99,22 @@ const IsType = (type, value) =>
  * @returns {Any} - 拷贝完成的值
  */
 const DeepCopyRA = arg => {
-  const newValue = isType("Object", arg) // 判断是否是对象
+  const newValue = IsType("Object", arg) // 判断是否是对象
     ? {}
-    : isType("Array", arg) // 判断是否是数组
+    : IsType("Array", arg) // 判断是否是数组
       ? []
-      : isType("Date", arg) // 判断是否是日期对象
+      : IsType("Date", arg) // 判断是否是日期对象
         ? new arg.constructor(+arg)
-        : isType("RegExp", arg) || isType("Error", arg) // 判断是否是正则对象或错误对象
+        : IsType("RegExp", arg) || IsType("Error", arg) // 判断是否是正则对象或错误对象
           ? new arg.constructor(arg)
           : arg;
   // 判断是否是数组或对象
-  if (isType("Object", arg) || isType("Array", arg)) {
+  if (IsType("Object", arg) || IsType("Array", arg)) {
     // 循环遍历
     for (const key in arg) {
       // 防止原型链的值
       Object.prototype.hasOwnProperty.call(arg, key) &&
-        (newValue[key] = DeepCopy(arg[key]));
+        (newValue[key] = DeepCopyRA(arg[key]));
     }
   }
   return newValue;
