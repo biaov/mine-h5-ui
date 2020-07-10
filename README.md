@@ -14,7 +14,7 @@
 
 一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库
 
-<h2 style="text-align:center;"><a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/badge/npm-1.1.1-blue" /></a></h2>
+<h2 style="text-align:center;"><a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/badge/npm-1.1.2-blue" /></a></h2>
 
 ## 文档
 
