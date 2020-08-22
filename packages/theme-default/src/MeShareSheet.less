@@ -1,0 +1,89 @@
+/**
+  * 分享面板
+*/
+
+@import "./variable.less";
+
+.me-share-sheet {
+  .m-mask;
+
+  .m-picker {
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    border-radius: @border-radius-default*5 @border-radius-default*5 0 0;
+    padding: 0;
+
+    &.show {
+      transform: translateY(0%);
+    }
+
+    // 提示语
+    .u-tips {
+      line-height: 50px;
+      text-align: center;
+      color: @font-color;
+      font-size: @font-size;
+    }
+
+    // 列表
+    .m-list-li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-bottom: 10px solid fade(@border-color-default, 50%);
+      padding: 15px;
+
+      &:after {
+        content: "";
+        width: 33.33%;
+      }
+
+      >li {
+        width: 33.33%;
+        border: solid fade(@border-color-default, 50%);
+        border-width: 0 1px 1px 0;
+        padding: 15px;
+        text-align: center;
+
+        &:nth-child(3n+1) {
+          border-left-width: 1px;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          border-top-width: 1px;
+        }
+
+        .u-icon {
+          display: block;
+          margin: 0 auto 5px;
+          text-align: center;
+          color: @font-color;
+          font-size: @font-size*3;
+        }
+
+        .u-desc {
+          .clamp;
+          display: block;
+          width: 100%;
+          color: @font-color-reduce;
+          font-size: @font-size;
+        }
+      }
+    }
+
+    // 取消按钮
+    .u-btn-cancel {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      outline: none;
+      color: @font-color-reduce;
+      font-size: @font-size;
+    }
+  }
+}

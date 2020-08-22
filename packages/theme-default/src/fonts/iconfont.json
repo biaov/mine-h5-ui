@@ -6,18 +6,151 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "1210950",
-      "name": "Star",
-      "font_class": "Star",
-      "unicode": "e674",
-      "unicode_decimal": 58996
+      "icon_id": "8963933",
+      "name": "qr-code 二维码",
+      "font_class": "qr-code",
+      "unicode": "e6e5",
+      "unicode_decimal": 59109
     },
     {
-      "icon_id": "6901001",
+      "icon_id": "435935",
+      "name": "朋友圈",
+      "font_class": "pengyouquan",
+      "unicode": "e7be",
+      "unicode_decimal": 59326
+    },
+    {
+      "icon_id": "1115081",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "3876283",
+      "name": "wechat",
+      "font_class": "wechat",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "8574987",
+      "name": "支付宝",
+      "font_class": "zhifubao",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "12703571",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "851467",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "1446472",
+      "name": "loading_ico",
+      "font_class": "loading_ico",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "2861028",
+      "name": "Loading",
+      "font_class": "Loading",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "14538438",
+      "name": "loading_flat",
+      "font_class": "loading_flat",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "14830256",
+      "name": "loading04",
+      "font_class": "loading04",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "15297240",
+      "name": "financial_loading",
+      "font_class": "financial_loading",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "5093354",
+      "name": "相机",
+      "font_class": "xiangji",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1262173",
       "name": "star",
-      "font_class": "star1",
-      "unicode": "e624",
-      "unicode_decimal": 58916
+      "font_class": "star3",
+      "unicode": "e70a",
+      "unicode_decimal": 59146
+    },
+    {
+      "icon_id": "6346000",
+      "name": "star",
+      "font_class": "star4",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "14342009",
+      "name": "search",
+      "font_class": "search1",
+      "unicode": "e7c4",
+      "unicode_decimal": 59332
+    },
+    {
+      "icon_id": "1164943",
+      "name": "点",
+      "font_class": "dian",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "1842087",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14112185",
+      "name": "delete",
+      "font_class": "delete1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "851473",
+      "name": "password",
+      "font_class": "password",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "1337758",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e614",
+      "unicode_decimal": 58900
     },
     {
       "icon_id": "800879",

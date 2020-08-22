@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.7.6",
+    "del": "^5.1.0",
     "gulp-postcss": "^8.0.0",
     "postcss-pxtorem": "^5.1.1"
   }

@@ -124,6 +124,7 @@ img {
     background: rgba(0, 0, 0, 0.7);
   }
 
+  >ul,
   >div {
     .clear-scroll;
     position: absolute;
@@ -236,6 +237,33 @@ img {
 
 .animation-cursor {
   animation: cursor 1.2s infinite;
+}
+
+// 旋转图标动画
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animation-rotate {
+  animation: rotate .8s linear infinite;
 }
 
 /* 自定义动画 end */

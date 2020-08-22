@@ -29,8 +29,16 @@ import MeForm from "./MeForm"; // 表单
 /* 表单组件 end */
 
 /* 反馈组件 start */
+import MeActionSheet from "./MeActionSheet"; // 动作面板
 import MeToast from "./MeToast"; // 消息提示
+import MeLoading from "./MeLoading"; // 加载
+import MeMask from "./MeMask"; // 遮罩层
+import MeMessageBox from "./MeMessageBox"; // 弹出框
+import MeDialog from "./MeDialog"; // 对话框
+import MeShareSheet from "./MeShareSheet"; // 分享面板
+import MeSwiperCell from "./MeSwiperCell"; // 滑动单元格
 /* 反馈组件 end */
+
 /* API start */
 import MeAPI from "./MeAPI";
 /* API end */
@@ -55,15 +63,21 @@ const components = {
   MeDatetimePicker,
   MeAddressPicker,
   MeUpload,
-  MeForm
+  MeForm,
+  MeActionSheet,
+  MeLoading,
+  MeMask,
+  MeDialog,
+  MeShareSheet,
+  MeSwiperCell
 };
 
-// 需要添加到VUE实例的API
-const API = { MeToast, ...MeAPI };
+// 需要添加到 VUE 实例的 API
+const API = { ...MeAPI, MeToast, MeMessageBox };
 
 /**
  * 组件注册
- * @param {Object} Vue - Vue实例对象
+ * @param {Object} Vue - Vue 实例对象
  * @returns {Void}
  */
 const install = Vue => {
@@ -104,7 +118,13 @@ export {
   MeDatetimePicker,
   MeAddressPicker,
   MeUpload,
-  MeForm
+  MeForm,
+  MeActionSheet,
+  MeLoading,
+  MeMask,
+  MeDialog,
+  MeShareSheet,
+  MeSwiperCell
 };
 
 // 全部导出
