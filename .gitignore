@@ -1,3 +1,8 @@
 # 忽略目录
 node_modules
 dist/
+
+# Github
+# dist
+# examples
+# mobile

@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1391280",
+      "name": "功能管理",
+      "font_class": "gongnengguanli",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "1796547",
+      "name": "user",
+      "font_class": "user1",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "1802380",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "16288655",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
       "icon_id": "8963933",
       "name": "qr-code 二维码",
       "font_class": "qr-code",

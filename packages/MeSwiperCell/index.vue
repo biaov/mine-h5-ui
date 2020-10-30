@@ -1,7 +1,12 @@
 <template>
   <!-- 滑动单元格 -->
   <div class="me-swiper-cell">
-    <div class="m-swiper" :class="{active:isActive}" :style="`transform:translateX(${currentValue}px);`" @touchstart="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend" @mousedown="onMousedown" @click.prevent.stop>
+    <div class="m-swiper" :class="{active:isActive}" :style="`transform:translateX(${currentValue}px);`" v-on="{
+      touchstart: onTouchstart,
+      touchmove: onTouchmove,
+      touchend: onTouchend,
+      mousedown: onMousedown
+    }" @click.prevent.stop>
       <!-- 内容 -->
       <div class="u-content">
         <slot name="content"></slot>

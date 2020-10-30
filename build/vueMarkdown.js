@@ -31,6 +31,17 @@ const vueMarkdown = {
             ? `<demo-block><div slot="highlight">`
             : `</div></demo-block>\n`
       }
+    ],
+    [
+      MarkdownItContainer,
+      "timeline",
+      {
+        validate: params => params.trim().match(/^timeline\s*(.*)$/),
+        render: (tokens, idx) =>
+          tokens[idx].nesting === 1
+            ? `<time-line><div slot="timeline">`
+            : `</div></time-line>\n`
+      }
     ]
   ]
 };

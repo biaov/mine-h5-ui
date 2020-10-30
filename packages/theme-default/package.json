@@ -1,12 +1,12 @@
 {
   "name": "mine-h5-ui-theme-default",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "mine-h5-ui 默认样式",
   "main": "lib/index.css",
   "style": "lib/index.css",
   "scripts": {
-    "build": "gulp build",
-    "build:rem": "gulp build -f gulpfile-rem.js"
+    "build": "gulp build -f gulpfile/gulpfile.prod.js",
+    "build:rem": "gulp build -f gulpfile/gulpfile.rem.js"
   },
   "repository": {
     "type": "git",

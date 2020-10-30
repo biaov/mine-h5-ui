@@ -10,7 +10,12 @@
       </div>
       <!-- 主体内容 -->
       <ul class="m-bd">
-        <li v-for="item in listData" :key="item.id" v-if="show.includes(item.id)" @touchstart="onTouchstart($event,item.id)" @touchmove="onTouchmove($event,item.id)" @touchend="onTouchend($event,item.id)" @mousedown="onMousedown($event,item.id)">
+        <li v-for="item in listData" :key="item.id" v-if="show.includes(item.id)" v-on="{
+          touchstart: $event => onTouchstart($event,item.id),
+          touchmove: $event => onTouchmove($event,item.id),
+          touchend: $event => onTouchend($event,item.id),
+          mousedown:$event => onMousedown($event,item.id)
+        }">
           <!-- 移动的区域 -->
           <ol :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration>0?'all':'none'};transition-duration: ${duration}ms;`">
             <li v-for="(num,i) in item.list" :key="i">{{item.id===5||item.id===4?num-1:num|filterNumber}}</li>

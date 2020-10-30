@@ -39,6 +39,17 @@ import MeShareSheet from "./MeShareSheet"; // 分享面板
 import MeSwiperCell from "./MeSwiperCell"; // 滑动单元格
 /* 反馈组件 end */
 
+/* 导航组件 start */
+import MeGrid from "./MeGrid"; // 宫格
+import MeGridItem from "./MeGridItem"; // 宫格选项
+import MeIndexBar from "./MeIndexBar"; // 索引栏
+import MeNavBar from "./MeNavBar"; // 导航栏
+import MeTab from "./MeTab"; // 标签页
+import MeTabItem from "./MeTabItem"; // 标签选项
+import MeTabBar from "./MeTabBar"; // 标签栏
+import MePullRefresh from "./MePullRefresh"; // 下拉刷新
+/* 导航组件 end */
+
 /* API start */
 import MeAPI from "./MeAPI";
 /* API end */
@@ -69,7 +80,15 @@ const components = {
   MeMask,
   MeDialog,
   MeShareSheet,
-  MeSwiperCell
+  MeSwiperCell,
+  MeGrid,
+  MeGridItem,
+  MeIndexBar,
+  MeNavBar,
+  MeTab,
+  MeTabItem,
+  MeTabBar,
+  MePullRefresh
 };
 
 // 需要添加到 VUE 实例的 API
@@ -124,7 +143,15 @@ export {
   MeMask,
   MeDialog,
   MeShareSheet,
-  MeSwiperCell
+  MeSwiperCell,
+  MeGrid,
+  MeGridItem,
+  MeIndexBar,
+  MeNavBar,
+  MeTab,
+  MeTabItem,
+  MeTabBar,
+  MePullRefresh
 };
 
 // 全部导出

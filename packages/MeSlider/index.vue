@@ -4,7 +4,12 @@
     <!-- 颜色线条 -->
     <p class="u-line" :style="`height:${styles.height};border-radius:${styles.radius};`"><span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span></p>
     <!-- 拖拽div -->
-    <div class="m-drag" :style="`left:${100-currentValue}%;`" @touchstart="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend" @mousedown="onMousedown">
+    <div class="m-drag" :style="`left:${100-currentValue}%;`" v-on="{
+      touchstart: onTouchstart,
+      touchmove: onTouchmove,
+      touchend: onTouchend,
+      mousedown: onMousedown
+     }">
       <!-- 圆点 -->
       <span class="u-round" v-if="!isBtn"></span>
       <!-- 自定义按钮 -->
