@@ -1,29 +1,32 @@
 <template>
   <!-- 演示demo -->
   <div class="m-demo">
-    <me-pull-refresh v-model="loading" @on-refresh="onRefresh">刷新次数{{count}}</me-pull-refresh>
+    <me-swiper>
+      <me-swiper-item v-for="(item,index) in listData" :key="index" v-bind="item"></me-swiper-item>
+    </me-swiper>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      loading: 0, // 加载状态
-      count: 0, // 刷新次数
+      // 列表数据
+      listData: [
+        {
+          background: "#4BC7F5"
+        },
+        {
+          background: "#7A51F5"
+        },
+        {
+          background: "#FFB808"
+        }
+      ]
     };
-  },
-  methods: {
-    // 刷新
-    onRefresh() {
-      setTimeout(() => {
-        this.count++;
-        this.loading = false;
-      }, 3000);
-    }
   }
 };
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
 .m-demo {
 }
 </style>

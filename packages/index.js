@@ -50,6 +50,20 @@ import MeTabBar from "./MeTabBar"; // 标签栏
 import MePullRefresh from "./MePullRefresh"; // 下拉刷新
 /* 导航组件 end */
 
+/* 展示组件 start */
+import MeProgressBar from "./MeProgressBar"; // 进度条
+import MeAccordion from "./MeAccordion"; // 手风琴
+import MeAccordionItem from "./MeAccordionItem"; // 手风琴选项
+import MeCountDown from "./MeCountDown"; // 倒计时
+import MeDivider from "./MeDivider"; // 分割线
+import MeEmpty from "./MeEmpty"; // 空状态
+import MePreview from "./MePreview"; // 图片预览
+import MeNoticeBar from "./MeNoticeBar"; // 公告栏
+import MeSwiper from "./MeSwiper"; // 轮播图
+import MeSwiperItem from "./MeSwiperItem"; // 轮播图选项
+import MeTag from "./MeTag"; // 标签
+/* 展示组件 end */
+
 /* API start */
 import MeAPI from "./MeAPI";
 /* API end */
@@ -88,11 +102,21 @@ const components = {
   MeTab,
   MeTabItem,
   MeTabBar,
-  MePullRefresh
+  MePullRefresh,
+  MeProgressBar,
+  MeAccordion,
+  MeAccordionItem,
+  MeCountDown,
+  MeDivider,
+  MeEmpty,
+  MeNoticeBar,
+  MeSwiper,
+  MeSwiperItem,
+  MeTag
 };
 
 // 需要添加到 VUE 实例的 API
-const API = { ...MeAPI, MeToast, MeMessageBox };
+const API = { ...MeAPI, MeToast, MeMessageBox, MePreview };
 
 /**
  * 组件注册
@@ -151,7 +175,17 @@ export {
   MeTab,
   MeTabItem,
   MeTabBar,
-  MePullRefresh
+  MePullRefresh,
+  MeProgressBar,
+  MeAccordion,
+  MeAccordionItem,
+  MeCountDown,
+  MeDivider,
+  MeEmpty,
+  MeNoticeBar,
+  MeSwiper,
+  MeSwiperItem,
+  MeTag
 };
 
 // 全部导出

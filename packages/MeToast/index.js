@@ -37,7 +37,7 @@ class Toast extends Vue.extend(MeToast) {
     timer = setTimeout(() => {
       this.isShow = true;
       this.end();
-    }, 500);
+    }, 100);
   }
 
   // 结束此组件

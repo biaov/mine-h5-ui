@@ -6,15 +6,10 @@ module.exports = {
     parser: "babel-eslint"
   },
   env: {
+    node: true,
     browser: true
   },
-  extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    "plugin:vue/essential",
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    "standard"
-  ],
+  extends: ["plugin:vue/essential", "@vue/standard"],
   // required to lint *.vue files
   plugins: ["vue"],
   // add your custom rules here
@@ -43,5 +38,16 @@ module.exports = {
     "no-new": "off",
     // 禁止不必要的Boolean值转换
     "no-extra-boolean-cast": "off"
-  }
+  },
+  overrides: [
+    {
+      files: [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
 };

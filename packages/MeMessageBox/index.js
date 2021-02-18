@@ -28,7 +28,7 @@ class MessageBox extends Vue.extend(MeMessageBox) {
     // 在挂载真实DOM树后显示过渡效果
     timer = setTimeout(() => {
       that.isShow = true;
-    }, 500);
+    }, 100);
   }
 
   // 关闭此组件

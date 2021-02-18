@@ -21,7 +21,6 @@
 <script>
 export default {
   name: "MeSwiperCell",
-  props: {},
   data() {
     return {
       maxDistance: 0, // 最大滑动距离

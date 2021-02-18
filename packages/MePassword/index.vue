@@ -103,7 +103,7 @@ export default {
     this.setList();
   },
   mounted() {
-    // document绑定点击事件
+    // document 绑定点击事件
     Bind(document, "click", () => {
       this.listData.forEach(elem => {
         elem.state = false;

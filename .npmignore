@@ -14,7 +14,6 @@ tests/
 .eslintignore
 .eslintrc.js
 .gitignore
-.vscode
 babel.config.js
 formate.vue
 vue.config.js

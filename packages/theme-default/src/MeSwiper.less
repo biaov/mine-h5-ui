@@ -1,0 +1,50 @@
+/**
+  * @file 轮播图
+*/
+
+@import "./variable.less";
+@dot-size: 8px;
+
+.me-swiper {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+
+  // 需要滚动的图片
+  .m-imgs {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    font-size: 0;
+    transition: none;
+
+    &.active {
+      transition: transform 0.4s;
+    }
+  }
+
+  // 指示点
+  .m-dot {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    display: flex;
+    align-items: center;
+    transform: translateX(-50%);
+
+
+    >li {
+      width: @dot-size;
+      height: @dot-size;
+      border-radius: 50%;
+      margin-right: @dot-size;
+      background: @border-password;
+
+      // 聚焦
+      &.on {
+        background: @color-primary;
+      }
+    }
+  }
+}

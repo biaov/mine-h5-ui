@@ -82,7 +82,7 @@ export default {
     // 更新子组件的状态
     updateItemState() {
       // 循环遍历
-      this.$children.forEach((elem, i) => {
+      this.$children.forEach(elem => {
         elem.initShow();
       });
     }

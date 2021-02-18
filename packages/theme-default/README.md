@@ -1,4 +1,4 @@
-# mine-h5-ui 默认样式
+# MINE-H5-UI 默认样式
 
 * 这是 `MINEH5UI` 框架的默认样式。
 

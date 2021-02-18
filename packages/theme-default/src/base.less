@@ -1,5 +1,5 @@
 /**
-  * 基础样式
+  * @file 基础样式
 */
 
 /* reset start */
@@ -191,12 +191,12 @@ img {
 
 // 轮播图
 .slider-enter-to {
-  transition: all 1s ease;
+  transition: transform 1s ease;
   transform: translateX(0);
 }
 
 .slider-leave-active {
-  transition: all 1s ease;
+  transition: transform 1s ease;
   transform: translateX(-100%);
 }
 
@@ -206,6 +206,20 @@ img {
 
 .slider-leave {
   transform: translateX(0);
+}
+
+// 公告滚动
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.4s;
+}
+
+.slide-enter {
+  transform: translateY(100%);
+}
+
+.slide-leave-to {
+  transform: translateY(-100%);
 }
 
 /* vue过渡动画 end*/

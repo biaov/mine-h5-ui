@@ -1,0 +1,106 @@
+// 行为颜色
+@color-default: #fff;
+@color-primary: #409eff;
+@color-success: #67c23a;
+@color-info: #909399;
+@color-warning: #e6a23c;
+@color-danger: #f56c6c;
+
+// 内容
+@bg-color: #f6f6f6; // 背景颜色
+
+// 文本
+@font-color: #494949;
+@font-color-reduce: #949494;
+@font-size: 14px;
+@font-size-min: 12px;
+@font-size-large: 16px;
+
+// 边框
+@border-radius-default: 4px;
+@border-color-pre: #e2ecf4;
+@border-color-line: #ececec;
+
+.clear-ft:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear-mg {
+  content: "";
+  display: table;
+}
+
+.clear-scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #dadee0;
+}
+
+.g-lf {
+  float: left;
+}
+
+.g-rt {
+  float: right;
+}
+
+.clamp {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.g-wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.clamp-two {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.clear-flex(@width: 88px) {
+  &::after {
+    content: "";
+    width: @width;
+  }
+}
+
+// 自定义模态框内容
+.m-cont {
+  .u-tit {
+    padding: 0 15px 20px 15px;
+    text-align: center;
+    color: @font-color;
+    font-size: @font-size;
+  }
+
+  .u-btn {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid fade(@font-color-reduce, 20%);
+    background: linear-gradient(90deg, #00aeff, #3369e7);
+    text-align: center;
+    color: @color-default;
+    font-size: @font-size;
+    outline: none;
+  }
+}

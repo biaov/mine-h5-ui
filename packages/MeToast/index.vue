@@ -9,7 +9,7 @@
 import MeIcon from "~/MeIcon";
 export default {
   name: "MeToast",
-  components:{
+  components: {
     MeIcon
   },
   data() {

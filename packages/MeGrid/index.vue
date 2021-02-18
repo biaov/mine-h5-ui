@@ -28,7 +28,7 @@ export default {
       const { cols, $children, borderColor } = this;
       $children.forEach((elem, i) => elem.setData(i, cols, borderColor));
     },
-    // 状态改变时触发次方法
+    // 状态改变时触发此方法
     onChange(num) {
       this.$emit("on-change", num);
     }
