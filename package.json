@@ -65,5 +65,6 @@
     "type": "git",
     "url": "https://github.com/biaov/MINE-H5-UI.git"
   },
+  "homepage": "https://mineh5ui.biaov.cn/",
   "license": "ISC"
 }

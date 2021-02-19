@@ -11,7 +11,7 @@
 import MeIcon from "~/MeIcon";
 export default {
   name: "MePopup",
-  components:{
+  components: {
     MeIcon
   },
   model: {
