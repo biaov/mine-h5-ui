@@ -14,7 +14,17 @@
 
 :::timeline
 
-## v1.4.0-
+## v1.4.1-Latest release
+
+`2021-02-26`
+
+* 更新展示组件
+  * [新增数字滚动组件](/doc/countTo)
+* 更新 API 方法
+  * 新增格式化千位符 API - [FormatThousand](/doc/api)
+  * 新增锁定 API - [Locked](/doc/api)
+
+## v1.4.0
 
 `2021-02-18`
 

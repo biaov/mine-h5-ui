@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": false,
   "author": "biaov<biaov@qq.com>",
   "main": "lib/mine-h5-ui.umd.min.js",

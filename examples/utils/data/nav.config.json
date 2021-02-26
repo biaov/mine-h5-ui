@@ -294,6 +294,12 @@
       },
       "path": "tag",
       "name": "tag"
+    }, {
+      "meta": {
+        "title": "CountTo 数字滚动"
+      },
+      "path": "countTo",
+      "name": "countTo"
     }]
   }],
   "封装方法": [{

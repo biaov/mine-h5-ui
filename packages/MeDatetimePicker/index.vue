@@ -45,7 +45,7 @@
  ** 还需要滑动的距离 = 滑动的速度 * 400
  ** 滑动的速度 > 0.12 才开启惯性滑动
  */
-import MeAPI from "~/MeAPI";
+import { IsLeapyear } from "~/MeAPI/function";
 export default {
   name: "MeDatetimePicker",
   props: {
@@ -163,7 +163,7 @@ export default {
           // 闰月为29天，平月为28天
           // 判断是否存在年份
           const Year = show.includes(1) ? currentValue[0] : new Date().getFullYear();
-          listData[2].list = MeAPI.IsLeapyear(Year) ? 29 : 28; // 是否是闰月
+          listData[2].list = IsLeapyear(Year) ? 29 : 28; // 是否是闰月
         } else {
           // 大于7且不能被2整除或者小于等于7且能被2整除的月数是小月，其他的是大月。
           listData[2].list = (current > 7 && current % 2 !== 0) || (current <= 7 && current % 2 === 0) ? 30 : 31;

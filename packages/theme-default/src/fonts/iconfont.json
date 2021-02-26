@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "713982",
+      "name": "notice",
+      "font_class": "notice",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "2217786",
+      "name": "网络错误",
+      "font_class": "wangluocuowu",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "2423299",
+      "name": "机构_无数据",
+      "font_class": "jigou_wushuju",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "2423300",
+      "name": "无数据",
+      "font_class": "wushuju",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "887983",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "7532887",
+      "name": "暂停",
+      "font_class": "zanting1",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
       "icon_id": "1391280",
       "name": "功能管理",
       "font_class": "gongnengguanli",
@@ -224,14 +266,14 @@
     },
     {
       "icon_id": "4182361",
-      "name": "AK-IN闭眼",
+      "name": "AK-IN_闭眼",
       "font_class": "in_biyan",
       "unicode": "e600",
       "unicode_decimal": 58880
     },
     {
       "icon_id": "4182913",
-      "name": "AK-IN睁眼",
+      "name": "AK-IN_睁眼",
       "font_class": "in_zhengyan",
       "unicode": "e601",
       "unicode_decimal": 58881

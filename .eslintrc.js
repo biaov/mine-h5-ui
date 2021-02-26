@@ -41,7 +41,11 @@ module.exports = {
     // 类换行要空一行
     "lines-between-class-members": "off",
     // if的()后必须接{}
-    "curly": "off"
+    curly: "off",
+    // 缩进位数
+    indent: "off",
+    // 三目运算
+    "no-unneeded-ternary": "off"
   },
   overrides: [
     {

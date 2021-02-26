@@ -1,3 +1,5 @@
+import Validator from "./validator";
+const { validThousand, validThousandFloat } = Validator;
 /**
  * 变量类型判断
  * @param {String} type - 需要判断的类型
@@ -63,7 +65,7 @@ const IsLeapyear = num => {
  * @returns {String} {Object}.time - 时间
  * @returns {String} {Object}.datetime - 日期时间
  */
-const FormateTime = (arg = new Date()) => {
+const FormatTime = (arg = new Date()) => {
   // 非空判断
   if (arg.trim() === "") throw new Error(`${arg} is not null`);
   const str =
@@ -125,13 +127,14 @@ const CountDown = (num, format = "hh:mm:ss") => {
  * 节流
  * @param {Function} fn - 回调业务处理函数
  * @param {Number} [time=1000] - 定时器时间
+ * @returns {Function} - 返回的 event 函数
  */
 const Throttle = (fn, time = 1000) => {
   let timer = null; // 定时器
   return e => {
     !timer &&
       (timer = setTimeout(() => {
-        fn(); // 第一次之后，延迟时间到达就会触发一次，然后再从新开始
+        fn(e); // 第一次之后，延迟时间到达就会触发一次，然后再从新开始
         timer = null; // 清理定时器
       }, time));
   };
@@ -140,6 +143,7 @@ const Throttle = (fn, time = 1000) => {
  * 防抖
  * @param {Function} fn - 回调业务处理函数
  * @param {Number} [time=300] - 定时器时间
+ * @returns {Function} - 返回的 event 函数
  */
 const Debounce = (fn, time = 300) => {
   let timer = null; // 定时器
@@ -150,12 +154,71 @@ const Debounce = (fn, time = 300) => {
     }, time);
   };
 };
+/**
+ * 格式化千位符
+ * @param {Number} num - 需要转换的数字
+ * @returns {String} - 转换后的字符串
+ */
+const FormatThousand = num => {
+  if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 数字校验
+  const numStr = String(num); // 数字转字符串
+  // 返回替换值
+  return numStr.replace(
+    numStr.includes(".") ? validThousandFloat : validThousand,
+    "$1,"
+  );
+};
+/**
+ * 锁定
+ * @param {Function} fn - 回调函数
+ * @param {Number} [time=5000] - 超时自动关闭
+ * @returns {Void}
+ */
+const Locked = (fn, time = 5000) => {
+  const isLocked = { _value: false }; // 锁状态值
+  let timer = null; // 定时器
+  // 监听锁状态的改变
+  Object.defineProperty(isLocked, "value", {
+    get() {
+      return this._value;
+    },
+    set(newValue) {
+      this._value = newValue;
+      if (newValue) {
+        timer = setTimeout(() => {
+          this._value = false;
+        }, time);
+      } else {
+        clearInterval(timer);
+      }
+    },
+    enumerable: true,
+    configurable: false
+  });
+  // 执行业务函数
+  fn(isLocked.value, value => {
+    isLocked.value = value;
+  });
+};
 export default {
   IsType, // 变量类型判断
   DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
   IsLeapyear, // 判断是否是闰年
-  FormateTime, // 时间转换
+  FormatTime, // 时间转换
   CountDown, // 倒计时
   Throttle, // 节流
-  Debounce // 防抖
+  Debounce, // 防抖
+  FormatThousand, // 格式化千位符
+  Locked // 锁定
+};
+export {
+  IsType, // 变量类型判断
+  DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
+  IsLeapyear, // 判断是否是闰年
+  FormatTime, // 时间转换
+  CountDown, // 倒计时
+  Throttle, // 节流
+  Debounce, // 防抖
+  FormatThousand, // 格式化千位符
+  Locked // 锁定
 };

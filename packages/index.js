@@ -1,6 +1,6 @@
 /**
- * Copyright (c) Author biaov<biaov@qq.com>
- * Date 2020-04-21
+ * @file 所有组件入口
+ * @author biaov<biaov@qq.com>
  */
 
 /* 基础组件 start */
@@ -62,6 +62,7 @@ import MeNoticeBar from "./MeNoticeBar"; // 公告栏
 import MeSwiper from "./MeSwiper"; // 轮播图
 import MeSwiperItem from "./MeSwiperItem"; // 轮播图选项
 import MeTag from "./MeTag"; // 标签
+import MeCountTo from "./MeCountTo"; // 数字滚动
 /* 展示组件 end */
 
 /* API start */
@@ -112,7 +113,8 @@ const components = {
   MeNoticeBar,
   MeSwiper,
   MeSwiperItem,
-  MeTag
+  MeTag,
+  MeCountTo
 };
 
 // 需要添加到 VUE 实例的 API
@@ -185,7 +187,8 @@ export {
   MeNoticeBar,
   MeSwiper,
   MeSwiperItem,
-  MeTag
+  MeTag,
+  MeCountTo
 };
 
 // 全部导出

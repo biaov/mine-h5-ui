@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import MeAPI from "~/MeAPI";
+import { CountDown } from "~/MeAPI/function";
 export default {
   name: "MeCountDown",
   props: {
@@ -62,7 +62,7 @@ export default {
           this.$emit("on-end");
         } else {
           this.curTime -= this.addSubNum;
-          this.formatAfter = MeAPI.CountDown(this.curTime, this.format);
+          this.formatAfter = CountDown(this.curTime, this.format);
           this.$emit("on-progress", this.curTime);
         }
       }, this.addSubNum);
@@ -75,7 +75,7 @@ export default {
     // 重置倒计时
     resetCountdown() {
       this.curTime = this.time;
-      this.formatAfter = MeAPI.CountDown(this.curTime, this.format);
+      this.formatAfter = CountDown(this.curTime, this.format);
     }
   },
   watch: {
