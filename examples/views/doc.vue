@@ -66,7 +66,7 @@ export default {
       padding: 20px 0 20px 10px;
       background: @bg-color-white;
     }
-    // 中建主体路由
+    // 中间主体路由
     .router-view {
       flex: 1;
       border-radius: 0 6px 0 6px;

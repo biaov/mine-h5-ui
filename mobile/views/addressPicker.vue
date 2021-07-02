@@ -7,7 +7,7 @@
         <span>{{item.title}}</span>
         <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
       </div>
-      <me-address-picker :type="item.type" v-model="item.value" :visible="item.visible" :min-date="item.minDate" :max-date="item.maxDate" @on-cancel="item.visible=false" @on-sure="onSure(item)"></me-address-picker>
+      <me-address-picker v-model="item.value" :visible="item.visible" :separator="item.separator" @on-cancel="item.visible=false" @on-sure="onSure(item)"></me-address-picker>
     </li>
   </ul>
 </template>
@@ -22,6 +22,15 @@ export default {
           label: "基础用法",
           title: "单击选择省市区",
           value: "",
+          separator: "-",
+          visible: false
+        },
+        {
+          id: 2,
+          label: "自定义分隔符",
+          title: "单击选择省市区",
+          value: "",
+          separator: " ",
           visible: false
         }
       ]

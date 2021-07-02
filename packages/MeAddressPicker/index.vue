@@ -58,13 +58,17 @@ export default {
     visible: {
       type: Boolean,
       default: false
+    },
+    // 分割符
+    separator: {
+      type: String,
+      default: "-"
     }
   },
   data() {
     return {
       currentValue: [], // 当前value值
-      // 列表数据
-      listData: [[], [], []],
+      listData: [[], [], []], // 列表数据
       distance: [88, 88, 88], // 滚动的距离
       startY: 0, // 开始Y坐标
       startDistence: 0, // 开始滚动的距离
@@ -79,23 +83,12 @@ export default {
     },
     // 点击确定按钮
     onSure() {
-      const { currentValue, type } = this;
+      const { currentValue, separator } = this;
       const str = currentValue.reduce((prev, elem, i) => {
         const val = elem < 10 ? `0${elem}` : elem;
-        let separator = ""; // 分隔符
-        // 时间
-        if (type === "time") {
-          separator = ":";
-        } else if (type === "datetime") {
-          // 日期时间
-          separator = i < 3 ? "-" : i === 3 ? " " : ":";
-        } else {
-          // 其他
-          separator = "-";
-        }
-        return prev + separator + val;
+        return prev + (i === 0 ? "" : separator) + val;
       }, "");
-      this.$emit("input", str.slice(1));
+      this.$emit("input", str);
       this.$emit("on-sure", currentValue);
     },
     // 获取当前value值

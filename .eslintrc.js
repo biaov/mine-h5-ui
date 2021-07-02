@@ -37,7 +37,15 @@ module.exports = {
     // 禁止使用 new 以避免产生副作用
     "no-new": "off",
     // 禁止不必要的Boolean值转换
-    "no-extra-boolean-cast": "off"
+    "no-extra-boolean-cast": "off",
+    // 类换行要空一行
+    "lines-between-class-members": "off",
+    // if的()后必须接{}
+    curly: "off",
+    // 缩进位数
+    indent: "off",
+    // 三目运算
+    "no-unneeded-ternary": "off"
   },
   overrides: [
     {

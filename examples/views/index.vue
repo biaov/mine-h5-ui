@@ -1,7 +1,7 @@
 <template>
   <div class="m-index">
     <div class="g-wrap m-hd">
-      <img src="../assets/logo.svg" class="u-logo animate__animated" :class="isShowTitle?'animate__fadeInDownBig':''">
+      <img src="../assets/logo.svg" class="u-logo">
       <p class="u-desc animate__animated" :class="isShowTitle&&'animate__fadeInUpBig'">一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库</p>
       <p class="u-preface animate__animated" :class="isShowPreface&&'animate__fadeInUpBig'">如果你还冇心仪的 UI 框架，不妨试试 <router-link to="/doc">MINE-H5-UI</router-link>，也许会让你有意外的收获。</p>
     </div>
@@ -41,8 +41,24 @@ export default {
 };
 </script>
 <style scoped lang="less">
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 body {
   overflow-x: hidden;
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 .m-index {
   .m-hd {
@@ -50,6 +66,7 @@ body {
     text-align: center;
     .u-logo {
       width: 220px;
+      animation: floating ease-in-out 1.86s infinite alternate;
     }
     .u-desc {
       margin-top: 56px;
@@ -78,10 +95,8 @@ body {
       top: 0;
       z-index: 9;
       text-align: center;
-      .u-btn-start {
-        color: #fff;
-        background-image: linear-gradient(90deg, #00aeff 0%, #3369e7 100%);
-        box-shadow: 0 2px 6px 0 rgba(51, 105, 231, 0.4);
+      .u-btn-start,
+      .u-btn-github {
         display: inline-block;
         width: 190px;
         height: 56px;
@@ -89,15 +104,47 @@ body {
         font-size: 18px;
         line-height: 56px;
         border-radius: 28px;
-        transition: all 0.4s;
+        background-image: linear-gradient(90deg, #20a0ff 0%, #3369e7 100%);
+        color: #fff;
+        box-shadow: 0 2px 6px 0 rgba(51, 105, 231, 0.4);
         cursor: pointer;
-      }
-      .u-btn-github {
-        .u-btn-start;
-        color: #316de9;
-        border: 1px solid #2f6ee9;
-        background: #fff;
-        box-shadow: none;
+        &:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          content: "";
+          background-color: #20a0ff;
+          background-image: radial-gradient(
+            circle farthest-corner at 100% 0,
+            #f09c33 0,
+            #f59234 4%,
+            #f98736 7%,
+            #fd7b38 10%,
+            #ff6e3c 14%,
+            #ff5f41 18%,
+            #ff4e46 21%,
+            #ff384b 25%,
+            #fd1851 29%,
+            #f90059 32%,
+            #f50062 36%,
+            #f0006c 39%,
+            #e90077 43%,
+            #e10083 46%,
+            #d70090 50%,
+            #20a0ff 75%,
+            #20a0ff 100%
+          );
+          background-position: 0 0;
+          background-size: 400% 100%;
+          border-radius: inherit;
+          transition: background-position 1s cubic-bezier(0.35, 0.35, 0, 1);
+        }
+        &:hover::after {
+          background-position: 85%;
+        }
       }
     }
     &:after {

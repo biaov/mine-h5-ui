@@ -29,14 +29,23 @@ Vue.use(MeAddressPicker);
 <me-address-picker v-model="value" :visible="true"></me-address-picker>
 ```
 
+### 自定义分隔符
+
+* 通过 `separator` 属性设置 value 的分隔符，默认值为 `-`。
+
+```HTML
+<me-address-picker v-model="value" :visible="true"></me-address-picker>
+```
+
 ## API
 
 ### 参数
 
-| 参数    | 说明                     | 类型    | 可选值       | 默认值 |
-|---------|--------------------------|---------|--------------|--------|
-| v-model | 双向绑定选择的时间值     | String  | --           | --     |
-| visible | 日期时间选择器的显示状态 | Boolean | true / false | false  |
+| 参数      | 说明             | 类型    | 可选值       | 默认值 |
+|-----------|------------------|---------|--------------|--------|
+| v-model   | 双向绑定选择的值 | String  | --           | --     |
+| visible   | 显示状态         | Boolean | true / false | false  |
+| separator | 分割符           | String  | --           | `-`    |
 
 ### 方法
 

@@ -46,7 +46,7 @@ export default {
   }
   // 标题信息
   .u-title {
-    .clamp;
+    .clamp();
     .same-height;
     width: 100%;
     padding: 0 40px;

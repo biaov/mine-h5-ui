@@ -11,7 +11,7 @@
 </template>
 <script>
 import MeIcon from "~/MeIcon";
-import Bind from "~/MeAPI/event";
+import { Bind, Unbind } from "~/MeAPI/event";
 export default {
   name: "MeKeyboard",
   components: {
@@ -82,14 +82,19 @@ export default {
           document.body.className = className.slice(0, index); // 设置className
         }
       }
+    },
+    // 点击 document
+    clickDocument() {
+      this.$emit("input", false);
     }
   },
   mounted() {
     this.setPadding();
     // 点击非键盘区域
-    Bind(document, "click", () => {
-      this.$emit("input", false);
-    });
+    Bind(document, "click", this.clickDocument);
+  },
+  destroyed() {
+    Unbind(document, "click", this.clickDocument);
   },
   watch: {
     // 监听value值变化

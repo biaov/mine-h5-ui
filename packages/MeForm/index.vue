@@ -25,7 +25,8 @@ export default {
   },
   methods: {
     // 点击提交按钮按钮
-    onSubmit() {
+    onSubmit(e) {
+      e.preventDefault(); // 取消默认行为，防止form提交
       const { model, rules } = this;
       const arr = Object.keys(model); // 需要校验的属性数组
       const data = {

@@ -8,7 +8,7 @@
   </ul>
 </template>
 <script>
-import Bind from "~/MeAPI/event";
+import { Bind, Unbind } from "~/MeAPI/event";
 export default {
   name: "MePassword",
   props: {
@@ -97,18 +97,22 @@ export default {
       this.listData.forEach(elem => {
         elem.state = false;
       });
+    },
+    // 点击 document
+    clickDocument() {
+      this.listData.forEach(elem => {
+        elem.state = false;
+      });
     }
   },
   created() {
     this.setList();
   },
   mounted() {
-    // document 绑定点击事件
-    Bind(document, "click", () => {
-      this.listData.forEach(elem => {
-        elem.state = false;
-      });
-    });
+    Bind(document, "click", this.clickDocument); // document 绑定点击事件
+  },
+  destroyed() {
+    Unbind(document, "click", this.clickDocument); // document 移除绑定点击事件
   },
   watch: {
     // 监听value的变化

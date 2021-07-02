@@ -67,6 +67,7 @@ img {
   display: table;
 }
 
+/* 自定义滚动条 start */
 .clear-scroll {
   overflow-x: hidden;
   overflow-y: auto;
@@ -81,6 +82,7 @@ img {
   background: #dadee0;
 }
 
+/* 自定义滚动条 end */
 /* 英文或数字强制换行 start */
 .wrap-en {
   word-wrap: break-word;
@@ -138,19 +140,20 @@ img {
 
 /* 遮罩层 end */
 /* 裁剪 start */
-.clamp {
+
+.clamp(@line: 1) when (@line =1) {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.clamp-two {
+.clamp(@line) when (@line >1) {
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: @line;
+  line-clamp: @line;
   -webkit-box-orient: vertical;
 }
 

@@ -15,6 +15,6 @@ tests/
 .eslintrc.js
 .gitignore
 babel.config.js
-formate.vue
+format.vue
 vue.config.js
 lib/demo.html

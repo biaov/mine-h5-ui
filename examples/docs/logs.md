@@ -10,11 +10,35 @@
 
 * 修订号：不定期发布，包含新特性和问题修复。
 * 次版本号：不定期发布，包含新特性和较大的功能更新，向下兼容。
-* 主版本号：发布时间不定，包含不兼容更新，预计作者技术发生重大提升时发布。
+* 主版本号：发布时间不定，包含不兼容更新，预计作者技术发生重大提升或重构时发布。
 
 :::timeline
 
-## v1.4.0-
+## v1.4.2-Latest release
+
+`2021-02-26`
+
+* 更新 API 方法
+  * 新增加 0 补位 API - [AddZero](/doc/api)
+  * 新增加减乘除运算 API - [Calculation](/doc/api)
+  * 新增移除绑定事件 API - [Unbind](/doc/api)
+* Bug Fixes
+  * 修复已知 Bug
+  * 优化代码
+  * 修复 [地址选择器组件](/doc/addressPicker) 演示和文档问题，并新增 `separator` 属性。
+  * 修复 [分享面板组件](/doc/addressPicker) 文档问题。
+
+## v1.4.1
+
+`2021-02-26`
+
+* 更新展示组件
+  * [新增数字滚动组件](/doc/countTo)
+* 更新 API 方法
+  * 新增格式化千位符 API - [FormatThousand](/doc/api)
+  * 新增锁定 API - [Locked](/doc/api)
+
+## v1.4.0
 
 `2021-02-18`
 

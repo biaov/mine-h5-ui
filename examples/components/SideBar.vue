@@ -91,7 +91,7 @@ export default {
       // 二级列表
       .m-list-second {
         > li > a {
-          .clamp;
+          .clamp();
           .same-height(@color-third, 40px);
           &:hover {
             color: @color-hover;
