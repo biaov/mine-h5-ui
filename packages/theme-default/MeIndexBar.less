@@ -1,0 +1,67 @@
+/**
+  * @file 索引栏
+*/
+
+@import "./variable.less";
+
+.me-index-bar {
+
+  // 相同的高度
+  .same-height(@height: 36px, @bgc: @bg-default) {
+    height: @height;
+    line-height: @height;
+    padding: @padding-default;
+    background: @bgc;
+  }
+
+  // 顶部固定项
+  .m-top {
+    .same-height(50px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+    color: @color-danger;
+    font-size: @font-size;
+    font-weight: bold;
+    box-shadow: 0 2px 10px @bg-item;
+  }
+
+  // 右侧列表值
+  .m-list-rt {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    >li {
+      line-height: 20px;
+      text-align: center;
+      color: @font-color-reduce;
+      font-size: @font-size-min;
+
+      &.on {
+        color: @color-danger;
+      }
+    }
+  }
+
+  // 内容列表
+  .m-list-cont {
+    .m-list-item {
+      dt {
+        .same-height(36px, @bg-item);
+        color: @font-color-password;
+        font-size: @font-size;
+      }
+
+      dd {
+        .same-height(44px);
+        border-bottom: 1px solid #ccc;
+        color: @font-color-password;
+        font-size: @font-size;
+      }
+    }
+  }
+}

@@ -2,13 +2,16 @@
   <!-- 加载 -->
   <div class="me-loading">
     <svg class="icon svg-icon" aria-hidden="true" :style="`color:${color};font-size:${size};`">
-      <use :xlink:href="`#${icon||iconName}`"></use>
+      <use :xlink:href="`#${icon || iconName}`"></use>
     </svg>
     <slot></slot>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useData } from "./hooks";
+
+export default defineComponent({
   name: "MeLoading",
   props: {
     // 类型
@@ -32,26 +35,9 @@ export default {
       default: ""
     }
   },
-  data() {
-    return {
-      iconName: "", // 自定义图标名称
-      // 默认图标名称
-      typeName: {
-        circle: "icon-loading",
-        circle2: "icon-Loading",
-        circle3: "icon-loading_flat",
-        circle4: "icon-loading04",
-        circle5: "icon-financial_loading",
-        circle6: "icon-loading_ico"
-      }
-    };
-  },
-  created() {
-    const { typeName, type } = this;
-    this.iconName = typeName[type] || "icon-loading"; // 设置名称
-  },
-  mounted() {
-    require("~/theme-default/src/fonts/iconfont.js");
+  setup(props) {
+    const { iconName } = useData(props);
+    return { iconName };
   }
-};
+});
 </script>

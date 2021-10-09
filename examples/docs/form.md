@@ -1,32 +1,38 @@
 # From 表单
 
-----
+---
 
 ## 按需引入
 
-:::demo
+::: CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeFrom } from "mine-h5-ui";
+import { createApp } from "vue";
+import App from "./App.vue";
+import { MeForm } from "mine-h5-ui";
+import "mine-h5-ui/lib/theme-default/MeForm.css";
 
-Vue.use(MeFrom);
+const app = createApp(App);
+app.use(MeForm);
+app.mount("#app");
 ```
 
 :::
 
-## 复制
+## 提示
 
-* 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
+- 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
 ## 代码演示
 
 ### 基础用法
 
-* 通过 `model` 属性来设置需要校验的内容，通过 `rules` 属性来设置匹配的规则，[rules 详情](#rules)。
-* 注意：只有当你同时设置 model 和 rules 属性时，验证才能生效。
+- 通过 `model` 属性来设置需要校验的内容，通过 `rules` 属性来设置匹配的规则，[rules 详情](#rules)。
+- 注意：只有当你同时设置 model 和 rules 属性时，验证才能生效。
 
-```HTML
+::: CopyCode
+
+```Vue
 <template>
   <!-- 演示demo -->
   <div class="m-demo">
@@ -39,52 +45,49 @@ Vue.use(MeFrom);
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      // 表单数据
-      form: {
-        username: "", // 用户名
-        password: "", // 密码
-        sms: "" // 短信验证码
+import { defineComponent, ref, getCurrentInstance } from "vue";
+
+export default defineComponent({
+  setup() {
+    const { $Validator } = getCurrentInstance().appContext.config.globalProperties;
+    // 表单数据
+    const form = ref({
+      username: "", // 用户名
+      password: "", // 密码
+      sms: "" // 短信验证码
+    });
+    // 规则
+    const rules = Object.freeze([
+      {
+        type: "username",
+        required: true,
+        message: "用户名不能为空"
       },
-      // 规则
-      rules: [
-        {
-          type: "username",
-          required: true,
-          message: "用户名不能为空"
-        },
-        {
-          type: "password",
-          pattern: this.$Validator.validPwd,
-          message: "密码必须为6-12位数字+字母组合"
-        },
-        {
-          type: "sms",
-          validator: value => /^\d{4}$/.test(value),
-          message: "短信验证码只能是4位纯数字"
-        }
-      ]
-    };
-  },
-  methods: {
+      {
+        type: "password",
+        pattern: $Validator.validPwd,
+        message: "密码必须为6-12位数字+字母组合"
+      },
+      {
+        type: "sms",
+        validator: value => /^\d{4}$/.test(value),
+        message: "短信验证码只能是4位纯数字"
+      }
+    ]);
     // 点击提交按钮
-    onSubmit({ valid, message, value }) {
+    const onSubmit = ({ valid, message, value }) => {
       // 判断是否通过验证
       if (valid) {
         console.log(value); // 通过验证的值
       }
-    }
+    };
+    return { form, rules, onSubmit };
   }
-};
+});
 </script>
-<style scoped lang="less">
-.m-demo {
-  
-}
-</style>
 ```
+
+:::
 
 ## API
 
@@ -97,13 +100,13 @@ export default {
 
 <h3 id="rules">rules</h3>
 
-| 参数      | 说明                                                  | 类型                        | 可选值       | 默认值 |
-|-----------|-------------------------------------------------------|-----------------------------|--------------|--------|
-| type      | 需要校验的属性名，注意：要和model里的form表单保持一致 | String                      | --           | --     |
-| required  | 是否必须                                              | Boolean                     | true / false | false  |
-| message   | 错误提示内容，如果不传或者传空则不弹出提示信息框      | String                      | --           | --     |
-| pattern   | 通过正则表达式进行校验                                | RegExp                      | --           | --     |
-| validator | 通过函数进行校验，返回 Boolean 值表示是否通过         | Function : value => boolean | --           | --     |
+| 参数      | 说明                                                      | 类型                        | 可选值       | 默认值 |
+|-----------|-----------------------------------------------------------|-----------------------------|--------------|--------|
+| type      | 需要校验的属性名，注意：要和 model 里的 form 表单保持一致 | string                      | --           | --     |
+| required  | 是否必须                                                  | boolean                     | true / false | false  |
+| message   | 错误提示内容，如果不传或者传空则不弹出提示信息框          | string                      | --           | --     |
+| pattern   | 通过正则表达式进行校验                                    | RegExp                      | --           | --     |
+| validator | 通过函数进行校验，返回 boolean 值表示是否通过             | Function : value => boolean | --           | --     |
 
 ### 方法
 
@@ -115,7 +118,7 @@ export default {
 
 | 参数    | 说明                                     | 类型    | 可选值       | 默认值 |
 |---------|------------------------------------------|---------|--------------|--------|
-| valid   | 验证状态，是否全部通过校验               | Boolean | true / false | --     |
-| type    | 未通过的属性名，如果全部通过则为空       | String  | --           | --     |
+| valid   | 验证状态，是否全部通过校验               | boolean | true / false | --     |
+| type    | 未通过的属性名，如果全部通过则为空       | string  | --           | --     |
 | value   | 需要验证的表单数据                       | Object  | --           | --     |
-| message | 返回规则里的 message，如果全部通过则为空 | String  | --           | --     |
+| message | 返回规则里的 message，如果全部通过则为空 | string  | --           | --     |

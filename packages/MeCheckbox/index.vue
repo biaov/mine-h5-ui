@@ -1,22 +1,25 @@
 <template>
   <!-- 复选框 -->
-  <div class="me-checkbox" @click="handleClick" :aria-checked="isChecked+''" :aria-disabled="disabled+''">
-    <me-icon :name="iconName" :color="isChecked?checkedColor:''" :size="iconSize"></me-icon>
+  <div class="me-checkbox" @click="handleClick" :aria-checked="isChecked + ''" :aria-disabled="disabled + ''">
+    <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
     <div class="u-value">
       <slot></slot>
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import MeIcon from "~/MeIcon";
-export default {
+import { useHandler } from "./hooks";
+
+export default defineComponent({
   name: "MeCheckbox",
   components: {
     MeIcon
   },
   props: {
     // v-model的值
-    value: {
+    modelValue: {
       type: Boolean,
       default: false
     },
@@ -55,71 +58,9 @@ export default {
       default: false
     }
   },
-  data() {
-    return {
-      isChecked: this.value, // 是否选中
-      iconName: "" // 图标名称
-    };
-  },
-  methods: {
-    // 点击单选框
-    handleClick() {
-      const {
-        isChecked,
-        name,
-        setIcon,
-        disabled,
-        $parent: { $options, onChange }
-      } = this;
-      // 判断当前是否被禁用
-      if (!disabled) {
-        // 判断是否存在父组件
-        if ($options._componentTag === "me-checkbox-group") {
-          onChange({ name, isChecked });
-        } else {
-          this.isChecked = !isChecked; // 改变当前状态
-          this.$emit("input", !isChecked);
-        }
-        this.$emit("on-click");
-        setIcon();
-      }
-    },
-    // 设置图标
-    setIcon() {
-      const { icon, iconSelect, isChecked, shape } = this;
-      this.iconName = isChecked
-        ? iconSelect
-          ? iconSelect
-          : shape === "round"
-          ? "icon-radio"
-          : "icon-baseline-check_box-px"
-        : icon
-        ? icon
-        : shape === "round"
-        ? "icon-radio3"
-        : "icon-baseline-check_box_outline_blank-px";
-    },
-    // 设置状态
-    setStatus() {
-      const {
-        value,
-        name,
-        setIcon,
-        $parent: { $options, currentValue }
-      } = this;
-      this.isChecked = $options._componentTag === "me-checkbox-group" ? currentValue.includes(name) : value;
-      setIcon();
-    }
-  },
-  created() {
-    this.setStatus();
-  },
-  watch: {
-    // 监听数据绑定
-    value(value) {
-      this.isChecked = value;
-      this.setIcon();
-    }
+  setup(props) {
+    const { isChecked, iconName, handleClick, setStatus } = useHandler(props);
+    return { isChecked, iconName, handleClick, setStatus };
   }
-};
+});
 </script>

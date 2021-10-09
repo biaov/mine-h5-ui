@@ -1,14 +1,17 @@
 <template>
   <!-- 标签 -->
-  <div class="me-tag" :class="[type,plain&&'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
+  <div class="me-tag" :class="[type, plain && 'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
     <div class="u-txt">
-      <span>{{text}}</span>
+      <span>{{ text }}</span>
       <i class="iconfont icon-baseline-close-px" @click="onClose" v-if="closeable"></i>
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useHandler } from "./hooks";
+
+export default defineComponent({
   name: "MeTag",
   props: {
     // 类型
@@ -56,14 +59,9 @@ export default {
       default: false
     }
   },
-  data() {
-    return {};
-  },
-  methods: {
-    // 点击关闭按钮
-    onClose() {
-      this.$emit("on-close");
-    }
+  setup() {
+    const { onClose } = useHandler();
+    return { onClose };
   }
-};
+});
 </script>

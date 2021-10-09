@@ -1,16 +1,24 @@
 <template>
   <!-- 轮播图 -->
   <div class="me-swiper-item" :style="`background:${background};`">
-    <img class="u-img" :src="url" width="100%" alt="banner" v-if="url" draggable="false">
+    <img class="u-img" :src="url" alt="banner" v-if="url" draggable="false" />
     <slot>
-      <div class="u-text" v-if="text">{{text}}</div>
+      <div class="u-text" v-if="text">{{ text }}</div>
     </slot>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useName } from "./hooks";
+
+export default defineComponent({
   name: "MeSwiperItem",
   props: {
+    // 属性名称
+    name: {
+      type: [String, Number],
+      required: true
+    },
     // 图片地址
     url: {
       type: String,
@@ -27,9 +35,9 @@ export default {
       default: ""
     }
   },
-  data() {
+  setup(props) {
+    useName(props);
     return {};
-  },
-  methods: {}
-};
+  }
+});
 </script>

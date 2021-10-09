@@ -1,61 +1,37 @@
-// https://eslint.org/docs/user-guide/configuring
-
-module.exports = {
-  root: true,
-  parserOptions: {
-    parser: "babel-eslint"
-  },
+// 配置信息
+const config = {
   env: {
-    node: true,
-    browser: true
+    browser: true,
+    es2021: true,
+    node: true
   },
-  extends: ["plugin:vue/essential", "@vue/standard"],
-  // required to lint *.vue files
-  plugins: ["vue"],
-  // add your custom rules here
+  extends: ["plugin:vue/essential", "airbnb-base", "plugin:prettier/recommended", "plugin:jest/recommended"],
+  parserOptions: {
+    ecmaVersion: 12,
+    parser: "@typescript-eslint/parser",
+    sourceType: "module"
+  },
+  plugins: ["vue", "@typescript-eslint"],
+  settings: {},
   rules: {
-    // 强制 generator 函数中 * 号周围使用一致的空格
-    "generator-star-spacing": "off",
-    // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    // 关闭单双引号
-    quotes: "off",
-    // 使用未声明的变量
-    "no-undef": "off",
-    // 禁止 console
-    "no-console": "off",
-    // 要求或禁止文件末尾存在空行
-    "eol-last": "off",
-    // 强制在 function的左括号之前使用一致的空格
-    "space-before-function-paren": "off",
-    // 要求或禁止使用分号代替 ASI
-    semi: "off",
-    // 要求使用 === 和 !==
-    eqeqeq: "off",
-    // 要求在同一个元素上不弄同时使用v-if和v-for
-    "vue/no-use-v-if-with-v-for": "off",
-    // 禁止使用 new 以避免产生副作用
-    "no-new": "off",
-    // 禁止不必要的Boolean值转换
-    "no-extra-boolean-cast": "off",
-    // 类换行要空一行
-    "lines-between-class-members": "off",
-    // if的()后必须接{}
-    curly: "off",
-    // 缩进位数
-    indent: "off",
-    // 三目运算
-    "no-unneeded-ternary": "off"
-  },
-  overrides: [
-    {
-      files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)"
-      ],
-      env: {
-        jest: true
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off", // 禁止console
+    "no-unused-expressions": [
+      "error",
+      {
+        allowShortCircuit: true, // 允许短路逻辑
+        allowTernary: true // 允许三目运算
       }
-    }
-  ]
+    ],
+    "import/prefer-default-export": "off", // 如果只有一个值，要用 default 导出
+    "import/no-unresolved": "off", // import识别路径，因为alias设置
+    "import/extensions": "off", // 扩展简写
+    "no-param-reassign": "off", // 函数参数修改
+    "no-plusplus": "off", // 一元操作符
+    "no-nested-ternary": "off", // 禁用嵌套的三元表达式
+    "no-bitwise": "off", // 禁用按位运算符
+    "no-multi-assign": "off", // 禁止连续赋值
+    "vue/no-v-model-argument": "off", // v-model 带参数
+    "vue/no-multiple-template-root": "off" // 根元素只有一个
+  }
 };
+module.exports = config;

@@ -1,6 +1,7 @@
 # 忽略目录
 .git/
 build/
+config/
 dist/
 examples/
 mobile/
@@ -12,9 +13,10 @@ tests/
 # 忽略指定文件
 .editorconfig
 .eslintignore
-.eslintrc.js
+.eslintrc
 .gitignore
-babel.config.js
-format.vue
-vue.config.js
-lib/demo.html
+.prettierrc
+*.html
+jest.config.js
+tsconfig.json
+vite.config.ts

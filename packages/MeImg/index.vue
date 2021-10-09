@@ -1,12 +1,15 @@
 <template>
   <!-- 图片 -->
-  <div class="me-img" @click="handleImg">
-    <img :src="src" width="40px" height="40px" :alt="alt" v-if="!fill" :style="`width:${width};height:${height};border-radius:${radius};`">
+  <div class="me-img" @click="onClick">
+    <img :src="src" width="40px" height="40px" :alt="alt" v-if="!fill" :style="`width:${width};height:${height};border-radius:${radius};`" @load="onLoad" @error="onError" />
     <span :style="`width:${width};height:${height};border-radius:${radius};background:url(${src}) no-repeat center;background-size:${fill};`" v-else></span>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useImgEvent } from "./hooks";
+
+export default defineComponent({
   name: "MeImg",
   props: {
     // 图片地址
@@ -40,14 +43,13 @@ export default {
       default: ""
     }
   },
-  data() {
-    return {};
-  },
-  methods: {
-    // 点击图片
-    handleImg() {
-      this.$emit("on-click");
-    }
+  setup() {
+    const { onClick, onLoad, onError } = useImgEvent();
+    return {
+      onClick,
+      onLoad,
+      onError
+    };
   }
-};
+});
 </script>

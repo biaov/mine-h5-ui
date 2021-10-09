@@ -1,0 +1,84 @@
+/**
+  * @file 进度条
+*/
+
+@import "./variable.less";
+
+.me-progress-bar {
+  // 相同的文本
+  .same-text(@font-color: @font-color-white) {
+    line-height: 20px;
+    white-space: nowrap;
+    color: @font-color;
+    font-size: @font-size-min;
+  }
+
+  // 相同的位置
+  .same-position(@bgc: @color-primary) {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    background: @bgc;
+  }
+
+  // 线型进度条
+  .m-line {
+    position: relative;
+
+    // 文本
+    .u-txt {
+      .same-position();
+      .same-text();
+      border-radius: @border-radius-default*2;
+      padding: 0 4px;
+    }
+
+    // 点
+    .u-dot {
+      .same-position();
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .u-line {
+      width: 100%;
+      height: 4px;
+      border-radius: 10px;
+      background: @bg-con;
+      overflow: hidden;
+
+      > span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: @color-primary;
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  // 环形进度条
+  .m-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    > svg {
+      width: 100%;
+      height: 100%;
+
+      > path {
+        fill: none;
+      }
+    }
+
+    .u-txt {
+      .same-position(transparent);
+      .same-text(@color-primary);
+      left: 50%;
+    }
+  }
+}

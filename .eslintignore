@@ -1,3 +1,5 @@
-lib
-examples/docs
-packages/theme-default/src/fonts/
+/dist
+/node_modules
+fonts
+/*.ts
+/build/*.ts

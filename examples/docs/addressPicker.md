@@ -4,18 +4,22 @@
 
 ## 按需引入
 
-:::demo
+::: CopyCode
 
 ```JavaScript
-import Vue from "vue";
+import { createApp } from "vue";
+import App from "./App.vue";
 import { MeAddressPicker } from "mine-h5-ui";
+import "mine-h5-ui/lib/theme-default/MeAddressPicker.css";
 
-Vue.use(MeAddressPicker);
+const app = createApp(App);
+app.use(MeAddressPicker);
+app.mount("#app");
 ```
 
 :::
 
-## 复制
+## 提示
 
 * 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
@@ -29,6 +33,8 @@ Vue.use(MeAddressPicker);
 <me-address-picker v-model="value" :visible="true"></me-address-picker>
 ```
 
+:::
+
 ### 自定义分隔符
 
 * 通过 `separator` 属性设置 value 的分隔符，默认值为 `-`。
@@ -37,15 +43,17 @@ Vue.use(MeAddressPicker);
 <me-address-picker v-model="value" :visible="true"></me-address-picker>
 ```
 
+:::
+
 ## API
 
 ### 参数
 
-| 参数      | 说明             | 类型    | 可选值       | 默认值 |
-|-----------|------------------|---------|--------------|--------|
-| v-model   | 双向绑定选择的值 | String  | --           | --     |
-| visible   | 显示状态         | Boolean | true / false | false  |
-| separator | 分割符           | String  | --           | `-`    |
+| 参数                | 说明             | 类型    | 可选值       | 默认值 |
+|---------------------|------------------|---------|--------------|--------|
+| modelValue(v-model) | 双向绑定选择的值 | string  | --           | --     |
+| visible             | 显示状态         | boolean | true / false | false  |
+| separator           | 分割符           | string  | --           | `-`    |
 
 ### 方法
 

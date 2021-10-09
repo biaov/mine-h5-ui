@@ -1,0 +1,76 @@
+/**
+  * @file 标签栏
+*/
+
+@import "./variable.less";
+
+.me-tab-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid @border-color-default;
+  background: @bg-default;
+
+  > li {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: @font-color;
+
+    // 图标
+    .u-icon {
+      position: relative;
+      color: inherit;
+      font-size: @font-size-min*2 - 2px;
+
+      // 相同的位置
+      .same-position {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: @color-danger;
+      }
+
+      // 点
+      &.dot::after {
+        .same-position;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      // 徽标
+      em {
+        .same-position;
+        min-width: 16px;
+        border-radius: @border-radius-default * 4;
+        padding: 0 3px;
+        text-align: center;
+        color: @color-default;
+        font-size: @font-size-min;
+        font-style: normal;
+        transform: translateX(50%);
+      }
+    }
+
+    // 图片
+    .u-img {
+      display: block;
+      height: 20px;
+    }
+
+    // 文本
+    .u-txt {
+      color: inherit;
+      font-size: @font-size;
+    }
+
+    &.selected {
+      color: @color-primary;
+    }
+  }
+}

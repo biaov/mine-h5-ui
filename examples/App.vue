@@ -1,26 +1,18 @@
 <template>
-  <div id="app">
-    <mine-header></mine-header>
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
-<script>
-import MineHeader from "@/components/MineHeader";
-export default {
-  components: {
-    MineHeader
-  },
-  data() {
-    return {};
-  },
-  mounted() {
-    window.innerWidth < 1200 && (location.href = `${location.origin}/mobile.html`);
+<script lang="ts">
+import { defineComponent, onMounted } from "vue";
+
+export default defineComponent({
+  setup() {
+    onMounted(() => {
+      globalThis.innerWidth < 1200 && (globalThis.location.href = `${globalThis.location.origin}/mobile.html`);
+    });
   }
-};
+});
 </script>
+
 <style lang="less">
-@import "./utils/styles/index.less";
-#app {
-  padding-top: 60px;
-}
+@import "./styles/index.less";
 </style>

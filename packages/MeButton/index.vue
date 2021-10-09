@@ -1,13 +1,22 @@
 <template>
   <!-- 按钮 -->
-  <button :type="nativeType" class="me-btn" :class="`me-btn-${type} ${plain?'me-btn-plain':''} ${disabled?'disabled':''}`" :style="`width:${width}; color:${type==='default'||plain?color:'#fff'}; background:${!plain?color:'#fff'}; border-color:${color};`" @click="$emit('on-click')">
-    <me-icon :name="icon" :color="`${type==='default'||plain?color:'#fff'}`" size="16px" v-if="!!icon"></me-icon>
+  <button
+    :type="nativeType"
+    class="me-btn"
+    :class="`me-btn-${type} ${plain ? 'me-btn-plain' : ''} ${disabled ? 'disabled' : ''}`"
+    :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
+    @click="onClick"
+  >
+    <me-icon :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" v-if="icon"></me-icon>
     <slot></slot>
   </button>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import MeIcon from "~/MeIcon";
-export default {
+import { useHandler } from "./hooks";
+
+export default defineComponent({
   name: "MeButton",
   components: {
     MeIcon
@@ -25,7 +34,8 @@ export default {
     },
     // 类型
     type: {
-      validator: value => value === "default" || value === "primary" || value === "success" || value === "info" || value === "warning" || value === "danger",
+      type: String,
+      validator: (value: string) => value === "default" || value === "primary" || value === "success" || value === "info" || value === "warning" || value === "danger",
       default: "default"
     },
     // 朴素按钮
@@ -47,8 +57,9 @@ export default {
       default: ""
     }
   },
-  data() {
-    return {};
+  setup() {
+    const { onClick } = useHandler();
+    return { onClick };
   }
-};
+});
 </script>

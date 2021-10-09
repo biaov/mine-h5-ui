@@ -2,28 +2,33 @@
   <!-- 标签页 -->
   <div class="me-tab">
     <!-- 标签组 -->
-    <div class="m-tabs" ref="tabs">
-      <div class="m-tab-item" v-for="(item,index) in tabList" :key="index" :class="{active:value===index}" @click="onClick(index)" :style="`color:${value===index?activeColor:color};`">{{item}}</div>
-      <div class="u-line-bt" :style="`transform:translateX(${transX*(value*2+1)}px) translateX(-50%);transition-duration:${duration}s;background:${lineColor};`"></div>
+    <div class="m-tabs" ref="tabsDom">
+      <div
+        class="m-tab-item"
+        v-for="item in tabList"
+        :key="item.name"
+        :class="{ active: modelValue === item.name }"
+        @click="onClick(item)"
+        :style="`color:${modelValue === item.name ? activeColor : color};`"
+      >
+        {{ item.label }}
+      </div>
+      <div class="u-line-bt" :style="`transform:translateX(${transX * (curIndex * 2 + 1)}px) translateX(-50%);transition-duration:${duration}s;background:${lineColor};`"></div>
     </div>
     <!-- slot 内容 -->
     <slot></slot>
   </div>
 </template>
-<script>
-/**
- * 下活动线位移计算方式
- * 思路：当前活动item的一半宽度 + 前面的所有宽度
- * transX * (value * 2 + 1) => transX * 2 * value + transX
- * transX：每个项的一半的宽度
- * value：活动索引
- */
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useInitSlots } from "./hooks";
+
+export default defineComponent({
   name: "MeTab",
   props: {
     // v-model绑定值
-    value: {
-      type: Number,
+    modelValue: {
+      type: [String, Number],
       required: true
     },
     // 未聚焦时的颜色
@@ -42,54 +47,9 @@ export default {
       default: "#f56c6c"
     }
   },
-  data() {
-    return {
-      tabList: [], // 标签列表
-      transX: 0, // 初始移动值
-      duration: 0 // 过渡动画时间
-    };
-  },
-  methods: {
-    // 更新子组件状态
-    updateValue() {
-      const { $children } = this;
-      const labelArr = []; // 标签数组
-      // 循环遍历
-      $children.forEach((elem, i) => {
-        elem.setData(i);
-        labelArr.push(elem.title);
-      });
-      this.tabList = labelArr;
-    },
-    // 计算初始移动值
-    initTranslateX() {
-      this.transX = this.$refs.tabs.offsetWidth / (this.tabList.length * 2);
-      this.duration = 0;
-    },
-    // 点击tabs item
-    onClick(index) {
-      // 点击不是活动项
-      if (index !== this.value) {
-        this.duration = 0.4;
-        this.$emit("input", index);
-        this.$emit("on-change", index);
-        // 防止还没更新完就更新字组件状态
-        this.$nextTick(() => {
-          this.updateItemState();
-        });
-      }
-    },
-    // 更新子组件的状态
-    updateItemState() {
-      // 循环遍历
-      this.$children.forEach(elem => {
-        elem.initShow();
-      });
-    }
-  },
-  mounted() {
-    this.updateValue();
-    this.initTranslateX();
+  setup(props) {
+    const { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick } = useInitSlots(props);
+    return { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick };
   }
-};
+});
 </script>

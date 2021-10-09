@@ -2,27 +2,35 @@
   <!-- 进度条 -->
   <div class="me-progress-bar" :style="`padding:${padding};`">
     <!-- 线型进度条 -->
-    <div class="m-line" v-if="type==='line'" :style="`width:${width};`">
-      <h3 class="u-txt" :style="`left:${value}%;background:${activeColor};color:${textColor};`" v-if="textShow">{{curText}}</h3>
-      <span class="u-dot" :style="`width:${size+8}px;height:${size+8}px;left:${value}%;background:${activeColor};`" v-else></span>
-      <p class="u-line" :style="`height:${size}px; background:${backgorund};`"><span :style="`background:${activeColor}; transform:translateX(${value-100}%)`"></span></p>
+    <div class="m-line" v-if="type === 'line'" :style="`width:${width};`">
+      <h3 class="u-txt" :style="`left:${modelValue}%;background:${activeColor};color:${textColor};`" v-if="textShow">{{ curText }}</h3>
+      <span class="u-dot" :style="`width:${size + 8}px;height:${size + 8}px;left:${modelValue}%;background:${activeColor};`" v-else></span>
+      <p class="u-line" :style="`height:${size}px; background:${backgorund};`"><span :style="`background:${activeColor}; transform:translateX(${modelValue - 100}%)`"></span></p>
     </div>
     <!-- 环形进度条 -->
     <div class="m-circle" :style="`width:${width};height:${width};`" v-else>
-      <svg :viewBox="`0 0 ${curPosi*2} ${curPosi*2}`">
+      <svg :viewBox="`0 0 ${curPosi * 2} ${curPosi * 2}`">
         <path :d="`M ${curPosi} ${curPosi} m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000`" :stroke="backgorund" :stroke-width="`${10 * this.size}px`"></path>
-        <path :d="`M ${curPosi} ${curPosi} m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000`" :stroke="activeColor" :stroke-dasharray="`${Math.round(31.4*value)}px, 3140px`" :stroke-width="`${10 * this.size}px`"></path>
+        <path
+          :d="`M ${curPosi} ${curPosi} m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000`"
+          :stroke="activeColor"
+          :stroke-dasharray="`${Math.round(31.4 * modelValue)}px, 3140px`"
+          :stroke-width="`${10 * this.size}px`"
+        ></path>
       </svg>
-      <div class="u-txt" v-if="textShow" :style="`color:${textColor};`">{{curText}}</div>
+      <div class="u-txt" v-if="textShow" :style="`color:${textColor};`">{{ curText }}</div>
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useCounts } from "./hooks";
+
+export default defineComponent({
   name: "MeProgressBar",
   props: {
     // v-model绑定值,0-100的整数
-    value: {
+    modelValue: {
       type: Number,
       required: true
     },
@@ -77,20 +85,9 @@ export default {
       default: "0 10px"
     }
   },
-  data() {
-    return {};
-  },
-  computed: {
-    // 当前文本
-    curText() {
-      const { text, value } = this;
-      const defaultText = value + "%"; // 默认文本
-      return text ? text.replace(/\$default/g, defaultText) : defaultText;
-    },
-    // 当前圆环位置
-    curPosi() {
-      return 5 * this.size + 500;
-    }
+  setup(props) {
+    const { curText, curPosi } = useCounts(props);
+    return { curText, curPosi };
   }
-};
+});
 </script>

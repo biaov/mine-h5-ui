@@ -1,0 +1,52 @@
+/**
+  * @file 标签
+*/
+
+@import "./variable.less";
+
+.me-tag {
+  @list: {
+    primary: @color-primary;
+    success: @color-success;
+    info: @color-info;
+    warning: @color-warning;
+    danger: @color-danger;
+  }
+
+  display: inline-block;
+  height: 24px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0 10px;
+  color: @font-color;
+  font-size: @font-size-min;
+
+  each(@list, {
+      &.@{key} {
+        background:@value;
+        border-color:@value;
+        color:@font-color-white;
+
+        // 空心
+        &.plain {
+          background:@bg-default  !important;
+          color:@value;
+        }
+      }
+    }
+
+  );
+
+  // 文本
+  .u-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    i {
+      padding-left: 4px;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,14 +1,14 @@
 <template>
   <!-- 分享面板 -->
-  <div class="me-share-sheet" :class="{show:isShow}" @click="hideMask" v-show="isShowMask">
-    <div class="m-picker" :class="{show:isShow}" @click.stop>
+  <div class="me-share-sheet" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask">
+    <div class="m-picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
-      <h3 class="u-tips">{{tips}}</h3>
+      <h3 class="u-tips">{{ tips }}</h3>
       <!-- 分享列表 -->
       <ul class="m-list-li">
-        <li v-for="(item,index) in list" :key="index" @click="onLi(item)">
+        <li v-for="(item, index) in list" :key="index" @click="onLi(item)">
           <i class="iconfont u-icon" :class="item.icon" :style="`color:${item.color};`"></i>
-          <span class="u-desc">{{item.value}}</span>
+          <span class="u-desc">{{ item.value }}</span>
         </li>
       </ul>
       <!-- 取消按钮 -->
@@ -16,12 +16,16 @@
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
+import { useShow, useBtns } from "./hooks";
+import { ListItem } from "./interfaces";
+
+export default defineComponent({
   name: "MeShareSheet",
   props: {
-    // v-model 绑定值
-    value: {
+    // v-model:visible 绑定值
+    visible: {
       type: Boolean,
       default: false
     },
@@ -32,53 +36,15 @@ export default {
     },
     // 数据列表
     list: {
-      type: Array,
-      validator: value => value.length > 0 && Object.keys(value[0]).length > 0
+      type: Array as PropType<ListItem[]>,
+      required: true,
+      validator: (value: ListItem[]) => value.length > 0 && Object.keys(value[0]).length > 0
     }
   },
-  data() {
-    return {
-      isShowMask: false, // 是否显示模态框
-      isShow: false // 是否显示模态框的过渡动画
-    };
-  },
-  methods: {
-    // 显示模态框
-    showMask() {
-      const that = this;
-      that.isShowMask = true;
-      setTimeout(() => {
-        that.isShow = true;
-      }, 100);
-    },
-    // 隐藏模态框
-    hideMask() {
-      const that = this;
-      that.isShow = false;
-      setTimeout(() => {
-        that.isShowMask = false;
-        that.$emit("input", false);
-      }, 400);
-    },
-    // 点击列表
-    onLi(item) {
-      const that = this;
-      that.$emit("input", false);
-      that.$emit("on-change", item);
-    },
-    // 点击取消按钮
-    onCancel() {
-      const that = this;
-      that.$emit("input", false);
-      that.$emit("on-cancel");
-    }
-  },
-  watch: {
-    // 监听是否显示弹出层参数
-    value(value) {
-      const { showMask, hideMask } = this;
-      value ? showMask() : hideMask();
-    }
+  setup(props) {
+    const { isShowMask, isShow, hideMask } = useShow(props);
+    const { onLi, onCancel } = useBtns();
+    return { isShowMask, isShow, hideMask, onLi, onCancel };
   }
-};
+});
 </script>

@@ -1,11 +1,14 @@
 <template>
   <!-- 宫格 -->
-  <div class="me-grid">
+  <div class="me-grid" ref="grid">
     <slot></slot>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useInitSlots } from "./hooks";
+
+export default defineComponent({
   name: "MeGrid",
   props: {
     // 一行几个
@@ -19,22 +22,9 @@ export default {
       default: "#edeff2"
     }
   },
-  data() {
-    return {};
-  },
-  methods: {
-    // 更新子组件状态
-    updateValue() {
-      const { cols, $children, borderColor } = this;
-      $children.forEach((elem, i) => elem.setData(i, cols, borderColor));
-    },
-    // 状态改变时触发此方法
-    onChange(num) {
-      this.$emit("on-change", num);
-    }
-  },
-  mounted() {
-    this.updateValue();
+  setup(props) {
+    const { grid } = useInitSlots(props);
+    return { grid };
   }
-};
+});
 </script>

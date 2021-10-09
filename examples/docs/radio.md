@@ -1,30 +1,37 @@
 # Radio 单选框
 
-----
+---
 
 ## 按需引入
 
-:::demo
+::: CopyCode
 
 ```JavaScript
-import Vue from "vue";
+import { createApp } from "vue";
+import App from "./App.vue";
 import { MeRadio, MeRadioGroup } from "mine-h5-ui";
+import "mine-h5-ui/lib/theme-default/MeRadio.css";
+import "mine-h5-ui/lib/theme-default/MeRadioGroup.css";
 
-Vue.use(MeRadio);
-Vue.use(MeRadioGroup);
+const app = createApp(App);
+app.use(MeRadio);
+app.use(MeRadioGroup);
+app.mount("#app");
 ```
 
 :::
 
-## 复制
+## 提示
 
-* 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
+- 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
 ## 代码演示
 
 ### 基础用法
 
-* 通过 `v-model` 绑定值当前选中项的 name。
+- 通过 `v-model` 绑定值当前选中项的 name。
+
+::: CopyCode
 
 ```HTML
 <me-radio-group v-model="radio">
@@ -33,17 +40,25 @@ Vue.use(MeRadioGroup);
 </me-radio-group>
 ```
 
+:::
+
 ### 单独使用
 
-* 通过 `v-model` 绑定值当前是否选中状态。
+- 通过 `v-model` 绑定值当前是否选中状态。
+
+::: CopyCode
 
 ```HTML
 <me-radio v-model="radio">单选框</me-radio>
 ```
 
+:::
+
 ### 排列方式
 
-* 通过属性 `shape` 设置单选框的排列方式，默认为 round。
+- 通过属性 `shape` 设置单选框的排列方式，默认为 round。
+
+::: CopyCode
 
 ```HTML
 <me-radio-group v-model="radio" shape="square">
@@ -52,9 +67,13 @@ Vue.use(MeRadioGroup);
 </me-radio-group>
 ```
 
+:::
+
 ### 自定义图标
 
-* 通过属性 `icon` 和 `icon-select` 设置单选框的未选中图标和选中图标，未选中图标的默认值为 icon-radio3，选中图标的默认值为 icon-radio。
+- 通过属性 `icon` 和 `icon-select` 设置单选框的未选中图标和选中图标，未选中图标的默认值为 icon-radio3，选中图标的默认值为 icon-radio。
+
+::: CopyCode
 
 ```HTML
 <me-radio-group v-model="radio">
@@ -63,9 +82,13 @@ Vue.use(MeRadioGroup);
 </me-radio-group>
 ```
 
+:::
+
 ### 自定义选中颜色
 
-* 通过属性 `checked-color` 设置单选框的选中颜色，默认值为 #409eff。
+- 通过属性 `checked-color` 设置单选框的选中颜色，默认值为 #409eff。
+
+::: CopyCode
 
 ```HTML
 <me-radio-group v-model="radio">
@@ -74,9 +97,13 @@ Vue.use(MeRadioGroup);
 </me-radio-group>
 ```
 
+:::
+
 ### 自定义大小
 
-* 通过属性 `icon-size` 设置单选框的大小，默认值为 20px。
+- 通过属性 `icon-size` 设置单选框的大小，默认值为 20px。
+
+::: CopyCode
 
 ```HTML
 <me-radio-group v-model="radio">
@@ -85,9 +112,13 @@ Vue.use(MeRadioGroup);
 </me-radio-group>
 ```
 
+:::
+
 ### 禁用状态
 
-* 通过属性 `disabled` 设置单选框的禁用状态，默认值为 false。
+- 通过属性 `disabled` 设置单选框的禁用状态，默认值为 false。
+
+::: CopyCode
 
 ```HTML
 <me-radio-group v-model="radio">
@@ -96,20 +127,22 @@ Vue.use(MeRadioGroup);
 </me-radio-group>
 ```
 
+:::
+
 ## API
 
 ### MeRadioGroup
 
 #### 参数
 
-| 参数      | 说明                           | 类型             | 可选值                | 默认值   |
-|-----------|--------------------------------|------------------|-----------------------|----------|
-| v-model   | 双向绑定单选框选项里的 name 值 | [String, Number] | --                    | --       |
-| direction | 排列方式                       | String           | vertical / horizontal | vertical |
+| 参数                | 说明                           | 类型             | 可选值                | 默认值   |
+|---------------------|--------------------------------|------------------|-----------------------|----------|
+| modelValue(v-model) | 双向绑定单选框选项里的 name 值 | [string, number] | --                    | --       |
+| direction           | 排列方式                       | string           | vertical / horizontal | vertical |
 
 #### Slots
 
-* ⚠ 注意：此插槽只接 `MeRadio` 组件。
+- ⚠ 注意：此插槽只接 `MeRadio` 组件。
 
 | 具名插槽 | 说明     | scopedSlots |
 |----------|----------|-------------|
@@ -125,16 +158,16 @@ Vue.use(MeRadioGroup);
 
 #### 参数
 
-| 参数         | 说明               | 类型             | 可选值         | 默认值      |
-|--------------|--------------------|------------------|----------------|-------------|
-| v-model      | 双向绑定单选框状态 | Boolean          | true / false   | --          |
-| name         | 单选框唯一名称     | [String, Number] | --             | --          |
-| shape        | 图标形状           | String           | square / round | round       |
-| icon         | 自定义图标         | String           | --             | icon-radio3 |
-| iconSelect   | 自定义选中图标     | String           | --             | icon-radio  |
-| iconSize     | 图标大小           | String           | --             | 20px        |
-| checkedColor | 选中图标颜色       | String           | --             | #409eff     |
-| disabled     | 禁用状态           | Boolean          | true / false   | false       |
+| 参数                | 说明               | 类型             | 可选值         | 默认值      |
+|---------------------|--------------------|------------------|----------------|-------------|
+| modelValue(v-model) | 双向绑定单选框状态 | boolean          | true / false   | --          |
+| name                | 单选框唯一名称     | [string, number] | --             | --          |
+| shape               | 图标形状           | string           | square / round | round       |
+| icon                | 自定义图标         | string           | --             | icon-radio3 |
+| iconSelect          | 自定义选中图标     | string           | --             | icon-radio  |
+| iconSize            | 图标大小           | string           | --             | 20px        |
+| checkedColor        | 选中图标颜色       | string           | --             | #409eff     |
+| disabled            | 禁用状态           | boolean          | true / false   | false       |
 
 #### Slots
 

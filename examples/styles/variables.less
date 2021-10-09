@@ -1,0 +1,70 @@
+// 行为颜色
+@color-white: #fff;
+@color-primary: #409eff;
+@color-success: #67c23a;
+@color-info: #909399;
+@color-warning: #e6a23c;
+@color-danger: #f56c6c;
+
+// 内容
+@bg-color: #f6f6f6; // 背景颜色
+@bg-hover: #e6f3f4;
+
+// 文本
+@font-color: #494949;
+@font-color-reduce: #949494;
+@font-color-disabled: #bec3c9;
+@font-size: 14px;
+@font-size-min: 12px;
+@font-size-large: 16px;
+
+// 边框
+@border-radius-default: 4px;
+@border-color: #e8eaec;
+@border-color-pre: #e2ecf4;
+@border-color-line: #ececec;
+@border-color-common: #c5d9e8;
+@boder-common: 1px solid @border-color-common;
+
+// 阴影
+@box-shadow-default: rgba(0, 0, 0, 0.12);
+
+/* transition 动画 start */
+// translate 动画
+.translate-enter-from,
+.translate-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.translate-enter-active,
+.translate-leave-active {
+  transition: all 0.4s;
+}
+
+// scale 动画
+.scale(@from-scale: scale(1), @to-scale: scale(1.2)) {
+  transform: @from-scale;
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: @to-scale;
+  }
+}
+
+/* transition 动画 end */
+
+// 溢出隐藏
+.clamp() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 清理弹性布局
+.clear-flex(@width: 88px) {
+  &::after {
+    content: "";
+    width: @width;
+  }
+}

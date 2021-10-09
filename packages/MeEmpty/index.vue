@@ -3,18 +3,21 @@
   <div class="me-empty" :style="`min-height:${height}px;`">
     <!-- 图片 -->
     <div class="u-img">
-      <img :src="url" alt="empty" v-if="url">
+      <img :src="url" alt="empty" v-if="url" />
       <i :class="`iconfont icon-${icon}`" v-else></i>
     </div>
     <!-- 文本 -->
     <div class="u-txt">
-      {{text}}
+      {{ text }}
     </div>
     <slot></slot>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useIconName } from "./hooks";
+
+export default defineComponent({
   name: "MeEmpty",
   props: {
     // 文本内容
@@ -43,19 +46,9 @@ export default {
       default: ""
     }
   },
-  data() {
-    return {
-      icon: "" // 图标名称
-    };
-  },
-  created() {
-    // 类型对应图标名称
-    const names = {
-      default: "jigou_wushuju",
-      network: "wangluocuowu",
-      search: "wushuju"
-    };
-    this.icon = this.iconName || names[this.type]; // 设置图标名称
+  setup(props) {
+    const { icon } = useIconName(props);
+    return { icon };
   }
-};
+});
 </script>

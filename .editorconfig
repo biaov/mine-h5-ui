@@ -1,7 +1,8 @@
-
+# 编辑器规则
 root = true
 
-[*.{js,jsx,ts,tsx,vue}]
+[*]
+charset = utf-8
 indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true

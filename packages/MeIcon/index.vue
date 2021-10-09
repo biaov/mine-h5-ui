@@ -2,8 +2,11 @@
   <!-- 图标 -->
   <i class="iconfont me-icon" :class="name" :style="`color:${color};font-size:${size};`" @click="onClick"></i>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useClick } from "./hooks";
+
+export default defineComponent({
   name: "MeIcon",
   props: {
     // class名称
@@ -22,14 +25,11 @@ export default {
       default: ""
     }
   },
-  data() {
-    return {};
-  },
-  methods: {
-    // 点击图标
-    onClick(e) {
-      this.$emit("on-click", e);
-    }
+  setup() {
+    const { onClick } = useClick();
+    return {
+      onClick
+    };
   }
-};
+});
 </script>

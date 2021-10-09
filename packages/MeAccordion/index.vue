@@ -4,35 +4,22 @@
     <slot></slot>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useInitSlots } from "./hooks";
+
+export default defineComponent({
   name: "MeAccordion",
   props: {
     // v-model绑定值
-    value: {
+    modelValue: {
       type: [Number, String],
       required: true
     }
   },
-  data() {
+  setup(props) {
+    useInitSlots(props);
     return {};
-  },
-  methods: {
-    // 更新子组件状态
-    updateValue() {
-      this.$children.forEach((elem, i) => {
-        elem.setData(i, this.value);
-      });
-    },
-    // 状态改变时触发此方法
-    onChange(active) {
-      this.$emit("input", active);
-      this.$emit("on-change", active);
-      this.$nextTick(this.updateValue);
-    }
-  },
-  mounted() {
-    this.updateValue();
   }
-};
+});
 </script>

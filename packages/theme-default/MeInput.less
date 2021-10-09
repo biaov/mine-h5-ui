@@ -1,0 +1,114 @@
+/**
+  * @file 输入框
+*/
+
+@import "./variable.less";
+
+
+
+.me-input {
+  @height-40: 40px;
+  @color-reduce: lighten(@font-color-reduce, 20%);
+
+  // 聚焦样式
+  .input-focus(@border-color: darken(@border-color-default, 20%)) {
+    .u-input:focus {
+      border-color: @border-color;
+      caret-color: @border-color;
+    }
+  }
+
+  // 相同块状样式
+  .same-block(@color: @font-color-reduce, @size: @font-size) {
+    position: absolute;
+    top: 0;
+    padding: 0 10px;
+    height: @height-40;
+    line-height: @height-40;
+    color: @color;
+    font-size: @size;
+  }
+
+  // 相同右侧内容样式
+  .same-right-content(@color: @color-reduce, @size: @font-size-min) {
+    .same-block(@color, @size);
+    right: 0;
+  }
+
+  position: relative;
+  width: 100%;
+
+  .u-input {
+    width: 100%;
+    height: @height-40;
+    line-height: @height-40 - 2;
+    border: 1px solid @border-color-default;
+    border-radius: @border-radius-default;
+    padding: 0 10px;
+    // transition: all 0.4s;
+    outline: none;
+    color: @font-color;
+    font-size: @font-size;
+
+    &::-webkit-input-placeholder {
+      color: lighten(@font-color, 50%);
+    }
+
+    &[readyonly]:focus {
+      border-color: @border-color-default  !important;
+      color: @color-reduce  !important;
+    }
+
+    &[diabled] {
+      border-color: @color-reduce  !important;
+      color: @color-reduce  !important;
+    }
+  }
+
+  // label样式
+  .u-label {
+    .same-block();
+    left: 0;
+
+    >.me-icon {
+      margin-right: 4px;
+    }
+  }
+
+  // 图标样式
+  >.me-icon {
+    .same-right-content(@size: @font-size-large+2);
+  }
+
+  // 短信验证码样式
+  .u-sms {
+    .same-right-content(@color: @font-color);
+
+    &.countdown {
+      color: @color-reduce  !important;
+    }
+  }
+
+  /* 主题样式 start */
+  &.me-input-default {
+    .input-focus();
+  }
+
+  &.me-input-primary {
+    .input-focus(@color-primary);
+  }
+
+  &.me-input-success {
+    .input-focus(@color-success);
+  }
+
+  &.me-input-warning {
+    .input-focus(@color-warning);
+  }
+
+  &.me-input-danger {
+    .input-focus(@color-danger);
+  }
+
+  /* 主题样式 end */
+}

@@ -1,31 +1,35 @@
 # Search 搜索
 
-----
+---
 
 ## 按需引入
 
-:::demo
+::: CopyCode
 
 ```JavaScript
-import Vue from "vue";
+import { createApp } from "vue";
+import App from "./App.vue";
 import { MeSearch } from "mine-h5-ui";
+import "mine-h5-ui/lib/theme-default/MeSearch.css";
 
-Vue.use(MeSearch);
+const app = createApp(App);
+app.use(MeSearch);
+app.mount("#app");
 ```
 
 :::
 
-## 复制
+## 提示
 
-* 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
+- 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
 ## 代码演示
 
 ### 基础用法
 
-* 通过 `v-model` 指令来设置搜索框的值。
+- 通过 `v-model` 指令来设置搜索框的值。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <me-search v-model="value"></me-search>
@@ -35,9 +39,9 @@ Vue.use(MeSearch);
 
 ### 占位符内容
 
-* 通过 `placeholder` 属性来设置搜索框的占位符内容，默认为**请搜索**。
+- 通过 `placeholder` 属性来设置搜索框的占位符内容，默认为**请搜索**。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <me-search v-model="value" placeholder="请输入搜索内容"></me-search>
@@ -47,46 +51,41 @@ Vue.use(MeSearch);
 
 ### 自定义右侧按钮内容
 
-* 通过 `btnText` 属性来设置搜索框右侧按钮内容。
+- 通过 `btnText` 属性来设置搜索框右侧按钮内容。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <template>
   <!-- 演示 -->
   <div class="m-demo">
-    <me-search v-model="value" btnText="取消" @on-click="btnCancel"></me-search>
+    <me-search v-model="iptValue" btnText="取消" @on-click="btnCancel"></me-search>
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      value: "" // 当前搜索框值
-    };
-  },
-  methods: {
-    // 点击取消按钮
-    btnCancel(){
-      this.$MeToast("点击了取消按钮");
-    }
-  }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
+import { defineComponent, ref, getCurrentInstance } from "vue";
 
-}
-</style>
+export default defineComponent({
+  setup() {
+    const { $MeToast } = getCurrentInstance().appContext.config.globalProperties;
+    const iptValue = ref(""); // 当前搜索框值
+    // 点击取消按钮
+    const btnCancel = () => {
+      $MeToast("点击了取消按钮");
+    };
+    return { iptValue, btnCancel };
+  }
+});
+</script>
 ```
 
 :::
 
 ### 对齐方式
 
-* 通过 `align` 属性来设置搜索框的内容对齐方式，默认为 left。
+- 通过 `align` 属性来设置搜索框的内容对齐方式，默认为 left。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <me-search v-model="value" align="center"></me-search>
@@ -96,9 +95,9 @@ export default {
 
 ### 设置倒角
 
-* 通过 `radius` 属性来设置搜索框的倒角，支持 CSS 的 border-radius 值，默认为 4px。
+- 通过 `radius` 属性来设置搜索框的倒角，支持 CSS 的 border-radius 值，默认为 4px。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <me-search v-model="value" radius="20px"></me-search>
@@ -108,9 +107,9 @@ export default {
 
 ### 自定义样式
 
-* 通过 `background` 和 `color` 属性来设置搜索框的样式，支持 CSS 的 background 和 color 值，background 默认值为 #f6f6f6，color 默认值为 #494949。
+- 通过 `background` 和 `color` 属性来设置搜索框的样式，支持 CSS 的 background 和 color 值，background 默认值为 #f6f6f6，color 默认值为 #494949。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <me-search v-model="value" background="linear-gradient(-45deg, #4bb0ff, #6149f6)" color="#fff"></me-search>
@@ -120,9 +119,9 @@ export default {
 
 ### 禁用搜索框
 
-* 通过 `disabled` 属性来设置搜索框的禁用状态，默认为 false。
+- 通过 `disabled` 属性来设置搜索框的禁用状态，默认为 false。
 
-:::demo
+::: CopyCode
 
 ```HTML
 <me-search v-model="value" :disabled="true"></me-search>
@@ -134,16 +133,16 @@ export default {
 
 ### 参数
 
-| 参数        | 说明               | 类型    | 可选值                                    | 默认值  |
-|-------------|--------------------|---------|-------------------------------------------|---------|
-| v-model     | 双向绑定弹出层状态 | Boolean | true / false                              | --      |
-| placeholder | 搜索框占位符       | String  | --                                        | 请搜索  |
-| btnText     | 搜索框右侧内容     | String  | --                                        | --      |
-| align       | 搜索框内容对齐方式 | String  | left / center / right / justify / inherit | left    |
-| radius      | 搜索框倒角         | String  | --                                        | 4px     |
-| background  | 搜索框背景颜色     | String  | --                                        | #f6f6f6 |
-| color       | 搜索框字体颜色     | String  | --                                        | #494949 |
-| disabled    | 搜索框禁用状态     | Boolean | true / false                              | false   |
+| 参数                | 说明               | 类型    | 可选值                                    | 默认值  |
+|---------------------|--------------------|---------|-------------------------------------------|---------|
+| modelValue(v-model) | 双向绑定弹出层状态 | boolean | true / false                              | --      |
+| placeholder         | 搜索框占位符       | string  | --                                        | 请搜索  |
+| btnText             | 搜索框右侧内容     | string  | --                                        | --      |
+| align               | 搜索框内容对齐方式 | string  | left / center / right / justify / inherit | left    |
+| radius              | 搜索框倒角         | string  | --                                        | 4px     |
+| background          | 搜索框背景颜色     | string  | --                                        | #f6f6f6 |
+| color               | 搜索框字体颜色     | string  | --                                        | #494949 |
+| disabled            | 搜索框禁用状态     | boolean | true / false                              | false   |
 
 ### 方法
 

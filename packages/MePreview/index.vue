@@ -1,12 +1,15 @@
 <template>
   <!-- 图片预览 -->
-  <div class="me-preview" :class="{show:isShow}" :style="`z-index:${zIndex};background:${background};`" @click="onClose">
-    <img class="u-img" :src="url" width="100%" alt="preview-img">
+  <div class="me-preview" :class="{ show: isShow }" :style="`z-index:${zIndex};background:${background};`" @click="onClose" v-if="!isDestroy">
+    <img class="u-img" :src="url" alt="preview-img" />
     <slot></slot>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useShow } from "./hooks";
+
+export default defineComponent({
   name: "MePreview",
   props: {
     // 图片地址
@@ -25,16 +28,9 @@ export default {
       default: "#000"
     }
   },
-  data() {
-    return {
-      isShow: false // 是否显示
-    };
-  },
-  methods: {
-    // 点击遮罩层
-    onClose() {
-      this.end && this.end();
-    }
+  setup() {
+    const { isShow, isDestroy, onClose } = useShow();
+    return { isShow, isDestroy, onClose };
   }
-};
+});
 </script>

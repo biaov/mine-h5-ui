@@ -1,0 +1,34 @@
+/**
+  * @file 下拉刷新
+*/
+
+@import "./variable.less";
+
+.me-pull-refresh {
+  overflow: hidden;
+
+  // 内容区域
+  .m-cont {
+    width: 100%;
+    min-height: 400px;
+    transform: translateY(-50px);
+    transition-property: transform;
+    transition-duration: 0ms;
+
+    // 头部信息
+    .m-hd {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      color: @font-color;
+      font-size: @font-size;
+      transform: scale(0);
+
+      .me-loading {
+        margin-right: 10px;
+      }
+    }
+  }
+}

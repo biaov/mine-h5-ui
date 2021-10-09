@@ -1,0 +1,65 @@
+import { useContext, ref, watch } from "vue";
+import { Props } from "./types";
+import { CountDown } from "~/MeAPI/function";
+
+// 倒计时
+export const useCountdown = (props: Props) => {
+  const { emit } = useContext();
+  const formatAfter = ref({}); // 格式化之后
+  let timer: number | undefined; // 定时器
+  const addSubNum = props.format.includes("ms") ? 10 : 1000; // 时间
+  let curTime = 0; // 当前 time
+  // 开启倒计时
+  const startCountdown = () => {
+    if (timer) return; // 倒计时是否存在
+    // 开启倒计时
+    timer = setInterval(() => {
+      // 是否已经倒计到0
+      if (curTime <= 0) {
+        clearInterval(timer);
+        timer = undefined;
+        emit("on-end");
+      } else {
+        curTime -= addSubNum;
+        formatAfter.value = CountDown(curTime, props.format);
+        emit("on-progress", curTime);
+      }
+    }, addSubNum);
+  };
+  // 暂停倒计时
+  const suspendCountdown = () => {
+    clearInterval(timer);
+    timer = undefined;
+  };
+  // 重置倒计时
+  const resetCountdown = () => {
+    curTime = props.time;
+    formatAfter.value = CountDown(curTime, props.format);
+  };
+  // 监听开始状态
+  watch(
+    () => props.isStart,
+    value => {
+      value && startCountdown();
+    },
+    {
+      immediate: true
+    }
+  );
+  // 监听暂停状态
+  watch(
+    () => props.isSuspend,
+    value => {
+      value && suspendCountdown();
+    }
+  );
+  // 监听重置状态
+  watch(
+    () => props.isReset,
+    value => {
+      value && resetCountdown();
+    }
+  );
+  resetCountdown();
+  return { formatAfter };
+};

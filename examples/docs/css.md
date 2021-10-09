@@ -1,34 +1,30 @@
 # CSS 代码块
 
-----
+---
 
 ## 全局引入
 
-:::demo
+::: CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
-
-Vue.use(MINEH5UI);
+import "mine-h5-ui/lib/theme-default/base.css";
 ```
 
 :::
 
-## 复制
+## 提示
 
-* 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
+- 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
 ## 源码
 
-* 源码地址：[CSS代码块](https://github.com/biaov/MINE-H5-UI/blob/master/packages/theme-default/src/base.less)
+- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/master/packages/theme-default/src/base.less)
 
-## Class类名
+## Class 类名
 
-* 通过在标签元素上加上 class 类名实现其应用。
+- 通过在标签元素上加上 class 类名实现其应用。
 
-| class类名    | 说明                                         | class类名        | 说明               |
+| class 类名   | 说明                                         | class 类名       | 说明               |
 |--------------|----------------------------------------------|------------------|--------------------|
 | g-lf         | 向左浮动                                     | g-rt             | 向右浮动           |
 | clear-ft     | 清理浮动（在浮动元素的父元素上设置清理浮动） | clear-mg         | 清理外边距 margin  |
@@ -47,24 +43,36 @@ Vue.use(MINEH5UI);
 
 ### 浮动
 
-* 向左浮动
+- 向左浮动
+
+::: CopyCode
 
 ```HTML
 <div class="g-lf"></div>
 ```
 
-* 向右浮动
+:::
+
+- 向右浮动
+
+::: CopyCode
 
 ```HTML
 <div class="g-rt"></div>
 ```
 
+:::
+
 ## Transition 代码演示
 
 ### 过渡动画
 
-* 透明过渡动画
+- 透明过渡动画
+
+::: CopyCode
 
 ```HTML
 <transition name="fade"></transition>
 ```
+
+:::

@@ -1,31 +1,37 @@
-[Bind]:https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
+[Bind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
+[Unbind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
 
 # API 方法
 
-----
+---
 
 ## 全局引入
 
-:::demo
+::: CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
+import { createApp } from "vue";
+import App from "./App.vue";
+import { MeAPI } from "mine-h5-ui";
 
-Vue.use(MINEH5UI);
+const app = createApp(App);
+app.mount("#app");
+// ctx 里插入 API
+Object.keys(MeAPI).forEach(key => {
+  app.config.globalProperties[`$${key}`] = (API as any)[key];
+});
 ```
 
 :::
 
-## 复制
+## 提示
 
-* 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
+- 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
 ## 源码
 
-* 源码地址：[API 方法](https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/function.js)
-* 注意：该 API 方法基于 ES6+，如果只想使用单个方法，复制代码后自行使用 [babel](https://www.babeljs.cn/) 转换。
+- 源码地址：[API 方法](https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/function.js)
+- 注意：该 API 方法基于 ES6+，如果只想使用单个方法，复制代码后自行使用 [babel](https://www.babeljs.cn/) 转换。
 
 ## API 方法名称
 
@@ -43,8 +49,17 @@ Vue.use(MINEH5UI);
 ### 判断是否是闰年
 
 ```JavaScript
-const IsLeapyear = this.$IsLeapyear; // 获取规则
-console.log(IsLeapyear(2020)); // true
-console.log(IsLeapyear(2000)); // true
-console.log(IsLeapyear(1900)); // false
+import { defineComponent, getCurrentInstance } from "vue";
+
+export default defineComponent({
+  setup() {
+    const { $IsLeapyear } = getCurrentInstance().appContext.config.globalProperties;
+    console.log($IsLeapyear(2020)); // true
+    console.log($IsLeapyear(2000)); // true
+    console.log($IsLeapyear(1900)); // false
+    return {};
+  }
+});
 ```
+
+:::

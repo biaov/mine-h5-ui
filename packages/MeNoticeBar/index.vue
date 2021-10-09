@@ -1,32 +1,39 @@
 <template>
   <!-- 公告栏 -->
-  <div class="me-notice-bar" :style="`height:${height}px;border-radius:${radius+(String(radius).includes('px')?'':'px')};background:${background};`">
+  <div class="me-notice-bar" :style="`height:${height}px;border-radius:${radius + (String(radius).includes('px') ? '' : 'px')};background:${background};`">
     <!-- 前面图标 -->
-    <div class="u-icon u-icon-preappend" :style="`color:${preappendColor};`" @click="onClick(':preappend')">
+    <div class="u-icon u-icon-preappend" :style="`color:${preappendColor};`" @click="onClick(':preappend', $event)">
       <i :class="`iconfont icon-${preappendIcon}`"></i>
     </div>
     <!-- 滚动公告 -->
     <div class="u-notice">
       <!-- 水平动画 -->
-      <ul class="u-notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll==='horizontal'">
-        <li v-for="(item,index) in listData" :key="index" @click="onClick('',index)"><span>{{item}}</span></li>
+      <ul class="u-notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll === 'horizontal'">
+        <li v-for="(item, index) in listData" :key="index" @click="onClick('', index)">
+          <span>{{ item }}</span>
+        </li>
       </ul>
       <!-- 垂直动画 -->
       <transition name="slide" mode="out-in" v-else>
-        <div class="u-notice-vertical" :key="listIndex" @click="onClick('',listIndex)" :style="`color:${color};`"><span>{{listData[listIndex]}}</span></div>
+        <div class="u-notice-vertical" :key="listIndex" @click="onClick('', listIndex)" :style="`color:${color};`">
+          <span>{{ listData[listIndex] }}</span>
+        </div>
       </transition>
     </div>
     <!-- 后面图标 -->
-    <div class="u-icon u-icon-append" :style="`color:${appendColor};`" @click="onClick(':append')"><i :class="`iconfont icon-${appendIcon}`"></i></div>
+    <div class="u-icon u-icon-append" :style="`color:${appendColor};`" @click="onClick(':append', $event)"><i :class="`iconfont icon-${appendIcon}`"></i></div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
+import { useAnimate, useBtns } from "./hooks";
+
+export default defineComponent({
   name: "MeNoticeBar",
   props: {
     // 列表内容
     list: {
-      type: [Array, String],
+      type: [String, Array] as PropType<string | string[]>,
       required: true
     },
     // 滚动方向
@@ -85,83 +92,10 @@ export default {
       default: "#494949"
     }
   },
-  data() {
-    return {
-      left: 0, // 距离左边的距离
-      listData: [], // 列表内容
-      listIndex: 0, // 列表索引
-      timer: null, // 定时器
-      isSwitch: true // 允许开启动画
-    };
-  },
-  methods: {
-    // 开启动画
-    startAnimate() {
-      // 水平方向
-      if (this.scroll === "horizontal") {
-        const { offsetWidth, parentNode } = this.$refs.noticeList;
-        let startTime = null;
-        // 开始当前动画
-        const startCurAnimate = timestamp => {
-          startTime === null && (startTime = timestamp); // 设置开始时间
-          const elapsed = timestamp - startTime; // 当前距离开始时间
-          const left = this.left; // 上次的 left
-          // 是否到达最大值
-          if (left < -offsetWidth) {
-            this.left = parentNode.offsetWidth;
-            startTime = null;
-          } else {
-            this.left = ~(elapsed / 18);
-          }
-          this.isSwitch && window.requestAnimationFrame(startCurAnimate);
-        };
-        window.requestAnimationFrame(startCurAnimate);
-      } else {
-        // 垂直方向
-        const { listData, delay } = this;
-        const len = listData.length;
-        // 是否是多条数据
-        if (len <= 1) return;
-        // 定时器
-        this.timer = setInterval(() => {
-          const index = this.listIndex; // 索引
-          this.listIndex = index >= len - 1 ? 0 : index + 1; // 设置索引
-        }, delay);
-      }
-    },
-    // 关闭动画
-    closeAnimate() {
-      // 水平方向
-      if (this.scroll === "horizontal") {
-        this.isSwitch = false; // 关闭开关
-      } else {
-        clearInterval(this.timer); // 关闭定时器
-      }
-    },
-    // 点击公告
-    onClick(name, index) {
-      this.$emit(`on-click${name}`, index);
-    }
-  },
-  watch: {
-    loop(value) {
-      // 是否开启
-      if (value) {
-        this.startAnimate(); // 执行开始动画
-      } else {
-        this.closeAnimate();
-      }
-    }
-  },
-  created() {
-    const list = this.list;
-    this.listData = Array.isArray(list) ? list : [list]; // 设置为数组
-  },
-  mounted() {
-    this.loop && this.startAnimate(); // 开启动画
-  },
-  destroyed() {
-    this.closeAnimate();
+  setup(props) {
+    const { noticeList, left, listData, listIndex } = useAnimate(props);
+    const { onClick } = useBtns();
+    return { noticeList, left, listData, listIndex, onClick };
   }
-};
+});
 </script>
