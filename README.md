@@ -12,7 +12,8 @@
 
 ## 使用文档
 
-**[😎 1.x](https://mineh5ui.biaov.cn/)**
+* **[😎 1.x](https://mineh5ui.biaov.cn/)**
+* **[😎 2.x](https://mineh5ui.biaov.cn/v2)**
 
 ## 安装
 
@@ -40,6 +41,3 @@ Vue.use(MINEH5UI);
 
 * [MIT](http://opensource.org/licenses/MIT)
 * Copyright © 2020-present, TalkingData.
-
-[^_^]: 我们改变不了生活，但是我们可以改变对待生活的态度。
-[^_^]: 作者就是一个逗比。

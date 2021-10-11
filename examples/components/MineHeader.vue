@@ -43,8 +43,12 @@ export default {
       // 版本列表数据
       listVersion: [
         {
-          id: 1,
-          value: "1.x"
+          value: "1.x",
+          href: "/"
+        },
+        {
+          value: "2.x",
+          href: "/v2"
         }
       ]
     };

@@ -17,10 +17,6 @@ export default {
     direction: {
       type: String,
       default: "vertical" // vertical|horizontal
-    },
-    // 最大可选值
-    max: {
-      type: Number
     }
   },
   data() {

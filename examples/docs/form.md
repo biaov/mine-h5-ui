@@ -8,9 +8,9 @@
 
 ```JavaScript
 import Vue from "vue";
-import { MeFrom } from "mine-h5-ui";
+import { MeForm } from "mine-h5-ui";
 
-Vue.use(MeFrom);
+Vue.use(MeForm);
 ```
 
 :::

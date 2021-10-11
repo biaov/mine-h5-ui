@@ -26,15 +26,6 @@ export default {
       this.currentId = id;
       this.initShow();
     },
-    // 点击列表项
-    handleClick() {
-      const {
-        $parent: { $options, onChange },
-        currentId
-      } = this;
-      $options._componentTag === "me-tab" && onChange(currentId); // 向父组件传递数据
-      this.$emit("on-click");
-    },
     // 设置初始化显示
     initShow() {
       const {

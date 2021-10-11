@@ -8,6 +8,12 @@
 git clone https://github.com/biaov/MINE-H5-UI.git
 ```
 
+### 切换分支
+
+```Basic
+git checkout v1
+```
+
 ### 安装依赖
 
 * 项目根目录安装项目依赖

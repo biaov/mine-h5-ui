@@ -4,7 +4,7 @@
     <h3 class="u-tit" @click="handleTitle">{{title}}<me-icon name="icon-down2" size="14px" color="#ccc" :class="{show:isShowDropdown}"></me-icon>
     </h3>
     <ul class="m-list" :style="`max-height:${ isShowDropdown ? list.length * 200 : 0 }%;`">
-      <li v-for="item in list" :key="item.id" @click="handleLi(item)">{{item.value}}</li>
+      <li v-for="(item,index) in list" :key="index" @click="handleLi(item)">{{item.value}}</li>
     </ul>
   </div>
 </template>
@@ -31,13 +31,12 @@ export default {
       this.isShowDropdown = !this.isShowDropdown;
     },
     // 点击列表
-    handleLi(item) {
-      this.title = item.value;
+    handleLi({ value, href }) {
+      value !== this.list[0].value && (location.href = href);
     }
   },
   created() {
-    const list = this.list;
-    this.title = list[list.length - 1].value;
+    this.title = this.list[0].value;
   },
   mounted() {
     document.onclick = e => {

@@ -39,7 +39,7 @@ this.$MePreview({
 |------------|--------------|--------|--------|--------|
 | url        | 图片地址     | String | --     | --     |
 | z-index    | 层级位置     | Number | --     | 99     |
-| background | 遮罩层背景色 | String | --     | #00    |
+| background | 遮罩层背景色 | String | --     | #000   |
 
 #### Slots
 
