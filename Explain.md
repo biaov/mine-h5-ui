@@ -24,8 +24,16 @@ npm start
 
 ## 打包项目
 
+* 打包演示项目
+
 ```Basic
-npm run build:doc
+npm run build:docs
+```
+
+* 打包组件库
+
+```Basic
+npm run build
 ```
 
 ## 项目目录
