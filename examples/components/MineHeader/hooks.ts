@@ -23,11 +23,11 @@ export const useListData = () => {
   // 版本列表
   const versionList = Object.freeze([
     {
-      href: "https://mineh5ui.biaov.cn/v1",
+      href: "/",
       version: "v1.x"
     },
     {
-      href: "https://mineh5ui.biaov.cn/v2",
+      href: "/v2",
       version: "v2.x"
     }
   ]);

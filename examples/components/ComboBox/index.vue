@@ -8,8 +8,8 @@
     <!-- 列表 -->
     <transition name="translate">
       <ul class="m-dropdown" v-if="isShow">
-        <li v-for="(item, index) in list" :key="index">
-          <a :href="item.href" target="_blank" rel="noopener noreferrer">{{ item.version }}</a>
+        <li v-for="(item, index) in list" :key="index" @click="onClickItem(item)">
+          {{ item.version }}
         </li>
       </ul>
     </transition>
@@ -29,9 +29,9 @@ export default defineComponent({
       required: true
     }
   },
-  setup() {
-    const { isShow, onClickFrame } = useShowAction();
-    return { isShow, onClickFrame };
+  setup(props) {
+    const { isShow, onClickFrame, onClickItem } = useShowAction(props);
+    return { isShow, onClickFrame, onClickItem };
   }
 });
 </script>
@@ -93,10 +93,6 @@ export default defineComponent({
       &:hover {
         background: @bg-hover;
         color: @color-primary;
-      }
-      a {
-        color: inherit;
-        font-size: inherit;
       }
     }
   }

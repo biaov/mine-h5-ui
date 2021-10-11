@@ -1,6 +1,9 @@
 import { ref, onMounted, onUnmounted } from "vue";
+import { Props } from "./types";
+import { ListItem } from "./interfaces";
+
 // 显示操作
-export const useShowAction = () => {
+export const useShowAction = (props: Props) => {
   const isShow = ref(false); // 显示状态
   // 点击框
   const onClickFrame = () => {
@@ -10,11 +13,15 @@ export const useShowAction = () => {
   const addClick = () => {
     isShow.value = false;
   };
+  // 点击 dropdown 的 item
+  const onClickItem = ({ href, version }: ListItem) => {
+    version !== props.list[1]?.version && (location.href = href);
+  };
   onMounted(() => {
     document.addEventListener("click", addClick);
   });
   onUnmounted(() => {
     document.removeEventListener("click", addClick);
   });
-  return { isShow, onClickFrame };
+  return { isShow, onClickFrame, onClickItem };
 };
