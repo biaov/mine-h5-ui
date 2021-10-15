@@ -65,6 +65,10 @@ import MeTag from "./MeTag"; // 标签
 import MeCountTo from "./MeCountTo"; // 数字滚动
 /* 展示组件 end */
 
+/* 业务组件 start */
+import MeVirtualList from "./MeVirtualList"; // 数字滚动
+/* 业务组件 end */
+
 /* API start */
 import MeAPI from "./MeAPI";
 /* API end */
@@ -114,7 +118,8 @@ const components = {
   MeSwiper,
   MeSwiperItem,
   MeTag,
-  MeCountTo
+  MeCountTo,
+  MeVirtualList
 };
 
 // 需要添加到 VUE 实例的 API
@@ -188,7 +193,8 @@ export {
   MeSwiper,
   MeSwiperItem,
   MeTag,
-  MeCountTo
+  MeCountTo,
+  MeVirtualList
 };
 
 // 全部导出

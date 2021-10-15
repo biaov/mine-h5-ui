@@ -358,6 +358,20 @@
           "name": "countTo"
         }
       ]
+    },
+    {
+      "meta": {
+        "title": "业务组件"
+      },
+      "items": [
+        {
+          "meta": {
+            "title": "VirtualList 虚拟列表"
+          },
+          "path": "virtualList",
+          "name": "virtualList"
+        }
+      ]
     }
   ],
   "封装方法": [

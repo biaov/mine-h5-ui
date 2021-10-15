@@ -1,0 +1,23 @@
+/**
+  * @file 虚拟列表
+*/
+
+@import "./variable.less";
+
+.me-virtual-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  .u-scroll-bar {
+    width: 100%;
+  }
+  .m-list-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

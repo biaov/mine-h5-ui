@@ -21,6 +21,6 @@ export default {
 <style lang="less">
 @import "./utils/styles/index.less";
 #app {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 </style>

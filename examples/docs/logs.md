@@ -14,7 +14,18 @@
 
 :::timeline
 
-## v1.4.2-Latest release
+## v1.5.0-Latest release
+
+`2021-10-15`
+
+* 更新业务组件
+  * [新增虚拟列表组件](/doc/virtualList)
+* Bug Fixes
+  * 修复已知 Bug
+  * 优化代码
+  * 调整代码架构
+
+## v1.4.2
 
 `2021-02-26`
 

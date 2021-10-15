@@ -51,7 +51,7 @@ export default {
     this.iconName = typeName[type] || "icon-loading"; // 设置名称
   },
   mounted() {
-    require("~/theme-default/src/fonts/iconfont.js");
+    require("~/theme-default/fonts/iconfont.js");
   }
 };
 </script>
