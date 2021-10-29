@@ -14,7 +14,7 @@ export const useHandMove = (props: Props) => {
   let initialValue = 0; // 初始值
   let startX = 0; // 开始 X 坐标
   let minDistance = 0; // 滑动超过多少算滑动过
-  let timer: number | undefined; // 定时器
+  let timer: NodeJS.Timeout | undefined; // 定时器
   const names: (string | number)[] = []; // 子组件 name
   // 开始动画
   const startAnimate = () => {
@@ -27,7 +27,7 @@ export const useHandMove = (props: Props) => {
   };
   // 关闭动画
   const closeAnimate = () => {
-    clearInterval(timer); // 关闭动画
+    clearInterval(timer as NodeJS.Timeout); // 关闭动画
   };
   // 触摸开始
   const onTouchstart = (e: TouchEvent) => {

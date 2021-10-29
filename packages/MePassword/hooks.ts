@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import { useContext, ref, watch, onMounted, onUnmounted } from "vue";
-import { Bind, Unbind } from "~/MeAPI/event";
+import { Bind, Unbind } from "../MeAPI/event";
 import { Props } from "./types";
 
 // 操作

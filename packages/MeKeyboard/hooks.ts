@@ -1,6 +1,6 @@
 import { useContext, onMounted, watch, ref, onUnmounted } from "vue";
 import { Props } from "./types";
-import { Bind, Unbind } from "~/MeAPI/event";
+import { Bind, Unbind } from "../MeAPI/event";
 
 // 点击操作
 export const useHandler = () => {

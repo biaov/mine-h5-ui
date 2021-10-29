@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { Props } from "./types";
 import { TypeName } from "./interfaces";
-import "~/theme-default/fonts/iconfont.js";
+import "../theme-default/fonts/iconfont.js";
 
 // 操作
 export const useData = (props: Props) => {

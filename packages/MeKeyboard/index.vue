@@ -11,7 +11,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import MeIcon from "~/MeIcon";
+import MeIcon from "../MeIcon";
 import { SkinStyleValue } from "./interfaces";
 import { useHandler, usePadding } from "./hooks";
 

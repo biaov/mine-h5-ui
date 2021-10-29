@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { PublicProps } from "~/types";
+import { PublicProps } from "../types";
 import { ListDataItem } from "./interfaces";
 
 // props beforeRead

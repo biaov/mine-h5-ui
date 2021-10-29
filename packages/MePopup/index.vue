@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useMask, useRadius } from "./hooks";
-import MeIcon from "~/MeIcon";
+import MeIcon from "../MeIcon";
 
 export default defineComponent({
   name: "MePopup",

@@ -15,7 +15,7 @@ export const useShowAction = (props: Props) => {
   };
   // 点击 dropdown 的 item
   const onClickItem = ({ href, version }: ListItem) => {
-    version !== props.list[1]?.version && (location.href = href);
+    version !== props.list[1]?.version && (globalThis.location.href = href);
   };
   onMounted(() => {
     document.addEventListener("click", addClick);

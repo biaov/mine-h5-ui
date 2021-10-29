@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeDatetimePicker from "./index.vue";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 // 安装
 MeDatetimePicker.install = (app: App) => {

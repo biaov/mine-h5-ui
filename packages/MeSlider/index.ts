@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeSlider from "./index.vue";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 // 安装
 MeSlider.install = (app: App) => {

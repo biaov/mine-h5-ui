@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeButton from "./index.vue";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 // 安装
 MeButton.install = (app: App): void => {

@@ -84,4 +84,4 @@ npm run build
 
 ## 技术栈
 
-> HTML5 + CSS3 + Less + ES6<sup>+</sup> + Vue3.x + Composition-API + Vite + Gulp + Rollup + Jest
+> HTML5 + CSS3 + Less + ES6<sup>+</sup> + TS + Vue3.x + Composition-API + Vite + Gulp + Rollup + Jest

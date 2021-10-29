@@ -1,7 +1,7 @@
 import { useContext, ref, computed } from "vue";
 import { Props } from "./types";
 import { TypeIds } from "./interfaces";
-import { IsLeapyear } from "~/MeAPI/function";
+import { IsLeapyear } from "../MeAPI/function";
 
 /**
  * 实际移动思路：通过触摸到移动中的距离，来设置滚动的距离。

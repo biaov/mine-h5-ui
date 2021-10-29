@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw, Router } from "vue-router";
-import { useGlobalVars } from "@/utils/variables";
 import docs from "./docs";
 
-const { BaseRouter } = useGlobalVars();
 // 路由配置
 const routes: RouteRecordRaw[] = [
   {

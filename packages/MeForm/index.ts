@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeForm from "./index.vue";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 // 安装
 MeForm.install = (app: App) => {

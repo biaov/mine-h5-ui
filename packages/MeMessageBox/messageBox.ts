@@ -2,7 +2,7 @@ import { createVNode, render } from "vue";
 import MessageBoxConstructor from "./index.vue";
 import { CurOption, OnOk } from "./types";
 import { Option, InMessageBox } from "./interfaces";
-import { IsType } from "~/MeAPI/function";
+import { IsType } from "../MeAPI/function";
 /**
  * 消息提示
  * @param {Option} arg 选项参数

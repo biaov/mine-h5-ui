@@ -1,7 +1,7 @@
 import { createVNode, render } from "vue";
 import PreviewConstructor from "./index.vue";
 import { Option } from "./interfaces";
-import { IsType } from "~/MeAPI/function";
+import { IsType } from "../MeAPI/function";
 /**
  * 图片预览
  * @param {Option} arg 选项参数

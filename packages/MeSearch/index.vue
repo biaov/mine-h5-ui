@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useSearch, useBtns } from "./hooks";
-import MeIcon from "~/MeIcon";
+import MeIcon from "../MeIcon";
 
 export default defineComponent({
   name: "MeSearch",

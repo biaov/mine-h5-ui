@@ -7,7 +7,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import MeIcon from "~/MeIcon";
+import MeIcon from "../MeIcon";
 import { useHandler } from "./hooks";
 
 export default defineComponent({

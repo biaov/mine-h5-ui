@@ -1,7 +1,7 @@
 import { useContext, ref, watch } from "vue";
 import { Props } from "./types";
 import { ListDataItem } from "./interfaces";
-import Validator from "~/MeAPI/validator";
+import Validator from "../MeAPI/validator";
 
 // 操作
 export const useHandler = (props: Props) => {
@@ -9,7 +9,7 @@ export const useHandler = (props: Props) => {
   const listData = ref(props.fileList); // 列表数据
   const curNum = ref(1); // 全屏预览图片当前索引
   const isPreview = ref(false); // 预览图片显示状态
-  let timer: number | null = null; // 定时器
+  let timer: NodeJS.Timeout | null = null; // 定时器
   // 点击删除按钮
   const onDelete = (e: Event, item: ListDataItem) => {
     e.stopPropagation();
@@ -37,7 +37,7 @@ export const useHandler = (props: Props) => {
   };
   // 点击预览图片
   const closePreview = () => {
-    clearInterval(timer as number);
+    clearInterval(timer as NodeJS.Timeout);
     isPreview.value = false;
   };
   // 点击上传图片按钮

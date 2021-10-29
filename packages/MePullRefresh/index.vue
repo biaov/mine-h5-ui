@@ -21,7 +21,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import MeLoading from "~/MeLoading";
+import MeLoading from "../MeLoading";
 import { useHandMove } from "./hooks";
 
 export default defineComponent({

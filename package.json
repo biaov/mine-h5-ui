@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -25,12 +25,14 @@
     "lint:mobile": "eslint --fix ./mobile --ext .vue,.ts",
     "lint:packages": "eslint --fix ./packages --ext .vue,.ts",
     "lint:tests": "eslint --fix ./tests --ext .vue,.ts",
-    "test:unit": "jest -c=jest.config.js --detectOpenHandles"
+    "test:unit": "jest -c=jest.config.js --detectOpenHandles",
+    "test:unit:single": "jest tests/unit/virtualList.spec.ts -c=jest.config.js --detectOpenHandles"
   },
   "types": "lib/index.d.ts",
   "dependencies": {
     "clipboard": "^2.0.8",
     "mockjs": "^1.1.0",
+    "qrcode": "^1.4.4",
     "vue": "^3.0.11",
     "vue-router": "^4.0.6"
   },
@@ -39,6 +41,7 @@
     "@types/jest": "^26.0.23",
     "@types/mockjs": "^1.0.4",
     "@types/node": "^15.0.2",
+    "@types/qrcode": "^1.4.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "@vitejs/plugin-vue": "^1.2.2",

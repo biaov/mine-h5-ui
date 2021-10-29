@@ -1,14 +1,13 @@
+# MINEH5UI
+
+一款轻量级、模块化基于 VUE3 的 H5 前端 UI 组件库 👍
+
 <p align="center">
     <a href="https://mineh5ui.biaov.cn/v2">
         <img src="https://mineh5ui.biaov.cn/v2/logo.svg" width="200px" title="mineh5ui" alt="mineh5ui">
     </a>
 </p>
-
-# MINEH5UI
-
-一款轻量级、模块化基于 VUE3 的 H5 前端 UI 组件库 👍
-
-<h2 style="text-align:center;"><a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/badge/npm-2.0.0-blue" /></a></h2>
+<h2 style="text-align:center;"><a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/badge/npm-2.1.0-blue" /></a></h2>
 
 ## 使用文档
 

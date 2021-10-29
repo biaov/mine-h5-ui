@@ -1,5 +1,5 @@
 import { Options } from "@vitejs/plugin-vue";
-import { vueDocFiles } from "vite-plugin-vuedoc";
+import { vueDocFiles as include } from "vite-plugin-vuedoc";
 import { VueDocPluginOptions } from "vite-plugin-vuedoc/dist/plugin";
 import MarkdownItContainer from "markdown-it-container";
 // vite插件配置
@@ -18,7 +18,8 @@ export const vitePluginVuedocConfig: Partial<VueDocPluginOptions> = {
           validate: params => params.trim().match(/^TimeLine\s*(.*)$/),
           render: (tokens, idx) => (tokens[idx].nesting === 1 ? `<time-line>` : `</time-line>\n`)
         }
-      ],[
+      ],
+      [
         MarkdownItContainer,
         "CopyCode",
         {
@@ -31,5 +32,5 @@ export const vitePluginVuedocConfig: Partial<VueDocPluginOptions> = {
 };
 // vue插件配置
 export const vueConfig: Options = {
-  include: [...vueDocFiles]
+  include
 };

@@ -13,7 +13,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import MeIcon from "~/MeIcon";
+import MeIcon from "../MeIcon";
 import { useHandler } from "./hooks";
 
 export default defineComponent({

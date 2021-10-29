@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeMessageBox, { alert, confirm, prompt, custom } from "./messageBox";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 const InMeMessageBox: SFCWithInstall<typeof MeMessageBox> = MeMessageBox as SFCWithInstall<typeof MeMessageBox>; // 增加类型
 // 安装

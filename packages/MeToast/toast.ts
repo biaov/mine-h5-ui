@@ -2,7 +2,7 @@ import { createVNode, render } from "vue";
 import ToastConstructor from "./index.vue";
 import { Options } from "./types";
 import { Option } from "./interfaces";
-import { IsType } from "~/MeAPI/function";
+import { IsType } from "../MeAPI/function";
 /**
  * 消息提示
  * @param {Options} arg 选项参数

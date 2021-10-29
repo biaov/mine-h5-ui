@@ -1,6 +1,6 @@
 import { useContext, watch, computed, ref } from "vue";
 import { Props } from "./types";
-import { FormatThousand } from "~/MeAPI/function";
+import { FormatThousand } from "../MeAPI/function";
 
 // 操作
 export const useHandler = (props: Props) => {

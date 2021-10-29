@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeToast from "./toast";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 const InMeToast: SFCWithInstall<typeof MeToast> = MeToast as SFCWithInstall<typeof MeToast>; // 增加类型
 // 安装

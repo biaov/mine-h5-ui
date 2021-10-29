@@ -1,12 +1,12 @@
 import { useContext, ref, watch } from "vue";
 import { Props } from "./types";
-import { CountDown } from "~/MeAPI/function";
+import { CountDown } from "../MeAPI/function";
 
 // 倒计时
 export const useCountdown = (props: Props) => {
   const { emit } = useContext();
   const formatAfter = ref({}); // 格式化之后
-  let timer: number | undefined; // 定时器
+  let timer: NodeJS.Timeout | undefined; // 定时器
   const addSubNum = props.format.includes("ms") ? 10 : 1000; // 时间
   let curTime = 0; // 当前 time
   // 开启倒计时
@@ -16,7 +16,7 @@ export const useCountdown = (props: Props) => {
     timer = setInterval(() => {
       // 是否已经倒计到0
       if (curTime <= 0) {
-        clearInterval(timer);
+        clearInterval(timer as NodeJS.Timeout);
         timer = undefined;
         emit("on-end");
       } else {
@@ -28,7 +28,7 @@ export const useCountdown = (props: Props) => {
   };
   // 暂停倒计时
   const suspendCountdown = () => {
-    clearInterval(timer);
+    clearInterval(timer as NodeJS.Timeout);
     timer = undefined;
   };
   // 重置倒计时

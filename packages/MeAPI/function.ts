@@ -128,7 +128,7 @@ export const CountDown = (num: number, format = "hh:mm:ss") => {
  * @returns {Function} - 返回的 event 函数
  */
 export const Throttle = (fn: DTCallback, time = 1000) => {
-  let timer: number | null = null; // 定时器
+  let timer: NodeJS.Timeout | null = null; // 定时器
   return (e: Event) => {
     !timer &&
       (timer = setTimeout(() => {
@@ -145,7 +145,7 @@ export const Throttle = (fn: DTCallback, time = 1000) => {
  */
 
 export const Debounce = (fn: DTCallback, time = 300) => {
-  let timer: number | undefined; // 定时器
+  let timer: NodeJS.Timeout | undefined; // 定时器
   return (e: Event) => {
     if (timer !== undefined) clearTimeout(timer); // 清理之前的操作
     timer = setTimeout(() => {
@@ -171,7 +171,7 @@ export const FormatThousand = (num: number) => {
  * @returns {(e?: Event) => void} 返回函数
  */
 export const Locked = (fn: LockedCallBack, time = 5000) => {
-  let timer: number | null = null; // 定时器
+  let timer: NodeJS.Timeout | null = null; // 定时器
   const isLocked = { value: false };
   // 监听锁状态的改变
   const isLockedProxy: IsLocked = new Proxy(isLocked, {
@@ -185,7 +185,7 @@ export const Locked = (fn: LockedCallBack, time = 5000) => {
           obj[prop] = false;
         }, time);
       } else {
-        clearInterval(timer as number);
+        clearInterval(timer as NodeJS.Timeout);
       }
       return true;
     }

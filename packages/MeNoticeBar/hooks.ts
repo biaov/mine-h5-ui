@@ -7,7 +7,7 @@ export const useAnimate = (props: Props) => {
   const left = ref(0); // 距离左边的距离
   const listData = ref(Array.isArray(props.list) ? props.list : [props.list]); // 列表内容
   const listIndex = ref(0); // 列表索引
-  let timer: number | undefined; // 定时器
+  let timer: NodeJS.Timeout | undefined; // 定时器
   let isSwitch = true; // 允许开启动画
   // 开启动画
   const startAnimate = () => {
@@ -48,7 +48,7 @@ export const useAnimate = (props: Props) => {
     if (props.scroll === "horizontal") {
       isSwitch = false; // 关闭开关
     } else {
-      clearInterval(timer); // 关闭定时器
+      clearInterval(timer as NodeJS.Timeout); // 关闭定时器
     }
   };
   // 监听动画是否开启

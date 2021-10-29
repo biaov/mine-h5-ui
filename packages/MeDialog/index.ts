@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeDialog from "./index.vue";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 // 安装
 MeDialog.install = (app: App) => {

@@ -1,6 +1,6 @@
 import { useContext } from "vue";
 import { Props } from "./types";
-import MeToast from "~/MeToast";
+import MeToast from "../MeToast";
 
 // 操作
 export const useHandler = (props: Props) => {

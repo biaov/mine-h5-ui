@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import MeKeyboard from "./index.vue";
-import { SFCWithInstall } from "~/types";
+import { SFCWithInstall } from "../types";
 
 // 安装
 MeKeyboard.install = (app: App) => {
