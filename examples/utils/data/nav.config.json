@@ -370,6 +370,13 @@
           },
           "path": "virtualList",
           "name": "virtualList"
+        },
+        {
+          "meta": {
+            "title": "Screenshot 截长图"
+          },
+          "path": "screenshot",
+          "name": "screenshot"
         }
       ]
     }

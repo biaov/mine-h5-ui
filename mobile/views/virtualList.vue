@@ -65,7 +65,7 @@ export default {
       if (item.loadStatus !== "more") return;
       item.loadStatus = "loading";
       setTimeout(() => {
-        item.list.push(...this.createArr(item.list.length));
+        item.list.push(...this.createArr());
         item.loadStatus = "nomore";
       }, 1500);
     }

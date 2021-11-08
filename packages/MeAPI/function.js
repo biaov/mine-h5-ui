@@ -1,4 +1,5 @@
 import Validator from "./validator";
+
 const { validThousand, validThousandFloat } = Validator;
 /**
  * 变量类型判断
@@ -15,7 +16,7 @@ const IsType = (type, value) =>
  * @param {Any} arg - 需要深拷贝的变量
  * @returns {Any} - 拷贝完成的值
  */
-const DeepCopyRA = (arg) => {
+const DeepCopyRA = arg => {
   const newValue = IsType("Object", arg) // 判断是否是对象
     ? {}
     : IsType("Array", arg) // 判断是否是数组
@@ -42,11 +43,9 @@ const DeepCopyRA = (arg) => {
  * @param {Number} year - 能被4整除,不能被100整除,能被400整除;优先级:400>100>4
  * @returns {Boolean} - true:是闰年,false:不是闰年
  */
-const IsLeapyear = (num) => {
+const IsLeapyear = num => {
   // 判断是否是数值
-  if (!IsType("Number", num)) {
-    throw new Error(`${num} is not number`);
-  }
+  if (!IsType("Number", num)) throw new Error(`${num} is not number`);
   return (num % 4 === 0 && num % 100 !== 0) || num % 400 === 0;
 };
 
@@ -72,7 +71,7 @@ const FormatTime = (arg = new Date()) => {
     IsType("Number", arg) && String(arg).length < 13 ? arg * 1000 : arg; // 转化成ms
   IsType("string", arg) && str.replace(/-/g, "/"); // 为了支持 IOS
   const O = new Date(str); // 时间 Date 对象
-  const doubleDigit = (num) => (num < 10 ? "0" + num : String(num)); // 加 0
+  const doubleDigit = num => (num < 10 ? "0" + num : String(num)); // 加 0
   const weeks = ["日", "一", "二", "三", "四", "五", "六"]; // 日期
   // 年、月、日、星、期、时、分、秒
   const [Y, M, D, w, h, m, s] = [
@@ -82,7 +81,7 @@ const FormatTime = (arg = new Date()) => {
     `星期${weeks[O.getDay()]}`,
     doubleDigit(O.getHours()),
     doubleDigit(O.getMinutes()),
-    doubleDigit(O.getSeconds()),
+    doubleDigit(O.getSeconds())
   ];
   const date = `${Y}-${M}-${D}`; // 日期
   const time = `${h}:${m}:${s}`; // 时间
@@ -102,9 +101,8 @@ const FormatTime = (arg = new Date()) => {
  */
 const CountDown = (num, format = "hh:mm:ss") => {
   if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 是否是数字
-  if (!"DD:hh:mm:ss:ms".includes(format)) {
+  if (!"DD:hh:mm:ss:ms".includes(format))
     throw new Error(`${format} form error`); // 格式是否正确
-  }
   // 假设格式都存在
   const DD = parseInt(num / (1000 * 60 * 60 * 24)); // 天
   let hh = parseInt((num / (1000 * 60 * 60)) % 24); // 时
@@ -112,7 +110,7 @@ const CountDown = (num, format = "hh:mm:ss") => {
   let ss = parseInt((num / 1000) % 60); // 秒
   let ms = parseInt(num % 1000); // 毫秒
   const formatData = {}; // 需要返回的格式化数据
-  const doubleDigit = (num) => (num < 10 ? `0${num}` : String(num)); // 加 0
+  const doubleDigit = num => (num < 10 ? `0${num}` : String(num)); // 加 0
   format.includes("DD") ? (formatData.DD = doubleDigit(DD)) : (hh += DD * 24); // 天
   format.includes("hh") ? (formatData.hh = doubleDigit(hh)) : (mm += hh * 60); // 时
   format.includes("mm") ? (formatData.mm = doubleDigit(mm)) : (ss += mm * 60); // 分
@@ -131,7 +129,7 @@ const CountDown = (num, format = "hh:mm:ss") => {
  */
 const Throttle = (fn, time = 1000) => {
   let timer = null; // 定时器
-  return (e) => {
+  return e => {
     !timer &&
       (timer = setTimeout(() => {
         fn(e); // 第一次之后，延迟时间到达就会触发一次，然后再从新开始
@@ -147,7 +145,7 @@ const Throttle = (fn, time = 1000) => {
  */
 const Debounce = (fn, time = 300) => {
   let timer = null; // 定时器
-  return (e) => {
+  return e => {
     if (timer !== undefined) clearTimeout(timer); // 清理之前的操作
     timer = setTimeout(() => {
       fn(e); // 最后一次触发，延迟时间过后执行业务处理函数
@@ -159,7 +157,7 @@ const Debounce = (fn, time = 300) => {
  * @param {Number} num - 需要转换的数字
  * @returns {String} - 转换后的字符串
  */
-const FormatThousand = (num) => {
+const FormatThousand = num => {
   if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 数字校验
   const numStr = String(num); // 数字转字符串
   // 返回替换值
@@ -193,10 +191,10 @@ const Locked = (fn, time = 5000) => {
       }
     },
     enumerable: true,
-    configurable: false,
+    configurable: false
   });
   // 执行业务函数
-  fn(isLocked.value, (value) => {
+  fn(isLocked.value, value => {
     isLocked.value = value;
   });
 };
@@ -218,9 +216,8 @@ const AddZero = (str = "", float1, float2) =>
  */
 const Calculation = (num1, num2) => {
   // 数字
-  if (!IsType("Number", num1) || !IsType("Number", num2)) {
+  if (!IsType("Number", num1) || !IsType("Number", num2))
     throw new Error(`${num1} or ${num2} is not number`);
-  }
   // 转列表
   const list1 = String(num1).split(".");
   const list2 = String(num2).split(".");
@@ -239,6 +236,13 @@ const Calculation = (num1, num2) => {
   this.divide = () => newNum1 / newNum2; // 除
   return this;
 };
+/**
+ * 生成随机数
+ * @param {void}
+ * @returns {String} 生成的随机数
+ */
+const GenerateRandom = () =>
+  +new Date() + String.prototype.slice.call(Math.random(), 2, 7);
 export default {
   IsType, // 变量类型判断
   DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
@@ -251,6 +255,7 @@ export default {
   Locked, // 锁定
   AddZero, // 加 0 补位
   Calculation, // 加减乘除运算
+  GenerateRandom // 生成随机数
 };
 export {
   IsType, // 变量类型判断
@@ -264,4 +269,5 @@ export {
   Locked, // 锁定
   AddZero, // 加 0 补位
   Calculation, // 加减乘除运算
+  GenerateRandom // 生成随机数
 };

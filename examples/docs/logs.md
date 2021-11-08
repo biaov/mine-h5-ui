@@ -14,7 +14,19 @@
 
 :::timeline
 
-## v1.5.0-Latest release
+## v1.5.1-Latest release
+
+`2021-11-08`
+
+* 更新业务组件
+  * [新增截长图组件](/doc/screenShot)
+* 更新 API 方法
+  * 新增生成随机数 API - [GenerateRandom](/doc/api)
+* Bug Fixes
+  * 修复已知 Bug
+  * 优化代码
+
+## v1.5.0
 
 `2021-10-15`
 
