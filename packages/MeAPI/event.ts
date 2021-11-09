@@ -1,4 +1,3 @@
-/* global EventListenerOrEventListenerObject */
 /**
  * 绑定事件
  * @param {EventTarget} dom 节点对象

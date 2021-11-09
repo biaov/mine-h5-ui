@@ -2,11 +2,12 @@ import { Options } from "@vitejs/plugin-vue";
 import { vueDocFiles as include } from "vite-plugin-vuedoc";
 import { VueDocPluginOptions } from "vite-plugin-vuedoc/dist/plugin";
 import MarkdownItContainer from "markdown-it-container";
+
 // vite插件配置
 export const vitePluginVuedocConfig: Partial<VueDocPluginOptions> = {
   wrapperClass: "m-md-demo",
   highlight: {
-    theme: "one-dark" // one-light
+    theme: "one-dark" // one-dark|one-light
   },
   markdownIt: {
     // 插件配置

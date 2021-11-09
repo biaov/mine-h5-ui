@@ -14,7 +14,20 @@
 
 :::TimeLine
 
-## v2.1.0-Latest release
+## v2.1.1-Latest release
+
+`2021-11-09`
+
+- 更新业务组件
+  - [新增截长图组件](/v2/doc/screenShot)
+- 更新 API 方法
+  - 新增生成随机数 API - [GenerateRandom](/v2/doc/api)
+  - 新增延迟器 API - [Retarder](/v2/doc/api)
+- Bug Fixes
+  - 修复已知 Bug
+  - 优化代码
+
+## v2.1.0
 
 `2021-10-27`
 

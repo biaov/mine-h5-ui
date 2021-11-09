@@ -23,7 +23,6 @@ export const useListData = () => {
       text: "Github"
     },
     {
-      href: "",
       url: QrcodeIcon,
       text: "qrcode"
     }

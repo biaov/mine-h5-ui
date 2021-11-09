@@ -1,4 +1,3 @@
-/* global NodeListOf */
 import { ref, provide, onMounted } from "vue";
 import { Props } from "./types";
 import { MeGridKey } from "./token";

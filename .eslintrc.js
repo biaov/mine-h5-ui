@@ -5,6 +5,11 @@ const config = {
     es2021: true,
     node: true
   },
+  globals: {
+    NodeListOf: "readonly",
+    EventListenerOrEventListenerObject: "readonly",
+    NodeJS: "readonly"
+  },
   extends: ["plugin:vue/essential", "airbnb-base", "plugin:prettier/recommended", "plugin:jest/recommended"],
   parserOptions: {
     ecmaVersion: 12,

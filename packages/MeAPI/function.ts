@@ -3,6 +3,7 @@ import { DTCallback, LockedCallBack } from "./types";
 import { FormatData, IsLocked } from "./interfaces";
 
 const { validThousand, validThousandFloat } = Validator;
+
 /**
  * 变量类型判断
  * @param {String} type - 需要判断的类型
@@ -87,6 +88,7 @@ export const FormatTime = (arg: string | number | Date = new Date()) => {
   const datetime = `${date} ${time}`; // 日期时间
   return { Y, M, D, w, h, m, s, date, time, datetime };
 };
+
 /**
  * 倒时间计算
  * @param {Number} num - 需要转化的时间，ms
@@ -121,6 +123,7 @@ export const CountDown = (num: number, format = "hh:mm:ss") => {
   }
   return formatData;
 };
+
 /**
  * 节流
  * @param {DTCallback} fn - 回调业务处理函数
@@ -137,13 +140,13 @@ export const Throttle = (fn: DTCallback, time = 1000) => {
       }, time));
   };
 };
+
 /**
  * 防抖
  * @param {DTCallback} fn - 回调业务处理函数
  * @param {Number} [time=300] - 定时器时间
  * @returns {Function} - 返回的 event 函数
  */
-
 export const Debounce = (fn: DTCallback, time = 300) => {
   let timer: NodeJS.Timeout | undefined; // 定时器
   return (e: Event) => {
@@ -153,6 +156,7 @@ export const Debounce = (fn: DTCallback, time = 300) => {
     }, time);
   };
 };
+
 /**
  * 格式化千位符
  * @param {Number} num - 需要转换的数字
@@ -164,6 +168,7 @@ export const FormatThousand = (num: number) => {
   // 返回替换值
   return numStr.replace(numStr.includes(".") ? validThousandFloat : validThousand, "$1,");
 };
+
 /**
  * 锁定
  * @param {LockedCallBack} fn - 回调函数
@@ -198,6 +203,7 @@ export const Locked = (fn: LockedCallBack, time = 5000) => {
       });
   };
 };
+
 /**
  * 加 0 补位
  * @param {String} str - 原来拼接值
@@ -206,6 +212,7 @@ export const Locked = (fn: LockedCallBack, time = 5000) => {
  * @returns {String} - 加 0 补位之后的值
  */
 export const AddZero = (str = "", float1: number, float2: number) => str + new Array(Math.abs(float1 - float2) + 1).join("0");
+
 /**
  * 加减乘除运算
  * 使用方法：Calculation(0.1, 0.2).add();
@@ -236,6 +243,26 @@ export const Calculation = (num1: number, num2: number) => {
   const divide = () => newNum1 / newNum2; // 除
   return { add, subtract, multiply, divide };
 };
+
+/**
+ * 生成随机数
+ * @param {void}
+ * @returns {String} 生成的随机数
+ */
+export const GenerateRandom = () => +new Date() + String.prototype.slice.call(Math.random(), 2, 7);
+
+/**
+ * 延迟器
+ * @param {number} [time=500] 延迟时间
+ * @returns {Promise<boolean>} Promise
+ */
+export const Retarder = (time = 500) =>
+  new Promise<boolean>(resolve => {
+    setTimeout(() => {
+      resolve(true);
+    }, time);
+  });
+
 export default {
   IsType, // 变量类型判断
   DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
@@ -247,5 +274,7 @@ export default {
   FormatThousand, // 格式化千位符
   Locked, // 锁定
   AddZero, // 加 0 补位
-  Calculation // 加减乘除运算
+  Calculation, // 加减乘除运算
+  GenerateRandom, // 生成随机数
+  Retarder // 延迟器
 };
