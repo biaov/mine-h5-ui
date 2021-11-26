@@ -41,5 +41,5 @@ app.mount("#app");
 
 ## License
 
-* [MIT](http://opensource.org/licenses/MIT)
-* Copyright © 2020-present, TalkingData.
+* [MIT](https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE)
+* Copyright (c) 2020-present biaov

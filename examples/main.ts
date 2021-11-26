@@ -15,7 +15,7 @@ app.component(TimeLine.name, TimeLine);
 app.component(CopyCode.name, CopyCode);
 app.use(MINEH5UI);
 app.use(router);
-app.mount("#app");
+app.mount("#mine-h5-ui");
 // 接收数据
 MessageEventListener(path => {
   if (!path.includes("/")) return;

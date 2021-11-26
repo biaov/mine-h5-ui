@@ -12,7 +12,7 @@ import "../lib/theme-default/index.css"; // 测试 */
 const app = createApp(App);
 app.use(MINEH5UI);
 app.use(router);
-app.mount("#app");
+app.mount("#mine-h5-ui");
 // 接收数据
 MessageEventListener(path => {
   app.config.globalProperties.$router.push({
