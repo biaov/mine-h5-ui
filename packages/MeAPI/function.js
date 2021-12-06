@@ -1,13 +1,14 @@
 import Validator from "./validator";
 
 const { validThousand, validThousandFloat } = Validator;
+
 /**
  * 变量类型判断
  * @param {String} type - 需要判断的类型
  * @param {Any} value - 需要判断的值
  * @returns {Boolean} - 是否该类型
  */
-const IsType = (type, value) =>
+export const IsType = (type, value) =>
   Object.prototype.toString.call(value).slice(8, -1) === type;
 
 /**
@@ -16,7 +17,7 @@ const IsType = (type, value) =>
  * @param {Any} arg - 需要深拷贝的变量
  * @returns {Any} - 拷贝完成的值
  */
-const DeepCopyRA = arg => {
+export const DeepCopyRA = arg => {
   const newValue = IsType("Object", arg) // 判断是否是对象
     ? {}
     : IsType("Array", arg) // 判断是否是数组
@@ -43,7 +44,7 @@ const DeepCopyRA = arg => {
  * @param {Number} year - 能被4整除,不能被100整除,能被400整除;优先级:400>100>4
  * @returns {Boolean} - true:是闰年,false:不是闰年
  */
-const IsLeapyear = num => {
+export const IsLeapyear = num => {
   // 判断是否是数值
   if (!IsType("Number", num)) throw new Error(`${num} is not number`);
   return (num % 4 === 0 && num % 100 !== 0) || num % 400 === 0;
@@ -64,7 +65,7 @@ const IsLeapyear = num => {
  * @returns {String} {Object}.time - 时间
  * @returns {String} {Object}.datetime - 日期时间
  */
-const FormatTime = (arg = new Date()) => {
+export const FormatTime = (arg = new Date()) => {
   // 非空判断
   if (arg.trim() === "") throw new Error(`${arg} is not null`);
   const str =
@@ -88,6 +89,7 @@ const FormatTime = (arg = new Date()) => {
   const datetime = `${date} ${time}`; // 日期时间
   return { Y, M, D, w, h, m, s, date, time, datetime };
 };
+
 /**
  * 倒时间计算
  * @param {Number} num - 需要转化的时间，ms
@@ -99,7 +101,7 @@ const FormatTime = (arg = new Date()) => {
  * @returns {String} {Object}.ss - 秒
  * @returns {String} {Object}.ms - 毫秒
  */
-const CountDown = (num, format = "hh:mm:ss") => {
+export const CountDown = (num, format = "hh:mm:ss") => {
   if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 是否是数字
   if (!"DD:hh:mm:ss:ms".includes(format))
     throw new Error(`${format} form error`); // 格式是否正确
@@ -121,13 +123,14 @@ const CountDown = (num, format = "hh:mm:ss") => {
   }
   return formatData;
 };
+
 /**
  * 节流
  * @param {Function} fn - 回调业务处理函数
  * @param {Number} [time=1000] - 定时器时间
  * @returns {Function} - 返回的 event 函数
  */
-const Throttle = (fn, time = 1000) => {
+export const Throttle = (fn, time = 1000) => {
   let timer = null; // 定时器
   return e => {
     !timer &&
@@ -137,13 +140,14 @@ const Throttle = (fn, time = 1000) => {
       }, time));
   };
 };
+
 /**
  * 防抖
  * @param {Function} fn - 回调业务处理函数
  * @param {Number} [time=300] - 定时器时间
  * @returns {Function} - 返回的 event 函数
  */
-const Debounce = (fn, time = 300) => {
+export const Debounce = (fn, time = 300) => {
   let timer = null; // 定时器
   return e => {
     if (timer !== undefined) clearTimeout(timer); // 清理之前的操作
@@ -152,12 +156,13 @@ const Debounce = (fn, time = 300) => {
     }, time);
   };
 };
+
 /**
  * 格式化千位符
  * @param {Number} num - 需要转换的数字
  * @returns {String} - 转换后的字符串
  */
-const FormatThousand = num => {
+export const FormatThousand = num => {
   if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 数字校验
   const numStr = String(num); // 数字转字符串
   // 返回替换值
@@ -166,13 +171,14 @@ const FormatThousand = num => {
     "$1,"
   );
 };
+
 /**
  * 锁定
  * @param {Function} fn - 回调函数
  * @param {Number} [time=5000] - 超时自动关闭
  * @returns {Void}
  */
-const Locked = (fn, time = 5000) => {
+export const Locked = (fn, time = 5000) => {
   const isLocked = { _value: false }; // 锁状态值
   let timer = null; // 定时器
   // 监听锁状态的改变
@@ -198,6 +204,7 @@ const Locked = (fn, time = 5000) => {
     isLocked.value = value;
   });
 };
+
 /**
  * 加 0 补位
  * @param {String} str - 原来拼接值
@@ -205,8 +212,9 @@ const Locked = (fn, time = 5000) => {
  * @param {Number} float2 - 第二个小数位数
  * @returns {String} - 加 0 补位之后的值
  */
-const AddZero = (str = "", float1, float2) =>
+export const AddZero = (str = "", float1, float2) =>
   str + new Array(Math.abs(float1 - float2) + 1).join("0");
+
 /**
  * 加减乘除运算
  * 使用方法：Calculation(0.1, 0.2).add();
@@ -214,7 +222,7 @@ const AddZero = (str = "", float1, float2) =>
  * @param {Number} num2 - 运算值 2
  * @returns {Object} - 运算方法 add subtract multiply divide
  */
-const Calculation = (num1, num2) => {
+export const Calculation = (num1, num2) => {
   // 数字
   if (!IsType("Number", num1) || !IsType("Number", num2))
     throw new Error(`${num1} or ${num2} is not number`);
@@ -236,13 +244,27 @@ const Calculation = (num1, num2) => {
   this.divide = () => newNum1 / newNum2; // 除
   return this;
 };
+
 /**
  * 生成随机数
  * @param {void}
  * @returns {String} 生成的随机数
  */
-const GenerateRandom = () =>
+export const GenerateRandom = () =>
   +new Date() + String.prototype.slice.call(Math.random(), 2, 7);
+
+/**
+ * 延迟器
+ * @param {number} [time=500] 延迟时间
+ * @returns {Promise<boolean>} Promise
+ */
+export const Retarder = (time = 500) =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(true);
+    }, time);
+  });
+
 export default {
   IsType, // 变量类型判断
   DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
@@ -255,19 +277,6 @@ export default {
   Locked, // 锁定
   AddZero, // 加 0 补位
   Calculation, // 加减乘除运算
-  GenerateRandom // 生成随机数
-};
-export {
-  IsType, // 变量类型判断
-  DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
-  IsLeapyear, // 判断是否是闰年
-  FormatTime, // 时间转换
-  CountDown, // 倒计时
-  Throttle, // 节流
-  Debounce, // 防抖
-  FormatThousand, // 格式化千位符
-  Locked, // 锁定
-  AddZero, // 加 0 补位
-  Calculation, // 加减乘除运算
-  GenerateRandom // 生成随机数
+  GenerateRandom, // 生成随机数
+  Retarder // 延迟器
 };

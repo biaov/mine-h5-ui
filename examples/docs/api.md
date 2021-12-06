@@ -37,7 +37,7 @@ Vue.use(MINEH5UI);
 | Debounce       | 防抖                | FormatThousand | 格式化千位符   |
 | Locked         | 锁定                | AddZero        | 加 0 补位      |
 | Calculation    | 加减乘除运算        | IsLeapyear     | 判断是否是闰年 |
-| GenerateRandom | 生成随机数          | --             | --             |
+| GenerateRandom | 生成随机数          | Retarder       | 延迟器         |
 
 ## 代码演示
 

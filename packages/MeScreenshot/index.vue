@@ -30,7 +30,7 @@ export default {
     return {};
   },
   methods: {
-    // 点击dom
+    // 点击 dom
     onClick(e) {
       this.$emit("on-click", e);
     },
@@ -58,7 +58,6 @@ export default {
       },
       immediate: true
     }
-  },
-  created() {}
+  }
 };
 </script>

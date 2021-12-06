@@ -14,7 +14,17 @@
 
 :::timeline
 
-## v1.5.1-Latest release
+## v1.5.2
+
+`2021-11-00`
+
+* 更新 API 方法
+  * 新增延迟器 API - [Retarder](/doc/api)
+* Bug Fixes
+  * 修复已知 Bug
+  * 优化代码
+
+## v1.5.1
 
 `2021-11-08`
 

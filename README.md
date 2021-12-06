@@ -36,6 +36,10 @@ Vue.use(MINEH5UI);
 
 * [Explain.md](https://github.com/biaov/MINE-H5-UI/blob/master/Explain.md)
 
+## 贡献者
+
+* biaov\<biaov@qq.com\>
+
 ## License
 
 * [MIT](http://opensource.org/licenses/MIT)

@@ -1,6 +1,6 @@
 <template>
   <!-- 截长图 -->
-  <ul class="m-virtual-list">
+  <ul class="m-screenshot">
     <li v-for="list in listData" :key="list.id">
       <div class="u-label">{{list.label}}</div>
       <me-screenshot :allow-down="list.allowDown" :image-name="list.imageName" :start="list.start" @on-click="onClick(list)" @on-end="onEnd">
@@ -47,6 +47,9 @@ export default {
     // 生成图时
     onEnd(data) {
       console.log(data);
+      this.$MeMessageBox.alert({
+        message: "截图成功，F12可调出控制台查看截图数据"
+      });
     },
     // 点击 cell
     onClick(item) {
@@ -56,7 +59,7 @@ export default {
 };
 </script>
 <style scoped lang="less">
-.m-virtual-list {
+.m-screenshot {
   > li {
     margin-bottom: 20px;
     .u-label {
