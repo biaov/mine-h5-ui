@@ -39,6 +39,10 @@ app.mount("#app");
 
 * [Explain.md](https://github.com/biaov/MINE-H5-UI/blob/master/Explain.md)
 
+## 贡献者
+
+* biaov\<biaov@qq.com\>
+
 ## License
 
 * [MIT](https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE)
