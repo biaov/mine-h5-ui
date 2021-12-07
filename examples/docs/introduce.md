@@ -12,7 +12,7 @@
 
 ## 温馨提示 😊
 
-- 为了你的良好体验，最好使用 Chrome 浏览器，分辨率 >= 1920 * 1080 的屏幕浏览。
+- 为了你的良好体验，最好使用 Chrome 浏览器，分辨率 >= 1920 \* 1080 的屏幕浏览。
 
 ## 特性
 
@@ -22,7 +22,7 @@
 
 ## 快速开始
 
-- 请参考👉[快速开始](/doc/start)章节。
+- 请参考 👉[快速开始](/doc/start)章节。
 
 ## 浏览器支持
 
@@ -30,12 +30,12 @@
 
 ## 贡献
 
-- 如果你在使用 `MINE-H5-UI` 时遇到问题，或者有好的建议，欢迎给作者提👉 [Issue](https://github.com/biaov/MINE-H5-UI/issues)。
+- 如果你在使用 `MINE-H5-UI` 时遇到问题，或者有好的建议，欢迎给作者提 👉 [Issue](https://github.com/biaov/MINE-H5-UI/issues)。
 
 ## 链接
 
-- [👉意见反馈](https://github.com/biaov/MINE-H5-UI/issues)
-- [👉更新日志](/doc/logs)
+- [👉 意见反馈](https://github.com/biaov/MINE-H5-UI/issues)
+- [👉 更新日志](/doc/logs)
 
 ## 开源协议
 

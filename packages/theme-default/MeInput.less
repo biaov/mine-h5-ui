@@ -4,8 +4,6 @@
 
 @import "./variable.less";
 
-
-
 .me-input {
   @height-40: 40px;
   @color-reduce: lighten(@font-color-reduce, 20%);
@@ -55,13 +53,13 @@
     }
 
     &[readyonly]:focus {
-      border-color: @border-color-default  !important;
-      color: @color-reduce  !important;
+      border-color: @border-color-default !important;
+      color: @color-reduce !important;
     }
 
     &[diabled] {
-      border-color: @color-reduce  !important;
-      color: @color-reduce  !important;
+      border-color: @color-reduce !important;
+      color: @color-reduce !important;
     }
   }
 
@@ -70,13 +68,13 @@
     .same-block();
     left: 0;
 
-    >.me-icon {
+    > .me-icon {
       margin-right: 4px;
     }
   }
 
   // 图标样式
-  >.me-icon {
+  > .me-icon {
     .same-right-content(@size: @font-size-large+2);
   }
 
@@ -85,7 +83,7 @@
     .same-right-content(@color: @font-color);
 
     &.countdown {
-      color: @color-reduce  !important;
+      color: @color-reduce !important;
     }
   }
 

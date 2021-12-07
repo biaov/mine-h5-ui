@@ -10,7 +10,7 @@
 ## 样式变量
 
 - `MINE-H5-UI` 使用了 Less 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
-- 所有可用的颜色变量请参考[👉配置文件](https://github.com/biaov/MINE-H5-UI)。
+- 所有可用的颜色变量请参考[👉 配置文件](https://github.com/biaov/MINE-H5-UI)。
 
 ## 定制方法
 

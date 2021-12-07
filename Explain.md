@@ -10,7 +10,7 @@ git clone https://github.com/biaov/MINE-H5-UI.git
 
 ### 安装依赖
 
-* 项目根目录安装项目依赖
+- 项目根目录安装项目依赖
 
 ```Basic
 npm i
@@ -24,13 +24,13 @@ npm start
 
 ## 打包项目
 
-* 打包演示项目
+- 打包演示项目
 
 ```Basic
 npm run build:docs
 ```
 
-* 打包组件库
+- 打包组件库
 
 ```Basic
 npm run build

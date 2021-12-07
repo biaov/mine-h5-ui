@@ -1,5 +1,5 @@
-[Bind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
-[Unbind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
+[bind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
+[unbind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
 
 # API 方法
 
@@ -36,7 +36,7 @@ Object.keys(MeAPI).forEach(key => {
 ## API 方法名称
 
 | 函数名         | 说明                | 函数名         | 说明           |
-|----------------|---------------------|----------------|----------------|
+| -------------- | ------------------- | -------------- | -------------- |
 | [Bind]         | 绑定事件            | Unbind         | 移除绑定事件   |
 | FormatTime     | 时间转换            | IsType         | 变量类型判断   |
 | DeepCopyRA     | 深拷贝变量-递归算法 | Throttle       | 节流           |

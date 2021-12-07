@@ -3,6 +3,7 @@ import typescript from "rollup-plugin-typescript2";
 import vue from "rollup-plugin-vue"; // 处理vue文件
 import { readdirSync } from "fs"; // 写文件
 import { resolve } from "path";
+
 const input = resolve(__dirname, "../packages"); // 入口文件
 const output = resolve(__dirname, "../lib"); // 输出文件
 const config = readdirSync(input)

@@ -3,6 +3,7 @@ import { terser } from "rollup-plugin-terser";
 import typescript from "rollup-plugin-typescript2";
 import vue from "rollup-plugin-vue"; // 处理vue文件
 import { resolve } from "path";
+
 const input = resolve(__dirname, "../packages"); // 入口文件
 const output = resolve(__dirname, "../lib"); // 输出文件
 const config = [
@@ -17,7 +18,6 @@ const config = [
       nodeResolve(),
       vue({
         target: "browser",
-        css: false,
         exposeFilename: false
       }),
       typescript({

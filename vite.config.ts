@@ -20,7 +20,8 @@ const config: UserConfigExport = defineConfig({
       "@": resolve(__dirname, "./examples"),
       "~": resolve(__dirname, "./packages"),
       "^": resolve(__dirname, "./mobile")
-    }
+    },
+    extensions: [".vue", ".ts", ".js", ".json"]
   },
   css: {
     // 配置预编译器

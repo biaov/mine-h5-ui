@@ -20,3 +20,4 @@ tests/
 jest.config.js
 tsconfig.json
 vite.config.ts
+package-publish.json
