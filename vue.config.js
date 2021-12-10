@@ -30,9 +30,7 @@ module.exports = {
   chainWebpack: config => {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
     // stylus修改成less
-    types.forEach(type =>
-      addStyleResource(config.module.rule("less").oneOf(type))
-    );
+    types.forEach(type => addStyleResource(config.module.rule("less").oneOf(type)));
     // vue默认@指向src目录，这里要修正为examples，另外新增一个~指向packages
     config.resolve.alias
       .set("@", resolve("examples"))

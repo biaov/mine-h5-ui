@@ -16,13 +16,13 @@ git checkout v1
 
 ### 安装依赖
 
-* 项目根目录安装项目依赖
+- 项目根目录安装项目依赖
 
 ```Basic
 npm install
 ```
 
-* 样式根目录安装样式依赖，路径：`/packages/theme-default`
+- 样式根目录安装样式依赖，路径：`/packages/theme-default`
 
 ```Basic
 npm install

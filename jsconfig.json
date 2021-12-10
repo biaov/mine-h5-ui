@@ -2,23 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "examples/*"
-      ],
-      "~/*": [
-        "packages/*"
-      ],
-      "^/*": [
-        "mobile/*"
-      ]
+      "@/*": ["examples/*"],
+      "~/*": ["packages/*"],
+      "^/*": ["mobile/*"]
     }
   },
-  "include": [
-    "examples/",
-    "mobile/",
-    "packages/"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["examples/", "mobile/", "packages/"],
+  "exclude": ["node_modules"]
 }

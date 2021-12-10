@@ -15,7 +15,10 @@
     "build:theme-rem": "gulp build -f build/gulpfile.rem.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-publish": "node build/pre-publish",
+    "pre-publish:github": "cross-env NODE_PRE=github node build/pre-publish",
+    "prettier": "prettier --write '**/*.{ts,js,less,md,json}'"
   },
   "browserslist": [
     "> 1%",
@@ -63,6 +66,7 @@
     "@vue/test-utils": "^1.0.0-beta.31",
     "autoprefixer": "^9.7.6",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
     "del": "^5.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",

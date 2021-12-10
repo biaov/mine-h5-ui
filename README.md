@@ -11,8 +11,8 @@
 
 ## 使用文档
 
-* **[😎 1.x](https://mineh5ui.biaov.cn/)**
-* **[😎 2.x](https://mineh5ui.biaov.cn/v2)**
+- **[😎 1.x](https://mineh5ui.biaov.cn/)**
+- **[😎 2.x](https://mineh5ui.biaov.cn/v2)**
 
 ## 安装
 
@@ -30,17 +30,17 @@ import "mine-h5-ui/lib/theme-default/index.css";
 Vue.use(MINEH5UI);
 ```
 
-* 👉 在[快速开始](https://mineh5ui.biaov.cn/doc/start)中查看更多信息。
+- 👉 在[快速开始](https://mineh5ui.biaov.cn/doc/start)中查看更多信息。
 
 ## 项目文档
 
-* [Explain.md](https://github.com/biaov/MINE-H5-UI/blob/master/Explain.md)
+- [Explain.md](https://github.com/biaov/MINE-H5-UI/blob/master/Explain.md)
 
 ## 贡献者
 
-* biaov\<biaov@qq.com\>
+- biaov\<biaov@qq.com\>
 
 ## License
 
-* [MIT](http://opensource.org/licenses/MIT)
-* Copyright © 2020-present, TalkingData.
+- [MIT](http://opensource.org/licenses/MIT)
+- Copyright © 2020-present, TalkingData.
