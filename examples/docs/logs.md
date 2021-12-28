@@ -14,7 +14,30 @@
 
 :::TimeLine
 
-## v2.1.1-Latest release
+## v2.2.2-Latest release
+
+`2021-12-23`
+
+- 更新技术
+  - 升级 `package.json` 依赖包版本
+  - 更新代码至新语法
+- Bug Fixes
+  - 更新图标
+  - 修复已知 Bug
+  - 优化代码
+
+## v2.2.1-Latest release
+
+`2021-12-23`
+
+- 更新业务组件
+  - [新增步骤条组件](/v2/doc/step)
+- Bug Fixes
+  - 优化包管理文件
+  - 修复已知 Bug
+  - 优化代码
+
+## v2.1.1
 
 `2021-11-09`
 

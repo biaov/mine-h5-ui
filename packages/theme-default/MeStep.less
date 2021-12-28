@@ -1,0 +1,51 @@
+/**
+  * @file 步骤条
+*/
+
+@import "./variable.less";
+
+.me-step {
+  transform: translateX(0px);
+  width: 100%;
+  overflow: hidden;
+  &.horizontal {
+    display: flex;
+    justify-content: space-between;
+    .me-step-item {
+      &:first-child {
+        position: absolute;
+        left: -8px;
+        border-top-width: 0;
+        .u-dot {
+          right: 0;
+        }
+        .u-line {
+          display: none;
+        }
+        .u-text {
+          transform: translateX(100%);
+          margin-right: 20px;
+        }
+      }
+      &:last-child {
+        .u-dot {
+          right: 0;
+        }
+        .u-text {
+          transform: none;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &.vertical {
+    display: block;
+    .me-step-item {
+      &:first-child {
+        .u-line {
+          display: none;
+        }
+      }
+    }
+  }
+}

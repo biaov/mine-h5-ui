@@ -15,7 +15,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./examples/*"],
-      "~/*": ["./packages/*", "packages/*"],
+      "~/*": ["./packages/*"],
       "^/*": ["./mobile/*"]
     }
   },

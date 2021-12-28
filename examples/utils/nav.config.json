@@ -377,6 +377,13 @@
           },
           "path": "screenshot",
           "name": "screenshot"
+        },
+        {
+          "meta": {
+            "title": "Step 步骤条"
+          },
+          "path": "step",
+          "name": "step"
         }
       ]
     }

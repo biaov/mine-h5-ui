@@ -20,4 +20,6 @@ tests/
 jest.config.js
 tsconfig.json
 vite.config.ts
-package-publish.json
+package-lock.json
+pre-publish.json
+pre-publish-github.json

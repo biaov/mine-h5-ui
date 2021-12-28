@@ -65,6 +65,8 @@ import MeCountTo from "./MeCountTo"; // 数字滚动
 /* 业务组件 start */
 import MeVirtualList from "./MeVirtualList"; // 虚拟列表
 import MeScreenshot from "./MeScreenshot"; // 截长图
+import MeStep from "./MeStep"; // 步骤条
+import MeStepItem from "./MeStepItem"; // 步骤条选项
 /* 业务组件 end */
 
 /* API start */
@@ -118,7 +120,9 @@ const components: any[] = [
   MeTag,
   MeCountTo,
   MeVirtualList,
-  MeScreenshot
+  MeScreenshot,
+  MeStep,
+  MeStepItem
 ];
 // 需要添加到 VUE 实例的 API
 const API = { ...MeAPI, MeToast, MeMessageBox, MePreview };
@@ -183,6 +187,8 @@ export {
   MeCountTo,
   MeVirtualList,
   MeScreenshot,
+  MeStep,
+  MeStepItem,
   // API
   MeToast,
   MeMessageBox,

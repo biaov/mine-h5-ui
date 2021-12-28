@@ -1,5 +1,6 @@
 // 图标
 const icons = [
+  "icon-dot",
   "icon-notice",
   "icon-wangluocuowu",
   "icon-jigou_wushuju",

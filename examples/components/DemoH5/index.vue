@@ -4,6 +4,7 @@
     <div class="m-bg-demo"><iframe :src="`${BaseRouter}mobile.html`" width="100%" height="100%" frameborder="0" ref="mobileIframe" @load="onFrameLoad"></iframe></div>
   </div>
 </template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useGlobalVars } from "@/utils/variables";
