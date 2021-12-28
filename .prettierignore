@@ -4,10 +4,7 @@
 dist/
 lib/
 node_modules/
-examples/
-mobile/
-packages/
-tests/
+fonts
 
 # 文件
 .editorconfig

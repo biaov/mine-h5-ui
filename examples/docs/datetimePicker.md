@@ -1,6 +1,6 @@
 # DatetimePicker 时间选择器
 
-----
+---
 
 ## 按需引入
 
@@ -17,13 +17,13 @@ Vue.use(MeDatetimePicker);
 
 ## 复制
 
-* 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
+- 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码。
 
 ## 代码演示
 
 ### 基础用法
 
-* 通过 `v-model` 绑定点击确定按钮之后选中的时间，通过 `visible` 属性设置时间选择器的显示和隐藏。
+- 通过 `v-model` 绑定点击确定按钮之后选中的时间，通过 `visible` 属性设置时间选择器的显示和隐藏。
 
 ```HTML
 <me-datetime-picker type="date" v-model="value" :visible="true"></me-datetime-picker>
@@ -31,7 +31,7 @@ Vue.use(MeDatetimePicker);
 
 ### 选择年月
 
-* 通过 `type` 属性设置时间选择器的类型，选择年月设置为 year-month，默认值为 date。
+- 通过 `type` 属性设置时间选择器的类型，选择年月设置为 year-month，默认值为 date。
 
 ```HTML
 <me-datetime-picker type="year-month" v-model="value" :visible="true"></me-datetime-picker>
@@ -39,7 +39,7 @@ Vue.use(MeDatetimePicker);
 
 ### 选择月日
 
-* 通过 `type` 属性设置时间选择器的类型，选择月日设置为 month-day，默认值为 date。
+- 通过 `type` 属性设置时间选择器的类型，选择月日设置为 month-day，默认值为 date。
 
 ```HTML
 <me-datetime-picker type="month-day" v-model="value" :visible="true"></me-datetime-picker>
@@ -47,7 +47,7 @@ Vue.use(MeDatetimePicker);
 
 ### 选择时间
 
-* 通过 `type` 属性设置时间选择器的类型，选择时间设置为 time，默认值为 date。
+- 通过 `type` 属性设置时间选择器的类型，选择时间设置为 time，默认值为 date。
 
 ```HTML
 <me-datetime-picker type="time" v-model="value" :visible="true"></me-datetime-picker>
@@ -55,7 +55,7 @@ Vue.use(MeDatetimePicker);
 
 ### 选择完整时间
 
-* 通过 `type` 属性设置时间选择器的类型，选择完整时间设置为 datetime，默认值为 date。
+- 通过 `type` 属性设置时间选择器的类型，选择完整时间设置为 datetime，默认值为 date。
 
 ```HTML
 <me-datetime-picker type="datetime" v-model="value" :visible="true"></me-datetime-picker>
@@ -63,7 +63,7 @@ Vue.use(MeDatetimePicker);
 
 ### 自定义时间区间
 
-* 通过 `min-date` 和 `max-date` 属性设置时间选择器时间区间。默认值为当前 10 年和后 10 年。
+- 通过 `min-date` 和 `max-date` 属性设置时间选择器时间区间。默认值为当前 10 年和后 10 年。
 
 ```HTML
 <me-datetime-picker type="datetime" v-model="value" :visible="true" :min-date="" :max-date="" ></me-datetime-picker>
@@ -74,7 +74,7 @@ Vue.use(MeDatetimePicker);
 ### 参数
 
 | 参数     | 说明                     | 类型    | 可选值                                          | 默认值                      |
-|----------|--------------------------|---------|-------------------------------------------------|-----------------------------|
+| -------- | ------------------------ | ------- | ----------------------------------------------- | --------------------------- |
 | v-model  | 双向绑定选择的时间值     | String  | --                                              | --                          |
 | type     | 选择日期时间类型         | String  | date / year-month / month-day / time / datetime | date                        |
 | visible  | 日期时间选择器的显示状态 | Boolean | true / false                                    | false                       |
@@ -84,6 +84,6 @@ Vue.use(MeDatetimePicker);
 ### 方法
 
 | 方法名    | 说明                     | 回调参数           |
-|-----------|--------------------------|--------------------|
+| --------- | ------------------------ | ------------------ |
 | on-sure   | 点击确定按钮时触发的事件 | array:时间选择数组 |
 | on-cancel | 点击取消按钮时触发的事件 | --                 |

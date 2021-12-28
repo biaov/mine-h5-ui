@@ -15,8 +15,7 @@ const addComponent = arr => {
       indexArr.push(i); // 添加到索引数组
       docs.splice(indexArr[0], 1); // 删除带items的数据
     } else {
-      elem.component = r =>
-        require.ensure([], () => r(require(`^/views/${elem.name}`)));
+      elem.component = r => require.ensure([], () => r(require(`^/views/${elem.name}`)));
     }
   });
 };

@@ -15,8 +15,7 @@ const addComponent = arr => {
       indexArr.push(i); // 添加到索引数组
       docs.splice(indexArr[0], 1); // 删除带items的数据
     } else {
-      elem.component = r =>
-        require.ensure([], () => r(require(`@/docs/${elem.name}.md`)));
+      elem.component = r => require.ensure([], () => r(require(`@/docs/${elem.name}.md`)));
     }
   });
 };
@@ -28,7 +27,7 @@ Object.keys(NavConfig).forEach(elem => {
 addComponent(docs);
 // 获取原型对象上的push函数
 const originalPush = Router.prototype.push;
-//修改原型对象中的push方法
+// 修改原型对象中的push方法
 Router.prototype.push = function(location) {
   return originalPush.call(this, location).catch(err => err);
 };

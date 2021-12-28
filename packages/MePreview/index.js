@@ -41,8 +41,7 @@ class Preview extends Vue.extend(MePreview) {
  * @return {Preview} - 预览对象
  */
 const GetPreview = options => {
-  if (Object.prototype.toString.call(options).slice(8, -1) !== "Object")
-    throw new Error(`${options} is not Object!`);
+  if (Object.prototype.toString.call(options).slice(8, -1) !== "Object") throw new Error(`${options} is not Object!`);
   return new Preview(options);
 };
 export default GetPreview;

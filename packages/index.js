@@ -68,6 +68,8 @@ import MeCountTo from "./MeCountTo"; // 数字滚动
 /* 业务组件 start */
 import MeVirtualList from "./MeVirtualList"; // 虚拟列表
 import MeScreenshot from "./MeScreenshot"; // 截长图
+import MeStep from "./MeStep"; // 步骤条
+import MeStepItem from "./MeStepItem"; // 步骤条选项
 /* 业务组件 end */
 
 /* API start */
@@ -121,7 +123,9 @@ const components = {
   MeTag,
   MeCountTo,
   MeVirtualList,
-  MeScreenshot
+  MeScreenshot,
+  MeStep,
+  MeStepItem
 };
 
 // 需要添加到 VUE 实例的 API
@@ -135,9 +139,7 @@ const API = { ...MeAPI, MeToast, MeMessageBox, MePreview };
 const install = Vue => {
   if (install.installed) return;
   // 注册组件
-  Object.values(components).map(component =>
-    Vue.component(component.name, component)
-  );
+  Object.values(components).map(component => Vue.component(component.name, component));
   // 在Vue.prototype里插入API
   Object.keys(API).forEach(elem => {
     Vue.prototype["$" + elem] = API[elem];
@@ -197,7 +199,9 @@ export {
   MeTag,
   MeCountTo,
   MeVirtualList,
-  MeScreenshot
+  MeScreenshot,
+  MeStep,
+  MeStepItem
 };
 
 // 全部导出

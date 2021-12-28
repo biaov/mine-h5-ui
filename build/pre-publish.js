@@ -11,12 +11,13 @@ package.dependencies = newDependencies;
 package.devDependencies = {}; // 清理多余的依赖
 package.scripts = {};
 let filename = ""; // 文件名
+// 单独处理逻辑
 switch (process.env.NODE_PRE) {
   case "github":
     filename = "-github";
     package.name = `@biaov/${package.name}`;
     break;
 }
-const prePackagePath = resolve(__dirname, `../pre-publish${filename}.json`);
-existsSync(prePackagePath) && unlinkSync(prePackagePath);
-writeFileSync(prePackagePath, JSON.stringify(package, null, 2));
+const prePackagePath = resolve(__dirname, `../pre-publish${filename}.json`); // 新路径
+existsSync(prePackagePath) && unlinkSync(prePackagePath); // 删除旧的
+writeFileSync(prePackagePath, JSON.stringify(package, null, 2)); // 写入最新的

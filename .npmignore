@@ -18,3 +18,6 @@ babel.config.js
 format.vue
 vue.config.js
 lib/demo.html
+package-lock.json
+pre-publish.json
+pre-publish-github.json

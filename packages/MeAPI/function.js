@@ -8,8 +8,7 @@ const { validThousand, validThousandFloat } = Validator;
  * @param {Any} value - 需要判断的值
  * @returns {Boolean} - 是否该类型
  */
-export const IsType = (type, value) =>
-  Object.prototype.toString.call(value).slice(8, -1) === type;
+export const IsType = (type, value) => Object.prototype.toString.call(value).slice(8, -1) === type;
 
 /**
  * 深拷贝变量-递归算法(recursive algorithm)
@@ -32,8 +31,7 @@ export const DeepCopyRA = arg => {
     // 循环遍历
     for (const key in arg) {
       // 防止原型链的值
-      Object.prototype.hasOwnProperty.call(arg, key) &&
-        (newValue[key] = DeepCopyRA(arg[key]));
+      Object.prototype.hasOwnProperty.call(arg, key) && (newValue[key] = DeepCopyRA(arg[key]));
     }
   }
   return newValue;
@@ -68,8 +66,7 @@ export const IsLeapyear = num => {
 export const FormatTime = (arg = new Date()) => {
   // 非空判断
   if (arg.trim() === "") throw new Error(`${arg} is not null`);
-  const str =
-    IsType("Number", arg) && String(arg).length < 13 ? arg * 1000 : arg; // 转化成ms
+  const str = IsType("Number", arg) && String(arg).length < 13 ? arg * 1000 : arg; // 转化成ms
   IsType("string", arg) && str.replace(/-/g, "/"); // 为了支持 IOS
   const O = new Date(str); // 时间 Date 对象
   const doubleDigit = num => (num < 10 ? "0" + num : String(num)); // 加 0
@@ -103,8 +100,7 @@ export const FormatTime = (arg = new Date()) => {
  */
 export const CountDown = (num, format = "hh:mm:ss") => {
   if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 是否是数字
-  if (!"DD:hh:mm:ss:ms".includes(format))
-    throw new Error(`${format} form error`); // 格式是否正确
+  if (!"DD:hh:mm:ss:ms".includes(format)) throw new Error(`${format} form error`); // 格式是否正确
   // 假设格式都存在
   const DD = parseInt(num / (1000 * 60 * 60 * 24)); // 天
   let hh = parseInt((num / (1000 * 60 * 60)) % 24); // 时
@@ -166,10 +162,7 @@ export const FormatThousand = num => {
   if (!IsType("Number", num)) throw new Error(`${num} is not number`); // 数字校验
   const numStr = String(num); // 数字转字符串
   // 返回替换值
-  return numStr.replace(
-    numStr.includes(".") ? validThousandFloat : validThousand,
-    "$1,"
-  );
+  return numStr.replace(numStr.includes(".") ? validThousandFloat : validThousand, "$1,");
 };
 
 /**
@@ -212,8 +205,7 @@ export const Locked = (fn, time = 5000) => {
  * @param {Number} float2 - 第二个小数位数
  * @returns {String} - 加 0 补位之后的值
  */
-export const AddZero = (str = "", float1, float2) =>
-  str + new Array(Math.abs(float1 - float2) + 1).join("0");
+export const AddZero = (str = "", float1, float2) => str + new Array(Math.abs(float1 - float2) + 1).join("0");
 
 /**
  * 加减乘除运算
@@ -224,8 +216,7 @@ export const AddZero = (str = "", float1, float2) =>
  */
 export const Calculation = (num1, num2) => {
   // 数字
-  if (!IsType("Number", num1) || !IsType("Number", num2))
-    throw new Error(`${num1} or ${num2} is not number`);
+  if (!IsType("Number", num1) || !IsType("Number", num2)) throw new Error(`${num1} or ${num2} is not number`);
   // 转列表
   const list1 = String(num1).split(".");
   const list2 = String(num2).split(".");
@@ -250,8 +241,7 @@ export const Calculation = (num1, num2) => {
  * @param {void}
  * @returns {String} 生成的随机数
  */
-export const GenerateRandom = () =>
-  +new Date() + String.prototype.slice.call(Math.random(), 2, 7);
+export const GenerateRandom = () => +new Date() + String.prototype.slice.call(Math.random(), 2, 7);
 
 /**
  * 延迟器

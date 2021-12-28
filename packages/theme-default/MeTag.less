@@ -23,14 +23,14 @@
 
   each(@list, {
       &.@{key} {
-        background:@value;
-        border-color:@value;
-        color:@font-color-white;
+        background: @value;
+        border-color: @value;
+        color: @font-color-white;
 
         // 空心
         &.plain {
-          background:@bg-default  !important;
-          color:@value;
+          background: @bg-default  !important;
+          color: @value;
         }
       }
     }

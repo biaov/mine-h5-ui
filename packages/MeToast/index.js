@@ -17,9 +17,7 @@ class Toast extends Vue.extend(MeToast) {
       });
     } else {
       // 抛出错误
-      throw new Error(
-        `${JSON.stringify(options)} is not Number, String or Object`
-      );
+      throw new Error(`${JSON.stringify(options)} is not Number, String or Object`);
     }
     this.init();
   }
