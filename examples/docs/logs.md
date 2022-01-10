@@ -14,7 +14,14 @@
 
 :::timeline
 
-## v1.6.0-Latest release
+## v1.6.1 - Latest Release
+
+`2022-01-10`
+
+- Bug Fixes
+  - 优化代码
+
+## v1.6.0
 
 `2021-12-28`
 

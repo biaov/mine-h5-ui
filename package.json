@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": false,
   "author": "biaov<biaov@qq.com>",
   "main": "lib/mine-h5-ui.umd.min.js",
@@ -42,6 +42,10 @@
     "url": "https://github.com/biaov/MINE-H5-UI.git"
   },
   "homepage": "https://mineh5ui.biaov.cn/",
+  "bugs": {
+    "url": "https://github.com/biaov/MINE-H5-UI/issues"
+  },
+  "publishConfig": {},
   "license": "ISC",
   "contributors": [
     {

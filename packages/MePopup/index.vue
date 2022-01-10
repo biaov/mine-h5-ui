@@ -1,7 +1,7 @@
 <template>
   <!-- 弹出层 -->
   <div class="me-popup" :class="{show:isShow}" :style="`background:rgba(0,0,0,${modal?0.7:0});`" @click="hideMask" v-show="isShowMask">
-    <div :class="position" :style="setRadius" @click="handleDiv">
+    <div :class="position" :style="setRadius" @click.stop>
       <me-icon name="icon-baseline-close-px" size="20px" @on-click="hideMask" v-if="closeable"></me-icon>
       <slot></slot>
     </div>
@@ -89,10 +89,6 @@ export default {
         this.$emit("input", false);
         this.$emit("on-cancel");
       }, 400);
-    },
-    // 点击内容区域
-    handleDiv(e) {
-      e.stopPropagation();
     }
   },
   watch: {
