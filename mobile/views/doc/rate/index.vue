@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 评分 -->
   <ul class="m-rate">
@@ -20,30 +23,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onChange } = useHandlerClick();
-    return { listData, onChange };
+    const { listData, onChange } = useHandlerClick()
+    return { listData, onChange }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-rate {
-  cursor: pointer;
-  > li {
-    margin-bottom: 20px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-rate[aria-disabled="true"]) {
-      cursor: not-allowed;
-    }
-  }
-}
-</style>

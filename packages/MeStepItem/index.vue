@@ -12,11 +12,11 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeStepItem",
+  name: 'MeStepItem',
   props: {
     // 索引名称
     name: {
@@ -25,8 +25,8 @@ export default defineComponent({
     }
   },
   setup(prop) {
-    const { isActive, parentProps } = useHandler(prop);
-    return { isActive, parentProps };
+    const { isActive, parentProps } = useHandler(prop)
+    return { isActive, parentProps }
   }
-});
+})
 </script>

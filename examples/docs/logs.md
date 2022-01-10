@@ -14,9 +14,9 @@
 
 :::TimeLine
 
-## v2.2.2-Latest release
+## v2.3.0-Latest release
 
-`2021-12-23`
+`2022-01-10`
 
 - 更新技术
   - 升级 `package.json` 依赖包版本
@@ -26,7 +26,7 @@
   - 修复已知 Bug
   - 优化代码
 
-## v2.2.1-Latest release
+## v2.2.1
 
 `2021-12-23`
 

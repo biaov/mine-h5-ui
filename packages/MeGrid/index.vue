@@ -5,11 +5,11 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useInitSlots } from "./hooks";
+import { defineComponent } from 'vue'
+import { useInitSlots } from './hooks'
 
 export default defineComponent({
-  name: "MeGrid",
+  name: 'MeGrid',
   props: {
     // 一行几个
     cols: {
@@ -19,12 +19,12 @@ export default defineComponent({
     // 边框颜色
     borderColor: {
       type: String,
-      default: "#edeff2"
+      default: '#edeff2'
     }
   },
   setup(props) {
-    const { grid } = useInitSlots(props);
-    return { grid };
+    const { grid } = useInitSlots(props)
+    return { grid }
   }
-});
+})
 </script>

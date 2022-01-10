@@ -11,10 +11,10 @@
       class="u-input"
       :placeholder="placeholder"
       :style="`${isFocus && `border-color:${focusColor};`};padding-right:${paddingRight}px;padding-left:${paddingLeft}px;`"
-      @focus="onFocusBlur('on-focus', $event)"
-      @blur="onFocusBlur('on-blur', $event)"
-      @change="onEvent('on-change', $event)"
-      @input="onEvent('on-input', $event)"
+      @focus="onFocus"
+      @blur="onBlur"
+      @change="onChange"
+      @input="onInput"
       :readonly="readonly"
       :disabled="disabled"
     />
@@ -24,30 +24,31 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import MeIcon from "../MeIcon";
-import { useSms, useIcon, useInput } from "./hooks";
+import { defineComponent } from 'vue'
+import MeIcon from '../MeIcon'
+import { useSms, useIcon, useInput } from './hooks'
 
 export default defineComponent({
-  name: "MeInput",
+  name: 'MeInput',
   components: {
     MeIcon
   },
+  emits: ['update:modelValue', 'on-focus', 'on-blur', 'on-change', 'on-input', 'on-click-sms', 'on-click-icon'],
   props: {
     // input绑定值
     modelValue: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     // 输入框值
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     // 占位符
     placeholder: {
       type: String,
-      default: "请输入..."
+      default: '请输入...'
     },
     // 只读状态
     readonly: {
@@ -62,42 +63,42 @@ export default defineComponent({
     // label内容
     label: {
       type: String,
-      default: ""
+      default: ''
     },
     // label宽度
     labelWidth: {
       type: String,
-      default: ""
+      default: ''
     },
     // label对齐方式
     labelAlign: {
       type: String,
-      default: "left" // auto|left|right|center|justify|start|end|initial|inherit;
+      default: 'left' // auto|left|right|center|justify|start|end|initial|inherit;
     },
     // label颜色
     labelColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // label图标
     labelIcon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 聚焦边框样式
     focusType: {
       type: String,
-      default: "default" // default|primary|success|warning|danger
+      default: 'default' // default|primary|success|warning|danger
     },
     // 聚焦颜色
     focusColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 密码输入框
     password: {
@@ -112,12 +113,12 @@ export default defineComponent({
     // 短信验证码
     smsMsg: {
       type: String,
-      default: ""
+      default: ''
     },
     // 短信颜色
     smsColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 是否开启倒计时
     smsIs: {
@@ -125,12 +126,12 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { sms, handleSMS } = useSms(props);
-    const { inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocusBlur, onEvent } = useInput(props, sms);
-    const { handleIcon } = useIcon(props, inputType);
+  setup(props, { emit }) {
+    const { sms, handleSMS } = useSms(props, emit)
+    const { inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput(props, emit, sms)
+    const { handleIcon } = useIcon(props, emit, inputType)
 
-    return { sms, handleSMS, inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocusBlur, onEvent, handleIcon };
+    return { sms, handleSMS, inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput, handleIcon }
   }
-});
+})
 </script>

@@ -1,0 +1,20 @@
+.m-grid {
+  // 自定义内容
+  .u-cust {
+    :deep(.me-icon) {
+      position: relative;
+      display: block;
+      margin: 0 auto 5px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        right: 20px;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        background: #f66;
+      }
+    }
+  }
+}

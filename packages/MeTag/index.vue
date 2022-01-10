@@ -8,16 +8,17 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeTag",
+  name: 'MeTag',
+  emits: ['on-close'],
   props: {
     // 类型
     type: {
       type: String,
-      default: "primary" // primary|success|info|warning|danger
+      default: 'primary' // primary|success|info|warning|danger
     },
     // 空心
     plain: {
@@ -41,17 +42,17 @@ export default defineComponent({
     // 标签颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     },
     // 标签内容
     text: {
       type: String,
-      default: "标签"
+      default: '标签'
     },
     // 文本颜色
     textColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 关闭状态
     closeable: {
@@ -59,9 +60,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup() {
-    const { onClose } = useHandler();
-    return { onClose };
+  setup(props, { emit }) {
+    const { onClose } = useHandler(emit)
+    return { onClose }
   }
-});
+})
 </script>

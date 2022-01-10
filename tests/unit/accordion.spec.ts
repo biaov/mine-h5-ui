@@ -1,9 +1,9 @@
-import { mount } from "@vue/test-utils";
-import MeAccordion from "~/MeAccordion/index.vue";
-import MeAccordionItem from "~/MeAccordionItem/index.vue";
+import { mount } from '@vue/test-utils'
+import MeAccordion from '~/MeAccordion/index.vue'
+import MeAccordionItem from '~/MeAccordionItem/index.vue'
 
-describe("MeAccordion", () => {
-  test("accordion exist", () => {
+describe('MeAccordion', () => {
+  test('accordion exist', () => {
     // 向组件里传参
     const wrapper = mount({
       template: `
@@ -13,16 +13,16 @@ describe("MeAccordion", () => {
         </me-accordion>
       `,
       components: { MeAccordion, MeAccordionItem }
-    });
-    const viewer = wrapper.find(".me-accordion"); // 获取 DOM
-    expect(viewer.exists()).toBeTruthy();
-    expect(wrapper.findAll(".me-accordion-item").length).toBe(2);
-  });
-});
+    })
+    const viewer = wrapper.find('.me-accordion') // 获取 DOM
+    expect(viewer.exists()).toBeTruthy()
+    expect(viewer.findAll('.me-accordion-item').length).toBe(2)
+  })
+})
 
-describe("MeAccordionItem", () => {
-  test("props label", () => {
-    const label = "名称一";
+describe('MeAccordionItem', () => {
+  test('props label', () => {
+    const label = '名称一'
     // 向组件里传参
     const wrapper = mount({
       template: `
@@ -32,9 +32,9 @@ describe("MeAccordionItem", () => {
         </me-accordion>
       `,
       components: { MeAccordion, MeAccordionItem }
-    });
-    const viewer = wrapper.find(".me-accordion"); // 获取 DOM
-    const itemEl = viewer.findAll(".me-accordion-item")[0];
-    expect(itemEl.html()).toContain(label); // 是否存在
-  });
-});
+    })
+    const viewer = wrapper.find('.me-accordion') // 获取 DOM
+    const itemEl = viewer.findAll('.me-accordion-item')[0]
+    expect(itemEl.html()).toContain(label) // 是否存在
+  })
+})

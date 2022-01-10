@@ -5,11 +5,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useInitSlots } from "./hooks";
+import { defineComponent } from 'vue'
+import { useInitSlots } from './hooks'
 
 export default defineComponent({
-  name: "MeAccordion",
+  name: 'MeAccordion',
+  emits: ['update:modelValue', 'on-change'],
   props: {
     // v-model绑定值
     modelValue: {
@@ -17,9 +18,9 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
-    useInitSlots(props);
-    return {};
+  setup(props, { emit }) {
+    useInitSlots(props, emit)
+    return {}
   }
-});
+})
 </script>

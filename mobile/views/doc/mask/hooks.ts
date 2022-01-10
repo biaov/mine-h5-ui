@@ -1,18 +1,9 @@
-import { ref } from "vue";
+import { ref } from 'vue'
+import initData from './data'
+import { ListDataItem } from './interfaces'
+
 // 页面数据
 export const useWebData = () => {
-  const listData = ref([
-    {
-      id: 1,
-      label: "基础用法",
-      list: [
-        {
-          id: 1,
-          value: "弹出模态框",
-          visible: false
-        }
-      ]
-    }
-  ]);
-  return { listData };
-};
+  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  return { listData }
+}

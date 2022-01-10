@@ -27,7 +27,7 @@
     ((o = document.createElement("div")).innerHTML = s),
       (s = null),
       (l = o.getElementsByTagName("svg")[0]) &&
-        (l.setAttribute("aria-hidden", "true"),
+        (l.setAttribute("data-hidden", "true"),
         (l.style.position = "absolute"),
         (l.style.width = 0),
         (l.style.height = 0),

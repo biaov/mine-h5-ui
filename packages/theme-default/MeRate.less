@@ -2,7 +2,7 @@
   * @file 评分
 */
 
-@import "./variable.less";
+@import './variable.less';
 
 .me-rate {
   display: flex;
@@ -14,7 +14,7 @@
   }
 
   // 禁用状态样式
-  &[aria-disabled="true"] {
+  &[data-disabled='true'] {
     .u-tips,
     .me-icon {
       color: lighten(@font-color-reduce, 10%) !important;

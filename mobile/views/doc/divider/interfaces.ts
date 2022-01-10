@@ -1,15 +1,24 @@
 /* eslint-disable no-unused-vars */
 
+// 线
+export interface Line {
+  radius?: number
+  color?: string
+  size?: number
+}
+// 文本
+export interface Text {
+  color?: string
+  size?: number
+}
 // 列表项
 export interface ListDataItem {
-  id: number;
-  label: string;
-  value: string;
-  placeholder?: string;
-  btnText?: string;
-  align?: string;
-  radius?: string;
-  background?: string;
-  color?: string;
-  disabled?: boolean;
+  label: string
+  list?: string[]
+  left?: number
+  line?: Line
+  text?: Text
+  width?: number
+  height?: number
+  origin?: number
 }

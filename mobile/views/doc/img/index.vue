@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 图片 -->
   <div class="m-img">
@@ -24,66 +27,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useWebData } from "./hooks";
+import { defineComponent } from 'vue'
+import { useWebData } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { isShowMask, listData, onLoad, onError } = useWebData();
-    return { isShowMask, listData, onLoad, onError };
+    const { isShowMask, listData, onLoad, onError } = useWebData()
+    return { isShowMask, listData, onLoad, onError }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-img {
-  .m-list-img {
-    > li {
-      margin-bottom: 10px;
-      .u-label {
-        width: 100%;
-        margin-bottom: 10px;
-        color: @font-color-reduce;
-        font-size: @font-size-min;
-      }
-
-      .m-list-all {
-        .clear-flex();
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        > li {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 88px;
-          margin-bottom: 15px;
-          cursor: pointer;
-          > span {
-            display: block;
-            width: 100%;
-            text-align: center;
-            word-wrap: break-word;
-            color: @font-color;
-            font-size: @font-size-min;
-          }
-        }
-      }
-      :deep(.me-img) {
-        margin-bottom: 10px;
-      }
-    }
-  }
-  :deep(.me-loading) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    .u-text {
-      padding-top: 10px;
-      text-align: center;
-      color: @color-white;
-    }
-  }
-}
-</style>

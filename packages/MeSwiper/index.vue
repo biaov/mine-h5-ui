@@ -4,11 +4,9 @@
     class="me-swiper"
     :style="`height:${height}px;border-radius:${radius}px;`"
     ref="swiperDom"
-    v-on="{
-      touchmove: onTouchmove,
-      touchend: onTouchend
-    }"
     @touchstart.prevent="onTouchstart"
+    @touchmove="onTouchmove"
+    @touchend="onTouchend"
     @mousedown.prevent="onMousedown"
   >
     <div class="m-imgs" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`">
@@ -21,11 +19,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandMove } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandMove } from './hooks'
 
 export default defineComponent({
-  name: "MeSwiper",
+  name: 'MeSwiper',
+  emits: ['on-change'],
   props: {
     // 自动
     loop: {
@@ -52,9 +51,9 @@ export default defineComponent({
       default: 4
     }
   },
-  setup(props) {
-    const { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props);
-    return { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown };
+  setup(props, { emit }) {
+    const { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props, emit)
+    return { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown }
   }
-});
+})
 </script>

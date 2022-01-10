@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 上传图片 -->
   <ul class="m-virtual-list">
@@ -20,61 +23,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, loadMoreText, onLoadMore } = useHandler();
-    return { listData, loadMoreText, onLoadMore };
+    const { listData, loadMoreText, onLoadMore } = useHandler()
+    return { listData, loadMoreText, onLoadMore }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-virtual-list {
-  > li {
-    margin-bottom: 20px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-virtual-list) {
-      border: 1px solid @border-color-pre;
-    }
-    .item {
-      width: 100%;
-      height: 50px;
-      border-bottom: 1px dotted @border-color-line;
-      &.auto {
-        min-height: 50px;
-        height: auto;
-        p {
-          line-height: 30px;
-        }
-      }
-      p {
-        width: 100%;
-        height: 100%;
-        line-height: 48px;
-        padding: 0 15px;
-        background: @color-white;
-        color: @font-color-reduce;
-        font-size: @font-size;
-        span {
-          color: @color-danger;
-        }
-      }
-    }
-    .u-more {
-      width: 100%;
-      height: 40px;
-      line-height: 40px;
-      text-align: center;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-  }
-}
-</style>

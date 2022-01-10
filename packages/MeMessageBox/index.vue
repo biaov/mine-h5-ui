@@ -26,42 +26,43 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useShow } from "./hooks";
-import { OnOk, OnOff } from "./types";
+import { defineComponent, PropType } from 'vue'
+import { useShow } from './hooks'
+import { OnOk, OnOff } from './types'
 
 export default defineComponent({
-  name: "MeMessageBox",
+  name: 'MeMessageBox',
+  emits: ['action'],
   props: {
     // 标题内容
     tips: {
       type: String,
-      default: "提示"
+      default: '提示'
     },
     // 弹出框类型
     type: {
       type: String,
-      default: "confirm" // alert | confirm | prompt | custom
+      default: 'confirm' // alert | confirm | prompt | custom
     },
     // 警告语
     message: {
       type: String,
-      default: ""
+      default: ''
     },
     // 自定义 HTML
     html: {
       type: String,
-      default: ""
+      default: ''
     },
     // 取消按钮内容
     cancelButtonText: {
       type: String,
-      default: "取消"
+      default: '取消'
     },
     // 确认按钮内容
     confirmButtonText: {
       type: String,
-      default: "确认"
+      default: '确认'
     },
     // 点击确定函数
     onOk: {
@@ -74,9 +75,9 @@ export default defineComponent({
       default: () => () => {}
     }
   },
-  setup(props) {
-    const { isShow, isDestroy, inputValue, onCancel, onConfirm } = useShow(props);
-    return { isShow, isDestroy, inputValue, onCancel, onConfirm };
+  setup(props, { emit }) {
+    const { isShow, isDestroy, inputValue, onCancel, onConfirm } = useShow(props, emit)
+    return { isShow, isDestroy, inputValue, onCancel, onConfirm }
   }
-});
+})
 </script>

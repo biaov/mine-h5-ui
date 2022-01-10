@@ -2,7 +2,7 @@
   * @file 单选框
 */
 
-@import "./variable.less";
+@import './variable.less';
 
 .me-radio {
   // aria设置样式
@@ -14,14 +14,14 @@
   align-items: center;
 
   // 未选中样式
-  &[aria-checked="false"] {
+  &[data-checked='false'] {
     .me-icon {
       .color-important;
     }
   }
 
   // 禁用样式
-  &[aria-disabled="true"] {
+  &[data-disabled='true'] {
     .me-icon {
       .color-important;
     }

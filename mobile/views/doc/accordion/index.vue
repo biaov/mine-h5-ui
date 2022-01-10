@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 手风琴 -->
   <div class="m-accordion">
@@ -10,36 +13,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useWebData } from "./hooks";
+import { defineComponent } from 'vue'
+import { useWebData } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { accordionActive, listData } = useWebData();
-    return { accordionActive, listData };
+    const { accordionActive, listData } = useWebData()
+    return { accordionActive, listData }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-accordion {
-  .u-label {
-    width: 100%;
-    margin-bottom: 10px;
-    color: @font-color-reduce;
-    font-size: @font-size-min;
-  }
-  :deep(.me-accordion-item) {
-    .m-hd {
-      cursor: pointer;
-    }
-    p {
-      line-height: 24px;
-      margin-bottom: 5px;
-      text-indent: 2em;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-</style>

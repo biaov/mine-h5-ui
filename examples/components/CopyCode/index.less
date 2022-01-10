@@ -1,0 +1,21 @@
+.m-copy-code {
+  position: relative;
+  .u-copy {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 0;
+    width: 30px;
+    padding: 5px;
+    transition: opacity 0.4s;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+  &:hover {
+    .u-copy {
+      opacity: 0.86;
+    }
+  }
+}

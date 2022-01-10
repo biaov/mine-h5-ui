@@ -1,0 +1,24 @@
+.m-radio {
+  cursor: pointer;
+  > li {
+    margin-bottom: 10px;
+    .u-label {
+      width: 100%;
+      margin-bottom: 10px;
+      color: @font-color-reduce;
+      font-size: @font-size-min;
+    }
+    .same-margin {
+      margin-bottom: 20px;
+    }
+    > :deep(.me-radio) {
+      .same-margin;
+    }
+    :deep(.me-radio-group) {
+      .same-margin;
+      .me-radio[data-disabled='true'] {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

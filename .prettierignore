@@ -4,6 +4,7 @@
 dist/
 lib/
 node_modules/
+fonts
 
 # 文件
 .editorconfig

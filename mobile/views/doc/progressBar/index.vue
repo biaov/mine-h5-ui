@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 进度条 -->
   <ul class="m-progress-bar">
@@ -9,30 +12,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onStart } = useHandlerClick();
-    return { listData, onStart };
+    const { listData, onStart } = useHandlerClick()
+    return { listData, onStart }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-progress-bar {
-  > li {
-    margin-bottom: 15px;
-    .u-label {
-      width: 100%;
-      // line-height: 40px;
-      margin-bottom: 20px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-progress-bar) {
-      margin-bottom: 15px;
-    }
-  }
-}
-</style>

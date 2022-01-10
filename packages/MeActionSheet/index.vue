@@ -8,12 +8,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useShowSheet, useBtns } from "./hooks";
-import { ListItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useShowSheet, useBtns } from './hooks'
+import { ListItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeActionSheet",
+  name: 'MeActionSheet',
+  emits: ['update:visible', 'on-change', 'on-cancel'],
   props: {
     // v-model:visible 绑定值
     visible: {
@@ -29,18 +30,18 @@ export default defineComponent({
     // 索引名
     index: {
       type: String,
-      default: "id"
+      default: 'id'
     },
     // 数据展示属性名
     label: {
       type: String,
-      default: "value"
+      default: 'value'
     }
   },
-  setup(props) {
-    const { isShowMask, isShow, hideMask } = useShowSheet(props);
-    const { onLi, onCancel } = useBtns();
-    return { isShowMask, isShow, hideMask, onLi, onCancel };
+  setup(props, { emit }) {
+    const { isShowMask, isShow, hideMask } = useShowSheet(props, emit)
+    const { onLi, onCancel } = useBtns(emit)
+    return { isShowMask, isShow, hideMask, onLi, onCancel }
   }
-});
+})
 </script>

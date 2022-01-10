@@ -15,11 +15,11 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeAccordionItem",
+  name: 'MeAccordionItem',
   props: {
     // 标题
     label: {
@@ -34,12 +34,13 @@ export default defineComponent({
     // 下边框颜色
     borderColor: {
       type: String,
-      default: "#dcdfe6"
+      default: '#dcdfe6'
     }
   },
-  setup(props) {
-    const { accordionItemCont, isShow, curHeight, onClick } = useHandler(props);
-    return { accordionItemCont, isShow, curHeight, onClick };
+  emits: ['on-click'],
+  setup(props, { emit }) {
+    const { accordionItemCont, isShow, curHeight, onClick } = useHandler(props, emit)
+    return { accordionItemCont, isShow, curHeight, onClick }
   }
-});
+})
 </script>

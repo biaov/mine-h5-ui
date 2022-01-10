@@ -24,12 +24,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useHandler } from "./hooks";
-import { Line, Text } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useHandler } from './hooks'
+import { Line, Text } from './interfaces'
 
 export default defineComponent({
-  name: "MeDivider",
+  name: 'MeDivider',
   props: {
     // 线条数和文本
     list: {
@@ -61,7 +61,7 @@ export default defineComponent({
       type: Object as PropType<Line>,
       default: () => ({
         radius: 0, // 线条倒角
-        color: "#dcdfe6", // 线条颜色
+        color: '#dcdfe6', // 线条颜色
         size: 1 // 线条大小
       })
     },
@@ -69,14 +69,14 @@ export default defineComponent({
     text: {
       type: Object as PropType<Text>,
       default: () => ({
-        color: "#494949", // 文本颜色
+        color: '#494949', // 文本颜色
         size: 14 // 文本大小
       })
     }
   },
   setup(props) {
-    const { fieldsetList, curLine } = useHandler(props);
-    return { fieldsetList, curLine };
+    const { fieldsetList, curLine } = useHandler(props)
+    return { fieldsetList, curLine }
   }
-});
+})
 </script>

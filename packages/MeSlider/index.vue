@@ -1,6 +1,6 @@
 <template>
   <!-- 滑块 -->
-  <div class="me-slider" :aria-disabled="disabled">
+  <div class="me-slider" :data-disabled="disabled">
     <!-- 颜色线条 -->
     <p class="u-line" :style="`height:${styles.height};border-radius:${styles.radius};`"><span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span></p>
     <!-- 拖拽div -->
@@ -12,6 +12,8 @@
         touchend: onTouchend
       }"
       @touchstart.prevent="onTouchstart"
+      @touchmove="onTouchmove"
+      @touchend="onTouchend"
       @mousedown.prevent="onMousedown"
     >
       <!-- 圆点 -->
@@ -22,12 +24,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useHandler } from "./hooks";
-import { PropStyles } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useHandler } from './hooks'
+import { PropStyles } from './interfaces'
 
 export default defineComponent({
-  name: "MeSlider",
+  name: 'MeSlider',
+  emits: ['update:modelValue', 'on-start', 'on-move', 'on-end'],
   props: {
     // v-model绑定值
     modelValue: {
@@ -48,9 +51,9 @@ export default defineComponent({
     styles: {
       type: Object as PropType<PropStyles>,
       default: () => ({
-        height: "", // 大小
-        radius: "", // 倒角
-        lineBgc: "" // 线背景色
+        height: '', // 大小
+        radius: '', // 倒角
+        lineBgc: '' // 线背景色
       })
     },
     // 禁用状态
@@ -64,9 +67,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler(props);
-    return { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown };
+  setup(props, { emit }) {
+    const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler(props, emit)
+    return { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown }
   }
-});
+})
 </script>

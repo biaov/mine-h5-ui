@@ -17,12 +17,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useShow, useBtns } from "./hooks";
-import { ListItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useShow, useBtns } from './hooks'
+import { ListItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeShareSheet",
+  name: 'MeShareSheet',
+  emits: ['update:visible', 'on-change', 'on-cancel'],
   props: {
     // v-model:visible 绑定值
     visible: {
@@ -32,7 +33,7 @@ export default defineComponent({
     // 提示文本
     tips: {
       type: String,
-      default: "立即分享给好友"
+      default: '立即分享给好友'
     },
     // 数据列表
     list: {
@@ -41,10 +42,10 @@ export default defineComponent({
       validator: (value: ListItem[]) => value.length > 0 && Object.keys(value[0]).length > 0
     }
   },
-  setup(props) {
-    const { isShowMask, isShow, hideMask } = useShow(props);
-    const { onLi, onCancel } = useBtns();
-    return { isShowMask, isShow, hideMask, onLi, onCancel };
+  setup(props, { emit }) {
+    const { isShowMask, isShow, hideMask } = useShow(props, emit)
+    const { onLi, onCancel } = useBtns(emit)
+    return { isShowMask, isShow, hideMask, onLi, onCancel }
   }
-});
+})
 </script>

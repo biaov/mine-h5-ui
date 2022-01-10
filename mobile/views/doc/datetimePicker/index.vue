@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 时间选择器 -->
   <ul class="m-datetime-picker">
@@ -20,44 +23,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onSure } = useHandlerClick();
-    return { listData, onSure };
+    const { listData, onSure } = useHandlerClick()
+    return { listData, onSure }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-datetime-picker {
-  > li {
-    margin-bottom: 10px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    .u-li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      height: 40px;
-      border-bottom: 1px solid darken(@bg-color, 5%);
-      cursor: pointer;
-      > span {
-        color: @font-color;
-        font-size: @font-size;
-      }
-    }
-    :deep(.me-datetime-picker) {
-      .m-bd > li {
-        cursor: grab;
-      }
-    }
-  }
-}
-</style>

@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 倒计时 -->
   <div class="m-count-down">
@@ -26,56 +29,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { time, btnList, handleStatus, onClick } = useHandlerClick();
-    return { time, btnList, handleStatus, onClick };
+    const { time, btnList, handleStatus, onClick } = useHandlerClick()
+    return { time, btnList, handleStatus, onClick }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-count-down {
-  .u-label {
-    width: 100%;
-    margin-bottom: 10px;
-    color: @font-color-reduce;
-    font-size: @font-size-min;
-  }
-  :deep(.me-count-down) {
-    margin-bottom: 10px;
-    color: #494949;
-    font-size: 14px;
-    .u-block {
-      border-radius: 4px;
-      padding: 3px 6px;
-      background: #f66;
-      color: #fff;
-    }
-  }
-  .m-btn {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    > li {
-      width: 30%;
-      height: 36px;
-      line-height: 34px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      text-align: center;
-      color: #494949;
-      font-size: 14px;
-      cursor: pointer;
-      &:hover {
-        background: #f2f2f2;
-      }
-      :deep(.me-icon) {
-        margin-right: 5px;
-      }
-    }
-  }
-}
-</style>

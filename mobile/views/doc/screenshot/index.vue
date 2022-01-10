@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 截长图 -->
   <ul class="m-screenshot">
@@ -13,38 +16,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onClick, onEnd } = useHandlerClick();
-    return { listData, onClick, onEnd };
+    const { listData, onClick, onEnd } = useHandlerClick()
+    return { listData, onClick, onEnd }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-screenshot {
-  > li {
-    margin-bottom: 20px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    .u-desc-cell {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 40px;
-      border-bottom: 1px solid darken(@bg-color, 5%);
-      cursor: pointer;
-      > span {
-        color: @font-color;
-        font-size: @font-size;
-      }
-    }
-  }
-}
-</style>

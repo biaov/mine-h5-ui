@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 搜索 -->
   <ul class="m-search">
@@ -19,32 +22,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onSearch, onClick } = useHandlerClick();
-    return { listData, onSearch, onClick };
+    const { listData, onSearch, onClick } = useHandlerClick()
+    return { listData, onSearch, onClick }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-search {
-  cursor: pointer;
-  > li {
-    margin-bottom: 10px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-search) {
-      :deep(.u-input[disabled="disabled"]) {
-        cursor: not-allowed;
-      }
-    }
-  }
-}
-</style>

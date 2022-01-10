@@ -11,11 +11,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useCountdown } from "./hooks";
+import { defineComponent } from 'vue'
+import { useCountdown } from './hooks'
 
 export default defineComponent({
-  name: "MeCountDown",
+  name: 'MeCountDown',
+  emits: ['on-end', 'on-progress'],
   props: {
     // 需要倒计的时间
     time: {
@@ -25,7 +26,7 @@ export default defineComponent({
     // 时间格式化
     format: {
       type: String,
-      default: "hh:mm:ss" // DD:hh:mm:ss:ms
+      default: 'hh:mm:ss' // DD:hh:mm:ss:ms
     },
     // 是否开始
     isStart: {
@@ -43,9 +44,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { formatAfter } = useCountdown(props);
-    return { formatAfter };
+  setup(props, { emit }) {
+    const { formatAfter } = useCountdown(props, emit)
+    return { formatAfter }
   }
-});
+})
 </script>

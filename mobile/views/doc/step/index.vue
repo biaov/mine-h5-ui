@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 标签页 -->
   <ul class="m-step">
@@ -19,36 +22,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onClickNext } = useHandlerClick();
-    return { listData, onClickNext };
+    const { listData, onClickNext } = useHandlerClick()
+    return { listData, onClickNext }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-step {
-  .u-label {
-    width: 100%;
-    line-height: 40px;
-    color: @font-color-reduce;
-    font-size: @font-size-min;
-  }
-  :deep(.me-step) {
-    margin-bottom: 10px;
-  }
-  .u-btn-next {
-    cursor: pointer;
-  }
-  .u-tit {
-    line-height: 24px;
-    font-weight: bold;
-  }
-  .u-time {
-    color: rgba(0, 0, 0, 0.45);
-  }
-}
-</style>

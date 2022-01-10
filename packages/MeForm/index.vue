@@ -5,12 +5,13 @@
   </form>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useHandler } from "./hooks";
-import { Model, RuleItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useHandler } from './hooks'
+import { Model, RuleItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeForm",
+  name: 'MeForm',
+  emits: ['on-submit'],
   props: {
     // 验证数据
     model: {
@@ -23,9 +24,9 @@ export default defineComponent({
       default: () => []
     }
   },
-  setup(props) {
-    const { onSubmit } = useHandler(props);
-    return { onSubmit };
+  setup(props, { emit }) {
+    const { onSubmit } = useHandler(props, emit)
+    return { onSubmit }
   }
-});
+})
 </script>

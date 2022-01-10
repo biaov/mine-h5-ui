@@ -5,11 +5,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeCountTo",
+  name: 'MeCountTo',
+  emits: ['update:modelValue', 'on-end'],
   props: {
     // 开始状态
     modelValue: {
@@ -37,9 +38,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { comValue } = useHandler(props);
-    return { comValue };
+  setup(props, { emit }) {
+    const { comValue } = useHandler(props, emit)
+    return { comValue }
   }
-});
+})
 </script>

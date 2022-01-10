@@ -1,0 +1,21 @@
+:deep(.me-btn) {
+  cursor: pointer;
+}
+.m-button {
+  > li {
+    .clear-flex();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .u-label {
+      width: 100%;
+      margin-bottom: 10px;
+      color: @font-color-reduce;
+      font-size: @font-size-min;
+    }
+    :deep(.me-btn) {
+      margin-bottom: 10px;
+    }
+  }
+}

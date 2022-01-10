@@ -1,15 +1,16 @@
 <template>
   <!-- 开关 -->
-  <div class="me-switch" :class="{ 'me-switch-on': isActived }" :aria-disabled="disabled" @click="handleClick" :style="`font-size:${size};background:${background};`">
+  <div class="me-switch" :class="{ 'me-switch-on': isActived }" :data-disabled="disabled" @click="handleClick" :style="`font-size:${size};background:${background};`">
     <span class="u-round"></span>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeSwitch",
+  name: 'MeSwitch',
+  emits: ['update:modelValue', 'on-click'],
   props: {
     // v-model绑定值
     modelValue: {
@@ -19,17 +20,17 @@ export default defineComponent({
     // 自定义大小
     size: {
       type: String,
-      default: "" // 30px
+      default: '' // 30px
     },
     // 自定义激活颜色
     activeColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 自定义未激活颜色
     inactiveColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 异步状态
     async: {
@@ -42,9 +43,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { isActived, background, handleClick } = useHandler(props);
-    return { isActived, background, handleClick };
+  setup(props, { emit }) {
+    const { isActived, background, handleClick } = useHandler(props, emit)
+    return { isActived, background, handleClick }
   }
-});
+})
 </script>

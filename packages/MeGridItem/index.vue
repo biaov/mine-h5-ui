@@ -9,37 +9,37 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeGridItem",
+  name: 'MeGridItem',
+  emits: ['on-click'],
   props: {
     // 图标
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标的颜色
     iconColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 文本
     text: {
       type: String,
-      default: ""
+      default: ''
     },
     // 文本颜色
     textColor: {
       type: String,
-      default: ""
+      default: ''
     }
   },
-  setup() {
-    const { cols, widthValue, borderColor, handleClick } = useHandler();
-    return { cols, widthValue, borderColor, handleClick };
+  setup(props, { emit }) {
+    const { cols, widthValue, borderColor, handleClick } = useHandler(emit)
+    return { cols, widthValue, borderColor, handleClick }
   }
-});
+})
 </script>
-<style lang="less" scoped></style>

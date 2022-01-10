@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 空状态 -->
   <ul class="m-empty">
@@ -8,26 +11,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useWebData } from "./hooks";
+import { defineComponent } from 'vue'
+import { useWebData } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData } = useWebData();
-    return { listData };
+    const { listData } = useWebData()
+    return { listData }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-empty {
-  > li {
-    margin-bottom: 15px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-  }
-}
-</style>

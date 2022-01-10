@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- layout -->
   <div class="m-layout">
@@ -24,76 +27,14 @@
     </ul>
   </div>
 </template>
-<script>
-import { defineComponent } from "vue";
-import { useWebData } from "./hook";
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useWebData } from './hook'
 
 export default defineComponent({
   setup() {
-    const { listData } = useWebData();
-    return { listData };
+    const { listData } = useWebData()
+    return { listData }
   }
-});
+})
 </script>
-<style scoped lang="less">
-@padding-15: 15px;
-.m-layout {
-  height: 100vh;
-  padding: @padding-15;
-  overflow-y: auto;
-  background: @color-white;
-  .same-padding {
-    padding: 0 @padding-15;
-  }
-  .same-font {
-    color: @font-color-reduce;
-    font-size: @font-size;
-  }
-  .m-hd {
-    margin-bottom: 30px;
-    .u-tit {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 60px;
-      > img {
-        width: 50px;
-        margin-right: 15px;
-      }
-      > span {
-        color: @font-color;
-        font-size: 26px;
-        font-weight: 500;
-      }
-    }
-    .u-desc {
-      .same-font;
-    }
-  }
-  .m-list-out {
-    .u-tit {
-      .same-padding;
-      .same-font;
-      height: 30px;
-      line-height: 30px;
-    }
-    .m-list-in {
-      > li {
-        margin-bottom: 10px;
-        > a {
-          .same-padding;
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          height: 40px;
-          line-height: 40px;
-          border-radius: 100px;
-          background: @bg-color;
-          color: @font-color;
-          font-size: @font-size;
-        }
-      }
-    }
-  }
-}
-</style>

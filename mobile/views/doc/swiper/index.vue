@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 轮播图 -->
   <ul class="m-swiper">
@@ -10,29 +13,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useWebData } from "./hooks";
+import { defineComponent } from 'vue'
+import { useWebData } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData } = useWebData();
-    return { listData };
+    const { listData } = useWebData()
+    return { listData }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-swiper {
-  > li {
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-swiper) {
-      margin-bottom: 15px;
-      cursor: grab;
-    }
-  }
-}
-</style>

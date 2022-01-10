@@ -1,11 +1,14 @@
-import { useContext } from "vue";
+import { Emits } from './interfaces'
 
 // 操作
-export const useHandler = () => {
-  const { emit } = useContext();
+export const useHandler = (emit: Emits) => {
   // 点击左侧按钮
-  const handleClick = (e: MouseEvent, name: string) => {
-    emit(`click-${name}`, e);
-  };
-  return { handleClick };
-};
+  const onClickLeft = (e: MouseEvent) => {
+    emit('click-left', e)
+  }
+  // 点击右侧按钮
+  const onClickRight = (e: MouseEvent) => {
+    emit('click-right', e)
+  }
+  return { onClickLeft, onClickRight }
+}

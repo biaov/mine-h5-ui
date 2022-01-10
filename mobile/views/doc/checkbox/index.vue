@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 复选框 -->
   <ul class="m-checkbox">
@@ -19,45 +22,19 @@
         </me-checkbox>
       </me-checkbox-group>
       <template v-else>
-        <me-checkbox v-for="it in item.list" :key="it.id" v-model="item.value" @on-click="onClick(item.value)">{{ it.label }}</me-checkbox>
+        <me-checkbox v-for="it in item.list" :key="it.id" v-model="item.value" @on-click="onClick(item.value as boolean)">{{ it.label }}</me-checkbox>
       </template>
     </li>
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onChange, onClick } = useHandlerClick();
-    return { listData, onChange, onClick };
+    const { listData, onChange, onClick } = useHandlerClick()
+    return { listData, onChange, onClick }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-checkbox {
-  cursor: pointer;
-  > li {
-    margin-bottom: 10px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    .same-margin {
-      margin-bottom: 20px;
-    }
-    > :deep(.me-checkbox) {
-      .same-margin;
-    }
-    :deep(.me-checkbox-group) {
-      .same-margin;
-      .me-checkbox[aria-disabled="true"] {
-        cursor: not-allowed;
-      }
-    }
-  }
-}
-</style>

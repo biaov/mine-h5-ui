@@ -1,41 +1,42 @@
 <template>
   <!-- 评分机制 -->
-  <div class="me-rate" :style="`font-size:${size};`" :aria-disabled="disabled">
+  <div class="me-rate" :style="`font-size:${size};`" :data-disabled="disabled">
     <me-icon v-for="item in listData" :key="item.id" :name="item.state ? iconSelect : icon" size="inherit" :color="item.state ? color : '#949494'" @on-click="onClick(item)"></me-icon>
     <span class="u-tips" v-if="tips.length > 0 && modelValue > 0" :style="`color:${tipsColor};`">{{ tips[modelValue - 1] }}</span>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import MeIcon from "../MeIcon";
-import { useHandler } from "./hooks";
+import { defineComponent, PropType } from 'vue'
+import MeIcon from '../MeIcon'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeRate",
+  name: 'MeRate',
   components: {
     MeIcon
   },
+  emits: ['update:modelValue', 'on-change'],
   props: {
     // v-model绑定值
     modelValue: {
       type: Number,
-      validator: (value: number) => !String(value).includes("."),
+      validator: (value: number) => !String(value).includes('.'),
       default: 0
     },
     // 自定义未选中图标
     icon: {
       type: String,
-      default: "icon-star4"
+      default: 'icon-star4'
     },
     // 自定义选中图标
     iconSelect: {
       type: String,
-      default: "icon-star3"
+      default: 'icon-star3'
     },
     // 自定义图标颜色
     color: {
       type: String,
-      default: "#fed835"
+      default: '#fed835'
     },
     // 自定义数量
     count: {
@@ -55,22 +56,22 @@ export default defineComponent({
     // 自定义提示语
     tips: {
       type: Array as PropType<string[]>,
-      default: () => ["非常不满意", "不满意", "一般", "满意", "非常满意"]
+      default: () => ['非常不满意', '不满意', '一般', '满意', '非常满意']
     },
     // 自定义提示语颜色
     tipsColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 评分大小
     size: {
       type: String,
-      default: ""
+      default: ''
     }
   },
-  setup(props) {
-    const { listData, onClick } = useHandler(props);
-    return { listData, onClick };
+  setup(props, { emit }) {
+    const { listData, onClick } = useHandler(props, emit)
+    return { listData, onClick }
   }
-});
+})
 </script>

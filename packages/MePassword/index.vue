@@ -8,21 +8,22 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MePassword",
+  name: 'MePassword',
+  emits: ['update:modelValue', 'on-focus', 'on-blur'],
   props: {
     // v-model的值
     modelValue: {
       type: String,
-      default: ""
+      default: ''
     },
     // 输入框模式
     type: {
       type: String,
-      default: "password" // number|password
+      default: 'password' // number|password
     },
     // 输入框数量
     num: {
@@ -32,7 +33,7 @@ export default defineComponent({
     // 系统皮肤样式
     skinType: {
       type: String,
-      default: "white" // white|dark
+      default: 'white' // white|dark
     },
     // 聚焦状态
     isFocus: {
@@ -40,9 +41,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { listData, handleClick } = useHandler(props);
-    return { listData, handleClick };
+  setup(props, { emit }) {
+    const { listData, handleClick } = useHandler(props, emit)
+    return { listData, handleClick }
   }
-});
+})
 </script>

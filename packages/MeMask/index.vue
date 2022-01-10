@@ -5,11 +5,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeMask",
+  name: 'MeMask',
+  emits: ['update:visible'],
   props: {
     // 显示状态
     visible: {
@@ -22,9 +23,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { isShowMask, isShow, clickMask } = useHandler(props);
-    return { isShowMask, isShow, clickMask };
+  setup(props, { emit }) {
+    const { isShowMask, isShow, clickMask } = useHandler(props, emit)
+    return { isShowMask, isShow, clickMask }
   }
-});
+})
 </script>

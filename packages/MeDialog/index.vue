@@ -10,11 +10,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useShow } from "./hooks";
+import { defineComponent } from 'vue'
+import { useShow } from './hooks'
 
 export default defineComponent({
-  name: "MeDialog",
+  name: 'MeDialog',
+  emits: ['update:visible'],
   props: {
     // v-model 绑定值
     visible: {
@@ -24,12 +25,12 @@ export default defineComponent({
     // 提示文本
     tips: {
       type: String,
-      default: "提示"
+      default: '提示'
     }
   },
-  setup(props) {
-    const { isShowMask, isShow, hideMask } = useShow(props);
-    return { isShowMask, isShow, hideMask };
+  setup(props, { emit }) {
+    const { isShowMask, isShow, hideMask } = useShow(props, emit)
+    return { isShowMask, isShow, hideMask }
   }
-});
+})
 </script>

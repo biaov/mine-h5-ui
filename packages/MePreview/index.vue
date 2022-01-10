@@ -6,16 +6,16 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useShow } from "./hooks";
+import { defineComponent } from 'vue'
+import { useShow } from './hooks'
 
 export default defineComponent({
-  name: "MePreview",
+  name: 'MePreview',
   props: {
     // 图片地址
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     // 层级位置
     zIndex: {
@@ -25,12 +25,12 @@ export default defineComponent({
     // 遮罩层背景色
     background: {
       type: String,
-      default: "#000"
+      default: '#000'
     }
   },
   setup() {
-    const { isShow, isDestroy, onClose } = useShow();
-    return { isShow, isDestroy, onClose };
+    const { isShow, isDestroy, onClose } = useShow()
+    return { isShow, isDestroy, onClose }
   }
-});
+})
 </script>

@@ -6,11 +6,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useImgEvent } from "./hooks";
+import { defineComponent } from 'vue'
+import { useImgEvent } from './hooks'
 
 export default defineComponent({
-  name: "MeImg",
+  name: 'MeImg',
+  emits: ['on-click', 'on-load', 'on-error'],
   props: {
     // 图片地址
     src: {
@@ -20,36 +21,36 @@ export default defineComponent({
     // 宽度
     width: {
       type: String,
-      default: ""
+      default: ''
     },
     // 高度
     height: {
       type: String,
-      default: ""
+      default: ''
     },
     // 填充方式
     fill: {
       type: String,
-      default: ""
+      default: ''
     },
     // 倒角
     radius: {
       type: String,
-      default: "0"
+      default: '0'
     },
     // 错误显示alt
     alt: {
       type: String,
-      default: ""
+      default: ''
     }
   },
-  setup() {
-    const { onClick, onLoad, onError } = useImgEvent();
+  setup(props, { emit }) {
+    const { onClick, onLoad, onError } = useImgEvent(emit)
     return {
       onClick,
       onLoad,
       onError
-    };
+    }
   }
-});
+})
 </script>

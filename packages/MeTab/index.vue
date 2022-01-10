@@ -20,11 +20,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useInitSlots } from "./hooks";
+import { defineComponent } from 'vue'
+import { useInitSlots } from './hooks'
 
 export default defineComponent({
-  name: "MeTab",
+  name: 'MeTab',
+  emits: ['update:modelValue', 'on-change'],
   props: {
     // v-model绑定值
     modelValue: {
@@ -34,22 +35,22 @@ export default defineComponent({
     // 未聚焦时的颜色
     color: {
       type: String,
-      default: "#949494"
+      default: '#949494'
     },
     // 聚焦时显示的颜色
     activeColor: {
       type: String,
-      default: "#494949"
+      default: '#494949'
     },
     // 位移边框颜色
     lineColor: {
       type: String,
-      default: "#f56c6c"
+      default: '#f56c6c'
     }
   },
-  setup(props) {
-    const { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick } = useInitSlots(props);
-    return { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick };
+  setup(props, { emit }) {
+    const { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick } = useInitSlots(props, emit)
+    return { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick }
   }
-});
+})
 </script>

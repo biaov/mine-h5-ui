@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 数字滚动 -->
   <ul class="m-count-to">
@@ -12,31 +15,14 @@
     </li>
   </ul>
 </template>
-<script>
-import { useWebData } from "./hooks";
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useWebData } from './hooks'
 
-export default {
+export default defineComponent({
   setup() {
-    const { listData, manual } = useWebData();
-    return { listData, manual };
+    const { listData, manual } = useWebData()
+    return { listData, manual }
   }
-};
+})
 </script>
-<style scoped lang="less">
-.m-count-to {
-  > li {
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-count-to) {
-      margin-bottom: 15px;
-    }
-    :deep(.me-button) {
-      cursor: pointer;
-    }
-  }
-}
-</style>

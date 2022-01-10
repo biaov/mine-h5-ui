@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 文档 -->
   <div class="m-docs">
@@ -7,22 +10,18 @@
     <router-view></router-view>
   </div>
 </template>
-<script>
-import MineHeader from "^/components/MineHeader";
-import { useRouteHandler } from "./hooks";
+<script lang="ts">
+import { defineComponent } from 'vue'
+import MineHeader from '^/components/MineHeader'
+import { useRouteHandler } from './hooks'
 
-export default {
+export default defineComponent({
   components: {
     MineHeader
   },
   setup() {
-    const { title } = useRouteHandler();
-    return { title };
+    const { title } = useRouteHandler()
+    return { title }
   }
-};
+})
 </script>
-<style scoped lang="less">
-.m-docs {
-  padding: 75px 15px 15px;
-}
-</style>

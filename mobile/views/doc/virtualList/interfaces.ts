@@ -1,13 +1,23 @@
 /* eslint-disable no-unused-vars */
-export interface ChildrenListItem {
-  text: string;
+
+// 子列表项
+export interface ChildListItem {
+  text: string
 }
 // list item
-export interface ListItem {
-  id: number;
-  label: string;
-  itemHeight: number;
-  list: ChildrenListItem[];
-  loadStatus?: string;
-  auto?: boolean;
+export interface ListDataItem {
+  id: number
+  label: string
+  itemHeight: number
+  list: ChildListItem[]
+  loadStatus?: string
+  auto?: boolean
+}
+
+// loadMoreText
+export interface LoadMoreText {
+  nomore: string
+  more: string
+  loading: string
+  [key: string]: string | undefined
 }

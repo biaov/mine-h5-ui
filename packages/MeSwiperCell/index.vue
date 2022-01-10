@@ -5,12 +5,10 @@
       class="m-swiper"
       :class="{ active: isActive }"
       :style="`transform:translateX(${currentValue}px);`"
-      v-on="{
-        touchmove: onTouchmove,
-        touchend: onTouchend
-      }"
       @click.prevent.stop
       @touchstart.prevent="onTouchstart"
+      @touchmove="onTouchmove"
+      @touchend="onTouchend"
       @mousedown.prevent="onMousedown"
     >
       <!-- 内容 -->
@@ -25,14 +23,14 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandMove } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandMove } from './hooks'
 
 export default defineComponent({
-  name: "MeSwiperCell",
+  name: 'MeSwiperCell',
   setup() {
-    const { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove();
-    return { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown };
+    const { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
+    return { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown }
   }
-});
+})
 </script>

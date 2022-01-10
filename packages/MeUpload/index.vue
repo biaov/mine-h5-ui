@@ -1,6 +1,6 @@
 <template>
   <!-- 上传图片 -->
-  <div class="me-upload" :aria-disabled="disabled">
+  <div class="me-upload" :data-disabled="disabled">
     <!-- 展示图片 -->
     <div class="m-imgs" v-for="item in listData" :key="item.id" @click="onPreview(item)">
       <img :src="item.url" class="u-img" alt="图片" />
@@ -21,17 +21,18 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import MeIcon from "../MeIcon";
-import { useHandler } from "./hooks";
-import { BeforeRead, BfterRead, BeforeDelete } from "./types";
-import { ListDataItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import MeIcon from '../MeIcon'
+import { useHandler } from './hooks'
+import { BeforeRead, BfterRead, BeforeDelete } from './types'
+import { ListDataItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeUpload",
+  name: 'MeUpload',
   components: {
     MeIcon
   },
+  emits: ['update:fileList', 'update:file-list', 'on-change'],
   props: {
     // v-model:fileList绑定值
     fileList: {
@@ -84,9 +85,9 @@ export default defineComponent({
       default: () => () => true
     }
   },
-  setup(props) {
-    const { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler(props);
-    return { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview };
+  setup(props, { emit }) {
+    const { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler(props, emit)
+    return { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview }
   }
-});
+})
 </script>

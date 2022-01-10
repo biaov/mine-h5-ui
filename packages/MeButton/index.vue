@@ -12,31 +12,33 @@
   </button>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import MeIcon from "../MeIcon";
-import { useHandler } from "./hooks";
+import { defineComponent, PropType } from 'vue'
+import MeIcon from '../MeIcon'
+import { useHandler } from './hooks'
+import { NativeType } from './types'
 
 export default defineComponent({
-  name: "MeButton",
+  name: 'MeButton',
   components: {
     MeIcon
   },
+  emits: ['on-click'],
   props: {
     // 原生 button 标签的 type 属性
     nativeType: {
-      type: String,
-      default: "button" // button|reset|submit
+      type: String as PropType<NativeType>,
+      default: 'button' // button|reset|submit
     },
     // 宽度
     width: {
       type: String,
-      default: ""
+      default: ''
     },
     // 类型
     type: {
       type: String,
-      validator: (value: string) => value === "default" || value === "primary" || value === "success" || value === "info" || value === "warning" || value === "danger",
-      default: "default"
+      validator: (value: string) => value === 'default' || value === 'primary' || value === 'success' || value === 'info' || value === 'warning' || value === 'danger',
+      default: 'default'
     },
     // 朴素按钮
     plain: {
@@ -49,17 +51,17 @@ export default defineComponent({
     // 图标按钮
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 自定义颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     }
   },
-  setup() {
-    const { onClick } = useHandler();
-    return { onClick };
+  setup(props, { emit }) {
+    const { onClick } = useHandler(emit)
+    return { onClick }
   }
-});
+})
 </script>

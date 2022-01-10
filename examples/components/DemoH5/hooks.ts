@@ -1,12 +1,12 @@
-import { useContext, ref } from "vue";
+import { ref } from 'vue'
+import { Emits } from './interfaces'
 
 // 抛出frame的DOM
-export const useFrames = () => {
-  const { emit } = useContext();
-  const mobileIframe = ref<HTMLIFrameElement>(); // frame dome
+export const useFrames = (emit: Emits) => {
+  const mobileIframe = ref<HTMLIFrameElement>() // frame dome
   // frame 加载完成
   const onFrameLoad = () => {
-    emit("getframe", mobileIframe.value);
-  };
-  return { mobileIframe, onFrameLoad };
-};
+    emit('getframe', mobileIframe.value)
+  }
+  return { mobileIframe, onFrameLoad }
+}

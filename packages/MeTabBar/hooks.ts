@@ -1,12 +1,10 @@
-import { useContext } from "vue";
-import { ListItem } from "./interfaces";
+import { ListItem, Emits } from './interfaces'
 
 // 操作
-export const useHandler = () => {
-  const { emit } = useContext();
+export const useHandler = (emit: Emits) => {
   // 点击列表项
   const onClick = (item: ListItem) => {
-    !item.state && emit("on-change", { ...item });
-  };
-  return { onClick };
-};
+    !item.state && emit('on-change', { ...item })
+  }
+  return { onClick }
+}

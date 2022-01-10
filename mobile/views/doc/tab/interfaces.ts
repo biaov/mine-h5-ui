@@ -1,15 +1,19 @@
 /* eslint-disable no-unused-vars */
 
+// 子列表项
+export interface ChildListItem {
+  id: number
+  label: string
+  content: string
+}
+
 // 列表项
 export interface ListDataItem {
-  id: number;
-  label: string;
-  value: string;
-  placeholder?: string;
-  btnText?: string;
-  align?: string;
-  radius?: string;
-  background?: string;
-  color?: string;
-  disabled?: boolean;
+  id: number
+  active: number
+  label: string
+  children: ChildListItem[]
+  color?: string
+  activeColor?: string
+  lineColor?: string
 }

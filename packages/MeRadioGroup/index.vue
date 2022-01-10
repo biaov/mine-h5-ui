@@ -5,26 +5,27 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useInitSlots } from "./hooks";
+import { defineComponent } from 'vue'
+import { useInitSlots } from './hooks'
 
 export default defineComponent({
-  name: "MeRadioGroup",
+  name: 'MeRadioGroup',
+  emits: ['update:modelValue', 'on-change'],
   props: {
     // v-model值
     modelValue: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     // 排列方向
     direction: {
       type: String,
-      default: "" // vertical|horizontal
+      default: '' // vertical|horizontal
     }
   },
-  setup(props) {
-    useInitSlots(props);
-    return {};
+  setup(props, { emit }) {
+    useInitSlots(props, emit)
+    return {}
   }
-});
+})
 </script>

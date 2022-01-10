@@ -19,6 +19,16 @@
       "^/*": ["./mobile/*"]
     }
   },
-  "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],
+  "include": [
+    "examples/**/*.ts",
+    "examples/**/*.vue",
+    "mobile/**/*.ts",
+    "mobile/**/*.vue",
+    "tests/**/*.ts",
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    "typings/shims-vue.d.ts",
+    "mobile/views/doc/button/data.js"
+  ],
   "exclude": ["node_modules"]
 }

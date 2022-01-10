@@ -6,11 +6,11 @@
       type="search"
       class="u-input"
       v-model="inputVal"
-      @focus="onEvent('on-focus', $event)"
-      @blur="onEvent('on-blur', $event)"
+      @focus="onFocus"
+      @blur="onBlur"
       @keypress="onKeypress"
-      @input="onEvent('on-input', $event)"
-      @change="onEvent('on-change', $event)"
+      @input="onInput"
+      @change="onChange"
       :placeholder="placeholder"
       :style="`text-align:${align};`"
       :disabled="disabled"
@@ -22,15 +22,16 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useSearch, useBtns } from "./hooks";
-import MeIcon from "../MeIcon";
+import { defineComponent } from 'vue'
+import { useSearch, useBtns } from './hooks'
+import MeIcon from '../MeIcon'
 
 export default defineComponent({
-  name: "MeSearch",
+  name: 'MeSearch',
   components: {
     MeIcon
   },
+  emits: ['update:modelValue', 'on-click', 'on-search', 'on-focus', 'on-blur', 'on-input', 'on-change'],
   props: {
     // v-model绑定值
     modelValue: {
@@ -40,32 +41,32 @@ export default defineComponent({
     // 占位符
     placeholder: {
       type: String,
-      default: "请搜索"
+      default: '请搜索'
     },
     // 右侧按钮内容
     btnText: {
       type: String,
-      default: ""
+      default: ''
     },
     // 搜索框对齐方式
     align: {
       type: String,
-      default: "left" // left|center|right|justify|inherit
+      default: 'left' // left|center|right|justify|inherit
     },
     // 搜索框倒角
     radius: {
       type: String,
-      default: "4px"
+      default: '4px'
     },
     // 搜索框背景色
     background: {
       type: String,
-      default: ""
+      default: ''
     },
     // 字体颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     },
     // 是否禁用输入框
     disabled: {
@@ -73,10 +74,10 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { inputVal, onKeypress, onEvent } = useSearch(props);
-    const { onClean, handleBtn } = useBtns();
-    return { inputVal, onKeypress, onEvent, onClean, handleBtn };
+  setup(props, { emit }) {
+    const { inputVal, onKeypress, onFocus, onBlur, onInput, onChange } = useSearch(props, emit)
+    const { onClean, handleBtn } = useBtns(emit)
+    return { inputVal, onKeypress, onFocus, onBlur, onInput, onChange, onClean, handleBtn }
   }
-});
+})
 </script>

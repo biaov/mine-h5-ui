@@ -14,21 +14,21 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useIconName } from "./hooks";
+import { defineComponent } from 'vue'
+import { useIconName } from './hooks'
 
 export default defineComponent({
-  name: "MeEmpty",
+  name: 'MeEmpty',
   props: {
     // 文本内容
     text: {
       type: String,
-      default: ""
+      default: ''
     },
     // 类型
     type: {
       type: String,
-      default: "default" // default|network|search
+      default: 'default' // default|network|search
     },
     // 高度
     height: {
@@ -38,17 +38,17 @@ export default defineComponent({
     // 自定义图标
     iconName: {
       type: String,
-      default: ""
+      default: ''
     },
     // 自定义图片
     url: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   setup(props) {
-    const { icon } = useIconName(props);
-    return { icon };
+    const { icon } = useIconName(props)
+    return { icon }
   }
-});
+})
 </script>

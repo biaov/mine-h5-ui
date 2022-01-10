@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 动作面板 -->
   <ul class="m-toast">
@@ -13,44 +16,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onClick } = useHandlerClick();
-    return { listData, onClick };
+    const { listData, onClick } = useHandlerClick()
+    return { listData, onClick }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-toast {
-  > li {
-    margin-bottom: 10px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    .m-list-all {
-      > li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        border-bottom: 1px solid darken(@bg-color, 5%);
-        cursor: pointer;
-        > span {
-          color: @font-color;
-          font-size: @font-size;
-        }
-      }
-    }
-    :deep(.me-img) {
-      margin-bottom: 10px;
-    }
-  }
-}
-</style>

@@ -2,15 +2,15 @@
 
 // 列表项
 export interface BtnListItem {
-  type: string;
-  icon: string;
-  text: string;
+  type: string
+  icon: string
+  text: string
 }
 
 // 页面状态值
 export interface WebStatus {
-  isStart: boolean;
-  isSuspend: boolean;
-  isReset: boolean;
-  [key: string]: boolean;
+  isStart: boolean
+  isSuspend: boolean
+  isReset: boolean
+  [key: string]: boolean
 }

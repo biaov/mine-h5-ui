@@ -6,27 +6,27 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import MeIcon from "../MeIcon";
-import { useShow } from "./hooks";
+import { defineComponent } from 'vue'
+import MeIcon from '../MeIcon'
+import { useShow } from './hooks'
 
 export default defineComponent({
-  name: "MeToast",
+  name: 'MeToast',
   props: {
     // 提示语
     message: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     // 背景颜色
     bgColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 延迟时间
     durction: {
@@ -38,8 +38,8 @@ export default defineComponent({
     MeIcon
   },
   setup(props) {
-    const { isShow, isDestroy } = useShow(props);
-    return { isShow, isDestroy };
+    const { isShow, isDestroy } = useShow(props)
+    return { isShow, isDestroy }
   }
-});
+})
 </script>

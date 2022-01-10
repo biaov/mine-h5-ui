@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 时间线 -->
   <div class="m-timeline">
@@ -9,57 +12,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "TimeLine",
+  name: 'TimeLine',
   setup() {
-    return {};
+    return {}
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-timeline {
-  position: relative;
-  padding: 0 0 5px 24px;
-  &:first-of-type {
-    .u-dot {
-      border-color: @color-danger;
-    }
-  }
-  // 相同的位置
-  .same-position() {
-    position: absolute;
-    top: 8px;
-  }
-  .u-dot {
-    .same-position();
-    z-index: 2;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    border: 2px solid darken(@border-color-line, 10%);
-    border-radius: 50%;
-    background-color: @color-white;
-  }
-  .u-tail {
-    .same-position();
-    left: 6px;
-    height: 100%;
-    border-left: 2px solid @border-color-line;
-  }
-  .m-cont {
-    h2 {
-      color: @color-primary;
-    }
-    > div {
-      > ul {
-        margin-bottom: 0;
-        ul {
-          margin: 5px 0 10px;
-        }
-      }
-    }
-  }
-}
-</style>

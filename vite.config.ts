@@ -1,25 +1,25 @@
-import { defineConfig, UserConfigExport } from "vite";
-import vue from "@vitejs/plugin-vue";
-import { resolve } from "path";
-import vitePluginVuedoc from "vite-plugin-vuedoc";
-import { vitePluginVuedocConfig, vueConfig } from "./config/plugins";
-import { useGlobalVars } from "./examples/utils/variables";
+import { defineConfig, UserConfigExport } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
+import vitePluginVuedoc from 'vite-plugin-vuedoc'
+import { vitePluginVuedocConfig, vueConfig } from './config/plugins'
+import { useGlobalVars } from './examples/utils/variables'
 
-const { BaseRouter: base } = useGlobalVars();
+const { BaseRouter: base } = useGlobalVars()
 // 配置信息
 const config: UserConfigExport = defineConfig({
   base,
   plugins: [vitePluginVuedoc(vitePluginVuedocConfig), vue(vueConfig)],
   server: {
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     port: 3333
   },
   resolve: {
     // 路径别名
     alias: {
-      "@": resolve(__dirname, "./examples"),
-      "~": resolve(__dirname, "./packages"),
-      "^": resolve(__dirname, "./mobile")
+      '@': resolve(__dirname, './examples'),
+      '~': resolve(__dirname, './packages'),
+      '^': resolve(__dirname, './mobile')
     }
   },
   css: {
@@ -34,10 +34,10 @@ const config: UserConfigExport = defineConfig({
     // 多页面
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "./index.html"),
-        mobile: resolve(__dirname, "./mobile.html")
+        main: resolve(__dirname, './index.html'),
+        mobile: resolve(__dirname, './mobile.html')
       }
     }
   }
-});
-export default config;
+})
+export default config

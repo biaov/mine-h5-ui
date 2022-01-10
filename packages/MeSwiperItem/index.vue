@@ -8,11 +8,11 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useName } from "./hooks";
+import { defineComponent } from 'vue'
+import { useName } from './hooks'
 
 export default defineComponent({
-  name: "MeSwiperItem",
+  name: 'MeSwiperItem',
   props: {
     // 属性名称
     name: {
@@ -22,22 +22,22 @@ export default defineComponent({
     // 图片地址
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     // 文本
     text: {
       type: String,
-      default: ""
+      default: ''
     },
     // 背景色
     background: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   setup(props) {
-    useName(props);
-    return {};
+    useName(props)
+    return {}
   }
-});
+})
 </script>

@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 宫格 -->
   <div class="m-grid">
@@ -13,35 +16,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { grids, handleLi } = useHandlerClick();
-    return { grids, handleLi };
+    const { grids, handleLi } = useHandlerClick()
+    return { grids, handleLi }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-grid {
-  // 自定义内容
-  .u-cust {
-    :deep(.me-icon) {
-      position: relative;
-      display: block;
-      margin: 0 auto 5px;
-      &::after {
-        content: "";
-        position: absolute;
-        top: -4px;
-        right: 20px;
-        border-radius: 50%;
-        width: 14px;
-        height: 14px;
-        background: #f66;
-      }
-    }
-  }
-}
-</style>

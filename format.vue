@@ -11,11 +11,11 @@
   </me-step>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue'
 export default defineComponent({
   setup() {
-    const active = ref(["first"]); // 活动项
-    return { active };
+    const active = ref(['first']) // 活动项
+    return { active }
   }
-});
+})
 </script>

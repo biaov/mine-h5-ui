@@ -11,12 +11,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useHandler } from "./hooks";
-import { ListItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useHandler } from './hooks'
+import { ListItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeTabBar",
+  name: 'MeTabBar',
+  emits: ['on-change'],
   props: {
     // 列表数据
     list: {
@@ -26,27 +27,27 @@ export default defineComponent({
     // 上边框颜色
     borderColor: {
       type: String,
-      default: "#dcdfe6"
+      default: '#dcdfe6'
     },
     // 背景颜色
     background: {
       type: String,
-      default: "#fff"
+      default: '#fff'
     },
     // 未选中状态颜色
     color: {
       type: String,
-      default: "#949494"
+      default: '#949494'
     },
     // 选中状态颜色
     colorSelected: {
       type: String,
-      default: "#409eff"
+      default: '#409eff'
     }
   },
-  setup() {
-    const { onClick } = useHandler();
-    return { onClick };
+  setup(props, { emit }) {
+    const { onClick } = useHandler(emit)
+    return { onClick }
   }
-});
+})
 </script>

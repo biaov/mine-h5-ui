@@ -19,13 +19,14 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import CountryData from "./countryData";
-import { useScroll, useBtns } from "./hooks";
-import { ListItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import CountryData from './countryData'
+import { useScroll, useBtns } from './hooks'
+import { ListItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeIndexBar",
+  name: 'MeIndexBar',
+  emits: ['on-click'],
   props: {
     // 自定义国家数据
     list: {
@@ -35,13 +36,13 @@ export default defineComponent({
     // 自定义顶部定位高度
     topHeight: {
       type: String,
-      default: "50px"
+      default: '50px'
     }
   },
-  setup() {
-    const { curLetter, listCont } = useScroll();
-    const { handleLi } = useBtns();
-    return { curLetter, listCont, handleLi };
+  setup(props, { emit }) {
+    const { curLetter, listCont } = useScroll()
+    const { handleLi } = useBtns(emit)
+    return { curLetter, listCont, handleLi }
   }
-});
+})
 </script>

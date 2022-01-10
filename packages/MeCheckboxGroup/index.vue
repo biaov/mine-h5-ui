@@ -5,11 +5,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useInitSlots } from "./hooks";
+import { defineComponent, PropType } from 'vue'
+import { useInitSlots } from './hooks'
 
 export default defineComponent({
-  name: "MeCheckboxGroup",
+  name: 'MeCheckboxGroup',
+  emits: ['update:modelValue', 'on-change'],
   props: {
     // v-model值
     modelValue: {
@@ -19,12 +20,12 @@ export default defineComponent({
     // 排列方向
     direction: {
       type: String,
-      default: "vertical" // vertical|horizontal
+      default: 'vertical' // vertical|horizontal
     }
   },
-  setup(props) {
-    useInitSlots(props);
-    return {};
+  setup(props, { emit }) {
+    useInitSlots(props, emit)
+    return {}
   }
-});
+})
 </script>

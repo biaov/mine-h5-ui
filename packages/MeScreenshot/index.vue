@@ -5,11 +5,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeScreenshot",
+  name: 'MeScreenshot',
+  emits: ['on-click', 'on-end'],
   props: {
     // 开始截图状态
     start: {
@@ -24,12 +25,12 @@ export default defineComponent({
     // 下载图片名称
     imageName: {
       type: String,
-      default: "screenshot"
+      default: 'screenshot'
     }
   },
-  setup(props) {
-    const { screenshotRef, onClick } = useHandler(props);
-    return { screenshotRef, onClick };
+  setup(props, { emit }) {
+    const { screenshotRef, onClick } = useHandler(props, emit)
+    return { screenshotRef, onClick }
   }
-});
+})
 </script>

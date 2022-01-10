@@ -2,21 +2,21 @@
 
 // 三级选项
 export interface GrandsonListItem {
-  icon: string;
-  value: string;
-  color: string;
+  icon: string
+  value: string
+  color: string
 }
 
 // 子选项
-export interface ChildrenListItem {
-  id: number;
-  value: string;
-  visible: boolean;
-  list: GrandsonListItem[];
+export interface ChildListItem {
+  id: number
+  value: string
+  visible: boolean
+  list: GrandsonListItem[]
 }
 // 列表项
 export interface ListDataItem {
-  id: number;
-  label: string;
-  list: ChildrenListItem[];
+  id: number
+  label: string
+  list: ChildListItem[]
 }

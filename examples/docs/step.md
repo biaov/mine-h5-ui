@@ -113,7 +113,7 @@ export default defineComponent({
 
 ```Vue
 <template>
-  <me-step :active="active" color="#ff66a6" active-color="#a079de">
+  <me-step :active="active" icon="in_biyan" active-icon="in_zhengyan">
     <me-step-item name="first">步骤一</me-step-item>
     <me-step-item name="second">步骤二</me-step-item>
   </me-step>

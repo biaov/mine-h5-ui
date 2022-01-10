@@ -1,0 +1,29 @@
+.m-input {
+  > li {
+    margin-bottom: 10px;
+    .u-label {
+      width: 100%;
+      margin-bottom: 10px;
+      color: @font-color-reduce;
+      font-size: @font-size-min;
+    }
+
+    .m-list-all {
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid darken(@bg-color, 5%);
+        margin-bottom: 10px;
+        cursor: pointer;
+        :deep(.me-input) {
+          :deep(.u-input[disabled]) {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

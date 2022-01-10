@@ -1,6 +1,6 @@
 <template>
   <!-- 单选框 -->
-  <div class="me-radio" @click="handleClick" :aria-checked="isChecked + ''" :aria-disabled="disabled + ''">
+  <div class="me-radio" @click="handleClick" :data-checked="isChecked + ''" :data-disabled="disabled + ''">
     <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
     <div class="u-value">
       <slot></slot>
@@ -8,15 +8,16 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import MeIcon from "../MeIcon";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import MeIcon from '../MeIcon'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeRadio",
+  name: 'MeRadio',
   components: {
     MeIcon
   },
+  emits: ['update:modelValue', 'on-click'],
   props: {
     // v-model的值
     modelValue: {
@@ -30,27 +31,27 @@ export default defineComponent({
     // 图标形状
     shape: {
       type: String,
-      default: "round" // square|round
+      default: 'round' // square|round
     },
     // 自定义图标
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 自定义选中图标
     iconSelect: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标大小
     iconSize: {
       type: String,
-      default: "20px"
+      default: '20px'
     },
     // 选中状态颜色
     checkedColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 禁用状态
     disabled: {
@@ -58,9 +59,9 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props) {
-    const { isChecked, iconName, handleClick, setStatus } = useHandler(props);
-    return { isChecked, iconName, handleClick, setStatus };
+  setup(props, { emit }) {
+    const { isChecked, iconName, handleClick, setStatus } = useHandler(props, emit)
+    return { isChecked, iconName, handleClick, setStatus }
   }
-});
+})
 </script>

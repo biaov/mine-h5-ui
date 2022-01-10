@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 文档 -->
   <div class="m-doc">
@@ -17,39 +20,28 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import MineHeader from "@/components/MineHeader";
-import SideBar from "@/components/SideBar";
-import DemoH5 from "@/components/DemoH5";
-import { useChangeRouter } from "./hooks";
-
-export default defineComponent({
-  components: {
-    MineHeader,
-    SideBar,
-    DemoH5
-  },
-  setup() {
-    const { changeFrameRouter } = useChangeRouter();
-    return { changeFrameRouter };
-  }
-});
+import { onBeforeRouteUpdate, useRoute } from 'vue-router'
+import { PostMessage } from '@/utils/functions'
+import { PostMessageReturn } from '@/utils/types'
 </script>
-<style scoped lang="less">
-.m-doc {
-  padding-top: 60px;
-  .m-content {
-    display: flex;
-    height: calc(100vh - 60px);
-    border-top: @boder-common;
-    .m-md {
-      width: 50%;
-      flex-grow: 1;
-      height: 100%;
-      padding: 15px;
-      overflow-y: auto;
-      border-right: @boder-common;
-    }
-  }
+<script lang="ts" setup>
+import MineHeader from '@/components/MineHeader'
+import SideBar from '@/components/SideBar'
+import DemoH5 from '@/components/DemoH5'
+
+const route = useRoute()
+let postMessage: PostMessageReturn // 发送消息对象
+// frame 跳转
+const navigateTo = (path: string) => {
+  postMessage.send(path)
 }
-</style>
+// 路由更新
+onBeforeRouteUpdate(({ path }) => {
+  navigateTo(path)
+})
+// 改变 frame 的 router
+const changeFrameRouter = (frame: HTMLIFrameElement) => {
+  postMessage = PostMessage(frame.contentWindow as Window)
+  navigateTo(route.path)
+}
+</script>

@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- H5演示 -->
   <ul class="m-side-bar">
@@ -23,87 +26,14 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useWebData } from "./hook";
+import { defineComponent } from 'vue'
+import { useWebData } from './hook'
 
 export default defineComponent({
-  name: "SideBar",
+  name: 'SideBar',
   setup() {
-    const { sidebarList } = useWebData();
-    return { sidebarList };
+    const { sidebarList } = useWebData()
+    return { sidebarList }
   }
-});
+})
 </script>
-<style scoped lang="less">
-// 相同的高度
-.same-height(@pd-lf:15px) {
-  height: 34px;
-  line-height: 34px;
-  padding-right: 10px;
-  padding-left: @pd-lf;
-}
-// 相同的字体
-.same-font() {
-  color: @font-color-reduce;
-  font-size: @font-size;
-  font-weight: normal;
-  &:hover {
-    color: @color-primary;
-    background: @bg-hover;
-  }
-}
-.m-side-bar {
-  width: 220px;
-  height: 100%;
-  border-right: 1px solid @border-color-common;
-  padding: 15px 0 30px;
-  overflow-y: auto;
-  > li {
-    .u-tit {
-      .same-height();
-      color: lighten(@color-primary, 10%);
-      font-size: @font-size;
-      font-weight: 600;
-    }
-    .m-list-ct {
-      > li {
-        position: relative;
-        &.spot::after {
-          content: "";
-          position: absolute;
-          top: 8px;
-          left: 85px;
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: @color-danger;
-        }
-        // 中间层/二层
-        .u-tit-ct {
-          .same-height(25px);
-          color: darken(@font-color-reduce, 5%);
-          font-size: @font-size;
-          font-weight: 600;
-          cursor: pointer;
-          &.u-in {
-            .same-font();
-          }
-        }
-        // 最后一层/三层列表
-        .m-list-in {
-          > li {
-            .same-height(35px);
-            .same-font();
-          }
-        }
-      }
-    }
-  }
-  a {
-    .clamp();
-    width: 100%;
-    color: inherit;
-    font-size: inherit;
-  }
-}
-</style>

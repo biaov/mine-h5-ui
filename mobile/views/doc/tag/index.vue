@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 标签 -->
   <ul class="m-tag">
@@ -8,31 +11,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onClose } = useHandlerClick();
-    return { listData, onClose };
+    const { listData, onClose } = useHandlerClick()
+    return { listData, onClose }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-tag {
-  > li {
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    :deep(.me-tag) {
-      margin: 0 10px 15px 0;
-      .u-txt i {
-        cursor: pointer;
-      }
-    }
-  }
-}
-</style>

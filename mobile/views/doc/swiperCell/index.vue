@@ -1,3 +1,6 @@
+<style scoped lang="less">
+@import './index.less';
+</style>
 <template>
   <!-- 滑动单元格 -->
   <ul class="m-swiper-cell">
@@ -18,46 +21,13 @@
   </ul>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandlerClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandlerClick } from './hooks'
 
 export default defineComponent({
   setup() {
-    const { listData, onDelete, onCollect } = useHandlerClick();
-    return { listData, onDelete, onCollect };
+    const { listData, onDelete, onCollect } = useHandlerClick()
+    return { listData, onDelete, onCollect }
   }
-});
+})
 </script>
-<style scoped lang="less">
-.m-swiper-cell {
-  > li {
-    margin-bottom: 10px;
-    .u-label {
-      width: 100%;
-      margin-bottom: 10px;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
-    }
-    .u-tit {
-      height: 40px;
-      line-height: 40px;
-      padding: 0 15px;
-      background: @bg-color;
-      color: @font-color;
-      font-size: @font-size;
-    }
-    .m-btns {
-      display: flex;
-      justify-content: space-between;
-      width: 100px;
-      height: 40px;
-      line-height: 40px;
-      background: @color-danger;
-      text-align: center;
-      color: @color-white;
-      font-size: @font-size;
-    }
-    cursor: grab;
-  }
-}
-</style>

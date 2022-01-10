@@ -13,12 +13,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { useHandler } from "./hooks";
-import { ListItem } from "./interfaces";
+import { defineComponent, PropType } from 'vue'
+import { useHandler } from './hooks'
+import { ListItem } from './interfaces'
 
 export default defineComponent({
-  name: "MeVirtualList",
+  name: 'MeVirtualList',
+  emits: ['on-load-more'],
   props: {
     // 列表数据
     list: {
@@ -33,7 +34,7 @@ export default defineComponent({
     // 虚拟列表高度
     height: {
       type: String,
-      default: "100%"
+      default: '100%'
     },
     // 固定选项高度
     itemHeight: {
@@ -56,9 +57,9 @@ export default defineComponent({
       default: 8
     }
   },
-  setup(props) {
-    const { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef } = useHandler(props);
-    return { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef };
+  setup(props, { emit }) {
+    const { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef } = useHandler(props, emit)
+    return { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef }
   }
-});
+})
 </script>

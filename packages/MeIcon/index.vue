@@ -3,11 +3,12 @@
   <i class="iconfont me-icon" :class="name" :style="`color:${color};font-size:${size};`" @click="onClick"></i>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useClick } from "./hooks";
+import { defineComponent } from 'vue'
+import { useClick } from './hooks'
 
 export default defineComponent({
-  name: "MeIcon",
+  name: 'MeIcon',
+  emits: ['on-click'],
   props: {
     // class名称
     name: {
@@ -17,19 +18,19 @@ export default defineComponent({
     // 图标颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标大小
     size: {
       type: String,
-      default: ""
+      default: ''
     }
   },
-  setup() {
-    const { onClick } = useClick();
+  setup(props, { emit }) {
+    const { onClick } = useClick(emit)
     return {
       onClick
-    };
+    }
   }
-});
+})
 </script>

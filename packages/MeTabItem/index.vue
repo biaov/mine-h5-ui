@@ -5,11 +5,11 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandler } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandler } from './hooks'
 
 export default defineComponent({
-  name: "MeTabItem",
+  name: 'MeTabItem',
   props: {
     // 标签内容
     label: {
@@ -23,8 +23,8 @@ export default defineComponent({
     }
   },
   setup(prop) {
-    const { isShow } = useHandler(prop);
-    return { isShow };
+    const { isShow } = useHandler(prop)
+    return { isShow }
   }
-});
+})
 </script>

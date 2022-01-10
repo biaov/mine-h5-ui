@@ -13,11 +13,9 @@
         <li
           v-for="(item, index) in listData"
           :key="index"
-          v-on="{
-            touchmove: $event => onTouchmove($event, index),
-            touchend: $event => onTouchend($event, index)
-          }"
           @touchstart.prevent="onTouchstart($event, index)"
+          @touchmove="onTouchmove($event, index)"
+          @touchend="onTouchend($event, index)"
           @mousedown.prevent="onMousedown($event, index)"
         >
           <!-- 移动的区域 -->
@@ -30,16 +28,17 @@
   </transition>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useHandMove, useBtns } from "./hooks";
+import { defineComponent } from 'vue'
+import { useHandMove, useBtns } from './hooks'
 
 export default defineComponent({
-  name: "MeAddressPicker",
+  name: 'MeAddressPicker',
+  emits: ['update:modelValue', 'on-cancel', 'on-sure'],
   props: {
     // v-model绑定值
     modelValue: {
       type: String,
-      default: ""
+      default: ''
     },
     // 是否显示时间选择器
     visible: {
@@ -49,13 +48,13 @@ export default defineComponent({
     // 分割符
     separator: {
       type: String,
-      default: "-"
+      default: '-'
     }
   },
-  setup(props) {
-    const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove();
-    const { onCancel, onSure } = useBtns(props, currentValue);
-    return { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown, onCancel, onSure };
+  setup(props, { emit }) {
+    const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
+    const { onCancel, onSure } = useBtns(props, emit, currentValue)
+    return { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown, onCancel, onSure }
   }
-});
+})
 </script>
