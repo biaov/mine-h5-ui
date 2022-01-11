@@ -1,0 +1,44 @@
+{
+  "name": "mine-h5-ui",
+  "version": "2.3.1-beta.1",
+  "private": false,
+  "author": {
+    "name": "biaov",
+    "email": "biaov@qq.com"
+  },
+  "main": "lib/index.esm.js",
+  "style": "lib/theme-default/index.css",
+  "scripts": {},
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "MINE-H5-UI",
+    "Vue",
+    "Vue3",
+    "VueJs",
+    "UI组件"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biaov/MINE-H5-UI.git"
+  },
+  "homepage": "https://mineh5ui.biaov.cn/v2",
+  "bugs": {
+    "url": "https://github.com/biaov/MINE-H5-UI/issues"
+  },
+  "publishConfig": {},
+  "license": "ISC",
+  "contributors": [
+    {
+      "name": "biaov",
+      "email": "biaov@qq.com"
+    }
+  ],
+  "dependencies": {
+    "html2canvas": "^1.4.0",
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {}
+}
