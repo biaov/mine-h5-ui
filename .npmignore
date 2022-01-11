@@ -9,13 +9,19 @@ node_modules/
 packages/
 public/
 tests/
+.husky
 
 # 忽略指定文件
 .editorconfig
 .eslintignore
 .eslintrc
+.eslintrc.js
 .gitignore
 .prettierrc
+.prettierignore
+babel.config.js
+Explain.md
+format.vue
 .npmrc
 *.html
 jest.config.js
@@ -24,3 +30,5 @@ vite.config.ts
 package-lock.json
 pre-publish.json
 pre-publish-github.json
+vue.config.js
+Release.md
