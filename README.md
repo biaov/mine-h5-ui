@@ -17,7 +17,7 @@
 ## 安装
 
 ```Basic
-npm i mine-h5-ui@2 -S
+npm i mine-h5-ui@latest
 ```
 
 ### 使用
