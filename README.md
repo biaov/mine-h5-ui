@@ -7,7 +7,7 @@
         <img src="https://mineh5ui.biaov.cn/v2/logo.svg" width="200px" title="mineh5ui" alt="mineh5ui">
     </a>
 </p>
-<h2 align="center"><a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/badge/npm-2.3.1-beta.1-blue" /></a></h2>
+<h2 align="center"><a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/badge/npm-2.3.0-blue" /></a></h2>
 
 ## 使用文档
 
