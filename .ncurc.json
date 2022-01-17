@@ -1,0 +1,4 @@
+{
+  "upgrade": true,
+  "reject": ["@types/jest", "@vitejs/plugin-vue", "jest", "ts-jest"]
+}

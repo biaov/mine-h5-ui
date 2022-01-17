@@ -13,13 +13,7 @@
   "engines": {
     "node": ">=12"
   },
-  "keywords": [
-    "MINE-H5-UI",
-    "Vue",
-    "Vue3",
-    "VueJs",
-    "UI组件"
-  ],
+  "keywords": ["MINE-H5-UI", "Vue", "Vue3", "VueJs", "UI组件"],
   "repository": {
     "type": "git",
     "url": "https://github.com/biaov/MINE-H5-UI.git"
