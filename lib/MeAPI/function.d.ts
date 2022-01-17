@@ -1,0 +1,63 @@
+import { DTCallback, LockedCallBack } from './types';
+import { FormatData } from './interfaces';
+export declare const IsType: (type: string, value: any) => boolean;
+export declare const DeepCopyRA: (arg: any) => any;
+export declare const IsLeapyear: (num: number) => boolean;
+export declare const FormatTime: (arg?: string | number | Date) => {
+    Y: string;
+    M: string;
+    D: string;
+    w: string;
+    h: string;
+    m: string;
+    s: string;
+    date: string;
+    time: string;
+    datetime: string;
+};
+export declare const CountDown: (num: number, format?: string) => FormatData;
+export declare const Throttle: (fn: DTCallback, time?: number) => (e: Event) => void;
+export declare const Debounce: (fn: DTCallback, time?: number) => (e: Event) => void;
+export declare const FormatThousand: (num: number) => string;
+export declare const Locked: (fn: LockedCallBack, time?: number) => (e?: Event | undefined) => void;
+export declare const AddZero: (str: string, float1: number, float2: number) => string;
+export declare const Calculation: (num1: number, num2: number) => {
+    add: () => number;
+    subtract: () => number;
+    multiply: () => number;
+    divide: () => number;
+};
+export declare const GenerateRandom: () => string;
+export declare const Retarder: (time?: number) => Promise<boolean>;
+declare const _default: {
+    IsType: (type: string, value: any) => boolean;
+    DeepCopyRA: (arg: any) => any;
+    IsLeapyear: (num: number) => boolean;
+    FormatTime: (arg?: string | number | Date) => {
+        Y: string;
+        M: string;
+        D: string;
+        w: string;
+        h: string;
+        m: string;
+        s: string;
+        date: string;
+        time: string;
+        datetime: string;
+    };
+    CountDown: (num: number, format?: string) => FormatData;
+    Throttle: (fn: DTCallback, time?: number) => (e: Event) => void;
+    Debounce: (fn: DTCallback, time?: number) => (e: Event) => void;
+    FormatThousand: (num: number) => string;
+    Locked: (fn: LockedCallBack, time?: number) => (e?: Event | undefined) => void;
+    AddZero: (str: string, float1: number, float2: number) => string;
+    Calculation: (num1: number, num2: number) => {
+        add: () => number;
+        subtract: () => number;
+        multiply: () => number;
+        divide: () => number;
+    };
+    GenerateRandom: () => string;
+    Retarder: (time?: number) => Promise<boolean>;
+};
+export default _default;
