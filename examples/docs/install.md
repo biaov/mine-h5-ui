@@ -10,9 +10,7 @@
 :::demo
 
 ```Basic
-npm install mine-h5-ui --save
-::or
-npm i mine-h5-ui -S
+npm i mine-h5-ui@version1
 ```
 
 :::

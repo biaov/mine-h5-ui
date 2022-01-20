@@ -7,7 +7,11 @@
         <img src="https://mineh5ui.biaov.cn/logo.svg" width="200px" title="mineh5ui" alt="mineh5ui">
     </a>
 </p>
-<h2 align="center"><a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/badge/npm-1.6.1-blue" /></a></h2>
+
+<h2 align="center">
+  <a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/npm/v/mine-h5-ui/version1.svg" /></a>
+  <a href="https://www.npmjs.com/package/mine-h5-ui/v/version1"><img src="https://img.shields.io/npm/dt/mine-h5-ui" /></a>
+</h2>
 
 ## 使用文档
 

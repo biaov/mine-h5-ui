@@ -1,9 +1,12 @@
 <template>
   <!-- 头部 -->
   <div class="g-header">
-    <p class="u-tips">你正在浏览的是 v1.x 的文档，最新 v2.x 的文档<a href="/v2">在这里</a></p>
+    <p class="u-tips">
+      你正在浏览的是 v1.x 的文档，最新 v2.x 的文档
+      <a href="/v2">在这里</a>
+    </p>
     <div class="g-wrap m-hd">
-      <router-link class="u-logo" :to="{name:'index'}" title="回到首页"><img src="../assets/logo.svg" width="100%" alt=""></router-link>
+      <router-link class="u-logo" :to="{ name: 'index' }" title="回到首页"><img src="../assets/logo.svg" width="100%" alt="" /></router-link>
       <div class="u-rt">
         <nav-bar :list="listData"></nav-bar>
         <combo-box :list="listVersion"></combo-box>
@@ -64,8 +67,8 @@ export default {
   z-index: 5;
   width: 100vw;
   border-bottom: 1px solid rgba(34, 34, 34, 0.2);
-  box-shadow: 0 2px 10px #ccc;
   background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 2px 10px #ccc;
   .u-tips {
     display: flex;
     justify-content: center;
@@ -76,7 +79,9 @@ export default {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     a {
+      margin-left: 5px;
       color: #fff;
+      font-weight: bold;
     }
   }
   .m-hd {
