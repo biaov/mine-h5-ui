@@ -11,6 +11,7 @@
 <h2 align="center">
   <a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/npm/v/mine-h5-ui.svg" /></a>
   <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://img.shields.io/npm/dt/mine-h5-ui" /></a>
+  <a href="https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg" /></a>
 </h2>
 
 ## 使用文档
