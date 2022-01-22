@@ -45,7 +45,7 @@ export default [
     title: '单击选择完整时间',
     value: 'datetime',
     visible: false,
-    minDate: new Date('1990-08-08 08:08'),
-    maxDate: new Date('2040-08-08 08:08')
+    minDate: new Date('1990/08/08 08:08'),
+    maxDate: new Date('2040/08/08 08:08')
   }
 ]

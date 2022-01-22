@@ -1,6 +1,6 @@
 import Validator from './validator'
-import { DTCallback, LockedCallBack } from './types'
-import { FormatData, IsLocked } from './interfaces'
+import { DTCallback, LockedCallback, ThrottleBack, DebounceBack, LockedBack } from './types'
+import { FormatData, IsLocked, FormatTimeBack, CalculationBack } from './interfaces'
 
 const { validThousand, validThousandFloat } = Validator
 
@@ -10,7 +10,7 @@ const { validThousand, validThousandFloat } = Validator
  * @param { any } value - 需要判断的值
  * @returns { boolean } - 是否该类型
  */
-export const IsType = (type: string, value: any) => Object.prototype.toString.call(value).slice(8, -1) === type
+export const IsType = (type: string, value: any): boolean => Object.prototype.toString.call(value).slice(8, -1) === type
 
 /**
  * 深拷贝变量-递归算法(recursive algorithm)
@@ -18,7 +18,7 @@ export const IsType = (type: string, value: any) => Object.prototype.toString.ca
  * @param { any } arg - 需要深拷贝的变量
  * @returns { any } - 拷贝完成的值
  */
-export const DeepCopyRA = (arg: any) => {
+export const DeepCopyRA = (arg: any): any => {
   const newValue = IsType('Object', arg) // 判断是否是对象
     ? {}
     : IsType('Array', arg) // 判断是否是数组
@@ -42,7 +42,7 @@ export const DeepCopyRA = (arg: any) => {
  * @param { number } year - 能被4整除,不能被100整除,能被400整除;优先级:400>100>4
  * @returns { boolean } - true:是闰年,false:不是闰年
  */
-export const IsLeapyear = (num: number) => {
+export const IsLeapyear = (num: number): boolean => {
   // 判断是否是数值
   if (!IsType('Number', num)) {
     throw new Error(`${num} is not number`)
@@ -53,20 +53,20 @@ export const IsLeapyear = (num: number) => {
 /**
  * 时间转换
  * @param { string | Number | Date} [arg=new Date()] - 需要转换的时间
- * @returns { Object } - 转换后的时间数据对象
- * @returns { string } { Object }.Y - 年
- * @returns { string } { Object }.M - 月
- * @returns { string } { Object }.D - 日
- * @returns { string } { Object }.w - 星期
- * @returns { string } { Object }.h - 时
- * @returns { string } { Object }.m - 分
- * @returns { string } { Object }.s - 秒
- * @returns { string } { Object }.date - 日期
- * @returns { string } { Object }.time - 时间
- * @returns { string } { Object }.datetime - 日期时间
+ * @returns { FormatTimeBack } - 转换后的时间数据对象
+ * @returns { string } FormatTimeBack.Y - 年
+ * @returns { string } FormatTimeBack.M - 月
+ * @returns { string } FormatTimeBack.D - 日
+ * @returns { string } FormatTimeBack.w - 星期
+ * @returns { string } FormatTimeBack.h - 时
+ * @returns { string } FormatTimeBack.m - 分
+ * @returns { string } FormatTimeBack.s - 秒
+ * @returns { string } FormatTimeBack.date - 日期
+ * @returns { string } FormatTimeBack.time - 时间
+ * @returns { string } FormatTimeBack.datetime - 日期时间
  */
 
-export const FormatTime = (arg: string | number | Date = new Date()) => {
+export const FormatTime = (arg: string | number | Date = new Date()): FormatTimeBack => {
   // 非空判断
   if ((arg as string).trim() === '') throw new Error(`${arg} is not null`)
   const str = IsType('Number', arg) && String(arg).length < 13 ? (arg as number) * 1000 : arg // 转化成ms
@@ -94,14 +94,14 @@ export const FormatTime = (arg: string | number | Date = new Date()) => {
  * 倒时间计算
  * @param { number } num - 需要转化的时间，ms
  * @param { string } [format="hh:mm:ss"] - 需要转化的时间，ms
- * @returns { Object } - 转换后的时间数据对象
- * @returns { string } { Object }.DD - 日
- * @returns { string } { Object }.hh - 时
- * @returns { string } { Object }.mm - 分
- * @returns { string } { Object }.ss - 秒
- * @returns { string } { Object }.ms - 毫秒
+ * @returns { FormatData } - 转换后的时间数据对象
+ * @returns { string } FormatData.DD - 日
+ * @returns { string } FormatData.hh - 时
+ * @returns { string } FormatData.mm - 分
+ * @returns { string } FormatData.ss - 秒
+ * @returns { string } FormatData.ms - 毫秒
  */
-export const CountDown = (num: number, format = 'hh:mm:ss') => {
+export const CountDown = (num: number, format = 'hh:mm:ss'): FormatData => {
   if (!IsType('Number', num)) throw new Error(`${num} is not number`) // 是否是数字
   if (!'DD:hh:mm:ss:ms'.includes(format)) {
     throw new Error(`${format} form error`) // 格式是否正确
@@ -129,9 +129,9 @@ export const CountDown = (num: number, format = 'hh:mm:ss') => {
  * 节流
  * @param { DTCallback } fn - 回调业务处理函数
  * @param { number } [time=1000] - 定时器时间
- * @returns { Function } - 返回的 event 函数
+ * @returns { ThrottleBack } - 返回的 event 函数
  */
-export const Throttle = (fn: DTCallback, time = 1000) => {
+export const Throttle = (fn: DTCallback, time = 1000): ThrottleBack => {
   let timer: NodeJS.Timeout | null = null // 定时器
   return (e: Event) => {
     !timer &&
@@ -146,9 +146,9 @@ export const Throttle = (fn: DTCallback, time = 1000) => {
  * 防抖
  * @param { DTCallback } fn - 回调业务处理函数
  * @param { number } [time=300] - 定时器时间
- * @returns { (e?: Event) => void } - 返回的 event 函数
+ * @returns { DebounceBack } - 返回的 event 函数
  */
-export const Debounce = (fn: DTCallback, time = 300) => {
+export const Debounce = (fn: DTCallback, time = 300): DebounceBack => {
   let timer: NodeJS.Timeout | undefined // 定时器
   return (e: Event) => {
     if (timer !== undefined) clearTimeout(timer) // 清理之前的操作
@@ -163,7 +163,7 @@ export const Debounce = (fn: DTCallback, time = 300) => {
  * @param { number } num - 需要转换的数字
  * @returns { string } - 转换后的字符串
  */
-export const FormatThousand = (num: number) => {
+export const FormatThousand = (num: number): string => {
   if (!IsType('Number', num)) throw new Error(`${num} is not number`) // 数字校验
   const numStr = String(num) // 数字转字符串
   // 返回替换值
@@ -172,11 +172,11 @@ export const FormatThousand = (num: number) => {
 
 /**
  * 锁定
- * @param { LockedCallBack } fn - 回调函数
+ * @param { LockedCallback } fn - 回调函数
  * @param { number } [time=5000] - 超时自动关闭
- * @returns { (e?: Event) => void } 返回函数
+ * @returns { LockedBack } 返回函数
  */
-export const Locked = (fn: LockedCallBack, time = 5000) => {
+export const Locked = (fn: LockedCallback, time = 5000): LockedBack => {
   let timer: NodeJS.Timeout | null = null // 定时器
   const isLocked = { value: false }
   // 监听锁状态的改变
@@ -212,16 +212,16 @@ export const Locked = (fn: LockedCallBack, time = 5000) => {
  * @param { number } float2 - 第二个小数位数
  * @returns { string } - 加 0 补位之后的值
  */
-export const AddZero = (str: string, float1: number, float2: number) => str + new Array(Math.abs(float1 - float2) + 1).join('0')
+export const AddZero = (str: string, float1: number, float2: number): string => str + new Array(Math.abs(float1 - float2) + 1).join('0')
 
 /**
  * 加减乘除运算
  * 使用方法：Calculation(0.1, 0.2).add();
  * @param { number } num1 - 运算值 1
  * @param { number } num2 - 运算值 2
- * @returns { Object } - 运算方法 add subtract multiply divide
+ * @returns { CalculationBack } - 运算方法 add subtract multiply divide
  */
-export const Calculation = (num1: number, num2: number) => {
+export const Calculation = (num1: number, num2: number): CalculationBack => {
   // 数字
   if (!IsType('Number', num1) || !IsType('Number', num2)) {
     throw new Error(`${num1} or ${num2} is not number`)
@@ -250,14 +250,14 @@ export const Calculation = (num1: number, num2: number) => {
  * @param { void }
  * @returns { string } 生成的随机数
  */
-export const GenerateRandom = () => +new Date() + String.prototype.slice.call(Math.random(), 2, 7)
+export const GenerateRandom = (): string => +new Date() + String.prototype.slice.call(Math.random(), 2, 7)
 
 /**
  * 延迟器
  * @param { number } [time=500] 延迟时间
  * @returns { Promise<boolean> } Promise
  */
-export const Retarder = (time = 500) =>
+export const Retarder = (time = 500): Promise<boolean> =>
   new Promise<boolean>(resolve => {
     setTimeout(() => {
       resolve(true)
