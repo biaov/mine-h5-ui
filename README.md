@@ -11,6 +11,7 @@
 <h2 align="center">
   <a href="https://mineh5ui.biaov.cn/"><img src="https://img.shields.io/npm/v/mine-h5-ui/version1.svg" /></a>
   <a href="https://www.npmjs.com/package/mine-h5-ui/v/version1"><img src="https://img.shields.io/npm/dt/mine-h5-ui" /></a>
+  <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://packagephobia.com/badge?p=mine-h5-ui@version1" /></a>
   <a href="https://github.com/biaov/MINE-H5-UI/blob/v1/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg" /></a>
 </h2>
 
