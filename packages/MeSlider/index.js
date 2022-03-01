@@ -1,6 +1,6 @@
-import MeSlider from "./index.vue";
+import MeSlider from './index.vue'
 MeSlider.install = Vue => {
-  Vue.component(MeSlider.name, MeSlider);
-};
+  Vue.component(MeSlider.name, MeSlider)
+}
 
-export default MeSlider;
+export default MeSlider

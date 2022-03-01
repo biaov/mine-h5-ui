@@ -3,15 +3,7 @@
   <ul class="m-step">
     <li v-for="list in listData" :key="list.id">
       <div class="u-label">{{ list.label }}</div>
-      <me-step
-        :active="list.active"
-        :direction="list.direction"
-        :type="list.type"
-        :color="list.color"
-        :activeColor="list.activeColor"
-        :icon="list.icon"
-        :activeIcon="list.activeIcon"
-      >
+      <me-step :active="list.active" :direction="list.direction" :type="list.type" :color="list.color" :activeColor="list.activeColor" :icon="list.icon" :activeIcon="list.activeIcon">
         <me-step-item v-for="item in list.children" :key="item.name" :name="item.name">
           <template v-if="item.time">
             <h3 class="u-tit">{{ item.label }}</h3>
@@ -32,146 +24,146 @@ export default {
       listData: [
         {
           id: 1,
-          label: "基础用法",
-          active: ["waitPay"],
+          label: '基础用法',
+          active: ['waitPay'],
           children: [
             {
-              name: "waitPay",
-              label: "待支付"
+              name: 'waitPay',
+              label: '待支付'
             },
             {
-              name: "waitSend",
-              label: "待发货"
+              name: 'waitSend',
+              label: '待发货'
             },
             {
-              name: "waitReceive",
-              label: "待收货"
+              name: 'waitReceive',
+              label: '待收货'
             },
             {
-              name: "finish",
-              label: "已完成"
+              name: 'finish',
+              label: '已完成'
             }
           ]
         },
         {
           id: 2,
-          label: "主题类型",
-          active: ["waitPay"],
-          type: "danger",
+          label: '主题类型',
+          active: ['waitPay'],
+          type: 'danger',
           children: [
             {
-              name: "waitPay",
-              label: "待支付"
+              name: 'waitPay',
+              label: '待支付'
             },
             {
-              name: "waitSend",
-              label: "待发货"
+              name: 'waitSend',
+              label: '待发货'
             },
             {
-              name: "waitReceive",
-              label: "待收货"
+              name: 'waitReceive',
+              label: '待收货'
             },
             {
-              name: "finish",
-              label: "已完成"
+              name: 'finish',
+              label: '已完成'
             }
           ]
         },
         {
           id: 3,
-          label: "自定义主题",
-          active: ["waitPay"],
-          color: "#ff66a6",
-          activeColor: "#a079de",
+          label: '自定义主题',
+          active: ['waitPay'],
+          color: '#ff66a6',
+          activeColor: '#a079de',
           children: [
             {
-              name: "waitPay",
-              label: "待支付"
+              name: 'waitPay',
+              label: '待支付'
             },
             {
-              name: "waitSend",
-              label: "待发货"
+              name: 'waitSend',
+              label: '待发货'
             },
             {
-              name: "waitReceive",
-              label: "待收货"
+              name: 'waitReceive',
+              label: '待收货'
             },
             {
-              name: "finish",
-              label: "已完成"
+              name: 'finish',
+              label: '已完成'
             }
           ]
         },
         {
           id: 4,
-          label: "自定义图标",
-          active: ["waitPay"],
-          icon: "in_biyan",
-          activeIcon: "in_zhengyan",
+          label: '自定义图标',
+          active: ['waitPay'],
+          icon: 'in_biyan',
+          activeIcon: 'in_zhengyan',
           children: [
             {
-              name: "waitPay",
-              label: "待支付"
+              name: 'waitPay',
+              label: '待支付'
             },
             {
-              name: "waitSend",
-              label: "待发货"
+              name: 'waitSend',
+              label: '待发货'
             },
             {
-              name: "waitReceive",
-              label: "待收货"
+              name: 'waitReceive',
+              label: '待收货'
             },
             {
-              name: "finish",
-              label: "已完成"
+              name: 'finish',
+              label: '已完成'
             }
           ]
         },
         {
           id: 5,
-          label: "方向",
-          active: ["waitPay"],
-          direction: "vertical",
+          label: '方向',
+          active: ['waitPay'],
+          direction: 'vertical',
           children: [
             {
-              name: "waitPay",
-              label: "状态一",
-              time: "2021-12-18 17:51:01"
+              name: 'waitPay',
+              label: '状态一',
+              time: '2021-12-18 17:51:01'
             },
             {
-              name: "waitSend",
-              label: "状态二",
-              time: "2021-12-18 17:51:02"
+              name: 'waitSend',
+              label: '状态二',
+              time: '2021-12-18 17:51:02'
             },
             {
-              name: "waitReceive",
-              label: "状态三",
-              time: "2021-12-18 17:51:03"
+              name: 'waitReceive',
+              label: '状态三',
+              time: '2021-12-18 17:51:03'
             },
             {
-              name: "finish",
-              label: "状态四",
-              time: "2021-12-18 17:51:04"
+              name: 'finish',
+              label: '状态四',
+              time: '2021-12-18 17:51:04'
             }
           ]
         }
       ]
-    };
+    }
   },
   methods: {
     // 点击下一步
     onClickNext(item) {
-      const child = item.children;
+      const child = item.children
       if (item.active.length < child.length) {
-        const last = item.active.at(-1);
-        const index = child.findIndex(el => el.name === last);
-        item.active.push(child[index + 1].name);
+        const last = item.active.at(-1)
+        const index = child.findIndex(el => el.name === last)
+        item.active.push(child[index + 1].name)
       } else {
-        item.active = [child[0].name];
+        item.active = [child[0].name]
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-step {

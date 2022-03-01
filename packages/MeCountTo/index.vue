@@ -1,13 +1,13 @@
 <template>
   <!-- 数字滚动 -->
   <div class="me-count-to">
-    {{comValue}}
+    {{ comValue }}
   </div>
 </template>
 <script>
-import { FormatThousand } from "~/MeAPI/function";
+import { FormatThousand } from '~/MeAPI/function'
 export default {
-  name: "MeCountTo",
+  name: 'MeCountTo',
   props: {
     // 开始状态
     value: {
@@ -38,43 +38,43 @@ export default {
   data() {
     return {
       curValue: 0 // 当前值
-    };
+    }
   },
   computed: {
     comValue() {
-      const { curValue, thousand } = this;
-      return thousand ? FormatThousand(curValue) : curValue;
+      const { curValue, thousand } = this
+      return thousand ? FormatThousand(curValue) : curValue
     }
   },
   methods: {
     // 开始动画
     startAnimate() {
-      let startTime = null;
-      const { duration, endValue, startValue } = this;
+      let startTime = null
+      const { duration, endValue, startValue } = this
       // 开始当前动画
       const startCurAnimate = timestamp => {
-        startTime === null && (startTime = timestamp); // 设置开始时间
-        const elapsed = timestamp - startTime; // 当前距离开始时间
+        startTime === null && (startTime = timestamp) // 设置开始时间
+        const elapsed = timestamp - startTime // 当前距离开始时间
         // 虚拟计算值
-        const virtual = ~~(((endValue - startValue) * elapsed) / duration + startValue);
-        this.curValue = Math.min(virtual, endValue); // 当前值
+        const virtual = ~~(((endValue - startValue) * elapsed) / duration + startValue)
+        this.curValue = Math.min(virtual, endValue) // 当前值
         if (elapsed < duration) {
-          window.requestAnimationFrame(startCurAnimate);
+          window.requestAnimationFrame(startCurAnimate)
         } else {
-          this.$emit("input", false);
-          this.$emit("on-end");
+          this.$emit('input', false)
+          this.$emit('on-end')
         }
-      };
-      window.requestAnimationFrame(startCurAnimate);
+      }
+      window.requestAnimationFrame(startCurAnimate)
     }
   },
   watch: {
     value(value) {
-      value && this.startAnimate();
+      value && this.startAnimate()
     }
   },
   created() {
-    this.value && this.startAnimate();
+    this.value && this.startAnimate()
   }
-};
+}
 </script>

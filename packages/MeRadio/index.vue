@@ -1,16 +1,16 @@
 <template>
   <!-- 单选框 -->
-  <div class="me-radio" @click="handleClick" :aria-checked="isChecked+''" :aria-disabled="disabled+''">
-    <me-icon :name="iconName" :color="isChecked?checkedColor:''" :size="iconSize"></me-icon>
+  <div class="me-radio" @click="handleClick" :aria-checked="isChecked + ''" :aria-disabled="disabled + ''">
+    <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
     <div class="u-value">
       <slot></slot>
     </div>
   </div>
 </template>
 <script>
-import MeIcon from "~/MeIcon";
+import MeIcon from '~/MeIcon'
 export default {
-  name: "MeRadio",
+  name: 'MeRadio',
   components: {
     MeIcon
   },
@@ -27,27 +27,27 @@ export default {
     // 图标形状
     shape: {
       type: String,
-      default: "round" // square|round
+      default: 'round' // square|round
     },
     // 自定义图标
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 自定义选中图标
     iconSelect: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标大小
     iconSize: {
       type: String,
-      default: "20px"
+      default: '20px'
     },
     // 选中状态颜色
     checkedColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 禁用状态
     disabled: {
@@ -58,8 +58,8 @@ export default {
   data() {
     return {
       isChecked: this.value, // 是否选中
-      iconName: "" // 图标名称
-    };
+      iconName: '' // 图标名称
+    }
   },
   methods: {
     // 点击单选框
@@ -70,34 +70,24 @@ export default {
         setIcon,
         disabled,
         $parent: { $options, currentValue, onChange }
-      } = this;
+      } = this
       // 判断当前是否被禁用
       if (!disabled) {
         // 判断是否存在父组件
-        if ($options._componentTag === "me-radio-group") {
-          name !== currentValue && onChange(name); // 如果当前不是选中状态则改变值
+        if ($options._componentTag === 'me-radio-group') {
+          name !== currentValue && onChange(name) // 如果当前不是选中状态则改变值
         } else {
-          this.isChecked = !isChecked; // 改变当前状态
-          this.$emit("input", !isChecked);
+          this.isChecked = !isChecked // 改变当前状态
+          this.$emit('input', !isChecked)
         }
-        this.$emit("on-click");
-        setIcon();
+        this.$emit('on-click')
+        setIcon()
       }
     },
     // 设置图标
     setIcon() {
-      const { icon, iconSelect, isChecked, shape } = this;
-      this.iconName = isChecked
-        ? iconSelect
-          ? iconSelect
-          : shape === "round"
-          ? "icon-radio"
-          : "icon-baseline-check_box-px"
-        : icon
-        ? icon
-        : shape === "round"
-        ? "icon-radio3"
-        : "icon-baseline-check_box_outline_blank-px";
+      const { icon, iconSelect, isChecked, shape } = this
+      this.iconName = isChecked ? (iconSelect ? iconSelect : shape === 'round' ? 'icon-radio' : 'icon-baseline-check_box-px') : icon ? icon : shape === 'round' ? 'icon-radio3' : 'icon-baseline-check_box_outline_blank-px'
     },
     // 设置状态
     setStatus() {
@@ -106,20 +96,20 @@ export default {
         name,
         setIcon,
         $parent: { $options, currentValue }
-      } = this;
-      this.isChecked = $options._componentTag === "me-radio-group" ? name === currentValue : value;
-      setIcon();
+      } = this
+      this.isChecked = $options._componentTag === 'me-radio-group' ? name === currentValue : value
+      setIcon()
     }
   },
   created() {
-    this.setStatus();
+    this.setStatus()
   },
   watch: {
     // 监听数据绑定
     value(value) {
-      this.isChecked = value;
-      this.setIcon();
+      this.isChecked = value
+      this.setIcon()
     }
   }
-};
+}
 </script>

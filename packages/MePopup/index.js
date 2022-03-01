@@ -1,6 +1,6 @@
-import MePopup from "./index.vue";
+import MePopup from './index.vue'
 MePopup.install = Vue => {
-  Vue.component(MePopup.name, MePopup);
-};
+  Vue.component(MePopup.name, MePopup)
+}
 
-export default MePopup;
+export default MePopup

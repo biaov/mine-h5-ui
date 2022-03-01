@@ -1,30 +1,30 @@
 <template>
   <!-- 按钮 -->
   <div class="m-doc">
-    <mine-header>{{title}}</mine-header>
+    <mine-header>{{ title }}</mine-header>
     <router-view></router-view>
   </div>
 </template>
 <script>
-import MineHeader from "^/components/MineHeader";
+import MineHeader from '^/components/MineHeader'
 export default {
   components: {
     MineHeader
   },
   data() {
     return {
-      title: "" // 标题
-    };
+      title: '' // 标题
+    }
   },
   watch: {
     $route() {
-      this.title = this.$route.meta.title;
+      this.title = this.$route.meta.title
     }
   },
   created() {
-    this.title = this.$route.meta.title;
+    this.title = this.$route.meta.title
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-doc {

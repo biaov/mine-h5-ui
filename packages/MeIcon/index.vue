@@ -4,7 +4,7 @@
 </template>
 <script>
 export default {
-  name: "MeIcon",
+  name: 'MeIcon',
   props: {
     // class名称
     name: {
@@ -14,22 +14,22 @@ export default {
     // 图标颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     },
     // 图标大小
     size: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 点击图标
     onClick(e) {
-      this.$emit("on-click", e);
+      this.$emit('on-click', e)
     }
   }
-};
+}
 </script>

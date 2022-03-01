@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -25,7 +25,7 @@ Vue.use(MeSlider);
 
 - 通过 `v-model` 指令来设置滑块的值。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-slider v-model="value"></me-slider>
@@ -37,7 +37,7 @@ Vue.use(MeSlider);
 
 - 通过 `max` 和 `min` 属性来设置滑块的范围。max 和 min 属性的默认值分别为 100，0。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-slider v-model="value" :max="50" :min="-50"></me-slider>
@@ -122,7 +122,7 @@ export default {
 
 - 通过 `disabled` 属性来设置滑块的禁用状态。默认为 false。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-slider v-model="value" :disabled="true"></me-slider>

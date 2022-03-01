@@ -2,12 +2,12 @@
   <!-- 弹出框 -->
   <ul class="m-popup">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{item.label}}</div>
+      <div class="u-label">{{ item.label }}</div>
       <ul class="m-list-all">
         <li v-for="it in item.list" :key="it.id" @click="it.visible = true">
-          <span>{{it.value}}</span>
+          <span>{{ it.value }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
-          <me-popup v-model="it.visible" :modal="it.modal" :position="it.position" :closeable="it.closeable" :radius="it.radius" @on-close="it.visible=false">内容...</me-popup>
+          <me-popup v-model="it.visible" :modal="it.modal" :position="it.position" :closeable="it.closeable" :radius="it.radius" @on-close="it.visible = false">内容...</me-popup>
         </li>
       </ul>
     </li>
@@ -21,75 +21,75 @@ export default {
       listData: [
         {
           id: 1,
-          label: "基础用法",
+          label: '基础用法',
           list: [
             {
               id: 1,
-              position: "center",
+              position: 'center',
               visible: false,
-              value: "展示弹出层"
+              value: '展示弹出层'
             }
           ]
         },
         {
           id: 2,
-          label: "弹出位置",
+          label: '弹出位置',
           list: [
             {
               id: 1,
-              position: "top",
+              position: 'top',
               visible: false,
-              value: "顶部弹出"
+              value: '顶部弹出'
             },
             {
               id: 2,
-              position: "right",
+              position: 'right',
               visible: false,
-              value: "右侧弹出"
+              value: '右侧弹出'
             },
             {
               id: 3,
-              position: "bottom",
+              position: 'bottom',
               visible: false,
-              value: "底部弹出"
+              value: '底部弹出'
             },
             {
               id: 4,
-              position: "left",
+              position: 'left',
               visible: false,
-              value: "左侧弹出"
+              value: '左侧弹出'
             }
           ]
         },
         {
           id: 3,
-          label: "关闭图标",
+          label: '关闭图标',
           list: [
             {
               id: 1,
               closeable: true,
               visible: false,
-              value: "展示关闭图标弹出层"
+              value: '展示关闭图标弹出层'
             }
           ]
         },
         {
           id: 4,
-          label: "圆角弹窗",
+          label: '圆角弹窗',
           list: [
             {
               id: 1,
-              position: "bottom",
-              radius: "15px",
+              position: 'bottom',
+              radius: '15px',
               visible: false,
-              value: "展示圆角弹出层"
+              value: '展示圆角弹出层'
             }
           ]
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-popup {

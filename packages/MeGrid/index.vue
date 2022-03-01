@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  name: "MeGrid",
+  name: 'MeGrid',
   props: {
     // 一行几个
     cols: {
@@ -16,25 +16,25 @@ export default {
     // 边框颜色
     borderColor: {
       type: String,
-      default: "#edeff2"
+      default: '#edeff2'
     }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 更新子组件状态
     updateValue() {
-      const { cols, $children, borderColor } = this;
-      $children.forEach((elem, i) => elem.setData(i, cols, borderColor));
+      const { cols, $children, borderColor } = this
+      $children.forEach((elem, i) => elem.setData(i, cols, borderColor))
     },
     // 状态改变时触发此方法
     onChange(num) {
-      this.$emit("on-change", num);
+      this.$emit('on-change', num)
     }
   },
   mounted() {
-    this.updateValue();
+    this.updateValue()
   }
-};
+}
 </script>

@@ -2,16 +2,19 @@
   <!-- 首页 -->
   <div class="m-index">
     <div class="m-hd">
-      <h3 class="u-tit"><img src="@/assets/logo.svg" alt=""><span>MINE-H5-UI</span></h3>
+      <h3 class="u-tit">
+        <img src="@/assets/logo.svg" alt="" />
+        <span>MINE-H5-UI</span>
+      </h3>
       <p class="u-desc">一款轻量级、模块化基于VUE的H5前端UI组件库</p>
     </div>
     <ul class="m-list-first">
-      <li v-for="(item,index) in listData" :key="index">
-        <h3 class="u-tit">{{item.meta.title}}</h3>
+      <li v-for="(item, index) in listData" :key="index">
+        <h3 class="u-tit">{{ item.meta.title }}</h3>
         <ul class="m-list-second">
-          <li v-for="(it,i) in item.items" :key="i">
-            <router-link :to="{name:it.name}">
-              <span>{{it.meta.title}}</span>
+          <li v-for="(it, i) in item.items" :key="i">
+            <router-link :to="{ name: it.name }">
+              <span>{{ it.meta.title }}</span>
               <me-icon name="icon-right1" size="20px" color="#949494"></me-icon>
             </router-link>
           </li>
@@ -21,14 +24,14 @@
   </div>
 </template>
 <script>
-import NavConfig from "@/utils/data/nav.config.json";
+import NavConfig from '@/utils/data/nav.config.json'
 export default {
   data() {
     return {
-      listData: NavConfig["组件"]
-    };
+      listData: NavConfig['组件']
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 @padding-15: 15px;

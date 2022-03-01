@@ -15,10 +15,10 @@
   </div>
 </template>
 <script>
-import NavBar from "./NavBar";
-import ComboBox from "./ComboBox";
+import NavBar from './NavBar'
+import ComboBox from './ComboBox'
 export default {
-  name: "MineHeader",
+  name: 'MineHeader',
   components: {
     NavBar,
     ComboBox
@@ -29,35 +29,35 @@ export default {
       listData: [
         {
           id: 1,
-          name: "introduce",
-          value: "指南"
+          name: 'introduce',
+          value: '指南'
         },
         {
           id: 2,
-          name: "button",
-          value: "组件"
+          name: 'button',
+          value: '组件'
         },
         {
           id: 3,
           link: this.$var.GithubAddress,
-          icon: "icon-github",
-          value: "Github"
+          icon: 'icon-github',
+          value: 'Github'
         }
       ],
       // 版本列表数据
       listVersion: [
         {
-          value: "1.x",
-          href: "/"
+          value: '1.x',
+          href: '/'
         },
         {
-          value: "2.x",
-          href: "/v2"
+          value: '2.x',
+          href: '/v2'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .g-header {

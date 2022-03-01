@@ -1,6 +1,6 @@
-import MeGridItem from "./index.vue";
+import MeGridItem from './index.vue'
 MeGridItem.install = Vue => {
-  Vue.component(MeGridItem.name, MeGridItem);
-};
+  Vue.component(MeGridItem.name, MeGridItem)
+}
 
-export default MeGridItem;
+export default MeGridItem

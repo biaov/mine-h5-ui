@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";

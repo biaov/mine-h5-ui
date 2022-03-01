@@ -1,14 +1,14 @@
 <template>
   <!-- 数字滚动 -->
   <ul class="m-count-to">
-    <li v-for="(item,index) in listData" :key="index">
-      <div class="u-label">{{item.label}}</div>
+    <li v-for="(item, index) in listData" :key="index">
+      <div class="u-label">{{ item.label }}</div>
       <me-count-to v-bind="item"></me-count-to>
     </li>
     <li>
       <div class="u-label">手动控制</div>
       <me-count-to v-bind="manual" v-model="manual.value"></me-count-to>
-      <me-button type="danger" plain @on-click="manual.value=true">重新开始</me-button>
+      <me-button type="danger" plain @on-click="manual.value = true">重新开始</me-button>
     </li>
   </ul>
 </template>
@@ -18,17 +18,17 @@ export default {
     return {
       listData: [
         {
-          label: "基础用法",
+          label: '基础用法',
           endValue: 6666
         },
         {
-          label: "起始值&时间",
+          label: '起始值&时间',
           startValue: 100,
           duration: 5000,
           endValue: 6666
         },
         {
-          label: "添加千分符",
+          label: '添加千分符',
           endValue: 6666.66,
           thousand: true
         }
@@ -39,9 +39,9 @@ export default {
         endValue: 6666.66,
         value: true
       }
-    };
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-count-to {

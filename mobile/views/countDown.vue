@@ -8,16 +8,19 @@
     <div class="u-label">自定义样式</div>
     <me-count-down :time="time">
       <template #default="{hh,mm,ss}">
-        <span class="u-block">{{hh}}</span> :
-        <span class="u-block">{{mm}}</span> :
-        <span class="u-block">{{ss}}</span>
+        <span class="u-block">{{ hh }}</span>
+        :
+        <span class="u-block">{{ mm }}</span>
+        :
+        <span class="u-block">{{ ss }}</span>
       </template>
     </me-count-down>
     <div class="u-label">手动控制</div>
-    <me-count-down format="hh:mm:ss:ms" v-bind="{...handleStatus,time}"></me-count-down>
+    <me-count-down format="hh:mm:ss:ms" v-bind="{ ...handleStatus, time }"></me-count-down>
     <ul class="m-btn">
-      <li v-for="(item,index) in btnList" :key="index" @click="onClickBtn(item.type)">
-        <me-icon :name="item.icon" size="16px"></me-icon>{{item.text}}
+      <li v-for="(item, index) in btnList" :key="index" @click="onClickBtn(item.type)">
+        <me-icon :name="item.icon" size="16px"></me-icon>
+        {{ item.text }}
       </li>
     </ul>
   </div>
@@ -36,32 +39,32 @@ export default {
       // 按钮列表
       btnList: [
         {
-          type: "isStart",
-          icon: "icon-zanting",
-          text: "开始"
+          type: 'isStart',
+          icon: 'icon-zanting',
+          text: '开始'
         },
         {
-          type: "isSuspend",
-          icon: "icon-zanting1",
-          text: "暂停"
+          type: 'isSuspend',
+          icon: 'icon-zanting1',
+          text: '暂停'
         },
         {
-          type: "isReset",
-          icon: "icon-loading_flat",
-          text: "重置"
+          type: 'isReset',
+          icon: 'icon-loading_flat',
+          text: '重置'
         }
       ]
-    };
+    }
   },
   methods: {
     // 点击操作按钮
     onClickBtn(type) {
       Object.keys(this.handleStatus).forEach(item => {
-        this.handleStatus[item] = type === item;
-      });
+        this.handleStatus[item] = type === item
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-count-down {

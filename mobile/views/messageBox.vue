@@ -2,10 +2,10 @@
   <!-- 弹出框 -->
   <ul class="m-message-box">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{item.label}}</div>
+      <div class="u-label">{{ item.label }}</div>
       <ul class="m-list-all">
         <li v-for="it in item.list" :key="it.id" @click="onLi(it)">
-          <span>{{it.value}}</span>
+          <span>{{ it.value }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
         </li>
       </ul>
@@ -20,62 +20,62 @@ export default {
       listData: [
         {
           id: 1,
-          label: "基础用法",
+          label: '基础用法',
           list: [
             {
               id: 1,
-              value: "弹出 Alert 提示框",
-              type: "alert",
-              tips: "警告",
-              message: "你可以像猪一样的生活，但你永远都不能像猪那样快乐！"
+              value: '弹出 Alert 提示框',
+              type: 'alert',
+              tips: '警告',
+              message: '你可以像猪一样的生活，但你永远都不能像猪那样快乐！'
             }
           ]
         },
         {
           id: 2,
-          label: "Confirm 确认框",
+          label: 'Confirm 确认框',
           list: [
             {
               id: 1,
-              value: "弹出 Confirm 确认框",
-              type: "confirm",
-              message: "你认为作者帅吗？",
-              cancelButtonText: "看不清",
-              confirmButtonText: "作者真帅"
+              value: '弹出 Confirm 确认框',
+              type: 'confirm',
+              message: '你认为作者帅吗？',
+              cancelButtonText: '看不清',
+              confirmButtonText: '作者真帅'
             }
           ]
         },
         {
           id: 3,
-          label: "Prompt 输入框",
+          label: 'Prompt 输入框',
           list: [
             {
               id: 1,
-              value: "弹出 Prompt 输入框",
-              type: "prompt",
-              message: "请输入你的手机号"
+              value: '弹出 Prompt 输入框',
+              type: 'prompt',
+              message: '请输入你的手机号'
             }
           ]
         },
         {
           id: 4,
-          label: "Custom 自定义框",
+          label: 'Custom 自定义框',
           list: [
             {
               id: 1,
-              value: "弹出 Custom 自定义框",
-              type: "custom",
+              value: '弹出 Custom 自定义框',
+              type: 'custom',
               html: `<div class="m-message-cont">假如生活欺骗了你，不要悲伤的哭泣，如果真的热爱生活你会自己骗自己的。</div>`
             }
           ]
         }
       ]
-    };
+    }
   },
   methods: {
     // 点击列表
     onLi({ type, tips, message, html, cancelButtonText, confirmButtonText }) {
-      const that = this;
+      const that = this
       that.$MeMessageBox({
         type,
         tips,
@@ -84,15 +84,15 @@ export default {
         cancelButtonText,
         confirmButtonText,
         onOk(value) {
-          that.$MeToast(type === "prompt" ? value : "你点击了确认按钮");
+          that.$MeToast(type === 'prompt' ? value : '你点击了确认按钮')
         },
         onOff() {
-          that.$MeToast("你点击了取消按钮");
+          that.$MeToast('你点击了取消按钮')
         }
-      });
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-message-box {

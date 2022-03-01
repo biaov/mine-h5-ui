@@ -1,6 +1,6 @@
-import MeInput from "./index.vue";
+import MeInput from './index.vue'
 MeInput.install = Vue => {
-  Vue.component(MeInput.name, MeInput);
-};
+  Vue.component(MeInput.name, MeInput)
+}
 
-export default MeInput;
+export default MeInput

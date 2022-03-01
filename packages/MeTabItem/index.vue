@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  name: "MeTabItem",
+  name: 'MeTabItem',
   props: {
     // 标签内容
     title: {
@@ -18,22 +18,22 @@ export default {
     return {
       currentId: 0, // 当前 id
       isShow: false // 是否显示
-    };
+    }
   },
   methods: {
     // 设置下标数据
     setData(id) {
-      this.currentId = id;
-      this.initShow();
+      this.currentId = id
+      this.initShow()
     },
     // 设置初始化显示
     initShow() {
       const {
         $parent: { $options, value },
         currentId
-      } = this;
-      this.isShow = $options._componentTag === "me-tab" && currentId === value;
+      } = this
+      this.isShow = $options._componentTag === 'me-tab' && currentId === value
     }
   }
-};
+}
 </script>

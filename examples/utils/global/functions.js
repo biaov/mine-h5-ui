@@ -5,25 +5,25 @@
  */
 const GetNodeText = arr => {
   if (!Array.isArray(arr)) {
-    throw new Error(`${JSON.stringify(arr)} is not Array`);
+    throw new Error(`${JSON.stringify(arr)} is not Array`)
   } else {
-    let html = ""; // 声明需要获取到的字符串变量
+    let html = '' // 声明需要获取到的字符串变量
     // 遍历节点
     const ErgodicNode = arr => {
       // 开始遍历
       arr.forEach(elem => {
         if (elem.children != undefined) {
-          ErgodicNode(elem.children);
+          ErgodicNode(elem.children)
         } else {
-          html += elem.text;
+          html += elem.text
         }
-      });
-    };
-    ErgodicNode(arr); // 第一次执行
-    return html;
+      })
+    }
+    ErgodicNode(arr) // 第一次执行
+    return html
   }
-};
+}
 
 export default {
   GetNodeText // 获取节点里的文本
-};
+}

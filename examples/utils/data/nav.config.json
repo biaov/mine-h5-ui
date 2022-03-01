@@ -384,6 +384,13 @@
           },
           "path": "step",
           "name": "step"
+        },
+        {
+          "meta": {
+            "title": "Drag 拖拽"
+          },
+          "path": "drag",
+          "name": "drag"
         }
       ]
     }

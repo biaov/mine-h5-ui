@@ -1,7 +1,7 @@
-import MeStep from "./index.vue";
+import MeStep from './index.vue'
 
 MeStep.install = Vue => {
-  Vue.component(MeStep.name, MeStep);
-};
+  Vue.component(MeStep.name, MeStep)
+}
 
-export default MeStep;
+export default MeStep

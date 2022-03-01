@@ -12,7 +12,7 @@
 
 - 如果你是为了开发效率，推荐使用这种方式。
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -28,7 +28,7 @@ Vue.use(MINEH5UI);
 
 - 如果你是为了项目性能，推荐使用这种方式。
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -44,7 +44,7 @@ Vue.use(MeButton);
 
 - 如果你觉得每次手动按需引用样式繁琐，那么你仍然可以全部导入样式。
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import "mine-h5-ui/lib/theme-default/index.css";

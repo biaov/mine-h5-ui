@@ -1,6 +1,6 @@
-import MeNavBar from "./index.vue";
+import MeNavBar from './index.vue'
 MeNavBar.install = Vue => {
-  Vue.component(MeNavBar.name, MeNavBar);
-};
+  Vue.component(MeNavBar.name, MeNavBar)
+}
 
-export default MeNavBar;
+export default MeNavBar

@@ -1,6 +1,6 @@
-import MeShareSheet from "./index.vue";
+import MeShareSheet from './index.vue'
 MeShareSheet.install = Vue => {
-  Vue.component(MeShareSheet.name, MeShareSheet);
-};
+  Vue.component(MeShareSheet.name, MeShareSheet)
+}
 
-export default MeShareSheet;
+export default MeShareSheet

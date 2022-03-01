@@ -10,12 +10,12 @@
 </template>
 <script>
 export default {
-  name: "TimeLine",
+  name: 'TimeLine',
   data() {
-    return {};
+    return {}
   },
   methods: {}
-};
+}
 </script>
 <style lang="less" scoped>
 .m-timeline {

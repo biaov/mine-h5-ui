@@ -1,6 +1,6 @@
-import MeSwitch from "./index.vue";
+import MeSwitch from './index.vue'
 MeSwitch.install = Vue => {
-  Vue.component(MeSwitch.name, MeSwitch);
-};
+  Vue.component(MeSwitch.name, MeSwitch)
+}
 
-export default MeSwitch;
+export default MeSwitch

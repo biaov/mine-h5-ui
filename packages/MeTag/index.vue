@@ -1,20 +1,20 @@
 <template>
   <!-- 标签 -->
-  <div class="me-tag" :class="[type,plain&&'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
+  <div class="me-tag" :class="[type, plain && 'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
     <div class="u-txt">
-      <span>{{text}}</span>
+      <span>{{ text }}</span>
       <i class="iconfont icon-baseline-close-px" @click="onClose" v-if="closeable"></i>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "MeTag",
+  name: 'MeTag',
   props: {
     // 类型
     type: {
       type: String,
-      default: "primary" // primary|success|info|warning|danger
+      default: 'primary' // primary|success|info|warning|danger
     },
     // 空心
     plain: {
@@ -38,17 +38,17 @@ export default {
     // 标签颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     },
     // 标签内容
     text: {
       type: String,
-      default: "标签"
+      default: '标签'
     },
     // 文本颜色
     textColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 关闭状态
     closeable: {
@@ -57,13 +57,13 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 点击关闭按钮
     onClose() {
-      this.$emit("on-close");
+      this.$emit('on-close')
     }
   }
-};
+}
 </script>

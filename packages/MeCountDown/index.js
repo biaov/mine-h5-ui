@@ -1,6 +1,6 @@
-import MeCountDown from "./index.vue";
+import MeCountDown from './index.vue'
 MeCountDown.install = Vue => {
-  Vue.component(MeCountDown.name, MeCountDown);
-};
+  Vue.component(MeCountDown.name, MeCountDown)
+}
 
-export default MeCountDown;
+export default MeCountDown

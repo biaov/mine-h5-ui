@@ -13,10 +13,10 @@
   </div>
 </template>
 <script>
-import { Throttle } from "~/MeAPI/function";
+import { Throttle } from '~/MeAPI/function'
 
 export default {
-  name: "MeVirtualList",
+  name: 'MeVirtualList',
   props: {
     // 列表数据
     list: {
@@ -31,7 +31,7 @@ export default {
     // 虚拟列表高度
     height: {
       type: String,
-      default: "100%"
+      default: '100%'
     },
     // 固定选项高度
     itemHeight: {
@@ -61,92 +61,92 @@ export default {
       scrollTranslateY: 0, // 纵向滚动
       startIndex: 0, // 开始数据索引
       endIndex: 0 // 结束数据索引
-    };
+    }
   },
   computed: {
     // 渲染数据
     renderData() {
-      return this.listData.slice(this.startIndex - this.prevCount, this.endIndex + this.nextCount);
+      return this.listData.slice(this.startIndex - this.prevCount, this.endIndex + this.nextCount)
     },
     // 前屏总显示数
     prevScreen() {
-      return this.remain * this.screen[0];
+      return this.remain * this.screen[0]
     },
     // 后屏总显示数
     nextScreen() {
-      return this.remain * this.screen[1];
+      return this.remain * this.screen[1]
     },
     // 前屏总数
     prevCount() {
-      return Math.min(this.startIndex, this.prevScreen);
+      return Math.min(this.startIndex, this.prevScreen)
     },
     // 后屏总数
     nextCount() {
-      return Math.min(this.list.length - this.endIndex, this.nextScreen);
+      return Math.min(this.list.length - this.endIndex, this.nextScreen)
     }
   },
   methods: {
     // 滚动条滚动
     onScroll(e) {
-      const { scrollTop, clientHeight, scrollHeight } = e.target;
+      const { scrollTop, clientHeight, scrollHeight } = e.target
       if (this.itemHeight) {
-        this.startIndex = ~~(scrollTop / this.itemHeight);
-        this.endIndex = this.startIndex + this.remain;
-        this.scrollTranslateY = (this.startIndex - this.prevCount) * this.itemHeight;
+        this.startIndex = ~~(scrollTop / this.itemHeight)
+        this.endIndex = this.startIndex + this.remain
+        this.scrollTranslateY = (this.startIndex - this.prevCount) * this.itemHeight
       } else {
-        let prevSum = 0;
+        let prevSum = 0
         const index = this.listData.findIndex(item => {
-          prevSum += item.height;
-          return prevSum > scrollTop;
-        });
-        this.startIndex = index;
-        this.endIndex = this.startIndex + this.remain;
-        let curPrevSum = 0;
-        const maxindex = this.startIndex - this.prevCount;
+          prevSum += item.height
+          return prevSum > scrollTop
+        })
+        this.startIndex = index
+        this.endIndex = this.startIndex + this.remain
+        let curPrevSum = 0
+        const maxindex = this.startIndex - this.prevCount
         this.listData.find((item, i) => {
           if (i >= maxindex) {
-            return true;
+            return true
           } else {
-            curPrevSum += item.height;
+            curPrevSum += item.height
           }
-        });
-        this.scrollTranslateY = curPrevSum;
-        this.updateHeight();
+        })
+        this.scrollTranslateY = curPrevSum
+        this.updateHeight()
       }
       this.$nextTick(() => {
-        scrollTop + clientHeight >= scrollHeight - this.distance && this.$emit("on-load-more");
-      });
+        scrollTop + clientHeight >= scrollHeight - this.distance && this.$emit('on-load-more')
+      })
     },
     // 更新高度
     updateHeight() {
       this.$nextTick(() => {
         if (this.itemHeight === 0) {
-          const nodesEl = this.$refs.nodes; // 节点
+          const nodesEl = this.$refs.nodes // 节点
           nodesEl.forEach(node => {
-            const { height } = node.getBoundingClientRect();
-            const index = +node.dataset.index;
-            const oldHeight = this.listData[index].height;
-            oldHeight !== height && (this.listData[index].height = height);
-          });
+            const { height } = node.getBoundingClientRect()
+            const index = +node.dataset.index
+            const oldHeight = this.listData[index].height
+            oldHeight !== height && (this.listData[index].height = height)
+          })
         }
-        this.scrollBarHeight = this.listData.reduce((prev, item) => prev + item.height, 0);
-      });
+        this.scrollBarHeight = this.listData.reduce((prev, item) => prev + item.height, 0)
+      })
     }
   },
   watch: {
     // 监听 props list
     list: {
       handler(value) {
-        const height = this.itemHeight || 100;
-        this.listData = value.map((item, virtualId) => ({ ...item, virtualId, height }));
-        this.updateHeight();
+        const height = this.itemHeight || 100
+        this.listData = value.map((item, virtualId) => ({ ...item, virtualId, height }))
+        this.updateHeight()
       },
       deep: true,
       immediate: true
     }
   },
   created() {
-    this.onScroll = Throttle(this.onScroll, this.interval); // 节流
+    this.onScroll = Throttle(this.onScroll, this.interval) // 节流
   }
-};
+}
 </script>

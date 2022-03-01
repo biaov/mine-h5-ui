@@ -1,6 +1,6 @@
-import MeForm from "./index.vue";
+import MeForm from './index.vue'
 MeForm.install = Vue => {
-  Vue.component(MeForm.name, MeForm);
-};
+  Vue.component(MeForm.name, MeForm)
+}
 
-export default MeForm;
+export default MeForm

@@ -1,0 +1,206 @@
+/**
+  * @file 拖拽
+*/
+
+@import './variable.less';
+
+// 相同的伪元素
+.same-after(@width, @height) {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: @width;
+    height: @height;
+    box-sizing: border-box;
+  }
+}
+
+// 相同的图标
+.same-icon(@width, @height, @font-size) {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  width: @width;
+  height: @height;
+  border-radius: 50%;
+  background: var(--theme);
+
+  .iconfont {
+    color: var(--themeText);
+    font-size: @font-size;
+  }
+}
+
+
+.me-drag {
+  position: relative;
+  overflow: hidden;
+
+  .item {
+    @border-width: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: @border-width solid transparent;
+      box-sizing: border-box;
+    }
+
+    .u-resize {
+      @width: 15px;
+      @height: 5px;
+      @cornerWidth: 11px;
+      @cornerHeight: 11px;
+
+      position: absolute;
+      z-index: 1;
+      display: none;
+      background: var(--theme);
+
+      &.ne,
+      &.nw,
+      &.se,
+      &.sw {
+        .same-after(180%, 180%);
+        width: @cornerWidth;
+        height: @cornerHeight;
+        border-radius: 50%;
+      }
+
+      &.ne,
+      &.nw {
+        top: -@cornerHeight / 2;
+      }
+
+      &.ne,
+      &.se {
+        right: -@cornerWidth / 2;
+      }
+
+      &.se,
+      &.sw {
+        bottom: -@cornerHeight / 2;
+      }
+
+      &.nw,
+      &.sw {
+        left: -@cornerWidth / 2;
+      }
+
+      &.n,
+      &.s {
+        .same-after(180%, 280%);
+        left: 50%;
+        transform: translateX(-50%);
+        width: @width;
+        height: @height;
+        border-radius: @height;
+      }
+
+      &.e,
+      &.w {
+        .same-after(280%, 180%);
+        top: 50%;
+        transform: translateY(-50%);
+        width: @height;
+        height: @width;
+        border-radius: @height;
+      }
+
+      &.e {
+        right: -@height / 2 + @border-width;
+      }
+
+      &.n {
+        top: -@height / 2;
+      }
+
+      &.s {
+        bottom: -@height / 2 + @border-width;
+      }
+
+      &.w {
+        left: -@height / 2;
+      }
+
+      @cursors: {
+        e: e-resize;
+        ne: ne-resize;
+        nw: nw-resize;
+        n: n-resize;
+        se: se-resize;
+        sw: sw-resize;
+        s: s-resize;
+        w: w-resize;
+      }
+
+      each(@cursors, {
+          &.@{key} {
+            cursor: @value;
+          }
+
+          &.new-@{key} {
+            cursor: @value  !important;
+          }
+        }
+
+      );
+    }
+
+    .u-delete {
+      @width: 20px;
+      @height: 20px;
+
+      .same-after(150%, 150%);
+      .same-icon(@width, @height, 12px);
+
+      top: -@height / 2;
+      right: -@width / 2;
+      cursor: pointer;
+    }
+
+    .u-rotate {
+      @width: 20px;
+      @height: 20px;
+
+      .same-after(150%, 150%);
+      .same-icon(@width, @height, 12px);
+
+      left: 50%;
+      bottom: -@height*1.7;
+      transform: translateX(-50%);
+      cursor: grabbing;
+    }
+
+    &.active {
+      z-index: 2;
+
+      &::after {
+        border-color: var(--theme);
+      }
+
+      .u-resize,
+      .u-delete,
+      .u-rotate {
+        display: flex;
+      }
+    }
+  }
+}

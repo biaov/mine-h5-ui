@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -25,7 +25,7 @@ Vue.use(MeSearch);
 
 - 通过 `v-model` 指令来设置搜索框的值。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-search v-model="value"></me-search>
@@ -37,7 +37,7 @@ Vue.use(MeSearch);
 
 - 通过 `placeholder` 属性来设置搜索框的占位符内容，默认为**请搜索**。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-search v-model="value" placeholder="请输入搜索内容"></me-search>
@@ -49,7 +49,7 @@ Vue.use(MeSearch);
 
 - 通过 `btnText` 属性来设置搜索框右侧按钮内容。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <template>
@@ -86,7 +86,7 @@ export default {
 
 - 通过 `align` 属性来设置搜索框的内容对齐方式，默认为 left。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-search v-model="value" align="center"></me-search>
@@ -98,7 +98,7 @@ export default {
 
 - 通过 `radius` 属性来设置搜索框的倒角，支持 CSS 的 border-radius 值，默认为 4px。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-search v-model="value" radius="20px"></me-search>
@@ -110,7 +110,7 @@ export default {
 
 - 通过 `background` 和 `color` 属性来设置搜索框的样式，支持 CSS 的 background 和 color 值，background 默认值为 #f6f6f6，color 默认值为 #494949。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-search v-model="value" background="linear-gradient(-45deg, #4bb0ff, #6149f6)" color="#fff"></me-search>
@@ -122,7 +122,7 @@ export default {
 
 - 通过 `disabled` 属性来设置搜索框的禁用状态，默认为 false。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-search v-model="value" :disabled="true"></me-search>

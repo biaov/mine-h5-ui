@@ -12,9 +12,22 @@
 - 次版本号：不定期发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计作者技术发生重大提升或重构时发布。
 
-:::timeline
+:::TimeLine
 
-## v1.6.1 - Latest Release
+## v1.6.2 - Latest Release
+
+`2022-03-01`
+
+- 更新业务组件
+  - [新增拖拽组件](/doc/drag)
+- 更新样式类
+  - 新增镂空效果 - [hollow-out](/doc/css)
+  - 新增图片填充效果 - [mode="fill,contain,cover"](/doc/css)
+- Bug Fixes
+  - 修复已知 Bug
+  - 优化代码
+
+## v1.6.1
 
 `2022-01-10`
 
@@ -35,7 +48,7 @@
 
 ## v1.5.2
 
-`2021-11-00`
+`2021-11-01`
 
 - 更新 API 方法
   - 新增延迟器 API - [Retarder](/doc/api)
@@ -147,7 +160,7 @@
 
 :::
 
-:::timeline
+:::TimeLine
 
 ## v1.1.2
 
@@ -162,7 +175,7 @@
 
 :::
 
-:::timeline
+:::TimeLine
 
 ## v1.1.1
 
@@ -173,7 +186,7 @@
 
 :::
 
-:::timeline
+:::TimeLine
 
 ## v1.1.0
 
@@ -205,7 +218,7 @@
 
 :::
 
-:::timeline
+:::TimeLine
 
 ## v1.0.0
 

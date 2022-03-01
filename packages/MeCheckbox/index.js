@@ -1,6 +1,6 @@
-import MeCheckbox from "./index.vue";
+import MeCheckbox from './index.vue'
 MeCheckbox.install = Vue => {
-  Vue.component(MeCheckbox.name, MeCheckbox);
-};
+  Vue.component(MeCheckbox.name, MeCheckbox)
+}
 
-export default MeCheckbox;
+export default MeCheckbox

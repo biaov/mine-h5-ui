@@ -1,6 +1,6 @@
-import MeKeyboard from "./index.vue";
+import MeKeyboard from './index.vue'
 MeKeyboard.install = Vue => {
-  Vue.component(MeKeyboard.name, MeKeyboard);
-};
+  Vue.component(MeKeyboard.name, MeKeyboard)
+}
 
-export default MeKeyboard;
+export default MeKeyboard

@@ -13,13 +13,13 @@
   </div>
 </template>
 <script>
-import SideBar from "@/components/SideBar";
+import SideBar from '@/components/SideBar'
 export default {
   components: {
     SideBar
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 路由跳转
@@ -27,21 +27,21 @@ export default {
       // 子窗口跳转路由
       this.$refs.mobileIframe.contentWindow.Vue.$router.push({
         path
-      });
+      })
     }
   },
   watch: {
     $route({ path }) {
-      this.routerPath(path);
+      this.routerPath(path)
     }
   },
   mounted() {
     // 页面渲染之后
     setTimeout(() => {
-      this.routerPath(this.$route.path);
-    }, 500);
+      this.routerPath(this.$route.path)
+    }, 500)
   }
-};
+}
 </script>
 <style scoped lang="less">
 @bg-color-white: #fff;
@@ -80,7 +80,7 @@ export default {
       height: 780px;
       margin-left: 20px;
       padding: 100px 16px;
-      background: url("../assets/bg_mobile.png") no-repeat center;
+      background: url('../assets/bg_mobile.png') no-repeat center;
       background-size: 100% auto;
       > iframe {
         width: 330px;

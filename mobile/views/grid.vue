@@ -19,60 +19,60 @@ export default {
       // 宫格列表数据
       grids: [
         {
-          icon: "icon-wechat",
-          text: "微信",
-          iconColor: "#67c23a"
+          icon: 'icon-wechat',
+          text: '微信',
+          iconColor: '#67c23a'
         },
         {
-          icon: "icon-pengyouquan",
-          text: "朋友圈",
-          iconColor: "#409eff"
+          icon: 'icon-pengyouquan',
+          text: '朋友圈',
+          iconColor: '#409eff'
         },
         {
-          icon: "icon-zhifubao",
-          text: "支付宝",
-          iconColor: "#06b4fd"
+          icon: 'icon-zhifubao',
+          text: '支付宝',
+          iconColor: '#06b4fd'
         },
         {
-          icon: "icon-qq",
-          text: "QQ",
-          iconColor: "#ec502b"
+          icon: 'icon-qq',
+          text: 'QQ',
+          iconColor: '#ec502b'
         },
         {
-          icon: "icon-weibo",
-          text: "微博",
-          iconColor: "#f40f3b"
+          icon: 'icon-weibo',
+          text: '微博',
+          iconColor: '#f40f3b'
         },
         {
-          icon: "icon-qr-code",
-          text: "二维码",
-          iconColor: "#1cc09e"
+          icon: 'icon-qr-code',
+          text: '二维码',
+          iconColor: '#1cc09e'
         },
         {
-          icon: "icon-xiangji",
-          text: "相机",
-          iconColor: "#4a82ff"
+          icon: 'icon-xiangji',
+          text: '相机',
+          iconColor: '#4a82ff'
         },
         {
-          icon: "icon-loading_ico",
-          text: "加载",
-          iconColor: "#f60",
-          textColor: "#ff9249"
+          icon: 'icon-loading_ico',
+          text: '加载',
+          iconColor: '#f60',
+          textColor: '#ff9249'
         }
       ]
-    };
+    }
   },
   methods: {
     // 点击格子项
     handleLi({ text }) {
-      this.$MeToast(text);
+      this.$MeToast(text)
     },
     // 点击第几个
     onChange(index) {
-      console.log(`你点击了第${index + 1}个`);
+      console.log(`你点击了第${index + 1}个`)
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-grid {
@@ -83,7 +83,7 @@ export default {
       display: block;
       margin: 0 auto 5px;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: -4px;
         right: 20px;

@@ -7,16 +7,16 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 点击内容列表
     onClick(item) {
-      console.log(item);
-      this.$MeToast(item.cn);
+      console.log(item)
+      this.$MeToast(item.cn)
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-index-bar {

@@ -22,7 +22,7 @@
 
 #### 从 Github 上去 Clone 项目下来
 
-:::demo
+:::CopyCode
 
 ```Basic
 git clone https://github.com/biaov/MINE-H5-UI.git
@@ -34,7 +34,7 @@ git clone https://github.com/biaov/MINE-H5-UI.git
 
 - 直接在浏览器输入以下地址即可下载。
 
-:::demo
+:::CopyCode
 
 ```Text
 https://codeload.github.com/biaov/MINE-H5-UI/zip/master
@@ -44,7 +44,7 @@ https://codeload.github.com/biaov/MINE-H5-UI/zip/master
 
 #### 进入项目更目录安装相关依赖
 
-:::demo
+:::CopyCode
 
 ```Basic
 npm install
@@ -54,7 +54,7 @@ npm install
 
 - 如果你使用的是 [Cmder](https://cmder.net/) 终端模拟器，并且配置了 git，那么你可以复制下面的一条命令到 Cmder 中，即可完成下载、安装、VSCode 打开项目等所有步骤。
 
-:::demo
+:::CopyCode
 
 ```Basic
 git clone https://github.com/biaov/MINE-H5-UI.git && cd MINE-H5-UI && npm i && code ./

@@ -1,6 +1,6 @@
-import MeMask from "./index.vue";
+import MeMask from './index.vue'
 MeMask.install = Vue => {
-  Vue.component(MeMask.name, MeMask);
-};
+  Vue.component(MeMask.name, MeMask)
+}
 
-export default MeMask;
+export default MeMask

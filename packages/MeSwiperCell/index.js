@@ -1,6 +1,6 @@
-import MeSwiperCell from "./index.vue";
+import MeSwiperCell from './index.vue'
 MeSwiperCell.install = Vue => {
-  Vue.component(MeSwiperCell.name, MeSwiperCell);
-};
+  Vue.component(MeSwiperCell.name, MeSwiperCell)
+}
 
-export default MeSwiperCell;
+export default MeSwiperCell

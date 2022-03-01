@@ -33,3 +33,4 @@ pre-publish.json
 pre-publish-github.json
 vue.config.js
 Release.md
+.ncurc.json

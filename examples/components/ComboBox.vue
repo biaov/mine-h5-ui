@@ -1,16 +1,18 @@
 <template>
   <!-- 下拉框 -->
   <div class="m-select">
-    <h3 class="u-tit" @click="handleTitle">{{title}}<me-icon name="icon-down2" size="14px" color="#ccc" :class="{show:isShowDropdown}"></me-icon>
+    <h3 class="u-tit" @click="handleTitle">
+      {{ title }}
+      <me-icon name="icon-down2" size="14px" color="#ccc" :class="{ show: isShowDropdown }"></me-icon>
     </h3>
-    <ul class="m-list" :style="`max-height:${ isShowDropdown ? list.length * 200 : 0 }%;`">
-      <li v-for="(item,index) in list" :key="index" @click="handleLi(item)">{{item.value}}</li>
+    <ul class="m-list" :style="`max-height:${isShowDropdown ? list.length * 200 : 0}%;`">
+      <li v-for="(item, index) in list" :key="index" @click="handleLi(item)">{{ item.value }}</li>
     </ul>
   </div>
 </template>
 <script>
 export default {
-  name: "ComboBox",
+  name: 'ComboBox',
   props: {
     // 列表
     list: {
@@ -20,30 +22,30 @@ export default {
   },
   data() {
     return {
-      title: "", // 内容
+      title: '', // 内容
       isShowDropdown: false // 是否显示下拉框
-    };
+    }
   },
   methods: {
     // 点击标题
     handleTitle(e) {
-      e.stopPropagation();
-      this.isShowDropdown = !this.isShowDropdown;
+      e.stopPropagation()
+      this.isShowDropdown = !this.isShowDropdown
     },
     // 点击列表
     handleLi({ value, href }) {
-      value !== this.list[0].value && (location.href = href);
+      value !== this.list[0].value && (location.href = href)
     }
   },
   created() {
-    this.title = this.list[0].value;
+    this.title = this.list[0].value
   },
   mounted() {
     document.onclick = e => {
-      this.isShowDropdown = false;
-    };
+      this.isShowDropdown = false
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-select {

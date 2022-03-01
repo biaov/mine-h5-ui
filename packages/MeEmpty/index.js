@@ -1,6 +1,6 @@
-import MeEmpty from "./index.vue";
+import MeEmpty from './index.vue'
 MeEmpty.install = Vue => {
-  Vue.component(MeEmpty.name, MeEmpty);
-};
+  Vue.component(MeEmpty.name, MeEmpty)
+}
 
-export default MeEmpty;
+export default MeEmpty

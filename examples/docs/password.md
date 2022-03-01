@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -25,7 +25,7 @@ Vue.use(MePassword);
 
 - 通过 `v-model` 指令来设置输入框的值，一般配合数字键盘输入。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <template>
@@ -87,7 +87,7 @@ export default {
 
 - 通过 `skin-type` 属性来设置输入框的主题样式，默认值为 white。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <template>
@@ -149,7 +149,7 @@ export default {
 
 - 通过 `num` 属性来设置输入框的数量，默认值为 6。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <template>
@@ -211,7 +211,7 @@ export default {
 
 - 通过 `type` 属性来设置输入框的模式，默认值为 password。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <template>

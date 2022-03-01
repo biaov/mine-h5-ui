@@ -2,10 +2,10 @@
   <!-- 动作面板 -->
   <ul class="m-mask-default">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{item.label}}</div>
+      <div class="u-label">{{ item.label }}</div>
       <ul class="m-list-all">
         <li v-for="it in item.list" :key="it.id" @click="it.visible = true">
-          <span>{{it.value}}</span>
+          <span>{{ it.value }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
           <me-mask v-model="it.visible">
             <me-loading type="circle2" color="#f56c6c" size="100px">
@@ -25,19 +25,19 @@ export default {
       listData: [
         {
           id: 1,
-          label: "基础用法",
+          label: '基础用法',
           list: [
             {
               id: 1,
-              value: "弹出模态框",
+              value: '弹出模态框',
               visible: false
             }
           ]
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-mask-default {

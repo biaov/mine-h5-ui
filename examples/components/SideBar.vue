@@ -3,18 +3,18 @@
   <div class="m-sidebar">
     <ul class="clear-scroll">
       <!-- 一级列表 -->
-      <li v-for="(item,index) in Object.keys(listData)" :key="index">
-        <div class="u-tit">{{item}}</div>
+      <li v-for="(item, index) in Object.keys(listData)" :key="index">
+        <div class="u-tit">{{ item }}</div>
         <ul class="m-list-first">
           <!-- 二级列表 -->
-          <li v-for="(its,ins) in listData[item]" :key="ins">
-            <router-link v-if="!its.items" :to="{name:its.name}" :class="{spot:its.name==='logs'}">{{its.meta.title}}</router-link>
+          <li v-for="(its, ins) in listData[item]" :key="ins">
+            <router-link v-if="!its.items" :to="{ name: its.name }" :class="{ spot: its.name === 'logs' }">{{ its.meta.title }}</router-link>
             <template v-else>
-              <div class="u-tit-second">{{its.meta.title}}</div>
+              <div class="u-tit-second">{{ its.meta.title }}</div>
               <ul class="m-list-second">
                 <!-- 三级列表 -->
-                <li v-for="(it,i) in its.items" :key="i">
-                  <router-link :to="{name:it.name}" :title="it.meta.title">{{it.meta.title}}</router-link>
+                <li v-for="(it, i) in its.items" :key="i">
+                  <router-link :to="{ name: it.name }" :title="it.meta.title">{{ it.meta.title }}</router-link>
                 </li>
               </ul>
             </template>
@@ -23,18 +23,17 @@
       </li>
     </ul>
   </div>
-
 </template>
 <script>
-import NavConfig from "@/utils/data/nav.config.json";
+import NavConfig from '@/utils/data/nav.config.json'
 export default {
-  name: "SideBar",
+  name: 'SideBar',
   data() {
     return {
       listData: NavConfig
-    };
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 @color-first: #8dabc4;
@@ -71,7 +70,7 @@ export default {
         .same-height();
         position: relative;
         &.spot::after {
-          content: "";
+          content: '';
           position: absolute;
           top: 8px;
           left: 85px;

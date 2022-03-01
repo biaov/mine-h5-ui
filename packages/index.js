@@ -4,76 +4,77 @@
  */
 
 /* 基础组件 start */
-import MeButton from "./MeButton"; // 按钮
-import MeIcon from "./MeIcon"; // 图标
-import MeImg from "./MeImg"; // 图片
-import MePopup from "./MePopup"; // 弹出层
+import MeButton from './MeButton' // 按钮
+import MeIcon from './MeIcon' // 图标
+import MeImg from './MeImg' // 图片
+import MePopup from './MePopup' // 弹出层
 /* 基础组件 end */
 
 /* 表单组件 start */
-import MeInput from "./MeInput"; // 输入框
-import MeRadio from "./MeRadio"; // 单选框
-import MeRadioGroup from "./MeRadioGroup"; // 单选框组
-import MeCheckbox from "./MeCheckbox"; // 复选框
-import MeCheckboxGroup from "./MeCheckboxGroup"; // 复选框组
-import MeSwitch from "./MeSwitch"; // 开关
-import MeKeyboard from "./MeKeyboard"; // 数字键盘
-import MePassword from "./MePassword"; // 密码输入框/短信输入框
-import MeSearch from "./MeSearch"; // 搜索
-import MeRate from "./MeRate"; // 评分
-import MeSlider from "./MeSlider"; // 滑块
-import MeDatetimePicker from "./MeDatetimePicker"; // 时间选择器
-import MeAddressPicker from "./MeAddressPicker"; // 地址选择器
-import MeUpload from "./MeUpload"; // 上传
-import MeForm from "./MeForm"; // 表单
+import MeInput from './MeInput' // 输入框
+import MeRadio from './MeRadio' // 单选框
+import MeRadioGroup from './MeRadioGroup' // 单选框组
+import MeCheckbox from './MeCheckbox' // 复选框
+import MeCheckboxGroup from './MeCheckboxGroup' // 复选框组
+import MeSwitch from './MeSwitch' // 开关
+import MeKeyboard from './MeKeyboard' // 数字键盘
+import MePassword from './MePassword' // 密码输入框/短信输入框
+import MeSearch from './MeSearch' // 搜索
+import MeRate from './MeRate' // 评分
+import MeSlider from './MeSlider' // 滑块
+import MeDatetimePicker from './MeDatetimePicker' // 时间选择器
+import MeAddressPicker from './MeAddressPicker' // 地址选择器
+import MeUpload from './MeUpload' // 上传
+import MeForm from './MeForm' // 表单
 /* 表单组件 end */
 
 /* 反馈组件 start */
-import MeActionSheet from "./MeActionSheet"; // 动作面板
-import MeToast from "./MeToast"; // 消息提示
-import MeLoading from "./MeLoading"; // 加载
-import MeMask from "./MeMask"; // 遮罩层
-import MeMessageBox from "./MeMessageBox"; // 弹出框
-import MeDialog from "./MeDialog"; // 对话框
-import MeShareSheet from "./MeShareSheet"; // 分享面板
-import MeSwiperCell from "./MeSwiperCell"; // 滑动单元格
+import MeActionSheet from './MeActionSheet' // 动作面板
+import MeToast from './MeToast' // 消息提示
+import MeLoading from './MeLoading' // 加载
+import MeMask from './MeMask' // 遮罩层
+import MeMessageBox from './MeMessageBox' // 弹出框
+import MeDialog from './MeDialog' // 对话框
+import MeShareSheet from './MeShareSheet' // 分享面板
+import MeSwiperCell from './MeSwiperCell' // 滑动单元格
 /* 反馈组件 end */
 
 /* 导航组件 start */
-import MeGrid from "./MeGrid"; // 宫格
-import MeGridItem from "./MeGridItem"; // 宫格选项
-import MeIndexBar from "./MeIndexBar"; // 索引栏
-import MeNavBar from "./MeNavBar"; // 导航栏
-import MeTab from "./MeTab"; // 标签页
-import MeTabItem from "./MeTabItem"; // 标签选项
-import MeTabBar from "./MeTabBar"; // 标签栏
-import MePullRefresh from "./MePullRefresh"; // 下拉刷新
+import MeGrid from './MeGrid' // 宫格
+import MeGridItem from './MeGridItem' // 宫格选项
+import MeIndexBar from './MeIndexBar' // 索引栏
+import MeNavBar from './MeNavBar' // 导航栏
+import MeTab from './MeTab' // 标签页
+import MeTabItem from './MeTabItem' // 标签选项
+import MeTabBar from './MeTabBar' // 标签栏
+import MePullRefresh from './MePullRefresh' // 下拉刷新
 /* 导航组件 end */
 
 /* 展示组件 start */
-import MeProgressBar from "./MeProgressBar"; // 进度条
-import MeAccordion from "./MeAccordion"; // 手风琴
-import MeAccordionItem from "./MeAccordionItem"; // 手风琴选项
-import MeCountDown from "./MeCountDown"; // 倒计时
-import MeDivider from "./MeDivider"; // 分割线
-import MeEmpty from "./MeEmpty"; // 空状态
-import MePreview from "./MePreview"; // 图片预览
-import MeNoticeBar from "./MeNoticeBar"; // 公告栏
-import MeSwiper from "./MeSwiper"; // 轮播图
-import MeSwiperItem from "./MeSwiperItem"; // 轮播图选项
-import MeTag from "./MeTag"; // 标签
-import MeCountTo from "./MeCountTo"; // 数字滚动
+import MeProgressBar from './MeProgressBar' // 进度条
+import MeAccordion from './MeAccordion' // 手风琴
+import MeAccordionItem from './MeAccordionItem' // 手风琴选项
+import MeCountDown from './MeCountDown' // 倒计时
+import MeDivider from './MeDivider' // 分割线
+import MeEmpty from './MeEmpty' // 空状态
+import MePreview from './MePreview' // 图片预览
+import MeNoticeBar from './MeNoticeBar' // 公告栏
+import MeSwiper from './MeSwiper' // 轮播图
+import MeSwiperItem from './MeSwiperItem' // 轮播图选项
+import MeTag from './MeTag' // 标签
+import MeCountTo from './MeCountTo' // 数字滚动
 /* 展示组件 end */
 
 /* 业务组件 start */
-import MeVirtualList from "./MeVirtualList"; // 虚拟列表
-import MeScreenshot from "./MeScreenshot"; // 截长图
-import MeStep from "./MeStep"; // 步骤条
-import MeStepItem from "./MeStepItem"; // 步骤条选项
+import MeVirtualList from './MeVirtualList' // 虚拟列表
+import MeScreenshot from './MeScreenshot' // 截长图
+import MeStep from './MeStep' // 步骤条
+import MeStepItem from './MeStepItem' // 步骤条选项
+import MeDrag from './MeDrag' // 拖拽
 /* 业务组件 end */
 
 /* API start */
-import MeAPI from "./MeAPI";
+import MeAPI from './MeAPI'
 /* API end */
 
 // 所有组件
@@ -125,11 +126,12 @@ const components = {
   MeVirtualList,
   MeScreenshot,
   MeStep,
-  MeStepItem
-};
+  MeStepItem,
+  MeDrag
+}
 
 // 需要添加到 VUE 实例的 API
-const API = { ...MeAPI, MeToast, MeMessageBox, MePreview };
+const API = { ...MeAPI, MeToast, MeMessageBox, MePreview }
 
 /**
  * 组件注册
@@ -137,18 +139,18 @@ const API = { ...MeAPI, MeToast, MeMessageBox, MePreview };
  * @returns {Void}
  */
 const install = Vue => {
-  if (install.installed) return;
+  if (install.installed) return
   // 注册组件
-  Object.values(components).map(component => Vue.component(component.name, component));
+  Object.values(components).map(component => Vue.component(component.name, component))
   // 在Vue.prototype里插入API
   Object.keys(API).forEach(elem => {
-    Vue.prototype["$" + elem] = API[elem];
-  });
-};
+    Vue.prototype['$' + elem] = API[elem]
+  })
+}
 
 // 判断是否存在 Vue 环境
-if (typeof window !== "undefined" && window.Vue) {
-  install(window.Vue);
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
 }
 
 // 单个导出
@@ -201,11 +203,12 @@ export {
   MeVirtualList,
   MeScreenshot,
   MeStep,
-  MeStepItem
-};
+  MeStepItem,
+  MeDrag
+}
 
 // 全部导出
 export default {
   install,
   ...components
-};
+}

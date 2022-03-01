@@ -7,10 +7,10 @@
         <template v-if="item.icon">
           <me-icon :name="item.icon" :title="item.value"></me-icon>
         </template>
-        <template v-else>{{item.value}}</template>
+        <template v-else>{{ item.value }}</template>
       </a>
       <!-- 内部路由 -->
-      <router-link :to="{name:item.name}" v-else>{{item.value}}</router-link>
+      <router-link :to="{ name: item.name }" v-else>{{ item.value }}</router-link>
     </li>
   </ul>
 </template>
@@ -24,9 +24,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-navbar {

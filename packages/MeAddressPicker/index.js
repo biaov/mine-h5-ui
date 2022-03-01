@@ -1,6 +1,6 @@
-import MeAddressPicker from "./index.vue";
+import MeAddressPicker from './index.vue'
 MeAddressPicker.install = Vue => {
-  Vue.component(MeAddressPicker.name, MeAddressPicker);
-};
+  Vue.component(MeAddressPicker.name, MeAddressPicker)
+}
 
-export default MeAddressPicker;
+export default MeAddressPicker

@@ -1,6 +1,6 @@
-import MeDatetimePicker from "./index.vue";
+import MeDatetimePicker from './index.vue'
 MeDatetimePicker.install = Vue => {
-  Vue.component(MeDatetimePicker.name, MeDatetimePicker);
-};
+  Vue.component(MeDatetimePicker.name, MeDatetimePicker)
+}
 
-export default MeDatetimePicker;
+export default MeDatetimePicker

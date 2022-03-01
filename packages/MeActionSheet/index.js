@@ -1,6 +1,6 @@
-import MeActionSheet from "./index.vue";
+import MeActionSheet from './index.vue'
 MeActionSheet.install = Vue => {
-  Vue.component(MeActionSheet.name, MeActionSheet);
-};
+  Vue.component(MeActionSheet.name, MeActionSheet)
+}
 
-export default MeActionSheet;
+export default MeActionSheet

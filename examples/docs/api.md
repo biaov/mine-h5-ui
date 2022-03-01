@@ -6,7 +6,7 @@
 
 ## 全局引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";

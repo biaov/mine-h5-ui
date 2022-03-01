@@ -6,4 +6,4 @@ export default {
   validImgs: /\.(svg|gif|png|jpe?g)$/i, // 验证图片格式
   validThousand: /(\d)(?=(\d{3})+$)/g, // 千位符
   validThousandFloat: /(\d)(?=(\d{3})+\.)/g // 小数千位符
-};
+}

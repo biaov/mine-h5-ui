@@ -1,6 +1,6 @@
-import MeTab from "./index.vue";
+import MeTab from './index.vue'
 MeTab.install = Vue => {
-  Vue.component(MeTab.name, MeTab);
-};
+  Vue.component(MeTab.name, MeTab)
+}
 
-export default MeTab;
+export default MeTab

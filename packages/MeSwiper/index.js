@@ -1,6 +1,6 @@
-import MeSwiper from "./index.vue";
+import MeSwiper from './index.vue'
 MeSwiper.install = Vue => {
-  Vue.component(MeSwiper.name, MeSwiper);
-};
+  Vue.component(MeSwiper.name, MeSwiper)
+}
 
-export default MeSwiper;
+export default MeSwiper

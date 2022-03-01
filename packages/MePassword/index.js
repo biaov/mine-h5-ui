@@ -1,6 +1,6 @@
-import MePassword from "./index.vue";
+import MePassword from './index.vue'
 MePassword.install = Vue => {
-  Vue.component(MePassword.name, MePassword);
-};
+  Vue.component(MePassword.name, MePassword)
+}
 
-export default MePassword;
+export default MePassword

@@ -6,7 +6,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -27,7 +27,7 @@ Vue.use(MeIcon);
 - 直接引入你的[Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)的项目。
 - 直接设置 `name` 属性即可。
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 // 引入iconfont图标

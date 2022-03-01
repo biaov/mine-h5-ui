@@ -1,6 +1,6 @@
-import MeSearch from "./index.vue";
+import MeSearch from './index.vue'
 MeSearch.install = Vue => {
-  Vue.component(MeSearch.name, MeSearch);
-};
+  Vue.component(MeSearch.name, MeSearch)
+}
 
-export default MeSearch;
+export default MeSearch

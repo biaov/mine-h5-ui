@@ -2,10 +2,10 @@
   <!-- 动作面板 -->
   <ul class="m-toast">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{item.label}}</div>
+      <div class="u-label">{{ item.label }}</div>
       <ul class="m-list-all">
         <li v-for="it in item.list" :key="it.id" @click="$MeToast('显示信息')">
-          <span>{{it.value}}</span>
+          <span>{{ it.value }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
         </li>
       </ul>
@@ -20,19 +20,19 @@ export default {
       listData: [
         {
           id: 1,
-          label: "基础用法",
+          label: '基础用法',
           list: [
             {
               id: 1,
-              value: "显示信息"
+              value: '显示信息'
             }
           ]
         }
       ]
-    };
+    }
   },
   methods: {}
-};
+}
 </script>
 <style scoped lang="less">
 .m-toast {

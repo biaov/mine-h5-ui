@@ -14,7 +14,7 @@ body {
   width: 100%;
   min-height: 100%;
   background: #fff;
-  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
 }
 
 a,
@@ -51,19 +51,32 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+  @modes: contain,
+  cover,
+  fill;
+
+  each(@modes, {
+      &[mode="@{value}"] {
+        width: 100%;
+        height: 100%;
+        object-fit: @value;
+      }
+    }
+
+  )
 }
 
 /* reset end */
 
 /* 清理 start */
 .clear-ft:after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
 
 .clear-mg {
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -126,8 +139,8 @@ img {
     background: rgba(0, 0, 0, 0.7);
   }
 
-  > ul,
-  > div {
+  >ul,
+  >div {
     .clear-scroll;
     position: absolute;
     padding: 15px;

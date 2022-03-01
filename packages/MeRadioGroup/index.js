@@ -1,6 +1,6 @@
-import MeRadioGroup from "./index.vue";
+import MeRadioGroup from './index.vue'
 MeRadioGroup.install = Vue => {
-  Vue.component(MeRadioGroup.name, MeRadioGroup);
-};
+  Vue.component(MeRadioGroup.name, MeRadioGroup)
+}
 
-export default MeRadioGroup;
+export default MeRadioGroup

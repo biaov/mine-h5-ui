@@ -5,10 +5,10 @@
   </div>
 </template>
 <script>
-import HTML2Canvas from "html2canvas";
+import HTML2Canvas from 'html2canvas'
 
 export default {
-  name: "MeScreenshot",
+  name: 'MeScreenshot',
   props: {
     // 开始截图状态
     start: {
@@ -23,41 +23,41 @@ export default {
     // 下载图片名称
     imageName: {
       type: String,
-      default: "screenshot"
+      default: 'screenshot'
     }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 点击 dom
     onClick(e) {
-      this.$emit("on-click", e);
+      this.$emit('on-click', e)
     },
     // 开始截图
     startScreenshot() {
       HTML2Canvas(this.$refs.screenshot).then(canvas => {
-        const img = canvas.toDataURL();
-        this.allowDown && this.downImg(img);
-        this.$emit("on-end", img, canvas);
-      });
+        const img = canvas.toDataURL()
+        this.allowDown && this.downImg(img)
+        this.$emit('on-end', img, canvas)
+      })
     },
     // 下载图片
     downImg(imgData) {
-      const aDom = document.createElement("a");
-      aDom.href = imgData;
-      aDom.download = `${this.imageName}.png`;
-      aDom.click(); // 下载图片
+      const aDom = document.createElement('a')
+      aDom.href = imgData
+      aDom.download = `${this.imageName}.png`
+      aDom.click() // 下载图片
     }
   },
   watch: {
     // 开始截图
     start: {
       handler(value) {
-        value && this.startScreenshot();
+        value && this.startScreenshot()
       },
       immediate: true
     }
   }
-};
+}
 </script>

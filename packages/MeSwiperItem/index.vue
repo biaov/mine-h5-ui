@@ -1,35 +1,35 @@
 <template>
   <!-- 轮播图 -->
   <div class="me-swiper-item" :style="`background:${background};`">
-    <img class="u-img" :src="url" width="100%" alt="banner" v-if="url" draggable="false">
+    <img class="u-img" :src="url" width="100%" alt="banner" v-if="url" draggable="false" />
     <slot>
-      <div class="u-text" v-if="text">{{text}}</div>
+      <div class="u-text" v-if="text">{{ text }}</div>
     </slot>
   </div>
 </template>
 <script>
 export default {
-  name: "MeSwiperItem",
+  name: 'MeSwiperItem',
   props: {
     // 图片地址
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     // 文本
     text: {
       type: String,
-      default: ""
+      default: ''
     },
     // 背景色
     background: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {}
-};
+}
 </script>

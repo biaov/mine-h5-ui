@@ -1,9 +1,9 @@
 <template>
   <!-- 标签 -->
   <ul class="m-tag">
-    <li v-for="(item,index) in listData" :key="index">
-      <div class="u-label">{{item.label}}</div>
-      <me-tag v-for="(it,i) in item.children" :key="i" v-bind="it" @on-close="onClose"></me-tag>
+    <li v-for="(item, index) in listData" :key="index">
+      <div class="u-label">{{ item.label }}</div>
+      <me-tag v-for="(it, i) in item.children" :key="i" v-bind="it" @on-close="onClose"></me-tag>
     </li>
   </ul>
 </template>
@@ -14,97 +14,97 @@ export default {
       // 列表数据
       listData: [
         {
-          label: "基础用法",
+          label: '基础用法',
           children: [
             {
-              type: "primary"
+              type: 'primary'
             },
             {
-              type: "success"
+              type: 'success'
             },
             {
-              type: "info"
+              type: 'info'
             },
             {
-              type: "warning"
+              type: 'warning'
             },
             {
-              type: "danger"
+              type: 'danger'
             }
           ]
         },
         {
-          label: "空心设置",
+          label: '空心设置',
           children: [
             {
-              type: "primary",
+              type: 'primary',
               plain: true
             },
             {
-              type: "success",
+              type: 'success',
               plain: true
             },
             {
-              type: "info",
+              type: 'info',
               plain: true
             },
             {
-              type: "warning",
+              type: 'warning',
               plain: true
             },
             {
-              type: "danger",
+              type: 'danger',
               plain: true
             }
           ]
         },
         {
-          label: "自定义样式",
+          label: '自定义样式',
           children: [
-            { color: "#6DA1F0", radius: 20, width: 100, height: 40 },
-            { color: "#F060F0", radius: 20, width: 100, height: 40 }
+            { color: '#6DA1F0', radius: 20, width: 100, height: 40 },
+            { color: '#F060F0', radius: 20, width: 100, height: 40 }
           ]
         },
         {
-          label: "自定义内容",
+          label: '自定义内容',
           children: [
             {
-              text: "注意",
-              textColor: "rgba(255,255,255,0.6)",
-              type: "warning"
+              text: '注意',
+              textColor: 'rgba(255,255,255,0.6)',
+              type: 'warning'
             },
             {
-              text: "警告",
-              type: "danger"
+              text: '警告',
+              type: 'danger'
             },
             {
-              text: "置顶",
-              color: "#e4393c"
+              text: '置顶',
+              color: '#e4393c'
             },
             {
-              text: "作者",
-              color: "#4359A8"
+              text: '作者',
+              color: '#4359A8'
             },
             {
-              text: "新消息",
-              color: "#f00"
+              text: '新消息',
+              color: '#f00'
             }
           ]
         },
         {
-          label: "关闭状态",
-          children: [{ type: "danger", closeable: true }]
+          label: '关闭状态',
+          children: [{ type: 'danger', closeable: true }]
         }
       ]
-    };
+    }
   },
   methods: {
     // 点击关闭按钮
     onClose() {
-      this.$MeToast("点击关闭按钮");
+      this.$MeToast('点击关闭按钮')
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-tag {

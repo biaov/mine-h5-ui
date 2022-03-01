@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -26,7 +26,7 @@ Vue.use(MeStepItem);
 
 - 通过 `active` 属性来设置激活状态。
 
-:::demo
+:::CopyCode
 
 ```Vue
 <template>
@@ -52,7 +52,7 @@ export default {
 
 - 通过 `type` 属性来设置主题类型，默认为 `primary`。
 
-:::demo
+:::CopyCode
 
 ```Vue
 <template>
@@ -78,7 +78,7 @@ export default {
 
 - 通过 `color` 属性和 `active-color` 属性来设置自定义主题。
 
-:::demo
+:::CopyCode
 
 ```Vue
 <template>
@@ -104,7 +104,7 @@ export default {
 
 - 通过 `icon` 属性和 `active-icon` 属性来设置自定义图标。
 
-:::demo
+:::CopyCode
 
 ```Vue
 <template>
@@ -130,7 +130,7 @@ export default {
 
 - 通过 `direction` 属性来设置方向，默认为 `horizontal`。
 
-:::demo
+:::CopyCode
 
 ```Vue
 <template>

@@ -1,23 +1,23 @@
-const { src, dest, series, parallel } = require("gulp");
-const less = require("gulp-less");
-const autoprefixer = require("autoprefixer");
-const cssmin = require("gulp-cssmin");
-const postcss = require("gulp-postcss");
-const pxtorem = require("postcss-pxtorem");
+const { src, dest, series, parallel } = require('gulp')
+const less = require('gulp-less')
+const autoprefixer = require('autoprefixer')
+const cssmin = require('gulp-cssmin')
+const postcss = require('gulp-postcss')
+const pxtorem = require('postcss-pxtorem')
 const {
   clean,
   copyfont,
   minifontCss,
   config: { input, output }
-} = require("./gulpfile.base"); // 基础方法
+} = require('./gulpfile.base') // 基础方法
 // 编译 LESS
 const compile = () =>
-  src([`${input}*.less`, ...["base", "variable"].map(name => `!${input}${name}.less`)])
+  src([`${input}*.less`, ...['base', 'variable'].map(name => `!${input}${name}.less`)])
     .pipe(less())
     .pipe(
       postcss([
         autoprefixer({
-          overrideBrowserslist: ["last 2 versions"]
+          overrideBrowserslist: ['last 2 versions']
         }),
         pxtorem({
           replace: true
@@ -25,6 +25,6 @@ const compile = () =>
       ])
     )
     .pipe(cssmin())
-    .pipe(dest(output));
+    .pipe(dest(output))
 
-exports.build = series(clean, parallel(compile, copyfont, minifontCss));
+exports.build = series(clean, parallel(compile, copyfont, minifontCss))

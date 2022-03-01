@@ -1,6 +1,6 @@
-import MeImg from "./index.vue";
+import MeImg from './index.vue'
 MeImg.install = Vue => {
-  Vue.component(MeImg.name, MeImg);
-};
+  Vue.component(MeImg.name, MeImg)
+}
 
-export default MeImg;
+export default MeImg

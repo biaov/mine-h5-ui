@@ -2,7 +2,7 @@
   <!-- 头部 -->
   <div class="g-header">
     <!-- 返回按钮 -->
-    <router-link :to="{name:'index'}" class="u-return">
+    <router-link :to="{ name: 'index' }" class="u-return">
       <me-icon name="icon-left" color="#949494" size="20px"></me-icon>
     </router-link>
     <!-- 头部内容 -->
@@ -14,9 +14,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>
 <style scoped lang="less">
 @height: 50px;

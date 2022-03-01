@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::demo
+:::CopyCode
 
 ```JavaScript
 import Vue from "vue";
@@ -26,7 +26,7 @@ Vue.use(MeRate);
 - 通过 `v-model` 指令来设置评分组件的的值。
 - 注意：只支持整数。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value"></me-rate>
@@ -38,7 +38,7 @@ Vue.use(MeRate);
 
 - 通过 `icon` 和 `icon-select` 属性来设置评分组件的自定义图标，未选中和选中的默认图标为 icon-star4 和 icon-star3。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" icon="icon-aixinD" icon-select="icon-love"></me-rate>
@@ -50,7 +50,7 @@ Vue.use(MeRate);
 
 - 通过 `color` 属性来设置评分组件的自定义图标颜色，默认为 #fed835。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" color="#f66"></me-rate>
@@ -63,7 +63,7 @@ Vue.use(MeRate);
 - 通过 `count` 属性来设置评分组件的自定义数量，默认为 5。
 - 当你设置 `count` 属性时注意与 [`tips` 属性](#tips)相对应。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" :count="6" :tips="['青铜', '白银', '黄金', '钻石', '王者', '无敌']"></me-rate>
@@ -75,7 +75,7 @@ Vue.use(MeRate);
 
 - 通过 `readonly` 属性来设置评分组件的只读状态，默认为 false。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" :readonly="true"></me-rate>
@@ -87,7 +87,7 @@ Vue.use(MeRate);
 
 - 通过 `disabled` 属性来设置评分组件的禁用状态，默认为 false。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" :disabled="true"></me-rate>
@@ -99,7 +99,7 @@ Vue.use(MeRate);
 
 - 通过 `tips` 和 `tips-color` 属性来设置评分组件的自定义提示语的内容和颜色，自定义提示语的内容和颜色默认为 ["非常不满意", "不满意", "一般", "满意", "非常满意"] 和 #494949。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" :tips="['一级', '二级', '三级', '四级', '五级']" tips-color="#f60"></me-rate>
@@ -111,7 +111,7 @@ Vue.use(MeRate);
 
 - 通过 `size` 属性来设置自定义图标颜色，默认为 24px。
 
-:::demo
+:::CopyCode
 
 ```HTML
 <me-rate v-model="value" size="26px"></me-rate>

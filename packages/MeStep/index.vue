@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  name: "MeStep",
+  name: 'MeStep',
   props: {
     // 激活状态
     active: {
@@ -16,36 +16,36 @@ export default {
     // 显示方向
     direction: {
       type: String,
-      default: "horizontal" // horizontal|vertical
+      default: 'horizontal' // horizontal|vertical
     },
     // 主题类型
     type: {
       type: String,
-      default: "primary" // primary|success|warning|danger
+      default: 'primary' // primary|success|warning|danger
     },
     // 置灰颜色
     color: {
       type: String,
-      default: ""
+      default: ''
     },
     // 激活颜色
     activeColor: {
       type: String,
-      default: ""
+      default: ''
     },
     // 置灰图标
     icon: {
       type: String,
-      default: "dot"
+      default: 'dot'
     },
     // 激活图标
     activeIcon: {
       type: String,
-      default: "radio"
+      default: 'radio'
     }
   },
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>
