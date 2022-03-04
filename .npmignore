@@ -34,3 +34,4 @@ pre-publish-github.json
 vue.config.js
 Release.md
 deploy.yml
+.ncurc.json

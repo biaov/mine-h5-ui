@@ -2,8 +2,14 @@
 
 ## Eslint 检查
 
+- 注释 [iconfont.js](./packages/MeLoading/hooks.ts)
+
+```JavaScript
+// import '../theme-default/fonts/iconfont.js'
+```
+
 ```Basic
-npm run eslint
+npm run lint
 ```
 
 ## 全部格式化

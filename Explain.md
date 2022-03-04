@@ -24,13 +24,8 @@ npm start
 
 ## 打包项目
 
-- 打包演示项目
-
-```Basic
-npm run build:docs
-```
-
-- 打包组件库
+- 打包组件库文档和组件库
+- `--max_old_space_size=8192`
 
 ```Basic
 npm run build

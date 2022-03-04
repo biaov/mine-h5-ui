@@ -28,12 +28,14 @@ export const DeepCopyRA = (arg: any): any => {
     : IsType('RegExp', arg) || IsType('Error', arg) // 判断是否是正则对象或错误对象
     ? new arg.constructor(arg)
     : arg
+
   // 判断是否是数组或对象,循环遍历
-  IsType('Object', arg) ||
-    (IsType('Array', arg) &&
-      Object.keys(arg).forEach(key => {
-        newValue[key] = DeepCopyRA(arg[key])
-      }))
+  if (IsType('Object', arg) || IsType('Array', arg)) {
+    Object.keys(arg).forEach(key => {
+      newValue[key] = DeepCopyRA(arg[key])
+    })
+  }
+
   return newValue
 }
 

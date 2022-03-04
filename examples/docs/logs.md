@@ -14,7 +14,20 @@
 
 :::TimeLine
 
-## v2.3.0-Latest release
+## v2.3.2-Latest release
+
+`2022-03-04`
+
+- 更新业务组件
+  - [新增拖拽组件](/v2/doc/drag)
+- 更新样式类
+  - 新增镂空效果 - [hollow-out](/v2/doc/css)
+  - 新增图片填充效果 - [mode="fill,contain,cover"](/v2/doc/css)
+- Bug Fixes
+  - 修复已知 Bug
+  - 优化代码
+
+## v2.3.0
 
 `2022-01-10`
 

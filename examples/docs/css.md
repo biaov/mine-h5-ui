@@ -31,6 +31,11 @@ import "mine-h5-ui/lib/theme-default/base.css";
 | clamp        | 溢出隐藏一行···                              | clamp-two        | 溢出隐藏两行···    |
 | wrap-en      | 英文或数字强制换行                           | clear-scroll     | 设置轮动条样式     |
 | inline-block | 行内块居中                                   | animation-cursor | animation 光标动画 |
+| hollow-out   | 镂空效果                                     | --               | --                 |
+
+| 属性名                         | 说明         | class 类名 | 说明 |
+| ------------------------------ | ------------ | ---------- | ---- |
+| img[mode="fill,contain,cover"] | 图片填充效果 | --         | --   |
 
 ## Transition 过渡动画
 

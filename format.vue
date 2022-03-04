@@ -1,21 +1,40 @@
 <template>
-  <me-step :active="active" direction="vertical">
-    <me-step-item name="first">
-      <h3>状态一</h3>
-      <p>2021-12-18 17:51:01</p>
-    </me-step-item>
-    <me-step-item name="second">
-      <h3>状态二</h3>
-      <p>2021-12-18 17:51:02</p>
-    </me-step-item>
-  </me-step>
+  <me-drag v-model:list="list" v-model:current="current">
+    <template #default="{ item }">
+      <img :src="item.url" alt="img" mode="fill" />
+    </template>
+  </me-drag>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, ref } from 'vue'
+
 export default defineComponent({
   setup() {
-    const active = ref(['first']) // 活动项
-    return { active }
+    // 列表数据
+    const list = ref([
+      {
+        rect: {
+          w: 100,
+          h: 100,
+          x: 0,
+          y: 0,
+          r: 0
+        },
+        url: 'https://dummyimage.com/100x100/67c23a/fff&text=1'
+      },
+      {
+        rect: {
+          w: 80,
+          h: 80,
+          x: 110,
+          y: 110,
+          r: 0
+        },
+        url: 'https://dummyimage.com/80x80/409eff/fff&text=2'
+      }
+    ])
+    const current = ref(0) // 当前选中项
+    return { list, current }
   }
 })
 </script>

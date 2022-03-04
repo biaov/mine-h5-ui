@@ -1,4 +1,5 @@
 export default [
+  'icon-close1',
   'icon-dot',
   'icon-notice',
   'icon-wangluocuowu',

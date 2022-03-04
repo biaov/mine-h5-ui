@@ -16,7 +16,7 @@ switch (process.env.NODE_PRE) {
   case 'github':
     filename = '-github'
     package.name = `@biaov/${package.name}`
-    package.publishConfig = { registry: 'https://npm.pkg.github.com/@biaov' }
+    package.publishConfig = { registry: 'https://npm.pkg.github.com/' }
     break
 }
 const prePackagePath = resolve(__dirname, `../pre-publish${filename}.json`) // 新路径

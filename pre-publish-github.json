@@ -1,6 +1,6 @@
 {
   "name": "@biaov/mine-h5-ui",
-  "version": "2.3.2-beta.0",
+  "version": "2.3.2",
   "private": false,
   "author": {
     "name": "biaov",
@@ -29,7 +29,7 @@
     "url": "https://github.com/biaov/MINE-H5-UI/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@biaov"
+    "registry": "https://npm.pkg.github.com/"
   },
   "license": "ISC",
   "contributors": [
@@ -39,8 +39,8 @@
     }
   ],
   "dependencies": {
-    "html2canvas": "^1.4.0",
-    "vue": "^3.2.26"
+    "html2canvas": "^1.4.1",
+    "vue": "^3.2.31"
   },
   "devDependencies": {}
 }
