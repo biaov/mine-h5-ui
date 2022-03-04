@@ -67,7 +67,7 @@ export const getRotatePoint = (point: Point, center: Point, angle: number): Poin
 const northWestResize = ({ symmPoint, curPoint, rect }: Option): Rect => {
   const newCenter = getCenterPoint(curPoint, symmPoint) // 新的中心点坐标
   const newPoint = getRotatePoint(curPoint, newCenter, -rect.r) // 新的坐标点
-  const newSymmPoint = getRotatePoint(symmPoint, newCenter, -rect.r) // 新的对称点
+  const newSymmPoint = getSymmPoint(newPoint, newCenter) // 新的对称点
   const newW = newSymmPoint.x - newPoint.x // 新的宽度
   const newH = newSymmPoint.y - newPoint.y // 新的高度
   if (newW > 0 && newH > 0) {
@@ -119,7 +119,7 @@ const northResize = ({ startPoint, symmPoint, curPoint, rect }: Option): Rect =>
 const northEastResize = ({ symmPoint, curPoint, rect }: Option): Rect => {
   const newCenter = getCenterPoint(curPoint, symmPoint)
   const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
-  const newSymmPoint = getRotatePoint(symmPoint, newCenter, -rect.r)
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
 
   const newW = newPoint.x - newSymmPoint.x
   const newH = newSymmPoint.y - newPoint.y
@@ -172,17 +172,17 @@ const eastResize = ({ startPoint, symmPoint, curPoint, rect }: Option): Rect => 
  */
 const southEastResize = ({ symmPoint, curPoint, rect }: Option): Rect => {
   const newCenter = getCenterPoint(curPoint, symmPoint)
-  const newPoint = getRotatePoint(symmPoint, newCenter, -rect.r)
-  const newSymmPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
 
-  const newW = newSymmPoint.x - newPoint.x
-  const newH = newSymmPoint.y - newPoint.y
+  const newW = newPoint.x - newSymmPoint.x
+  const newH = newPoint.y - newSymmPoint.y
 
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
     rect.h = Math.round(newH)
-    rect.x = Math.round(newPoint.x)
-    rect.y = Math.round(newPoint.y)
+    rect.x = Math.round(newSymmPoint.x)
+    rect.y = Math.round(newSymmPoint.y)
   }
 
   return rect
@@ -226,16 +226,17 @@ const southResize = ({ startPoint, symmPoint, curPoint, rect }: Option): Rect =>
  */
 const southWestResize = ({ symmPoint, curPoint, rect }: Option): Rect => {
   const newCenter = getCenterPoint(curPoint, symmPoint)
-  const newPoint = getRotatePoint(symmPoint, newCenter, -rect.r)
-  const newSymmPoint = getRotatePoint(curPoint, newCenter, -rect.r)
-  const newW = newPoint.x - newSymmPoint.x
-  const newH = newSymmPoint.y - newPoint.y
+  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
+
+  const newW = newSymmPoint.x - newPoint.x
+  const newH = newPoint.y - newSymmPoint.y
 
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
     rect.h = Math.round(newH)
-    rect.x = Math.round(newSymmPoint.x)
-    rect.y = Math.round(newPoint.y)
+    rect.x = Math.round(newPoint.x)
+    rect.y = Math.round(newSymmPoint.y)
   }
 
   return rect

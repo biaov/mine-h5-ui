@@ -26,6 +26,7 @@
     "test:unit": "jest -c=jest.config.js --detectOpenHandles",
     "test:unit:single": "jest tests/unit/loading.spec.ts -c=jest.config.js --detectOpenHandles",
     "prepare": "husky install",
+    "publish":"npm run pre-publish && npm run pre-publish:github",
     "pre-publish": "node build/pre-publish.ts",
     "pre-publish:github": "cross-env NODE_PRE=github node build/pre-publish.ts",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue}'",
