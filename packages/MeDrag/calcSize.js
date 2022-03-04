@@ -37,8 +37,8 @@ export const angleMutualRadian = (value, type = 'angle') => {
  * 获取旋转之后的坐标
  * @param { Object } point 需要旋转的点
  * @param { Object } center 旋转的中心点
- * @param { Object } angle 旋转角度
- * @returns { Object } 旋转之后的点
+ * @param { number } angle 旋转角度
+ * @returns { Object } { x, y } 旋转之后的点
  */
 export const getRotatePoint = (point, center, angle) => {
   const radian = angleMutualRadian(angle) // 弧度
@@ -59,15 +59,17 @@ export const getRotatePoint = (point, center, angle) => {
 const northWestResize = ({ symmPoint, curPoint, rect }) => {
   const newCenter = getCenterPoint(curPoint, symmPoint) // 新的中心点坐标
   const newPoint = getRotatePoint(curPoint, newCenter, -rect.r) // 新的坐标点
-  const newSymmPoint = getRotatePoint(symmPoint, newCenter, -rect.r) // 新的对称点
+  const newSymmPoint = getSymmPoint(newPoint, newCenter) // 新的对称点
   const newW = newSymmPoint.x - newPoint.x // 新的宽度
   const newH = newSymmPoint.y - newPoint.y // 新的高度
+
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
     rect.h = Math.round(newH)
     rect.x = Math.round(newPoint.x)
     rect.y = Math.round(newPoint.y)
   }
+
   return rect
 }
 
@@ -76,7 +78,7 @@ const northWestResize = ({ symmPoint, curPoint, rect }) => {
  * @param { Object } param - 计算参数
  * @returns { Object } 计算之后的大小
  */
-const northResize = ({ startPoint, centerPoint, symmPoint, curPoint, rect }) => {
+const northResize = ({ startPoint, symmPoint, curPoint, rect }) => {
   const rotatePoint = getRotatePoint(curPoint, startPoint, -rect.r)
   const centerTop = getRotatePoint(
     {
@@ -109,7 +111,7 @@ const northResize = ({ startPoint, centerPoint, symmPoint, curPoint, rect }) => 
 const northEastResize = ({ symmPoint, curPoint, rect }) => {
   const newCenter = getCenterPoint(curPoint, symmPoint)
   const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
-  const newSymmPoint = getRotatePoint(symmPoint, newCenter, -rect.r)
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
 
   const newW = newPoint.x - newSymmPoint.x
   const newH = newSymmPoint.y - newPoint.y
@@ -120,6 +122,7 @@ const northEastResize = ({ symmPoint, curPoint, rect }) => {
     rect.x = Math.round(newSymmPoint.x)
     rect.y = Math.round(newPoint.y)
   }
+
   return rect
 }
 
@@ -159,18 +162,19 @@ const eastResize = ({ startPoint, symmPoint, curPoint, rect }) => {
  */
 const southEastResize = ({ symmPoint, curPoint, rect }) => {
   const newCenter = getCenterPoint(curPoint, symmPoint)
-  const newPoint = getRotatePoint(symmPoint, newCenter, -rect.r)
-  const newSymmPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
 
-  const newW = newSymmPoint.x - newPoint.x
-  const newH = newSymmPoint.y - newPoint.y
+  const newW = newPoint.x - newSymmPoint.x
+  const newH = newPoint.y - newSymmPoint.y
 
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
     rect.h = Math.round(newH)
-    rect.x = Math.round(newPoint.x)
-    rect.y = Math.round(newPoint.y)
+    rect.x = Math.round(newSymmPoint.x)
+    rect.y = Math.round(newSymmPoint.y)
   }
+
   return rect
 }
 
@@ -210,17 +214,19 @@ const southResize = ({ startPoint, symmPoint, curPoint, rect }) => {
  */
 const southWestResize = ({ symmPoint, curPoint, rect }) => {
   const newCenter = getCenterPoint(curPoint, symmPoint)
-  const newPoint = getRotatePoint(symmPoint, newCenter, -rect.r)
-  const newSymmPoint = getRotatePoint(curPoint, newCenter, -rect.r)
-  const newW = newPoint.x - newSymmPoint.x
-  const newH = newSymmPoint.y - newPoint.y
+  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
+
+  const newW = newSymmPoint.x - newPoint.x
+  const newH = newPoint.y - newSymmPoint.y
 
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
     rect.h = Math.round(newH)
-    rect.x = Math.round(newSymmPoint.x)
-    rect.y = Math.round(newPoint.y)
+    rect.x = Math.round(newPoint.x)
+    rect.y = Math.round(newSymmPoint.y)
   }
+
   return rect
 }
 

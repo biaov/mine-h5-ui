@@ -13,7 +13,7 @@
       @click.stop="onClick(index)"
     >
       <!-- 缩放按钮 -->
-      <div class="u-resize" v-for="(it, i) in angleToCursor" :key="it.cursor" :class="[it.cursor, getCursor(i)]" @touchstart.stop="onResizeTouchstart" @touchmove.stop="onResizeTouchmove($event, item)" @touchend.stop @mousedown.stop="onResizeMousedown($event, it)"></div>
+      <div class="u-resize" v-for="(it, i) in angleToCursor" :key="it.cursor" :class="[it.cursor, getCursor(i)]" @touchstart.stop="onResizeTouchstart" @touchmove.stop="onResizeTouchmove($event, it)" @touchend.stop @mousedown.stop="onResizeMousedown($event, it)"></div>
       <!-- 删除按钮 -->
       <div class="u-delete flex-center" @click="onDelete"><i class="iconfont icon-baseline-close-px"></i></div>
       <!-- 旋转按钮 -->
@@ -121,7 +121,7 @@ export default {
     // 角度对正
     getAngleAlign(angle) {
       const { angleRange } = this
-      return [0, 90, 180, 360].find(deg => Math.abs(angle - deg) < angleRange) || angle
+      return [0, 90, 180, 270, 360, angle].find(deg => Math.abs(angle - deg) < angleRange)
     },
     // 获取旋转角度
     getRotate(point) {
@@ -155,9 +155,7 @@ export default {
       const diffY = point.y - startPoint.y // 手指纵向移动距离
       const distX = startRect.x + diffX // 矩形移动的距离
       const distY = startRect.y + diffY // 矩形移动的距离
-      const distW = Math.abs(diffX) + startPoint.w
-      const distH = Math.abs(diffY) + startPoint.h
-      return { distX, distY, distW, distH }
+      return { distX, distY }
     },
     // 触摸开始
     onTouchstart(e) {
@@ -167,12 +165,9 @@ export default {
     },
     // 接触点改变,滑动时
     onTouchmove(e) {
-      const { startPoint, startRect, current, listData } = this
+      const { current, listData } = this
       const { clientX, clientY } = e.changedTouches[0]
-      const diffX = clientX - startPoint.x // 手指横向移动距离
-      const diffY = clientY - startPoint.y // 手指纵向移动距离
-      const distX = startRect.x + diffX // 矩形移动的距离
-      const distY = startRect.y + diffY // 矩形移动的距离
+      const { distX, distY } = this.getDistance({ x: clientX, y: clientY })
       listData[current].rect.x = distX // 矩形移动的距离
       listData[current].rect.y = distY // 矩形移动的距离
       this.onEmitChange('translate')
@@ -184,13 +179,9 @@ export default {
       this.startPoint = { x: clientX, y: clientY }
       this.startRect = { ...this.getCurItem }
       // 表达式声明移动事件
-      document.onmousemove = e => {
-        const { startPoint, startRect, current, listData } = this
-        const { clientX, clientY } = e
-        const diffX = clientX - startPoint.x // 手指横向移动距离
-        const diffY = clientY - startPoint.y // 手指纵向移动距离
-        const distX = startRect.x + diffX // 矩形移动的距离
-        const distY = startRect.y + diffY // 矩形移动的距离
+      document.onmousemove = ev => {
+        const { current, listData } = this
+        const { distX, distY } = this.getDistance({ x: ev.clientX, y: ev.clientY })
         listData[current].rect.x = distX // 矩形移动的距离
         listData[current].rect.y = distY // 矩形移动的距离
         this.onEmitChange('translate')
@@ -223,7 +214,6 @@ export default {
     // 触摸 resize 元素开始
     onResizeTouchstart(e) {
       const { clientX, clientY } = e.changedTouches[0]
-      this.startRect = { ...this.getCurItem }
       this.startPoint = { x: clientX, y: clientY }
       this.centerPoint = this.getCenterPoint()
       this.symmPoint = getSymmPoint(this.startPoint, this.centerPoint)
@@ -244,15 +234,13 @@ export default {
     // resize 元素 pc 端鼠标按下移动
     onResizeMousedown(e, item) {
       const { clientX, clientY } = e
-      this.startRect = { ...this.getCurItem }
       this.startPoint = { x: clientX, y: clientY }
       this.centerPoint = this.getCenterPoint()
       this.symmPoint = getSymmPoint(this.startPoint, this.centerPoint)
       // 表达式声明移动事件
-      document.onmousemove = e => {
+      document.onmousemove = ev => {
         const { startPoint, centerPoint, symmPoint, getCurItem } = this
-        const { clientX, clientY } = e
-        const curPoint = { x: clientX, y: clientY } // 当前触摸点坐标
+        const curPoint = { x: ev.clientX, y: ev.clientY } // 当前触摸点坐标
         const resultRect = calcSize(item.cursor, { startPoint, centerPoint, symmPoint, curPoint, rect: getCurItem })
         const { x, y } = this.getDragRect
         resultRect.x -= x

@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     // 状态改变
-    onChange(type, name) {
+    onChange(data, name) {
       console.log(name)
     }
   }
