@@ -7,6 +7,7 @@
 export const getSymmPoint = (curPoint, center) => {
   const x = center.x * 2 - curPoint.x
   const y = center.y * 2 - curPoint.y
+  
   return { x, y }
 }
 
@@ -19,6 +20,7 @@ export const getSymmPoint = (curPoint, center) => {
 export const getCenterPoint = (curPoint, symmPoint) => {
   const x = (curPoint.x + symmPoint.x) / 2
   const y = (curPoint.y + symmPoint.y) / 2
+
   return { x, y }
 }
 
@@ -31,6 +33,7 @@ export const getCenterPoint = (curPoint, symmPoint) => {
  */
 export const angleMutualRadian = (value, type = 'angle') => {
   const ratio = Math.PI / 180 // 比例
+
   return type === 'angle' ? value * ratio : value / ratio
 }
 /**
@@ -44,10 +47,12 @@ export const getRotatePoint = (point, center, angle) => {
   const radian = angleMutualRadian(angle) // 弧度
   const sin = Math.sin(radian) // sin
   const cos = Math.cos(radian) // cos
+
   const relativeX = point.x - center.x // 相对横坐标
   const relativeY = point.y - center.y // 相对纵坐标
   const x = relativeX * cos - relativeY * sin + center.x
   const y = relativeX * sin + relativeY * cos + center.y
+
   return { x, y }
 }
 
@@ -60,6 +65,7 @@ const northWestResize = ({ symmPoint, curPoint, rect }) => {
   const newCenter = getCenterPoint(curPoint, symmPoint) // 新的中心点坐标
   const newPoint = getRotatePoint(curPoint, newCenter, -rect.r) // 新的坐标点
   const newSymmPoint = getSymmPoint(newPoint, newCenter) // 新的对称点
+
   const newW = newSymmPoint.x - newPoint.x // 新的宽度
   const newH = newSymmPoint.y - newPoint.y // 新的高度
 
@@ -93,13 +99,14 @@ const northResize = ({ startPoint, symmPoint, curPoint, rect }) => {
 
   if (newH > 0) {
     const newCenter = {
-      x: centerTop.x - (centerTop.x - symmPoint.x) / 2,
-      y: centerTop.y + (symmPoint.y - centerTop.y) / 2
+      x: (centerTop.x + symmPoint.x) / 2,
+      y: (centerTop.y + symmPoint.y) / 2
     }
     rect.h = Math.round(newH)
     rect.x = Math.round(newCenter.x - rect.w / 2)
     rect.y = Math.round(newCenter.y - newH / 2)
   }
+
   return rect
 }
 
@@ -143,15 +150,17 @@ const eastResize = ({ startPoint, symmPoint, curPoint, rect }) => {
   )
 
   const newW = Math.sqrt((rightCenter.x - symmPoint.x) ** 2 + (rightCenter.y - symmPoint.y) ** 2)
+
   if (newW > 0) {
     const newCenter = {
-      x: rightCenter.x - (rightCenter.x - symmPoint.x) / 2,
-      y: rightCenter.y + (symmPoint.y - rightCenter.y) / 2
+      x: (rightCenter.x + symmPoint.x) / 2,
+      y: (rightCenter.y + symmPoint.y) / 2
     }
     rect.w = Math.round(newW)
     rect.x = Math.round(newCenter.x - newW / 2)
     rect.y = Math.round(newCenter.y - rect.h / 2)
   }
+
   return rect
 }
 
@@ -195,15 +204,17 @@ const southResize = ({ startPoint, symmPoint, curPoint, rect }) => {
   )
 
   const newH = Math.sqrt((centerBottom.x - symmPoint.x) ** 2 + (centerBottom.y - symmPoint.y) ** 2)
+
   if (newH > 0) {
     const newCenter = {
-      x: centerBottom.x - (centerBottom.x - symmPoint.x) / 2,
-      y: centerBottom.y + (symmPoint.y - centerBottom.y) / 2
+      x: (centerBottom.x + symmPoint.x) / 2,
+      y: (centerBottom.y + symmPoint.y) / 2
     }
     rect.h = Math.round(newH)
     rect.x = Math.round(newCenter.x - rect.w / 2)
     rect.y = Math.round(newCenter.y - newH / 2)
   }
+
   return rect
 }
 
@@ -238,16 +249,19 @@ const southWestResize = ({ symmPoint, curPoint, rect }) => {
 const westResize = ({ startPoint, symmPoint, curPoint, rect }) => {
   const rotatePoint = getRotatePoint(curPoint, startPoint, -rect.r)
   const leftCenter = getRotatePoint({ x: rotatePoint.x, y: startPoint.y }, startPoint, rect.r)
+
   const newW = Math.sqrt((leftCenter.x - symmPoint.x) ** 2 + (leftCenter.y - symmPoint.y) ** 2)
+
   if (newW > 0) {
     const newCenter = {
-      x: leftCenter.x - (leftCenter.x - symmPoint.x) / 2,
-      y: leftCenter.y + (symmPoint.y - leftCenter.y) / 2
+      x: (leftCenter.x + symmPoint.x) / 2,
+      y: (leftCenter.y + symmPoint.y) / 2
     }
     rect.w = Math.round(newW)
     rect.y = Math.round(newCenter.y - rect.h / 2)
     rect.x = Math.round(newCenter.x - newW / 2)
   }
+
   return rect
 }
 
