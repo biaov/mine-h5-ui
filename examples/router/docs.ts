@@ -1,4 +1,4 @@
-import NavConfig from '@/utils/nav.config.json'
+import NavConfig from '@/utils/nav.config'
 import { Docs } from './interfaces'
 
 let docs: Docs[] = []
@@ -24,4 +24,5 @@ Object.keys(NavConfig).forEach(elem => {
 
 addComponent(docs)
 const exportDocs = docs
+
 export default exportDocs

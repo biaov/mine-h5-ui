@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import TimeLine from '@/components/TimeLine'
 import CopyCode from '@/components/CopyCode'
 import { MessageEventListener } from '@/utils/functions'
+import { componentConfig } from '@/utils/nav.config'
 import router from './router'
 import App from './App.vue'
 import MINEH5UI from '~/index' // 开发
@@ -22,7 +23,7 @@ MessageEventListener(path => {
   const routePath = app.config.globalProperties.$route.path // 当前路由路径
   const { $router } = app.config.globalProperties
   if (path === '/') {
-    routePath !== '/doc/introduce' &&
+    componentConfig.some(item => item.items.some(it => routePath.includes(it.path))) &&
       $router.push({
         path: '/doc/introduce'
       })

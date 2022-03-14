@@ -1,7 +1,7 @@
-import NavConfig from '@/utils/nav.config.json'
+import { componentConfig } from '@/utils/nav.config'
 import { Docs } from './interfaces'
 
-let docs: Docs[] = NavConfig['组件']
+let docs: Docs[] = componentConfig
 // 添加组件
 const addComponent = (arr: Docs[]) => {
   const indexArr: number[] = [] // 索引数组

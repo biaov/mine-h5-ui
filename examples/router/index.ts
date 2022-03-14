@@ -28,4 +28,5 @@ const router: Router = createRouter({
   history: createWebHistory(BaseRouter),
   routes
 })
+
 export default router

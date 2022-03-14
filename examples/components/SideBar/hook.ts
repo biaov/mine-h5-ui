@@ -1,4 +1,4 @@
-import NavData from '@/utils/nav.config.json'
+import NavData from '@/utils/nav.config'
 import { SidebarListItem } from './interfaces'
 
 // 使用页面数据
