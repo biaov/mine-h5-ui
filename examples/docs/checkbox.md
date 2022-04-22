@@ -136,24 +136,24 @@ app.mount("#app");
 
 #### 参数
 
-| 参数                | 说明                           | 类型   | 可选值                | 默认值   |
-| ------------------- | ------------------------------ | ------ | --------------------- | -------- |
-| modelValue(v-model) | 双向绑定复选框选项里的 name 值 | Array  | --                    | --       |
-| direction           | 排列方式                       | string | vertical / horizontal | vertical |
+| 参数                | 说明                           | 类型   | 可选值                | 默认值   | 版本 |
+| ------------------- | ------------------------------ | ------ | --------------------- | -------- | ---- |
+| modelValue(v-model) | 双向绑定复选框选项里的 name 值 | Array  | --                    | --       | --   |
+| direction           | 排列方式                       | string | vertical / horizontal | vertical | --   |
 
 #### Slots
 
 - ⚠ 注意：此插槽只接 `MeCheckbox` 组件。
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |
 
 #### 方法
 
-| 方法名    | 说明                     | 回调参数       |
-| --------- | ------------------------ | -------------- |
-| on-change | 当绑定值变化时触发的事件 | `array:item[]` |
+| 方法名    | 说明                     | 回调参数       | 版本 |
+| --------- | ------------------------ | -------------- | ---- |
+| on-change | 当绑定值变化时触发的事件 | `array:item[]` | --   |
 
 - item: `string | number`
 
@@ -161,25 +161,25 @@ app.mount("#app");
 
 #### 参数
 
-| 参数                | 说明               | 类型             | 可选值         | 默认值      |
-| ------------------- | ------------------ | ---------------- | -------------- | ----------- |
-| modelValue(v-model) | 双向绑定复选框状态 | boolean          | true / false   | --          |
-| name                | 复选框唯一名称     | [string, number] | --             | --          |
-| shape               | 图标形状           | string           | square / round | round       |
-| icon                | 自定义图标         | string           | --             | icon-radio3 |
-| iconSelect          | 自定义选中图标     | string           | --             | icon-radio  |
-| iconSize            | 图标大小           | string           | --             | 20px        |
-| checkedColor        | 选中图标颜色       | string           | --             | #409eff     |
-| disabled            | 禁用状态           | boolean          | true / false   | false       |
+| 参数                | 说明               | 类型             | 可选值         | 默认值      | 版本 |
+| ------------------- | ------------------ | ---------------- | -------------- | ----------- | ---- |
+| modelValue(v-model) | 双向绑定复选框状态 | boolean          | true / false   | --          | --   |
+| name                | 复选框唯一名称     | [string, number] | --             | --          | --   |
+| shape               | 图标形状           | string           | square / round | round       | --   |
+| icon                | 自定义图标         | string           | --             | icon-radio3 | --   |
+| iconSelect          | 自定义选中图标     | string           | --             | icon-radio  | --   |
+| iconSize            | 图标大小           | string           | --             | 20px        | --   |
+| checkedColor        | 选中图标颜色       | string           | --             | #409eff     | --   |
+| disabled            | 禁用状态           | boolean          | true / false   | false       | --   |
 
 #### Slots
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |
 
 #### 方法
 
-| 方法名   | 说明                   | 回调参数         |
-| -------- | ---------------------- | ---------------- |
-| on-click | 点击复选框时触发的事件 | event:MouseEvent |
+| 方法名   | 说明                   | 回调参数         | 版本 |
+| -------- | ---------------------- | ---------------- | ---- |
+| on-click | 点击复选框时触发的事件 | event:MouseEvent | --   |

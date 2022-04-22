@@ -110,24 +110,24 @@ app.mount("#app");
 
 ### 参数
 
-| 参数        | 说明                         | 类型    | 可选值                                                | 默认值     |
-| ----------- | ---------------------------- | ------- | ----------------------------------------------------- | ---------- |
-| width       | 按钮宽度                     | string  | --                                                    | 自适应内容 |
-| type        | 按钮类型                     | string  | default / primary / success / info / warning / danger | default    |
-| native-type | 原生 button 标签的 type 属性 | string  | button / reset / submit                               | button     |
-| plain       | 是否为朴素按钮               | boolean | true / false                                          | false      |
-| disabled    | 是否为禁用状态               | boolean | true / false                                          | false      |
-| icon        | 图标按钮                     | string  | --                                                    | --         |
-| color       | 自定义颜色                   | string  | --                                                    | #494949    |
+| 参数        | 说明                         | 类型    | 可选值                                                | 默认值     | 版本 |
+| ----------- | ---------------------------- | ------- | ----------------------------------------------------- | ---------- | ---- |
+| width       | 按钮宽度                     | string  | --                                                    | 自适应内容 | --   |
+| type        | 按钮类型                     | string  | default / primary / success / info / warning / danger | default    | --   |
+| native-type | 原生 button 标签的 type 属性 | string  | button / reset / submit                               | button     | --   |
+| plain       | 是否为朴素按钮               | boolean | true / false                                          | false      | --   |
+| disabled    | 是否为禁用状态               | boolean | true / false                                          | false      | --   |
+| icon        | 图标按钮                     | string  | --                                                    | --         | --   |
+| color       | 自定义颜色                   | string  | --                                                    | #494949    | --   |
 
 ### 方法
 
-| 方法名   | 说明                 | 回调参数         |
-| -------- | -------------------- | ---------------- |
-| on-click | 点击按钮时触发的事件 | event:MouseEvent |
+| 方法名   | 说明                 | 回调参数         | 版本 |
+| -------- | -------------------- | ---------------- | ---- |
+| on-click | 点击按钮时触发的事件 | event:MouseEvent | --   |
 
 ### Slots
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |

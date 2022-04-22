@@ -1,6 +1,6 @@
 <template>
   <!-- 拖拽 -->
-  <div class="me-drag" ref="dragRef" :style="`width:${width};height:${height};`" @click="onClick(-1)">
+  <div class="me-drag" ref="dragRef" :style="`width:${width};height:${height};`" @click="onClick(-1)" @touchstart="onTouchstartWrap" @touchmove="onTouchmoveWrap">
     <div
       v-for="(item, index) in listData"
       :key="index"
@@ -33,7 +33,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { useHandler, useMove, useResize, useRotate } from './hooks'
+import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
 import { ListDataItem } from './interfaces'
 
 export default defineComponent({
@@ -74,6 +74,11 @@ export default defineComponent({
     angleRange: {
       type: Number,
       default: 5
+    },
+    // 双指缩放一倍的像素
+    scale: {
+      type: Number,
+      default: 100 // 100px:1倍,0表示禁止缩放
     }
   },
   setup(props, { emit }) {
@@ -82,6 +87,7 @@ export default defineComponent({
     const { onTouchstart, onTouchmove, onMousedown } = useMove(props, { ...share, listData })
     const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize(props, { ...share, listData })
     const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
+    const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listData })
 
     return {
       listData,
@@ -97,7 +103,9 @@ export default defineComponent({
       onResizeTouchmove,
       onResizeMousedown,
       onRotateTouchmove,
-      onRotateMousedown
+      onRotateMousedown,
+      onTouchstartWrap,
+      onTouchmoveWrap
     }
   }
 })

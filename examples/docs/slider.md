@@ -143,33 +143,33 @@ export default defineComponent({
 
 ### 参数
 
-| 参数                | 说明                            | 类型    | 可选值       | 默认值 |
-| ------------------- | ------------------------------- | ------- | ------------ | ------ |
-| modelValue(v-model) | 双向绑定滑块的值                | number  | --           | --     |
-| max                 | 范围最大值                      | number  | --           | 100    |
-| min                 | 范围最小值                      | number  | --           | 0      |
-| styles              | 自定义样式，[查看详情](#styles) | Object  | --           | --     |
-| is-btn              | 自定义按钮                      | boolean | true / false | false  |
-| disabled            | 禁用状态                        | boolean | true / false | false  |
+| 参数                | 说明                            | 类型    | 可选值       | 默认值 | 版本 |
+| ------------------- | ------------------------------- | ------- | ------------ | ------ | ---- |
+| modelValue(v-model) | 双向绑定滑块的值                | number  | --           | --     | --   |
+| max                 | 范围最大值                      | number  | --           | 100    | --   |
+| min                 | 范围最小值                      | number  | --           | 0      | --   |
+| styles              | 自定义样式，[查看详情](#styles) | Object  | --           | --     | --   |
+| is-btn              | 自定义按钮                      | boolean | true / false | false  | --   |
+| disabled            | 禁用状态                        | boolean | true / false | false  | --   |
 
 <h3 id="styles">styles 属性</h3>
 
-| 参数    | 说明                           | 类型   | 可选值 | 默认值  |
-| ------- | ------------------------------ | ------ | ------ | ------- |
-| height  | 线条高度                       | string | --     | 2px     |
-| radius  | 线条倒角                       | string | --     | 2px     |
-| lineBgc | 线条背景色，支持 background 值 | string | --     | #409eff |
+| 参数    | 说明                           | 类型   | 可选值 | 默认值  | 版本 |
+| ------- | ------------------------------ | ------ | ------ | ------- | ---- |
+| height  | 线条高度                       | string | --     | 2px     | --   |
+| radius  | 线条倒角                       | string | --     | 2px     | --   |
+| lineBgc | 线条背景色，支持 background 值 | string | --     | #409eff | --   |
 
 ### 方法
 
-| 方法名   | 说明                 | 回调参数    |
-| -------- | -------------------- | ----------- |
-| on-start | 开始拖动时触发的事件 | event:Event |
-| on-move  | 正在拖动中触发的事件 | event:Event |
-| on-end   | 结束拖动时触发的事件 | event:Event |
+| 方法名   | 说明                 | 回调参数    | 版本 |
+| -------- | -------------------- | ----------- | ---- |
+| on-start | 开始拖动时触发的事件 | event:Event | --   |
+| on-move  | 正在拖动中触发的事件 | event:Event | --   |
+| on-end   | 结束拖动时触发的事件 | event:Event | --   |
 
 ### Slots
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |

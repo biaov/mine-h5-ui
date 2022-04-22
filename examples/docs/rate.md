@@ -127,21 +127,21 @@ app.mount("#app");
 
 ### 参数
 
-| 参数                | 说明                 | 类型    | 可选值       | 默认值                                               |
-| ------------------- | -------------------- | ------- | ------------ | ---------------------------------------------------- |
-| modelValue(v-model) | 双向绑定评分组件的值 | number  | --           | --                                                   |
-| icon                | 未选中图标           | string  | --           | icon-star4                                           |
-| icon-select         | 选中图标             | string  | --           | icon-star3                                           |
-| color               | 图标颜色             | string  | --           | #fed835                                              |
-| count               | 图标数量             | number  | --           | 5                                                    |
-| readonly            | 只读状态             | boolean | true / false | false                                                |
-| disabled            | 禁用状态             | boolean | true / false | false                                                |
-| tips                | 提示语               | Array   | --           | ["非常不满意", "不满意", "一般", "满意", "非常满意"] |
-| tips-color          | 提示语颜色           | string  | --           | #494949                                              |
-| size                | 图标大小             | string  | --           | 24px                                                 |
+| 参数                | 说明                 | 类型    | 可选值       | 默认值                                               | 版本 |
+| ------------------- | -------------------- | ------- | ------------ | ---------------------------------------------------- | ---- |
+| modelValue(v-model) | 双向绑定评分组件的值 | number  | --           | --                                                   | --   |
+| icon                | 未选中图标           | string  | --           | icon-star4                                           | --   |
+| icon-select         | 选中图标             | string  | --           | icon-star3                                           | --   |
+| color               | 图标颜色             | string  | --           | #fed835                                              | --   |
+| count               | 图标数量             | number  | --           | 5                                                    | --   |
+| readonly            | 只读状态             | boolean | true / false | false                                                | --   |
+| disabled            | 禁用状态             | boolean | true / false | false                                                | --   |
+| tips                | 提示语               | Array   | --           | ["非常不满意", "不满意", "一般", "满意", "非常满意"] | --   |
+| tips-color          | 提示语颜色           | string  | --           | #494949                                              | --   |
+| size                | 图标大小             | string  | --           | 24px                                                 | --   |
 
 ### 方法
 
-| 方法名    | 说明                       | 回调参数 |
-| --------- | -------------------------- | -------- |
-| on-change | 评分组件改变值时触发该事件 | --       |
+| 方法名    | 说明                       | 回调参数 | 版本 |
+| --------- | -------------------------- | -------- | ---- |
+| on-change | 评分组件改变值时触发该事件 | --       | --   |

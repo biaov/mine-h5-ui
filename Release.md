@@ -2,8 +2,6 @@
 
 ## Eslint 检查
 
-- 注释 [iconfont.js](./packages/MeLoading/hooks.ts)
-
 ```JavaScript
 // import '../theme-default/fonts/iconfont.js'
 ```
@@ -19,6 +17,9 @@ npm run prettier
 ```
 
 ## 单元测试
+
+- 注释 [iconfont.js](./packages/MeLoading/hooks.ts)
+- 单元测试完再去掉注释
 
 ```Basic
 npm run test:unit

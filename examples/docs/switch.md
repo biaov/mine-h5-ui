@@ -89,17 +89,17 @@ app.mount("#app");
 
 ### 参数
 
-| 参数                | 说明             | 类型    | 可选值       | 默认值  |
-| ------------------- | ---------------- | ------- | ------------ | ------- |
-| modelValue(v-model) | 双向绑定开关状态 | boolean | true / false | --      |
-| size                | 开关大小         | string  | --           | 30px    |
-| inactiveColor       | 开关关闭颜色     | string  | --           | #fff    |
-| activeColor         | 开关打开颜色     | string  | --           | #409eff |
-| async               | 异步状态         | boolean | true / false | false   |
-| disabled            | 禁用状态         | boolean | true / false | false   |
+| 参数                | 说明             | 类型    | 可选值       | 默认值  | 版本 |
+| ------------------- | ---------------- | ------- | ------------ | ------- | ---- |
+| modelValue(v-model) | 双向绑定开关状态 | boolean | true / false | --      | --   |
+| size                | 开关大小         | string  | --           | 30px    | --   |
+| inactiveColor       | 开关关闭颜色     | string  | --           | #fff    | --   |
+| activeColor         | 开关打开颜色     | string  | --           | #409eff | --   |
+| async               | 异步状态         | boolean | true / false | false   | --   |
+| disabled            | 禁用状态         | boolean | true / false | false   | --   |
 
 ### 方法
 
-| 方法名   | 说明                 | 回调参数          |
-| -------- | -------------------- | ----------------- |
-| on-click | 点击开关时触发的事件 | event: MouseEvent |
+| 方法名   | 说明                 | 回调参数          | 版本 |
+| -------- | -------------------- | ----------------- | ---- |
+| on-click | 点击开关时触发的事件 | event: MouseEvent | --   |

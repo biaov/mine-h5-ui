@@ -229,16 +229,16 @@ export default defineComponent({
 
 ### 参数
 
-| 参数      | 说明               | 类型   | 可选值            | 默认值   |
-| --------- | ------------------ | ------ | ----------------- | -------- |
-| v-model   | 双向绑定输入框的值 | string | --                | --       |
-| type      | 输入框模式         | string | password / number | password |
-| num       | 自定义输入框数量   | number | --                | 6        |
-| skin-type | 主题样式           | string | white / dark      | white    |
+| 参数      | 说明               | 类型   | 可选值            | 默认值   | 版本 |
+| --------- | ------------------ | ------ | ----------------- | -------- | ---- |
+| v-model   | 双向绑定输入框的值 | string | --                | --       | --   |
+| type      | 输入框模式         | string | password / number | password | --   |
+| num       | 自定义输入框数量   | number | --                | 6        | --   |
+| skin-type | 主题样式           | string | white / dark      | white    | --   |
 
 ### 方法
 
-| 方法名   | 说明                       | 回调参数         |
-| -------- | -------------------------- | ---------------- |
-| on-focus | 输入框聚焦时触发的事件     | event:MouseEvent |
-| on-blur  | 输入框失去焦点时触发的事件 | event:MouseEvent |
+| 方法名   | 说明                       | 回调参数         | 版本 |
+| -------- | -------------------------- | ---------------- | ---- |
+| on-focus | 输入框聚焦时触发的事件     | event:MouseEvent | --   |
+| on-blur  | 输入框失去焦点时触发的事件 | event:MouseEvent | --   |

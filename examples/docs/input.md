@@ -111,33 +111,33 @@ app.mount("#app");
 
 ### 参数
 
-| 参数                | 说明           | 类型             | 可选值                                                                   | 默认值    |
-| ------------------- | -------------- | ---------------- | ------------------------------------------------------------------------ | --------- |
-| modelValue(v-model) | 输入框默认值   | [string, number] | --                                                                       | --        |
-| type                | 输入框类型     | string           | 原生 input 类型                                                          | text      |
-| placeholder         | 输入框占位符   | string           | --                                                                       | 请输入... |
-| label               | 输入框标签     | string           | --                                                                       | --        |
-| label-width         | 标签宽度       | string           | --                                                                       | --        |
-| label-align         | 标签对齐方式   | string           | auto / left / right / center / justify / start / end / initial / inherit | left      |
-| label-color         | 标签颜色       | string           | --                                                                       | --        |
-| label-icon          | 标签图标       | string           | --                                                                       | --        |
-| focus-type          | 聚焦类型       | string           | default / primary / success / warning / danger                           | default   |
-| focus-color         | 聚焦自定义颜色 | string           | --                                                                       | --        |
-| icon                | 图标按钮       | string           | --                                                                       | --        |
-| password            | 密码输入框     | boolean          | true / false                                                             | false     |
-| digit               | 整数输入框     | boolean          | true / false                                                             | false     |
-| sms-msg             | 短信验证码信息 | string           | --                                                                       | --        |
-| sms-color           | 短信验证码颜色 | string           | --                                                                       | --        |
-| sms-is              | 是否开启倒计时 | boolean          | true / false                                                             | false     |
-| readonly            | 只读           | boolean          | true / false                                                             | false     |
-| disabled            | 禁用           | boolean          | true / false                                                             | false     |
+| 参数                | 说明           | 类型             | 可选值                                                                   | 默认值    | 版本 |
+| ------------------- | -------------- | ---------------- | ------------------------------------------------------------------------ | --------- | ---- |
+| modelValue(v-model) | 输入框默认值   | [string, number] | --                                                                       | --        | --   |
+| type                | 输入框类型     | string           | 原生 input 类型                                                          | text      | --   |
+| placeholder         | 输入框占位符   | string           | --                                                                       | 请输入... | --   |
+| label               | 输入框标签     | string           | --                                                                       | --        | --   |
+| label-width         | 标签宽度       | string           | --                                                                       | --        | --   |
+| label-align         | 标签对齐方式   | string           | auto / left / right / center / justify / start / end / initial / inherit | left      | --   |
+| label-color         | 标签颜色       | string           | --                                                                       | --        | --   |
+| label-icon          | 标签图标       | string           | --                                                                       | --        | --   |
+| focus-type          | 聚焦类型       | string           | default / primary / success / warning / danger                           | default   | --   |
+| focus-color         | 聚焦自定义颜色 | string           | --                                                                       | --        | --   |
+| icon                | 图标按钮       | string           | --                                                                       | --        | --   |
+| password            | 密码输入框     | boolean          | true / false                                                             | false     | --   |
+| digit               | 整数输入框     | boolean          | true / false                                                             | false     | --   |
+| sms-msg             | 短信验证码信息 | string           | --                                                                       | --        | --   |
+| sms-color           | 短信验证码颜色 | string           | --                                                                       | --        | --   |
+| sms-is              | 是否开启倒计时 | boolean          | true / false                                                             | false     | --   |
+| readonly            | 只读           | boolean          | true / false                                                             | false     | --   |
+| disabled            | 禁用           | boolean          | true / false                                                             | false     | --   |
 
 ### 方法
 
-| 方法名        | 说明                           | 回调参数         |
-| ------------- | ------------------------------ | ---------------- |
-| on-click-icon | 点击图标时触发的事件           | event:MouseEvent |
-| on-click-sms  | 点击短信验证码时触发的事件     | event:MouseEvent |
-| on-focus      | 输入框聚焦时触发的事件         | event:FocusEvent |
-| on-blur       | 输入框移除焦点时触发的事件     | event:FocusEvent |
-| on-change     | 输入框内容发生改变时触发的事件 | event:InputEvent |
+| 方法名        | 说明                           | 回调参数         | 版本 |
+| ------------- | ------------------------------ | ---------------- | ---- |
+| on-click-icon | 点击图标时触发的事件           | event:MouseEvent | --   |
+| on-click-sms  | 点击短信验证码时触发的事件     | event:MouseEvent | --   |
+| on-focus      | 输入框聚焦时触发的事件         | event:FocusEvent | --   |
+| on-blur       | 输入框移除焦点时触发的事件     | event:FocusEvent | --   |
+| on-change     | 输入框内容发生改变时触发的事件 | event:InputEvent | --   |

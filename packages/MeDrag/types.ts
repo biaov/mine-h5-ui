@@ -11,6 +11,7 @@ export type Props = PublicProps<{
   theme: string
   themeText: string
   angleRange: number
+  scale: number
 }>
 
 // calcSize name

@@ -169,46 +169,46 @@ export default defineComponent({
 
 #### MeStep
 
-| 参数         | 说明     | 类型   | 可选值                               | 默认值     |
-| ------------ | -------- | ------ | ------------------------------------ | ---------- |
-| active       | 激活状态 | Array  | --                                   | --         |
-| direction    | 显示方向 | string | horizontal / vertical                | horizontal |
-| type         | 主题类型 | string | primary / success / warning / danger | primary    |
-| color        | 置灰颜色 | string | --                                   | --         |
-| active-color | 激活颜色 | string | --                                   | --         |
-| icon         | 置灰图标 | string | --                                   | dot        |
-| active-icon  | 激活图标 | string | --                                   | radio      |
+| 参数         | 说明     | 类型   | 可选值                               | 默认值     | 版本 |
+| ------------ | -------- | ------ | ------------------------------------ | ---------- | ---- |
+| active       | 激活状态 | Array  | --                                   | --         | --   |
+| direction    | 显示方向 | string | horizontal / vertical                | horizontal | --   |
+| type         | 主题类型 | string | primary / success / warning / danger | primary    | --   |
+| color        | 置灰颜色 | string | --                                   | --         | --   |
+| active-color | 激活颜色 | string | --                                   | --         | --   |
+| icon         | 置灰图标 | string | --                                   | dot        | --   |
+| active-icon  | 激活图标 | string | --                                   | radio      | --   |
 
 ##### Slots
 
 - ⚠ 注意：此插槽只接 `MeStepItem` 组件。
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |
 
 #### MeStepItem
 
-| 参数 | 说明     | 类型            | 可选值 | 默认值 |
-| ---- | -------- | --------------- | ------ | ------ |
-| name | 索引名称 | string / number | --     | --     |
+| 参数 | 说明     | 类型            | 可选值 | 默认值 | 版本 |
+| ---- | -------- | --------------- | ------ | ------ | ---- |
+| name | 索引名称 | string / number | --     | --     | --   |
 
 ##### Slots
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |
 
 ### 方法
 
 #### MeStep
 
-| 方法名 | 说明 | 回调参数 |
-| ------ | ---- | -------- |
-| --     | --   | --       |
+| 方法名 | 说明 | 回调参数 | 版本 |
+| ------ | ---- | -------- | ---- |
+| --     | --   | --       | --   |
 
 #### MeStepItem
 
-| 方法名 | 说明 | 回调参数 |
-| ------ | ---- | -------- |
-| --     | --   | --       |
+| 方法名 | 说明 | 回调参数 | 版本 |
+| ------ | ---- | -------- | ---- |
+| --     | --   | --       | --   |

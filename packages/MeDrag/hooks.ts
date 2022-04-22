@@ -1,6 +1,6 @@
 import { ref, computed, watch } from 'vue'
 import { Props, CalcSizeName } from './types'
-import { ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare } from './interfaces'
+import { ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare, ScaleShare } from './interfaces'
 import calcSize, { getSymmPoint } from './calcSize'
 import { DeepCopyRA } from '../MeAPI/function'
 
@@ -18,8 +18,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     { start: 248, end: 293, cursor: 'sw' },
     { start: 293, end: 338, cursor: 'w' }
   ])
-  const getCurItem = computed(() => listData.value[props.current]?.rect) // 获取当前 item
-
+  const getCurItem = computed(() => listData.value[props.current]?.rect ?? {}) // 获取当前 item
   // 获取当前 cursor
   const getCursor = computed(() => (i: number) => {
     const { r } = getCurItem.value || {}
@@ -206,6 +205,7 @@ export const useResize = (props: Props, share: ResizeShare) => {
   return { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint }
 }
 
+// 旋转
 export const useRotate = (props: Props, share: RotateShare) => {
   const { getCurItem, getCenterPoint, onUpdate, onEmitChange } = share
 
@@ -263,4 +263,44 @@ export const useRotate = (props: Props, share: RotateShare) => {
     }
   }
   return { onRotateTouchmove, onRotateMousedown }
+}
+
+// 双指缩放
+export const useScale = (props: Props, share: ScaleShare) => {
+  const { listData, getCurItem, onEmitChange, onUpdate } = share
+  let startTouchDist: number // 开始两指距离
+  let startRect: Rect // 开始矩形区域
+
+  // 计算距离
+  const calcDistance = (list: TouchList): number => {
+    const first = list[0]
+    const last = list[1]
+    const distX = Math.abs(first.clientX - last.clientX)
+    const distY = Math.abs(first.clientY - last.clientY)
+    return Math.sqrt(distX ** 2 + distY ** 2)
+  }
+
+  // 触摸开始
+  const onTouchstartWrap = (e: TouchEvent) => {
+    if (e.touches.length !== 2 || !props.scale || !Object.keys(getCurItem.value).length) return
+    startTouchDist = calcDistance(e.touches)
+    startRect = { ...getCurItem.value }
+  }
+
+  // 触摸移动
+  const onTouchmoveWrap = (e: TouchEvent) => {
+    if (e.touches.length !== 2 || !props.scale || !Object.keys(getCurItem.value).length) return
+    const { x, y, w, h } = startRect
+    const scale = (calcDistance(e.touches) - startTouchDist) / props.scale + 1
+    const tempW = w * scale
+    const tempH = h * scale
+    listData.value[props.current].rect.x = x + (w - tempW) / 2
+    listData.value[props.current].rect.y = y + (h - tempH) / 2
+    listData.value[props.current].rect.w = tempW
+    listData.value[props.current].rect.h = tempH
+    onEmitChange('scale')
+    onUpdate()
+  }
+
+  return { onTouchstartWrap, onTouchmoveWrap }
 }

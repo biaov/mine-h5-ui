@@ -92,33 +92,33 @@ export default defineComponent({
 
 ### 参数
 
-| 参数       | 说明                      | 类型    | 可选值       | 默认值 |
-| ---------- | ------------------------- | ------- | ------------ | ------ |
-| title      | 标题                      | string  | --           | --     |
-| left-arrow | 左侧按钮箭头显示状态      | boolean | true / false | true   |
-| left-text  | 左侧按钮文本              | Array   | --           | --     |
-| right-text | 右侧按钮文本              | string  | --           | --     |
-| styles     | 组件样式，[详情](#Styles) | Object  | --           | --     |
+| 参数       | 说明                      | 类型    | 可选值       | 默认值 | 版本 |
+| ---------- | ------------------------- | ------- | ------------ | ------ | ---- |
+| title      | 标题                      | string  | --           | --     | --   |
+| left-arrow | 左侧按钮箭头显示状态      | boolean | true / false | true   | --   |
+| left-text  | 左侧按钮文本              | Array   | --           | --     | --   |
+| right-text | 右侧按钮文本              | string  | --           | --     | --   |
+| styles     | 组件样式，[详情](#Styles) | Object  | --           | --     | --   |
 
 <h4 id="Styles">Styles</h4>
 
-| 参数         | 说明         | 类型   | 可选值 | 默认值  |
-| ------------ | ------------ | ------ | ------ | ------- |
-| border-color | 下边框颜色   | string | --     | #dcdfe6 |
-| background   | 组件背景颜色 | string | --     | #fff    |
-| title-color  | 标题字体颜色 | string | --     | #494949 |
-| left-color   | 左侧字体颜色 | string | --     | #949494 |
-| right-color  | 右侧字体颜色 | string | --     | #949494 |
+| 参数         | 说明         | 类型   | 可选值 | 默认值  | 版本 |
+| ------------ | ------------ | ------ | ------ | ------- | ---- |
+| border-color | 下边框颜色   | string | --     | #dcdfe6 | --   |
+| background   | 组件背景颜色 | string | --     | #fff    | --   |
+| title-color  | 标题字体颜色 | string | --     | #494949 | --   |
+| left-color   | 左侧字体颜色 | string | --     | #949494 | --   |
+| right-color  | 右侧字体颜色 | string | --     | #949494 | --   |
 
 ### Slots
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 |
+| -------- | -------- | ----------- | ---- |
+| default  | 默认名称 | --          | --   |
 
 ### 方法
 
-| 方法名      | 说明                     | 回调参数         |
-| ----------- | ------------------------ | ---------------- |
-| click-left  | 点击左侧按钮时触发的事件 | event:MouseEvent |
-| click-right | 点击右侧按钮时触发的事件 | event:MouseEvent |
+| 方法名      | 说明                     | 回调参数         | 版本 |
+| ----------- | ------------------------ | ---------------- | ---- |
+| click-left  | 点击左侧按钮时触发的事件 | event:MouseEvent | --   |
+| click-right | 点击右侧按钮时触发的事件 | event:MouseEvent | --   |

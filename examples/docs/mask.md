@@ -88,13 +88,13 @@ export default defineComponent({
 
 ### 参数
 
-| 参数       | 说明               | 类型    | 可选值       | 默认值 |
-| ---------- | ------------------ | ------- | ------------ | ------ |
-| visible    | 遮罩层的显示状态   | boolean | true / false | false  |
-| mask-close | 点击遮罩层是否关闭 | boolean | true / false | false  |
+| 参数       | 说明               | 类型    | 可选值       | 默认值 | 版本 |
+| ---------- | ------------------ | ------- | ------------ | ------ | ---- |
+| visible    | 遮罩层的显示状态   | boolean | true / false | false  | --   |
+| mask-close | 点击遮罩层是否关闭 | boolean | true / false | false  | --   |
 
 ### Slots
 
-| 具名插槽 | 说明     | scopedSlots |
-| -------- | -------- | ----------- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本 | --  |
+| -------- | -------- | ----------- | ---- | --- |
+| default  | 默认名称 | --          | --   |

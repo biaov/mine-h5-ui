@@ -84,25 +84,25 @@ export default defineComponent({
 
 ### 参数
 
-| 参数                     | 说明                                     | 类型    | 可选值       | 默认值 |
-| ------------------------ | ---------------------------------------- | ------- | ------------ | ------ |
-| visible(v-model:visible) | 数字输入显示状态                         | boolean | true / false | --     |
-| is-padding               | 键盘激活状态是否要设置 padding-bottom    | boolean | true / false | true   |
-| skin-type                | 主题样式                                 | string  | gray / dark  | gray   |
-| skin-style               | 自定义主题样式，详见下面 skin-style 属性 | Object  | --           | --     |
+| 参数                     | 说明                                     | 类型    | 可选值       | 默认值 | 版本 |
+| ------------------------ | ---------------------------------------- | ------- | ------------ | ------ | ---- |
+| visible(v-model:visible) | 数字输入显示状态                         | boolean | true / false | --     | --   |
+| is-padding               | 键盘激活状态是否要设置 padding-bottom    | boolean | true / false | true   | --   |
+| skin-type                | 主题样式                                 | string  | gray / dark  | gray   | --   |
+| skin-style               | 自定义主题样式，详见下面 skin-style 属性 | Object  | --           | --     | --   |
 
 ### skin-style 属性
 
-| 参数    | 说明           | 类型   | 可选值 | 默认值 |
-| ------- | -------------- | ------ | ------ | ------ |
-| bgc     | 数字键盘背景色 | string | --     | --     |
-| textBgc | 按钮背景色     | string | --     | --     |
-| color   | 按钮文字颜色   | string | --     | --     |
+| 参数    | 说明           | 类型   | 可选值 | 默认值 | 版本 |
+| ------- | -------------- | ------ | ------ | ------ | ---- |
+| bgc     | 数字键盘背景色 | string | --     | --     | --   |
+| textBgc | 按钮背景色     | string | --     | --     | --   |
+| color   | 按钮文字颜色   | string | --     | --     | --   |
 
 ### 方法
 
-| 方法名      | 说明                         | 回调参数          |
-| ----------- | ---------------------------- | ----------------- |
-| on-click    | 点击键盘数字时触发的事件     | number: number    |
-| on-delete   | 点击键盘删除按钮时触发的事件 | event: MouseEvent |
-| on-complate | 点击键盘完成按钮时触发的事件 | event: MouseEvent |
+| 方法名      | 说明                         | 回调参数          | 版本 |
+| ----------- | ---------------------------- | ----------------- | ---- |
+| on-click    | 点击键盘数字时触发的事件     | number: number    | --   |
+| on-delete   | 点击键盘删除按钮时触发的事件 | event: MouseEvent | --   |
+| on-complate | 点击键盘完成按钮时触发的事件 | event: MouseEvent | --   |

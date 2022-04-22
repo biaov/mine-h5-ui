@@ -84,3 +84,8 @@ export interface ResizeGroup {
   sw: (option: Option) => Rect
   w: (option: Option) => Rect
 }
+
+// ScaleShare 共享数据和方法
+export interface ScaleShare extends Share {
+  listData: Ref<ListDataItem[]>
+}

@@ -53,23 +53,23 @@ app.mount("#app");
 
 ### 参数
 
-| 参数      | 说明                                | 类型    | 可选值       | 默认值   |
-| --------- | ----------------------------------- | ------- | ------------ | -------- |
-| time      | 倒计时的时间，单位毫秒(ms)          | number  | --           | --       |
-| format    | 显示格式，完整格式 `DD:hh:mm:ss:ms` | string  | --           | hh:mm:ss |
-| isStart   | 是否开始                            | boolean | true / false | false    |
-| isSuspend | 是否暂停                            | boolean | true / false | false    |
-| isReset   | 是否重置                            | boolean | true / false | false    |
+| 参数      | 说明                                | 类型    | 可选值       | 默认值   | 版本 |
+| --------- | ----------------------------------- | ------- | ------------ | -------- | ---- |
+| time      | 倒计时的时间，单位毫秒(ms)          | number  | --           | --       | --   |
+| format    | 显示格式，完整格式 `DD:hh:mm:ss:ms` | string  | --           | hh:mm:ss | --   |
+| isStart   | 是否开始                            | boolean | true / false | false    | --   |
+| isSuspend | 是否暂停                            | boolean | true / false | false    | --   |
+| isReset   | 是否重置                            | boolean | true / false | false    | --   |
 
 #### Slots
 
-| 具名插槽 | 说明     | scopedSlots                |
-| -------- | -------- | -------------------------- |
-| default  | 默认名称 | { hh: "", ms: "", ss: "" } |
+| 具名插槽 | 说明     | scopedSlots                | 版本 |
+| -------- | -------- | -------------------------- | ---- |
+| default  | 默认名称 | { hh: "", ms: "", ss: "" } | --   |
 
 ### 方法
 
-| 方法名      | 说明                   | 回调参数               |
-| ----------- | ---------------------- | ---------------------- |
-| on-end      | 倒计时结束时触发的事件 | --                     |
-| on-progress | 倒计时进行时触发的事件 | time: number(当前时间) |
+| 方法名      | 说明                   | 回调参数               | 版本 |
+| ----------- | ---------------------- | ---------------------- | ---- |
+| on-end      | 倒计时结束时触发的事件 | --                     | --   |
+| on-progress | 倒计时进行时触发的事件 | time: number(当前时间) | --   |

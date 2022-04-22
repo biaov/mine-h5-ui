@@ -101,17 +101,17 @@ app.mount("#app");
 
 ### 参数
 
-| 参数                | 说明                     | 类型    | 可选值                                          | 默认值                      |
-| ------------------- | ------------------------ | ------- | ----------------------------------------------- | --------------------------- |
-| modelValue(v-model) | 双向绑定选择的时间值     | string  | --                                              | --                          |
-| type                | 选择日期时间类型         | string  | date / year-month / month-day / time / datetime | date                        |
-| visible             | 日期时间选择器的显示状态 | boolean | true / false                                    | false                       |
-| min-date            | 时间下限                 | Date    | --                                              | new Date().getFullYear()-10 |
-| max-date            | 时间上限                 | Date    | --                                              | new Date().getFullYear()+10 |
+| 参数                | 说明                     | 类型    | 可选值                                          | 默认值                      | 版本 |
+| ------------------- | ------------------------ | ------- | ----------------------------------------------- | --------------------------- | ---- |
+| modelValue(v-model) | 双向绑定选择的时间值     | string  | --                                              | --                          | --   |
+| type                | 选择日期时间类型         | string  | date / year-month / month-day / time / datetime | date                        | --   |
+| visible             | 日期时间选择器的显示状态 | boolean | true / false                                    | false                       | --   |
+| min-date            | 时间下限                 | Date    | --                                              | new Date().getFullYear()-10 | --   |
+| max-date            | 时间上限                 | Date    | --                                              | new Date().getFullYear()+10 | --   |
 
 ### 方法
 
-| 方法名    | 说明                     | 回调参数           |
-| --------- | ------------------------ | ------------------ |
-| on-sure   | 点击确定按钮时触发的事件 | array:时间选择数组 |
-| on-cancel | 点击取消按钮时触发的事件 | --                 |
+| 方法名    | 说明                     | 回调参数           | 版本 |
+| --------- | ------------------------ | ------------------ | ---- |
+| on-sure   | 点击确定按钮时触发的事件 | array:时间选择数组 | --   |
+| on-cancel | 点击取消按钮时触发的事件 | --                 | --   |

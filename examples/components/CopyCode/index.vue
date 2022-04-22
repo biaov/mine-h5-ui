@@ -4,7 +4,7 @@
 <template>
   <!-- 时间线 -->
   <div class="m-copy-code">
-    <div class="u-copy" ref="copyDom" data-clipboard-action="copy"><img src="../../assets/icon-copy.png" alt="copy" /></div>
+    <div class="u-copy" ref="copyDom" data-clipboard-action="copy" title="复制"><img src="../../assets/icon-copy-2.png" alt="copy" /></div>
     <div class="m-cont" ref="codeCont">
       <slot></slot>
     </div>
