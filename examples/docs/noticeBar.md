@@ -123,25 +123,25 @@ export default {
 
 ### 参数
 
-| 参数            | 说明                                 | 类型                     | 可选值                | 默认值     |
-| --------------- | ------------------------------------ | ------------------------ | --------------------- | ---------- |
-| list            | 列表内容                             | `Array<string> / String` | --                    | --         |
-| scroll          | 滚动方向                             | String                   | horizontal / vertical | horizontal |
-| loop            | 开启动画                             | Boolean                  | true / false          | false      |
-| delay           | 间隔时间，滚动方向为 vertical 才有效 | Number                   | --                    | 3000       |
-| preappend-icon  | 前面图标                             | String                   | --                    | notice     |
-| preappend-color | 前面图标颜色                         | String                   | --                    | #f56c6c    |
-| append-icon     | 后面图标                             | String                   | --                    | right1     |
-| append-color    | 后面图标颜色                         | String                   | --                    | #c8c7cc    |
-| height          | 高度                                 | Number                   | --                    | 40         |
-| radius          | 倒角                                 | Number / String          | --                    | 4          |
-| background      | 背景颜色                             | String                   | --                    | #f6f6f6    |
-| color           | 文本颜色                             | String                   | --                    | #494949    |
+| 参数            | 说明                                 | 类型                     | 可选值                | 默认值     | 版本 |
+| --------------- | ------------------------------------ | ------------------------ | --------------------- | ---------- | ---- |
+| list            | 列表内容                             | `Array<string> / String` | --                    | --         | --   |
+| scroll          | 滚动方向                             | String                   | horizontal / vertical | horizontal | --   |
+| loop            | 开启动画                             | Boolean                  | true / false          | false      | --   |
+| delay           | 间隔时间，滚动方向为 vertical 才有效 | Number                   | --                    | 3000       | --   |
+| preappend-icon  | 前面图标                             | String                   | --                    | notice     | --   |
+| preappend-color | 前面图标颜色                         | String                   | --                    | #f56c6c    | --   |
+| append-icon     | 后面图标                             | String                   | --                    | right1     | --   |
+| append-color    | 后面图标颜色                         | String                   | --                    | #c8c7cc    | --   |
+| height          | 高度                                 | Number                   | --                    | 40         | --   |
+| radius          | 倒角                                 | Number / String          | --                    | 4          | --   |
+| background      | 背景颜色                             | String                   | --                    | #f6f6f6    | --   |
+| color           | 文本颜色                             | String                   | --                    | #494949    | --   |
 
 ### 方法
 
-| 方法名             | 说明                           | 回调参数           |
-| ------------------ | ------------------------------ | ------------------ |
-| on-click           | 点击组件文本列表项时触发的事件 | index:Number(索引) |
-| on-click:preappend | 点击组件前面的图标时触发的事件 | --                 |
-| on-click:append    | 点击组件后面的图标时触发的事件 | --                 |
+| 方法名             | 说明                           | 回调参数           | 版本 |
+| ------------------ | ------------------------------ | ------------------ | ---- |
+| on-click           | 点击组件文本列表项时触发的事件 | index:Number(索引) | --   |
+| on-click:preappend | 点击组件前面的图标时触发的事件 | --                 | --   |
+| on-click:append    | 点击组件后面的图标时触发的事件 | --                 | --   |

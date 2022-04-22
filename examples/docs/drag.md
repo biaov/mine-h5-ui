@@ -75,26 +75,27 @@ export default {
 
 ### 参数
 
-| 参数       | 说明                   | 类型   | 可选值 | 默认值  |
-| ---------- | ---------------------- | ------ | ------ | ------- |
-| current    | 选中项                 | Number | --     | -1      |
-| list       | 列表数据               | Array  | --     | --      |
-| width      | 容器宽度               | String | --     | 300px   |
-| height     | 容器高度               | String | --     | 300px   |
-| theme      | 选中主题色             | String | --     | #f56c6c |
-| themeText  | 选中主题文本色         | String | --     | #fff    |
-| angleRange | 对正角度范围,单位度(°) | Number | --     | 5       |
+| 参数       | 说明                   | 类型   | 可选值 | 默认值  | 版本  |
+| ---------- | ---------------------- | ------ | ------ | ------- | ----- |
+| current    | 选中项                 | Number | --     | -1      | --    |
+| list       | 列表数据               | Array  | --     | --      | --    |
+| width      | 容器宽度               | String | --     | 300px   | --    |
+| height     | 容器高度               | String | --     | 300px   | --    |
+| theme      | 选中主题色             | String | --     | #f56c6c | --    |
+| themeText  | 选中主题文本色         | String | --     | #fff    | --    |
+| angleRange | 对正角度范围,单位度(°) | Number | --     | 5       | --    |
+| scale      | 双指缩放一倍的像素     | Number | --     | 100     | 1.6.3 |
 
 #### Slots
 
-| 具名插槽 | 说明     | scopedSlots     |
-| -------- | -------- | --------------- |
-| default  | 默认名称 | { item, index } |
+| 具名插槽 | 说明     | scopedSlots     | 版本 | 版本 |
+| -------- | -------- | --------------- | ---- | ---- |
+| default  | 默认名称 | { item, index } | --   | --   |
 
 ### 方法
 
-| 方法名         | 说明           | 回调参数                |
-| -------------- | -------------- | ----------------------- |
-| on-change      | 拖拽改变时触发 | list: Array,name:string |
-| update:current | 更新选中项触发 | value: number           |
-| update:list    | 更新列表触发   | list: Array             |
+| 方法名         | 说明           | 回调参数                 | 版本 |
+| -------------- | -------------- | ------------------------ | ---- |
+| on-change      | 拖拽改变时触发 | list: Array, name:string | --   |
+| update:current | 更新选中项触发 | value: number            | --   |
+| update:list    | 更新列表触发   | list: Array              | --   |

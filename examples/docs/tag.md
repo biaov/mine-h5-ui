@@ -69,20 +69,20 @@ Vue.use(MeTag);
 
 ### 参数
 
-| 参数       | 说明     | 类型    | 可选值                                      | 默认值  |
-| ---------- | -------- | ------- | ------------------------------------------- | ------- |
-| type       | 类型     | String  | primary / success / info / warning / danger | primary |
-| plain      | 空心     | Boolean | true / false                                | false   |
-| radius     | 倒角     | Number  | --                                          | 4       |
-| width      | 宽度     | Number  | --                                          | --      |
-| height     | 高度     | Number  | --                                          | 24      |
-| color      | 标签颜色 | String  | --                                          | --      |
-| text       | 标签内容 | String  | --                                          | 标签    |
-| text-color | 文本颜色 | String  | --                                          | --      |
-| closeable  | 关闭状态 | Boolean | true / false                                | false   |
+| 参数       | 说明     | 类型    | 可选值                                      | 默认值  | 版本 |
+| ---------- | -------- | ------- | ------------------------------------------- | ------- | ---- |
+| type       | 类型     | String  | primary / success / info / warning / danger | primary | --   |
+| plain      | 空心     | Boolean | true / false                                | false   | --   |
+| radius     | 倒角     | Number  | --                                          | 4       | --   |
+| width      | 宽度     | Number  | --                                          | --      | --   |
+| height     | 高度     | Number  | --                                          | 24      | --   |
+| color      | 标签颜色 | String  | --                                          | --      | --   |
+| text       | 标签内容 | String  | --                                          | 标签    | --   |
+| text-color | 文本颜色 | String  | --                                          | --      | --   |
+| closeable  | 关闭状态 | Boolean | true / false                                | false   | --   |
 
 ### 方法
 
-| 方法名   | 说明                     | 回调参数 |
-| -------- | ------------------------ | -------- |
-| on-close | 点击关闭状态时触发的事件 | --       |
+| 方法名   | 说明                     | 回调参数 | 版本 |
+| -------- | ------------------------ | -------- | ---- |
+| on-close | 点击关闭状态时触发的事件 | --       | --   |

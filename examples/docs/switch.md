@@ -65,17 +65,17 @@ Vue.use(MeSwitch);
 
 ### 参数
 
-| 参数          | 说明             | 类型    | 可选值       | 默认值  |
-| ------------- | ---------------- | ------- | ------------ | ------- |
-| v-model       | 双向绑定开关状态 | Boolean | true / false | --      |
-| size          | 开关大小         | String  | --           | 30px    |
-| inactiveColor | 开关关闭颜色     | String  | --           | #fff    |
-| activeColor   | 开关打开颜色     | String  | --           | #409eff |
-| async         | 异步状态         | Boolean | true / false | false   |
-| disabled      | 禁用状态         | Boolean | true / false | false   |
+| 参数          | 说明             | 类型    | 可选值       | 默认值  | 版本 |
+| ------------- | ---------------- | ------- | ------------ | ------- | ---- |
+| v-model       | 双向绑定开关状态 | Boolean | true / false | --      | --   |
+| size          | 开关大小         | String  | --           | 30px    | --   |
+| inactiveColor | 开关关闭颜色     | String  | --           | #fff    | --   |
+| activeColor   | 开关打开颜色     | String  | --           | #409eff | --   |
+| async         | 异步状态         | Boolean | true / false | false   | --   |
+| disabled      | 禁用状态         | Boolean | true / false | false   | --   |
 
 ### 方法
 
-| 方法名   | 说明                 | 回调参数 |
-| -------- | -------------------- | -------- |
-| on-click | 点击开关时触发的事件 | --       |
+| 方法名   | 说明                 | 回调参数 | 版本 |
+| -------- | -------------------- | -------- | ---- |
+| on-click | 点击开关时触发的事件 | --       | --   |

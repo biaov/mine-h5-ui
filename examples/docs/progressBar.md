@@ -85,22 +85,22 @@ export default {
 
 ### 参数
 
-| 参数         | 说明                                         | 类型    | 可选值        | 默认值                       |
-| ------------ | -------------------------------------------- | ------- | ------------- | ---------------------------- |
-| v-model      | 双向绑定进度值，0-100 的整数                 | Number  | --            | --                           |
-| type         | 进度条类型                                   | String  | line / circle | line                         |
-| text         | 自定义文本，可通过 `$default` 设置默认进度条 | String  | --            | --                           |
-| textShow     | 文本显示状态,，设置为 `false` 时显示圆点     | Boolean | true / false  | true                         |
-| width        | 进度条宽度                                   | String  | --            | 100px                        |
-| borderRadius | 线性进度条倒角                               | String  | --            | 8px                          |
-| size         | 进度条粗细                                   | Number  | --            | 4                            |
-| textColor    | 文本颜色                                     | String  | --            | `line`-#fff,`circle`-#409eff |
-| activeColor  | 进度条活动色                                 | String  | --            | #409eff                      |
-| backgorund   | 进度条背景色                                 | String  | --            | #ccc                         |
-| padding      | 整体边距，只对 `line` 有效                   | String  | --            | 0 10px                       |
+| 参数         | 说明                                         | 类型    | 可选值        | 默认值                       | 版本 |
+| ------------ | -------------------------------------------- | ------- | ------------- | ---------------------------- | ---- |
+| v-model      | 双向绑定进度值，0-100 的整数                 | Number  | --            | --                           | --   |
+| type         | 进度条类型                                   | String  | line / circle | line                         | --   |
+| text         | 自定义文本，可通过 `$default` 设置默认进度条 | String  | --            | --                           | --   |
+| textShow     | 文本显示状态,，设置为 `false` 时显示圆点     | Boolean | true / false  | true                         | --   |
+| width        | 进度条宽度                                   | String  | --            | 100px                        | --   |
+| borderRadius | 线性进度条倒角                               | String  | --            | 8px                          | --   |
+| size         | 进度条粗细                                   | Number  | --            | 4                            | --   |
+| textColor    | 文本颜色                                     | String  | --            | `line`-#fff,`circle`-#409eff | --   |
+| activeColor  | 进度条活动色                                 | String  | --            | #409eff                      | --   |
+| backgorund   | 进度条背景色                                 | String  | --            | #ccc                         | --   |
+| padding      | 整体边距，只对 `line` 有效                   | String  | --            | 0 10px                       | --   |
 
 ### 方法
 
-| 方法名 | 说明 | 回调参数 |
-| ------ | ---- | -------- |
-| --     | --   | --       |
+| 方法名 | 说明 | 回调参数 | 版本 |
+| ------ | ---- | -------- | ---- |
+| --     | --   | --       | --   |

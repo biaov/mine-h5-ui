@@ -1,6 +1,6 @@
 <template>
   <!-- 拖拽 -->
-  <div class="me-drag" ref="dragRef" :style="`width:${width};height:${height};`" @click="onClick(-1)">
+  <div class="me-drag" ref="dragRef" :style="`width:${width};height:${height};`" @click="onClick(-1)" @touchstart="onTouchstartWrap" @touchmove="onTouchmoveWrap">
     <div
       v-for="(item, index) in listData"
       :key="index"
@@ -63,6 +63,11 @@ export default {
     angleRange: {
       type: Number,
       default: 5
+    },
+    // 双指缩放一倍的像素
+    scale: {
+      type: Number,
+      default: 100 // 100px:1倍,0表示禁止缩放
     }
   },
   data() {
@@ -82,7 +87,8 @@ export default {
         { start: 203, end: 248, cursor: 's' },
         { start: 248, end: 293, cursor: 'sw' },
         { start: 293, end: 338, cursor: 'w' }
-      ]
+      ],
+      startTouchDist: 0 // 开始双指触摸距离
     }
   },
   computed: {
@@ -92,7 +98,7 @@ export default {
     },
     // 获取当前 item
     getCurItem() {
-      return this.listData[this.current]?.rect
+      return this.listData[this.current]?.rect ?? {}
     },
     // 获取当前 cursor
     getCursor() {
@@ -276,6 +282,32 @@ export default {
         document.onmousemove = null // 清理上次的移动事件
         document.onmouseup = null // 清理上次的抬起事件
       }
+    },
+    // 计算距离
+    calcDistance([first, last]) {
+      const distX = Math.abs(first.clientX - last.clientX)
+      const distY = Math.abs(first.clientY - last.clientY)
+      return Math.sqrt(distX ** 2 + distY ** 2)
+    },
+    // 触摸开始
+    onTouchstartWrap(e) {
+      if (e.touches.length !== 2 || !this.scale || !Object.keys(this.getCurItem).length) return
+      this.startTouchDist = this.calcDistance(e.touches)
+      this.startRect = { ...this.getCurItem }
+    },
+    // 触摸移动
+    onTouchmoveWrap(e) {
+      if (e.touches.length !== 2 || !this.scale || !Object.keys(this.getCurItem).length) return
+      const { x, y, w, h } = this.startRect
+      const scale = (this.calcDistance(e.touches) - this.startTouchDist) / this.scale + 1
+      const tempW = w * scale
+      const tempH = h * scale
+      this.listData[this.current].rect.x = x + (w - tempW) / 2
+      this.listData[this.current].rect.y = y + (h - tempH) / 2
+      this.listData[this.current].rect.w = tempW
+      this.listData[this.current].rect.h = tempH
+      this.onEmitChange('scale')
+      this.onUpdate()
     }
   },
   watch: {

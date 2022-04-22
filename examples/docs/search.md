@@ -134,23 +134,23 @@ export default {
 
 ### 参数
 
-| 参数        | 说明               | 类型    | 可选值                                    | 默认值  |
-| ----------- | ------------------ | ------- | ----------------------------------------- | ------- |
-| v-model     | 双向绑定弹出层状态 | Boolean | true / false                              | --      |
-| placeholder | 搜索框占位符       | String  | --                                        | 请搜索  |
-| btnText     | 搜索框右侧内容     | String  | --                                        | --      |
-| align       | 搜索框内容对齐方式 | String  | left / center / right / justify / inherit | left    |
-| radius      | 搜索框倒角         | String  | --                                        | 4px     |
-| background  | 搜索框背景颜色     | String  | --                                        | #f6f6f6 |
-| color       | 搜索框字体颜色     | String  | --                                        | #494949 |
-| disabled    | 搜索框禁用状态     | Boolean | true / false                              | false   |
+| 参数        | 说明               | 类型    | 可选值                                    | 默认值  | 版本 |
+| ----------- | ------------------ | ------- | ----------------------------------------- | ------- | ---- |
+| v-model     | 双向绑定弹出层状态 | Boolean | true / false                              | --      | --   |
+| placeholder | 搜索框占位符       | String  | --                                        | 请搜索  | --   |
+| btnText     | 搜索框右侧内容     | String  | --                                        | --      | --   |
+| align       | 搜索框内容对齐方式 | String  | left / center / right / justify / inherit | left    | --   |
+| radius      | 搜索框倒角         | String  | --                                        | 4px     | --   |
+| background  | 搜索框背景颜色     | String  | --                                        | #f6f6f6 | --   |
+| color       | 搜索框字体颜色     | String  | --                                        | #494949 | --   |
+| disabled    | 搜索框禁用状态     | Boolean | true / false                              | false   | --   |
 
 ### 方法
 
-| 方法名    | 说明                                      | 回调参数    |
-| --------- | ----------------------------------------- | ----------- |
-| on-focus  | 输入框聚焦时触发的事件                    | event:Event |
-| on-search | 输入框点击软键盘搜索/回车按钮时触发的事件 | event:Event |
-| on-input  | 输入框输入时触发的事件                    | event:Event |
-| on-change | 输入框内容发生改变时触发的事件            | event:Event |
-| on-blur   | 输入框移除焦点时触发的事件                | event:Event |
+| 方法名    | 说明                                      | 回调参数    | 版本 |
+| --------- | ----------------------------------------- | ----------- | ---- |
+| on-focus  | 输入框聚焦时触发的事件                    | event:Event | --   |
+| on-search | 输入框点击软键盘搜索/回车按钮时触发的事件 | event:Event | --   |
+| on-input  | 输入框输入时触发的事件                    | event:Event | --   |
+| on-change | 输入框内容发生改变时触发的事件            | event:Event | --   |
+| on-blur   | 输入框移除焦点时触发的事件                | event:Event | --   |

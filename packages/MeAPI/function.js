@@ -136,7 +136,7 @@ export const Throttle = (fn, time = 1000) => {
  * @returns { Function } - 返回的 event 函数
  */
 export const Debounce = (fn, time = 300) => {
-  let timer = null // 定时器
+  let timer // 定时器
   return e => {
     if (timer !== undefined) clearTimeout(timer) // 清理之前的操作
     timer = setTimeout(() => {

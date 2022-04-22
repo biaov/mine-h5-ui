@@ -7,7 +7,7 @@
 export const getSymmPoint = (curPoint, center) => {
   const x = center.x * 2 - curPoint.x
   const y = center.y * 2 - curPoint.y
-  
+
   return { x, y }
 }
 

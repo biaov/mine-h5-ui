@@ -105,21 +105,21 @@ export default {
 
 ### 参数
 
-| 参数         | 说明                                                                                                                    | 类型    | 可选值       | 默认值            |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------- | ------- | ------------ | ----------------- |
-| v-model      | 双向绑定上传图片列表的内容                                                                                              | Array   | --           | --                |
-| preview      | 图片是否可预览                                                                                                          | Boolean | true / false | true              |
-| max-count    | 上传图片数量                                                                                                            | Number  | --           | 1000              |
-| max-size     | 上传图片大小，单位 B                                                                                                    | Number  | --           | 2 \* 1024 \* 1024 |
-| multiple     | 是否允许多传                                                                                                            | Boolean | true / false | false             |
-| deletable    | 删除图片按钮的显示状态                                                                                                  | Boolean | true / false | true              |
-| disabled     | 禁用状态                                                                                                                | Boolean | true / false | false             |
-| beforeRead   | 读取图片文件之前的钩子函数，返回 false 表示不读取图片文件，即不进入 afterRead 钩子函数；回调参数：files，上传的图片列表 | String  | true / false | false             |
-| afterRead    | 读取图片文件之后的钩子函数；回调参数：files，上传的图片列表                                                             | String  | true / false | false             |
-| beforeDelete | 删除图片之前的钩子函数，返回 false 表示不删除；回调参数：files，上传的图片列表                                          | String  | true / false | false             |
+| 参数         | 说明                                                           | 类型    | 可选值       | 默认值            | 版本 |
+| ------------ | -------------------------------------------------------------- | ------- | ------------ | ----------------- | ---- |
+| v-model      | 双向绑定上传图片列表的内容                                     | Array   | --           | --                | --   |
+| preview      | 图片是否可预览                                                 | Boolean | true / false | true              | --   |
+| max-count    | 上传图片数量                                                   | Number  | --           | 1000              | --   |
+| max-size     | 上传图片大小，单位 B                                           | Number  | --           | 2 \* 1024 \* 1024 | --   |
+| multiple     | 是否允许多传                                                   | Boolean | true / false | false             | --   |
+| deletable    | 删除图片按钮的显示状态                                         | Boolean | true / false | true              | --   |
+| disabled     | 禁用状态                                                       | Boolean | true / false | false             | --   |
+| beforeRead   | 上传文件之前的钩子函数，返回 false 不上传文件，回调参数：files | String  | true / false | false             | --   |
+| afterRead    | 上传文件之后的钩子函数；回调参数：files                        | String  | true / false | false             | --   |
+| beforeDelete | 删除图片之前的钩子函数，返回 false 不删除；回调参数：files     | String  | true / false | false             | --   |
 
 ### 方法
 
-| 方法名    | 说明                           | 回调参数                 |
-| --------- | ------------------------------ | ------------------------ |
-| on-change | 当上传图片列表的内容改变时触发 | Array:改变后图片列表的值 |
+| 方法名    | 说明                           | 回调参数                  | 版本 |
+| --------- | ------------------------------ | ------------------------- | ---- |
+| on-change | 当上传图片列表的内容改变时触发 | Array: 改变后图片列表的值 | --   |
