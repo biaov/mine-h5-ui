@@ -15,5 +15,6 @@ export const useData = (props: Props) => {
     circle6: 'icon-loading_ico'
   }
   const iconName = ref(typeName[props.type] || 'icon-loading') // 自定义图标名称
+
   return { iconName }
 }

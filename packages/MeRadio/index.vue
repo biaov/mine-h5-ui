@@ -7,61 +7,36 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import MeIcon from '../MeIcon'
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeRadio',
-  components: {
-    MeIcon
-  },
-  emits: ['update:modelValue', 'on-click'],
-  props: {
-    // v-model的值
-    modelValue: {
-      type: Boolean,
-      default: false
-    },
-    // 单选框索引名称
-    name: {
-      type: [String, Number]
-    },
-    // 图标形状
-    shape: {
-      type: String,
-      default: 'round' // square|round
-    },
-    // 自定义图标
-    icon: {
-      type: String,
-      default: ''
-    },
-    // 自定义选中图标
-    iconSelect: {
-      type: String,
-      default: ''
-    },
-    // 图标大小
-    iconSize: {
-      type: String,
-      default: '20px'
-    },
-    // 选中状态颜色
-    checkedColor: {
-      type: String,
-      default: ''
-    },
-    // 禁用状态
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { isChecked, iconName, handleClick, setStatus } = useHandler(props, emit)
-    return { isChecked, iconName, handleClick, setStatus }
+const emit = defineEmits<{
+  (event: 'update:modelValue', bool: boolean): void
+  (event: 'on-click'): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: boolean // v-model 的值
+    name?: string | number // 单选框索引名称
+    shape?: string // 图标形状, square | round
+    icon?: string // 自定义图标
+    iconSelect?: string // 自定义选中图标
+    iconSize?: string // 图标大小
+    checkedColor?: string // 选中状态颜色
+    disabled?: boolean // 禁用状态
+  }>(),
+  {
+    modelValue: false,
+    shape: 'round',
+    icon: '',
+    iconSelect: '',
+    iconSize: '20px',
+    checkedColor: '',
+    disabled: false
   }
-})
+)
+
+const { isChecked, iconName, handleClick, setStatus } = useHandler(props, emit)
 </script>

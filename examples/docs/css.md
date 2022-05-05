@@ -7,7 +7,7 @@
 ::: CopyCode
 
 ```JavaScript
-import "mine-h5-ui/lib/theme-default/base.css";
+import 'mine-h5-ui/lib/theme-default/base.css'
 ```
 
 :::

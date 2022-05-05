@@ -10,18 +10,9 @@
     <router-view></router-view>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import MineHeader from '^/components/MineHeader'
 import { useRouteHandler } from './hooks'
 
-export default defineComponent({
-  components: {
-    MineHeader
-  },
-  setup() {
-    const { title } = useRouteHandler()
-    return { title }
-  }
-})
+const { title } = useRouteHandler()
 </script>

@@ -5,32 +5,20 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useShow } from './hooks'
 
-export default defineComponent({
-  name: 'MePreview',
-  props: {
-    // 图片地址
-    url: {
-      type: String,
-      default: ''
-    },
-    // 层级位置
-    zIndex: {
-      type: Number,
-      default: 99
-    },
-    // 遮罩层背景色
-    background: {
-      type: String,
-      default: '#000'
-    }
-  },
-  setup() {
-    const { isShow, isDestroy, onClose } = useShow()
-    return { isShow, isDestroy, onClose }
+const props = withDefaults(
+  defineProps<{
+    url: string // 图片地址
+    zIndex?: number // 层级位置
+    background?: string // 遮罩层背景色
+  }>(),
+  {
+    zIndex: 99,
+    background: '#000'
   }
-})
+)
+
+const { isShow, isDestroy, onClose } = useShow()
 </script>

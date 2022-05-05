@@ -6,6 +6,7 @@ import { ListDataItem, Emits } from './interfaces'
 export const useHandler = (props: Props, emit: Emits) => {
   // 列表样式
   const listData = ref(Array.from({ length: props.count }, (k, v) => ({ id: v + 1, state: false })))
+
   // 点击按钮
   const onClick = ({ id, state }: ListDataItem) => {
     // 判断是否为只读/禁用/选中状态
@@ -17,6 +18,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       elem.state = elem.id <= id
     })
   }
+
   // 设置页面状态
   const setStatus = () => {
     // 循环遍历设置状态值的改变
@@ -24,7 +26,10 @@ export const useHandler = (props: Props, emit: Emits) => {
       elem.state = elem.id <= props.modelValue
     })
   }
+
   watch(() => props.modelValue, setStatus)
+
   setStatus()
+
   return { listData, onClick }
 }

@@ -4,28 +4,24 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useInitSlots } from './hooks'
 
-export default defineComponent({
-  name: 'MeCheckboxGroup',
-  emits: ['update:modelValue', 'on-change'],
-  props: {
-    // v-model值
-    modelValue: {
-      type: Array as PropType<(string | number)[]>,
-      default: () => []
-    },
-    // 排列方向
-    direction: {
-      type: String,
-      default: 'vertical' // vertical|horizontal
-    }
-  },
-  setup(props, { emit }) {
-    useInitSlots(props, emit)
-    return {}
+const emit = defineEmits<{
+  (event: 'update:modelValue', arr: (string | number)[]): void
+  (event: 'on-change', arr: (string | number)[]): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: (string | number)[] // v-model 值
+    direction?: string // 排列方向, vertical | horizontal
+  }>(),
+  {
+    modelValue: () => [],
+    direction: 'vertical'
   }
-})
+)
+
+useInitSlots(props, emit)
 </script>

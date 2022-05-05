@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeMessageBox } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeMessageBox.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeMessageBox } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeMessageBox.css'
 
-const app = createApp(App);
-app.mount("#app");
-app.config.globalProperties["$MeMessageBox"] = $MeMessageBox;
+const app = createApp(App)
+app.mount('#app')
+app.config.globalProperties['$MeMessageBox'] = $MeMessageBox
 ```
 
 :::
@@ -33,13 +33,13 @@ app.config.globalProperties["$MeMessageBox"] = $MeMessageBox;
 ::: CopyCode
 
 ```JavaScript
-import { getCurrentInstance } from "vue";
+import { getCurrentInstance } from 'vue'
 
-const { $MeMessageBox } = getCurrentInstance().appContext.config.globalProperties;
+const { $MeMessageBox } = getCurrentInstance().appContext.config.globalProperties
 $MeMessageBox({
-  type: "alert",
-  message: "至于未来会怎样，要走下去才知道，反正路还很长，天总会亮！"
-});
+  type: 'alert',
+  message: '至于未来会怎样，要走下去才知道，反正路还很长，天总会亮！'
+})
 ```
 
 :::
@@ -51,20 +51,20 @@ $MeMessageBox({
 ::: CopyCode
 
 ```JavaScript
-import { getCurrentInstance } from "vue";
+import { getCurrentInstance } from 'vue'
 
-const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties;
+const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties
 $MeMessageBox.prompt({
-  message: "你认为作者帅吗？",
-  cancelButtonText: "看不清",
-  confirmButtonText: "作者真帅",
+  message: '你认为作者帅吗？',
+  cancelButtonText: '看不清',
+  confirmButtonText: '作者真帅',
   onOk() {
-    $MeToast("你点击了确认按钮");
+    $MeToast('你点击了确认按钮')
   },
   onOff() {
-    $MeToast("你点击了取消按钮");
+    $MeToast('你点击了取消按钮')
   }
-});
+})
 ```
 
 :::
@@ -76,18 +76,18 @@ $MeMessageBox.prompt({
 ::: CopyCode
 
 ```JavaScript
-import { getCurrentInstance } from "vue";
+import { getCurrentInstance } from 'vue'
 
-const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties;
+const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties
 $MeMessageBox.prompt({
-  message: "请输入你的手机号码",
+  message: '请输入你的手机号码',
   onOk(value) {
-    $MeToast(value); // 手机号码
+    $MeToast(value) // 手机号码
   },
   onOff() {
-    $MeToast("你点击了取消按钮");
+    $MeToast('你点击了取消按钮')
   }
-});
+})
 ```
 
 :::
@@ -98,38 +98,29 @@ $MeMessageBox.prompt({
 
 ::: CopyCode
 
-```HTML
+```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo" @click="handleClick">点击弹出自义定弹出框</div>
+  <div @click="handleClick">点击弹出自义定弹出框</div>
 </template>
-<script>
-import { getCurrentInstance } from "vue";
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
 
-export default {
-  setup() {
-    const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties;
-    // 点击文本
-    const handleClick = () => {
-      // 弹出模态框
-      $MeMessageBox.custom({
-        html: `<div class="m-message-cont">健康的身体是实现目标的基石</div>`,
-        onOk() {
-          $MeToast("你点击了确认按钮");
-        },
-        onOff() {
-          $MeToast("你点击了取消按钮");
-        }
-      });
-    };
-    return { handleClick };
-  }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
+const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties
+// 点击文本
+const handleClick = () => {
+  // 弹出模态框
+  $MeMessageBox.custom({
+    html: `<div class="m-message-cont">健康的身体是实现目标的基石</div>`,
+    onOk() {
+      $MeToast('你点击了确认按钮')
+    },
+    onOff() {
+      $MeToast('你点击了取消按钮')
+    }
+  })
 }
-</style>
+</script>
+
 <style lang="less">
 // 自定义模态框内容
 .m-message-cont {
@@ -143,7 +134,6 @@ export default {
   font-size: 14px;
 }
 </style>
-
 ```
 
 :::

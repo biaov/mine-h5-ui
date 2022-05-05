@@ -6,5 +6,6 @@ export const useHandler = (emit: Emits) => {
   const onClose = (e: MouseEvent) => {
     emit('on-close', e)
   }
+
   return { onClose }
 }

@@ -18,31 +18,26 @@
     </ul>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import CountryData from './countryData'
 import { useScroll, useBtns } from './hooks'
-import { ListItem } from './interfaces'
+import { ListItem, CityItem } from './interfaces'
 
-export default defineComponent({
-  name: 'MeIndexBar',
-  emits: ['on-click'],
-  props: {
-    // 自定义国家数据
-    list: {
-      type: Array as PropType<ListItem[]>,
-      default: () => CountryData
-    },
-    // 自定义顶部定位高度
-    topHeight: {
-      type: String,
-      default: '50px'
-    }
-  },
-  setup(props, { emit }) {
-    const { curLetter, listCont } = useScroll()
-    const { handleLi } = useBtns(emit)
-    return { curLetter, listCont, handleLi }
+const emit = defineEmits<{
+  (event: 'on-click', item: CityItem): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    list: ListItem[] // 自定义国家数据
+    topHeight: string // 自定义顶部定位高度
+  }>(),
+  {
+    list: () => CountryData,
+    topHeight: '50px'
   }
-})
+)
+
+const { curLetter, listCont } = useScroll()
+const { handleLi } = useBtns(emit)
 </script>

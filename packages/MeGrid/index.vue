@@ -4,27 +4,19 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useInitSlots } from './hooks'
 
-export default defineComponent({
-  name: 'MeGrid',
-  props: {
-    // 一行几个
-    cols: {
-      type: Number,
-      default: 4
-    },
-    // 边框颜色
-    borderColor: {
-      type: String,
-      default: '#edeff2'
-    }
-  },
-  setup(props) {
-    const { grid } = useInitSlots(props)
-    return { grid }
+const props = withDefaults(
+  defineProps<{
+    cols?: number // 一行几个
+    borderColor?: string // 边框颜色
+  }>(),
+  {
+    cols: 4,
+    borderColor: '#edeff2'
   }
-})
+)
+
+const { grid } = useInitSlots(props)
 </script>

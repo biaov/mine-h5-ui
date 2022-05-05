@@ -14,7 +14,17 @@
 
 :::TimeLine
 
-## v2.3.3-Latest release
+## v2.3.4-Latest release
+
+`2022-05-05`
+
+- 优化代码
+  - 使用 [ts-script-setup](https://staging-cn.vuejs.org/guide/typescript/options-api.html)
+- Bug Fixes
+  - 修复已知 Bug
+  - 更新依赖版本
+
+## v2.3.3
 
 `2022-04-22`
 

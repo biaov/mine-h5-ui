@@ -7,4 +7,5 @@ MeRate.install = (app: App) => {
   app.component(MeRate.name, MeRate)
 }
 const InMeRate: SFCWithInstall<typeof MeRate> = MeRate // 增加类型
+
 export default InMeRate

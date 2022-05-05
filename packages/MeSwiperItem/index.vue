@@ -7,37 +7,22 @@
     </slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useName } from './hooks'
 
-export default defineComponent({
-  name: 'MeSwiperItem',
-  props: {
-    // 属性名称
-    name: {
-      type: [String, Number],
-      required: true
-    },
-    // 图片地址
-    url: {
-      type: String,
-      default: ''
-    },
-    // 文本
-    text: {
-      type: String,
-      default: ''
-    },
-    // 背景色
-    background: {
-      type: String,
-      default: ''
-    }
-  },
-  setup(props) {
-    useName(props)
-    return {}
+const props = withDefaults(
+  defineProps<{
+    name: string | number // 属性名称
+    url?: string // 图片地址
+    text?: string // 文本
+    background?: string // 背景色
+  }>(),
+  {
+    url: '',
+    text: '',
+    background: ''
   }
-})
+)
+
+useName(props)
 </script>

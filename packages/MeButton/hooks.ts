@@ -6,5 +6,6 @@ export const useHandler = (emit: Emits) => {
   const onClick = (e: MouseEvent) => {
     emit('on-click', e)
   }
+
   return { onClick }
 }

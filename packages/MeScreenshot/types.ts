@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { PublicProps } from '../types'
+import { Props as DefaultProps } from './interfaces'
 
-// 当前 vue props
-export type Props = PublicProps<{
-  start: boolean
-  allowDown: boolean
-  imageName: string
-}>
+export type Props = PublicProps<DefaultProps> // 当前 vue props

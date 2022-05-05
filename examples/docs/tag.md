@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeTag } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeTag.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeTag } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeTag.css'
 
-const app = createApp(App);
-app.use(MeTag);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeTag)
+app.mount('#app')
 ```
 
 :::

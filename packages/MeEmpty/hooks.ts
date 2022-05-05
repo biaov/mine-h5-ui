@@ -11,5 +11,6 @@ export const useIconName = (props: Props) => {
     search: 'wushuju'
   }
   const icon = ref(props.iconName || names[props.type]) // 图标名称
+
   return { icon }
 }

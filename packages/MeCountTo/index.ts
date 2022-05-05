@@ -7,4 +7,5 @@ MeCountTo.install = (app: App) => {
   app.component(MeCountTo.name, MeCountTo)
 }
 const InMeCountTo: SFCWithInstall<typeof MeCountTo> = MeCountTo // 增加类型
+
 export default InMeCountTo

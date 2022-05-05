@@ -12,13 +12,3 @@
     </h3>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'MineHeader',
-  setup() {
-    return {}
-  }
-})
-</script>

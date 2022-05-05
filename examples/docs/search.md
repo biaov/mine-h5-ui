@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeSearch } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeSearch.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeSearch } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeSearch.css'
 
-const app = createApp(App);
-app.use(MeSearch);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeSearch)
+app.mount('#app')
 ```
 
 :::
@@ -57,25 +57,17 @@ app.mount("#app");
 
 ```HTML
 <template>
-  <!-- 演示 -->
-  <div class="m-demo">
-    <me-search v-model="iptValue" btnText="取消" @on-click="btnCancel"></me-search>
-  </div>
+  <me-search v-model="iptValue" btnText="取消" @on-click="btnCancel"></me-search>
 </template>
-<script>
-import { defineComponent, ref, getCurrentInstance } from "vue";
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
 
-export default defineComponent({
-  setup() {
-    const { $MeToast } = getCurrentInstance().appContext.config.globalProperties;
-    const iptValue = ref(""); // 当前搜索框值
-    // 点击取消按钮
-    const btnCancel = () => {
-      $MeToast("点击了取消按钮");
-    };
-    return { iptValue, btnCancel };
-  }
-});
+const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
+const iptValue = $ref('') // 当前搜索框值
+// 点击取消按钮
+const btnCancel = () => {
+  $MeToast('点击了取消按钮')
+}
 </script>
 ```
 

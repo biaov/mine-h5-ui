@@ -23,115 +23,64 @@
     <span class="u-sms" :class="{ countdown: smsIs }" v-if="!password && smsMsg" @click="handleSMS" ref="sms" :style="`color:${smsColor};`">{{ smsMsg }}</span>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import MeIcon from '../MeIcon'
 import { useSms, useIcon, useInput } from './hooks'
 
-export default defineComponent({
-  name: 'MeInput',
-  components: {
-    MeIcon
-  },
-  emits: ['update:modelValue', 'on-focus', 'on-blur', 'on-change', 'on-input', 'on-click-sms', 'on-click-icon'],
-  props: {
-    // input绑定值
-    modelValue: {
-      type: [String, Number],
-      default: ''
-    },
-    // 输入框值
-    type: {
-      type: String,
-      default: 'text'
-    },
-    // 占位符
-    placeholder: {
-      type: String,
-      default: '请输入...'
-    },
-    // 只读状态
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    // 禁用状态
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    // label内容
-    label: {
-      type: String,
-      default: ''
-    },
-    // label宽度
-    labelWidth: {
-      type: String,
-      default: ''
-    },
-    // label对齐方式
-    labelAlign: {
-      type: String,
-      default: 'left' // auto|left|right|center|justify|start|end|initial|inherit;
-    },
-    // label颜色
-    labelColor: {
-      type: String,
-      default: ''
-    },
-    // label图标
-    labelIcon: {
-      type: String,
-      default: ''
-    },
-    // 聚焦边框样式
-    focusType: {
-      type: String,
-      default: 'default' // default|primary|success|warning|danger
-    },
-    // 聚焦颜色
-    focusColor: {
-      type: String,
-      default: ''
-    },
-    // 图标
-    icon: {
-      type: String,
-      default: ''
-    },
-    // 密码输入框
-    password: {
-      type: Boolean,
-      default: false
-    },
-    // 整数输入
-    digit: {
-      type: Boolean,
-      default: false
-    },
-    // 短信验证码
-    smsMsg: {
-      type: String,
-      default: ''
-    },
-    // 短信颜色
-    smsColor: {
-      type: String,
-      default: ''
-    },
-    // 是否开启倒计时
-    smsIs: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { sms, handleSMS } = useSms(props, emit)
-    const { inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput(props, emit, sms)
-    const { handleIcon } = useIcon(props, emit, inputType)
+const emit = defineEmits<{
+  (event: 'update:modelValue', value: string | number): void
+  (event: 'on-focus', e: FocusEvent): void
+  (event: 'on-blur', e: FocusEvent): void
+  (event: 'on-change', e: Event): void
+  (event: 'on-input', e: Event): void
+  (event: 'on-click-sms', e: MouseEvent): void
+  (event: 'on-click-icon', e: MouseEvent): void
+}>()
 
-    return { sms, handleSMS, inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput, handleIcon }
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string | number // input 绑定值
+    type?: string // 输入框值
+    placeholder?: string // 占位符
+    readonly?: boolean // 只读状态
+    disabled?: boolean // 禁用状态
+    label?: string // label 内容
+    labelWidth?: string // label 宽度
+    labelAlign?: string // label 对齐方式, auto | left | right | center | justify | start | end | initial | inherit
+    labelColor?: string // label 颜色
+    labelIcon?: string // label 图标
+    focusType?: string // 聚焦边框样式, default | primary | success | warning | danger
+    focusColor?: string // 聚焦颜色
+    icon?: string // 图标
+    password?: boolean // 密码输入框
+    digit?: boolean // 整数输入
+    smsMsg?: string // 短信验证码
+    smsColor?: string // 短信颜色
+    smsIs?: boolean // 是否开启倒计时
+  }>(),
+  {
+    modelValue: '',
+    type: 'text',
+    placeholder: '请输入...',
+    readonly: false,
+    disabled: false,
+    label: '',
+    labelWidth: '',
+    labelAlign: 'left',
+    labelColor: '',
+    labelIcon: '',
+    focusType: 'default',
+    focusColor: '',
+    icon: '',
+    password: false,
+    digit: false,
+    smsMsg: '',
+    smsColor: '',
+    smsIs: false
   }
-})
+)
+
+const { sms, handleSMS } = useSms(props, emit)
+const { inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput(props, emit, sms)
+const { handleIcon } = useIcon(props, emit, inputType)
 </script>

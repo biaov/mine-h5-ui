@@ -14,14 +14,8 @@
     <me-nav-bar title="标题" left-text="返回" right-text="自定义" @click-left="handleClick('返回')" v-bind="{ styles }" @click-right="handleClick('自定义')"></me-nav-bar>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandlerClick } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { styles, handleClick } = useHandlerClick()
-    return { styles, handleClick }
-  }
-})
+const { styles, handleClick } = useHandlerClick()
 </script>

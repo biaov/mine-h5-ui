@@ -31,82 +31,43 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
 import { ListDataItem } from './interfaces'
 
-export default defineComponent({
-  name: 'MeDrag',
-  emits: ['on-change', 'update:list', 'update:current'],
-  props: {
-    // 选中项
-    current: {
-      type: Number,
-      default: -1
-    },
-    // 列表数据
-    list: {
-      type: Array as PropType<ListDataItem[]>,
-      default: () => []
-    },
-    // 容器宽度
-    width: {
-      type: String,
-      default: '300px'
-    },
-    // 容器高度
-    height: {
-      type: String,
-      default: '300px'
-    },
-    // 选中主题色
-    theme: {
-      type: String,
-      default: '#f56c6c'
-    },
-    // 选中主题文本色
-    themeText: {
-      type: String,
-      default: '#fff'
-    },
-    // 对正角度范围
-    angleRange: {
-      type: Number,
-      default: 5
-    },
-    // 双指缩放一倍的像素
-    scale: {
-      type: Number,
-      default: 100 // 100px:1倍,0表示禁止缩放
-    }
-  },
-  setup(props, { emit }) {
-    const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler(props, emit)
-    const share = { getCurItem, onEmitChange, onUpdate }
-    const { onTouchstart, onTouchmove, onMousedown } = useMove(props, { ...share, listData })
-    const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize(props, { ...share, listData })
-    const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
-    const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listData })
+const emit = defineEmits<{
+  (event: 'on-change', list: ListDataItem[], type: string): void
+  (event: 'update:list', list: ListDataItem[]): void
+  (event: 'update:current', index: number): void
+}>()
 
-    return {
-      listData,
-      angleToCursor,
-      getCursor,
-      onDelete,
-      onClick,
-      onTouchstart,
-      onTouchmove,
-      onMousedown,
-      dragRef,
-      onResizeTouchstart,
-      onResizeTouchmove,
-      onResizeMousedown,
-      onRotateTouchmove,
-      onRotateMousedown,
-      onTouchstartWrap,
-      onTouchmoveWrap
-    }
+const props = withDefaults(
+  defineProps<{
+    current?: number // 选中项
+    list?: ListDataItem[] // 列表数据
+    width?: string // 容器宽度
+    height?: string // 容器高度
+    theme?: string // 选中主题色
+    themeText?: string // 选中主题文本色
+    angleRange?: number // 对正角度范围
+    scale?: number // 双指缩放一倍的像素
+  }>(),
+  {
+    current: -1,
+    list: () => [],
+    width: '300px',
+    height: '300px',
+    theme: '#f56c6c',
+    themeText: '#fff',
+    angleRange: 5,
+    scale: 100
   }
-})
+)
+
+const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler(props, emit)
+const share = { getCurItem, onEmitChange, onUpdate }
+const { onTouchstart, onTouchmove, onMousedown } = useMove(props, { ...share, listData })
+const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize(props, { ...share, listData })
+const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
+const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listData })
 </script>

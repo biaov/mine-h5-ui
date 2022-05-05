@@ -8,38 +8,27 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeGridItem',
-  emits: ['on-click'],
-  props: {
-    // 图标
-    icon: {
-      type: String,
-      default: ''
-    },
-    // 图标的颜色
-    iconColor: {
-      type: String,
-      default: ''
-    },
-    // 文本
-    text: {
-      type: String,
-      default: ''
-    },
-    // 文本颜色
-    textColor: {
-      type: String,
-      default: ''
-    }
-  },
-  setup(props, { emit }) {
-    const { cols, widthValue, borderColor, handleClick } = useHandler(emit)
-    return { cols, widthValue, borderColor, handleClick }
+const emit = defineEmits<{
+  (event: 'on-click', e: MouseEvent): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    icon: string // 图标
+    iconColor: string // 图标的颜色
+    text: string // 文本
+    textColor: string // 文本颜色
+  }>(),
+  {
+    icon: '',
+    iconColor: '',
+    text: '',
+    textColor: ''
   }
-})
+)
+
+const { widthValue, borderColor, handleClick } = useHandler(emit)
 </script>

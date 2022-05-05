@@ -14,3 +14,11 @@ export interface Emits {
   (event: 'on-delete', e: MouseEvent): void
   (event: 'on-complate', e: MouseEvent): void
 }
+
+// props
+export interface Props {
+  visible: boolean
+  skinType: string
+  skinStyle: SkinStyleValue
+  isPadding: boolean
+}

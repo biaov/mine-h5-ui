@@ -7,16 +7,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeSwiper, MeSwiperItem  } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeSwiper.css";
-import "mine-h5-ui/lib/theme-default/MeSwiperItem.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeSwiper, MeSwiperItem } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeSwiper.css'
+import 'mine-h5-ui/lib/theme-default/MeSwiperItem.css'
 
-const app = createApp(App);
-app.use(MeSwiper);
-app.use(MeSwiperItem);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeSwiper)
+app.use(MeSwiperItem)
+app.mount('#app')
 ```
 
 :::
@@ -52,36 +52,26 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-swiper>
-      <me-swiper-item v-for="(item,index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
-    </me-swiper>
-  </div>
+  <me-swiper>
+    <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
+  </me-swiper>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const listData = Object.freeze([
-      {
-        text: "一月不读书，耳目失精爽。",
-        url: "https://dummyimage.com/750x350/B32FF5/fff&text=1"
-      },
-      {
-        text: "穷且益坚，不坠青云之志。",
-        url: "https://dummyimage.com/750x350/F53698/fff&text=2"
-      },
-      {
-        text: "我见青山多妩媚，料青山见我应如是。",
-        url: "https://dummyimage.com/750x350/F5A02E/fff&text=3"
-      }
-    ]);
-    return { listData };
+<script lang="ts" setup>
+// 列表数据
+const listData = Object.freeze([
+  {
+    text: '一月不读书，耳目失精爽。',
+    url: 'https://dummyimage.com/750x350/B32FF5/fff&text=1'
+  },
+  {
+    text: '穷且益坚，不坠青云之志。',
+    url: 'https://dummyimage.com/750x350/F53698/fff&text=2'
+  },
+  {
+    text: '我见青山多妩媚，料青山见我应如是。',
+    url: 'https://dummyimage.com/750x350/F5A02E/fff&text=3'
   }
-});
+])
 </script>
 ```
 
@@ -114,36 +104,26 @@ export default defineComponent({
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-swiper loop :height="150">
-      <me-swiper-item v-for="(item,index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
-    </me-swiper>
-  </div>
+  <me-swiper loop :height="150">
+    <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
+  </me-swiper>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const listData = Object.freeze([
-      {
-        text: "青，取之于蓝而青于蓝；冰，水为之而寒于水。",
-        background: "#B32FF5"
-      },
-      {
-        text: "路漫漫其修远兮，吾将上下而求索。",
-        background: "#F53698"
-      },
-      {
-        text: "尺有所短；寸有所长。物有所不足；智有所不明。",
-        background: "#F5A02E"
-      }
-    ]);
-    return { listData };
+<script lang="ts" setup>
+// 列表数据
+const listData = Object.freeze([
+  {
+    text: '青，取之于蓝而青于蓝；冰，水为之而寒于水。',
+    background: '#B32FF5'
+  },
+  {
+    text: '路漫漫其修远兮，吾将上下而求索。',
+    background: '#F53698'
+  },
+  {
+    text: '尺有所短；寸有所长。物有所不足；智有所不明。',
+    background: '#F5A02E'
   }
-});
+])
 </script>
 ```
 

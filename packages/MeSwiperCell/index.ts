@@ -7,4 +7,5 @@ MeSwiperCell.install = (app: App) => {
   app.component(MeSwiperCell.name, MeSwiperCell)
 }
 const InMeSwiperCell: SFCWithInstall<typeof MeSwiperCell> = MeSwiperCell // 增加类型
+
 export default InMeSwiperCell

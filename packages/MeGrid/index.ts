@@ -7,4 +7,5 @@ MeGrid.install = (app: App) => {
   app.component(MeGrid.name, MeGrid)
 }
 const InMeGrid: SFCWithInstall<typeof MeGrid> = MeGrid // 增加类型
+
 export default InMeGrid

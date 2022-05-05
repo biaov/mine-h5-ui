@@ -6,15 +6,17 @@
 
 ## 按需引入
 
-```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeImg } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeImg.css";
+::: CopyCode
 
-const app = createApp(App);
-app.use(MeImg);
-app.mount("#app");
+```JavaScript
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeImg } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeImg.css'
+
+const app = createApp(App)
+app.use(MeImg)
+app.mount('#app')
 ```
 
 :::

@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeVirtualList } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeVirtualList.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeVirtualList } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeVirtualList.css'
 
-const app = createApp(App);
-app.use(MeVirtualList);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeVirtualList)
+app.mount('#app')
 ```
 
 :::
@@ -35,46 +35,37 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示 demo -->
-  <div class="m-demo">
-    <me-virtual-list height="300px" :list="listData" :itemHeight="50">
-      <template #default="{item}">
-        <div class="item">
-          <p><span><template v-text="`#${item.virtualId}.`"></template></span> <template v-text="item.text"></template></p>
-        </div>
-      </template>
-    </me-virtual-list>
-  </div>
+  <me-virtual-list height="300px" :list="listData" :itemHeight="50">
+    <template #default="{ item }">
+      <div class="item">
+        <p>
+          <span><template v-text="`#${item.virtualId}.`"></template></span>
+          <template v-text="item.text"></template>
+        </p>
+      </div>
+    </template>
+  </me-virtual-list>
 </template>
-<script>
-import { Random } from "mockjs";
+<script lang="ts" setup>
+import { Random } from 'mockjs'
 
-export default {
-  data() {
-    return {
-      // 列表数据
-      listData: Array.from({ length: 100 }, () => ({ text: Random.cword(6, 14) }))
-    };
-  }
-};
+const listData = $ref(Array.from({ length: 100 }, () => ({ text: Random.cword(6, 14) })))
 </script>
 <style lang="less" scoped>
-.m-demo {
-  .item {
+.item {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px dotted #ececec;
+  p {
     width: 100%;
-    height: 50px;
-    border-bottom: 1px dotted #ececec;
-    p {
-      width: 100%;
-      height: 100%;
-      line-height: 48px;
-      padding: 0 15px;
-      background: #fff;
-      color: #949494;
-      font-size: 14px;
-      span {
-        color: #f56c6c;
-      }
+    height: 100%;
+    line-height: 48px;
+    padding: 0 15px;
+    background: #fff;
+    color: #949494;
+    font-size: 14px;
+    span {
+      color: #f56c6c;
     }
   }
 }
@@ -91,80 +82,69 @@ export default {
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-virtual-list height="300px" :list="listData" :itemHeight="50" @on-load-more="onLoadMore(list)">
-      <template #default="{item}">
-        <div class="item">
-          <p><span><template v-text="`#${item.virtualId}.`"></template></span> <template v-text="item.text"></template></p>
-        </div>
-      </template>
-      <template #more>
-        <div class="u-more" v-text="loadMoreText[list.loadStatus]"></div>
-      </template>
-    </me-virtual-list>
-  </div>
+  <me-virtual-list height="300px" :list="listData" :itemHeight="50" @on-load-more="onLoadMore">
+    <template #default="{ item }">
+      <div class="item">
+        <p>
+          <span><template v-text="`#${item.virtualId}.`"></template></span>
+          <template v-text="item.text"></template>
+        </p>
+      </div>
+    </template>
+    <template #more>
+      <div class="u-more" v-text="loadMoreText[loadStatus]"></div>
+    </template>
+  </me-virtual-list>
 </template>
-<script>
-import { Random } from "mockjs";
+<script lang="ts" setup>
+import { Random } from 'mockjs'
 
-export default {
-  data() {
-    const listData = this.createArr();
-    return {
-      listData, // 列表数据
-      // 状态文本
-      loadMoreText: {
-        nomore: "没有更多数据了",
-        more: "加载更多",
-        loading: "正在加载中..."
-      }
-    };
-  },
-  methods: {
-    // 生成数组
-    createArr(min = 6, max = 14) {
-      return Array.from({ length: 100 }, () => ({ text: Random.cword(min, max) }));
-    },
-    // 加载更多
-    onLoadMore(item) {
-      if (item.loadStatus !== "more") return;
-      item.loadStatus = "loading";
-      setTimeout(() => {
-        item.list.push(...this.createArr(item.list.length));
-        item.loadStatus = "nomore";
-      }, 1500);
-    }
-  }
-};
+// 状态文本
+const loadMoreText = Object.freeze({
+  nomore: '没有更多数据了',
+  more: '加载更多',
+  loading: '正在加载中...'
+})
+let loadStatus = $ref('more')
+// 生成数组
+const createArr = (min = 6, max = 14) => Array.from({ length: 100 }, () => ({ text: Random.cword(min, max) }))
+const listData = createArr()
+
+// 加载更多
+const onLoadMore = () => {
+  if (loadStatus !== 'more') return
+  loadStatus = 'loading'
+  setTimeout(() => {
+    listData.push(...createArr(listData.length))
+    loadStatus = 'nomore'
+  }, 1500)
+}
 </script>
 <style lang="less" scoped>
-.m-demo {
-  .item {
+.item {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px dotted #ececec;
+  p {
     width: 100%;
-    height: 50px;
-    border-bottom: 1px dotted #ececec;
-    p {
-      width: 100%;
-      height: 100%;
-      line-height: 48px;
-      padding: 0 15px;
-      background: #fff;
-      color: #949494;
-      font-size: 14px;
-      span {
-        color: #f56c6c;
-      }
+    height: 100%;
+    line-height: 48px;
+    padding: 0 15px;
+    background: #fff;
+    color: #949494;
+    font-size: 14px;
+    span {
+      color: #f56c6c;
     }
   }
-  .u-more {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: #949494;
-    font-size: 12px;
-  }
+}
+.u-more {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #949494;
+  font-size: 12px;
 }
 </style>
 ```
@@ -179,48 +159,37 @@ export default {
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-virtual-list height="300px" :list="listData" @on-load-more="onLoadMore(list)">
-      <template #default="{item}">
-        <div class="item">
-          <p><span><template v-text="`#${item.virtualId}.`"></template></span> <template v-text="item.text"></template></p>
-        </div>
-      </template>
-      <template #more>
-        <div class="u-more" v-text="loadMoreText[list.loadStatus]"></div>
-      </template>
-    </me-virtual-list>
-  </div>
+  <me-virtual-list height="300px" :list="listData" @on-load-more="onLoadMore(list)">
+    <template #default="{ item }">
+      <div class="item">
+        <p>
+          <span><template v-text="`#${item.virtualId}.`"></template></span>
+          <template v-text="item.text"></template>
+        </p>
+      </div>
+    </template>
+  </me-virtual-list>
 </template>
 <script>
-import { Random } from "mockjs";
+import { Random } from 'mockjs'
 
-export default {
-  data() {
-    return {
-      listData: Array.from({ length: 100 }, () => ({ text: Random.cword(14, 50) })) // 列表数据
-    };
-  }
-};
+const listData = $ref(Array.from({ length: 100 }, () => ({ text: Random.cword(14, 50) }))) // 列表数据
 </script>
 <style lang="less" scoped>
-.m-demo {
-  .item {
+.item {
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 1px dotted #ececec;
+  p {
     width: 100%;
-    min-height: 50px;
-    border-bottom: 1px dotted #ececec;
-    p {
-      width: 100%;
-      height: 100%;
-      line-height: 30px;
-      padding: 0 15px;
-      background: #fff;
-      color: #949494;
-      font-size: 14px;
-      span {
-        color: #f56c6c;
-      }
+    height: 100%;
+    line-height: 30px;
+    padding: 0 15px;
+    background: #fff;
+    color: #949494;
+    font-size: 14px;
+    span {
+      color: #f56c6c;
     }
   }
 }

@@ -1,13 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { PublicProps } from '../types'
 import { Option } from './interfaces'
-// 当前 vue props
-export type Props = PublicProps<{
-  message: string | number
-  bgColor: string
-  icon: string
-  durction: number
-}>
+import { Props as DefaultProps } from './interfaces'
 
-// 参数
-export type Options = string | number | Option
+export type Props = PublicProps<DefaultProps> // 当前 vue props
+export type Options = string | number | Option // 参数

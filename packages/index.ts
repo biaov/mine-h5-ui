@@ -75,7 +75,7 @@ import MeAPI from './MeAPI'
 /* API end */
 
 // 所有组件
-const components: any[] = [
+const components = {
   MeButton,
   MeIcon,
   MeImg,
@@ -125,17 +125,20 @@ const components: any[] = [
   MeStep,
   MeStepItem,
   MeDrag
-]
-// 需要添加到 VUE 实例的 API
-const API = { ...MeAPI, MeToast, MeMessageBox, MePreview }
+}
+
+const API = { ...MeAPI, MeToast, MeMessageBox, MePreview } // 需要添加到 VUE 实例的 API
+
 /**
  * 组件注册
- * @param {App} app Vue 对象
- * @returns {Void}
+ * @param { App } app Vue 对象
+ * @returns { void }
  */
 const install = (app: App) => {
   // 注册组件
-  components.forEach(component => app.component(component.name, component))
+  Object.entries(components).forEach(([key, value]) => {
+    app.component(key, value)
+  })
   // ctx 里插入 API
   Object.keys(API).forEach(key => {
     app.config.globalProperties[`$${key}`] = (API as any)[key]
@@ -198,6 +201,7 @@ export {
   MePreview,
   MeAPI
 }
+
 // 全部导出
 export default {
   install,

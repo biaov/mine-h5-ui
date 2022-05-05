@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeToast } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeToast.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeToast } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeToast.css'
 
-const app = createApp(App);
-app.mount("#app");
-app.config.globalProperties["$MeToast"] = $MeToast;
+const app = createApp(App)
+app.mount('#app')
+app.config.globalProperties['$MeToast'] = $MeToast
 ```
 
 :::
@@ -32,10 +32,10 @@ app.config.globalProperties["$MeToast"] = $MeToast;
 ::: CopyCode
 
 ```JavaScript
-import { getCurrentInstance } from "vue";
+import { getCurrentInstance } from 'vue'
 
-const { $MeToast } = getCurrentInstance().appContext.config.globalProperties;
-$MeToast("显示信息");
+const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
+$MeToast('显示信息')
 ```
 
 :::

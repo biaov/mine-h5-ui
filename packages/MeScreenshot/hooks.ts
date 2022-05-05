@@ -6,10 +6,12 @@ import { Emits } from './interfaces'
 // 操作
 export const useHandler = (props: Props, emit: Emits) => {
   const screenshotRef = ref<HTMLDivElement>() // 节点
+
   // 点击 dom
   const onClick = (e: MouseEvent) => {
     emit('on-click', e)
   }
+
   // 下载图片
   const downImg = (imgData: string) => {
     const aDom = document.createElement('a')
@@ -17,6 +19,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     aDom.download = `${props.imageName}.png`
     aDom.click() // 下载图片
   }
+
   // 开始截图
   const startScreenshot = () => {
     HTML2Canvas(screenshotRef.value!).then(canvas => {
@@ -25,6 +28,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       emit('on-end', img, canvas)
     })
   }
+
   // 监听 props start
   watch(
     () => props.start,
@@ -33,6 +37,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     },
     { immediate: true }
   )
+
   return {
     screenshotRef,
     onClick

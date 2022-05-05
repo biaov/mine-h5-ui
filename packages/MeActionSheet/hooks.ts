@@ -6,6 +6,7 @@ import { ListItem, Emits } from './interfaces'
 export const useShowSheet = (props: Props, emit: Emits) => {
   const isShowMask = ref(false) // 是否显示模态框
   const isShow = ref(false) // 是否显示模态框的过渡动画
+
   // 显示模态框
   const showMask = () => {
     isShowMask.value = true
@@ -13,6 +14,7 @@ export const useShowSheet = (props: Props, emit: Emits) => {
       isShow.value = true
     }, 100)
   }
+
   // 隐藏模态框
   const hideMask = () => {
     isShow.value = false
@@ -21,6 +23,7 @@ export const useShowSheet = (props: Props, emit: Emits) => {
       emit('update:visible', false)
     }, 400)
   }
+
   // 监听是否显示弹出层参数
   watch(
     () => props.visible,
@@ -31,8 +34,10 @@ export const useShowSheet = (props: Props, emit: Emits) => {
       immediate: true
     }
   )
+
   return { isShowMask, isShow, hideMask }
 }
+
 // 按钮
 export const useBtns = (emit: Emits) => {
   // 点击列表
@@ -40,10 +45,12 @@ export const useBtns = (emit: Emits) => {
     emit('update:visible', false)
     emit('on-change', item)
   }
+
   // 点击取消按钮
   const onCancel = (e: MouseEvent) => {
     emit('update:visible', false)
     emit('on-cancel', e)
   }
+
   return { onLi, onCancel }
 }

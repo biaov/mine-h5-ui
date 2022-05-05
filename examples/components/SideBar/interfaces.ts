@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // meta类型
 export interface SidebarMeta {
   title: string

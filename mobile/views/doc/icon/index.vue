@@ -16,14 +16,8 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useWebData } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { icons, listData, onClick } = useWebData()
-    return { icons, listData, onClick }
-  }
-})
+const { icons, listData, onClick } = useWebData()
 </script>

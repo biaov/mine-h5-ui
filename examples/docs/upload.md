@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeUpload } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeUpload.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeUpload } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeUpload.css'
 
-const app = createApp(App);
-app.use(MeUpload);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeUpload)
+app.mount('#app')
 ```
 
 :::
@@ -45,25 +45,15 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-upload v-model:fileList="fileList" :preview="true"></me-upload>
-  </div>
+  <me-upload v-model:fileList="fileList" :preview="true"></me-upload>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const fileList = [
-      { id: 1, url: "https://dummyimage.com/100x100/4BC7F5/fff&text=1" },
-      { id: 2, url: "https://dummyimage.com/100x100/7A51F5/fff&text=2" },
-      { id: 3, url: "https://dummyimage.com/100x100/FFB808/fff&text=3" }
-    ];
-    return { fileList };
-  }
-});
+<script lang="ts" setup>
+// 列表数据
+const fileList = [
+  { id: 1, url: 'https://dummyimage.com/100x100/4BC7F5/fff&text=1' },
+  { id: 2, url: 'https://dummyimage.com/100x100/7A51F5/fff&text=2' },
+  { id: 3, url: 'https://dummyimage.com/100x100/FFB808/fff&text=3' }
+]
 </script>
 ```
 

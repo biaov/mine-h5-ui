@@ -7,43 +7,31 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MePassword',
-  emits: ['update:modelValue', 'on-focus', 'on-blur'],
-  props: {
-    // v-model的值
-    modelValue: {
-      type: String,
-      default: ''
-    },
-    // 输入框模式
-    type: {
-      type: String,
-      default: 'password' // number|password
-    },
-    // 输入框数量
-    num: {
-      type: Number,
-      default: 6
-    },
-    // 系统皮肤样式
-    skinType: {
-      type: String,
-      default: 'white' // white|dark
-    },
-    // 聚焦状态
-    isFocus: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { listData, handleClick } = useHandler(props, emit)
-    return { listData, handleClick }
+const emit = defineEmits<{
+  (event: 'update:modelValue', str: string): void
+  (event: 'on-focus', e: MouseEvent): void
+  (event: 'on-blur', e: MouseEvent): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string // v-model 的值
+    type?: string // 输入框模式, number | password
+    num?: number // 输入框数量
+    skinType?: string // 系统皮肤样式, white | dark
+    isFocus?: boolean // 聚焦状态
+  }>(),
+  {
+    modelValue: '',
+    type: 'password',
+    num: 6,
+    skinType: 'white',
+    isFocus: false
   }
-})
+)
+
+const { listData, handleClick } = useHandler(props, emit)
 </script>

@@ -12,11 +12,12 @@ import '~/theme-default/index.less' // 开发
 import "../lib/theme-default/index.css"; // 测试 */
 
 const app = createApp(App)
-app.component(TimeLine.name, TimeLine)
-app.component(CopyCode.name, CopyCode)
+app.component('TimeLine', TimeLine)
+app.component('CopyCode', CopyCode)
 app.use(MINEH5UI)
 app.use(router)
 app.mount('#mine-h5-ui')
+
 // 接收数据
 MessageEventListener(path => {
   if (!path.includes('/')) return

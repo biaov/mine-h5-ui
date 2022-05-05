@@ -5,3 +5,10 @@ export interface Option {
   zIndex?: number
   background?: string
 }
+
+// props
+export interface Props {
+  url: string
+  zIndex: number
+  background: string
+}

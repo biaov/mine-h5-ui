@@ -7,4 +7,5 @@ MeKeyboard.install = (app: App) => {
   app.component(MeKeyboard.name, MeKeyboard)
 }
 const InMeKeyboard: SFCWithInstall<typeof MeKeyboard> = MeKeyboard // 增加类型
+
 export default InMeKeyboard

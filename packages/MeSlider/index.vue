@@ -23,53 +23,39 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 import { PropStyles } from './interfaces'
 
-export default defineComponent({
-  name: 'MeSlider',
-  emits: ['update:modelValue', 'on-start', 'on-move', 'on-end'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: Number,
-      default: 0
-    },
-    // 最大值
-    max: {
-      type: Number,
-      default: 100
-    },
-    // 最小值
-    min: {
-      type: Number,
-      default: 0
-    },
-    // 自定义样式
-    styles: {
-      type: Object as PropType<PropStyles>,
-      default: () => ({
-        height: '', // 大小
-        radius: '', // 倒角
-        lineBgc: '' // 线背景色
-      })
-    },
-    // 禁用状态
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    // 自定义按钮状态
-    isBtn: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler(props, emit)
-    return { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown }
+const emit = defineEmits<{
+  (event: 'update:modelValue', num: number): void
+  (event: 'on-start', e: TouchEvent | MouseEvent): void
+  (event: 'on-move', e: TouchEvent | MouseEvent): void
+  (event: 'on-end', e: TouchEvent | MouseEvent): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: number // v-model 绑定值
+    max?: number // 最大值
+    min?: number // 最小值
+    styles?: PropStyles // 自定义样式
+    disabled?: boolean // 禁用状态
+    isBtn?: boolean // 自定义按钮状态
+  }>(),
+  {
+    modelValue: 0,
+    max: 100,
+    min: 0,
+    styles: () => ({
+      height: '', // 大小
+      radius: '', // 倒角
+      lineBgc: '' // 线背景色
+    }),
+    disabled: false,
+    isBtn: false
   }
-})
+)
+
+const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler(props, emit)
 </script>

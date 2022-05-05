@@ -1,11 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { PublicProps } from '../types'
+import { Props as DefaultProps } from './interfaces'
 
-// 当前 vue props
-export type Props = PublicProps<{
-  visible: boolean
-  modal: boolean
-  position: string
-  closeable: boolean
-  radius: string
-}>
+export type Props = PublicProps<DefaultProps> // 当前 vue props

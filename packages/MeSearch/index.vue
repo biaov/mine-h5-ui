@@ -21,63 +21,42 @@
     <div class="u-btn" @click="handleBtn" v-if="btnText">{{ btnText }}</div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useSearch, useBtns } from './hooks'
 import MeIcon from '../MeIcon'
 
-export default defineComponent({
-  name: 'MeSearch',
-  components: {
-    MeIcon
-  },
-  emits: ['update:modelValue', 'on-click', 'on-search', 'on-focus', 'on-blur', 'on-input', 'on-change'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: String,
-      required: true
-    },
-    // 占位符
-    placeholder: {
-      type: String,
-      default: '请搜索'
-    },
-    // 右侧按钮内容
-    btnText: {
-      type: String,
-      default: ''
-    },
-    // 搜索框对齐方式
-    align: {
-      type: String,
-      default: 'left' // left|center|right|justify|inherit
-    },
-    // 搜索框倒角
-    radius: {
-      type: String,
-      default: '4px'
-    },
-    // 搜索框背景色
-    background: {
-      type: String,
-      default: ''
-    },
-    // 字体颜色
-    color: {
-      type: String,
-      default: ''
-    },
-    // 是否禁用输入框
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { inputVal, onKeypress, onFocus, onBlur, onInput, onChange } = useSearch(props, emit)
-    const { onClean, handleBtn } = useBtns(emit)
-    return { inputVal, onKeypress, onFocus, onBlur, onInput, onChange, onClean, handleBtn }
+const emit = defineEmits<{
+  (event: 'update:modelValue', str: string): void
+  (event: 'on-click'): void
+  (event: 'on-search'): void
+  (event: 'on-focus', e: FocusEvent): void
+  (event: 'on-blur', e: FocusEvent): void
+  (event: 'on-input', e: Event): void
+  (event: 'on-change', e: Event): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue: string // v-model 绑定值
+    placeholder: string // 占位符
+    btnText: string // 右侧按钮内容
+    align: string // 搜索框对齐方式, left | center | right | justify | inherit
+    radius: string // 搜索框倒角
+    background: string // 搜索框背景色
+    color: string // 字体颜色
+    disabled: boolean // 是否禁用输入框
+  }>(),
+  {
+    placeholder: '请搜索',
+    btnText: '',
+    align: 'left',
+    radius: '4px',
+    background: '',
+    color: '',
+    disabled: false
   }
-})
+)
+
+const { inputVal, onKeypress, onFocus, onBlur, onInput, onChange } = useSearch(props, emit)
+const { onClean, handleBtn } = useBtns(emit)
 </script>

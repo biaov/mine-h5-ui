@@ -7,4 +7,5 @@ MeSlider.install = (app: App) => {
   app.component(MeSlider.name, MeSlider)
 }
 const InMeSlider: SFCWithInstall<typeof MeSlider> = MeSlider // 增加类型
+
 export default InMeSlider

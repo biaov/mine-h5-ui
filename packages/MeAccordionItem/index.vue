@@ -14,33 +14,21 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeAccordionItem',
-  props: {
-    // 标题
-    label: {
-      type: String,
-      required: true
-    },
-    // index值
-    name: {
-      type: [Number, String],
-      required: true
-    },
-    // 下边框颜色
-    borderColor: {
-      type: String,
-      default: '#dcdfe6'
-    }
-  },
-  emits: ['on-click'],
-  setup(props, { emit }) {
-    const { accordionItemCont, isShow, curHeight, onClick } = useHandler(props, emit)
-    return { accordionItemCont, isShow, curHeight, onClick }
-  }
-})
+const emit = defineEmits<{
+  (event: 'on-click', e: MouseEvent): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    label: string // 标题
+    name: string | number // index 值
+    borderColor?: string // 下边框颜色
+  }>(),
+  { borderColor: '#dcdfe6' }
+)
+
+const { accordionItemCont, isShow, curHeight, onClick } = useHandler(props, emit)
 </script>

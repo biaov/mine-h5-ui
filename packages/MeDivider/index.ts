@@ -7,4 +7,5 @@ MeDivider.install = (app: App) => {
   app.component(MeDivider.name, MeDivider)
 }
 const InMeDivider: SFCWithInstall<typeof MeDivider> = MeDivider // 增加类型
+
 export default InMeDivider

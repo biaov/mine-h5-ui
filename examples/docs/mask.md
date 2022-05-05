@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeMask } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeMask.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeMask } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeMask.css'
 
-const app = createApp(App);
-app.use(MeMask);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeMask)
+app.mount('#app')
 ```
 
 :::
@@ -45,38 +45,26 @@ app.mount("#app");
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-mask v-model:visible="visible" mask-close>
-      <me-loading type="circle2" color="#f56c6c" size="100px">
-        <div class="u-text">加载中...</div>
-      </me-loading>
-    </me-mask>
-  </div>
+  <me-mask v-model:visible="visible" mask-close>
+    <me-loading type="circle2" color="#f56c6c" size="100px">
+      <div class="u-text">加载中...</div>
+    </me-loading>
+  </me-mask>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    const visible = ref(false); // 模态框显示状态
-    return { visible };
-  }
-});
+<script lang="ts" setup>
+const visible = $ref(false) // 模态框显示状态
 </script>
 <style scoped lang="less">
-.m-demo {
-  .me-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    .u-text {
-      padding-top: 10px;
-      text-align: center;
-      color: @color-default;
-    }
+.me-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  .u-text {
+    padding-top: 10px;
+    text-align: center;
+    color: @color-default;
   }
 }
 </style>

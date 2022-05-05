@@ -7,4 +7,5 @@ MeForm.install = (app: App) => {
   app.component(MeForm.name, MeForm)
 }
 const InMeForm: SFCWithInstall<typeof MeForm> = MeForm // 增加类型
+
 export default InMeForm

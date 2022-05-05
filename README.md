@@ -29,14 +29,14 @@ npm i mine-h5-ui@latest
 ### 使用
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import MINEH5UI from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/index.css'
 
-const app = createApp(App);
-app.use(MINEH5UI);
-app.mount("#app");
+const app = createApp(App)
+app.use(MINEH5UI)
+app.mount('#app')
 ```
 
 - 👉 在[快速开始](https://mineh5ui.biaov.cn/v2/doc/start)中查看更多信息。

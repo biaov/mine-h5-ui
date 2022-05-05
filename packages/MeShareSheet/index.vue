@@ -16,36 +16,36 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType } from 'vue'
 import { useShow, useBtns } from './hooks'
 import { ListItem } from './interfaces'
 
-export default defineComponent({
-  name: 'MeShareSheet',
-  emits: ['update:visible', 'on-change', 'on-cancel'],
-  props: {
-    // v-model:visible 绑定值
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // 提示文本
-    tips: {
-      type: String,
-      default: '立即分享给好友'
-    },
-    // 数据列表
-    list: {
-      type: Array as PropType<ListItem[]>,
-      required: true,
-      validator: (value: ListItem[]) => value.length > 0 && Object.keys(value[0]).length > 0
-    }
+const emit = defineEmits<{
+  (event: 'update:visible', bool: boolean): void
+  (event: 'on-change', e: ListItem): void
+  (event: 'on-cancel', e: MouseEvent): void
+}>()
+
+const props = defineProps({
+  // v-model:visible 绑定值
+  visible: {
+    type: Boolean,
+    default: false
   },
-  setup(props, { emit }) {
-    const { isShowMask, isShow, hideMask } = useShow(props, emit)
-    const { onLi, onCancel } = useBtns(emit)
-    return { isShowMask, isShow, hideMask, onLi, onCancel }
+  // 提示文本
+  tips: {
+    type: String,
+    default: '立即分享给好友'
+  },
+  // 数据列表
+  list: {
+    type: Array as PropType<ListItem[]>,
+    required: true,
+    validator: (value: ListItem[]) => value.length > 0 && Object.keys(value[0]).length > 0
   }
 })
+
+const { isShowMask, isShow, hideMask } = useShow(props, emit)
+const { onLi, onCancel } = useBtns(emit)
 </script>

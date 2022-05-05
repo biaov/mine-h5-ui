@@ -3,6 +3,7 @@ import MessageBoxConstructor from './index.vue'
 import { CurOption, OnOk } from './types'
 import { Option, InMessageBox } from './interfaces'
 import { IsType } from '../MeAPI/function'
+
 /**
  * 消息提示
  * @param {Option} arg 选项参数
@@ -37,12 +38,15 @@ const MessageBox = (option: Option, type: string): Promise<string | undefined> =
     })
   }
 }
-/* 导出fn.type */
+
+/* 导出 fn.type */
 const types = ['alert', 'confirm', 'prompt', 'custom'] // 列表
 types.forEach(type => {
-  ;(MessageBox as InMessageBox)[type] = (option: Option) => MessageBox(option, type)
+  const tempMessageBox = MessageBox as InMessageBox
+  tempMessageBox[type] = (option: Option) => MessageBox(option, type)
 })
-/* 导出type */
+
+/* 导出 type */
 export const alert = (option: Option) => MessageBox(option, 'alert') // 警告框
 export const confirm = (option: Option) => MessageBox(option, 'confirm') // 确认框
 export const prompt = (option: Option) => MessageBox(option, 'prompt') // 提示框

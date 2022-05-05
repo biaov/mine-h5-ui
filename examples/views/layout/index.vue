@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- 首页 -->
   <div class="m-layout">
@@ -29,17 +26,19 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { ref, onMounted } from 'vue'
+<script lang="ts" setup>
+import { onMounted } from 'vue'
 import { useGlobalVars } from '@/utils/variables'
 import { useCanvas } from './hooks'
-</script>
-<script lang="ts" setup>
 import MineHeader from '@/components/MineHeader'
 
 const { GithubAddress } = useGlobalVars()
-const canvas = ref<HTMLCanvasElement>() // canvas 对象
+const canvas = $ref<HTMLCanvasElement>() // canvas 对象
+
 onMounted(() => {
-  useCanvas(canvas)
+  useCanvas($$(canvas))
 })
 </script>
+<style scoped lang="less">
+@import './index.less';
+</style>

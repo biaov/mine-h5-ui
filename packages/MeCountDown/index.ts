@@ -7,4 +7,5 @@ MeCountDown.install = (app: App) => {
   app.component(MeCountDown.name, MeCountDown)
 }
 const InMeCountDown: SFCWithInstall<typeof MeCountDown> = MeCountDown // 增加类型
+
 export default InMeCountDown

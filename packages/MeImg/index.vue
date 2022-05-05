@@ -5,52 +5,32 @@
     <span :style="`width:${width};height:${height};border-radius:${radius};background:url(${src}) no-repeat center;background-size:${fill};`" v-else></span>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useImgEvent } from './hooks'
 
-export default defineComponent({
-  name: 'MeImg',
-  emits: ['on-click', 'on-load', 'on-error'],
-  props: {
-    // 图片地址
-    src: {
-      type: String,
-      required: true
-    },
-    // 宽度
-    width: {
-      type: String,
-      default: ''
-    },
-    // 高度
-    height: {
-      type: String,
-      default: ''
-    },
-    // 填充方式
-    fill: {
-      type: String,
-      default: ''
-    },
-    // 倒角
-    radius: {
-      type: String,
-      default: '0'
-    },
-    // 错误显示alt
-    alt: {
-      type: String,
-      default: ''
-    }
-  },
-  setup(props, { emit }) {
-    const { onClick, onLoad, onError } = useImgEvent(emit)
-    return {
-      onClick,
-      onLoad,
-      onError
-    }
+const emit = defineEmits<{
+  (event: 'on-click', e: MouseEvent): void
+  (event: 'on-load', e: Event): void
+  (event: 'on-error', e: Event): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    src: string // 图片地址
+    width: string // 宽度
+    height: string // 高度
+    fill: string // 填充方式
+    radius: string // 倒角
+    alt: string // 错误显示 alt
+  }>(),
+  {
+    width: '',
+    height: '',
+    fill: '',
+    radius: '0',
+    alt: ''
   }
-})
+)
+
+const { onClick, onLoad, onError } = useImgEvent(emit)
 </script>

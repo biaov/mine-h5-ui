@@ -14,3 +14,10 @@ export interface Emits {
   (event: 'on-cancel'): void
   (event: 'on-sure', currentValue: string[]): void
 }
+
+// props
+export interface Props {
+  modelValue: string
+  visible: boolean
+  separator: string
+}

@@ -11,22 +11,12 @@
     <div class="u-text" :style="`color:${isActive ? parentProps.activeColor : parentProps.color};`"><slot></slot></div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeStepItem',
-  props: {
-    // 索引名称
-    name: {
-      type: [String, Number],
-      required: true
-    }
-  },
-  setup(prop) {
-    const { isActive, parentProps } = useHandler(prop)
-    return { isActive, parentProps }
-  }
-})
+const props = defineProps<{
+  name: string | number // 索引名称
+}>()
+
+const { isActive, parentProps } = useHandler(props)
 </script>

@@ -13,7 +13,9 @@ export const useInitSlots = (props: Props, emit: Emits) => {
     emit('update:modelValue', value)
     emit('on-change', value)
   }
+
   provide(MeAccordionKey, { name: MeAccordionKey, currentValue, onChange })
+
   // 监听值的改变
   watch(
     () => props.modelValue,
@@ -21,5 +23,6 @@ export const useInitSlots = (props: Props, emit: Emits) => {
       currentValue.value = value
     }
   )
+
   return {}
 }

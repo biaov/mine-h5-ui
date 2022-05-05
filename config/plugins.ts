@@ -31,7 +31,9 @@ export const vitePluginVuedocConfig: Partial<VueDocPluginOptions> = {
     ]
   }
 }
-// vue插件配置
+
+// vue 插件配置
 export const vueConfig: Options = {
-  include
+  include,
+  reactivityTransform: true
 }

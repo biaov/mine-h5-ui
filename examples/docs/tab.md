@@ -7,16 +7,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeTab, MeTabItem } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeTab.css";
-import "mine-h5-ui/lib/theme-default/MeTabItem.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeTab, MeTabItem } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeTab.css'
+import 'mine-h5-ui/lib/theme-default/MeTabItem.css'
 
-const app = createApp(App);
-app.use(MeTab);
-app.use(MeTabItem);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeTab)
+app.use(MeTabItem)
+app.mount('#app')
 ```
 
 :::
@@ -36,90 +36,40 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-tab v-model="active" @on-change="onChange">
-      <me-tab-item v-for="item in listData" :key="item.id" :name="item.id" :label="item.title" v-text="item.content"></me-tab-item>
-    </me-tab>
-  </div>
+  <me-tab v-model="active" @on-change="onChange">
+    <me-tab-item v-for="item in listData" :key="item.id" :name="item.id" :label="item.label" v-text="item.content"></me-tab-item>
+  </me-tab>
 </template>
-<script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const listData = ref([
-      {
-        id: 1,
-        active: 0,
-        label: "基础用法",
-        children: [
-          {
-            id: 1,
-            label: "标签一",
-            content: "内容一"
-          },
-          {
-            id: 2,
-            label: "标签二",
-            content: "内容二"
-          },
-          {
-            id: 3,
-            label: "标签三",
-            content: "内容三"
-          },
-          {
-            id: 4,
-            label: "标签四",
-            content: "内容四"
-          }
-        ]
-      },
-      {
-        id: 2,
-        active: 0,
-        label: "自定义样式",
-        color: "#f60",
-        activeColor: "#f66",
-        lineColor: "#409eff",
-        children: [
-          {
-            id: 1,
-            label: "标签一",
-            content: "内容一"
-          },
-          {
-            id: 2,
-            label: "标签二",
-            content: "内容二"
-          },
-          {
-            id: 3,
-            label: "标签三",
-            content: "内容三"
-          },
-          {
-            id: 4,
-            label: "标签四",
-            content: "内容四"
-          }
-        ]
-      }
-    ]);
-    // 当标签栏改变时
-    const onChange = index => {
-      console.log(`活动项${index}`);
-    };
-    return { listData, onChange };
+<script lang="ts" setup>
+const active = $ref(0)
+// 列表数据
+const listData = $ref([
+  {
+    id: 1,
+    label: '标签一',
+    content: '内容一'
+  },
+  {
+    id: 2,
+    label: '标签二',
+    content: '内容二'
+  },
+  {
+    id: 3,
+    label: '标签三',
+    content: '内容三'
+  },
+  {
+    id: 4,
+    label: '标签四',
+    content: '内容四'
   }
-});
-</script>
-<style scoped lang="less">
-.m-demo {
+])
+// 当标签栏改变时
+const onChange = index => {
+  console.log(`活动项${index}`)
 }
-</style>
+</script>
 ```
 
 :::

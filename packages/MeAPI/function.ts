@@ -46,9 +46,8 @@ export const DeepCopyRA = (arg: any): any => {
  */
 export const IsLeapyear = (num: number): boolean => {
   // 判断是否是数值
-  if (!IsType('Number', num)) {
-    throw new Error(`${num} is not number`)
-  }
+  if (!IsType('Number', num)) throw new Error(`${num} is not number`)
+
   return (num % 4 === 0 && num % 100 !== 0) || num % 400 === 0
 }
 
@@ -69,8 +68,8 @@ export const IsLeapyear = (num: number): boolean => {
  */
 
 export const FormatTime = (arg: string | number | Date = new Date()): FormatTimeBack => {
-  // 非空判断
-  if ((arg as string).trim() === '') throw new Error(`${arg} is not null`)
+  if ((arg as string).trim() === '') throw new Error(`${arg} is not null`) // 非空判断
+
   const str = IsType('Number', arg) && String(arg).length < 13 ? (arg as number) * 1000 : arg // 转化成ms
   IsType('string', arg) && (str as string).replace(/-/g, '/') // 为了支持 IOS
   const O = new Date(str) // 时间 Date 对象
@@ -89,6 +88,7 @@ export const FormatTime = (arg: string | number | Date = new Date()): FormatTime
   const date = `${Y}-${M}-${D}` // 日期
   const time = `${h}:${m}:${s}` // 时间
   const datetime = `${date} ${time}` // 日期时间
+
   return { Y, M, D, w, h, m, s, date, time, datetime }
 }
 
@@ -105,9 +105,8 @@ export const FormatTime = (arg: string | number | Date = new Date()): FormatTime
  */
 export const CountDown = (num: number, format = 'hh:mm:ss'): FormatData => {
   if (!IsType('Number', num)) throw new Error(`${num} is not number`) // 是否是数字
-  if (!'DD:hh:mm:ss:ms'.includes(format)) {
-    throw new Error(`${format} form error`) // 格式是否正确
-  }
+  if (!'DD:hh:mm:ss:ms'.includes(format)) throw new Error(`${format} form error`) // 格式是否正确
+
   // 假设格式都存在
   const DD = ~~(num / (1000 * 60 * 60 * 24)) // 天
   let hh = ~~((num / (1000 * 60 * 60)) % 24) // 时
@@ -120,10 +119,12 @@ export const CountDown = (num: number, format = 'hh:mm:ss'): FormatData => {
   format.includes('hh') ? (formatData.hh = doubleDigit(hh)) : (mm += hh * 60) // 时
   format.includes('mm') ? (formatData.mm = doubleDigit(mm)) : (ss += mm * 60) // 分
   format.includes('ss') ? (formatData.ss = doubleDigit(ss)) : (ms += ss * 1000) // 秒
+
   if (format.includes('ms')) {
     const curMs = format.includes('mm') ? doubleDigit(ms) : num // 毫秒
     formatData.ms = +String(curMs).slice(0, 2)
   }
+
   return formatData
 }
 
@@ -135,6 +136,7 @@ export const CountDown = (num: number, format = 'hh:mm:ss'): FormatData => {
  */
 export const Throttle = (fn: DTCallback, time = 1000): ThrottleBack => {
   let timer: NodeJS.Timeout | null = null // 定时器
+
   return (e: Event) => {
     !timer &&
       (timer = setTimeout(() => {
@@ -152,6 +154,7 @@ export const Throttle = (fn: DTCallback, time = 1000): ThrottleBack => {
  */
 export const Debounce = (fn: DTCallback, time = 300): DebounceBack => {
   let timer: NodeJS.Timeout | undefined // 定时器
+
   return (e: Event) => {
     if (timer !== undefined) clearTimeout(timer) // 清理之前的操作
     timer = setTimeout(() => {
@@ -167,9 +170,10 @@ export const Debounce = (fn: DTCallback, time = 300): DebounceBack => {
  */
 export const FormatThousand = (num: number): string => {
   if (!IsType('Number', num)) throw new Error(`${num} is not number`) // 数字校验
+
   const numStr = String(num) // 数字转字符串
-  // 返回替换值
-  return numStr.replace(numStr.includes('.') ? validThousandFloat : validThousand, '$1,')
+
+  return numStr.replace(numStr.includes('.') ? validThousandFloat : validThousand, '$1,') // 返回替换值
 }
 
 /**
@@ -181,6 +185,7 @@ export const FormatThousand = (num: number): string => {
 export const Locked = (fn: LockedCallback, time = 5000): LockedBack => {
   let timer: NodeJS.Timeout | null = null // 定时器
   const isLocked = { value: false }
+
   // 监听锁状态的改变
   const isLockedProxy: IsLocked = new Proxy(isLocked, {
     get(obj: IsLocked, prop: string) {
@@ -188,6 +193,7 @@ export const Locked = (fn: LockedCallback, time = 5000): LockedBack => {
     },
     set(obj: IsLocked, prop: string, value: boolean) {
       obj[prop] = value
+
       if (value) {
         timer = setTimeout(() => {
           obj[prop] = false
@@ -195,9 +201,11 @@ export const Locked = (fn: LockedCallback, time = 5000): LockedBack => {
       } else {
         clearInterval(timer as NodeJS.Timeout)
       }
+
       return true
     }
   })
+
   return (e?: Event) => {
     // 执行业务函数
     !isLockedProxy.value &&
@@ -224,10 +232,8 @@ export const AddZero = (str: string, float1: number, float2: number): string => 
  * @returns { CalculationBack } - 运算方法 add subtract multiply divide
  */
 export const Calculation = (num1: number, num2: number): CalculationBack => {
-  // 数字
-  if (!IsType('Number', num1) || !IsType('Number', num2)) {
-    throw new Error(`${num1} or ${num2} is not number`)
-  }
+  if (!IsType('Number', num1) || !IsType('Number', num2)) throw new Error(`${num1} or ${num2} is not number`) // 数字
+
   // 转列表
   const list1 = String(num1).split('.')
   const list2 = String(num2).split('.')
@@ -244,6 +250,7 @@ export const Calculation = (num1: number, num2: number): CalculationBack => {
   const subtract = () => (newNum1 - newNum2) / 10 ** maxFloat // 减
   const multiply = () => (newNum1 * newNum2) / 10 ** (maxFloat * 2) // 乘
   const divide = () => newNum1 / newNum2 // 除
+
   return { add, subtract, multiply, divide }
 }
 

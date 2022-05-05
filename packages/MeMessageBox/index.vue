@@ -25,59 +25,36 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useShow } from './hooks'
 import { OnOk, OnOff } from './types'
 
-export default defineComponent({
-  name: 'MeMessageBox',
-  emits: ['action'],
-  props: {
-    // 标题内容
-    tips: {
-      type: String,
-      default: '提示'
-    },
-    // 弹出框类型
-    type: {
-      type: String,
-      default: 'confirm' // alert | confirm | prompt | custom
-    },
-    // 警告语
-    message: {
-      type: String,
-      default: ''
-    },
-    // 自定义 HTML
-    html: {
-      type: String,
-      default: ''
-    },
-    // 取消按钮内容
-    cancelButtonText: {
-      type: String,
-      default: '取消'
-    },
-    // 确认按钮内容
-    confirmButtonText: {
-      type: String,
-      default: '确认'
-    },
-    // 点击确定函数
-    onOk: {
-      type: Function as PropType<OnOk>,
-      default: () => () => {}
-    },
-    // 点击取消函数
-    onOff: {
-      type: Function as PropType<OnOff>,
-      default: () => () => {}
-    }
-  },
-  setup(props, { emit }) {
-    const { isShow, isDestroy, inputValue, onCancel, onConfirm } = useShow(props, emit)
-    return { isShow, isDestroy, inputValue, onCancel, onConfirm }
+const emit = defineEmits<{
+  (event: 'action', eventName: string, value?: string): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    tips?: string // 标题内容
+    type?: string // 弹出框类型, alert | confirm | prompt | custom
+    message?: string // 警告语
+    html?: string // 自定义 HTML
+    cancelButtonText?: string // 取消按钮内容
+    confirmButtonText?: string // 确认按钮内容
+    onOk?: OnOk // 点击确定函数
+    onOff?: OnOff // 点击取消函数
+  }>(),
+  {
+    tips: '提示',
+    type: 'confirm',
+    message: '',
+    html: '',
+    cancelButtonText: '取消',
+    confirmButtonText: '确认',
+    onOk: () => () => {},
+    onOff: () => () => {}
   }
-})
+)
+
+const { isShow, isDestroy, inputValue, onCancel, onConfirm } = useShow(props, emit)
 </script>

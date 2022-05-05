@@ -7,16 +7,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeStep, MeStepItem } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeStep.css";
-import "mine-h5-ui/lib/theme-default/MeStepItem.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeStep, MeStepItem } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeStep.css'
+import 'mine-h5-ui/lib/theme-default/MeStepItem.css'
 
-const app = createApp(App);
-app.use(MeStep);
-app.use(MeStepItem);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeStep)
+app.use(MeStepItem)
+app.mount('#app')
 ```
 
 :::
@@ -40,14 +40,8 @@ app.mount("#app");
     <me-step-item name="second">步骤二</me-step-item>
   </me-step>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const active = ref(["first"]); // 活动项
-    return { active };
-  }
-});
+<script lang="ts" setup>
+const active = $ref(['first']) // 活动项
 </script>
 ```
 
@@ -66,14 +60,8 @@ export default defineComponent({
     <me-step-item name="second">步骤二</me-step-item>
   </me-step>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const active = ref(["first"]); // 活动项
-    return { active };
-  }
-});
+<script lang="ts" setup>
+const active = $ref(['first']) // 活动项
 </script>
 ```
 
@@ -92,14 +80,8 @@ export default defineComponent({
     <me-step-item name="second">步骤二</me-step-item>
   </me-step>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const active = ref(["first"]); // 活动项
-    return { active };
-  }
-});
+<script lang="ts" setup>
+const active = $ref(['first']) // 活动项
 </script>
 ```
 
@@ -118,14 +100,8 @@ export default defineComponent({
     <me-step-item name="second">步骤二</me-step-item>
   </me-step>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const active = ref(["first"]); // 活动项
-    return { active };
-  }
-});
+<script lang="ts" setup>
+const active = $ref(['first']) // 活动项
 </script>
 ```
 
@@ -150,14 +126,8 @@ export default defineComponent({
     </me-step-item>
   </me-step>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const active = ref(["first"]); // 活动项
-    return { active };
-  }
-});
+<script lang="ts" setup>
+const active = $ref(['first']) // 活动项
 </script>
 ```
 

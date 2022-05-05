@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeSlider } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeSlider.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeSlider } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeSlider.css'
 
-const app = createApp(App);
-app.use(MeSlider);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeSlider)
+app.mount('#app')
 ```
 
 :::
@@ -57,26 +57,16 @@ app.mount("#app");
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-slider v-model="sliderValue" :styles="styles"></me-slider>
-  </div>
+  <me-slider v-model="sliderValue" :styles="styles"></me-slider>
 </template>
-<script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    const sliderValue = ref(30); // 当前滑块值
-    // 自定义滑块样式
-    const styles = Object.freeze({
-      height: "10px", // 高度
-      radius: "6px", // 倒角
-      lineBgc: "#f60" // 线背景色
-    });
-    return { sliderValue, styles };
-  }
-});
+<script lang="ts" setup>
+const sliderValue = $ref(30) // 当前滑块值
+// 自定义滑块样式
+const styles = Object.freeze({
+  height: '10px', // 高度
+  radius: '6px', // 倒角
+  lineBgc: '#f60' // 线背景色
+})
 </script>
 ```
 
@@ -90,36 +80,24 @@ export default defineComponent({
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-slider v-model="sliderValue" :is-btn="true">
-      <div class="u-btn" v-text="sliderValue"></div>
-    </me-slider>
-  </div>
+  <me-slider v-model="sliderValue" :is-btn="true">
+    <div class="u-btn" v-text="sliderValue"></div>
+  </me-slider>
 </template>
-<script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    const sliderValue = ref(30); // 当前滑块值
-    return { sliderValue };
-  }
-});
+<script lang="ts" setup>
+const sliderValue = $ref(30) // 当前滑块值
 </script>
 <style scoped lang="less">
-.m-demo {
-  .me-slider {
-    .u-btn {
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 3px;
-      background: #f60;
-      text-align: center;
-      color: #fff;
-      font-size: 12px;
-    }
+.me-slider {
+  .u-btn {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    background: #f60;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
   }
 }
 </style>

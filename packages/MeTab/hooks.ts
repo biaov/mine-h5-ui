@@ -18,11 +18,13 @@ export const useInitSlots = (props: Props, emit: Emits) => {
   const transX = ref(0) // 初始移动值
   const duration = ref(0) // 过渡动画时间
   const currentValue = ref(props.modelValue)
+
   // 计算初始移动值
   const initTranslateX = () => {
     transX.value = tabsDom.value!.offsetWidth / (tabList.value.length * 2)
     duration.value = 0
   }
+
   // 点击tabs item
   const onClick = ({ name }: LabelName) => {
     // 点击不是活动项
@@ -32,15 +34,20 @@ export const useInitSlots = (props: Props, emit: Emits) => {
       emit('on-change', name)
     }
   }
+
   // 获取 title
   const getLabelName = (item: LabelName) => {
     tabList.value.push(item)
   }
+
   const curIndex = computed(() => tabList.value.findIndex(item => item.name === props.modelValue)) // 当前索引
+
   provide(MeTabKey, { name: MeTabKey, currentValue, getLabelName })
+
   onMounted(() => {
     initTranslateX()
   })
+
   // 监听 modelValue 值
   watch(
     () => props.modelValue,
@@ -48,5 +55,6 @@ export const useInitSlots = (props: Props, emit: Emits) => {
       currentValue.value = value
     }
   )
-  return { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick }
+
+  return { tabsDom, tabList, transX, duration, curIndex, onClick }
 }

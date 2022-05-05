@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- 时间线 -->
   <div class="m-timeline">
@@ -11,13 +8,6 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'TimeLine',
-  setup() {
-    return {}
-  }
-})
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

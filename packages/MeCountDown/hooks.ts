@@ -10,9 +10,11 @@ export const useCountdown = (props: Props, emit: Emits) => {
   let timer: NodeJS.Timeout | undefined // 定时器
   const addSubNum = props.format.includes('ms') ? 10 : 1000 // 时间
   let curTime = 0 // 当前 time
+
   // 开启倒计时
   const startCountdown = () => {
     if (timer) return // 倒计时是否存在
+
     // 开启倒计时
     timer = setInterval(() => {
       // 是否已经倒计到0
@@ -27,16 +29,19 @@ export const useCountdown = (props: Props, emit: Emits) => {
       }
     }, addSubNum)
   }
+
   // 暂停倒计时
   const suspendCountdown = () => {
     clearInterval(timer as NodeJS.Timeout)
     timer = undefined
   }
+
   // 重置倒计时
   const resetCountdown = () => {
     curTime = props.time
     formatAfter.value = CountDown(curTime, props.format)
   }
+
   // 监听开始状态
   watch(
     () => props.isStart,
@@ -47,6 +52,7 @@ export const useCountdown = (props: Props, emit: Emits) => {
       immediate: true
     }
   )
+
   // 监听暂停状态
   watch(
     () => props.isSuspend,
@@ -54,6 +60,7 @@ export const useCountdown = (props: Props, emit: Emits) => {
       value && suspendCountdown()
     }
   )
+
   // 监听重置状态
   watch(
     () => props.isReset,
@@ -61,6 +68,8 @@ export const useCountdown = (props: Props, emit: Emits) => {
       value && resetCountdown()
     }
   )
+
   resetCountdown()
+
   return { formatAfter }
 }

@@ -15,14 +15,8 @@
     </me-grid>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandlerClick } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { grids, handleLi } = useHandlerClick()
-    return { grids, handleLi }
-  }
-})
+const { grids, handleLi } = useHandlerClick()
 </script>

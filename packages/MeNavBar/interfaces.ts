@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 // props styles
 export interface Styles {
   borderColor: string
@@ -13,4 +12,13 @@ export interface Styles {
 export interface Emits {
   (event: 'click-left', e: MouseEvent): void
   (event: 'click-right', e: MouseEvent): void
+}
+
+// props
+export interface Props {
+  title: string
+  leftArrow: boolean
+  leftText: string
+  rightText: string
+  styles: Styles
 }

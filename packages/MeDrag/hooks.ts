@@ -18,7 +18,9 @@ export const useHandler = (props: Props, emit: Emits) => {
     { start: 248, end: 293, cursor: 'sw' },
     { start: 293, end: 338, cursor: 'w' }
   ])
+
   const getCurItem = computed(() => listData.value[props.current]?.rect ?? {}) // 获取当前 item
+
   // 获取当前 cursor
   const getCursor = computed(() => (i: number) => {
     const { r } = getCurItem.value || {}
@@ -114,6 +116,7 @@ export const useMove = (props: Props, share: MoveShare) => {
     const { clientX, clientY } = e
     startPoint = { x: clientX, y: clientY }
     startRect = { ...getCurItem.value }
+
     // 表达式声明移动事件
     document.onmousemove = (ev: MouseEvent) => {
       const { distX, distY } = getDistance({ x: ev.clientX, y: ev.clientY })
@@ -122,6 +125,7 @@ export const useMove = (props: Props, share: MoveShare) => {
       onEmitChange('translate')
       onUpdate()
     }
+
     // 表达式声明抬起事件
     document.onmouseup = () => {
       document.onmousemove = null // 清理上次的移动事件
@@ -215,15 +219,18 @@ export const useRotate = (props: Props, share: RotateShare) => {
   // 获取旋转角度
   const getRotate = (point: Point): number => {
     const center = getCenterPoint()
+
     if (point.x === center.x) {
       return point.y >= center.y ? 0 : 180
     }
     if (point.y === center.y) {
       return point.x < center.x ? 90 : 270
     }
+
     const x = point.x - center.x
     const y = point.y - center.y
     let angle = (Math.atan(Math.abs(x / y)) / Math.PI) * 180
+
     // 默认从第三象限(x<0 && y>0)开始为正
     if (x < 0 && y < 0) {
       // 第二象限
@@ -235,6 +242,7 @@ export const useRotate = (props: Props, share: RotateShare) => {
       // 第四象限
       angle = 360 - angle
     }
+
     return getAngleAlign(angle)
   }
 
@@ -262,6 +270,7 @@ export const useRotate = (props: Props, share: RotateShare) => {
       document.onmouseup = null // 清理上次的抬起事件
     }
   }
+
   return { onRotateTouchmove, onRotateMousedown }
 }
 
@@ -277,12 +286,14 @@ export const useScale = (props: Props, share: ScaleShare) => {
     const last = list[1]
     const distX = Math.abs(first.clientX - last.clientX)
     const distY = Math.abs(first.clientY - last.clientY)
+
     return Math.sqrt(distX ** 2 + distY ** 2)
   }
 
   // 触摸开始
   const onTouchstartWrap = (e: TouchEvent) => {
     if (e.touches.length !== 2 || !props.scale || !Object.keys(getCurItem.value).length) return
+
     startTouchDist = calcDistance(e.touches)
     startRect = { ...getCurItem.value }
   }
@@ -290,6 +301,7 @@ export const useScale = (props: Props, share: ScaleShare) => {
   // 触摸移动
   const onTouchmoveWrap = (e: TouchEvent) => {
     if (e.touches.length !== 2 || !props.scale || !Object.keys(getCurItem.value).length) return
+
     const { x, y, w, h } = startRect
     const scale = (calcDistance(e.touches) - startTouchDist) / props.scale + 1
     const tempW = w * scale

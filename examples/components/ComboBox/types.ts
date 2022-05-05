@@ -1,9 +1,6 @@
 /* eslint-disable no-unused-vars */
-
 import { PublicProps } from '@/types'
-import { ListItem } from './interfaces'
+import { Props as PropsI } from './interfaces'
 
 // 当前 vue props
-export type Props = PublicProps<{
-  list: ListItem[]
-}>
+export type Props = PublicProps<PropsI>

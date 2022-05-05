@@ -7,4 +7,5 @@ MeCheckbox.install = (app: App) => {
   app.component(MeCheckbox.name, MeCheckbox)
 }
 const InMeCheckbox: SFCWithInstall<typeof MeCheckbox> = MeCheckbox // 增加类型
+
 export default InMeCheckbox

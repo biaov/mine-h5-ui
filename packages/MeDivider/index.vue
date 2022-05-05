@@ -23,60 +23,34 @@
     </template>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 import { Line, Text } from './interfaces'
 
-export default defineComponent({
-  name: 'MeDivider',
-  props: {
-    // 线条数和文本
-    list: {
-      type: Array as PropType<string[]>,
-      default: () => []
-    },
-    // 距离左边的距离
-    left: {
-      type: Number
-    },
-    // 距离右边的距离
-    right: {
-      type: Number
-    },
-    // 宽度
-    width: {
-      type: Number
-    },
-    // 高度
-    height: {
-      type: Number
-    },
-    // 旋转元素Y轴的基点位置
-    origin: {
-      type: Number
-    },
-    // 线条样式
-    line: {
-      type: Object as PropType<Line>,
-      default: () => ({
-        radius: 0, // 线条倒角
-        color: '#dcdfe6', // 线条颜色
-        size: 1 // 线条大小
-      })
-    },
-    // 文本样式
-    text: {
-      type: Object as PropType<Text>,
-      default: () => ({
-        color: '#494949', // 文本颜色
-        size: 14 // 文本大小
-      })
-    }
-  },
-  setup(props) {
-    const { fieldsetList, curLine } = useHandler(props)
-    return { fieldsetList, curLine }
+const props = withDefaults(
+  defineProps<{
+    list?: string[] // 线条数和文本
+    left?: number // 距离左边的距离
+    right?: number // 距离右边的距离
+    width?: number // 宽度
+    height?: number // 高度
+    origin?: number // 旋转元素Y轴的基点位置
+    line?: Line // 线条样式
+    text?: Text // 文本样式
+  }>(),
+  {
+    list: () => [],
+    line: () => ({
+      radius: 0, // 线条倒角
+      color: '#dcdfe6', // 线条颜色
+      size: 1 // 线条大小
+    }),
+    text: () => ({
+      color: '#494949', // 文本颜色
+      size: 14 // 文本大小
+    })
   }
-})
+)
+
+const { fieldsetList, curLine } = useHandler(props)
 </script>

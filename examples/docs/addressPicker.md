@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeAddressPicker } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeAddressPicker.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeAddressPicker } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeAddressPicker.css'
 
-const app = createApp(App);
-app.use(MeAddressPicker);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeAddressPicker)
+app.mount('#app')
 ```
 
 :::

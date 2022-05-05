@@ -12,3 +12,9 @@ export interface Emits {
   (event: 'update:modelValue', arr: (string | number)[]): void
   (event: 'on-change', arr: (string | number)[]): void
 }
+
+// props
+export interface Props {
+  modelValue: (string | number)[]
+  direction: string
+}

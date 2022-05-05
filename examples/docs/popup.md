@@ -9,14 +9,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MePopup } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MePopup.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MePopup } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MePopup.css'
 
-const app = createApp(App);
-app.use(MePopup);
-app.mount("#app");
+const app = createApp(App)
+app.use(MePopup)
+app.mount('#app')
 ```
 
 :::

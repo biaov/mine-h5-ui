@@ -4,33 +4,26 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeScreenshot',
-  emits: ['on-click', 'on-end'],
-  props: {
-    // 开始截图状态
-    start: {
-      type: Boolean,
-      default: false
-    },
-    // 允许下载状态
-    allowDown: {
-      type: Boolean,
-      default: false
-    },
-    // 下载图片名称
-    imageName: {
-      type: String,
-      default: 'screenshot'
-    }
-  },
-  setup(props, { emit }) {
-    const { screenshotRef, onClick } = useHandler(props, emit)
-    return { screenshotRef, onClick }
+const emit = defineEmits<{
+  (event: 'on-click', e: MouseEvent): void
+  (event: 'on-end', url: string, canvas: HTMLCanvasElement): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    start?: boolean // 开始截图状态
+    allowDown?: boolean // 允许下载状态
+    imageName?: string // 下载图片名称
+  }>(),
+  {
+    start: false,
+    allowDown: false,
+    imageName: 'screenshot'
   }
-})
+)
+
+const { screenshotRef, onClick } = useHandler(props, emit)
 </script>

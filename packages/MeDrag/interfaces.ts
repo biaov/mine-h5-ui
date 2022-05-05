@@ -23,13 +23,6 @@ export interface AngleToCursorItem {
   cursor: string
 }
 
-// emits
-export interface Emits {
-  (event: 'on-change', list: ListDataItem[], type: string): void
-  (event: 'update:list', list: ListDataItem[]): void
-  (event: 'update:current', index: number): void
-}
-
 // 坐标
 export interface Point {
   x: number
@@ -88,4 +81,23 @@ export interface ResizeGroup {
 // ScaleShare 共享数据和方法
 export interface ScaleShare extends Share {
   listData: Ref<ListDataItem[]>
+}
+
+// emits
+export interface Emits {
+  (event: 'on-change', list: ListDataItem[], type: string): void
+  (event: 'update:list', list: ListDataItem[]): void
+  (event: 'update:current', index: number): void
+}
+
+// props
+export interface Props {
+  current: number
+  list: ListDataItem[]
+  width: string
+  height: string
+  theme: string
+  themeText: string
+  angleRange: number
+  scale: number
 }

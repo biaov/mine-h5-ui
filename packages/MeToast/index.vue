@@ -5,41 +5,24 @@
     <span>{{ message }}</span>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import MeIcon from '../MeIcon'
 import { useShow } from './hooks'
 
-export default defineComponent({
-  name: 'MeToast',
-  props: {
-    // 提示语
-    message: {
-      type: [String, Number],
-      default: ''
-    },
-    // 背景颜色
-    bgColor: {
-      type: String,
-      default: ''
-    },
-    // 图标
-    icon: {
-      type: String,
-      default: ''
-    },
-    // 延迟时间
-    durction: {
-      type: Number,
-      default: 1000
-    }
-  },
-  components: {
-    MeIcon
-  },
-  setup(props) {
-    const { isShow, isDestroy } = useShow(props)
-    return { isShow, isDestroy }
+const props = withDefaults(
+  defineProps<{
+    message?: string | number // 提示语
+    bgColor?: string // 背景颜色
+    icon?: string // 图标
+    durction?: number // 延迟时间
+  }>(),
+  {
+    message: '',
+    bgColor: '',
+    icon: '',
+    durction: 1000
   }
-})
+)
+
+const { isShow, isDestroy } = useShow(props)
 </script>

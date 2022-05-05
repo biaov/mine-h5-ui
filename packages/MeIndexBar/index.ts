@@ -7,4 +7,5 @@ MeIndexBar.install = (app: App) => {
   app.component(MeIndexBar.name, MeIndexBar)
 }
 const InMeIndexBar: SFCWithInstall<typeof MeIndexBar> = MeIndexBar // 增加类型
+
 export default InMeIndexBar

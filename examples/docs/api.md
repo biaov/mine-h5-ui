@@ -10,16 +10,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeAPI } from "mine-h5-ui";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeAPI } from 'mine-h5-ui'
 
-const app = createApp(App);
-app.mount("#app");
+const app = createApp(App)
+app.mount('#app')
 // ctx 里插入 API
 Object.keys(MeAPI).forEach(key => {
-  app.config.globalProperties[`$${key}`] = (API as any)[key];
-});
+  app.config.globalProperties[`$${key}`] = (API as any)[key]
+})
 ```
 
 :::
@@ -56,18 +56,15 @@ Object.keys(MeAPI).forEach(key => {
 
 ### 判断是否是闰年
 
-```JavaScript
-import { defineComponent, getCurrentInstance } from "vue";
+```Vue
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
 
-export default defineComponent({
-  setup() {
-    const { $IsLeapyear } = getCurrentInstance().appContext.config.globalProperties;
-    console.log($IsLeapyear(2020)); // true
-    console.log($IsLeapyear(2000)); // true
-    console.log($IsLeapyear(1900)); // false
-    return {};
-  }
-});
+const { $IsLeapyear } = getCurrentInstance().appContext.config.globalProperties
+console.log($IsLeapyear(2020)) // true
+console.log($IsLeapyear(2000)) // true
+console.log($IsLeapyear(1900)) // false
+</script>
 ```
 
 :::

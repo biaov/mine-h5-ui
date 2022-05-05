@@ -28,14 +28,8 @@
     </ul>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandlerClick } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { time, btnList, handleStatus, onClick } = useHandlerClick()
-    return { time, btnList, handleStatus, onClick }
-  }
-})
+const { time, btnList, handleStatus, onClick } = useHandlerClick()
 </script>

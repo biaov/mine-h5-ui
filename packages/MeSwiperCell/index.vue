@@ -22,15 +22,8 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandMove } from './hooks'
 
-export default defineComponent({
-  name: 'MeSwiperCell',
-  setup() {
-    const { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
-    return { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown }
-  }
-})
+const { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
 </script>

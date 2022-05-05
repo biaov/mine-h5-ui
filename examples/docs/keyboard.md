@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeKeyboard } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeKeyboard.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeKeyboard } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeKeyboard.css'
 
-const app = createApp(App);
-app.use(MeKeyboard);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeKeyboard)
+app.mount('#app')
 ```
 
 :::
@@ -60,21 +60,14 @@ app.mount("#app");
 <template>
   <me-keyboard v-model:visible="isShow" :skin-style="skinStyle"></me-keyboard>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    const isShow = ref(false); // 数字键盘显示状态
-    // 自定义样式
-    const skinStyle = Object.freeze({
-      background: "linear-gradient(-45deg, #4bb0ff, #6149f6)", // 背景色
-      textBg: "rgba(255,255,255,0.1)", // 按钮背景色
-      color: "#fff" // 按钮颜色
-    });
-    return { isShow, skinStyle };
-  }
-});
+<script lang="ts" setup>
+const isShow = $ref(false) // 数字键盘显示状态
+// 自定义样式
+const skinStyle = Object.freeze({
+  background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景色
+  textBg: 'rgba(255,255,255,0.1)', // 按钮背景色
+  color: '#fff' // 按钮颜色
+})
 </script>
 ```
 

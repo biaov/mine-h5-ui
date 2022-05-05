@@ -4,23 +4,17 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useInitSlots } from './hooks'
 
-export default defineComponent({
-  name: 'MeAccordion',
-  emits: ['update:modelValue', 'on-change'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: [Number, String],
-      required: true
-    }
-  },
-  setup(props, { emit }) {
-    useInitSlots(props, emit)
-    return {}
-  }
-})
+const emit = defineEmits<{
+  (event: 'update:modelValue', value: string | number): void
+  (event: 'on-change', value: string | number): void
+}>()
+
+const props = defineProps<{
+  modelValue: number | string // v-model 绑定值
+}>()
+
+useInitSlots(props, emit)
 </script>

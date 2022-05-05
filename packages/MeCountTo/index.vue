@@ -4,43 +4,29 @@
     {{ comValue }}
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeCountTo',
-  emits: ['update:modelValue', 'on-end'],
-  props: {
-    // 开始状态
-    modelValue: {
-      type: Boolean,
-      default: true
-    },
-    // 开始数字
-    startValue: {
-      type: Number,
-      default: 0
-    },
-    // 结束数字
-    endValue: {
-      type: Number,
-      required: true
-    },
-    // 持续时间
-    duration: {
-      type: Number,
-      default: 1500
-    },
-    // 千分符
-    thousand: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { comValue } = useHandler(props, emit)
-    return { comValue }
+const emit = defineEmits<{
+  (event: 'update:modelValue', bool: boolean): void
+  (event: 'on-end'): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: boolean // 开始状态
+    startValue?: number // 开始数字
+    endValue: number // 结束数字
+    duration?: number // 持续时间
+    thousand?: boolean // 千分符
+  }>(),
+  {
+    modelValue: true,
+    startValue: 0,
+    duration: 1500,
+    thousand: false
   }
-})
+)
+
+const { comValue } = useHandler(props, emit)
 </script>

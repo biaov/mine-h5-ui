@@ -7,14 +7,8 @@
     <me-index-bar @on-click="onClick"></me-index-bar>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useClick } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { onClick } = useClick()
-    return { onClick }
-  }
-})
+const { onClick } = useClick()
 </script>

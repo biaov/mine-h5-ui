@@ -12,54 +12,34 @@
     <slot name="more"></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 import { ListItem } from './interfaces'
 
-export default defineComponent({
-  name: 'MeVirtualList',
-  emits: ['on-load-more'],
-  props: {
-    // 列表数据
-    list: {
-      type: Array as PropType<ListItem[]>,
-      default: () => []
-    },
-    // 节流时间
-    interval: {
-      type: Number,
-      default: 100
-    },
-    // 虚拟列表高度
-    height: {
-      type: String,
-      default: '100%'
-    },
-    // 固定选项高度
-    itemHeight: {
-      type: Number,
-      default: 0
-    },
-    // 距离底部的距离
-    distance: {
-      type: Number,
-      default: 50
-    },
-    // 前后各渲染几屏
-    screen: {
-      type: Array as PropType<number[]>,
-      default: () => [1, 1]
-    },
-    // 每屏可见的数据条数
-    remain: {
-      type: Number,
-      default: 8
-    }
-  },
-  setup(props, { emit }) {
-    const { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef } = useHandler(props, emit)
-    return { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef }
+const emit = defineEmits<{
+  (event: 'on-load-more'): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    list?: ListItem[] // 列表数据
+    interval?: number // 节流时间
+    height?: string // 虚拟列表高度
+    itemHeight?: number // 固定选项高度
+    distance?: number // 距离底部的距离
+    screen?: number[] // 前后各渲染几屏
+    remain?: number // 每屏可见的数据条数
+  }>(),
+  {
+    list: () => [],
+    interval: 100,
+    height: '100%',
+    itemHeight: 0,
+    distance: 50,
+    screen: () => [1, 1],
+    remain: 8
   }
-})
+)
+
+const { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef } = useHandler(props, emit)
 </script>

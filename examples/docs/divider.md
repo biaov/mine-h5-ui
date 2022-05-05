@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeDivider } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeDivider.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeDivider } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeDivider.css'
 
-const app = createApp(App);
-app.use(MeDivider);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeDivider)
+app.mount('#app')
 ```
 
 :::
@@ -57,32 +57,22 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-divider v-bind="divider"></me-divider>
-  </div>
+  <me-divider v-bind="divider"></me-divider>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 分割线
-    const divider = Object.freeze({
-      list: ["流影"],
-      line: {
-        width: 4,
-        color: "#F06B51",
-        radius: 4
-      },
-      text: {
-        color: "#FFA18F",
-        size: 16
-      }
-    });
-    return { divider };
+<script lang="ts" setup>
+// 分割线
+const divider = Object.freeze({
+  list: ['流影'],
+  line: {
+    width: 4,
+    color: '#F06B51',
+    radius: 4
+  },
+  text: {
+    color: '#FFA18F',
+    size: 16
   }
-});
+})
 </script>
 ```
 
@@ -97,33 +87,24 @@ export default defineComponent({
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-divider v-bind="divider"></me-divider>
-  </div>
+  <me-divider v-bind="divider"></me-divider>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 分割线
-    const divider = Object.freeze({
-      list: ["羽裳", "轩辕", "紫萱"],
-      width: 100,
-      height: 100,
-      origin: 41,
-      line: {
-        width: 6,
-        color: "#f60"
-      },
-      text: {
-        color: "#f66"
-      }
-    });
-    return { divider };
+<script lang="ts" setup>
+// 分割线
+const divider = Object.freeze({
+  list: ['羽裳', '轩辕', '紫萱'],
+  width: 100,
+  height: 100,
+  origin: 41,
+  line: {
+    width: 6,
+    color: '#f60'
+  },
+  text: {
+    color: '#f66'
   }
-});
+})
+return { divider }
 </script>
 ```
 

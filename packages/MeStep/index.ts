@@ -7,4 +7,5 @@ MeStep.install = (app: App) => {
   app.component(MeStep.name, MeStep)
 }
 const InMeStep: SFCWithInstall<typeof MeStep> = MeStep // 增加类型
+
 export default InMeStep

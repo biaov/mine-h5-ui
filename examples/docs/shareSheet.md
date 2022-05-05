@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeShareSheet } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeShareSheet.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeShareSheet } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeShareSheet.css'
 
-const app = createApp(App);
-app.use(MeShareSheet);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeShareSheet)
+app.mount('#app')
 ```
 
 :::
@@ -48,72 +48,67 @@ app.mount("#app");
     </li>
   </ul>
 </template>
-<script>
-import { defineComponent, getCurrentInstance } from "vue";
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
 
-export default defineComponent({
-  setup() {
-    const { $MeToast } = getCurrentInstance().appContext.config.globalProperties;
-    const listData = ref([
+const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
+const listData = $ref([
+  {
+    id: 1,
+    label: '基础用法',
+    list: [
       {
         id: 1,
-        label: "基础用法",
+        value: '立即分享',
+        visible: false,
         list: [
           {
-            id: 1,
-            value: "立即分享",
-            visible: false,
-            list: [
-              {
-                icon: "icon-wechat",
-                value: "微信",
-                color: "#67c23a"
-              },
-              {
-                icon: "icon-pengyouquan",
-                value: "朋友圈",
-                color: "#409eff"
-              },
-              {
-                icon: "icon-zhifubao",
-                value: "支付宝",
-                color: "#06b4fd"
-              },
-              {
-                icon: "icon-qq",
-                value: "QQ",
-                color: "#ec502b"
-              },
-              {
-                icon: "icon-weibo",
-                value: "微博",
-                color: "#f40f3b"
-              },
-              {
-                icon: "icon-qr-code",
-                value: "二维码",
-                color: "#1cc09e"
-              }
-            ]
+            icon: 'icon-wechat',
+            value: '微信',
+            color: '#67c23a'
+          },
+          {
+            icon: 'icon-pengyouquan',
+            value: '朋友圈',
+            color: '#409eff'
+          },
+          {
+            icon: 'icon-zhifubao',
+            value: '支付宝',
+            color: '#06b4fd'
+          },
+          {
+            icon: 'icon-qq',
+            value: 'QQ',
+            color: '#ec502b'
+          },
+          {
+            icon: 'icon-weibo',
+            value: '微博',
+            color: '#f40f3b'
+          },
+          {
+            icon: 'icon-qr-code',
+            value: '二维码',
+            color: '#1cc09e'
           }
         ]
       }
-    ]);
-    // 点击列表项
-    const onClick = item => {
-      item.visible = false;
-    };
-    // 点击分享面板列表
-    const onChange = item => {
-      $MeToast(JSON.stringify(item));
-    };
-    // 点击分享面板取消按钮
-    const onCancel = () => {
-      $MeToast("你点击了取消按钮");
-    };
-    return { listData, onClick, onChange, onCancel };
+    ]
   }
-});
+])
+// 点击列表项
+const onClick = item => {
+  item.visible = false
+}
+// 点击分享面板列表
+const onChange = item => {
+  $MeToast(JSON.stringify(item))
+}
+// 点击分享面板取消按钮
+const onCancel = () => {
+  $MeToast('你点击了取消按钮')
+}
 </script>
 <style scoped lang="less">
 .m-share-sheet {

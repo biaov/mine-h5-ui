@@ -7,4 +7,5 @@ MeDrag.install = (app: App) => {
   app.component(MeDrag.name, MeDrag)
 }
 const InMeDrag: SFCWithInstall<typeof MeDrag> = MeDrag // 增加类型
+
 export default InMeDrag

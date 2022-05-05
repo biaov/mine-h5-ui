@@ -6,3 +6,11 @@ export interface Option {
   icon?: string
   durction?: number
 }
+
+// props
+export interface Props {
+  message: string | number
+  bgColor: string
+  icon: string
+  durction: number
+}

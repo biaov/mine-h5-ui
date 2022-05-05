@@ -7,4 +7,5 @@ MeTag.install = (app: App) => {
   app.component(MeTag.name, MeTag)
 }
 const InMeTag: SFCWithInstall<typeof MeTag> = MeTag // 增加类型
+
 export default InMeTag

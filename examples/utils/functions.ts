@@ -28,6 +28,7 @@ export const PostMessage = (otherWindow: Window, origin = window.location.origin
   const send = (data: string) => {
     otherWindow.postMessage(data, origin)
   }
+
   return { send }
 }
 
@@ -39,6 +40,7 @@ export const PostMessage = (otherWindow: Window, origin = window.location.origin
 export const RgbToHex = (rgb: string) => {
   const [r, g, b] = rgb.match(/\d+/g)!
   const hex = `#${((1 << 24) + (+r << 16) + (+g << 8) + +b).toString(16).substring(1)}`
+
   return hex
 }
 

@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 // type 值
 export interface TypeIds {
   'year-month': number[]
@@ -20,4 +19,13 @@ export interface Emits {
   (event: 'update:modelValue', str: string): void
   (event: 'on-cancel'): void
   (event: 'on-sure', arr: number[]): void
+}
+
+// props
+export interface Props {
+  modelValue: string
+  type: string
+  visible: boolean
+  minDate: Date
+  maxDate: Date
 }

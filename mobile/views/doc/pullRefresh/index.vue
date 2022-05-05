@@ -11,14 +11,8 @@
     </me-tab>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useRefresh } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { active, listData, onRefresh } = useRefresh()
-    return { active, listData, onRefresh }
-  }
-})
+const { active, listData, onRefresh } = useRefresh()
 </script>

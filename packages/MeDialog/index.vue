@@ -9,28 +9,23 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useShow } from './hooks'
 
-export default defineComponent({
-  name: 'MeDialog',
-  emits: ['update:visible'],
-  props: {
-    // v-model 绑定值
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // 提示文本
-    tips: {
-      type: String,
-      default: '提示'
-    }
-  },
-  setup(props, { emit }) {
-    const { isShowMask, isShow, hideMask } = useShow(props, emit)
-    return { isShowMask, isShow, hideMask }
+const emit = defineEmits<{
+  (event: 'update:visible', bool: boolean): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    visible?: boolean // v-model 绑定值
+    tips?: string // 提示文本
+  }>(),
+  {
+    visible: false,
+    tips: '提示'
   }
-})
+)
+
+const { isShowMask, isShow, hideMask } = useShow(props, emit)
 </script>

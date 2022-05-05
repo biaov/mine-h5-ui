@@ -11,4 +11,5 @@ InMeMessageBox.install = (app: App) => {
   app.config.globalProperties.$MePrompt = prompt
   app.config.globalProperties.$MeCustom = custom
 }
+
 export default InMeMessageBox

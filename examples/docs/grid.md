@@ -7,16 +7,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeGrid, MeGridItem } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeGrid.css";
-import "mine-h5-ui/lib/theme-default/MeGridItem.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeGrid, MeGridItem } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeGrid.css'
+import 'mine-h5-ui/lib/theme-default/MeGridItem.css'
 
-const app = createApp(App);
-app.use(MeGrid);
-app.use(MeGridItem);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeGrid)
+app.use(MeGridItem)
+app.mount('#app')
 ```
 
 :::
@@ -50,99 +50,88 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-grid border-color="#d9d9d9" :cols="3">
-      <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @on-click="handleLi(item)"></me-grid-item>
-      <me-grid-item>
-        <div class="u-cust">
-          <me-icon name="icon-love" color="#999" size="28px"></me-icon>
-          <p>自定义</p>
-        </div>
-      </me-grid-item>
-    </me-grid>
-  </div>
+  <me-grid border-color="#d9d9d9" :cols="3">
+    <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @on-click="handleLi(item)"></me-grid-item>
+    <me-grid-item>
+      <div class="u-cust">
+        <me-icon name="icon-love" color="#999" size="28px"></me-icon>
+        <p>自定义</p>
+      </div>
+    </me-grid-item>
+  </me-grid>
 </template>
-<script>
-import { defineComponent, getCurrentInstance } from "vue";
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
 
-export default defineComponent({
-  setup() {
-    const { $MeToast } = getCurrentInstance().appContext.config.globalProperties;
-    const grids = Object.freeze([
-      {
-        icon: "icon-wechat",
-        text: "微信",
-        iconColor: "#67c23a"
-      },
-      {
-        icon: "icon-pengyouquan",
-        text: "朋友圈",
-        iconColor: "#409eff"
-      },
-      {
-        icon: "icon-zhifubao",
-        text: "支付宝",
-        iconColor: "#06b4fd"
-      },
-      {
-        icon: "icon-qq",
-        text: "QQ",
-        iconColor: "#ec502b"
-      },
-      {
-        icon: "icon-weibo",
-        text: "微博",
-        iconColor: "#f40f3b"
-      },
-      {
-        icon: "icon-qr-code",
-        text: "二维码",
-        iconColor: "#1cc09e"
-      },
-      {
-        icon: "icon-xiangji",
-        text: "相机",
-        iconColor: "#4a82ff"
-      },
-      {
-        icon: "icon-loading_ico",
-        text: "加载",
-        iconColor: "#f60",
-        textColor: "#ff9249"
-      }
-    ]);
-    // 点击列表
-    const handleLi = ({ text }) => {
-      $MeToast(text);
-    };
-    return { grids, handleLi };
+const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
+const grids = Object.freeze([
+  {
+    icon: 'icon-wechat',
+    text: '微信',
+    iconColor: '#67c23a'
+  },
+  {
+    icon: 'icon-pengyouquan',
+    text: '朋友圈',
+    iconColor: '#409eff'
+  },
+  {
+    icon: 'icon-zhifubao',
+    text: '支付宝',
+    iconColor: '#06b4fd'
+  },
+  {
+    icon: 'icon-qq',
+    text: 'QQ',
+    iconColor: '#ec502b'
+  },
+  {
+    icon: 'icon-weibo',
+    text: '微博',
+    iconColor: '#f40f3b'
+  },
+  {
+    icon: 'icon-qr-code',
+    text: '二维码',
+    iconColor: '#1cc09e'
+  },
+  {
+    icon: 'icon-xiangji',
+    text: '相机',
+    iconColor: '#4a82ff'
+  },
+  {
+    icon: 'icon-loading_ico',
+    text: '加载',
+    iconColor: '#f60',
+    textColor: '#ff9249'
   }
-});
+])
+// 点击列表
+const handleLi = ({ text }) => {
+  $MeToast(text)
+}
 </script>
 <style scoped lang="less">
-.m-demo {
-  // 自定义内容
-  .u-cust {
-    .me-icon {
-      position: relative;
-      display: block;
-      margin: 0 auto 5px;
-      &::after {
-        content: "";
-        position: absolute;
-        top: -4px;
-        right: 20px;
-        border-radius: 50%;
-        width: 14px;
-        height: 14px;
-        background: #f66;
-      }
+// 自定义内容
+.u-cust {
+  .me-icon {
+    position: relative;
+    display: block;
+    margin: 0 auto 5px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: 20px;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      background: #f66;
     }
   }
 }
 </style>
-
 ```
 
 :::

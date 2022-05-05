@@ -3,6 +3,7 @@ import { useGlobalVars } from '@/utils/variables'
 import docs from './docs'
 
 const { BaseRouter } = useGlobalVars()
+
 // 路由配置
 const routes: RouteRecordRaw[] = [
   {
@@ -23,6 +24,7 @@ const routes: RouteRecordRaw[] = [
     children: docs as any[]
   }
 ]
+
 // 路由实例
 const router: Router = createRouter({
   history: createWebHistory(BaseRouter),

@@ -1,3 +1,5 @@
+/// <reference types="vue/macros-global" />
+
 // vue
 declare module '*.vue' {
   import { App, defineComponent } from 'vue'

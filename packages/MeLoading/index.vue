@@ -7,37 +7,23 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useData } from './hooks'
 
-export default defineComponent({
-  name: 'MeLoading',
-  props: {
-    // 类型
-    type: {
-      type: String,
-      default: 'circle' // circle|circle2|circle3|circle4|circle5|circle6
-    },
-    // 图标大小
-    size: {
-      type: String,
-      default: '30px'
-    },
-    // 图标颜色
-    color: {
-      type: String,
-      default: '#949494' // #494949
-    },
-    // 自定义图标名称
-    icon: {
-      type: String,
-      default: ''
-    }
-  },
-  setup(props) {
-    const { iconName } = useData(props)
-    return { iconName }
+const props = withDefaults(
+  defineProps<{
+    type?: string // 类型, circle | circle2 | circle3 | circle4 | circle5 | circle6
+    size?: string // 图标大小
+    color?: string // 图标颜色
+    icon?: string // 自定义图标名称
+  }>(),
+  {
+    type: 'circle',
+    size: '30px',
+    color: '#949494',
+    icon: ''
   }
-})
+)
+
+const { iconName } = useData(props)
 </script>

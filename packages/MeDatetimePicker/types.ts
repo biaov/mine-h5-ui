@@ -1,11 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { PublicProps } from '../types'
+import { Props as DefaultProps } from './interfaces'
 
-// 当前 vue props
-export type Props = PublicProps<{
-  modelValue: string
-  type: string
-  visible: boolean
-  minDate: Date
-  maxDate: Date
-}>
+export type Props = PublicProps<DefaultProps> // 当前 vue props

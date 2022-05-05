@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MePullRefresh } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MePullRefresh.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MePullRefresh } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MePullRefresh.css'
 
-const app = createApp(App);
-app.use(MePullRefresh);
-app.mount("#app");
+const app = createApp(App)
+app.use(MePullRefresh)
+app.mount('#app')
 ```
 
 :::
@@ -33,28 +33,18 @@ app.mount("#app");
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-pull-refresh v-model="loading" @on-refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
-  </div>
+  <me-pull-refresh v-model="loading" @on-refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
 </template>
-<script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    const loading = ref(0); // 加载状态
-    const count = ref(0); // 刷新次数
-    // 刷新
-    const onRefresh = () => {
-      setTimeout(() => {
-        this.count++;
-        this.loading = false;
-      }, 3000);
-    };
-    return { loading, count, onRefresh };
-  }
-});
+<script lang="ts" setup>
+let loading = $ref(false) // 加载状态
+let count = $ref(0) // 刷新次数
+// 刷新
+const onRefresh = () => {
+  setTimeout(() => {
+    count++
+    loading = false
+  }, 3000)
+}
 </script>
 ```
 
@@ -68,29 +58,19 @@ export default defineComponent({
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @on-refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
-  </div>
+  <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @on-refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
 </template>
-<script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    const loading = ref(0); // 加载状态
-    const count = ref(0); // 刷新次数
-    const loadText = Object.freeze(["开始下拉...", "释放刷新...", "还在请求后台...", "成功了"]); // 自定义加载文本
-    // 刷新
-    const onRefresh = () => {
-      setTimeout(() => {
-        this.count++;
-        this.loading = false;
-      }, 3000);
-    };
-    return { loading, count, loadText, onRefresh };
-  }
-});
+<script lang="ts" setup>
+const loadText = Object.freeze(['开始下拉...', '释放刷新...', '还在请求后台...', '成功了']) // 自定义加载文本
+let loading = $ref(false) // 加载状态
+let count = $ref(0) // 刷新次数
+// 刷新
+const onRefresh = () => {
+  setTimeout(() => {
+    count++
+    loading = false
+  }, 3000)
+}
 </script>
 ```
 

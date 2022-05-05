@@ -17,37 +17,26 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import MeLoading from '../MeLoading'
 import { useHandMove } from './hooks'
 
-export default defineComponent({
-  name: 'MePullRefresh',
-  components: {
-    MeLoading
-  },
-  emits: ['update:modelValue', 'on-refresh'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: Boolean,
-      required: true
-    },
-    // 自定义状态文本
-    loadText: {
-      type: Array as PropType<string[]>,
-      default: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功']
-    },
-    // 是否要显示加载图标
-    loadIcon: {
-      type: Boolean,
-      default: true
-    }
-  },
-  setup(props, { emit }) {
-    const { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown, onMousemove, onMouseup } = useHandMove(props, emit)
-    return { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown, onMousemove, onMouseup }
+const emit = defineEmits<{
+  (event: 'update:modelValue', bool: boolean): void
+  (event: 'on-refresh'): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue: boolean // v-model 绑定值
+    loadText?: string[] // 自定义状态文本
+    loadIcon?: boolean // 是否要显示加载图标
+  }>(),
+  {
+    loadText: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功'],
+    loadIcon: true
   }
-})
+)
+
+const { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props, emit)
 </script>

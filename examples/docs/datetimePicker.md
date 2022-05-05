@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeDatetimePicker } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeDatetimePicker.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeDatetimePicker } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeDatetimePicker.css'
 
-const app = createApp(App);
-app.use(MeDatetimePicker);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeDatetimePicker)
+app.mount('#app')
 ```
 
 :::

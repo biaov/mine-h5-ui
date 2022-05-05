@@ -2,12 +2,15 @@ import NavConfig from '@/utils/nav.config'
 import { Docs } from './interfaces'
 
 let docs: Docs[] = []
+
 // 添加组件
 const addComponent = (arr: Docs[]) => {
   const indexArr: number[] = [] // 索引数组
+
   // 循环遍历参数数组
   arr.forEach((elem, i) => {
     const { items } = elem
+
     if (items) {
       addComponent(items) // 递归
       docs = [...docs, ...items] // 对象添加到一级
@@ -18,6 +21,7 @@ const addComponent = (arr: Docs[]) => {
     }
   })
 }
+
 Object.keys(NavConfig).forEach(elem => {
   docs = [...docs, ...(NavConfig as any)[elem]]
 })

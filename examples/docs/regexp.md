@@ -7,16 +7,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeAPI } from "mine-h5-ui";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeAPI } from 'mine-h5-ui'
 
-const app = createApp(App);
-app.mount("#app");
+const app = createApp(App)
+app.mount('#app')
 // ctx 里插入 API
 Object.keys(MeAPI).forEach(key => {
-  app.config.globalProperties[`$${key}`] = (API as any)[key];
-});
+  app.config.globalProperties[`$${key}`] = (API as any)[key]
+})
 ```
 
 :::
@@ -49,19 +49,16 @@ Object.keys(MeAPI).forEach(key => {
 
 ::: CopyCode
 
-```JavaScript
-import { defineComponent, getCurrentInstance } from "vue";
+```Vue
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
 
-export default defineComponent({
-  setup() {
-    const { $Validator } = getCurrentInstance().appContext.config.globalProperties;
-    const valid = $Validator.validPhone; // 获取规则
-    console.log(valid); // /^1[3456789]\d{9}$/
-    console.log(valid.test(18888888888)); // true
-    console.log(valid.test(12888888888)); // false
-    return {};
-  }
-});
+const { $Validator } = getCurrentInstance().appContext.config.globalProperties
+const valid = $Validator.validPhone // 获取规则
+console.log(valid) // /^1[3456789]\d{9}$/
+console.log(valid.test(18888888888)) // true
+console.log(valid.test(12888888888)) // false
+</script>
 ```
 
 :::

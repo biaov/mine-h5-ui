@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 // props model
 export interface Model {
   [key: string]: any
@@ -25,4 +24,10 @@ export interface Option {
 // emits
 export interface Emits {
   (event: 'on-submit', option: Option): void
+}
+
+// props
+export interface Props {
+  model: Model
+  rules: RuleItem[]
 }

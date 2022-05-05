@@ -7,4 +7,5 @@ MePopup.install = (app: App) => {
   app.component(MePopup.name, MePopup)
 }
 const InMePopup: SFCWithInstall<typeof MePopup> = MePopup // 增加类型
+
 export default InMePopup

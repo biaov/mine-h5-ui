@@ -4,27 +4,13 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeTabItem',
-  props: {
-    // 标签内容
-    label: {
-      type: String,
-      required: true
-    },
-    // 名称
-    name: {
-      type: [String, Number],
-      required: true
-    }
-  },
-  setup(prop) {
-    const { isShow } = useHandler(prop)
-    return { isShow }
-  }
-})
+const props = defineProps<{
+  label: string // 标签内容
+  name: string | number // 名称
+}>()
+
+const { isShow } = useHandler(props)
 </script>

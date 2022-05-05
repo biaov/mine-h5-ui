@@ -29,52 +29,40 @@
     </div>
   </transition>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandMove, useBtns } from './hooks'
 
-export default defineComponent({
-  name: 'MeDatetimePicker',
-  emits: ['update:modelValue', 'on-cancel', 'on-sure'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: String,
-      default: ''
+const emit = defineEmits<{
+  (event: 'update:modelValue', str: string): void
+  (event: 'on-cancel'): void
+  (event: 'on-sure', arr: number[]): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string // v-model 绑定值
+    type?: string // 时间类型, date | year-month | month-day | time | datetime
+    visible?: boolean // 是否显示时间选择器
+    minDate?: Date // 最小值
+    maxDate?: Date // 最大值
+  }>(),
+  {
+    modelValue: '',
+    type: 'datetime',
+    visible: false,
+    minDate: () => {
+      const now = new Date() // 获取当前数据
+      now.setFullYear(now.getFullYear() - 10) // 设置新数据
+      return now
     },
-    // 时间类型
-    type: {
-      type: String,
-      default: 'datetime' // date|year-month|month-day|time|datetime
-    },
-    // 是否显示时间选择器
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // 最小值
-    minDate: {
-      type: Date,
-      default: () => {
-        const now = new Date() // 获取当前数据
-        now.setFullYear(now.getFullYear() - 10) // 设置新数据
-        return now
-      }
-    },
-    // 最大值
-    maxDate: {
-      type: Date,
-      default: () => {
-        const now = new Date() // 获取当前数据
-        now.setFullYear(now.getFullYear() + 10) // 设置新数据
-        return now
-      }
+    maxDate: () => {
+      const now = new Date() // 获取当前数据
+      now.setFullYear(now.getFullYear() + 10) // 设置新数据
+      return now
     }
-  },
-  setup(props, { emit }) {
-    const { show, currentValue, listData, distance, duration, filterNumber, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
-    const { onCancel, onSure } = useBtns(props, emit, currentValue)
-    return { show, listData, distance, duration, filterNumber, onTouchstart, onTouchmove, onTouchend, onMousedown, onCancel, onSure }
   }
-})
+)
+
+const { show, currentValue, listData, distance, duration, filterNumber, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
+const { onCancel, onSure } = useBtns(props, emit, currentValue)
 </script>

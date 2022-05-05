@@ -7,4 +7,5 @@ MeAccordion.install = (app: App) => {
   app.component(MeAccordion.name, MeAccordion)
 }
 const InMeAccordion: SFCWithInstall<typeof MeAccordion> = MeAccordion // 增加类型
+
 export default InMeAccordion

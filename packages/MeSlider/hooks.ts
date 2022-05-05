@@ -8,10 +8,12 @@ export const useHandler = (props: Props, emit: Emits) => {
   let startX = 0 // 开始X坐标
   let changeValue = 0 // 触摸开始时的value
   let screenW = 0 // 整个屏幕的width
+
   // 处理currentValue
   const handleCurrent = () => {
     currentValue.value = 100 + props.min - props.modelValue // 设置当前偏移value值
   }
+
   // 触摸开始
   const onTouchstart = (e: TouchEvent) => {
     startX = e.changedTouches[0].clientX // 获取初始位置
@@ -19,6 +21,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     screenW = document.body.offsetWidth // 获取元素整体宽度
     emit('on-start', e)
   }
+
   // 接触点改变，滑动时
   const onTouchmove = (e: TouchEvent) => {
     const currentX = e.changedTouches[0].clientX // 获取当前移动的X坐标
@@ -29,10 +32,12 @@ export const useHandler = (props: Props, emit: Emits) => {
     emit('update:modelValue', afterVal)
     emit('on-move', e)
   }
+
   // 触摸结束
   const onTouchend = (e: TouchEvent) => {
     emit('on-end', e)
   }
+
   // pc端鼠标按下移动
   const onMousemove = (e: MouseEvent) => {
     const currentX = e.clientX // 获取当前移动的x坐标
@@ -43,12 +48,14 @@ export const useHandler = (props: Props, emit: Emits) => {
     emit('update:modelValue', afterVal)
     emit('on-move', e)
   }
+
   // pc端鼠标抬起
   const onMouseup = (e: MouseEvent) => {
     document.onmousemove = null // 清理上次的移动事件
     document.onmouseup = null // 清理上次的抬起事件
     emit('on-end', e)
   }
+
   // pc端鼠标按下
   const onMousedown = (e: MouseEvent) => {
     startX = e.clientX // 获取x初始位置
@@ -58,12 +65,15 @@ export const useHandler = (props: Props, emit: Emits) => {
     document.onmouseup = onMouseup // 表达式声明抬起事件
     emit('on-start', e)
   }
+
   watch(
     () => props.modelValue,
     () => {
       !props.disabled && handleCurrent()
     }
   )
+
   handleCurrent()
+
   return { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown }
 }

@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeNavBar } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeNavBar.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeNavBar } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeNavBar.css'
 
-const app = createApp(App);
-app.use(MeNavBar);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeNavBar)
+app.mount('#app')
 ```
 
 :::
@@ -62,27 +62,17 @@ app.mount("#app");
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-nav-bar title="标题" left-text="返回" right-text="自定义" :styles="styles"></me-nav-bar>
-  </div>
+  <me-nav-bar title="标题" left-text="返回" right-text="自定义" v-bind="{ styles }"></me-nav-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 自定义样式
-    const styles = Object.freeze({
-      borderColor: "#ccc", // 边框颜色
-      background: "linear-gradient(-45deg, #4bb0ff, #6149f6)", // 背景颜色
-      titleColor: "#f56c6c", // 标题颜色
-      leftColor: "#aedbff", // 左侧按钮颜色
-      rightColor: "#fff" // 右侧按钮颜色
-    });
-    return { styles };
-  }
-});
+<script lang="ts" setup>
+// 自定义样式
+const styles = Object.freeze({
+  borderColor: '#ccc', // 边框颜色
+  background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景颜色
+  titleColor: '#f56c6c', // 标题颜色
+  leftColor: '#aedbff', // 左侧按钮颜色
+  rightColor: '#fff' // 右侧按钮颜色
+})
 </script>
 ```
 

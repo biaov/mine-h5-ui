@@ -6,5 +6,6 @@ export const useHandler = (emit: Emits) => {
   const onClick = (item: ListItem) => {
     !item.state && emit('on-change', { ...item })
   }
+
   return { onClick }
 }

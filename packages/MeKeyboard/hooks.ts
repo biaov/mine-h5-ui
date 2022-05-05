@@ -9,21 +9,25 @@ export const useHandler = (emit: Emits) => {
   const onClick = (num: number) => {
     emit('on-click', num)
   }
+
   // 点击删除按钮
   const onDelete = (e: MouseEvent) => {
     emit('on-delete', e)
   }
+
   // 点击完成按钮
   const onComplate = (e: MouseEvent) => {
     emit('update:visible', false)
     emit('on-complate', e)
   }
+
   return { onClick, onDelete, onComplate }
 }
 
 // 页面padding
 export const usePadding = (props: Props, emit: Emits) => {
   const isActive = ref(false) // 是否处于激活状态
+
   // 改变页面padding
   const setPadding = () => {
     // 判断是否可设置padding
@@ -39,19 +43,24 @@ export const usePadding = (props: Props, emit: Emits) => {
       }
     }
   }
+
   // 点击 Document
   const clickDocument = () => {
     emit('update:visible', false)
   }
+
   onMounted(() => {
     setPadding()
     // 点击非键盘区域
     Bind(document, 'click', clickDocument)
   })
+
   onUnmounted(() => {
     // document 移除绑定点击事件
     Unbind(document, 'click', clickDocument)
   })
+
   watch(() => props.visible, setPadding)
+
   return { isActive }
 }

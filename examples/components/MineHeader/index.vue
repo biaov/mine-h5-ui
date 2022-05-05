@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- 头部 -->
   <div class="g-header" :class="{ home: isHome }">
@@ -10,28 +7,20 @@
       <!-- 右侧内容 -->
       <div class="m-rt-list">
         <!-- 导航 -->
-        <nav-list :list="navList"></nav-list>
+        <nav-list :list="navListData"></nav-list>
         <!-- 下拉组件 -->
         <combo-box :list="versionList"></combo-box>
       </div>
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import ComboBox from '@/components/ComboBox'
 import NavList from '@/components/NavList'
 import { useListData } from './hooks'
 
-export default defineComponent({
-  name: 'MineHeader',
-  components: {
-    ComboBox,
-    NavList
-  },
-  setup() {
-    const { navList, versionList, isHome } = useListData()
-    return { navList, versionList, isHome }
-  }
-})
+const { navList: navListData, versionList, isHome } = useListData()
 </script>
+<style scoped lang="less">
+@import './index.less';
+</style>

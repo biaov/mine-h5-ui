@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeProgressBar } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeProgressBar.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeProgressBar } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeProgressBar.css'
 
-const app = createApp(App);
-app.use(MeProgressBar);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeProgressBar)
+app.mount('#app')
 ```
 
 :::
@@ -36,16 +36,8 @@ app.mount("#app");
 <template>
   <me-progress-bar v-model="progress" type="line"></me-progress-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    const progress = ref(0); // 进度条值
-
-    return { progress };
-  }
-});
+<script lang="ts" setup>
+const progress = $ref(0) // 进度条值
 </script>
 ```
 
@@ -62,16 +54,8 @@ export default defineComponent({
 <template>
   <me-progress-bar v-model="progress" type="line" :size="10" :text-show="false"></me-progress-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    const progress = ref(0); // 进度条值
-
-    return { progress };
-  }
-});
+<script lang="ts" setup>
+const progress = $ref(0) // 进度条值
 </script>
 ```
 
@@ -88,16 +72,8 @@ export default defineComponent({
 <template>
   <me-progress-bar v-model="progress" type="line" background="linear-gradient(90deg, #8af2ba, #1e57f5)" active-color="#f66" padding="0 25px"></me-progress-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    const progress = ref(0); // 进度条值
-
-    return { progress };
-  }
-});
+<script lang="ts" setup>
+const progress = $ref(0) // 进度条值
 </script>
 
 ```

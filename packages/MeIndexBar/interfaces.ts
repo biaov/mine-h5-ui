@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 // cities item
 export interface CityItem {
   code: string
@@ -16,4 +15,10 @@ export interface ListItem {
 // emits
 export interface Emits {
   (event: 'on-click', item: CityItem): void
+}
+
+// props
+export interface Props {
+  list: ListItem[]
+  topHeight: string
 }

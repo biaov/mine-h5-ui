@@ -7,9 +7,11 @@ export const useScroll = () => {
   const curLetter = ref('') // 当前字母
   const listCont = ref<HTMLDivElement>() // listCont 节点
   let arrLi: HTMLCollection // 子节点
+
   // 滚动条
   const onScroll = () => {
     const { scrollTop } = document.documentElement
+
     // 是否滚动
     if (scrollTop >= (arrLi[0] as HTMLDivElement).offsetTop) {
       // 遍历节点数组
@@ -25,20 +27,25 @@ export const useScroll = () => {
       curLetter.value = ''
     }
   }
+
   onMounted(() => {
     arrLi = listCont.value!.children
     Bind(document, 'scroll', onScroll)
   })
+
   onUnmounted(() => {
     Unbind(document, 'scroll', onScroll)
   })
+
   return { curLetter, listCont }
 }
+
 // 按钮
 export const useBtns = (emit: Emits) => {
   // 点击内容列表
   const handleLi = (item: CityItem) => {
     emit('on-click', { ...item })
   }
+
   return { handleLi }
 }

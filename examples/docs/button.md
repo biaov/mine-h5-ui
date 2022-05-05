@@ -9,14 +9,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeButton } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeButton.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeButton } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeButton.css'
 
-const app = createApp(App);
-app.use(MeButton);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeButton)
+app.mount('#app')
 ```
 
 :::

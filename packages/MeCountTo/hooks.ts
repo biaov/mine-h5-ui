@@ -7,6 +7,7 @@ import { Emits } from './interfaces'
 export const useHandler = (props: Props, emit: Emits) => {
   const curValue = ref(props.startValue) // 当前值
   const comValue = computed(() => (props.thousand ? FormatThousand(curValue.value) : curValue.value))
+
   // 开始动画
   const startAnimate = () => {
     let startTime: number | undefined
@@ -17,6 +18,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       // 虚拟计算值
       const virtual = ~~(((props.endValue - props.startValue) * elapsed) / props.duration + props.startValue)
       curValue.value = Math.min(virtual, props.endValue) // 当前值
+
       if (elapsed < props.duration) {
         window.requestAnimationFrame(startCurAnimate)
       } else {
@@ -24,8 +26,10 @@ export const useHandler = (props: Props, emit: Emits) => {
         emit('on-end')
       }
     }
+
     window.requestAnimationFrame(startCurAnimate)
   }
+
   // 监听开始状态
   watch(
     () => props.modelValue,
@@ -36,5 +40,6 @@ export const useHandler = (props: Props, emit: Emits) => {
       immediate: true
     }
   )
+
   return { comValue }
 }

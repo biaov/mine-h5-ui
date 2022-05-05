@@ -9,6 +9,7 @@ export const useAnimate = (props: Props) => {
   const listIndex = ref(0) // 列表索引
   let timer: NodeJS.Timeout | undefined // 定时器
   let isSwitch = true // 允许开启动画
+
   // 开启动画
   const startAnimate = () => {
     // 水平方向
@@ -29,6 +30,7 @@ export const useAnimate = (props: Props) => {
         }
         isSwitch && window.requestAnimationFrame(startCurAnimate)
       }
+
       window.requestAnimationFrame(startCurAnimate)
     } else {
       // 垂直方向
@@ -42,6 +44,7 @@ export const useAnimate = (props: Props) => {
       }, props.delay)
     }
   }
+
   // 关闭动画
   const closeAnimate = () => {
     // 水平方向
@@ -51,6 +54,7 @@ export const useAnimate = (props: Props) => {
       clearInterval(timer as NodeJS.Timeout) // 关闭定时器
     }
   }
+
   // 监听动画是否开启
   watch(
     () => props.loop,
@@ -58,9 +62,11 @@ export const useAnimate = (props: Props) => {
       value ? startAnimate() : closeAnimate()
     }
   )
+
   onMounted(() => {
     props.loop && startAnimate() // 开启动画
   })
+
   return { noticeList, left, listData, listIndex }
 }
 
@@ -70,13 +76,16 @@ export const useBtns = (emit: Emits) => {
   const onClick = (e: number) => {
     emit('on-click', e)
   }
+
   // 点击前面图标
   const onClickPreappend = (e: MouseEvent) => {
     emit('on-click:preappend', e)
   }
+
   // 点击后面图标
   const onClickAppend = (e: MouseEvent) => {
     emit('on-click:append', e)
   }
+
   return { onClick, onClickPreappend, onClickAppend }
 }

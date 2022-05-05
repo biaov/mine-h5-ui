@@ -6,7 +6,9 @@ import { Props } from './types'
 export const useInitSlots = (props: Props) => {
   const grid = ref<HTMLDivElement>()
   const params = { cols: props.cols, borderColor: props.borderColor }
+
   provide(MeGridKey, { name: MeGridKey, params })
+
   onMounted(() => {
     const gridItems: NodeListOf<HTMLDivElement> = grid.value?.querySelectorAll('.me-grid-item')!
     gridItems?.forEach((elem, i) => {
@@ -14,5 +16,6 @@ export const useInitSlots = (props: Props) => {
       elem.style.borderLeftWidth = `${+(i % props.cols === 0)}px`
     })
   })
+
   return { grid }
 }

@@ -6,6 +6,7 @@ import { Emits } from './interfaces'
 export const useHandler = (props: Props, emit: Emits) => {
   const isShowMask = ref(false) // 是否显示模态框
   const isShow = ref(false) // 是否显示模态框的过渡动画
+
   // 显示模态框
   const showMask = () => {
     isShowMask.value = true
@@ -13,6 +14,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       isShow.value = true
     }, 100)
   }
+
   // 隐藏模态框
   const hideMask = () => {
     isShow.value = false
@@ -21,10 +23,12 @@ export const useHandler = (props: Props, emit: Emits) => {
       emit('update:visible', false)
     }, 400)
   }
+
   // 点击 mask
   const clickMask = () => {
     props.maskClose && hideMask()
   }
+
   // 监听是否显示弹出层参数
   watch(
     () => props.visible,
@@ -35,5 +39,6 @@ export const useHandler = (props: Props, emit: Emits) => {
       immediate: true
     }
   )
+
   return { isShowMask, isShow, clickMask }
 }

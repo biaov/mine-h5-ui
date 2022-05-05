@@ -7,4 +7,5 @@ MePullRefresh.install = (app: App) => {
   app.component(MePullRefresh.name, MePullRefresh)
 }
 const InMePullRefresh: SFCWithInstall<typeof MePullRefresh> = MePullRefresh // 增加类型
+
 export default InMePullRefresh

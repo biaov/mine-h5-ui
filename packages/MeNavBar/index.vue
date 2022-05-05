@@ -15,50 +15,37 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 import { Styles } from './interfaces'
 
-export default defineComponent({
-  name: 'MeNavBar',
-  emits: ['click-left', 'click-right'],
-  props: {
-    // 标题
-    title: {
-      type: String,
-      default: ''
-    },
-    // 左侧按钮箭头显示状态
-    leftArrow: {
-      type: Boolean,
-      default: true
-    },
-    // 左侧按钮文本
-    leftText: {
-      type: String,
-      default: ''
-    },
-    // 右侧按钮文本
-    rightText: {
-      type: String,
-      default: ''
-    },
-    // 组件样式
-    styles: {
-      type: Object as PropType<Styles>,
-      default: () => ({
-        borderColor: '#dcdfe6', // 边框颜色
-        background: '#fff', // 背景颜色
-        titleColor: '#494949', // 标题颜色
-        leftColor: '#949494', // 左侧按钮颜色
-        rightColor: '#949494' // 右侧按钮颜色
-      })
-    }
-  },
-  setup(props, { emit }) {
-    const { onClickLeft, onClickRight } = useHandler(emit)
-    return { onClickLeft, onClickRight }
+const emit = defineEmits<{
+  (event: 'click-left', e: MouseEvent): void
+  (event: 'click-right', e: MouseEvent): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    title?: string // 标题
+    leftArrow?: boolean // 左侧按钮箭头显示状态
+    leftText?: string // 左侧按钮文本
+    rightText?: string // 右侧按钮文本
+    styles?: Styles // 组件样式
+  }>(),
+  {
+    title: '',
+    leftArrow: true,
+    leftText: '',
+    rightText: '',
+    styles: () => ({
+      borderColor: '#dcdfe6', // 边框颜色
+      background: '#fff', // 背景颜色
+      titleColor: '#494949', // 标题颜色
+      leftColor: '#949494', // 左侧按钮颜色
+      rightColor: '#949494' // 右侧按钮颜色
+    })
   }
-})
+)
+
+const { onClickLeft, onClickRight } = useHandler(emit)
 </script>

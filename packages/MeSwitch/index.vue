@@ -4,48 +4,32 @@
     <span class="u-round"></span>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeSwitch',
-  emits: ['update:modelValue', 'on-click'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: Boolean,
-      default: false
-    },
-    // 自定义大小
-    size: {
-      type: String,
-      default: '' // 30px
-    },
-    // 自定义激活颜色
-    activeColor: {
-      type: String,
-      default: ''
-    },
-    // 自定义未激活颜色
-    inactiveColor: {
-      type: String,
-      default: ''
-    },
-    // 异步状态
-    async: {
-      type: Boolean,
-      default: false
-    },
-    // 禁用状态
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { isActived, background, handleClick } = useHandler(props, emit)
-    return { isActived, background, handleClick }
+const emit = defineEmits<{
+  (event: 'on-click', e: MouseEvent): void
+  (event: 'update:modelValue', bool: boolean): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: boolean // v-model 绑定值
+    size?: string // 自定义大小
+    activeColor?: string // 自定义激活颜色
+    inactiveColor?: string // 自定义未激活颜色
+    async?: boolean // 异步状态
+    disabled?: boolean // 禁用状态
+  }>(),
+  {
+    modelValue: false,
+    size: '',
+    activeColor: '',
+    inactiveColor: '',
+    async: false,
+    disabled: false
   }
-})
+)
+
+const { isActived, background, handleClick } = useHandler(props, emit)
 </script>

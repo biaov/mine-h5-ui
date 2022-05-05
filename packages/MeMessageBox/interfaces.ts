@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 import { OnOff, OnOk, HookFn, MessageBoxFn } from './types'
 
 // 传参
@@ -28,4 +27,16 @@ export interface InMessageBox {
 // emits
 export interface Emits {
   (event: 'action', eventName: string, value?: string): void
+}
+
+// props
+export interface Props {
+  tips: string
+  type: string
+  message: string
+  html: string
+  cancelButtonText: string
+  confirmButtonText: string
+  onOk: OnOk
+  onOff: OnOff
 }

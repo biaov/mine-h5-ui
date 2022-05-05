@@ -27,34 +27,28 @@
     </div>
   </transition>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandMove, useBtns } from './hooks'
 
-export default defineComponent({
-  name: 'MeAddressPicker',
-  emits: ['update:modelValue', 'on-cancel', 'on-sure'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: String,
-      default: ''
-    },
-    // 是否显示时间选择器
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // 分割符
-    separator: {
-      type: String,
-      default: '-'
-    }
-  },
-  setup(props, { emit }) {
-    const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
-    const { onCancel, onSure } = useBtns(props, emit, currentValue)
-    return { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown, onCancel, onSure }
+const emit = defineEmits<{
+  (event: 'update:modelValue', str: string): void
+  (event: 'on-cancel'): void
+  (event: 'on-sure', currentValue: string[]): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string // v-model绑定值
+    visible?: boolean // 是否显示时间选择器
+    separator?: string // 分割符
+  }>(),
+  {
+    modelValue: '',
+    visible: false,
+    separator: '-'
   }
-})
+)
+
+const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
+const { onCancel, onSure } = useBtns(props, emit, currentValue)
 </script>

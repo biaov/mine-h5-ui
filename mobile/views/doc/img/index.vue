@@ -26,14 +26,8 @@
     </me-mask>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useWebData } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { isShowMask, listData, onLoad, onError } = useWebData()
-    return { isShowMask, listData, onLoad, onError }
-  }
-})
+const { isShowMask, listData, onLoad, onError } = useWebData()
 </script>

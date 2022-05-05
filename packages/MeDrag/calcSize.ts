@@ -287,7 +287,6 @@ const resizeGroup: ResizeGroup = {
  * @param { Object } option 计算参数
  * @returns { Object } 计算之后的大小
  */
-
 const calcSize = (name: CalcSizeName, option: Option) => {
   return resizeGroup[name](JSON.parse(JSON.stringify(option)))
 }

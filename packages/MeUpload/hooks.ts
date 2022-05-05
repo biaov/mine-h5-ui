@@ -9,9 +9,11 @@ export const useHandler = (props: Props, emit: Emits) => {
   const curNum = ref(1) // 全屏预览图片当前索引
   const isPreview = ref(false) // 预览图片显示状态
   let timer: NodeJS.Timeout | null = null // 定时器
+
   // 点击删除按钮
   const onDelete = (e: Event, item: ListDataItem) => {
     e.stopPropagation()
+
     // 判断是否允许删除文件
     if (!props.disabled && props.beforeDelete(item) !== false) {
       const index = listData.value.findIndex(({ id }) => id === item.id) ?? 0 // 索引
@@ -21,12 +23,14 @@ export const useHandler = (props: Props, emit: Emits) => {
       emit('on-change', listData.value)
     }
   }
+
   // 开启轮播
   const startTimer = () => {
     // 判断数组是否大于1
     if (listData.value.length > 1) {
       timer = setInterval(() => {
         curNum.value++
+
         // 改变当前图片索引
         if (curNum.value > listData.value.length) {
           curNum.value = 1
@@ -34,14 +38,17 @@ export const useHandler = (props: Props, emit: Emits) => {
       }, 3000)
     }
   }
+
   // 点击预览图片
   const closePreview = () => {
     clearInterval(timer as NodeJS.Timeout)
     isPreview.value = false
   }
+
   // 点击上传图片按钮
   const onChange = (e: Event) => {
     const files = Object.values((e.target as HTMLInputElement).files as FileList).slice(0, props.maxCount) // 获取不超过maxCount文件
+
     // 判断是否允许读取文件
     if (props.beforeRead(files) !== false) {
       // 循环遍历添加数据
@@ -56,6 +63,7 @@ export const useHandler = (props: Props, emit: Emits) => {
           arr.push(elem)
         }
       })
+
       // 符合规则的图片数组
       if (arr.length > 0) {
         props.afterRead(arr)
@@ -63,6 +71,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       }
     }
   }
+
   // 点击预览图片
   const onPreview = ({ id }: ListDataItem) => {
     // 判断是否允许预览
@@ -72,6 +81,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       startTimer() // 开启自动轮播图
     }
   }
+
   // 监听列表数据
   watch(
     () => props.fileList,
@@ -82,5 +92,6 @@ export const useHandler = (props: Props, emit: Emits) => {
       deep: true
     }
   )
+
   return { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview }
 }

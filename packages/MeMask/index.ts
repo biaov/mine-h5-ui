@@ -7,4 +7,5 @@ MeMask.install = (app: App) => {
   app.component(MeMask.name, MeMask)
 }
 const InMeMask: SFCWithInstall<typeof MeMask> = MeMask // 增加类型
+
 export default InMeMask

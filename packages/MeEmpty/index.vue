@@ -13,42 +13,25 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useIconName } from './hooks'
 
-export default defineComponent({
-  name: 'MeEmpty',
-  props: {
-    // 文本内容
-    text: {
-      type: String,
-      default: ''
-    },
-    // 类型
-    type: {
-      type: String,
-      default: 'default' // default|network|search
-    },
-    // 高度
-    height: {
-      type: Number,
-      default: 200
-    },
-    // 自定义图标
-    iconName: {
-      type: String,
-      default: ''
-    },
-    // 自定义图片
-    url: {
-      type: String,
-      default: ''
-    }
-  },
-  setup(props) {
-    const { icon } = useIconName(props)
-    return { icon }
+const props = withDefaults(
+  defineProps<{
+    text?: string // 文本内容
+    type?: string // 类型, default | network | search
+    height?: number // 高度
+    iconName?: string // 自定义图标
+    url?: string // 自定义图片
+  }>(),
+  {
+    text: '',
+    type: 'default',
+    height: 200,
+    iconName: '',
+    url: ''
   }
-})
+)
+
+const { icon } = useIconName(props)
 </script>

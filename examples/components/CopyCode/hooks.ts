@@ -6,6 +6,7 @@ export const useRefs = () => {
   const copyDom = ref<HTMLDivElement>()
   const codeCont = ref<HTMLDivElement>()
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
+
   onMounted(() => {
     const clipboard = new ClipboardJS(copyDom.value!, {
       text: () => codeCont.value!.textContent!.slice(0, -1)
@@ -17,5 +18,6 @@ export const useRefs = () => {
       $MeToast('复制失败')
     })
   })
+
   return { copyDom, codeCont }
 }

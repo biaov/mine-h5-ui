@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- 导航列表 -->
   <ul class="m-nav-list">
@@ -15,27 +12,19 @@
         </div>
       </template>
       <template v-else>
-        <a :href="item.href" target="_blank" rel="noopener noreferrer" class="u-scale" v-if="item.href"><img :src="item.url" :title="item.text" :alt="item.text" /></a>
-        <router-link :to="{ name: item.name }" v-else>{{ item.text }}</router-link>
+        <a v-if="item.href" :href="item.href" target="_blank" rel="noopener noreferrer" class="u-scale"><img :src="item.url" :title="item.text" :alt="item.text" /></a>
+        <router-link v-else :to="{ name: item.name }">{{ item.text }}</router-link>
       </template>
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { ListItem } from './interfaces'
 
-export default defineComponent({
-  name: 'NavList',
-  props: {
-    // 列表数据
-    list: {
-      type: Array as PropType<ListItem[]>,
-      required: true
-    }
-  },
-  setup() {
-    return {}
-  }
-})
+defineProps<{
+  list: ListItem[]
+}>()
 </script>
+<style scoped lang="less">
+@import './index.less';
+</style>

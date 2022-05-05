@@ -6,3 +6,12 @@ export interface Names {
   search: string
   [key: string]: string
 }
+
+// props
+export interface Props {
+  text: string
+  type: string
+  height: number
+  iconName: string
+  url: string
+}

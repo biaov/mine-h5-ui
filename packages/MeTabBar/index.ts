@@ -7,4 +7,5 @@ MeTabBar.install = (app: App) => {
   app.component(MeTabBar.name, MeTabBar)
 }
 const InMeTabBar: SFCWithInstall<typeof MeTabBar> = MeTabBar // 增加类型
+
 export default InMeTabBar

@@ -9,14 +9,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeIcon } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeIcon.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeIcon } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeIcon.css'
 
-const app = createApp(App);
-app.use(MeIcon);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeIcon)
+app.mount('#app')
 ```
 
 :::
@@ -35,10 +35,10 @@ app.mount("#app");
 
 ```JavaScript
 // 引入iconfont图标
-import "//at.alicdn.com/t/font_1774902_nar195smdvf.css"; // 线上地址，也可以使用线下文件
+import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可以使用线下文件
 
 // 使用iconfont图标
-<el-icon name="icon-close"></el-icon>
+<me-icon name="icon-close"></me-icon>
 ```
 
 :::

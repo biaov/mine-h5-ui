@@ -33,14 +33,8 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandlerInput } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { listData, onSMS, onIcon } = useHandlerInput()
-    return { listData, onSMS, onIcon }
-  }
-})
+const { listData, onSMS, onIcon } = useHandlerInput()
 </script>

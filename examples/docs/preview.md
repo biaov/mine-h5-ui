@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MePreview } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MePreview.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MePreview } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MePreview.css'
 
-const app = createApp(App);
-app.mount("#app");
-app.config.globalProperties["$MePreview"] = $MePreview;
+const app = createApp(App)
+app.mount('#app')
+app.config.globalProperties['$MePreview'] = $MePreview
 ```
 
 :::
@@ -32,19 +32,16 @@ app.config.globalProperties["$MePreview"] = $MePreview;
 
 ::: CopyCode
 
-```JavaScript
-import { getCurrentInstance } from "vue";
-import url from "../assets/empty.png";
+```Vue
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
+import url from '../assets/empty.png'
 
-export default defineComponent({
-  setup() {
-    const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties;
-    $MePreview({
-      url
-    });
-    return { };
-  }
-});
+const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
+$MePreview({
+  url
+})
+</script>
 ```
 
 :::
@@ -56,20 +53,17 @@ export default defineComponent({
 
 ::: CopyCode
 
-```JavaScript
-import { getCurrentInstance } from "vue";
-import url from "../assets/empty.png";
+```Vue
+<script lang="ts" setup>
+import { getCurrentInstance } from 'vue'
+import url from '../assets/empty.png'
 
-export default defineComponent({
-  setup() {
-    const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties;
-    $MePreview({
-      url,
-      background: "#fff"
-    });
-    return { };
-  }
-});
+const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
+$MePreview({
+  url,
+  background: '#fff'
+})
+</script>
 ```
 
 :::

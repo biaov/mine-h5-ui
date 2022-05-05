@@ -1,16 +1,19 @@
+// eslint-plugin-vue:https://eslint.vuejs.org/
+
 // 配置信息
 const config = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
+    'vue/setup-compiler-macros': true
   },
   globals: {
     NodeListOf: 'readonly',
     EventListenerOrEventListenerObject: 'readonly',
     NodeJS: 'readonly'
   },
-  extends: ['plugin:vue/essential', 'airbnb-base', 'plugin:prettier/recommended', 'plugin:jest/recommended'],
+  extends: ['plugin:vue/vue3-essential', 'airbnb-base', 'plugin:prettier/recommended', 'plugin:jest/recommended'],
   parserOptions: {
     ecmaVersion: 12,
     parser: '@typescript-eslint/parser',

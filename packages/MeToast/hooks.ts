@@ -5,6 +5,7 @@ import { Props } from './types'
 export const useShow = (props: Props) => {
   const isDestroy = ref(false) // 是否销毁
   const isShow = ref(false) // 是否显示
+
   // 关闭显示
   const closeShow = () => {
     isShow.value = false
@@ -12,17 +13,20 @@ export const useShow = (props: Props) => {
       isDestroy.value = true
     }, 400)
   }
+
   // 开始显示
   const startShow = () => {
     setTimeout(() => {
       isShow.value && closeShow()
     }, props.durction)
   }
+
   onMounted(() => {
     setTimeout(() => {
       isShow.value = true
       startShow()
     }, 100)
   })
+
   return { isShow, isDestroy }
 }

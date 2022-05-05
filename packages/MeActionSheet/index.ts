@@ -7,4 +7,5 @@ MeActionSheet.install = (app: App) => {
   app.component(MeActionSheet.name, MeActionSheet)
 }
 const InMeActionSheet: SFCWithInstall<typeof MeActionSheet> = MeActionSheet // 增加类型
+
 export default InMeActionSheet

@@ -10,44 +10,29 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 import { ListItem } from './interfaces'
 
-export default defineComponent({
-  name: 'MeTabBar',
-  emits: ['on-change'],
-  props: {
-    // 列表数据
-    list: {
-      type: Array as PropType<ListItem[]>,
-      required: true
-    },
-    // 上边框颜色
-    borderColor: {
-      type: String,
-      default: '#dcdfe6'
-    },
-    // 背景颜色
-    background: {
-      type: String,
-      default: '#fff'
-    },
-    // 未选中状态颜色
-    color: {
-      type: String,
-      default: '#949494'
-    },
-    // 选中状态颜色
-    colorSelected: {
-      type: String,
-      default: '#409eff'
-    }
-  },
-  setup(props, { emit }) {
-    const { onClick } = useHandler(emit)
-    return { onClick }
+const emit = defineEmits<{
+  (event: 'on-change', item: ListItem): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    list: ListItem[] // 列表数据
+    borderColor?: string // 上边框颜色
+    background?: string // 背景颜色
+    color?: string // 未选中状态颜色
+    colorSelected?: string // 选中状态颜色
+  }>(),
+  {
+    borderColor: '#dcdfe6',
+    background: '#fff',
+    color: '#949494',
+    colorSelected: '#409eff'
   }
-})
+)
+
+const { onClick } = useHandler(emit)
 </script>

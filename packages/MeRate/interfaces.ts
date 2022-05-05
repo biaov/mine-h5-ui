@@ -10,3 +10,17 @@ export interface Emits {
   (event: 'update:modelValue', id: number): void
   (event: 'on-change'): void
 }
+
+// props
+export interface Props {
+  modelValue: number
+  color: string
+  size: string
+  icon: string
+  iconSelect: string
+  count: number
+  readonly: boolean
+  disabled: boolean
+  tips: string[]
+  tipsColor: string
+}

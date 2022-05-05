@@ -7,4 +7,5 @@ MeAccordionItem.install = (app: App) => {
   app.component(MeAccordionItem.name, MeAccordionItem)
 }
 const InMeAccordionItem: SFCWithInstall<typeof MeAccordionItem> = MeAccordionItem // 增加类型
+
 export default InMeAccordionItem

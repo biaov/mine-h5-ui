@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- H5演示 -->
   <ul class="m-side-bar">
@@ -10,7 +7,7 @@
       <ul class="m-list-ct">
         <!-- 二级列表 -->
         <li v-for="(it, i) in item.children" :key="i" :class="{ spot: it.name === 'logs' }">
-          <router-link class="u-tit-ct u-in" :to="{ name: it.name }" v-if="!it.items">{{ it.meta.title }}</router-link>
+          <router-link v-if="!it.items" class="u-tit-ct u-in" :to="{ name: it.name }">{{ it.meta.title }}</router-link>
           <template v-else>
             <h3 class="u-tit-ct">{{ it.meta.title }}</h3>
             <ul class="m-list-in">
@@ -25,15 +22,11 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useWebData } from './hook'
 
-export default defineComponent({
-  name: 'SideBar',
-  setup() {
-    const { sidebarList } = useWebData()
-    return { sidebarList }
-  }
-})
+const { sidebarList } = useWebData()
 </script>
+<style scoped lang="less">
+@import './index.less';
+</style>

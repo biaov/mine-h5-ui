@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeInput } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeInput.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeInput } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeInput.css'
 
-const app = createApp(App);
-app.use(MeInput);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeInput)
+app.mount('#app')
 ```
 
 :::

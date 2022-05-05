@@ -20,74 +20,44 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import MeIcon from '../MeIcon'
 import { useHandler } from './hooks'
 import { BeforeRead, BfterRead, BeforeDelete } from './types'
 import { ListDataItem } from './interfaces'
 
-export default defineComponent({
-  name: 'MeUpload',
-  components: {
-    MeIcon
-  },
-  emits: ['update:fileList', 'update:file-list', 'on-change'],
-  props: {
-    // v-model:fileList绑定值
-    fileList: {
-      type: Array as PropType<ListDataItem[]>,
-      default: () => []
-    },
-    // 图片是否可预览
-    preview: {
-      type: Boolean,
-      default: true
-    },
-    // 最大上传数量
-    maxCount: {
-      type: Number,
-      default: 1000
-    },
-    // 文件大小设置
-    maxSize: {
-      type: Number,
-      default: 2 * 1024 * 1024
-    },
-    // 是否多选
-    multiple: {
-      type: Boolean,
-      default: false
-    },
-    // 是否展示删除按钮
-    deletable: {
-      type: Boolean,
-      default: true
-    },
-    // 禁止状态
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    // 文件读取前钩子函数
-    beforeRead: {
-      type: Function as PropType<BeforeRead>,
-      default: () => () => true
-    },
-    // 文件读取完钩子函数
-    afterRead: {
-      type: Function as PropType<BfterRead>,
-      default: () => () => true
-    },
-    // 文件删除前钩子函数
-    beforeDelete: {
-      type: Function as PropType<BeforeDelete>,
-      default: () => () => true
-    }
-  },
-  setup(props, { emit }) {
-    const { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler(props, emit)
-    return { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview }
+const emit = defineEmits<{
+  (event: 'update:fileList', list: ListDataItem[]): void
+  (event: 'update:file-list', list: ListDataItem[]): void
+  (event: 'on-change', list: ListDataItem[]): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    fileList?: ListDataItem[] // v-model:fileList 绑定值
+    preview?: boolean // 图片是否可预览
+    maxCount?: number // 最大上传数量
+    maxSize?: number // 文件大小设置
+    multiple?: boolean // 是否多选
+    deletable?: boolean // 是否展示删除按钮
+    disabled?: boolean // 禁止状态
+    beforeRead?: BeforeRead // 文件读取前钩子函数
+    afterRead?: BfterRead // 文件读取完钩子函数
+    beforeDelete?: BeforeDelete // 文件删除前钩子函数
+  }>(),
+  {
+    fileList: () => [],
+    preview: true,
+    maxCount: 1000,
+    maxSize: 2 * 1024 * 1024,
+    multiple: false,
+    deletable: true,
+    disabled: false,
+    beforeRead: () => true,
+    afterRead: () => true,
+    beforeDelete: () => true
   }
-})
+)
+
+const { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler(props, emit)
 </script>

@@ -7,16 +7,16 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeRadio, MeRadioGroup } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeRadio.css";
-import "mine-h5-ui/lib/theme-default/MeRadioGroup.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeRadio, MeRadioGroup } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeRadio.css'
+import 'mine-h5-ui/lib/theme-default/MeRadioGroup.css'
 
-const app = createApp(App);
-app.use(MeRadio);
-app.use(MeRadioGroup);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeRadio)
+app.use(MeRadioGroup)
+app.mount('#app')
 ```
 
 :::

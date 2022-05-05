@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 // 当前 type 类型的 name 所有值
 export interface TypeName {
   circle: string
@@ -9,4 +8,12 @@ export interface TypeName {
   circle5: string
   circle6: string
   [key: string]: string
+}
+
+// props
+export interface Props {
+  type: string
+  size: string
+  color: string
+  icon: string
 }

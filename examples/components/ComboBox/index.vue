@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- 下拉框 -->
   <div class="m-combo-box" @click.stop="onClickFrame">
@@ -10,31 +7,19 @@
     </div>
     <!-- 列表 -->
     <transition name="translate">
-      <ul class="m-dropdown" v-if="isShow">
-        <li v-for="(item, index) in list" :key="index" @click="onClickItem(item)">
-          {{ item.version }}
-        </li>
+      <ul v-if="isShow" class="m-dropdown">
+        <li v-for="(item, index) in list" :key="index" @click="onClickItem(item)">{{ item.version }}</li>
       </ul>
     </transition>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useShowAction } from './hooks'
 import { ListItem } from './interfaces'
 
-export default defineComponent({
-  name: 'ComboBox',
-  props: {
-    // 列表
-    list: {
-      type: Array as PropType<ListItem[]>,
-      required: true
-    }
-  },
-  setup(props) {
-    const { isShow, onClickFrame, onClickItem } = useShowAction(props)
-    return { isShow, onClickFrame, onClickItem }
-  }
-})
+const props = defineProps<{ list: ListItem[] }>()
+const { isShow, onClickFrame, onClickItem } = useShowAction(props)
 </script>
+<style scoped lang="less">
+@import './index.less';
+</style>

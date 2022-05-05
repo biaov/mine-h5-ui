@@ -12,14 +12,8 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { listData, onPreview } = useHandler()
-    return { listData, onPreview }
-  }
-})
+const { listData, onPreview } = useHandler()
 </script>

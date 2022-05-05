@@ -7,4 +7,5 @@ MeTab.install = (app: App) => {
   app.component(MeTab.name, MeTab)
 }
 const InMeTab: SFCWithInstall<typeof MeTab> = MeTab // 增加类型
+
 export default InMeTab

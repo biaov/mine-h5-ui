@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeIndexBar } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeIndexBar.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeIndexBar } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeIndexBar.css'
 
-const app = createApp(App);
-app.use(MeIndexBar);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeIndexBar)
+app.mount('#app')
 ```
 
 :::
@@ -34,23 +34,13 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-index-bar @on-click="onClick"></me-index-bar>
-  </div>
+  <me-index-bar @on-click="onClick"></me-index-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 点击内容列表
-    const onClick = item => {
-      console.log(item);
-    };
-    return { onClick };
-  }
-});
+<script lang="ts" setup>
+// 点击内容列表
+const onClick = item => {
+  console.log(item)
+}
 </script>
 ```
 
@@ -65,8 +55,8 @@ export default defineComponent({
 ```JavaScript
 [
   {
-    name: "A",
-    cities: [{ code: "AR", cn: "阿根廷" }]
+    name: 'A',
+    cities: [{ code: 'AR', cn: '阿根廷' }]
   }
 ]
 ```

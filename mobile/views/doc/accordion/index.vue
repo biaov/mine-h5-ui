@@ -12,14 +12,8 @@
     </me-accordion>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useWebData } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { accordionActive, listData } = useWebData()
-    return { accordionActive, listData }
-  }
-})
+const { accordionActive, listData } = useWebData()
 </script>

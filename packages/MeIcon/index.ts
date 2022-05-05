@@ -7,4 +7,5 @@ MeIcon.install = (app: App) => {
   app.component(MeIcon.name, MeIcon)
 }
 const InMeIcon: SFCWithInstall<typeof MeIcon> = MeIcon // 增加类型
+
 export default InMeIcon

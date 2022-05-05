@@ -27,9 +27,11 @@ export const useListData = () => {
       text: 'qrcode'
     }
   ])
+
   QRcode.toDataURL(globalThis.location.origin + BaseRouter).then(data => {
     navList.value[3].href = data
   })
+
   // 版本列表
   const versionList = [
     {
@@ -43,5 +45,6 @@ export const useListData = () => {
   ]
   const { path } = useRoute()
   const isHome = Object.freeze(path === '/') // 是否是首页
+
   return { navList, versionList, isHome }
 }

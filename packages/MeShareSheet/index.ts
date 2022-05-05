@@ -7,4 +7,5 @@ MeShareSheet.install = (app: App) => {
   app.component(MeShareSheet.name, MeShareSheet)
 }
 const InMeShareSheet: SFCWithInstall<typeof MeShareSheet> = MeShareSheet // 增加类型
+
 export default InMeShareSheet

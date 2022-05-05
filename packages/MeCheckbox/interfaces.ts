@@ -14,3 +14,15 @@ export interface Emits {
   (event: 'update:modelValue', bool: boolean): void
   (event: 'on-click', e: MouseEvent): void
 }
+
+// props
+export interface Props {
+  modelValue: boolean
+  name?: string | number
+  shape: string
+  icon: string
+  iconSelect: string
+  iconSize: string
+  checkedColor: string
+  disabled: boolean
+}

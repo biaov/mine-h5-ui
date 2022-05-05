@@ -7,4 +7,5 @@ MeDatetimePicker.install = (app: App) => {
   app.component(MeDatetimePicker.name, MeDatetimePicker)
 }
 const InMeDatetimePicker: SFCWithInstall<typeof MeDatetimePicker> = MeDatetimePicker // 增加类型
+
 export default InMeDatetimePicker

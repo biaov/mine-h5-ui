@@ -19,38 +19,27 @@
     <slot></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useInitSlots } from './hooks'
 
-export default defineComponent({
-  name: 'MeTab',
-  emits: ['update:modelValue', 'on-change'],
-  props: {
-    // v-model绑定值
-    modelValue: {
-      type: [String, Number],
-      required: true
-    },
-    // 未聚焦时的颜色
-    color: {
-      type: String,
-      default: '#949494'
-    },
-    // 聚焦时显示的颜色
-    activeColor: {
-      type: String,
-      default: '#494949'
-    },
-    // 位移边框颜色
-    lineColor: {
-      type: String,
-      default: '#f56c6c'
-    }
-  },
-  setup(props, { emit }) {
-    const { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick } = useInitSlots(props, emit)
-    return { tabsDom, tabList, transX, duration, initTranslateX, curIndex, onClick }
+const emit = defineEmits<{
+  (event: 'update:modelValue', value: string | number): void
+  (event: 'on-change', value: string | number): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    modelValue: string | number // v-model 绑定值
+    color: string // 未聚焦时的颜色
+    activeColor: string // 聚焦时显示的颜色
+    lineColor: string // 位移边框颜色
+  }>(),
+  {
+    color: '#949494',
+    activeColor: '#494949',
+    lineColor: '#f56c6c'
   }
-})
+)
+
+const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots(props, emit)
 </script>

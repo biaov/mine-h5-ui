@@ -7,4 +7,5 @@ MeSwiperItem.install = (app: App) => {
   app.component(MeSwiperItem.name, MeSwiperItem)
 }
 const InMeSwiperItem: SFCWithInstall<typeof MeSwiperItem> = MeSwiperItem // 增加类型
+
 export default InMeSwiperItem

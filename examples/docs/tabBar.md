@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeTabBar } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeTabBar.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeTabBar } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeTabBar.css'
 
-const app = createApp(App);
-app.use(MeTabBar);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeTabBar)
+app.mount('#app')
 ```
 
 :::
@@ -35,41 +35,34 @@ app.mount("#app");
 <template>
   <me-tab-bar :list="listData"></me-tab-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const listData = Object.freeze([
-      {
-        id: 1,
-        icon: "icon-home",
-        text: "首页",
-        state: true
-      },
-      {
-        id: 2,
-        icon: "icon-tupian",
-        text: "图片",
-        state: false
-      },
-      {
-        id: 3,
-        icon: "icon-gongnengguanli",
-        text: "功能",
-        state: false
-      },
-      {
-        id: 4,
-        icon: "icon-user1",
-        text: "用户",
-        state: false
-      }
-    ]);
-    return { listData };
+<script lang="ts" setup>
+// 列表数据
+const listData = Object.freeze([
+  {
+    id: 1,
+    icon: 'icon-home',
+    text: '首页',
+    state: true
+  },
+  {
+    id: 2,
+    icon: 'icon-tupian',
+    text: '图片',
+    state: false
+  },
+  {
+    id: 3,
+    icon: 'icon-gongnengguanli',
+    text: '功能',
+    state: false
+  },
+  {
+    id: 4,
+    icon: 'icon-user1',
+    text: '用户',
+    state: false
   }
-});
+])
 </script>
 ```
 
@@ -86,45 +79,39 @@ export default defineComponent({
 <template>
   <me-tab-bar :list="listData"></me-tab-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const listData = Object.freeze([
-      {
-        id: 1,
-        icon: "icon-home",
-        text: "首页",
-        state: true
-      },
-      {
-        id: 2,
-        icon: "icon-tupian",
-        text: "图片",
-        badge: "6",
-        state: false
-      },
-      {
-        id: 3,
-        icon: "icon-gongnengguanli",
-        text: "功能",
-        badge: "A",
-        state: false
-      },
-      {
-        id: 4,
-        icon: "icon-user1",
-        text: "用户",
-        dot: true,
-        state: false
-      }
-    ]);
-    return { listData };
+<script lang="ts" setup>
+// 列表数据
+const listData = Object.freeze([
+  {
+    id: 1,
+    icon: 'icon-home',
+    text: '首页',
+    state: true
+  },
+  {
+    id: 2,
+    icon: 'icon-tupian',
+    text: '图片',
+    badge: '6',
+    state: false
+  },
+  {
+    id: 3,
+    icon: 'icon-gongnengguanli',
+    text: '功能',
+    badge: 'A',
+    state: false
+  },
+  {
+    id: 4,
+    icon: 'icon-user1',
+    text: '用户',
+    dot: true,
+    state: false
   }
-});
+])
 </script>
+
 ```
 
 :::
@@ -142,44 +129,38 @@ export default defineComponent({
 <template>
   <me-tab-bar :list="listData"></me-tab-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-import img from "^/assets/verify.png";
-import imgSelected from "^/assets/verify_selected.png";
+<script lang="ts" setup>
+import img from '^/assets/verify.png'
+import imgSelected from '^/assets/verify_selected.png'
 
-export default defineComponent({
-  setup() {
-    // 列表数据
-    const listData = Object.freeze([
-      {
-        id: 1,
-        text: "安全",
-        state: true,
-        img,
-        imgSelected
-      },
-      {
-        id: 2,
-        icon: "icon-tupian",
-        text: "图片",
-        state: false
-      },
-      {
-        id: 3,
-        icon: "icon-gongnengguanli",
-        text: "功能",
-        state: false
-      },
-      {
-        id: 4,
-        icon: "icon-user1",
-        text: "用户",
-        state: false
-      }
-    ]);
-    return { listData };
+// 列表数据
+const listData = Object.freeze([
+  {
+    id: 1,
+    text: '安全',
+    state: true,
+    img,
+    imgSelected
+  },
+  {
+    id: 2,
+    icon: 'icon-tupian',
+    text: '图片',
+    state: false
+  },
+  {
+    id: 3,
+    icon: 'icon-gongnengguanli',
+    text: '功能',
+    state: false
+  },
+  {
+    id: 4,
+    icon: 'icon-user1',
+    text: '用户',
+    state: false
   }
-});
+])
 </script>
 ```
 
@@ -196,50 +177,42 @@ export default defineComponent({
 <template>
   <me-tab-bar :list="listData" v-bind="colors"></me-tab-bar>
 </template>
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    // 自定义颜色
-    const colors = Object.freeze({
-      color: "", // 颜色
-      colorSelected: "", // 选中颜色
-      background: "", // 背景颜色
-      borderColor: "" // 上边框颜色
-    });
-    // 列表数据
-    const listData = Object.freeze([
-      {
-        id: 1,
-        icon: "icon-home",
-        text: "首页",
-        state: true
-      },
-      {
-        id: 2,
-        icon: "icon-tupian",
-        text: "图片",
-        state: false
-      },
-      {
-        id: 3,
-        icon: "icon-gongnengguanli",
-        text: "功能",
-        state: false
-      },
-      {
-        id: 4,
-        icon: "icon-user1",
-        text: "用户",
-        state: false
-      }
-    ]);
-    return { colors, listData };
+<script lang="ts" setup>
+// 自定义颜色
+const colors = Object.freeze({
+  color: '', // 颜色
+  colorSelected: '', // 选中颜色
+  background: '', // 背景颜色
+  borderColor: '' // 上边框颜色
+})
+// 列表数据
+const listData = Object.freeze([
+  {
+    id: 1,
+    icon: 'icon-home',
+    text: '首页',
+    state: true
+  },
+  {
+    id: 2,
+    icon: 'icon-tupian',
+    text: '图片',
+    state: false
+  },
+  {
+    id: 3,
+    icon: 'icon-gongnengguanli',
+    text: '功能',
+    state: false
+  },
+  {
+    id: 4,
+    icon: 'icon-user1',
+    text: '用户',
+    state: false
   }
-});
+])
 </script>
-
 ```
 
 :::

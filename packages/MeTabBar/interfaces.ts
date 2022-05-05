@@ -15,3 +15,12 @@ export interface ListItem {
 export interface Emits {
   (event: 'on-change', item: ListItem): void
 }
+
+// props
+export interface Props {
+  list: ListItem[]
+  borderColor: string
+  background: string
+  color: string
+  colorSelected: string
+}

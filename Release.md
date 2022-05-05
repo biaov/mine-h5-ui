@@ -1,19 +1,17 @@
 # 发布文档
 
-## Eslint 检查
-
-```JavaScript
-// import '../theme-default/fonts/iconfont.js'
-```
-
-```Basic
-npm run lint
-```
-
-## 全部格式化
+## 格式化
 
 ```Basic
 npm run prettier
+```
+
+## Eslint 检查
+
+- [MeLoading](./packages/MeLoading/hooks.ts)
+
+```Basic
+npm run lint
 ```
 
 ## 单元测试
@@ -35,6 +33,8 @@ npm run test:unit:single
 
 ## 打包
 
+- `--max_old_space_size=8192`
+
 ```Basic
 npm run build
 ```
@@ -54,7 +54,17 @@ npm run preview
 ### 发布 package
 
 - npm 发布
+
+```Basic
+npm publish --tag=beta-v2
+npm publish [--tag=latest]
+```
+
 - github 发布
+
+```Basic
+npm publish
+```
 
 ## 更新 github 代码
 

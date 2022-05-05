@@ -13,3 +13,9 @@ export interface TabContext {
   currentValue: Ref<number>
   getLabelName: (item: LabelName) => void
 }
+
+// props
+export interface Props {
+  label: string
+  name: string | number
+}

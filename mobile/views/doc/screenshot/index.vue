@@ -15,14 +15,8 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandlerClick } from './hooks'
 
-export default defineComponent({
-  setup() {
-    const { listData, onClick, onEnd } = useHandlerClick()
-    return { listData, onClick, onEnd }
-  }
-})
+const { listData, onClick, onEnd } = useHandlerClick()
 </script>

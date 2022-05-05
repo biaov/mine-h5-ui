@@ -7,5 +7,6 @@ import { SwiperContext } from './interfaces'
 export const useName = (props: Props) => {
   const { name, getName } = inject(MeSwiperKey, {} as SwiperContext)
   name === MeSwiperKey && getName(props.name)
+
   return {}
 }

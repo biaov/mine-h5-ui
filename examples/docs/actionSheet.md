@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeActionSheet } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeActionSheet.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeActionSheet } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeActionSheet.css'
 
-const app = createApp(App);
-app.use(MeActionSheet);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeActionSheet)
+app.mount('#app')
 ```
 
 :::
@@ -35,33 +35,23 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-action-sheet v-model:visible="visible" :list="listData" index="id" label="value"></me-action-sheet>
-  </div>
+  <me-action-sheet v-model:visible="visible" :list="listData" index="id" label="value"></me-action-sheet>
 </template>
-<script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    const visible = ref(false); // 动作面板的显示状态
-    // 列表数据
-    const listData = ref([
-      {
-        id: 1,
-        value: "微信",
-        label: "Wechat"
-      },
-      {
-        id: 2,
-        value: "支付宝",
-        label: "Alipay"
-      }
-    ]);
-    return { visible, listData };
+<script lang="ts" setup>
+const visible = $ref(false) // 动作面板的显示状态
+// 列表数据
+const listData = $ref([
+  {
+    id: 1,
+    value: '微信',
+    label: 'Wechat'
+  },
+  {
+    id: 2,
+    value: '支付宝',
+    label: 'Alipay'
   }
-});
+])
 </script>
 ```
 

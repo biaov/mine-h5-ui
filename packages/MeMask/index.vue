@@ -4,28 +4,23 @@
     <slot :class="{ on: isShow }" @click.stop></slot>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useHandler } from './hooks'
 
-export default defineComponent({
-  name: 'MeMask',
-  emits: ['update:visible'],
-  props: {
-    // 显示状态
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // 点击遮罩层是否关闭
-    maskClose: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const { isShowMask, isShow, clickMask } = useHandler(props, emit)
-    return { isShowMask, isShow, clickMask }
+const emit = defineEmits<{
+  (event: 'update:visible', bool: boolean): void
+}>()
+
+const props = withDefaults(
+  defineProps<{
+    visible?: boolean // 显示状态
+    maskClose?: boolean // 点击遮罩层是否关闭
+  }>(),
+  {
+    visible: false,
+    maskClose: false
   }
-})
+)
+
+const { isShowMask, isShow, clickMask } = useHandler(props, emit)
 </script>

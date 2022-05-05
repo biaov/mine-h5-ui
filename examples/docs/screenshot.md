@@ -7,14 +7,14 @@
 ::: CopyCode
 
 ```JavaScript
-import { createApp } from "vue";
-import App from "./App.vue";
-import { MeScreenshot } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeScreenshot.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { MeScreenshot } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeScreenshot.css'
 
-const app = createApp(App);
-app.use(MeScreenshot);
-app.mount("#app");
+const app = createApp(App)
+app.use(MeScreenshot)
+app.mount('#app')
 ```
 
 :::
@@ -33,22 +33,16 @@ app.mount("#app");
 
 ```Vue
 <template>
-  <screenshot v-bind="{start}">
+  <me-screenshot v-bind="{ start }">
     <p @click="onClick">点击截图</p>
-  </screenshot>
+  </me-screenshot>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const start = ref(false); // 截图状态
-    // 点击截图
-    const onClick = () => {
-      start.value = true;
-    };
-    return { start, onClick };
-  }
-});
+<script lang="ts" setup>
+let start = $ref(false) // 截图状态
+// 点击截图
+const onClick = () => {
+  start = true
+}
 </script>
 ```
 
@@ -62,22 +56,16 @@ export default defineComponent({
 
 ```Vue
 <template>
-  <screenshot v-bind="{start}" allow-down>
+  <me-screenshot v-bind="{ start }" allow-down>
     <p @click="onClick">点击截图</p>
-  </screenshot>
+  </me-screenshot>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  setup() {
-    const start = ref(false); // 截图状态
-    // 点击截图
-    const onClick = () => {
-      start.value = true;
-    };
-    return { start, onClick };
-  }
-});
+<script lang="ts" setup>
+let start = $ref(false) // 截图状态
+// 点击截图
+const onClick = () => {
+  start = true
+}
 </script>
 ```
 
