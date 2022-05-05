@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeActionSheet.install = (app: App) => {
-  app.component(MeActionSheet.name, MeActionSheet)
+  app.component('MeActionSheet', MeActionSheet)
 }
 const InMeActionSheet: SFCWithInstall<typeof MeActionSheet> = MeActionSheet // 增加类型
 

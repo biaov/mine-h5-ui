@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeCountTo.install = (app: App) => {
-  app.component(MeCountTo.name, MeCountTo)
+  app.component('MeCountTo', MeCountTo)
 }
 const InMeCountTo: SFCWithInstall<typeof MeCountTo> = MeCountTo // 增加类型
 

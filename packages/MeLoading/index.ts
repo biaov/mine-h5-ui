@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeLoading.install = (app: App) => {
-  app.component(MeLoading.name, MeLoading)
+  app.component('MeLoading', MeLoading)
 }
 const InMeLoading: SFCWithInstall<typeof MeLoading> = MeLoading // 增加类型
 

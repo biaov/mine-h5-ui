@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeAddressPicker.install = (app: App) => {
-  app.component(MeAddressPicker.name, MeAddressPicker)
+  app.component('MeAddressPicker', MeAddressPicker)
 }
 const InMeAddressPicker: SFCWithInstall<typeof MeAddressPicker> = MeAddressPicker // 增加类型
 

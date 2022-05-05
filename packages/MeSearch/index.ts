@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeSearch.install = (app: App) => {
-  app.component(MeSearch.name, MeSearch)
+  app.component('MeSearch', MeSearch)
 }
 const InMeSearch: SFCWithInstall<typeof MeSearch> = MeSearch // 增加类型
 

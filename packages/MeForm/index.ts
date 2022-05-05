@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeForm.install = (app: App) => {
-  app.component(MeForm.name, MeForm)
+  app.component('MeForm', MeForm)
 }
 const InMeForm: SFCWithInstall<typeof MeForm> = MeForm // 增加类型
 

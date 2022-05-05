@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeUpload.install = (app: App) => {
-  app.component(MeUpload.name, MeUpload)
+  app.component('MeUpload', MeUpload)
 }
 const InMeUpload: SFCWithInstall<typeof MeUpload> = MeUpload // 增加类型
 

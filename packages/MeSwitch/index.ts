@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeSwitch.install = (app: App) => {
-  app.component(MeSwitch.name, MeSwitch)
+  app.component('MeSwitch', MeSwitch)
 }
 const InMeSwitch: SFCWithInstall<typeof MeSwitch> = MeSwitch // 增加类型
 

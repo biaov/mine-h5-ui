@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MePullRefresh.install = (app: App) => {
-  app.component(MePullRefresh.name, MePullRefresh)
+  app.component('MePullRefresh', MePullRefresh)
 }
 const InMePullRefresh: SFCWithInstall<typeof MePullRefresh> = MePullRefresh // 增加类型
 

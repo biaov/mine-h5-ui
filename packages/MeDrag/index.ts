@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeDrag.install = (app: App) => {
-  app.component(MeDrag.name, MeDrag)
+  app.component('MeDrag', MeDrag)
 }
 const InMeDrag: SFCWithInstall<typeof MeDrag> = MeDrag // 增加类型
 

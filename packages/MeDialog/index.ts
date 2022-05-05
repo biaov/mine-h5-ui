@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeDialog.install = (app: App) => {
-  app.component(MeDialog.name, MeDialog)
+  app.component('MeDialog', MeDialog)
 }
 const InMeDialog: SFCWithInstall<typeof MeDialog> = MeDialog // 增加类型
 

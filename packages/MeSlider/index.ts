@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeSlider.install = (app: App) => {
-  app.component(MeSlider.name, MeSlider)
+  app.component('MeSlider', MeSlider)
 }
 const InMeSlider: SFCWithInstall<typeof MeSlider> = MeSlider // 增加类型
 

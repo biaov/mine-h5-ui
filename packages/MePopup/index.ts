@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MePopup.install = (app: App) => {
-  app.component(MePopup.name, MePopup)
+  app.component('MePopup', MePopup)
 }
 const InMePopup: SFCWithInstall<typeof MePopup> = MePopup // 增加类型
 

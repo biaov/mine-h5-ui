@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeAccordion.install = (app: App) => {
-  app.component(MeAccordion.name, MeAccordion)
+  app.component('MeAccordion', MeAccordion)
 }
 const InMeAccordion: SFCWithInstall<typeof MeAccordion> = MeAccordion // 增加类型
 

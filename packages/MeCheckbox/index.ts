@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeCheckbox.install = (app: App) => {
-  app.component(MeCheckbox.name, MeCheckbox)
+  app.component('MeCheckbox', MeCheckbox)
 }
 const InMeCheckbox: SFCWithInstall<typeof MeCheckbox> = MeCheckbox // 增加类型
 

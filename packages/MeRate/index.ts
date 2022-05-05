@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeRate.install = (app: App) => {
-  app.component(MeRate.name, MeRate)
+  app.component('MeRate', MeRate)
 }
 const InMeRate: SFCWithInstall<typeof MeRate> = MeRate // 增加类型
 

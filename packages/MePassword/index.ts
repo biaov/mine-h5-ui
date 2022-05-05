@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MePassword.install = (app: App) => {
-  app.component(MePassword.name, MePassword)
+  app.component('MePassword', MePassword)
 }
 const InMePassword: SFCWithInstall<typeof MePassword> = MePassword // 增加类型
 

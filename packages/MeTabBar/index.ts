@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeTabBar.install = (app: App) => {
-  app.component(MeTabBar.name, MeTabBar)
+  app.component('MeTabBar', MeTabBar)
 }
 const InMeTabBar: SFCWithInstall<typeof MeTabBar> = MeTabBar // 增加类型
 

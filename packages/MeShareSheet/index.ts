@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeShareSheet.install = (app: App) => {
-  app.component(MeShareSheet.name, MeShareSheet)
+  app.component('MeShareSheet', MeShareSheet)
 }
 const InMeShareSheet: SFCWithInstall<typeof MeShareSheet> = MeShareSheet // 增加类型
 

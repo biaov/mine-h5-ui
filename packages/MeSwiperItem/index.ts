@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeSwiperItem.install = (app: App) => {
-  app.component(MeSwiperItem.name, MeSwiperItem)
+  app.component('MeSwiperItem', MeSwiperItem)
 }
 const InMeSwiperItem: SFCWithInstall<typeof MeSwiperItem> = MeSwiperItem // 增加类型
 

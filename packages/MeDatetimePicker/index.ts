@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeDatetimePicker.install = (app: App) => {
-  app.component(MeDatetimePicker.name, MeDatetimePicker)
+  app.component('MeDatetimePicker', MeDatetimePicker)
 }
 const InMeDatetimePicker: SFCWithInstall<typeof MeDatetimePicker> = MeDatetimePicker // 增加类型
 

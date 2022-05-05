@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeNoticeBar.install = (app: App) => {
-  app.component(MeNoticeBar.name, MeNoticeBar)
+  app.component('MeNoticeBar', MeNoticeBar)
 }
 const InMeNoticeBar: SFCWithInstall<typeof MeNoticeBar> = MeNoticeBar // 增加类型
 

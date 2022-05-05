@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeTag.install = (app: App) => {
-  app.component(MeTag.name, MeTag)
+  app.component('MeTag', MeTag)
 }
 const InMeTag: SFCWithInstall<typeof MeTag> = MeTag // 增加类型
 

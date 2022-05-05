@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeRadioGroup.install = (app: App) => {
-  app.component(MeRadioGroup.name, MeRadioGroup)
+  app.component('MeRadioGroup', MeRadioGroup)
 }
 const InMeRadioGroup: SFCWithInstall<typeof MeRadioGroup> = MeRadioGroup // 增加类型
 

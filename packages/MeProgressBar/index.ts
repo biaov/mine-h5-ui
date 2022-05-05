@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeProgressBar.install = (app: App) => {
-  app.component(MeProgressBar.name, MeProgressBar)
+  app.component('MeProgressBar', MeProgressBar)
 }
 const InMeProgressBar: SFCWithInstall<typeof MeProgressBar> = MeProgressBar // 增加类型
 

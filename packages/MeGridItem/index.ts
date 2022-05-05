@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeGridItem.install = (app: App) => {
-  app.component(MeGridItem.name, MeGridItem)
+  app.component('MeGridItem', MeGridItem)
 }
 const InMeGridItem: SFCWithInstall<typeof MeGridItem> = MeGridItem // 增加类型
 

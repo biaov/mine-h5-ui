@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeVirtualList.install = (app: App) => {
-  app.component(MeVirtualList.name, MeVirtualList)
+  app.component('MeVirtualList', MeVirtualList)
 }
 const InMeVirtualList: SFCWithInstall<typeof MeVirtualList> = MeVirtualList // 增加类型
 

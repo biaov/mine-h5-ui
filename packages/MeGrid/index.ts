@@ -4,7 +4,7 @@ import { SFCWithInstall } from '../types'
 
 // 安装
 MeGrid.install = (app: App) => {
-  app.component(MeGrid.name, MeGrid)
+  app.component('MeGrid', MeGrid)
 }
 const InMeGrid: SFCWithInstall<typeof MeGrid> = MeGrid // 增加类型
 
