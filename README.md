@@ -17,8 +17,8 @@
 
 ## 使用文档
 
-- **[😎 1.x](https://mineh5ui.biaov.cn/)**
-- **[😎 2.x](https://mineh5ui.biaov.cn/v2)**
+- [x] **[😎 1.x](https://mineh5ui.biaov.cn/)**
+- [x] **[😎 2.x](https://mineh5ui.biaov.cn/v2)**
 
 ## 安装
 
@@ -47,9 +47,9 @@ app.mount('#app')
 
 ## 贡献者
 
-- biaov\<biaov@qq.com\>
+- [x] biaov\<biaov@qq.com\>
 
 ## License
 
-- [MIT](https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE)
-- Copyright (c) 2020-present biaov
+- [x] [MIT](https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE)
+- [x] Copyright (c) 2020-present biaov
