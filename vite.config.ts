@@ -40,4 +40,5 @@ const config: UserConfigExport = defineConfig({
     }
   }
 })
+
 export default config

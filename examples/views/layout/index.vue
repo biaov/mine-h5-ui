@@ -27,17 +27,23 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useGlobalVars } from '@/utils/variables'
 import { useCanvas } from './hooks'
 import MineHeader from '@/components/MineHeader'
 
 const { GithubAddress } = useGlobalVars()
-const canvas = $ref<HTMLCanvasElement>() // canvas 对象
+const canvas = ref<HTMLCanvasElement>() // canvas 对象
 
 onMounted(() => {
-  useCanvas($$(canvas))
+  useCanvas(canvas)
 })
+
+// const canvas = $ref<HTMLCanvasElement>() // canvas 对象
+
+// onMounted(() => {
+//   useCanvas($$(canvas))
+// })
 </script>
 <style scoped lang="less">
 @import './index.less';

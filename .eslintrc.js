@@ -21,8 +21,21 @@ const config = {
   },
   plugins: ['vue', '@typescript-eslint'],
   settings: {},
+  overrides: [
+    {
+      files: ['./mobile/**/*.ts'],
+      rules: {
+        'no-console': 'off' // 禁止 console
+      }
+    },
+    {
+      files: ['**/*.vue'],
+      rules: {
+        'no-unused-vars': 'off' // 禁止未使用的变量, ts 变量
+      }
+    }
+  ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off', // 禁止console
     'no-unused-expressions': [
       'error',
       {
@@ -31,15 +44,13 @@ const config = {
       }
     ],
     'import/prefer-default-export': 'off', // 如果只有一个值，要用 default 导出
-    'import/no-unresolved': 'off', // import识别路径，因为alias设置
+    'import/no-unresolved': 'off', // import 识别路径，因为 alias 设置
     'import/extensions': 'off', // 扩展简写
     'no-param-reassign': 'off', // 函数参数修改
     'no-plusplus': 'off', // 一元操作符
     'no-nested-ternary': 'off', // 禁用嵌套的三元表达式
     'no-bitwise': 'off', // 禁用按位运算符
     'no-multi-assign': 'off', // 禁止连续赋值
-    'vue/no-v-model-argument': 'off', // v-model 带参数
-    'vue/no-multiple-template-root': 'off', // 根元素只有一个
     'no-restricted-exports': 'off', // 禁止默认导出
     'vue/multi-word-component-names': 'off' // 禁止多个单词名称
   }
