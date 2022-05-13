@@ -6,7 +6,7 @@
 import { useClick } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

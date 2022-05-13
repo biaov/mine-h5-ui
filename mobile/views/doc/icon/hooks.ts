@@ -10,11 +10,14 @@ export const useWebData = () => {
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   let copyText: string
   const listData: ListItem[] = initData // 列表数据
+
   listData[3].list = IconData.map((name, id) => ({ id, name }))
+
   // 点击列表
   const onClick = (name: string) => {
     copyText = name
   }
+
   onMounted(() => {
     const clipboard = new ClipboardJS(icons.value!, {
       text: () => copyText
@@ -26,5 +29,6 @@ export const useWebData = () => {
       $MeToast('复制失败')
     })
   })
+
   return { icons, listData, onClick }
 }

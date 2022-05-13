@@ -5,6 +5,7 @@ import { ListDataItem, ChildListItem } from './interfaces'
 // 操作输入框
 export const useHandlerInput = () => {
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击短信验证码
   const onSMS = (item: ChildListItem) => {
     let num = 60
@@ -22,6 +23,7 @@ export const useHandlerInput = () => {
       }
     }, 1000)
   }
+
   // 点击图标
   const onIcon = (item: ChildListItem) => {
     // 判断是否为清理按钮

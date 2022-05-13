@@ -1,21 +1,21 @@
-.m-slider {
+.slider {
   cursor: pointer;
   > li {
     margin-bottom: 10px;
-    .u-label {
+    .label {
       width: 100%;
       margin-bottom: 10px;
       color: @font-color-reduce;
       font-size: @font-size-min;
     }
     :deep(.me-slider) {
-      .m-drag {
+      .drag {
         cursor: grab;
       }
-      &[data-disabled='true'] :deep(.m-drag) {
+      &[data-disabled='true'] :deep(.drag) {
         cursor: not-allowed;
       }
-      .u-btn {
+      .btn {
         width: 30px;
         height: 30px;
         line-height: 30px;

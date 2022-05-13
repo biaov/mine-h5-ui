@@ -3,13 +3,13 @@
 </style>
 <template>
   <!-- 图片 -->
-  <div class="m-img">
-    <ul class="m-list-img">
+  <div class="img">
+    <ul class="list-img">
       <li v-for="item in listData" :key="item.id">
-        <div class="u-label">{{ item.label }}</div>
-        <ul class="m-list-all">
+        <div class="label">{{ item.label }}</div>
+        <ul class="list-all">
           <li v-for="it in item.list" :key="it.id">
-            <me-img :src="it.src" :width="it.width" :height="it.height" :fill="it.fill" :radius="it.radius" @on-load="onLoad" @on-error="onError"></me-img>
+            <me-img :src="it.src" :width="it.width" :height="it.height" :fill="it.fill" :radius="it.radius" @load="onLoad" @error="onError"></me-img>
             <span v-if="it.width && !it.height">width:{{ it.width }}</span>
             <span v-if="!it.width && it.height">height:{{ it.height }}</span>
             <span v-if="it.width && it.height">width:{{ it.width }};height:{{ it.height }}</span>
@@ -21,7 +21,7 @@
     </ul>
     <me-mask :visible="isShowMask">
       <me-loading type="circle2" color="#f56c6c" size="100px">
-        <div class="u-text">加载中...</div>
+        <div class="text">加载中...</div>
       </me-loading>
     </me-mask>
   </div>

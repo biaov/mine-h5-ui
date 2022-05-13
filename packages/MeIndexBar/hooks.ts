@@ -44,7 +44,7 @@ export const useScroll = () => {
 export const useBtns = (emit: Emits) => {
   // 点击内容列表
   const handleLi = (item: CityItem) => {
-    emit('on-click', { ...item })
+    emit('click', { ...item })
   }
 
   return { handleLi }

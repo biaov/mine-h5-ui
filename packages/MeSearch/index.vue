@@ -4,7 +4,7 @@
     <me-icon name="icon-search1" size="15px" color="inherit"></me-icon>
     <input
       type="search"
-      class="u-input"
+      class="input"
       v-model="inputVal"
       @focus="onFocus"
       @blur="onBlur"
@@ -15,10 +15,10 @@
       :style="`text-align:${align};`"
       :disabled="disabled"
     />
-    <transition name="fade">
-      <me-icon name="icon-close" size="16px" color="inherit" @on-click="onClean" v-if="modelValue"></me-icon>
+    <transition name="me-fade">
+      <me-icon name="icon-close" size="16px" color="inherit" @click="onClean" v-if="modelValue"></me-icon>
     </transition>
-    <div class="u-btn" @click="handleBtn" v-if="btnText">{{ btnText }}</div>
+    <div class="btn" @click="handleBtn" v-if="btnText">{{ btnText }}</div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -27,24 +27,24 @@ import MeIcon from '../MeIcon'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', str: string): void
-  (event: 'on-click'): void
-  (event: 'on-search'): void
-  (event: 'on-focus', e: FocusEvent): void
-  (event: 'on-blur', e: FocusEvent): void
-  (event: 'on-input', e: Event): void
-  (event: 'on-change', e: Event): void
+  (event: 'click'): void
+  (event: 'search'): void
+  (event: 'focus', e: FocusEvent): void
+  (event: 'blur', e: FocusEvent): void
+  (event: 'input', e: Event): void
+  (event: 'change', e: Event): void
 }>()
 
 const props = withDefaults(
   defineProps<{
     modelValue: string // v-model 绑定值
-    placeholder: string // 占位符
-    btnText: string // 右侧按钮内容
-    align: string // 搜索框对齐方式, left | center | right | justify | inherit
-    radius: string // 搜索框倒角
-    background: string // 搜索框背景色
-    color: string // 字体颜色
-    disabled: boolean // 是否禁用输入框
+    placeholder?: string // 占位符
+    btnText?: string // 右侧按钮内容
+    align?: string // 搜索框对齐方式, left | center | right | justify | inherit
+    radius?: string // 搜索框倒角
+    background?: string // 搜索框背景色
+    color?: string // 字体颜色
+    disabled?: boolean // 是否禁用输入框
   }>(),
   {
     placeholder: '请搜索',

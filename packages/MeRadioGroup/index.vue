@@ -9,7 +9,7 @@ import { useInitSlots } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', name: string | number): void
-  (event: 'on-change', name: string | number): void
+  (event: 'change', name: string | number): void
 }>()
 
 const props = withDefaults(

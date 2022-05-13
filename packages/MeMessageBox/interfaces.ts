@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { OnOff, OnOk, HookFn, MessageBoxFn } from './types'
 
 // 传参

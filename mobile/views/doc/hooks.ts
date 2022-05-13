@@ -7,6 +7,8 @@ export const useRouteHandler = () => {
     meta: { title },
     path
   } = useRoute()
+
   PostMessage(window.parent!).send(path)
+
   return { title }
 }

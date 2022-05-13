@@ -3,9 +3,9 @@
 </style>
 <template>
   <!-- 索引栏 -->
-  <div class="m-drag">
-    <div class="u-label">基础使用</div>
-    <me-drag v-model:list="listData" v-model:current="current" @on-change="onChange">
+  <div class="drag">
+    <div class="label">基础使用</div>
+    <me-drag v-model:list="listData" v-model:current="current" @change="onChange">
       <template #default="{ item }">
         <img :src="item.url" alt="img" mode="fill" />
       </template>

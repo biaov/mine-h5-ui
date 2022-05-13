@@ -5,7 +5,7 @@ import MarkdownItContainer from 'markdown-it-container'
 
 // vite 插件配置
 export const vitePluginVuedocConfig: Partial<VueDocPluginOptions> = {
-  wrapperClass: 'm-md-demo',
+  wrapperClass: 'md-demo',
   highlight: {
     theme: 'one-light' // one-dark|one-light
   },

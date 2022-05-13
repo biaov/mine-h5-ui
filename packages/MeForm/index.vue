@@ -9,13 +9,13 @@ import { useHandler } from './hooks'
 import { Model, RuleItem, Option } from './interfaces'
 
 const emit = defineEmits<{
-  (event: 'on-submit', option: Option): void
+  (event: 'submit', option: Option): void
 }>()
 
 const props = withDefaults(
   defineProps<{
-    model?: Model // 验证数据
-    rules?: RuleItem[] // 验证规则
+    model?: Model // 校验数据
+    rules?: RuleItem[] // 校验规则
   }>(),
   {
     model: () => ({}),

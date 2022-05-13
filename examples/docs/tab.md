@@ -36,7 +36,7 @@ app.mount('#app')
 
 ```Vue
 <template>
-  <me-tab v-model="active" @on-change="onChange">
+  <me-tab v-model="active" @change="onChange">
     <me-tab-item v-for="item in listData" :key="item.id" :name="item.id" :label="item.label" v-text="item.content"></me-tab-item>
   </me-tab>
 </template>
@@ -106,12 +106,12 @@ const onChange = index => {
 
 #### MeTab
 
-| 方法名    | 说明                     | 回调参数     | 版本 |
-| --------- | ------------------------ | ------------ | ---- |
-| on-change | 点击列表改变时触发的事件 | index:number | --   |
+| 方法名 | 说明                     | 回调参数      | 版本  |
+| ------ | ------------------------ | ------------- | ----- |
+| change | 点击列表改变时触发的事件 | index: number | 2.3.5 |
 
 #### MeTabItem
 
-| 方法名   | 说明                   | 回调参数         | 版本 |
-| -------- | ---------------------- | ---------------- | ---- |
-| on-click | 点击列表项时触发的事件 | event:MouseEvent | --   |
+| 方法名 | 说明                   | 回调参数      | 版本  |
+| ------ | ---------------------- | ------------- | ----- |
+| click  | 点击列表项时触发的事件 | e: MouseEvent | 2.3.5 |

@@ -3,16 +3,16 @@
 </style>
 <template>
   <!-- 进度条 -->
-  <ul class="m-progress-bar">
+  <ul class="progress-bar">
     <li v-for="(item, index) in listData" :key="index">
-      <div class="u-label">{{ item.label }}</div>
+      <div class="label">{{ item.label }}</div>
       <me-progress-bar v-model="item.value" v-bind="item"></me-progress-bar>
-      <me-button type="primary" @on-click="onStart(item)">点击开始</me-button>
+      <me-button type="primary" @click="onStart(item)">点击开始</me-button>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onStart } = useHandlerClick()
+const { listData, onStart } = useHandle()
 </script>

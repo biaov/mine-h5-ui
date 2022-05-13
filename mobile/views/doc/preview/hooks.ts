@@ -6,9 +6,11 @@ import { ListDataItem } from './interfaces'
 export const useHandler = () => {
   const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击图片预览
   const onPreview = (item: ListDataItem) => {
     $MePreview(item)
   }
+
   return { listData, onPreview }
 }

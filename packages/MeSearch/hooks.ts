@@ -8,27 +8,27 @@ export const useSearch = (props: Props, emit: Emits) => {
 
   // 点击软键盘的搜索/回车按钮
   const onKeypress = (e: KeyboardEvent) => {
-    e.key === 'Enter' && emit('on-search')
+    e.key === 'Enter' && emit('search')
   }
 
   // 输入框聚焦
   const onFocus = (e: FocusEvent) => {
-    emit('on-focus', e)
+    emit('focus', e)
   }
 
   // 输入框失去焦点
   const onBlur = (e: FocusEvent) => {
-    emit('on-blur', e)
+    emit('blur', e)
   }
 
   // 输入框 change 事件
   const onChange = (e: Event) => {
-    emit('on-change', e)
+    emit('change', e)
   }
 
   // 输入框 input 事件
   const onInput = (e: Event) => {
-    emit('on-input', e)
+    emit('input', e)
   }
 
   // 监听参数value的变化
@@ -56,7 +56,7 @@ export const useBtns = (emit: Emits) => {
 
   // 点击自定义按钮
   const handleBtn = () => {
-    emit('on-click')
+    emit('click')
   }
 
   return { onClean, handleBtn }

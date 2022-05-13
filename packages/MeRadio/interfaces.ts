@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Ref } from 'vue'
 
 // 父组件参数
@@ -11,7 +10,7 @@ export interface RadioGroupContext {
 // emits
 export interface Emits {
   (event: 'update:modelValue', bool: boolean): void
-  (event: 'on-click'): void
+  (event: 'click'): void
 }
 
 // props

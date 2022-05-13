@@ -56,7 +56,7 @@ export const useHandMove = (props: Props, emit: Emits) => {
       transY.value = showValue.value
       scale.value = 1
       emit('update:modelValue', true)
-      emit('on-refresh')
+      emit('refresh')
     } else {
       activeState.value = 0
       transY.value = 0
@@ -98,7 +98,7 @@ export const useHandMove = (props: Props, emit: Emits) => {
       transY.value = showValue.value
       scale.value = 1
       emit('update:modelValue', true)
-      emit('on-refresh')
+      emit('refresh')
     } else {
       activeState.value = 0
       transY.value = 0

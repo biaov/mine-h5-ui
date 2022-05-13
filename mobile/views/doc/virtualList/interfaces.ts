@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
-
 // 子列表项
 export interface ChildListItem {
   text: string
 }
+
 // list item
 export interface ListDataItem {
   id: number

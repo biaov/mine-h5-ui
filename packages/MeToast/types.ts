@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { PublicProps } from '../types'
 import { Option, Props as DefaultProps } from './interfaces'
 

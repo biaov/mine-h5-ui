@@ -1,13 +1,13 @@
 <template>
   <!-- 文档 -->
-  <div class="m-doc">
+  <div class="doc">
     <!-- 头部 -->
     <mine-header></mine-header>
     <!-- 内容 -->
-    <div class="m-content">
+    <div class="content">
       <!-- 菜单列表 -->
       <side-bar></side-bar>
-      <div class="m-md">
+      <div class="md">
         <!-- 使用文档 -->
         <router-view></router-view>
       </div>

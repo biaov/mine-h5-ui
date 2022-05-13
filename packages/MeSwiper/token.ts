@@ -1,1 +1,1 @@
-export const MeSwiperKey = 'MeSwiper' // token 验证 key
+export const MeSwiperKey = 'MeSwiper' // token 校验 key

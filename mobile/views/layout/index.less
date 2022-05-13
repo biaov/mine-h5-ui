@@ -1,5 +1,6 @@
 @padding-15: 15px;
-.m-layout {
+
+.layout {
   height: 100vh;
   padding: @padding-15;
   overflow-y: auto;
@@ -11,9 +12,9 @@
     color: @font-color-reduce;
     font-size: @font-size;
   }
-  .m-hd {
+  .hd {
     margin-bottom: 30px;
-    .u-tit {
+    .tit {
       display: flex;
       align-items: center;
       width: 100%;
@@ -28,18 +29,18 @@
         font-weight: 500;
       }
     }
-    .u-desc {
+    .desc {
       .same-font;
     }
   }
-  .m-list-out {
-    .u-tit {
+  .list-out {
+    .tit {
       .same-padding;
       .same-font;
       height: 30px;
       line-height: 30px;
     }
-    .m-list-in {
+    .list-in {
       > li {
         margin-bottom: 10px;
         > a {

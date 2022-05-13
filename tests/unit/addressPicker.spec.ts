@@ -8,26 +8,33 @@ describe('MeAddressPicker', () => {
       props: { visible: true }
     })
     const viewer = wrapper.find('.me-address-picker') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
   })
-  test('emit on-sure', async () => {
+
+  test('emit sure', async () => {
     // 向组件里传参
     const wrapper = mount(MeAddressPicker, {
       props: { visible: true }
     })
     const viewer = wrapper.find('.me-address-picker') // 获取 DOM
-    const sureBtn = viewer.find('button.u-sure')
+    const sureBtn = viewer.find('button.sure')
+
     await sureBtn.trigger('click') // 点击确定按钮
-    expect(wrapper.emitted('on-sure')).toBeTruthy() // 是否为真
+
+    expect(wrapper.emitted('sure')).toBeTruthy() // 是否为真
   })
-  test('emit on-cancel', async () => {
+
+  test('emit cancel', async () => {
     // 向组件里传参
     const wrapper = mount(MeAddressPicker, {
       props: { visible: true }
     })
     const viewer = wrapper.find('.me-address-picker') // 获取 DOM
-    const cancelBtn = viewer.find('button.u-cancel')
+    const cancelBtn = viewer.find('button.cancel')
+
     await cancelBtn.trigger('click') // 点击取消按钮
-    expect(wrapper.emitted('on-cancel')).toBeTruthy() // 是否为真
+
+    expect(wrapper.emitted('cancel')).toBeTruthy() // 是否为真
   })
 })

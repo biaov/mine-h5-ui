@@ -1,8 +1,8 @@
 <template>
   <!-- 时间线 -->
-  <div class="m-copy-code">
-    <div ref="copyDom" class="u-copy" data-clipboard-action="copy" title="复制"><img src="../../assets/icon-copy-2.png" alt="copy" /></div>
-    <div ref="codeCont" class="m-cont">
+  <div class="copy-code">
+    <div ref="copyDom" class="copy" data-clipboard-action="copy" title="复制"><img src="../../assets/icon-copy-2.png" alt="copy" /></div>
+    <div ref="codeCont" class="cont">
       <slot></slot>
     </div>
   </div>

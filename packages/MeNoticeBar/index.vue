@@ -2,35 +2,35 @@
   <!-- 公告栏 -->
   <div class="me-notice-bar" :style="`height:${height}px;border-radius:${radius + (String(radius).includes('px') ? '' : 'px')};background:${background};`">
     <!-- 前面图标 -->
-    <div class="u-icon u-icon-preappend" :style="`color:${preappendColor};`" @click="onClickPreappend">
+    <div class="icon icon-preappend" :style="`color:${preappendColor};`" @click="onClickPreappend">
       <i :class="`iconfont icon-${preappendIcon}`"></i>
     </div>
     <!-- 滚动公告 -->
-    <div class="u-notice">
+    <div class="notice">
       <!-- 水平动画 -->
-      <ul class="u-notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll === 'horizontal'">
+      <ul class="notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll === 'horizontal'">
         <li v-for="(item, index) in listData" :key="index" @click="onClick(index)">
           <span>{{ item }}</span>
         </li>
       </ul>
       <!-- 垂直动画 -->
-      <transition name="slide" mode="out-in" v-else>
-        <div class="u-notice-vertical" :key="listIndex" @click="onClick(listIndex)" :style="`color:${color};`">
+      <transition name="me-slide" mode="out-in" v-else>
+        <div class="notice-vertical" :key="listIndex" @click="onClick(listIndex)" :style="`color:${color};`">
           <span>{{ listData[listIndex] }}</span>
         </div>
       </transition>
     </div>
     <!-- 后面图标 -->
-    <div class="u-icon u-icon-append" :style="`color:${appendColor};`" @click="onClickAppend"><i :class="`iconfont icon-${appendIcon}`"></i></div>
+    <div class="icon icon-append" :style="`color:${appendColor};`" @click="onClickAppend"><i :class="`iconfont icon-${appendIcon}`"></i></div>
   </div>
 </template>
 <script lang="ts" setup>
 import { useAnimate, useBtns } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-click', index: number): void
-  (event: 'on-click:preappend', e: MouseEvent): void
-  (event: 'on-click:append', e: MouseEvent): void
+  (event: 'click', index: number): void
+  (event: 'click:preappend', e: MouseEvent): void
+  (event: 'click:append', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

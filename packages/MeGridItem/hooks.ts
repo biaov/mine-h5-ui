@@ -20,7 +20,7 @@ export const useHandler = (emit: Emits) => {
 
   // 点击列表项
   const handleClick = (e: MouseEvent) => {
-    emit('on-click', e)
+    emit('click', e)
   }
 
   return { widthValue, borderColor, handleClick }

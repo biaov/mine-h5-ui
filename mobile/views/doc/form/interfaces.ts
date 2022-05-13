@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // 规则项
 export interface RulesItem {
   type: string

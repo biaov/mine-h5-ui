@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // props list
 export interface ListItem {
   icon: string
@@ -9,8 +8,8 @@ export interface ListItem {
 // emits
 export interface Emits {
   (event: 'update:visible', bool: boolean): void
-  (event: 'on-change', e: ListItem): void
-  (event: 'on-cancel', e: MouseEvent): void
+  (event: 'change', e: ListItem): void
+  (event: 'cancel', e: MouseEvent): void
 }
 
 // props

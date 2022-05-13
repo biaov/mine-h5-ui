@@ -3,7 +3,7 @@
 </style>
 <template>
   <!-- 文档 -->
-  <div class="m-docs">
+  <div class="docs">
     <!-- 头部 -->
     <mine-header>{{ title }}</mine-header>
     <!-- 内容 -->

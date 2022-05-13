@@ -9,7 +9,7 @@ export const useSms = (props: Props, emit: Emits) => {
   // 点击短信验证码
   const handleSMS = (e: MouseEvent) => {
     // 判断是否处于倒计时状态
-    !props.smsIs && emit('on-click-sms', e)
+    !props.smsIs && emit('click-sms', e)
   }
 
   return { sms, handleSMS }
@@ -23,7 +23,7 @@ export const useIcon = (props: Props, emit: Emits, inputType: Ref<string>) => {
     if (props.password) {
       inputType.value = inputType.value === 'password' ? 'text' : 'password'
     } else {
-      emit('on-click-icon', e)
+      emit('click-icon', e)
     }
   }
 
@@ -53,25 +53,25 @@ export const useInput = (props: Props, emit: Emits, sms: Ref<HTMLDivElement | un
   // 输入框聚焦
   const onFocus = (e: FocusEvent) => {
     isFocus.value = !isFocus.value
-    emit('on-focus', e)
+    emit('focus', e)
   }
 
   // 输入框失去焦点
   const onBlur = (e: FocusEvent) => {
     isFocus.value = !isFocus.value
-    emit('on-blur', e)
+    emit('blur', e)
   }
 
   // 输入框 change 事件
   const onChange = (e: Event) => {
     isFocus.value = !isFocus.value
-    emit('on-change', e)
+    emit('change', e)
   }
 
   // 输入框 input 事件
   const onInput = (e: Event) => {
     isFocus.value = !isFocus.value
-    emit('on-input', e)
+    emit('input', e)
   }
 
   onMounted(() => {
@@ -97,7 +97,7 @@ export const useInput = (props: Props, emit: Emits, sms: Ref<HTMLDivElement | un
     emit('update:modelValue', value)
   })
 
-  // 监听短信验证状态
+  // 监听短信校验状态
   watch(
     () => props.smsIs,
     () => {

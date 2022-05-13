@@ -153,9 +153,9 @@ const listData = Object.freeze([
 
 #### 方法
 
-| 方法名    | 说明               | 回调参数              | 版本 |
-| --------- | ------------------ | --------------------- | ---- |
-| on-change | 轮播滚动改变时触发 | `name:CallbackParams` | --   |
+| 方法名 | 说明               | 回调参数              | 版本  |
+| ------ | ------------------ | --------------------- | ----- |
+| change | 轮播滚动改变时触发 | `name:CallbackParams` | 2.3.5 |
 
 - `CallbackParams:string|number`
 

@@ -80,7 +80,7 @@ const current = $ref(0) // 当前选中项
 | angleRange      | 对正角度范围,单位度(°) | number | --     | 5       | --    |
 | scale           | 双指缩放一倍的像素     | number | --     | 100     | 2.3.3 |
 
-#### Slots
+### Slots
 
 | 具名插槽 | 说明     | scopedSlots     | 版本 |
 | -------- | -------- | --------------- | ---- |
@@ -88,8 +88,8 @@ const current = $ref(0) // 当前选中项
 
 ### 方法
 
-| 方法名         | 说明           | 回调参数                  | 版本 |
-| -------------- | -------------- | ------------------------- | ---- |
-| on-change      | 拖拽改变时触发 | list: Array, name: string | --   |
-| update:current | 更新选中项触发 | value: number             | --   |
-| update:list    | 更新列表触发   | list: Array               | --   |
+| 方法名         | 说明           | 回调参数                  | 版本  |
+| -------------- | -------------- | ------------------------- | ----- |
+| change         | 拖拽改变时触发 | list: any[], name: string | 2.3.5 |
+| update:current | 更新选中项触发 | value: number             | --    |
+| update:list    | 更新列表触发   | list: any[]               | --    |

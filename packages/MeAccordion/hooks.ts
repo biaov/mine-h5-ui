@@ -11,7 +11,7 @@ export const useInitSlots = (props: Props, emit: Emits) => {
   const onChange = (name: string | number) => {
     const value = name !== props.modelValue ? name : ''
     emit('update:modelValue', value)
-    emit('on-change', value)
+    emit('change', value)
   }
 
   provide(MeAccordionKey, { name: MeAccordionKey, currentValue, onChange })

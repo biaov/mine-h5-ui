@@ -4,7 +4,7 @@ import { Emits } from './interfaces'
 export const useClick = (emit: Emits) => {
   // 点击按钮
   const onClick = (e: MouseEvent) => {
-    emit('on-click', e)
+    emit('click', e)
   }
 
   return { onClick }

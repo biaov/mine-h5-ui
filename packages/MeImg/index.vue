@@ -9,19 +9,19 @@
 import { useImgEvent } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-click', e: MouseEvent): void
-  (event: 'on-load', e: Event): void
-  (event: 'on-error', e: Event): void
+  (event: 'click', e: MouseEvent): void
+  (event: 'load', e: Event): void
+  (event: 'error', e: Event): void
 }>()
 
 const props = withDefaults(
   defineProps<{
     src: string // 图片地址
-    width: string // 宽度
-    height: string // 高度
-    fill: string // 填充方式
-    radius: string // 倒角
-    alt: string // 错误显示 alt
+    width?: string // 宽度
+    height?: string // 高度
+    fill?: string // 填充方式
+    radius?: string // 倒角
+    alt?: string // 错误显示 alt
   }>(),
   {
     width: '',

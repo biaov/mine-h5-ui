@@ -2,9 +2,9 @@
   <!-- 虚拟列表 -->
   <div class="me-virtual-list" :style="`height:${height};`" @scroll.passive="onScroll">
     <!-- 滚动高度 -->
-    <div class="u-scroll-bar" :style="`height:${scrollBarHeight}px;`"></div>
+    <div class="scroll-bar" :style="`height:${scrollBarHeight}px;`"></div>
     <!-- 列表 -->
-    <ul class="m-list-scroll" :style="`transform:translateY(${scrollTranslateY}px);`">
+    <ul class="list-scroll" :style="`transform:translateY(${scrollTranslateY}px);`">
       <li v-for="item in renderData" :key="item.virtualId" :data-index="item.virtualId" :ref="$event => setItemRef($event, item.virtualId)">
         <slot :item="item"></slot>
       </li>
@@ -17,7 +17,7 @@ import { useHandler } from './hooks'
 import { ListItem } from './interfaces'
 
 const emit = defineEmits<{
-  (event: 'on-load-more'): void
+  (event: 'load-more'): void
 }>()
 
 const props = withDefaults(

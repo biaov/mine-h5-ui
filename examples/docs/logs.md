@@ -14,7 +14,19 @@
 
 :::TimeLine
 
-## v2.3.4-Latest release
+## v2.3.5-Latest release
+
+`2022-05-13`
+
+- 更新封装方法
+  - [更改样式命名](/v2/doc/style)
+- 更新基础组件
+  - [新增单元格组件](/v2/doc/cell)
+- Bug Fixes
+  - 修复已知 Bug
+  - 更新依赖版本
+
+## v2.3.4
 
 `2022-05-05`
 
@@ -44,7 +56,7 @@
 - 更新业务组件
   - [新增拖拽组件](/v2/doc/drag)
 - 更新样式类
-  - 新增镂空效果 - [hollow-out](/v2/doc/css)
+  - 新增镂空效果 - [me-hollow-out](/v2/doc/css)
   - 新增图片填充效果 - [mode="fill,contain,cover"](/v2/doc/css)
 - Bug Fixes
   - 修复已知 Bug

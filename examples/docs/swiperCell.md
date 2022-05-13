@@ -39,11 +39,11 @@ app.mount('#app')
   <!-- 滑动单元格 -->
   <me-swiper-cell>
     <template #content>
-      <h3 class="u-tit">向左滑动显示删除按钮</h3>
+      <h3 class="tit">向左滑动显示删除按钮</h3>
     </template>
     <template #hidden>
-      <div class="m-btns">
-        <me-button type="danger" icon="icon-delete1" @on-click="onDelete">删除</me-button>
+      <div class="btns">
+        <me-button type="danger" icon="icon-delete1" @click="onDelete">删除</me-button>
       </div>
     </template>
   </me-swiper-cell>
@@ -66,7 +66,7 @@ const onDelete = () => {
 <style scoped lang="less">
 .me-swiper-cell {
   // 标题
-  .u-tit {
+  .tit {
     height: 40px;
     line-height: 40px;
     padding: 0 15px;
@@ -75,7 +75,7 @@ const onDelete = () => {
     font-size: 14px;
   }
   // 按钮
-  .m-btns {
+  .btns {
     display: flex;
     justify-content: space-between;
     width: 100px;
@@ -100,15 +100,15 @@ const onDelete = () => {
 | ---- | ---- | ---- | ------ | ------ | ---- |
 | --   | --   | --   | --     | --     | --   |
 
-### 方法
-
-| 方法名 | 说明 | 回调参数 | 版本 |
-| ------ | ---- | -------- | ---- |
-| --     | --   | --       | --   |
-
 ### Slots
 
 | 具名插槽 | 说明               | scopedSlots | 版本 |
 | -------- | ------------------ | ----------- | ---- |
 | content  | 需要显示的内容区域 | --          | --   |
 | hidden   | 需要隐藏的内容区域 | --          | --   |
+
+### 方法
+
+| 方法名 | 说明 | 回调参数 | 版本 |
+| ------ | ---- | -------- | ---- |
+| --     | --   | --       | --   |

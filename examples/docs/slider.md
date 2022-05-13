@@ -81,7 +81,7 @@ const styles = Object.freeze({
 ```HTML
 <template>
   <me-slider v-model="sliderValue" :is-btn="true">
-    <div class="u-btn" v-text="sliderValue"></div>
+    <div class="btn" v-text="sliderValue"></div>
   </me-slider>
 </template>
 <script lang="ts" setup>
@@ -89,7 +89,7 @@ const sliderValue = $ref(30) // 当前滑块值
 </script>
 <style scoped lang="less">
 .me-slider {
-  .u-btn {
+  .btn {
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -138,16 +138,16 @@ const sliderValue = $ref(30) // 当前滑块值
 | radius  | 线条倒角                       | string | --     | 2px     | --   |
 | lineBgc | 线条背景色，支持 background 值 | string | --     | #409eff | --   |
 
-### 方法
-
-| 方法名   | 说明                 | 回调参数    | 版本 |
-| -------- | -------------------- | ----------- | ---- |
-| on-start | 开始拖动时触发的事件 | event:Event | --   |
-| on-move  | 正在拖动中触发的事件 | event:Event | --   |
-| on-end   | 结束拖动时触发的事件 | event:Event | --   |
-
 ### Slots
 
 | 具名插槽 | 说明     | scopedSlots | 版本 |
 | -------- | -------- | ----------- | ---- |
 | default  | 默认名称 | --          | --   |
+
+### 方法
+
+| 方法名 | 说明                 | 回调参数 | 版本  |
+| ------ | -------------------- | -------- | ----- |
+| start  | 开始拖动时触发的事件 | e: Event | 2.3.5 |
+| move   | 正在拖动中触发的事件 | e: Event | 2.3.5 |
+| end    | 结束拖动时触发的事件 | e: Event | 2.3.5 |

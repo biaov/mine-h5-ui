@@ -23,7 +23,7 @@ export const useHandler = (props: Props, emit: Emits) => {
         window.requestAnimationFrame(startCurAnimate)
       } else {
         emit('update:modelValue', false)
-        emit('on-end')
+        emit('end')
       }
     }
 

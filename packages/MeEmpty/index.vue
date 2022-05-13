@@ -2,12 +2,12 @@
   <!-- 空状态 -->
   <div class="me-empty" :style="`min-height:${height}px;`">
     <!-- 图片 -->
-    <div class="u-img">
+    <div class="img">
       <img :src="url" alt="empty" v-if="url" />
       <i :class="`iconfont icon-${icon}`" v-else></i>
     </div>
     <!-- 文本 -->
-    <div class="u-txt">
+    <div class="txt">
       {{ text }}
     </div>
     <slot></slot>

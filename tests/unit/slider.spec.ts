@@ -8,12 +8,14 @@ describe('MeSlider', () => {
       props: { disabled: true }
     })
     const viewer = wrapper.find('.me-slider') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
+
   test('props isBtn', () => {
     const TestComponent = {
-      template: `<MeSlider><button class="u-btn-custom"></button></MeSlider>`,
+      template: `<MeSlider><button class="btn-custom"></button></MeSlider>`,
       components: {
         MeSlider
       }
@@ -22,7 +24,8 @@ describe('MeSlider', () => {
     const wrapper = mount(TestComponent, {
       props: { isBtn: true }
     })
-    const viewer = wrapper.find('.me-slider .u-btn-custom') // 获取 DOM
+    const viewer = wrapper.find('.me-slider .btn-custom') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
   })
 })

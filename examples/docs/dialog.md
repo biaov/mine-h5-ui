@@ -36,16 +36,16 @@ app.mount('#app')
 <template>
   <div @click="handleClick">点击弹出自义定弹出框</div>
   <me-dialog v-model:visible="visible" tips="提示">
-    <div class="m-text">
+    <div class="text">
       走在斑马线上的好处：
       <br />
       我就是一个行人，
       <br />
       赔的多一点！
     </div>
-    <div class="m-btn">
-      <button type="button" class="u-btn-cancel" @click="onCancel">取消</button>
-      <button type="button" class="u-btn-confirm" @click="onConfirm">确定</button>
+    <div class="btn">
+      <button type="button" class="btn-cancel" @click="onCancel">取消</button>
+      <button type="button" class="btn-confirm" @click="onConfirm">确定</button>
     </div>
   </me-dialog>
 </template>
@@ -71,7 +71,7 @@ const onConfirm = () => {
 </script>
 <style scoped lang="less">
 .me-dialog {
-  .m-text {
+  .text {
     padding: 0 10px 16px;
     text-align: center;
     color: #494949;

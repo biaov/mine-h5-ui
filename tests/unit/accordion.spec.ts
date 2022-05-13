@@ -15,6 +15,7 @@ describe('MeAccordion', () => {
       components: { MeAccordion, MeAccordionItem }
     })
     const viewer = wrapper.find('.me-accordion') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.findAll('.me-accordion-item').length).toBe(2)
   })
@@ -35,6 +36,7 @@ describe('MeAccordionItem', () => {
     })
     const viewer = wrapper.find('.me-accordion') // 获取 DOM
     const itemEl = viewer.findAll('.me-accordion-item')[0]
+
     expect(itemEl.html()).toContain(label) // 是否存在
   })
 })

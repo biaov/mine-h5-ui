@@ -3,10 +3,10 @@
 </style>
 <template>
   <!-- 输入框 -->
-  <ul class="m-input">
+  <ul class="input">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
-      <ul class="m-list-all">
+      <div class="label">{{ item.label }}</div>
+      <ul class="list-all">
         <li v-for="it in item.list" :key="it.id">
           <me-input
             v-model="it.value"
@@ -23,8 +23,8 @@
             :sms-msg="it.smsMsg"
             :sms-color="it.smsColor"
             :sms-is="it.smsIs"
-            @on-click-sms="onSMS(it)"
-            @on-click-icon="onIcon(it)"
+            @click-sms="onSMS(it)"
+            @click-icon="onIcon(it)"
             :readonly="it.readonly"
             :disabled="it.disabled"
           ></me-input>

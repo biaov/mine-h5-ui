@@ -18,7 +18,7 @@ import { useHandler } from './hooks'
 import { NativeType } from './types'
 
 const emit = defineEmits<{
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }>()
 
 const props = defineProps({

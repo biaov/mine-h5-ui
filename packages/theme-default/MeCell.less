@@ -1,0 +1,45 @@
+/**
+  * @file 单元格
+*/
+
+@import './variable.less';
+
+.me-cell {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  &.bottom {
+    border-bottom: 1px solid @border-color-default;
+  }
+
+  .lf,
+  .rt {
+    display: flex;
+    align-items: center;
+  }
+
+  .lf {
+    color: @font-color;
+    font-size: @font-size;
+    .me-icon {
+      margin-right: 5px;
+      color: var(--icon-color);
+    }
+  }
+
+  .rt {
+    color: @font-color;
+    font-size: @font-size;
+
+    .placeholder {
+      color: @font-color-light;
+    }
+    .me-icon {
+      margin-left: 5px;
+      color: @font-color-light;
+      font-size: @font-size-large;
+    }
+  }
+}

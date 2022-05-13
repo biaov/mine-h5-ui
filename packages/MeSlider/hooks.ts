@@ -19,7 +19,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     startX = e.changedTouches[0].clientX // 获取初始位置
     changeValue = props.modelValue // 保存第一次的value参数值
     screenW = document.body.offsetWidth // 获取元素整体宽度
-    emit('on-start', e)
+    emit('start', e)
   }
 
   // 接触点改变，滑动时
@@ -30,12 +30,12 @@ export const useHandler = (props: Props, emit: Emits) => {
     // 判断是否大于0,大于0:向右拖拽,小于0:向左拖拽
     afterVal = diffX > 0 ? (afterVal > props.max ? props.max : afterVal) : afterVal < props.min ? props.min : afterVal
     emit('update:modelValue', afterVal)
-    emit('on-move', e)
+    emit('move', e)
   }
 
   // 触摸结束
   const onTouchend = (e: TouchEvent) => {
-    emit('on-end', e)
+    emit('end', e)
   }
 
   // pc端鼠标按下移动
@@ -46,14 +46,14 @@ export const useHandler = (props: Props, emit: Emits) => {
     // 判断是否大于0,大于0:向右拖拽,小于0:向左拖拽
     afterVal = diffX > 0 ? (afterVal > props.max ? props.max : afterVal) : afterVal < props.min ? props.min : afterVal
     emit('update:modelValue', afterVal)
-    emit('on-move', e)
+    emit('move', e)
   }
 
   // pc端鼠标抬起
   const onMouseup = (e: MouseEvent) => {
     document.onmousemove = null // 清理上次的移动事件
     document.onmouseup = null // 清理上次的抬起事件
-    emit('on-end', e)
+    emit('end', e)
   }
 
   // pc端鼠标按下
@@ -63,7 +63,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     screenW = document.body.offsetWidth // 获取元素整体宽度
     document.onmousemove = onMousemove // 表达式声明移动事件
     document.onmouseup = onMouseup // 表达式声明抬起事件
-    emit('on-start', e)
+    emit('start', e)
   }
 
   watch(

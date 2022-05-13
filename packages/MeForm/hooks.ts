@@ -21,14 +21,14 @@ export const useHandler = (props: Props, emit: Emits) => {
 
       // 判断是否该存在属性
       if (arr.includes(type)) {
-        // 是否存在验证规则
+        // 是否存在校验规则
         if (validator !== undefined || pattern !== undefined || required !== undefined) {
-          // 是否通过验证
+          // 是否通过校验
           const valid = validator !== undefined ? validator(props.model[type]) : pattern !== undefined ? pattern.test(props.model[type]) : String(props.model[type]).trim() !== ''
 
-          // 只要存在验证不通过则结束此次循环
+          // 只要存在校验不通过则结束此次循环
           if (!valid) {
-            option.valid = valid // 验证规则
+            option.valid = valid // 校验规则
             option.message = message || '' // 提示信息
             option.type = type
             message && MeToast(message) // 是否显示提示
@@ -38,7 +38,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       }
     }
 
-    emit('on-submit', option)
+    emit('submit', option)
   }
 
   return { onSubmit }

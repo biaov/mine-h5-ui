@@ -10,25 +10,33 @@ describe('MeTabBar', () => {
       state: false
     }
   ]
+
   test('props list', () => {
     // 向组件里传参
     const wrapper = mount(MeTabBar, {
       props: { list }
     })
     const viewer = wrapper.find('.me-tab-bar') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
-    const textEl = viewer.find('li:first-child .u-txt')
+
+    const textEl = viewer.find('li:first-child .txt')
+
     expect(textEl.exists()).toBeTruthy()
     expect(textEl.text()).toBe(text)
   })
-  test('emit on-change', async () => {
+
+  test('emit change', async () => {
     // 向组件里传参
     const wrapper = mount(MeTabBar, {
       props: { list }
     })
     const viewer = wrapper.find('.me-tab-bar>li:first-child') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     await viewer.trigger('click')
-    expect(wrapper.emitted('on-change')).toBeDefined()
+
+    expect(wrapper.emitted('change')).toBeDefined()
   })
 })

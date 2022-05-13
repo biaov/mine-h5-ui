@@ -46,7 +46,7 @@ export default [
         id: 1,
         value: '弹出 Custom 自定义框',
         type: 'custom',
-        html: `<div class="m-message-cont">健康的身体是实现目标的基石</div>`
+        html: `<div class="message-cont">健康的身体是实现目标的基石</div>`
       }
     ]
   }

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // type 值
 export interface TypeIds {
   'year-month': number[]
@@ -17,8 +16,8 @@ export interface ListDataItem {
 // emits
 export interface Emits {
   (event: 'update:modelValue', str: string): void
-  (event: 'on-cancel'): void
-  (event: 'on-sure', arr: number[]): void
+  (event: 'cancel'): void
+  (event: 'sure', arr: number[]): void
 }
 
 // props

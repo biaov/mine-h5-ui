@@ -2,7 +2,7 @@
   <!-- 复选框 -->
   <div class="me-checkbox" @click="handleClick" :data-checked="isChecked + ''" :data-disabled="disabled + ''">
     <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
-    <div class="u-value">
+    <div class="value">
       <slot></slot>
     </div>
   </div>
@@ -13,7 +13,7 @@ import { useHandler } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', bool: boolean): void
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

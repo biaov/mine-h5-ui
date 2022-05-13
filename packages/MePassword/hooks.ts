@@ -38,9 +38,9 @@ export const useHandler = (props: Props, emit: Emits) => {
         }
       }
 
-      emit('on-focus', e)
+      emit('focus', e)
     } else {
-      emit('on-blur', e)
+      emit('blur', e)
     }
   }
 

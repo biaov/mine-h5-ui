@@ -33,8 +33,8 @@ app.mount('#app')
 
 ```Vue
 <template>
-  <me-password v-model="iptValue" @on-focus="onFocus" @on-blur="onBlur"></me-password>
-  <me-keyboard v-model="keyboardValue" @on-click="handleNum" @on-delete="onDelete" @on-complate="onComplate"></me-keyboard>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur"></me-password>
+  <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
 let iptValue = $ref('') // 当前输入框值
@@ -73,8 +73,8 @@ const onComplate = () => {
 
 ```Vue
 <template>
-  <me-password v-model="iptValue" @on-focus="onFocus" @on-blur="onBlur" skin-type="dark"></me-password>
-  <me-keyboard v-model="keyboardValue" @on-click="handleNum" @on-delete="onDelete" @on-complate="onComplate"></me-keyboard>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" skin-type="dark"></me-password>
+  <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
 let iptValue = $ref('') // 当前输入框值
@@ -113,8 +113,8 @@ const onComplate = () => {
 
 ```Vue
 <template>
-  <me-password v-model="iptValue" @on-focus="onFocus" @on-blur="onBlur" :num="4"></me-password>
-  <me-keyboard v-model="keyboardValue" @on-click="handleNum" @on-delete="onDelete" @on-complate="onComplate"></me-keyboard>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" :num="4"></me-password>
+  <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
 let iptValue = $ref('') // 当前输入框值
@@ -153,8 +153,8 @@ const onComplate = () => {
 
 ```HTML
 <template>
-  <me-password v-model="iptValue" @on-focus="onFocus" @on-blur="onBlur" type="number"></me-password>
-  <me-keyboard v-model="keyboardValue" @on-click="handleNum" @on-delete="onDelete" @on-complate="onComplate"></me-keyboard>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" type="number"></me-password>
+  <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
 let iptValue = $ref('') // 当前输入框值
@@ -198,7 +198,7 @@ const onComplate = () => {
 
 ### 方法
 
-| 方法名   | 说明                       | 回调参数         | 版本 |
-| -------- | -------------------------- | ---------------- | ---- |
-| on-focus | 输入框聚焦时触发的事件     | event:MouseEvent | --   |
-| on-blur  | 输入框失去焦点时触发的事件 | event:MouseEvent | --   |
+| 方法名 | 说明                       | 回调参数      | 版本  |
+| ------ | -------------------------- | ------------- | ----- |
+| focus  | 输入框聚焦时触发的事件     | e: MouseEvent | 2.3.5 |
+| blur   | 输入框失去焦点时触发的事件 | e: MouseEvent | 2.3.5 |

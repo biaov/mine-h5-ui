@@ -76,7 +76,7 @@ app.mount('#app')
 
 ```HTML
 <me-input v-model="inputValue" label="密码" :password="true"></me-input>
-<me-input v-model="inputValue" label="清理" icon="icon-close" @on-click-icon="handleIcon"></me-input>
+<me-input v-model="inputValue" label="清理" icon="icon-close" @click-icon="handleIcon"></me-input>
 ```
 
 :::
@@ -89,7 +89,7 @@ app.mount('#app')
 
 ```HTML
 <me-input v-model="inputValue" sms-msg="短信验证码" :sms-is="false"></me-input>
-<me-input v-model="inputValue" sms-msg="短信验证码" sms-is="icon-close" sms-color="#549ff2" placeholder="自定义验证码颜色" @on-click-sms="handleSMS"></me-input>
+<me-input v-model="inputValue" sms-msg="短信验证码" sms-is="icon-close" sms-color="#549ff2" placeholder="自定义验证码颜色" @click-sms="handleSMS"></me-input>
 ```
 
 :::
@@ -134,10 +134,10 @@ app.mount('#app')
 
 ### 方法
 
-| 方法名        | 说明                           | 回调参数         | 版本 |
-| ------------- | ------------------------------ | ---------------- | ---- |
-| on-click-icon | 点击图标时触发的事件           | event:MouseEvent | --   |
-| on-click-sms  | 点击短信验证码时触发的事件     | event:MouseEvent | --   |
-| on-focus      | 输入框聚焦时触发的事件         | event:FocusEvent | --   |
-| on-blur       | 输入框移除焦点时触发的事件     | event:FocusEvent | --   |
-| on-change     | 输入框内容发生改变时触发的事件 | event:InputEvent | --   |
+| 方法名     | 说明                           | 回调参数      | 版本  |
+| ---------- | ------------------------------ | ------------- | ----- |
+| click-icon | 点击图标时触发的事件           | e: MouseEvent | 2.3.5 |
+| click-sms  | 点击短信验证码时触发的事件     | e: MouseEvent | 2.3.5 |
+| focus      | 输入框聚焦时触发的事件         | e: FocusEvent | 2.3.5 |
+| blur       | 输入框移除焦点时触发的事件     | e: FocusEvent | 2.3.5 |
+| change     | 输入框内容发生改变时触发的事件 | e: InputEvent | 2.3.5 |

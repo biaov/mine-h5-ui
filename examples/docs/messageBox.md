@@ -110,7 +110,7 @@ const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globa
 const handleClick = () => {
   // 弹出模态框
   $MeMessageBox.custom({
-    html: `<div class="m-message-cont">健康的身体是实现目标的基石</div>`,
+    html: `<div class="message-cont">健康的身体是实现目标的基石</div>`,
     onOk() {
       $MeToast('你点击了确认按钮')
     },
@@ -123,7 +123,7 @@ const handleClick = () => {
 
 <style lang="less">
 // 自定义模态框内容
-.m-message-cont {
+.message-cont {
   padding: 0 15px 20px 15px;
   -webkit-line-clamp: 2;
   background: linear-gradient(90deg, #00aeff, #3369e7);

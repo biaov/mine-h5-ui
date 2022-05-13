@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // 子列表项
 export interface Styles {
   height: string

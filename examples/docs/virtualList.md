@@ -76,13 +76,13 @@ const listData = $ref(Array.from({ length: 100 }, () => ({ text: Random.cword(6,
 
 ### 加载更多
 
-- 通过自定义事件 `on-load-more` 来设置虚拟列表的数据加载更多。
+- 通过自定义事件 `load-more` 来设置虚拟列表的数据加载更多。
 
 ::: CopyCode
 
 ```Vue
 <template>
-  <me-virtual-list height="300px" :list="listData" :itemHeight="50" @on-load-more="onLoadMore">
+  <me-virtual-list height="300px" :list="listData" :itemHeight="50" @load-more="onLoadMore">
     <template #default="{ item }">
       <div class="item">
         <p>
@@ -92,7 +92,7 @@ const listData = $ref(Array.from({ length: 100 }, () => ({ text: Random.cword(6,
       </div>
     </template>
     <template #more>
-      <div class="u-more" v-text="loadMoreText[loadStatus]"></div>
+      <div class="more" v-text="loadMoreText[loadStatus]"></div>
     </template>
   </me-virtual-list>
 </template>
@@ -138,7 +138,7 @@ const onLoadMore = () => {
     }
   }
 }
-.u-more {
+.more {
   width: 100%;
   height: 40px;
   line-height: 40px;
@@ -159,7 +159,7 @@ const onLoadMore = () => {
 
 ```Vue
 <template>
-  <me-virtual-list height="300px" :list="listData" @on-load-more="onLoadMore(list)">
+  <me-virtual-list height="300px" :list="listData" @load-more="onLoadMore(list)">
     <template #default="{ item }">
       <div class="item">
         <p>
@@ -214,6 +214,6 @@ const listData = $ref(Array.from({ length: 100 }, () => ({ text: Random.cword(14
 
 ### 方法
 
-| 方法名       | 说明                 | 回调参数 | 版本 |
-| ------------ | -------------------- | -------- | ---- |
-| on-load-more | 当需要加载更多时触发 | --       | --   |
+| 方法名    | 说明                 | 回调参数 | 版本  |
+| --------- | -------------------- | -------- | ----- |
+| load-more | 当需要加载更多时触发 | --       | 2.3.5 |

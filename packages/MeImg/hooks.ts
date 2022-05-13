@@ -4,17 +4,17 @@ import { Emits } from './interfaces'
 export const useImgEvent = (emit: Emits) => {
   // 点击按钮
   const onClick = (e: MouseEvent) => {
-    emit('on-click', e)
+    emit('click', e)
   }
 
   // 加载完成
   const onLoad = (e: Event) => {
-    emit('on-load', e)
+    emit('load', e)
   }
 
   // 加载失败
   const onError = (e: Event) => {
-    emit('on-error', e)
+    emit('error', e)
   }
 
   return { onClick, onLoad, onError }

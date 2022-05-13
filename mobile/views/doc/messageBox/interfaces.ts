@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // 子选项
 export interface ChildListItem {
   id: number

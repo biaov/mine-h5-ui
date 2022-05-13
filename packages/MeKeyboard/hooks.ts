@@ -7,18 +7,18 @@ import { Emits } from './interfaces'
 export const useHandler = (emit: Emits) => {
   // 点击数字
   const onClick = (num: number) => {
-    emit('on-click', num)
+    emit('click', num)
   }
 
   // 点击删除按钮
   const onDelete = (e: MouseEvent) => {
-    emit('on-delete', e)
+    emit('delete', e)
   }
 
   // 点击完成按钮
   const onComplate = (e: MouseEvent) => {
     emit('update:visible', false)
-    emit('on-complate', e)
+    emit('complate', e)
   }
 
   return { onClick, onDelete, onComplate }

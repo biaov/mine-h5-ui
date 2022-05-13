@@ -10,7 +10,7 @@
 
   // 聚焦样式
   .input-focus(@border-color: darken(@border-color-default, 20%)) {
-    .u-input:focus {
+    .input:focus {
       border-color: @border-color;
       caret-color: @border-color;
     }
@@ -36,7 +36,7 @@
   position: relative;
   width: 100%;
 
-  .u-input {
+  .input {
     width: 100%;
     height: @height-40;
     line-height: @height-40 - 2;
@@ -64,7 +64,7 @@
   }
 
   // label样式
-  .u-label {
+  .label {
     .same-block();
     left: 0;
 
@@ -79,7 +79,7 @@
   }
 
   // 短信验证码样式
-  .u-sms {
+  .sms {
     .same-right-content(@color: @font-color);
 
     &.countdown {

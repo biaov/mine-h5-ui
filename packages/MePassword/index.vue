@@ -12,8 +12,8 @@ import { useHandler } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', str: string): void
-  (event: 'on-focus', e: MouseEvent): void
-  (event: 'on-blur', e: MouseEvent): void
+  (event: 'focus', e: MouseEvent): void
+  (event: 'blur', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

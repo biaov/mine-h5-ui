@@ -2,8 +2,8 @@ import { getCurrentInstance } from 'vue'
 import initData from './data'
 import { ListDataItem, EventMsg } from './interfaces'
 
-// 点击项
-export const useHandlerClick = () => {
+// 操作
+export const useHandle = () => {
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   // 事件提示语
   const eventMsg = Object.freeze<EventMsg>({
@@ -11,6 +11,7 @@ export const useHandlerClick = () => {
     append: '你点击了后面的图标'
   })
   const listData = Object.freeze<ListDataItem>(initData) // 列表数据
+
   // 当标签栏改变时
   const onClick = (type: string, index: number) => {
     // 提示语

@@ -1,4 +1,4 @@
-.m-nav-list {
+.nav-list {
   display: flex;
   align-content: center;
   li {
@@ -9,14 +9,14 @@
       &:hover {
         color: @color-primary;
       }
-      &.u-scale {
+      &.scale {
         .scale();
       }
       img {
         width: 20px;
       }
     }
-    .u-qrcode {
+    .qrcode {
       position: relative;
       cursor: pointer;
       &::after {
@@ -29,11 +29,11 @@
         height: 20px;
         opacity: 0;
       }
-      .u-img {
+      .img {
         width: 20px;
         margin: 0 10px 0 4px;
       }
-      .u-dropdown {
+      .dropdown {
         position: absolute;
         top: 40px;
         right: 0;
@@ -63,7 +63,7 @@
         }
       }
       &:hover {
-        .u-dropdown {
+        .dropdown {
           height: 140px;
           opacity: 1;
         }

@@ -1,11 +1,11 @@
 <template>
   <!-- 头部 -->
-  <div class="g-header" :class="{ home: isHome }">
-    <div class="m-cont">
+  <div class="header" :class="{ home: isHome }">
+    <div class="cont">
       <!-- logo -->
-      <router-link to="/" class="u-logo"><img src="../../assets/logo.svg" title="MINEH5UI" alt="mineh5ui logo" /></router-link>
+      <router-link to="/" class="logo"><img src="../../assets/logo.svg" title="MINEH5UI" alt="mineh5ui logo" /></router-link>
       <!-- 右侧内容 -->
-      <div class="m-rt-list">
+      <div class="rt-list">
         <!-- 导航 -->
         <nav-list :list="navListData"></nav-list>
         <!-- 下拉组件 -->

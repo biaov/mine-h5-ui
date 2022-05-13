@@ -2,9 +2,10 @@ import { ref } from 'vue'
 import initData from './data'
 import { ListDataItem } from './interfaces'
 
-// 点击项
-export const useHandlerClick = () => {
+// 操作
+export const useHandle = () => {
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击下一步
   const onClickNext = (item: ListDataItem) => {
     const child = item.children
@@ -16,5 +17,6 @@ export const useHandlerClick = () => {
       item.active = [child[0].name]
     }
   }
+
   return { listData, onClickNext }
 }

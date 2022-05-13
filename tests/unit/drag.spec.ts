@@ -31,7 +31,9 @@ describe('MeDrag', () => {
     const viewer = wrapper.find('.me-drag') // 获取 DOM
 
     expect(viewer.exists()).toBeTruthy()
+
     const items = wrapper.findAll('.item')
+
     expect(items.length).toBe(list.length)
   })
 
@@ -42,6 +44,7 @@ describe('MeDrag', () => {
       props: { list, current }
     })
     const viewer = wrapper.find(`.me-drag .item:first-child`) // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('active')).toBe(true)
   })

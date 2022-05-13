@@ -15,14 +15,18 @@ describe('MeScreenshot', () => {
       props: { start: false }
     })
     const viewer = wrapper.find('.me-screenshot') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(testText)
   })
-  test('emit on-click', async () => {
+
+  test('emit click', async () => {
     // 向组件里传参
     const wrapper = mount(MeScreenshot)
     const viewer = wrapper.find('.me-screenshot') // 获取 DOM
+
     await viewer.trigger('click')
-    expect(wrapper.emitted('on-click')).toBeDefined()
+
+    expect(wrapper.emitted('click')).toBeDefined()
   })
 })

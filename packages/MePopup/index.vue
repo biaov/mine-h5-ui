@@ -2,7 +2,7 @@
   <!-- 弹出层 -->
   <div class="me-popup" :class="{ show: isShow }" :style="`background:rgba(0,0,0,${modal ? 0.7 : 0});`" @click="hideMask" v-show="isShowMask">
     <div :class="position" :style="setRadius" @click.stop>
-      <me-icon name="icon-baseline-close-px" size="20px" @on-click="hideMask" v-if="closeable"></me-icon>
+      <me-icon name="icon-baseline-close-px" size="20px" @click="hideMask" v-if="closeable"></me-icon>
       <slot></slot>
     </div>
   </div>
@@ -13,7 +13,7 @@ import MeIcon from '../MeIcon'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void
-  (event: 'on-cancel'): void
+  (event: 'cancel'): void
 }>()
 
 const props = withDefaults(

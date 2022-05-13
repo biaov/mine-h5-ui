@@ -1,7 +1,7 @@
 <template>
   <!-- 动作面板 -->
   <div class="me-action-sheet" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask">
-    <ul class="m-list-li" :class="{ on: isShow }" @click.stop>
+    <ul class="list-li" :class="{ on: isShow }" @click.stop>
       <li v-for="item in list" :key="item[index]" @click.stop="onLi(item)">{{ item[label] }}</li>
       <li @click.stop="onCancel">取消</li>
     </ul>
@@ -14,8 +14,8 @@ import { ListItem } from './interfaces'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void
-  (event: 'on-change', item: ListItem): void
-  (event: 'on-cancel', item: MouseEvent): void
+  (event: 'change', item: ListItem): void
+  (event: 'cancel', item: MouseEvent): void
 }>()
 
 const props = defineProps({

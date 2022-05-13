@@ -1,9 +1,11 @@
 import { ref } from 'vue'
 import initData from './data'
 import { ListDataItem, ChildListItem } from './interfaces'
-// 点击项
-export const useHandlerClick = () => {
+
+// 操作
+export const useHandle = () => {
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击标签栏项
   const onChange = ({ id }: ChildListItem, item: ListDataItem) => {
     // 遍历设置每一项的数据

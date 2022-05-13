@@ -3,11 +3,11 @@
 </style>
 <template>
   <!-- 图标 -->
-  <p class="u-top-tips">点击图标即可复制名称</p>
-  <ul class="m-icon" ref="icons" data-clipboard-action="copy">
+  <p class="top-tips">点击图标即可复制名称</p>
+  <ul class="icon" ref="icons" data-clipboard-action="copy">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
-      <ul class="m-list-all">
+      <div class="label">{{ item.label }}</div>
+      <ul class="list-all">
         <li v-for="(it, i) in item.list" :key="i" @click="onClick(it.name)">
           <me-icon :name="it.name" :color="it.color" :size="it.size"></me-icon>
           <span>{{ it.name }}</span>

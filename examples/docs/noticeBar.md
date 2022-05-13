@@ -83,6 +83,8 @@ const noticeBar = Object.freeze({
 - 通过属性 `background` 来设置组件的背景色，默认值为 #f6f6f6。
 - 通过属性 `color` 来设置组件的文本颜色，默认值为 #494949。
 
+::: CopyCode
+
 ```Vue
 <template>
   <me-notice-bar v-bind="noticeBar"></me-notice-bar>
@@ -126,8 +128,8 @@ const noticeBar = Object.freeze({
 
 ### 方法
 
-| 方法名             | 说明                           | 回调参数           | 版本 |
-| ------------------ | ------------------------------ | ------------------ | ---- |
-| on-click           | 点击组件文本列表项时触发的事件 | index:number(索引) | --   |
-| on-click:preappend | 点击组件前面的图标时触发的事件 | event:MouseEvent   | --   |
-| on-click:append    | 点击组件后面的图标时触发的事件 | event:MouseEvent   | --   |
+| 方法名          | 说明                           | 回调参数      | 版本  |
+| --------------- | ------------------------------ | ------------- | ----- |
+| click           | 点击组件文本列表项时触发的事件 | i: number     | 2.3.5 |
+| click:preappend | 点击组件前面的图标时触发的事件 | e: MouseEvent | 2.3.5 |
+| click:append    | 点击组件后面的图标时触发的事件 | e: MouseEvent | 2.3.5 |

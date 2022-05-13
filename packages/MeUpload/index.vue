@@ -2,19 +2,19 @@
   <!-- 上传图片 -->
   <div class="me-upload" :data-disabled="disabled">
     <!-- 展示图片 -->
-    <div class="m-imgs" v-for="item in listData" :key="item.id" @click="onPreview(item)">
-      <img :src="item.url" class="u-img" alt="图片" />
-      <me-icon name="icon-close" color="#dcdee0" size="16px" @on-click="onDelete($event, item)" v-if="deletable"></me-icon>
+    <div class="imgs" v-for="item in listData" :key="item.id" @click="onPreview(item)">
+      <img :src="item.url" class="img" alt="图片" />
+      <me-icon name="icon-close" color="#dcdee0" size="16px" @click="onDelete($event, item)" v-if="deletable"></me-icon>
     </div>
     <!-- 上传按钮 -->
-    <div class="m-upload" v-if="listData.length < maxCount">
+    <div class="upload" v-if="listData.length < maxCount">
       <me-icon name="icon-xiangji" color="#dcdee0" size="20px"></me-icon>
-      <input type="file" class="u-file" :multiple="multiple" @change="onChange" :disabled="disabled" />
+      <input type="file" class="file" :multiple="multiple" @change="onChange" :disabled="disabled" />
     </div>
     <!-- 图片预览 -->
-    <div class="m-preview" v-if="isPreview" @click="closePreview">
-      <div class="u-num">{{ curNum }} / {{ listData.length }}</div>
-      <transition-group tag="ul" name="slider" class="m-slider">
+    <div class="preview" v-if="isPreview" @click="closePreview">
+      <div class="num">{{ curNum }} / {{ listData.length }}</div>
+      <transition-group tag="ul" name="me-slider" class="slider">
         <li v-for="item in listData" :key="item.id" v-show="curNum === item.id"><img :src="item.url" alt="图片" /></li>
       </transition-group>
     </div>
@@ -29,7 +29,7 @@ import { ListDataItem } from './interfaces'
 const emit = defineEmits<{
   (event: 'update:fileList', list: ListDataItem[]): void
   (event: 'update:file-list', list: ListDataItem[]): void
-  (event: 'on-change', list: ListDataItem[]): void
+  (event: 'change', list: ListDataItem[]): void
 }>()
 
 const props = withDefaults(

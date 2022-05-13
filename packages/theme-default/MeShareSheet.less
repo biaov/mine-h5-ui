@@ -5,9 +5,9 @@
 @import './variable.less';
 
 .me-share-sheet {
-  .m-mask;
+  .mask;
 
-  .m-picker {
+  .picker {
     bottom: 0;
     left: 0;
     transform: translateY(100%);
@@ -20,7 +20,7 @@
     }
 
     // 提示语
-    .u-tips {
+    .tips {
       line-height: 50px;
       text-align: center;
       color: @font-color;
@@ -28,7 +28,7 @@
     }
 
     // 列表
-    .m-list-li {
+    .list-li {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -58,7 +58,7 @@
         }
 
         // 图标
-        .u-icon {
+        .icon {
           display: block;
           margin: 0 auto 5px;
           text-align: center;
@@ -67,8 +67,8 @@
         }
 
         // 描述文本
-        .u-desc {
-          .clamp();
+        .desc {
+          .me-clamp();
           display: block;
           width: 100%;
           color: @font-color-reduce;
@@ -78,7 +78,7 @@
     }
 
     // 取消按钮
-    .u-btn-cancel {
+    .btn-cancel {
       width: 100%;
       height: 40px;
       line-height: 40px;

@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // props list
 export interface ListItem {
   text: string
@@ -13,7 +11,7 @@ export interface ListItem {
 
 // emits
 export interface Emits {
-  (event: 'on-change', item: ListItem): void
+  (event: 'change', item: ListItem): void
 }
 
 // props

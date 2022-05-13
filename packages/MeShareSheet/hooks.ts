@@ -43,13 +43,13 @@ export const useBtns = (emit: Emits) => {
   // 点击列表
   const onLi = (item: ListItem) => {
     emit('update:visible', false)
-    emit('on-change', item)
+    emit('change', item)
   }
 
   // 点击取消按钮
   const onCancel = (e: MouseEvent) => {
     emit('update:visible', false)
-    emit('on-cancel', e)
+    emit('cancel', e)
   }
 
   return { onLi, onCancel }

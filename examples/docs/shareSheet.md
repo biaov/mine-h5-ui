@@ -35,14 +35,14 @@ app.mount('#app')
 ```Vue
 <template>
   <!-- 分享面板 -->
-  <ul class="m-share-sheet">
+  <ul class="share-sheet">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label" v-text="item.label"></div>
-      <ul class="m-list-all">
+      <div class="label" v-text="item.label"></div>
+      <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="onClick(it)">
           <span v-text="it.value"></span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
-          <me-share-sheet v-model:visible="it.visible" :list="it.list" tips="立即分享给好友" @on-change="onChange" @on-cancel="onCancel"></me-share-sheet>
+          <me-share-sheet v-model:visible="it.visible" :list="it.list" tips="立即分享给好友" @change="onChange" @cancel="onCancel"></me-share-sheet>
         </li>
       </ul>
     </li>
@@ -111,16 +111,16 @@ const onCancel = () => {
 }
 </script>
 <style scoped lang="less">
-.m-share-sheet {
+.share-sheet {
   > li {
     margin-bottom: 10px;
-    .u-label {
+    .label {
       width: 100%;
       margin-bottom: 10px;
       color: #949494;
       font-size: 14px-min;
     }
-    .m-list-all {
+    .list-all {
       > li {
         display: flex;
         justify-content: space-between;
@@ -154,7 +154,7 @@ const onCancel = () => {
 
 ### 方法
 
-| 方法名    | 说明                     | 回调参数            | 版本 |
-| --------- | ------------------------ | ------------------- | ---- |
-| on-change | 点击分享列表时触发的事件 | object:选中的对象值 | --   |
-| on-cancel | 点击取消按钮时触发的事件 | event:MouseEvent    | --   |
+| 方法名 | 说明                     | 回调参数      | 版本  |
+| ------ | ------------------------ | ------------- | ----- |
+| change | 点击分享列表时触发的事件 | item: Object  | 2.3.5 |
+| cancel | 点击取消按钮时触发的事件 | e: MouseEvent | 2.3.5 |

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // area
 export interface InArea {
   [key: string]: string
@@ -11,8 +10,8 @@ export interface InAreaData {
 // emits
 export interface Emits {
   (event: 'update:modelValue', str: string): void
-  (event: 'on-cancel'): void
-  (event: 'on-sure', currentValue: string[]): void
+  (event: 'cancel'): void
+  (event: 'sure', currentValue: string[]): void
 }
 
 // props

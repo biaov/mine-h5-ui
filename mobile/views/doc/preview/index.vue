@@ -3,10 +3,10 @@
 </style>
 <template>
   <!-- 图片预览 -->
-  <ul class="m-preview">
+  <ul class="preview">
     <li v-for="(item, index) in listData" :key="index">
-      <div class="u-label">{{ item.label }}</div>
-      <div class="u-img" @click="onPreview(item)">
+      <div class="label">{{ item.label }}</div>
+      <div class="img" @click="onPreview(item)">
         <img :src="item.url" alt="img" />
       </div>
     </li>

@@ -66,7 +66,7 @@ export const useHandMove = (props: Props, emit: Emits) => {
       currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX // 实际位移
     }
     dotIndex.value = -currentValue.value / maxDistance
-    emit('on-change', names[dotIndex.value - 1])
+    emit('change', names[dotIndex.value - 1])
   }
 
   // pc 端鼠标按下移动
@@ -98,7 +98,7 @@ export const useHandMove = (props: Props, emit: Emits) => {
     }
 
     dotIndex.value = -currentValue.value / maxDistance
-    emit('on-change', names[dotIndex.value - 1])
+    emit('change', names[dotIndex.value - 1])
     document.onmousemove = null // 清理上次的移动事件
     document.onmouseup = null // 清理上次的抬起事件
   }

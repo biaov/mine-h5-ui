@@ -1,8 +1,8 @@
-.m-timeline {
+.timeline {
   position: relative;
   padding: 0 0 5px 24px;
   &:first-of-type {
-    .u-dot {
+    .dot {
       border-color: @color-danger;
     }
   }
@@ -11,7 +11,7 @@
     position: absolute;
     top: 8px;
   }
-  .u-dot {
+  .dot {
     .same-position();
     z-index: 2;
     left: 0;
@@ -21,13 +21,13 @@
     border-radius: 50%;
     background-color: @color-white;
   }
-  .u-tail {
+  .tail {
     .same-position();
     left: 6px;
     height: 100%;
     border-left: 2px solid @border-color-line;
   }
-  .m-cont {
+  .cont {
     h2 {
       color: @color-primary;
     }

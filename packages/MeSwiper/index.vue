@@ -9,11 +9,11 @@
     @touchend="onTouchend"
     @mousedown.prevent="onMousedown"
   >
-    <div class="m-imgs" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`">
+    <div class="imgs" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`">
       <slot></slot>
     </div>
     <!-- 指示点 -->
-    <ul class="m-dot" v-if="dot">
+    <ul class="dot" v-if="dot">
       <li v-for="(item, index) in dots" :key="index" :class="{ on: dotIndex === index }"></li>
     </ul>
   </div>
@@ -22,7 +22,7 @@
 import { useHandMove } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-change', value: string | number): void
+  (event: 'change', value: string | number): void
 }>()
 
 const props = withDefaults(

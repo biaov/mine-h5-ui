@@ -2,14 +2,14 @@
   <!-- 下拉刷新 -->
   <div class="me-pull-refresh">
     <div
-      class="m-cont"
+      class="cont"
       :style="`transform: translateY(${transY - showValue}px);transition-duration: ${duration}ms;`"
       @touchstart.prevent="onTouchstart"
       @touchmove="onTouchmove"
       @touchend="onTouchend"
       @mousedown.prevent="onMousedown"
     >
-      <div class="m-hd" :style="`transform:scale(${scale});`">
+      <div class="hd" :style="`transform:scale(${scale});`">
         <me-loading type="circle" v-if="loadIcon && activeState === 2"></me-loading>
         {{ loadText[activeState] }}
       </div>
@@ -23,7 +23,7 @@ import { useHandMove } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', bool: boolean): void
-  (event: 'on-refresh'): void
+  (event: 'refresh'): void
 }>()
 
 const props = withDefaults(

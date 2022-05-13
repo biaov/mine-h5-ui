@@ -36,7 +36,7 @@ app.mount('#app')
 
 ```Vue
 <template>
-  <div class="u-label">基础用法</div>
+  <div class="label">基础用法</div>
   <me-accordion v-model="accordionActive">
     <me-accordion-item v-for="(item, index) in listData" :key="index" :title="item.title" :index="index">
       <div v-html="item.html"></div>
@@ -73,14 +73,14 @@ const listData = Object.freeze([
 ])
 </script>
 <style scoped lang="less">
-.u-label {
+.label {
   width: 100%;
   margin-bottom: 10px;
   color: #949494;
   font-size: 14px-min;
 }
 .me-accordion-item {
-  .m-hd {
+  .hd {
     cursor: pointer;
   }
   p {
@@ -117,9 +117,9 @@ const listData = Object.freeze([
 
 #### 方法
 
-| 方法名    | 说明                       | 回调参数                | 版本 |
-| --------- | -------------------------- | ----------------------- | ---- |
-| on-change | 点击列表头部项时触发的事件 | value: [string, number] | --   |
+| 方法名 | 说明                       | 回调参数                | 版本  |
+| ------ | -------------------------- | ----------------------- | ----- |
+| change | 点击列表头部项时触发的事件 | value: [string, number] | 2.3.5 |
 
 ### MeAccordionItem
 
@@ -133,6 +133,6 @@ const listData = Object.freeze([
 
 #### 方法
 
-| 方法名   | 说明                     | 回调参数         | 版本 |
-| -------- | ------------------------ | ---------------- | ---- |
-| on-click | 点击列表头部项触发的事件 | event:MouseEvent | --   |
+| 方法名 | 说明                     | 回调参数      | 版本  |
+| ------ | ------------------------ | ------------- | ----- |
+| click  | 点击列表头部项触发的事件 | e: MouseEvent | 2.3.5 |

@@ -1,3 +1,4 @@
+// 指南配置
 export const guideConfig = [
   {
     path: 'introduce',
@@ -35,6 +36,8 @@ export const guideConfig = [
     }
   }
 ]
+
+// 组件配置
 export const componentConfig = [
   {
     meta: {
@@ -68,6 +71,13 @@ export const componentConfig = [
         },
         path: 'popup',
         name: 'popup'
+      },
+      {
+        meta: {
+          title: 'Cell 单元格'
+        },
+        path: 'cell',
+        name: 'cell'
       }
     ]
   },
@@ -394,24 +404,25 @@ export const componentConfig = [
     ]
   }
 ]
-export const funConfig = [
+
+export const apiConfig = [
   {
     meta: {
-      title: 'CSS 样式'
+      title: '样式封装'
     },
     items: [
       {
         meta: {
-          title: 'CSS 代码块'
+          title: 'Style 样式类'
         },
-        path: 'css',
-        name: 'css'
+        path: 'style',
+        name: 'style'
       }
     ]
   },
   {
     meta: {
-      title: 'API 应用'
+      title: '方法封装'
     },
     items: [
       {
@@ -423,7 +434,7 @@ export const funConfig = [
       },
       {
         meta: {
-          title: '正则验证'
+          title: 'RegExp 正则校验'
         },
         path: 'regexp',
         name: 'regexp'
@@ -435,7 +446,7 @@ export const funConfig = [
 const config = {
   指南: guideConfig,
   组件: componentConfig,
-  封装方法: funConfig
+  封装: apiConfig
 }
 
 export default config

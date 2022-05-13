@@ -11,6 +11,7 @@ describe('MeTab', () => {
       props: { modelValue }
     })
     const viewer = wrapper.find('.me-tab') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
   })
 })
@@ -31,12 +32,17 @@ describe('MeTabItem', () => {
     const wrapper = mount(TestComponent, {
       props: { modelValue }
     })
+
     await Retarder(0)
+
     const viewer = wrapper.find('.me-tab') // 获取 DOM
-    const labelEl = viewer.find('.m-tabs .m-tab-item:first-child')
+    const labelEl = viewer.find('.tabs .tab-item:first-child')
+
     expect(labelEl.exists()).toBeTruthy()
     expect(labelEl.text()).toBe('1')
+
     const tabItemEl = viewer.find('.me-tab-item:last-child')
+
     expect(tabItemEl.exists()).toBeTruthy()
   })
 })

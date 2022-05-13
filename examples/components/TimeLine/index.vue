@@ -1,9 +1,9 @@
 <template>
   <!-- 时间线 -->
-  <div class="m-timeline">
-    <div class="u-dot"></div>
-    <div class="u-tail"></div>
-    <div class="m-cont">
+  <div class="timeline">
+    <div class="dot"></div>
+    <div class="tail"></div>
+    <div class="cont">
       <slot></slot>
     </div>
   </div>

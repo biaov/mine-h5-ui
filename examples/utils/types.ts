@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // PostMessage Return
 export type PostMessageReturn = {
   send: (data: string) => void

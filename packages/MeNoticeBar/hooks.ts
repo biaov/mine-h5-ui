@@ -74,17 +74,17 @@ export const useAnimate = (props: Props) => {
 export const useBtns = (emit: Emits) => {
   // 点击公告
   const onClick = (e: number) => {
-    emit('on-click', e)
+    emit('click', e)
   }
 
   // 点击前面图标
   const onClickPreappend = (e: MouseEvent) => {
-    emit('on-click:preappend', e)
+    emit('click:preappend', e)
   }
 
   // 点击后面图标
   const onClickAppend = (e: MouseEvent) => {
-    emit('on-click:append', e)
+    emit('click:append', e)
   }
 
   return { onClick, onClickPreappend, onClickAppend }

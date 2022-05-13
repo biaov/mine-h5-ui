@@ -21,7 +21,7 @@ export const useInitSlots = (props: Props, emit: Emits) => {
     }
 
     emit('update:modelValue', currentValue.value)
-    emit('on-change', currentValue.value)
+    emit('change', currentValue.value)
   }
 
   provide(MeCheckboxGroupKey, { name: MeCheckboxGroupKey, currentValue, onChange })

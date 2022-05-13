@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // props line
 export interface Line {
   radius?: number

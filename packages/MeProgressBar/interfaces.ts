@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // props
 export interface Props {
   modelValue: number

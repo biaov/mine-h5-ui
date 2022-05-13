@@ -1,14 +1,14 @@
 <template>
   <!-- 开关 -->
   <div class="me-switch" :class="{ 'me-switch-on': isActived }" :data-disabled="disabled" @click="handleClick" :style="`font-size:${size};background:${background};`">
-    <span class="u-round"></span>
+    <span class="round"></span>
   </div>
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
   (event: 'update:modelValue', bool: boolean): void
 }>()
 

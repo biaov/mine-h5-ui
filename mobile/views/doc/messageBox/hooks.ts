@@ -2,10 +2,11 @@ import { getCurrentInstance, ref } from 'vue'
 import initData from './data'
 import { ListDataItem, ChildListItem } from './interfaces'
 
-// 点击项
-export const useHandlerClick = () => {
+// 操作
+export const useHandle = () => {
   const { $MeMessageBox, $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击列表
   const onClick = ({ type, tips, message, html, cancelButtonText, confirmButtonText }: ChildListItem) => {
     $MeMessageBox({
@@ -23,5 +24,6 @@ export const useHandlerClick = () => {
       }
     })
   }
+
   return { listData, onClick }
 }

@@ -3,9 +3,9 @@
 </style>
 <template>
   <!-- 分割线 -->
-  <ul class="m-divider">
+  <ul class="divider">
     <li v-for="(item, index) in listData" :key="index">
-      <div class="u-label">{{ item.label }}</div>
+      <div class="label">{{ item.label }}</div>
       <me-divider v-bind="item"></me-divider>
     </li>
   </ul>

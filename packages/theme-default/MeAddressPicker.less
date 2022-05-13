@@ -15,7 +15,7 @@
   overflow: hidden;
 
   // 头部
-  .m-hd {
+  .hd {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -32,18 +32,18 @@
       outline: none;
 
       // 取消按钮
-      &.u-cancel {
+      &.cancel {
         color: @font-color-reduce;
       }
 
       // 确定按钮
-      &.u-sure {
+      &.sure {
         color: @color-primary;
       }
     }
 
     // 中间线
-    .u-line {
+    .line {
       width: 40px;
       height: 0;
       border-bottom: 2px solid @font-color-reduce;
@@ -52,7 +52,7 @@
     }
   }
 
-  .m-bd {
+  .bd {
     position: relative;
     display: flex;
     height: 220px;
@@ -91,7 +91,7 @@
 
     // 每一项
     > li {
-      .clamp();
+      .me-clamp();
       flex-grow: 1;
       width: 33.33%;
       height: 100%;

@@ -2,9 +2,10 @@ import { ref } from 'vue'
 import initData from './data'
 import { ListDataItem } from './interfaces'
 
-// 点击项
-export const useHandlerClick = () => {
+// 操作
+export const useHandle = () => {
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击开始按钮
   const onStart = (item: ListDataItem) => {
     // 是否已到终点
@@ -21,5 +22,6 @@ export const useHandlerClick = () => {
     }
     window.requestAnimationFrame(startAnimate) // 开启帧动画
   }
+
   return { listData, onStart }
 }

@@ -15,20 +15,20 @@
     background: @bg-hover;
   }
 }
-.m-side-bar {
+.side-bar {
   width: 220px;
   height: 100%;
   border-right: 1px solid @border-color-common;
   padding: 15px 0 30px;
   overflow-y: auto;
   > li {
-    .u-tit {
+    .tit {
       .same-height();
       color: lighten(@color-primary, 10%);
       font-size: @font-size;
       font-weight: 600;
     }
-    .m-list-ct {
+    .list-ct {
       > li {
         position: relative;
         &.spot::after {
@@ -42,18 +42,18 @@
           background: @color-danger;
         }
         // 中间层/二层
-        .u-tit-ct {
+        .tit-ct {
           .same-height(25px);
           color: darken(@font-color-reduce, 5%);
           font-size: @font-size;
           font-weight: 600;
           cursor: pointer;
-          &.u-in {
+          &.in {
             .same-font();
           }
         }
         // 最后一层/三层列表
-        .m-list-in {
+        .list-in {
           > li {
             .same-height(35px);
             .same-font();
@@ -63,7 +63,7 @@
     }
   }
   a {
-    .clamp();
+    .me-clamp();
     width: 100%;
     color: inherit;
     font-size: inherit;

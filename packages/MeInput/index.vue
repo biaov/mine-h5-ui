@@ -1,14 +1,14 @@
 <template>
   <!-- 输入框 -->
   <div class="me-input" :class="`me-input-${focusType}`">
-    <div class="u-label" :style="`width:${labelWidth};text-align-last:${labelAlign};color:${labelColor};`" ref="inputLabel" v-if="label">
+    <div class="label" :style="`width:${labelWidth};text-align-last:${labelAlign};color:${labelColor};`" ref="inputLabel" v-if="label">
       <me-icon :name="labelIcon" :color="labelColor" size="inherit" v-if="labelIcon"></me-icon>
       {{ label }}
     </div>
     <input
       :type="inputType"
       v-model="inputVal"
-      class="u-input"
+      class="input"
       :placeholder="placeholder"
       :style="`${isFocus && `border-color:${focusColor};`};padding-right:${paddingRight}px;padding-left:${paddingLeft}px;`"
       @focus="onFocus"
@@ -18,9 +18,9 @@
       :readonly="readonly"
       :disabled="disabled"
     />
-    <me-icon :name="inputType == 'password' ? 'icon-in_biyan' : 'icon-in_zhengyan'" @on-click="handleIcon" v-if="password"></me-icon>
-    <me-icon :name="icon" @on-click="handleIcon" v-else></me-icon>
-    <span class="u-sms" :class="{ countdown: smsIs }" v-if="!password && smsMsg" @click="handleSMS" ref="sms" :style="`color:${smsColor};`">{{ smsMsg }}</span>
+    <me-icon :name="inputType == 'password' ? 'icon-in_biyan' : 'icon-in_zhengyan'" @click="handleIcon" v-if="password"></me-icon>
+    <me-icon :name="icon" @click="handleIcon" v-else></me-icon>
+    <span class="sms" :class="{ countdown: smsIs }" v-if="!password && smsMsg" @click="handleSMS" ref="sms" :style="`color:${smsColor};`">{{ smsMsg }}</span>
   </div>
 </template>
 <script lang="ts" setup>
@@ -29,12 +29,12 @@ import { useSms, useIcon, useInput } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string | number): void
-  (event: 'on-focus', e: FocusEvent): void
-  (event: 'on-blur', e: FocusEvent): void
-  (event: 'on-change', e: Event): void
-  (event: 'on-input', e: Event): void
-  (event: 'on-click-sms', e: MouseEvent): void
-  (event: 'on-click-icon', e: MouseEvent): void
+  (event: 'focus', e: FocusEvent): void
+  (event: 'blur', e: FocusEvent): void
+  (event: 'change', e: Event): void
+  (event: 'input', e: Event): void
+  (event: 'click-sms', e: MouseEvent): void
+  (event: 'click-icon', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

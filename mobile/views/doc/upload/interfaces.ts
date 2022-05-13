@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // 文件列表
 export interface FileListItem {
   id: number

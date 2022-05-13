@@ -6,6 +6,7 @@ describe('MeSwiperCell', () => {
     // 向组件里传参
     const wrapper = mount(MeSwiperCell)
     const viewer = wrapper.find('.me-swiper-cell') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
   })
 })

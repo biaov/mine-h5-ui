@@ -1,13 +1,12 @@
-/* eslint-disable no-unused-vars */
 // emits
 export interface Emits {
   (event: 'update:modelValue', value: string | number): void
-  (event: 'on-focus', e: FocusEvent): void
-  (event: 'on-blur', e: FocusEvent): void
-  (event: 'on-change', e: Event): void
-  (event: 'on-input', e: Event): void
-  (event: 'on-click-sms', e: MouseEvent): void
-  (event: 'on-click-icon', e: MouseEvent): void
+  (event: 'focus', e: FocusEvent): void
+  (event: 'blur', e: FocusEvent): void
+  (event: 'change', e: Event): void
+  (event: 'input', e: Event): void
+  (event: 'click-sms', e: MouseEvent): void
+  (event: 'click-icon', e: MouseEvent): void
 }
 
 // props

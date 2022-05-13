@@ -3,10 +3,10 @@
 </style>
 <template>
   <!-- 时间选择器 -->
-  <ul class="m-datetime-picker">
+  <ul class="datetime-picker">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
-      <div class="u-li" @click="item.visible = true">
+      <div class="label">{{ item.label }}</div>
+      <div class="li" @click="item.visible = true">
         <span>{{ item.title }}</span>
         <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
       </div>
@@ -16,14 +16,14 @@
         :visible="item.visible"
         :min-date="item.minDate"
         :max-date="item.maxDate"
-        @on-cancel="item.visible = false"
-        @on-sure="onSure(item)"
+        @cancel="item.visible = false"
+        @sure="onSure(item)"
       ></me-datetime-picker>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onSure } = useHandlerClick()
+const { listData, onSure } = useHandle()
 </script>

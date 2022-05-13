@@ -1,7 +1,7 @@
 import { getCurrentInstance } from 'vue'
 
-// 点击项
-export const useHandlerClick = () => {
+// 操作
+export const useHandle = () => {
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   const styles = Object.freeze({
     borderColor: '#008fff', // 边框颜色
@@ -10,9 +10,11 @@ export const useHandlerClick = () => {
     leftColor: '#aedbff', // 左侧按钮颜色
     rightColor: '#fff' // 右侧按钮颜色
   })
+
   // 点击右侧按钮
   const handleClick = (tips: string) => {
     $MeToast(`你点击了${tips}`)
   }
+
   return { styles, handleClick }
 }

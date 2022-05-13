@@ -2,10 +2,11 @@ import { getCurrentInstance, ref } from 'vue'
 import initData from './data'
 import { ListDataItem } from './interfaces'
 
-// 点击项
-export const useHandlerClick = () => {
+// 操作
+export const useHandle = () => {
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 点击 Switch 开关
   const onClick = ({ async, value }: ListDataItem) => {
     // 判断是否为异步
@@ -15,5 +16,6 @@ export const useHandlerClick = () => {
       $MeToast(value ? '打开' : '关闭')
     }
   }
+
   return { listData, onClick }
 }

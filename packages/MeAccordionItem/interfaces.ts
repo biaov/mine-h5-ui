@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Ref } from 'vue'
 
 // 父组件参数
@@ -10,7 +9,7 @@ export interface AccordionContext {
 
 // emits
 export interface Emits {
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }
 
 // props

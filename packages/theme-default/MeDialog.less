@@ -5,9 +5,9 @@
 @import './variable.less';
 
 .me-dialog {
-  .m-mask;
+  .mask;
 
-  .m-picker {
+  .picker {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
@@ -22,7 +22,7 @@
     }
 
     // 提示语
-    .u-tips {
+    .tips {
       line-height: 50px;
       text-align: center;
       color: @font-color;
@@ -30,7 +30,7 @@
     }
 
     // 按钮
-    .m-btn {
+    .btn {
       display: flex;
       border-top: 1px solid fade(@border-color-default, 50%);
 
@@ -42,11 +42,11 @@
         font-size: @font-size;
         outline: none;
 
-        &.u-btn-cancel {
+        &.btn-cancel {
           color: @font-color-reduce;
         }
 
-        &.u-btn-confirm {
+        &.btn-confirm {
           color: @color-primary;
         }
       }

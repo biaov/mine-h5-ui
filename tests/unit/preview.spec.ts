@@ -9,8 +9,11 @@ describe('MePreview', () => {
       props: { url }
     })
     const viewer = wrapper.find('.me-preview') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
-    const imgEl = viewer.find('.u-img')
+
+    const imgEl = viewer.find('.img')
+
     expect(imgEl.exists()).toBeTruthy()
     expect(imgEl.attributes('src')).toBe(url)
   })

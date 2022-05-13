@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { PublicProps } from '../types'
 import { ListDataItem, Props as DefaultProps } from './interfaces'
 

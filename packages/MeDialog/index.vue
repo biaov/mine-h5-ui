@@ -1,9 +1,9 @@
 <template>
   <!-- 对话框 -->
   <div class="me-dialog" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask">
-    <div class="m-picker" :class="{ show: isShow }" @click.stop>
+    <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
-      <h3 class="u-tips">{{ tips }}</h3>
+      <h3 class="tips">{{ tips }}</h3>
       <!-- 内容 -->
       <slot></slot>
     </div>

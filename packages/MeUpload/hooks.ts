@@ -20,7 +20,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       listData.value.splice(index, 1) // 删除
       emit('update:fileList', listData.value)
       emit('update:file-list', listData.value)
-      emit('on-change', listData.value)
+      emit('change', listData.value)
     }
   }
 
@@ -67,7 +67,7 @@ export const useHandler = (props: Props, emit: Emits) => {
       // 符合规则的图片数组
       if (arr.length > 0) {
         props.afterRead(arr)
-        emit('on-change', listData.value)
+        emit('change', listData.value)
       }
     }
   }

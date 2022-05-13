@@ -33,7 +33,7 @@ app.mount('#app')
 
 ```HTML
 <template>
-  <me-pull-refresh v-model="loading" @on-refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
+  <me-pull-refresh v-model="loading" @refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
 </template>
 <script lang="ts" setup>
 let loading = $ref(false) // 加载状态
@@ -58,7 +58,7 @@ const onRefresh = () => {
 
 ```HTML
 <template>
-  <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @on-refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
+  <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
 </template>
 <script lang="ts" setup>
 const loadText = Object.freeze(['开始下拉...', '释放刷新...', '还在请求后台...', '成功了']) // 自定义加载文本
@@ -88,6 +88,6 @@ const onRefresh = () => {
 
 ### 方法
 
-| 方法名     | 说明                 | 回调参数 | 版本 |
-| ---------- | -------------------- | -------- | ---- |
-| on-refresh | 释放下拉时触发的事件 | --       | --   |
+| 方法名  | 说明                 | 回调参数 | 版本  |
+| ------- | -------------------- | -------- | ----- |
+| refresh | 释放下拉时触发的事件 | --       | 2.3.5 |

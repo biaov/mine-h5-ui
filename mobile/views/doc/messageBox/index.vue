@@ -6,10 +6,10 @@
 </style>
 <template>
   <!-- 弹出框 -->
-  <ul class="m-message-box">
+  <ul class="message-box">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
-      <ul class="m-list-all">
+      <div class="label">{{ item.label }}</div>
+      <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="onClick(it)">
           <span>{{ it.value }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
@@ -19,7 +19,7 @@
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onClick } = useHandlerClick()
+const { listData, onClick } = useHandle()
 </script>

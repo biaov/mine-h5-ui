@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Ref } from 'vue'
 import { OnChangeParams } from '../MeCheckboxGroup/interfaces'
 
@@ -12,7 +11,7 @@ export interface CheckboxGroupContext {
 // emits
 export interface Emits {
   (event: 'update:modelValue', bool: boolean): void
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }
 
 // props

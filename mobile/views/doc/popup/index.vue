@@ -3,14 +3,14 @@
 </style>
 <template>
   <!-- 弹出框 -->
-  <ul class="m-popup">
+  <ul class="popup">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
-      <ul class="m-list-all">
+      <div class="label">{{ item.label }}</div>
+      <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="it.visible = true">
           <span>{{ it.value }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
-          <me-popup v-model:visible="it.visible" :position="it.position" :closeable="it.closeable" :radius="it.radius" @on-close="it.visible = false">内容...</me-popup>
+          <me-popup v-model:visible="it.visible" :position="it.position" :closeable="it.closeable" :radius="it.radius" @close="it.visible = false">内容...</me-popup>
         </li>
       </ul>
     </li>

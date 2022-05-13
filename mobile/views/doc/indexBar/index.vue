@@ -3,8 +3,8 @@
 </style>
 <template>
   <!-- 索引栏 -->
-  <div class="m-index-bar">
-    <me-index-bar @on-click="onClick"></me-index-bar>
+  <div class="index-bar">
+    <me-index-bar @click="onClick"></me-index-bar>
   </div>
 </template>
 <script lang="ts" setup>

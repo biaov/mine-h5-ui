@@ -9,7 +9,7 @@ export const useHandler = (props: Props, emit: Emits) => {
 
   // 点击 dom
   const onClick = (e: MouseEvent) => {
-    emit('on-click', e)
+    emit('click', e)
   }
 
   // 下载图片
@@ -25,7 +25,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     HTML2Canvas(screenshotRef.value!).then(canvas => {
       const img = canvas.toDataURL()
       props.allowDown && downImg(img)
-      emit('on-end', img, canvas)
+      emit('end', img, canvas)
     })
   }
 

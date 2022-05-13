@@ -57,7 +57,7 @@ app.mount('#app')
 
 ```HTML
 <template>
-  <me-search v-model="iptValue" btnText="取消" @on-click="btnCancel"></me-search>
+  <me-search v-model="iptValue" btnText="取消" @click="btnCancel"></me-search>
 </template>
 <script lang="ts" setup>
 import { getCurrentInstance } from 'vue'
@@ -138,10 +138,10 @@ const btnCancel = () => {
 
 ### 方法
 
-| 方法名    | 说明                                      | 回调参数    | 版本 |
-| --------- | ----------------------------------------- | ----------- | ---- |
-| on-focus  | 输入框聚焦时触发的事件                    | event:Event | --   |
-| on-search | 输入框点击软键盘搜索/回车按钮时触发的事件 | event:Event | --   |
-| on-input  | 输入框输入时触发的事件                    | event:Event | --   |
-| on-change | 输入框内容发生改变时触发的事件            | event:Event | --   |
-| on-blur   | 输入框移除焦点时触发的事件                | event:Event | --   |
+| 方法名 | 说明                                      | 回调参数 | 版本  |
+| ------ | ----------------------------------------- | -------- | ----- |
+| focus  | 输入框聚焦时触发的事件                    | e: Event | 2.3.5 |
+| search | 输入框点击软键盘搜索/回车按钮时触发的事件 | e: Event | 2.3.5 |
+| input  | 输入框输入时触发的事件                    | e: Event | 2.3.5 |
+| change | 输入框内容发生改变时触发的事件            | e: Event | 2.3.5 |
+| blur   | 输入框移除焦点时触发的事件                | e: Event | 2.3.5 |

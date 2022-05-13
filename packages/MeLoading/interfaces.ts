@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // 当前 type 类型的 name 所有值
 export interface TypeName {
   circle: string

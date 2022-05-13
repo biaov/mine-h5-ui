@@ -66,7 +66,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     }
 
     nextTick(() => {
-      scrollTop + clientHeight >= scrollHeight - props.distance && emit('on-load-more')
+      scrollTop + clientHeight >= scrollHeight - props.distance && emit('load-more')
     })
   }
 

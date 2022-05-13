@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // 线
 export interface Line {
   radius?: number

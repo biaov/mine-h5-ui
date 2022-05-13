@@ -3,10 +3,10 @@
 </style>
 <template>
   <!-- 复选框 -->
-  <ul class="m-checkbox">
+  <ul class="checkbox">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
-      <me-checkbox-group v-model="item.value" @on-change="onChange" :direction="item.direction" v-if="item.list.length > 1">
+      <div class="label">{{ item.label }}</div>
+      <me-checkbox-group v-model="item.value" @change="onChange" :direction="item.direction" v-if="item.list.length > 1">
         <me-checkbox
           v-for="it in item.list"
           :key="it.id"
@@ -22,13 +22,13 @@
         </me-checkbox>
       </me-checkbox-group>
       <template v-else>
-        <me-checkbox v-for="it in item.list" :key="it.id" v-model="item.value" @on-click="onClick(item.value as boolean)">{{ it.label }}</me-checkbox>
+        <me-checkbox v-for="it in item.list" :key="it.id" v-model="item.value" @click="onClick(item.value as boolean)">{{ it.label }}</me-checkbox>
       </template>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onChange, onClick } = useHandlerClick()
+const { listData, onChange, onClick } = useHandle()
 </script>

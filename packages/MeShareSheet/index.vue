@@ -1,18 +1,18 @@
 <template>
   <!-- 分享面板 -->
   <div class="me-share-sheet" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask">
-    <div class="m-picker" :class="{ show: isShow }" @click.stop>
+    <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
-      <h3 class="u-tips">{{ tips }}</h3>
+      <h3 class="tips">{{ tips }}</h3>
       <!-- 分享列表 -->
-      <ul class="m-list-li">
+      <ul class="list-li">
         <li v-for="(item, index) in list" :key="index" @click="onLi(item)">
-          <i class="iconfont u-icon" :class="item.icon" :style="`color:${item.color};`"></i>
-          <span class="u-desc">{{ item.value }}</span>
+          <i class="iconfont icon" :class="item.icon" :style="`color:${item.color};`"></i>
+          <span class="desc">{{ item.value }}</span>
         </li>
       </ul>
       <!-- 取消按钮 -->
-      <button type="button" class="u-btn-cancel" @click="onCancel">取消</button>
+      <button type="button" class="btn-cancel" @click="onCancel">取消</button>
     </div>
   </div>
 </template>
@@ -23,8 +23,8 @@ import { ListItem } from './interfaces'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void
-  (event: 'on-change', e: ListItem): void
-  (event: 'on-cancel', e: MouseEvent): void
+  (event: 'change', e: ListItem): void
+  (event: 'cancel', e: MouseEvent): void
 }>()
 
 const props = defineProps({

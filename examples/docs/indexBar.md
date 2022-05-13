@@ -34,7 +34,7 @@ app.mount('#app')
 
 ```Vue
 <template>
-  <me-index-bar @on-click="onClick"></me-index-bar>
+  <me-index-bar @click="onClick"></me-index-bar>
 </template>
 <script lang="ts" setup>
 // 点击内容列表
@@ -74,6 +74,6 @@ const onClick = item => {
 
 ### 方法
 
-| 方法名   | 说明                     | 回调参数    | 版本 |
-| -------- | ------------------------ | ----------- | ---- |
-| on-click | 点击具体国家项触发的事件 | item:object | --   |
+| 方法名 | 说明                     | 回调参数     | 版本  |
+| ------ | ------------------------ | ------------ | ----- |
+| click  | 点击具体国家项触发的事件 | item: Object | 2.3.5 |

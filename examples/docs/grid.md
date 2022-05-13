@@ -51,9 +51,9 @@ app.mount('#app')
 ```Vue
 <template>
   <me-grid border-color="#d9d9d9" :cols="3">
-    <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @on-click="handleLi(item)"></me-grid-item>
+    <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @click="handleLi(item)"></me-grid-item>
     <me-grid-item>
-      <div class="u-cust">
+      <div class="cust">
         <me-icon name="icon-love" color="#999" size="28px"></me-icon>
         <p>自定义</p>
       </div>
@@ -114,7 +114,7 @@ const handleLi = ({ text }) => {
 </script>
 <style scoped lang="less">
 // 自定义内容
-.u-cust {
+.cust {
   .me-icon {
     position: relative;
     display: block;
@@ -174,6 +174,6 @@ const handleLi = ({ text }) => {
 
 #### 方法
 
-| 方法名   | 说明                     | 回调参数    | 版本 |
-| -------- | ------------------------ | ----------- | ---- |
-| on-click | 点击单个宫格时触发的事件 | Event:event | --   |
+| 方法名 | 说明                     | 回调参数      | 版本  |
+| ------ | ------------------------ | ------------- | ----- |
+| click  | 点击单个宫格时触发的事件 | e: MouseEvent | 2.3.5 |

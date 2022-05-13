@@ -2,10 +2,10 @@
   <!-- 滑块 -->
   <div class="me-slider" :data-disabled="disabled">
     <!-- 颜色线条 -->
-    <p class="u-line" :style="`height:${styles.height};border-radius:${styles.radius};`"><span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span></p>
+    <p class="line" :style="`height:${styles.height};border-radius:${styles.radius};`"><span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span></p>
     <!-- 拖拽div -->
     <div
-      class="m-drag"
+      class="drag"
       :style="`left:${100 - currentValue}%;`"
       v-on="{
         touchmove: onTouchmove,
@@ -17,7 +17,7 @@
       @mousedown.prevent="onMousedown"
     >
       <!-- 圆点 -->
-      <span class="u-round" v-if="!isBtn"></span>
+      <span class="round" v-if="!isBtn"></span>
       <!-- 自定义按钮 -->
       <slot v-else></slot>
     </div>
@@ -29,9 +29,9 @@ import { PropStyles } from './interfaces'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', num: number): void
-  (event: 'on-start', e: TouchEvent | MouseEvent): void
-  (event: 'on-move', e: TouchEvent | MouseEvent): void
-  (event: 'on-end', e: TouchEvent | MouseEvent): void
+  (event: 'start', e: TouchEvent | MouseEvent): void
+  (event: 'move', e: TouchEvent | MouseEvent): void
+  (event: 'end', e: TouchEvent | MouseEvent): void
 }>()
 
 const props = withDefaults(

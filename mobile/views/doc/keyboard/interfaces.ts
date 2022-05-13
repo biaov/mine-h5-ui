@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // skinStyle
 export interface SkinStyle {
   bgc: string

@@ -12,7 +12,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     // 判断是否为只读/禁用/选中状态
     if ((state && !listData.value[id].state) || props.disabled || props.readonly) return
     emit('update:modelValue', id)
-    emit('on-change')
+    emit('change')
     // 循环遍历设置状态值的改变
     listData.value.forEach(elem => {
       elem.state = elem.id <= id

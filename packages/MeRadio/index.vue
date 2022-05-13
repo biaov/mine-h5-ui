@@ -2,7 +2,7 @@
   <!-- 单选框 -->
   <div class="me-radio" @click="handleClick" :data-checked="isChecked + ''" :data-disabled="disabled + ''">
     <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
-    <div class="u-value">
+    <div class="value">
       <slot></slot>
     </div>
   </div>
@@ -13,7 +13,7 @@ import { useHandler } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', bool: boolean): void
-  (event: 'on-click'): void
+  (event: 'click'): void
 }>()
 
 const props = withDefaults(

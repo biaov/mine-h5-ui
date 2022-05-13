@@ -13,7 +13,7 @@
   };
   position: relative;
   color: @font-color-reduce;
-  .u-dot {
+  .dot {
     position: absolute;
     z-index: 2;
     display: flex;
@@ -29,23 +29,23 @@
       font-size: inherit;
     }
   }
-  .u-line {
+  .line {
     position: absolute;
     z-index: 1;
     background: lighten(@font-color-light, 10%);
   }
-  .u-text {
+  .text {
     color: inherit;
     font-size: @font-size-min;
   }
   &.active {
     each(@list,{
       &.@{key}{
-        .u-text,
-        .u-dot{
+        .text,
+        .dot{
           color: @value;
         }
-        .u-line{
+        .line{
           background: @value;
         }
       }
@@ -58,17 +58,17 @@
     display: flex;
     justify-content: flex-end;
     padding-top: 20px;
-    .u-dot {
+    .dot {
       top: 0;
       right: -8px;
     }
-    .u-line {
+    .line {
       top: 10px;
       left: 0;
       width: 100%;
       height: 1px;
     }
-    .u-text {
+    .text {
       display: inline-block;
       transform: translateX(50%);
       margin-right: 8px;
@@ -78,12 +78,12 @@
   &.vertical {
     width: 100%;
     padding: 10px 10px 10px 32px;
-    .u-dot {
+    .dot {
       top: 50%;
       left: 6px;
       transform: translateY(-50%);
     }
-    .u-line {
+    .line {
       top: -50%;
       left: 16px;
       width: 1px;

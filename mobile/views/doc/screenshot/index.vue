@@ -3,11 +3,11 @@
 </style>
 <template>
   <!-- 截长图 -->
-  <ul class="m-screenshot">
+  <ul class="screenshot">
     <li v-for="list in listData" :key="list.id">
-      <div class="u-label">{{ list.label }}</div>
-      <me-screenshot :allow-down="list.allowDown" :image-name="list.imageName" :start="list.start" @on-click="onClick(list)" @on-end="onEnd">
-        <div class="u-desc-cell">
+      <div class="label">{{ list.label }}</div>
+      <me-screenshot :allow-down="list.allowDown" :image-name="list.imageName" :start="list.start" @click="onClick(list)" @end="onEnd">
+        <div class="desc-cell">
           <span>{{ list.text }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
         </div>
@@ -16,7 +16,7 @@
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onClick, onEnd } = useHandlerClick()
+const { listData, onClick, onEnd } = useHandle()
 </script>

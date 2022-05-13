@@ -28,13 +28,13 @@ app.mount('#app')
 ### 基础用法
 
 - 通过 `model` 属性来设置需要校验的内容，通过 `rules` 属性来设置匹配的规则，[rules 详情](#rules)。
-- 注意：只有当你同时设置 model 和 rules 属性时，验证才能生效。
+- 注意：只有当你同时设置 model 和 rules 属性时，校验才能生效。
 
 ::: CopyCode
 
 ```Vue
 <template>
-  <me-form :model="form" :rules="rules" @on-submit="onSubmit">
+  <me-form :model="form" :rules="rules" @submit="onSubmit">
     <me-input v-model="form.username" placeholder="请输入用户名" label-width="70px" label="用户名"></me-input>
     <me-input v-model="form.password" :password="true" placeholder="请输入6-12位数字+字母组合" label-width="70px" label="密码"></me-input>
     <me-input v-model="form.sms" placeholder="请输入短信验证码" sms-msg="短信验证码" :sms-is="false"></me-input>
@@ -71,9 +71,9 @@ const rules = Object.freeze([
 ])
 // 点击提交按钮
 const onSubmit = ({ valid, message, value }) => {
-  // 判断是否通过验证
+  // 判断是否通过校验
   if (valid) {
-    console.log(value) // 通过验证的值
+    console.log(value) // 通过校验的值
   }
 }
 </script>
@@ -102,15 +102,15 @@ const onSubmit = ({ valid, message, value }) => {
 
 ### 方法
 
-| 方法名    | 说明                                                                           | 回调参数                         | 版本 |
-| --------- | ------------------------------------------------------------------------------ | -------------------------------- | ---- |
-| on-submit | 表单提交时触发的事件，注意：只有表单里的按钮原始类型设置为 submit 时，才起作用 | Object:[回调数据](#callbackData) | --   |
+| 方法名 | 说明                                                                           | 回调参数                         | 版本  |
+| ------ | ------------------------------------------------------------------------------ | -------------------------------- | ----- |
+| submit | 表单提交时触发的事件，注意：只有表单里的按钮原始类型设置为 submit 时，才起作用 | Object:[回调数据](#callbackData) | 2.3.5 |
 
 <h3 id="callbackData">Object : 回调数据</h3>
 
 | 参数    | 说明                                     | 类型    | 可选值       | 默认值 | 版本 |
 | ------- | ---------------------------------------- | ------- | ------------ | ------ | ---- |
-| valid   | 验证状态，是否全部通过校验               | boolean | true / false | --     | --   |
+| valid   | 校验状态，是否全部通过校验               | boolean | true / false | --     | --   |
 | type    | 未通过的属性名，如果全部通过则为空       | string  | --           | --     | --   |
-| value   | 需要验证的表单数据                       | Object  | --           | --     | --   |
+| value   | 需要校验的表单数据                       | Object  | --           | --     | --   |
 | message | 返回规则里的 message，如果全部通过则为空 | string  | --           | --     | --   |

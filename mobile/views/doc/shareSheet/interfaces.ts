@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // 三级选项
 export interface GrandsonListItem {
   icon: string
@@ -14,6 +12,7 @@ export interface ChildListItem {
   visible: boolean
   list: GrandsonListItem[]
 }
+
 // 列表项
 export interface ListDataItem {
   id: number

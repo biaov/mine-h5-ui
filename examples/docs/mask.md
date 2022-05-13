@@ -47,7 +47,7 @@ app.mount('#app')
 <template>
   <me-mask v-model:visible="visible" mask-close>
     <me-loading type="circle2" color="#f56c6c" size="100px">
-      <div class="u-text">加载中...</div>
+      <div class="text">加载中...</div>
     </me-loading>
   </me-mask>
 </template>
@@ -61,7 +61,7 @@ const visible = $ref(false) // 模态框显示状态
   left: 50%;
   transform: translate(-50%, -50%);
   background: transparent;
-  .u-text {
+  .text {
     padding-top: 10px;
     text-align: center;
     color: @color-default;

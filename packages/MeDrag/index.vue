@@ -14,7 +14,7 @@
     >
       <!-- 缩放按钮 -->
       <div
-        class="u-resize"
+        class="resize"
         v-for="(it, i) in angleToCursor"
         :key="it.cursor"
         :class="[it.cursor, getCursor(i)]"
@@ -24,9 +24,9 @@
         @mousedown.stop="onResizeMousedown($event, it)"
       ></div>
       <!-- 删除按钮 -->
-      <div class="u-delete flex-center" @click="onDelete"><i class="iconfont icon-baseline-close-px"></i></div>
+      <div class="delete flex-center" @click="onDelete"><i class="iconfont icon-baseline-close-px"></i></div>
       <!-- 旋转按钮 -->
-      <div class="u-rotate flex-center" @touchstart.stop @touchmove.stop="onRotateTouchmove" @touchend.stop @mousedown.stop="onRotateMousedown"><i class="iconfont icon-loading_flat"></i></div>
+      <div class="rotate flex-center" @touchstart.stop @touchmove.stop="onRotateTouchmove" @touchend.stop @mousedown.stop="onRotateMousedown"><i class="iconfont icon-loading_flat"></i></div>
       <slot :item="item" :index="index"></slot>
     </div>
   </div>
@@ -36,7 +36,7 @@ import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
 import { ListDataItem } from './interfaces'
 
 const emit = defineEmits<{
-  (event: 'on-change', list: ListDataItem[], type: string): void
+  (event: 'change', list: ListDataItem[], type: string): void
   (event: 'update:list', list: ListDataItem[]): void
   (event: 'update:current', index: number): void
 }>()

@@ -10,7 +10,7 @@ export const useInitSlots = (props: Props, emit: Emits) => {
   // 改变value的值
   const onChange = (name: string | number) => {
     emit('update:modelValue', name)
-    emit('on-change', name)
+    emit('change', name)
   }
 
   provide(MeRadioGroupKey, { name: MeRadioGroupKey, currentValue, onChange })

@@ -3,15 +3,15 @@
 </style>
 <template>
   <!-- 公告栏 -->
-  <ul class="m-notice-bar">
+  <ul class="notice-bar">
     <li v-for="(item, index) in listData" :key="index">
-      <div class="u-label">{{ item.label }}</div>
-      <me-notice-bar v-bind="item" loop @on-click:preappend="onClick('preappend', $event)" @on-click:append="onClick('append', $event)" @on-click="onClick('notice', $event)"></me-notice-bar>
+      <div class="label">{{ item.label }}</div>
+      <me-notice-bar v-bind="item" loop @click:preappend="onClick('preappend', $event)" @click:append="onClick('append', $event)" @click="onClick('notice', $event)"></me-notice-bar>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onClick } = useHandlerClick()
+const { listData, onClick } = useHandle()
 </script>

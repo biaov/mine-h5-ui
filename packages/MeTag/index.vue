@@ -1,7 +1,7 @@
 <template>
   <!-- 标签 -->
   <div class="me-tag" :class="[type, plain && 'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
-    <div class="u-txt">
+    <div class="txt">
       <span>{{ text }}</span>
       <i class="iconfont icon-baseline-close-px" @click="onClose" v-if="closeable"></i>
     </div>
@@ -11,7 +11,7 @@
 import { useHandler } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-close', e: MouseEvent): void
+  (event: 'close', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

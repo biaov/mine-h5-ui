@@ -31,7 +31,7 @@ export const useInitSlots = (props: Props, emit: Emits) => {
     if (name !== props.modelValue) {
       duration.value = 0.4
       emit('update:modelValue', name)
-      emit('on-change', name)
+      emit('change', name)
     }
   }
 

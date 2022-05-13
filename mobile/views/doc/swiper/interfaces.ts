@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // 子列表
 export interface ChildListItem {
   url?: string

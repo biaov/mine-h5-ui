@@ -9,7 +9,7 @@ import { useHandler } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', bool: boolean): void
-  (event: 'on-end'): void
+  (event: 'end'): void
 }>()
 
 const props = withDefaults(

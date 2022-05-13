@@ -3,11 +3,11 @@
 </style>
 <template>
   <!-- 宫格 -->
-  <div class="m-grid">
+  <div class="grid">
     <me-grid border-color="#d9d9d9" :cols="3">
-      <me-grid-item v-for="item in grids" :key="item.icon" v-bind="item" @on-click="handleLi(item)"></me-grid-item>
+      <me-grid-item v-for="item in grids" :key="item.icon" v-bind="item" @click="handleLi(item)"></me-grid-item>
       <me-grid-item>
-        <div class="u-cust">
+        <div class="cust">
           <me-icon name="icon-love" color="#999" size="28px"></me-icon>
           <p>自定义</p>
         </div>
@@ -16,7 +16,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { grids, handleLi } = useHandlerClick()
+const { grids, handleLi } = useHandle()
 </script>

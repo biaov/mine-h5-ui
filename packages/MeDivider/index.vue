@@ -3,20 +3,20 @@
   <div class="me-divider" :style="`width:${width}px;height:${height}px;`">
     <template v-if="fieldsetList.length > 0">
       <fieldset
-        class="u-fieldset"
+        class="fieldset"
         v-for="(item, index) in fieldsetList"
         :key="index"
         :style="`transform-origin:center ${origin}px;transform:translate(-50%, -50%) rotate(${item.deg}deg);border-top-width:${curLine.size}px;border-top-color:${curLine.color};border-radius: ${curLine.radius}px;`"
         role="presentation"
       >
-        <legend class="u-legend" :style="`margin-left:${left}px;margin-right:${right}px;color:${text.color};font-size:${text.size}px`">
+        <legend class="legend" :style="`margin-left:${left}px;margin-right:${right}px;color:${text.color};font-size:${text.size}px`">
           {{ item.text }}
         </legend>
       </fieldset>
     </template>
     <template v-else>
       <fieldset
-        class="u-fieldset"
+        class="fieldset"
         :style="`transform-origin:center ${origin}px;border-top-width:${curLine.size}px;border-top-color:${curLine.color};border-radius: ${curLine.radius}px;`"
         role="presentation"
       ></fieldset>

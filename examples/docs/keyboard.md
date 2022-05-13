@@ -94,8 +94,8 @@ const skinStyle = Object.freeze({
 
 ### 方法
 
-| 方法名      | 说明                         | 回调参数          | 版本 |
-| ----------- | ---------------------------- | ----------------- | ---- |
-| on-click    | 点击键盘数字时触发的事件     | number: number    | --   |
-| on-delete   | 点击键盘删除按钮时触发的事件 | event: MouseEvent | --   |
-| on-complate | 点击键盘完成按钮时触发的事件 | event: MouseEvent | --   |
+| 方法名   | 说明                         | 回调参数      | 版本  |
+| -------- | ---------------------------- | ------------- | ----- |
+| click    | 点击键盘数字时触发的事件     | num: number   | 2.3.5 |
+| delete   | 点击键盘删除按钮时触发的事件 | e: MouseEvent | 2.3.5 |
+| complate | 点击键盘完成按钮时触发的事件 | e: MouseEvent | 2.3.5 |

@@ -8,11 +8,15 @@ describe('MeLoading', () => {
       props: { type: 'circle2' }
     })
     const viewer = wrapper.find('.me-loading') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     const useEl = viewer.find('.svg-icon>use')
+
     expect(useEl.exists()).toBeTruthy()
     expect(useEl.html()).toContain('#icon-Loading')
   })
+
   test('props icon', () => {
     const icon = 'icon-github'
     // 向组件里传参
@@ -20,6 +24,7 @@ describe('MeLoading', () => {
       props: { icon }
     })
     const viewer = wrapper.find('.me-loading .svg-icon>use') // 获取 DOM
+
     expect(viewer.html()).toContain(`#${icon}`)
   })
 })

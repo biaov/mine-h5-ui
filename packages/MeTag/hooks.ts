@@ -4,7 +4,7 @@ import { Emits } from './interfaces'
 export const useHandler = (emit: Emits) => {
   // 点击关闭按钮
   const onClose = (e: MouseEvent) => {
-    emit('on-close', e)
+    emit('close', e)
   }
 
   return { onClose }

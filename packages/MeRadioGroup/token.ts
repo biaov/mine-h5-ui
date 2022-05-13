@@ -1,1 +1,1 @@
-export const MeRadioGroupKey = 'MeRadioGroup' // token 验证 key
+export const MeRadioGroupKey = 'MeRadioGroup' // token 校验 key

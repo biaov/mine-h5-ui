@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 // emits
 export interface Emits {
-  (event: 'on-close', e: MouseEvent): void
+  (event: 'close', e: MouseEvent): void
 }
 
 // props

@@ -6,6 +6,7 @@ import { ListDataItem } from './interfaces'
 export const useRefresh = () => {
   const active = ref(1) // 活动索引
   const listData = ref<ListDataItem[]>(initData) // 列表数据
+
   // 刷新
   const onRefresh = (item: ListDataItem) => {
     setTimeout(() => {
@@ -13,5 +14,6 @@ export const useRefresh = () => {
       item.loading = false
     }, 3000)
   }
+
   return { active, listData, onRefresh }
 }

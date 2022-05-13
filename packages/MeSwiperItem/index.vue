@@ -1,9 +1,9 @@
 <template>
   <!-- 轮播图 -->
   <div class="me-swiper-item" :style="`background:${background};`">
-    <img class="u-img" :src="url" alt="banner" v-if="url" draggable="false" />
+    <img class="img" :src="url" alt="banner" v-if="url" draggable="false" />
     <slot>
-      <div class="u-text" v-if="text">{{ text }}</div>
+      <div class="text" v-if="text">{{ text }}</div>
     </slot>
   </div>
 </template>

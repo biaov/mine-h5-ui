@@ -83,7 +83,7 @@ const onClick = () => {
 
 ### 方法
 
-| 方法名   | 说明             | 回调参数                                | 版本 |
-| -------- | ---------------- | --------------------------------------- | ---- |
-| on-click | 当点击组件时触发 | event: PointerEvent                     | --   |
-| on-end   | 当截图结束时触发 | data: string, canvas: HTMLCanvasElement | --   |
+| 方法名 | 说明             | 回调参数                                | 版本  |
+| ------ | ---------------- | --------------------------------------- | ----- |
+| click  | 当点击组件时触发 | e: PointerEvent                         | 2.3.5 |
+| end    | 当截图结束时触发 | data: string, canvas: HTMLCanvasElement | 2.3.5 |

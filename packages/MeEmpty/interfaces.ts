@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // names
 export interface Names {
   default: string

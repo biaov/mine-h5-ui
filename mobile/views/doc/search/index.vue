@@ -3,9 +3,9 @@
 </style>
 <template>
   <!-- 搜索 -->
-  <ul class="m-search">
+  <ul class="search">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
+      <div class="label">{{ item.label }}</div>
       <me-search
         v-model="item.value"
         :placeholder="item.placeholder"
@@ -15,14 +15,14 @@
         :background="item.background"
         :color="item.color"
         :disabled="item.disabled"
-        @on-search="onSearch"
-        @on-click="onClick"
+        @search="onSearch"
+        @click="onClick"
       ></me-search>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onSearch, onClick } = useHandlerClick()
+const { listData, onSearch, onClick } = useHandle()
 </script>

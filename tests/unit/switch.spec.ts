@@ -8,14 +8,18 @@ describe('MeSwitch', () => {
       props: { disabled: true }
     })
     const viewer = wrapper.find('.me-switch') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
-  test('emit on-click', async () => {
+
+  test('emit click', async () => {
     // 向组件里传参
     const wrapper = mount(MeSwitch)
     const viewer = wrapper.find('.me-switch') // 获取 DOM
+
     await viewer.trigger('click')
-    expect(wrapper.emitted('on-click')).toBeDefined()
+
+    expect(wrapper.emitted('click')).toBeDefined()
   })
 })

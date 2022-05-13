@@ -14,18 +14,23 @@ describe('MeStep', () => {
     }
   }
   const active = ['first']
+
   test('props active', () => {
     // 向组件里传参
     const wrapper = mount(TestComponent, {
       props: { active }
     })
     const viewer = wrapper.find('.me-step') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('horizontal')).toBe(true)
+
     const itemDom = viewer.find('.me-step-item:first-child')
+
     expect(itemDom.exists()).toBeTruthy()
     expect(itemDom.classes('active')).toBe(true)
   })
+
   test('props direction', () => {
     const direction = 'vertical'
     // 向组件里传参
@@ -33,8 +38,10 @@ describe('MeStep', () => {
       props: { active, direction }
     })
     const viewer = wrapper.find('.me-step') // 获取 DOM
+
     expect(viewer.classes(direction)).toBe(true)
   })
+
   test('props type', () => {
     const type = 'danger'
     // 向组件里传参
@@ -42,6 +49,7 @@ describe('MeStep', () => {
       props: { active, type }
     })
     const viewer = wrapper.find('.me-step .me-step-item:first-child') // 获取 DOM
+
     expect(viewer.classes(type)).toBe(true)
   })
 })
@@ -64,8 +72,11 @@ describe('MeStepItem', () => {
       props: { active }
     })
     const viewer = wrapper.find('.me-step') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     const itemDom = viewer.find('.me-step-item:first-child')
+
     expect(itemDom.exists()).toBeTruthy()
     expect(itemDom.classes('active')).toBe(true)
   })

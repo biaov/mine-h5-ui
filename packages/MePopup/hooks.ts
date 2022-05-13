@@ -21,7 +21,7 @@ export const useMask = (props: Props, emit: Emits) => {
     setTimeout(() => {
       isShowMask.value = false
       emit('update:visible', false)
-      emit('on-cancel')
+      emit('cancel')
     }, 400)
   }
 

@@ -3,10 +3,10 @@
 </style>
 <template>
   <!-- 上传图片 -->
-  <ul class="m-virtual-list">
+  <ul class="virtual-list">
     <li v-for="list in listData" :key="list.id">
-      <div class="u-label">{{ list.label }}</div>
-      <me-virtual-list height="300px" :list="list.list" :itemHeight="list.itemHeight" :remain="16" @on-load-more="onLoadMore(list)">
+      <div class="label">{{ list.label }}</div>
+      <me-virtual-list height="300px" :list="list.list" :itemHeight="list.itemHeight" :remain="16" @load-more="onLoadMore(list)">
         <template #default="{ item }">
           <div class="item" :class="{ auto: list.auto }">
             <p>
@@ -16,7 +16,7 @@
           </div>
         </template>
         <template #more>
-          <div class="u-more" v-if="list.loadStatus">{{ loadMoreText[list.loadStatus] }}</div>
+          <div class="more" v-if="list.loadStatus">{{ loadMoreText[list.loadStatus] }}</div>
         </template>
       </me-virtual-list>
     </li>

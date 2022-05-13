@@ -1,7 +1,7 @@
 <template>
   <!-- 图片预览 -->
   <div class="me-preview" :class="{ show: isShow }" :style="`z-index:${zIndex};background:${background};`" @click="onClose" v-if="!isDestroy">
-    <img class="u-img" :src="url" alt="preview-img" />
+    <img class="img" :src="url" alt="preview-img" />
     <slot></slot>
   </div>
 </template>

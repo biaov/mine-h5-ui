@@ -3,9 +3,9 @@
 </style>
 <template>
   <!-- 评分 -->
-  <ul class="m-rate">
+  <ul class="rate">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
+      <div class="label">{{ item.label }}</div>
       <me-rate
         v-model="item.value"
         :icon="item.icon"
@@ -17,13 +17,13 @@
         :tips="item.tips"
         :tips-color="item.tipsColor"
         :size="item.size"
-        @on-change="onChange(item)"
+        @change="onChange(item)"
       ></me-rate>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onChange } = useHandlerClick()
+const { listData, onChange } = useHandle()
 </script>

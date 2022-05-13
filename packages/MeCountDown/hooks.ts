@@ -21,11 +21,11 @@ export const useCountdown = (props: Props, emit: Emits) => {
       if (curTime <= 0) {
         clearInterval(timer as NodeJS.Timeout)
         timer = undefined
-        emit('on-end')
+        emit('end')
       } else {
         curTime -= addSubNum
         formatAfter.value = CountDown(curTime, props.format)
-        emit('on-progress', curTime)
+        emit('progress', curTime)
       }
     }, addSubNum)
   }

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // listItem
 export interface ListItem {
   [key: string]: any
@@ -6,7 +5,7 @@ export interface ListItem {
 
 // emits
 export interface Emits {
-  (event: 'on-load-more'): void
+  (event: 'load-more'): void
 }
 
 // props

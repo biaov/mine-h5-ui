@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // props SkinStyleValue
 export interface SkinStyleValue {
   bgc: string
@@ -10,9 +8,9 @@ export interface SkinStyleValue {
 // emits
 export interface Emits {
   (event: 'update:visible', bool: boolean): void
-  (event: 'on-click', num: number): void
-  (event: 'on-delete', e: MouseEvent): void
-  (event: 'on-complate', e: MouseEvent): void
+  (event: 'click', num: number): void
+  (event: 'delete', e: MouseEvent): void
+  (event: 'complate', e: MouseEvent): void
 }
 
 // props

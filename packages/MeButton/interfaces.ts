@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 import { NativeType } from './types'
 
 // emits
 export interface Emits {
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }
 
 // props

@@ -38,7 +38,7 @@ export const useHandler = (props: Props, emit: Emits) => {
 
   // 自定义事件
   const onEmitChange = (type: string) => {
-    emit('on-change', listData.value, type)
+    emit('change', listData.value, type)
   }
 
   // 更新 list

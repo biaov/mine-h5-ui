@@ -256,7 +256,7 @@ export const useHandMove = (props: Props) => {
 export const useBtns = (props: Props, emit: Emits, currentValue: number[]) => {
   // 点击取消按钮
   const onCancel = () => {
-    emit('on-cancel')
+    emit('cancel')
   }
 
   // 点击确定按钮
@@ -278,7 +278,7 @@ export const useBtns = (props: Props, emit: Emits, currentValue: number[]) => {
       return prev + separator + val
     }, '')
     emit('update:modelValue', str.slice(1))
-    emit('on-sure', currentValue)
+    emit('sure', currentValue)
   }
 
   return { onCancel, onSure }

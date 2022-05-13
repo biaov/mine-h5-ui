@@ -2,7 +2,7 @@
   <!-- 数字键盘 -->
   <ul class="me-keyboard" :class="`me-keyboard-${skinType} ${visible ? 'show' : ''} ${isActive ? 'me-keyboard-active' : ''}`" @click.stop>
     <li v-for="item in 9" :key="item" @click="onClick(item)">{{ item }}</li>
-    <li @click="onComplate" class="u-complate">完成</li>
+    <li @click="onComplate" class="complate">完成</li>
     <li @click="onClick(0)">0</li>
     <li @click="onDelete">
       <me-icon name="icon-delete"></me-icon>
@@ -16,9 +16,9 @@ import { useHandler, usePadding } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void
-  (event: 'on-click', num: number): void
-  (event: 'on-delete', e: MouseEvent): void
-  (event: 'on-complate', e: MouseEvent): void
+  (event: 'click', num: number): void
+  (event: 'delete', e: MouseEvent): void
+  (event: 'complate', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

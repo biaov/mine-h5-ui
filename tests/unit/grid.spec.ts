@@ -15,12 +15,16 @@ describe('MeGrid', () => {
       MeGridItem
     }
   }
+
   test('props cols', () => {
     // 向组件里传参
     const wrapper = mount(TestComponent)
     const viewer = wrapper.find('.me-grid') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     const viewerItemEl = viewer.find('.me-grid-item:first-child')
+
     expect(viewerItemEl.exists()).toBeTruthy()
     expect(viewerItemEl.html()).toContain(`${100 / 3}`)
   })
@@ -34,6 +38,7 @@ describe('MeGridItem', () => {
       MeGridItem
     }
   }
+
   test('props icon', () => {
     TestComponent.template = `<MeGrid>
       <MeGridItem icon="icon-github"></MeGridItem>
@@ -44,9 +49,11 @@ describe('MeGridItem', () => {
     // 向组件里传参
     const wrapper = mount(TestComponent)
     const viewer = wrapper.find('.me-grid-item .iconfont') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('icon-github')).toBe(true)
   })
+
   test('props text', () => {
     const testText = '测试文本'
     TestComponent.template = `<MeGrid>
@@ -58,7 +65,8 @@ describe('MeGridItem', () => {
     // 向组件里传参
     const wrapper = mount(TestComponent)
     const viewer = wrapper.find('.me-grid-item') // 获取 DOM
-    const descEl = viewer.find('.u-desc')
+    const descEl = viewer.find('.desc')
+
     expect(descEl.exists()).toBeTruthy()
     expect(descEl.text()).toBe(testText)
   })

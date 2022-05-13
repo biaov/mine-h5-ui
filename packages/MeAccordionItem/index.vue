@@ -2,12 +2,12 @@
   <!-- 手风琴选项 -->
   <div class="me-accordion-item">
     <!-- 头部区域 -->
-    <div class="m-hd" @click="onClick" :style="`border-bottom-color:${borderColor};`">
+    <div class="hd" @click="onClick" :style="`border-bottom-color:${borderColor};`">
       <h3>{{ label }}</h3>
       <i class="iconfont icon-right1" :class="{ open: isShow }"></i>
     </div>
     <!-- 内容区域 -->
-    <div class="m-bd" :style="`height:${curHeight}px;`">
+    <div class="bd" :style="`height:${curHeight}px;`">
       <div ref="accordionItemCont">
         <slot></slot>
       </div>
@@ -18,7 +18,7 @@
 import { useHandler } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-click', e: MouseEvent): void
+  (event: 'click', e: MouseEvent): void
 }>()
 
 const props = withDefaults(

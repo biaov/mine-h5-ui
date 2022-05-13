@@ -11,5 +11,6 @@ export const useWebData = () => {
     endValue: 6666.66,
     value: true
   })
+
   return { listData, manual }
 }

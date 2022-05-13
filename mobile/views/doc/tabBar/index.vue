@@ -3,15 +3,15 @@
 </style>
 <template>
   <!-- 标签栏 -->
-  <ul class="m-tab-bar">
+  <ul class="tab-bar">
     <li v-for="(item, index) in listData" :key="index">
-      <div class="u-label">{{ item.label }}</div>
-      <me-tab-bar v-bind="item" @on-change="onChange($event, item)"></me-tab-bar>
+      <div class="label">{{ item.label }}</div>
+      <me-tab-bar v-bind="item" @change="onChange($event, item)"></me-tab-bar>
     </li>
   </ul>
 </template>
 <script lang="ts" setup>
-import { useHandlerClick } from './hooks'
+import { useHandle } from './hooks'
 
-const { listData, onChange } = useHandlerClick()
+const { listData, onChange } = useHandle()
 </script>

@@ -9,6 +9,7 @@ describe('MeDivider', () => {
       props: { list }
     })
     const viewer = wrapper.find('.me-divider') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(list[0])
   })

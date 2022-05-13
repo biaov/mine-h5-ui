@@ -2,15 +2,15 @@
   <!-- 导航栏 -->
   <div class="me-nav-bar" :style="`background:${styles.background};border-bottom-color:${styles.borderColor};`">
     <!-- 左侧按钮 -->
-    <div class="u-lf" @click="onClickLeft" :style="`color:${styles.leftColor};`">
+    <div class="lf" @click="onClickLeft" :style="`color:${styles.leftColor};`">
       <i class="iconfont icon-left" v-if="leftArrow"></i>
       <span>{{ leftText }}</span>
     </div>
     <!-- 中间标题 -->
-    <h2 class="u-tit" :style="`color:${styles.titleColor};`">{{ title }}</h2>
+    <h2 class="tit" :style="`color:${styles.titleColor};`">{{ title }}</h2>
     <!-- 右侧按钮 -->
-    <div class="u-rt">
-      <div class="u-btn" v-if="rightText" @click="onClickRight" :style="`color:${styles.rightColor};`">{{ rightText }}</div>
+    <div class="rt">
+      <div class="btn" v-if="rightText" @click="onClickRight" :style="`color:${styles.rightColor};`">{{ rightText }}</div>
       <slot v-else></slot>
     </div>
   </div>

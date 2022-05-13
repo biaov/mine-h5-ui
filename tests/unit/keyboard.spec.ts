@@ -8,9 +8,11 @@ describe('MeKeyboard', () => {
       props: { visible: true }
     })
     const viewer = wrapper.find('.me-keyboard') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)
   })
+
   test('props skinType', () => {
     const skinType = 'dark'
     // 向组件里传参
@@ -18,30 +20,43 @@ describe('MeKeyboard', () => {
       props: { skinType }
     })
     const viewer = wrapper.find('.me-keyboard') // 获取 DOM
+
     expect(viewer.classes(`me-keyboard-${skinType}`)).toBe(true)
   })
-  test('emit on-click', async () => {
+
+  test('emit click', async () => {
     // 向组件里传参
     const wrapper = mount(MeKeyboard)
     const viewer = wrapper.find('.me-keyboard>li:first-child') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     await viewer.trigger('click')
-    expect(wrapper.emitted('on-click')).toBeDefined()
+
+    expect(wrapper.emitted('click')).toBeDefined()
   })
-  test('emit on-delete', async () => {
+
+  test('emit delete', async () => {
     // 向组件里传参
     const wrapper = mount(MeKeyboard)
     const viewer = wrapper.find('.me-keyboard>li:last-child') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     await viewer.trigger('click')
-    expect(wrapper.emitted('on-delete')).toBeDefined()
+
+    expect(wrapper.emitted('delete')).toBeDefined()
   })
-  test('emit on-complate', async () => {
+
+  test('emit complate', async () => {
     // 向组件里传参
     const wrapper = mount(MeKeyboard)
-    const viewer = wrapper.find('.me-keyboard>li.u-complate') // 获取 DOM
+    const viewer = wrapper.find('.me-keyboard>li.complate') // 获取 DOM
+
     expect(viewer.exists()).toBeTruthy()
+
     await viewer.trigger('click')
-    expect(wrapper.emitted('on-complate')).toBeDefined()
+
+    expect(wrapper.emitted('complate')).toBeDefined()
   })
 })

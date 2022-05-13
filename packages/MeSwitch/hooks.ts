@@ -12,7 +12,7 @@ export const useHandler = (props: Props, emit: Emits) => {
     if (props.disabled) return // 是否被禁用
 
     !props.async && emit('update:modelValue', !isActived.value) // 是否异步
-    emit('on-click', e)
+    emit('click', e)
   }
 
   // 设置自定义颜色

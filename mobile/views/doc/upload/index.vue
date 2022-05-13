@@ -3,9 +3,9 @@
 </style>
 <template>
   <!-- 上传图片 -->
-  <ul class="m-upload">
+  <ul class="upload">
     <li v-for="item in listData" :key="item.id">
-      <div class="u-label">{{ item.label }}</div>
+      <div class="label">{{ item.label }}</div>
       <me-upload :max-count="item.maxCount" :max-size="item.maxSize" :multiple="item.multiple" :deletable="item.deletable" v-model:fileList="item.fileList"></me-upload>
     </li>
   </ul>

@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { Ref } from 'vue'
 
 // 矩形区域
@@ -85,7 +83,7 @@ export interface ScaleShare extends Share {
 
 // emits
 export interface Emits {
-  (event: 'on-change', list: ListDataItem[], type: string): void
+  (event: 'change', list: ListDataItem[], type: string): void
   (event: 'update:list', list: ListDataItem[]): void
   (event: 'update:current', index: number): void
 }

@@ -8,8 +8,8 @@
 import { useHandler } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-click', e: MouseEvent): void
-  (event: 'on-end', url: string, canvas: HTMLCanvasElement): void
+  (event: 'click', e: MouseEvent): void
+  (event: 'end', url: string, canvas: HTMLCanvasElement): void
 }>()
 
 const props = withDefaults(

@@ -14,8 +14,8 @@
 import { useCountdown } from './hooks'
 
 const emit = defineEmits<{
-  (event: 'on-end'): void
-  (event: 'on-progress', time: number): void
+  (event: 'end'): void
+  (event: 'progress', time: number): void
 }>()
 
 const props = withDefaults(

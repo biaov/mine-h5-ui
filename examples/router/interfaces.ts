@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { RouteComponent } from 'vue-router'
 import { SidebarChildItem } from '@/components/SideBar/interfaces'
 import { Lazy } from './types'

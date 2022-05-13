@@ -3,13 +3,13 @@
   <transition name="translate">
     <div class="me-datetime-picker" v-if="visible">
       <!-- 头部按钮 -->
-      <div class="m-hd">
-        <button type="button" class="u-cancel" @click="onCancel">取消</button>
-        <span class="u-line"></span>
-        <button type="button" class="u-sure" @click="onSure">确定</button>
+      <div class="hd">
+        <button type="button" class="cancel" @click="onCancel">取消</button>
+        <span class="line"></span>
+        <button type="button" class="sure" @click="onSure">确定</button>
       </div>
       <!-- 主体内容 -->
-      <ul class="m-bd">
+      <ul class="bd">
         <template v-for="item in listData">
           <li
             :key="item.id"
@@ -34,8 +34,8 @@ import { useHandMove, useBtns } from './hooks'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', str: string): void
-  (event: 'on-cancel'): void
-  (event: 'on-sure', arr: number[]): void
+  (event: 'cancel'): void
+  (event: 'sure', arr: number[]): void
 }>()
 
 const props = withDefaults(

@@ -28,7 +28,7 @@ export const useHandler = (props: Props, emit: Emits) => {
         emit('update:modelValue', !isChecked.value)
       }
 
-      emit('on-click', e)
+      emit('click', e)
       setIcon()
     }
   }
