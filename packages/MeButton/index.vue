@@ -2,8 +2,14 @@
   <!-- 按钮 -->
   <button
     :type="nativeType"
-    class="me-btn"
-    :class="`me-btn-${type} ${plain ? 'me-btn-plain' : ''} ${disabled ? 'disabled' : ''}`"
+    :class="[
+    'me-btn',
+    `me-btn-${type}`,
+      {
+        'me-btn-plain':plain,
+        'disabled':disabled
+      }
+    ]"
     :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
     @click="onClick"
   >
@@ -35,7 +41,16 @@ const props = defineProps({
   // 类型
   type: {
     type: String,
-    validator: (value: string) => value === 'default' || value === 'primary' || value === 'success' || value === 'info' || value === 'warning' || value === 'danger',
+      validator(val: string): boolean {
+      return [
+        'default',
+        'primary',
+        'success',
+        'info',
+        'warning',
+        'danger'
+      ].includes(val)
+    },
     default: 'default'
   },
   // 朴素按钮
