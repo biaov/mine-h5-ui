@@ -3,11 +3,11 @@
   <button
     :type="nativeType"
     :class="[
-    'me-btn',
-    `me-btn-${type}`,
+      'me-btn',
+      `me-btn-${type}`,
       {
-        'me-btn-plain':plain,
-        'disabled':disabled
+        'me-btn-plain': plain,
+        disabled
       }
     ]"
     :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
@@ -31,7 +31,7 @@ const props = defineProps({
   // 原生 button 标签的 type 属性
   nativeType: {
     type: String as PropType<NativeType>,
-    default: 'button' // button|reset|submit
+    default: 'button' // button | reset | submit
   },
   // 宽度
   width: {
@@ -41,16 +41,7 @@ const props = defineProps({
   // 类型
   type: {
     type: String,
-      validator(val: string): boolean {
-      return [
-        'default',
-        'primary',
-        'success',
-        'info',
-        'warning',
-        'danger'
-      ].includes(val)
-    },
+    validator: (val: string): boolean => ['default', 'primary', 'success', 'info', 'warning', 'danger'].includes(val),
     default: 'default'
   },
   // 朴素按钮
