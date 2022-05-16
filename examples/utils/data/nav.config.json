@@ -69,6 +69,13 @@
           },
           "path": "popup",
           "name": "popup"
+        },
+        {
+          "meta": {
+            "title": "Cell 单元格"
+          },
+          "path": "cell",
+          "name": "cell"
         }
       ]
     },
@@ -398,21 +405,21 @@
   "封装方法": [
     {
       "meta": {
-        "title": "CSS 样式"
+        "title": "样式封装"
       },
       "items": [
         {
           "meta": {
-            "title": "CSS 代码块"
+            "title": "Style 样式类"
           },
-          "path": "css",
-          "name": "css"
+          "path": "style",
+          "name": "style"
         }
       ]
     },
     {
       "meta": {
-        "title": "API 应用"
+        "title": "方法封装"
       },
       "items": [
         {
@@ -424,7 +431,7 @@
         },
         {
           "meta": {
-            "title": "正则验证"
+            "title": "RegExp 正则校验"
           },
           "path": "regexp",
           "name": "regexp"

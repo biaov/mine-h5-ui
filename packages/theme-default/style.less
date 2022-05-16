@@ -1,52 +1,10 @@
 /**
-  * @file 基础样式
+  * @file 样式类
 */
 
-/* reset start */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import './reset.less';
 
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  background: #fff;
-  font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
-}
-
-a,
-a:hover {
-  display: block;
-  text-decoration: none;
-}
-
-ul,
-ol,
-dl,
-li {
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-input,
-button,
-select {
-  border: none;
-  background: #fff;
-}
-
+/* 图片 start */
 img {
   max-width: 100%;
   height: auto;
@@ -65,57 +23,56 @@ img {
 
   )
 }
-
-/* reset end */
+/* 图片 end */
 
 /* 清理 start */
-.clear-ft:after {
+.me-clear-ft:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.clear-mg {
+.me-clear-mg {
   content: '';
   display: table;
 }
 
 /* 自定义滚动条 start */
-.clear-scroll {
+.me-clear-scroll {
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.clear-scroll::-webkit-scrollbar {
+.me-clear-scroll::-webkit-scrollbar {
   width: 6px;
 }
 
-.clear-scroll::-webkit-scrollbar-thumb {
+.me-clear-scroll::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #dadee0;
 }
 
 /* 自定义滚动条 end */
 /* 英文或数字强制换行 start */
-.wrap-en {
+.me-wrap-en {
   word-wrap: break-word;
 }
 
 /* 英文或数字强制换行 end */
 /* 清理 end */
 /* 行内块居中 start */
-.inline-block {
+.me-inline-block {
   display: inline-block;
   vertical-align: middle;
 }
 
 /* 行内块居中 end */
 /* 浮动 start */
-.g-lf {
+.me-lf {
   float: left;
 }
 
-.g-rt {
+.me-rt {
   float: right;
 }
 
@@ -141,7 +98,7 @@ img {
 
   >ul,
   >div {
-    .clear-scroll;
+    .me-clear-scroll;
     position: absolute;
     padding: 15px;
     background: #fff;
@@ -154,13 +111,13 @@ img {
 /* 遮罩层 end */
 /* 裁剪 start */
 
-.clamp(@line: 1) when (@line =1) {
+.me-clamp(@line: 1) when (@line =1) {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.clamp(@line) when (@line >1) {
+.me-clamp(@line) when (@line >1) {
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -264,7 +221,7 @@ img {
   }
 }
 
-.animation-cursor {
+.me-animation-cursor {
   animation: cursor 1.2s infinite;
 }
 

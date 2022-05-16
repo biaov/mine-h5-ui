@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "private": false,
   "author": "biaov<biaov@qq.com>",
   "main": "lib/mine-h5-ui.umd.min.js",
@@ -17,7 +17,6 @@
     "lint": "vue-cli-service lint",
     "prepare": "husky install",
     "pre-publish": "node build/pre-publish",
-    "pre-publish:github": "cross-env NODE_PRE=github node build/pre-publish",
     "prettier": "prettier --write '**/*.{ts,js,md,json,vue}'"
   },
   "browserslist": [

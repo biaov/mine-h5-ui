@@ -1,6 +1,6 @@
 <template>
   <!-- 滑块 -->
-  <div class="me-slider" :aria-disabled="disabled">
+  <div class="slider" :aria-disabled="disabled">
     <!-- 颜色线条 -->
     <p class="u-line" :style="`height:${styles.height};border-radius:${styles.radius};`"><span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span></p>
     <!-- 拖拽div -->

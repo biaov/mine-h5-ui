@@ -1,7 +1,7 @@
 <template>
   <!-- sidebar -->
   <div class="m-sidebar">
-    <ul class="clear-scroll">
+    <ul class="me-clear-scroll">
       <!-- 一级列表 -->
       <li v-for="(item, index) in Object.keys(listData)" :key="index">
         <div class="u-tit">{{ item }}</div>
@@ -43,7 +43,7 @@ export default {
 .m-sidebar {
   height: 820px;
   border-right: 1px dashed #c5d9e8;
-  .clear-scroll {
+  .me-clear-scroll {
     height: 100%;
     padding-right: 10px;
     // 一级标题
@@ -90,7 +90,7 @@ export default {
       // 二级列表
       .m-list-second {
         > li > a {
-          .clamp();
+          .me-clamp();
           .same-height(@color-third, 40px);
           &:hover {
             color: @color-hover;

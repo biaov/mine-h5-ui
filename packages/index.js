@@ -8,6 +8,7 @@ import MeButton from './MeButton' // 按钮
 import MeIcon from './MeIcon' // 图标
 import MeImg from './MeImg' // 图片
 import MePopup from './MePopup' // 弹出层
+import MeCell from './MeCell' // 单元格
 /* 基础组件 end */
 
 /* 表单组件 start */
@@ -83,6 +84,7 @@ const components = {
   MeIcon,
   MeImg,
   MePopup,
+  MeCell,
   MeInput,
   MeRadio,
   MeRadioGroup,
@@ -160,6 +162,7 @@ export {
   MeIcon,
   MeImg,
   MePopup,
+  MeCell,
   MeInput,
   MeRadio,
   MeRadioGroup,

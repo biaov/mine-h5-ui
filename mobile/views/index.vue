@@ -24,7 +24,8 @@
   </div>
 </template>
 <script>
-import NavConfig from '@/utils/data/nav.config.json'
+import NavConfig from '@/utils/data/nav.config.json?v=1'
+
 export default {
   data() {
     return {

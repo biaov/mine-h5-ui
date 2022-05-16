@@ -29,10 +29,7 @@ Vue.use(MeActionSheet);
 
 ```HTML
 <template>
-  <!-- 演示demo -->
-  <div class="m-demo">
-    <me-action-sheet v-model="visible" :list="list" index="id" label="value"></me-action-sheet>
-  </div>
+  <me-action-sheet v-model="visible" :list="list" index="id" label="value"></me-action-sheet>
 </template>
 <script>
 export default {
@@ -52,15 +49,10 @@ export default {
           label: "Alipay"
         }
       ]
-    };
-  },
-  methods: {}
-};
-</script>
-<style scoped lang="less">
-.m-demo {
+    }
+  }
 }
-</style>
+</script>
 ```
 
 ## API

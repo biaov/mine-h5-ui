@@ -6,7 +6,7 @@
       <!-- 侧边栏 -->
       <side-bar class="side-bar"></side-bar>
       <!-- 路由区域 -->
-      <router-view class="router-view clear-scroll"></router-view>
+      <router-view class="router-view me-clear-scroll"></router-view>
       <!-- 移动示例 -->
       <div class="m-mobile"><iframe src="/mobile.html#/" width="100%" height="100%" frameborder="0" ref="mobileIframe"></iframe></div>
     </div>
