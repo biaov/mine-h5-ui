@@ -14,7 +14,7 @@
     <!-- 图片预览 -->
     <div class="preview" v-if="isPreview" @click="closePreview">
       <div class="num">{{ curNum }} / {{ listData.length }}</div>
-      <transition-group tag="ul" name="me-slider" class="slider">
+      <transition-group tag="ul" name="slider" class="slider">
         <li v-for="item in listData" :key="item.id" v-show="curNum === item.id"><img :src="item.url" alt="图片" /></li>
       </transition-group>
     </div>

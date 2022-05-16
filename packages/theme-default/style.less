@@ -130,13 +130,13 @@ each(@modes, {
 
 /* vue过渡动画 start*/
 // 透明过渡
-.me-fade-enter,
-.me-fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
-.me-fade-enter-active,
-.me-fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.4s;
 }
 
@@ -154,35 +154,35 @@ each(@modes, {
 }
 
 // 轮播图
-.me-slider-enter-to {
+.slider-enter-to {
   transition: transform 1s ease;
   transform: translateX(0);
 }
 
-.me-slider-leave-active {
+.slider-leave-active {
   transition: transform 1s ease;
   transform: translateX(-100%);
 }
 
-.me-slider-enter {
+.slider-enter {
   transform: translateX(100%);
 }
 
-.me-slider-leave {
+.slider-leave {
   transform: translateX(0);
 }
 
 // 公告滚动
-.me-slide-enter-active,
-.me-slide-leave-active {
+.slide-enter-active,
+.slide-leave-active {
   transition: transform 0.4s;
 }
 
-.me-slide-enter {
+.slide-enter {
   transform: translateY(100%);
 }
 
-.me-slide-leave-to {
+.slide-leave-to {
   transform: translateY(-100%);
 }
 

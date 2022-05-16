@@ -14,7 +14,7 @@
         </li>
       </ul>
       <!-- 垂直动画 -->
-      <transition name="me-slide" mode="out-in" v-else>
+      <transition name="slide" mode="out-in" v-else>
         <div class="notice-vertical" :key="listIndex" @click="onClick(listIndex)" :style="`color:${color};`">
           <span>{{ listData[listIndex] }}</span>
         </div>

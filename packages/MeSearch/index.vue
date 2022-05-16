@@ -15,7 +15,7 @@
       :style="`text-align:${align};`"
       :disabled="disabled"
     />
-    <transition name="me-fade">
+    <transition name="fade">
       <me-icon name="icon-close" size="16px" color="inherit" @click="onClean" v-if="modelValue"></me-icon>
     </transition>
     <div class="btn" @click="handleBtn" v-if="btnText">{{ btnText }}</div>

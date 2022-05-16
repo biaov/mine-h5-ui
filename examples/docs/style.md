@@ -39,7 +39,7 @@ import 'mine-h5-ui/lib/theme-default/style.css'
 ::: CopyCode
 
 ```HTML
-<transition name="me-fade"></transition>
+<transition name="fade"></transition>
 ```
 
 :::
@@ -72,7 +72,9 @@ import 'mine-h5-ui/lib/theme-default/style.css'
 
 ## Transition 过渡动画
 
-| name 名称 | 说明         | name 名称 | 说明         | 版本 |
-| --------- | ------------ | --------- | ------------ | ---- |
-| fade      | 透明过渡动画 | translate | 从下弹出过渡 | --   |
-| slider    | 轮播图       | --        | --           | --   |
+| name 名称 | 说明         | 版本 |
+| --------- | ------------ | ---- |
+| fade      | 透明过渡动画 | --   |
+| translate | 从下弹出过渡 | --   |
+| slider    | 轮播图       | --   |
+| slide     | 公告滚动     | --   |
