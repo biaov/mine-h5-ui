@@ -22,7 +22,7 @@ Vue.use(MINEH5UI);
 
 ## 源码
 
-- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/tree/v1/packages/theme-default/src/style.less)
+- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/v1/packages/theme-default/style.less)
 
 ## Class 类名
 
