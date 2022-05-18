@@ -28,15 +28,20 @@
     border-left: 2px solid @border-color-line;
   }
   .cont {
-    h2 {
+    :deep(h2) {
+      position: relative;
       color: @color-primary;
-    }
-    > div {
-      > ul {
-        margin-bottom: 0;
-        ul {
-          margin: 5px 0 10px;
-        }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        background: @color-danger;
       }
     }
   }

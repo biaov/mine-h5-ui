@@ -1,15 +1,15 @@
 import { defineConfig, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import vitePluginVuedoc from 'vite-plugin-vuedoc'
-import { vitePluginVuedocConfig, vueConfig } from './config/plugins'
+import vitePluginMd from 'vite-plugin-md'
+import { vitePluginMdConfig, vueConfig } from './config/plugins'
 import { useGlobalVars } from './examples/utils/variables'
 
 const { BaseRouter: base } = useGlobalVars()
 // 配置信息
 const config: UserConfigExport = defineConfig({
   base,
-  plugins: [vitePluginVuedoc(vitePluginVuedocConfig), vue(vueConfig)],
+  plugins: [vue(vueConfig), vitePluginMd(vitePluginMdConfig)],
   server: {
     host: '0.0.0.0',
     port: 3333

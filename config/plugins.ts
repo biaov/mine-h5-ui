@@ -1,39 +1,39 @@
 import { Options } from '@vitejs/plugin-vue'
-import { vueDocFiles as include } from 'vite-plugin-vuedoc'
-import { VueDocPluginOptions } from 'vite-plugin-vuedoc/dist/plugin'
+import hljs from 'highlight.js'
 import MarkdownItContainer from 'markdown-it-container'
+import type MarkdownIt from 'markdown-it'
+import { VitePluginMdOptions, TokenItem } from './interfaces'
 
-// vite 插件配置
-export const vitePluginVuedocConfig: Partial<VueDocPluginOptions> = {
-  wrapperClass: 'md-demo',
-  highlight: {
-    theme: 'one-light' // one-dark|one-light
+// Vite 插件配置
+export const vitePluginMdConfig: VitePluginMdOptions = {
+  wrapperClasses: 'md-demo',
+  markdownItOptions: {
+    highlight: (str: string, lang: string): string => {
+      if (lang) {
+        const formtatLang = lang.toLowerCase().replace('vue', 'html')
+        if (hljs.getLanguage(formtatLang)) return hljs.highlight(str, { language: formtatLang }).value
+      }
+
+      return str
+    }
   },
-  markdownIt: {
-    // 插件配置
-    plugins: [
-      [
-        MarkdownItContainer,
-        'TimeLine',
-        {
-          validate: params => params.trim().match(/^TimeLine\s*(.*)$/),
-          render: (tokens, idx) => (tokens[idx].nesting === 1 ? `<time-line>` : `</time-line>\n`)
-        }
-      ],
-      [
-        MarkdownItContainer,
-        'CopyCode',
-        {
-          validate: params => params.trim().match(/^CopyCode\s*(.*)$/),
-          render: (tokens, idx) => (tokens[idx].nesting === 1 ? `<copy-code>` : `</copy-code>\n`)
-        }
-      ]
-    ]
+  markdownItSetup: (md: MarkdownIt) => {
+    // 时间线
+    md.use(MarkdownItContainer, 'TimeLine', {
+      validate: (params: string): string[] => params.trim().match(/^TimeLine\s*(.*)$/),
+      render: (tokens: TokenItem[], i: number): string => (tokens[i].nesting === 1 ? `<time-line>` : `</time-line>\n`)
+    })
+
+    // 复制
+    md.use(MarkdownItContainer, 'CopyCode', {
+      validate: (params: string): string[] => params.trim().match(/^CopyCode\s*(.*)$/),
+      render: (tokens: TokenItem[], i: number): string => (tokens[i].nesting === 1 ? `<copy-code>` : `</copy-code>\n`)
+    })
   }
 }
 
-// vue 插件配置
+// Vue 插件配置
 export const vueConfig: Options = {
-  include,
+  include: [/\.vue$/, /\.md$/],
   reactivityTransform: true
 }

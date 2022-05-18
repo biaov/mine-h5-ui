@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "jest", "node"],
+    "types": ["vite/client", "jasmine", "node"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["./examples/*"],
@@ -19,16 +19,6 @@
       "^/*": ["./mobile/*"]
     }
   },
-  "include": [
-    "examples/**/*.ts",
-    "examples/**/*.vue",
-    "mobile/**/*.ts",
-    "mobile/**/*.vue",
-    "tests/**/*.ts",
-    "packages/**/*.ts",
-    "packages/**/*.vue",
-    "typings/shims-vue.d.ts",
-    "mobile/views/doc/button/data.js"
-  ],
+  "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],
   "exclude": ["node_modules"]
 }

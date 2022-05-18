@@ -8,8 +8,8 @@ import App from './App.vue'
 import MINEH5UI from '~/index' // 开发
 import '~/theme-default/index.less' // 开发
 
-/* import MINEH5UI from "../lib"; // 测试
-import "../lib/theme-default/index.css"; // 测试 */
+/* import MINEH5UI from "../lib" // 测试
+import "../lib/theme-default/index.css" // 测试 */
 
 const app = createApp(App)
 app.component('TimeLine', TimeLine)

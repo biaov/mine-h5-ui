@@ -46,7 +46,7 @@ import 'mine-h5-ui/lib/theme-default/style.css'
 
 ## 源码
 
-- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/master/packages/theme-default/src/style.less)
+- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/master/packages/theme-default/style.less)
 
 ## Class 类名
 

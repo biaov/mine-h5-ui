@@ -56,7 +56,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```HTML
 <template>
   <me-keyboard v-model:visible="isShow" :skin-style="skinStyle"></me-keyboard>
 </template>
