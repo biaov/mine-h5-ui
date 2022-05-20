@@ -22,7 +22,7 @@
 
 ## 快速开始
 
-- 请参考 👉[快速开始](/doc/start)章节。
+- 请参考 👉[快速开始](/v2/doc/start)章节。
 
 ## 浏览器支持
 
@@ -35,7 +35,7 @@
 ## 链接
 
 - [👉 意见反馈](https://github.com/biaov/MINE-H5-UI/issues)
-- [👉 更新日志](/doc/logs)
+- [👉 更新日志](/v2/doc/logs)
 
 ## 开源协议
 
