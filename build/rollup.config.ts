@@ -31,6 +31,7 @@ const config = readdirSync(input)
       format: 'es'
     }
   }))
+
 config.push({
   input: `${input}/index.ts`,
   external: ['vue'],
@@ -54,4 +55,5 @@ config.push({
     format: 'es'
   }
 })
+
 export default config

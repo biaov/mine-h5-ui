@@ -4,7 +4,8 @@ export interface ListItem {
   y: number
   max: number
 }
-// 列表项
+
+// 循环项
 export interface ForItem {
   x: number
   y: number

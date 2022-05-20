@@ -21,6 +21,7 @@ const routes: RouteRecordRaw[] = [
     children: docs as any[]
   }
 ]
+
 // 路由实例
 const router: Router = createRouter({
   history: createWebHistory(BaseRouter),

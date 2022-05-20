@@ -4,7 +4,6 @@ const autoprefixer = require('autoprefixer')
 const cssmin = require('gulp-cssmin')
 const postcss = require('gulp-postcss')
 const pxtorem = require('postcss-pxtorem')
-
 const {
   clean,
   copyfont,

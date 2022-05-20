@@ -32,4 +32,5 @@ const config = [
     external: ['vue']
   }
 ]
+
 export default config

@@ -55,4 +55,5 @@ const config = {
     'vue/multi-word-component-names': 'off' // 禁止多个单词名称
   }
 }
+
 module.exports = config
