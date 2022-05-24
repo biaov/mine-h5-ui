@@ -2,7 +2,9 @@ import { Options } from '@vitejs/plugin-vue'
 import hljs from 'highlight.js'
 import MarkdownItContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
+import { VitePWAOptions } from 'vite-plugin-pwa'
 import { VitePluginMdOptions, TokenItem } from './interfaces'
+import { resolve } from 'path'
 
 // Vite 插件配置
 export const vitePluginMdConfig: VitePluginMdOptions = {
@@ -36,4 +38,27 @@ export const vitePluginMdConfig: VitePluginMdOptions = {
 export const vueConfig: Options = {
   include: [/\.vue$/, /\.md$/],
   reactivityTransform: true
+}
+
+// PWA 配置
+export const vitePwaConfig: Partial<VitePWAOptions> = {
+  registerType: 'prompt',
+  manifest: {
+    name: 'mine-h5-ui',
+    short_name: 'PWA for MINE-H5-UI',
+    description: '关于 MINE-H5-UI 的 PWA',
+    theme_color: '#ffffff',
+    icons: [
+      {
+        src: '/v2/pwa-192x192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      }
+    ]
+  },
+  workbox: {
+    globDirectory: resolve(__dirname, '../dist'),
+    skipWaiting: true,
+    clientsClaim: true
+  }
 }

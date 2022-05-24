@@ -25,12 +25,14 @@
       </ul>
     </div>
   </div>
+  <reload-prompt></reload-prompt>
 </template>
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import { useGlobalVars } from '@/utils/variables'
-import { useCanvas } from './hooks'
 import MineHeader from '@/components/MineHeader'
+import ReloadPrompt from '@/components/ReloadPrompt'
+import { useCanvas } from './hooks'
 
 const { GithubAddress } = useGlobalVars()
 const canvas = ref<HTMLCanvasElement>() // canvas 对象

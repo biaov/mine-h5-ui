@@ -26,8 +26,10 @@
       </li>
     </ul>
   </div>
+  <reload-prompt></reload-prompt>
 </template>
 <script lang="ts" setup>
+import ReloadPrompt from '@/components/ReloadPrompt'
 import { useWebData } from './hook'
 
 const { listData } = useWebData()

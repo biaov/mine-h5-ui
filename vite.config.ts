@@ -2,14 +2,15 @@ import { defineConfig, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import vitePluginMd from 'vite-plugin-md'
-import { vitePluginMdConfig, vueConfig } from './config/plugins'
+import { VitePWA } from 'vite-plugin-pwa'
+import { vitePluginMdConfig, vueConfig, vitePwaConfig } from './config/plugins'
 import { useGlobalVars } from './examples/utils/variables'
 
 const { BaseRouter: base } = useGlobalVars()
 // 配置信息
 const config: UserConfigExport = defineConfig({
   base,
-  plugins: [vue(vueConfig), vitePluginMd(vitePluginMdConfig)],
+  plugins: [vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],
   server: {
     host: '0.0.0.0',
     port: 3333
@@ -31,6 +32,8 @@ const config: UserConfigExport = defineConfig({
     }
   },
   build: {
+    ssrManifest: false,
+    manifest: false,
     // 多页面
     rollupOptions: {
       input: {

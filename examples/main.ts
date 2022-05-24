@@ -5,6 +5,7 @@ import { MessageEventListener } from '@/utils/functions'
 import { componentConfig } from '@/utils/nav.config'
 import router from './router'
 import App from './App.vue'
+
 import MINEH5UI from '~/index' // 开发
 import '~/theme-default/index.less' // 开发
 
