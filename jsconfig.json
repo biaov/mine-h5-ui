@@ -7,6 +7,9 @@
       "^/*": ["mobile/*"]
     }
   },
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  },
   "include": ["examples/", "mobile/", "packages/"],
   "exclude": ["node_modules"]
 }

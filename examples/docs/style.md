@@ -40,7 +40,6 @@ Vue.use(MINEH5UI);
 | me-clear-scroll     | 设置轮动条样式                               | 1.6.4 |
 | me-inline-block     | 行内块居中                                   | 1.6.4 |
 | me-animation-cursor | animation 光标动画                           | 1.6.4 |
-| me-hollow-out       | 镂空效果                                     | 1.6.4 |
 
 | 属性名                         | 说明         | class 类名 | 说明 | 版本 |
 | ------------------------------ | ------------ | ---------- | ---- | ---- |
