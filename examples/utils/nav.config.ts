@@ -400,6 +400,13 @@ export const componentConfig = [
         },
         path: 'drag',
         name: 'drag'
+      },
+      {
+        meta: {
+          title: 'Coupon 优惠券'
+        },
+        path: 'coupon',
+        name: 'coupon'
       }
     ]
   }

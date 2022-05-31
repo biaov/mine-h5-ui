@@ -64,7 +64,6 @@ import 'mine-h5-ui/lib/theme-default/style.css'
 | me-clear-scroll     | 设置轮动条样式                               | v2.3.5 |
 | me-inline-block     | 行内块居中                                   | v2.3.5 |
 | me-animation-cursor | animation 光标动画                           | v2.3.5 |
-| me-hollow-out       | 镂空效果                                     | v2.3.5 |
 
 | 属性名                         | 说明         | class 类名 | 说明 | 版本 |
 | ------------------------------ | ------------ | ---------- | ---- | ---- |
