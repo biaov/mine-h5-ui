@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeMask } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeMask } from 'mine-h5-ui'
 
-Vue.use(MeMask);
+Vue.use(MeMask)
 ```
 
 :::
@@ -49,10 +49,10 @@ export default {
   data() {
     return {
       visible: false
-    };
+    }
   },
   methods: {}
-};
+}
 </script>
 <style scoped lang="less">
 .m-demo {

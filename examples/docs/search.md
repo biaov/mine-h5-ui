@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeSearch } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeSearch } from 'mine-h5-ui'
 
-Vue.use(MeSearch);
+Vue.use(MeSearch)
 ```
 
 :::
@@ -62,22 +62,17 @@ Vue.use(MeSearch);
 export default {
   data() {
     return {
-      value: "" // 当前搜索框值
-    };
+      value: '' // 当前搜索框值
+    }
   },
   methods: {
     // 点击取消按钮
-    btnCancel(){
-      this.$MeToast("点击了取消按钮");
+    btnCancel() {
+      this.$MeToast('点击了取消按钮')
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 :::

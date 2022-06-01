@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeProgressBar } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeProgressBar } from 'mine-h5-ui'
 
-Vue.use(MeProgressBar);
+Vue.use(MeProgressBar)
 ```
 
 :::
@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       progress: 0 // 进度条值
-    };
+    }
   }
 }
 </script>
@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       progress: 0 // 进度条值
-    };
+    }
   }
 }
 </script>
@@ -75,7 +75,7 @@ export default {
   data() {
     return {
       progress: 0 // 进度条值
-    };
+    }
   }
 }
 </script>

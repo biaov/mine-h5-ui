@@ -7,11 +7,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeTab, MeTabItem } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeTab, MeTabItem } from 'mine-h5-ui'
 
-Vue.use(MeTab);
-Vue.use(MeTabItem);
+Vue.use(MeTab)
+Vue.use(MeTabItem)
 ```
 
 :::
@@ -32,7 +32,7 @@ Vue.use(MeTabItem);
   <!-- 演示demo -->
   <div class="m-demo">
     <me-tab v-model="active" @on-change="onChange">
-      <me-tab-item v-for="item in listData" :key="item.id" :title="item.title">{{item.content}}</me-tab-item>
+      <me-tab-item v-for="item in listData" :key="item.id" :title="item.title">{{ item.content }}</me-tab-item>
     </me-tab>
   </div>
 </template>
@@ -45,40 +45,35 @@ export default {
       listData: [
         {
           id: 1,
-          title: "标签一",
-          content: "内容一"
+          title: '标签一',
+          content: '内容一'
         },
         {
           id: 2,
-          title: "标签二",
-          content: "内容二"
+          title: '标签二',
+          content: '内容二'
         },
         {
           id: 3,
-          title: "标签三",
-          content: "内容三"
+          title: '标签三',
+          content: '内容三'
         },
         {
           id: 4,
-          title: "标签四",
-          content: "内容四"
+          title: '标签四',
+          content: '内容四'
         }
       ]
-    };
+    }
   },
   methods: {
     // 当标签栏改变时
     onChange(index) {
-      console.log("活动项" + index);
+      console.log('活动项' + index)
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
 }
-</style>
-
+</script>
 ```
 
 ## API

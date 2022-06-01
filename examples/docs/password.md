@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MePassword } from "mine-h5-ui";
+import Vue from 'vue'
+import { MePassword } from 'mine-h5-ui'
 
-Vue.use(MePassword);
+Vue.use(MePassword)
 ```
 
 :::
@@ -39,46 +39,41 @@ Vue.use(MePassword);
 export default {
   data() {
     return {
-      value: "", // 当前输入框值
+      value: '', // 当前输入框值
       keyboardValue: false // 数字键盘显示状态
-    };
+    }
   },
   methods: {
     // 密码输入框聚焦
     onFocus() {
-      this.keyboardValue = true;
+      this.keyboardValue = true
     },
     // 密码输入框失焦
     onBlur() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     },
     // 点击密码输入框数字按钮
     handleNum(e) {
-      this.value += String(e);
+      this.value += String(e)
     },
     // 点击密码输入框删除按钮
     onDelete() {
-      const { value } = this;
+      const { value } = this
       // 判断是否为空
       if (!!value) {
         this.value = value
-          .split("")
+          .split('')
           .slice(0, -1)
-          .join("");
+          .join('')
       }
     },
     // 点击密码输入框完成按钮
     onComplate() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 :::
@@ -101,46 +96,41 @@ export default {
 export default {
   data() {
     return {
-      value: "", // 当前输入框值
+      value: '', // 当前输入框值
       keyboardValue: false // 数字键盘显示状态
-    };
+    }
   },
   methods: {
     // 密码输入框聚焦
     onFocus() {
-      this.keyboardValue = true;
+      this.keyboardValue = true
     },
     // 密码输入框失焦
     onBlur() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     },
     // 点击密码输入框数字按钮
     handleNum(e) {
-      this.value += String(e);
+      this.value += String(e)
     },
     // 点击密码输入框删除按钮
     onDelete() {
-      const { value } = this;
+      const { value } = this
       // 判断是否为空
       if (!!value) {
         this.value = value
-          .split("")
+          .split('')
           .slice(0, -1)
-          .join("");
+          .join('')
       }
     },
     // 点击密码输入框完成按钮
     onComplate() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 :::
@@ -163,46 +153,41 @@ export default {
 export default {
   data() {
     return {
-      value: "", // 当前输入框值
+      value: '', // 当前输入框值
       keyboardValue: false // 数字键盘显示状态
-    };
+    }
   },
   methods: {
     // 密码输入框聚焦
     onFocus() {
-      this.keyboardValue = true;
+      this.keyboardValue = true
     },
     // 密码输入框失焦
     onBlur() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     },
     // 点击密码输入框数字按钮
     handleNum(e) {
-      this.value += String(e);
+      this.value += String(e)
     },
     // 点击密码输入框删除按钮
     onDelete() {
-      const { value } = this;
+      const { value } = this
       // 判断是否为空
       if (!!value) {
         this.value = value
-          .split("")
+          .split('')
           .slice(0, -1)
-          .join("");
+          .join('')
       }
     },
     // 点击密码输入框完成按钮
     onComplate() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 :::
@@ -225,46 +210,41 @@ export default {
 export default {
   data() {
     return {
-      value: "", // 当前输入框值
+      value: '', // 当前输入框值
       keyboardValue: false // 数字键盘显示状态
-    };
+    }
   },
   methods: {
     // 密码输入框聚焦
     onFocus() {
-      this.keyboardValue = true;
+      this.keyboardValue = true
     },
     // 密码输入框失焦
     onBlur() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     },
     // 点击密码输入框数字按钮
     handleNum(e) {
-      this.value += String(e);
+      this.value += String(e)
     },
     // 点击密码输入框删除按钮
     onDelete() {
-      const { value } = this;
+      const { value } = this
       // 判断是否为空
       if (!!value) {
         this.value = value
-          .split("")
+          .split('')
           .slice(0, -1)
-          .join("");
+          .join('')
       }
     },
     // 点击密码输入框完成按钮
     onComplate() {
-      this.keyboardValue = false;
+      this.keyboardValue = false
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 :::

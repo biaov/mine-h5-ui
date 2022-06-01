@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeDialog } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeDialog } from 'mine-h5-ui'
 
-Vue.use(MeDialog);
+Vue.use(MeDialog)
 ```
 
 :::
@@ -32,7 +32,13 @@ Vue.use(MeDialog);
   <div class="m-demo">
     <div @click="handleClick">点击弹出自义定弹出框</div>
     <me-dialog v-model="visible" tips="提示">
-      <div class="m-text">走在斑马线上的好处：<br />我就是一个行人，<br />赔的多一点！</div>
+      <div class="m-text">
+        走在斑马线上的好处：
+        <br />
+        我就是一个行人，
+        <br />
+        赔的多一点！
+      </div>
       <div class="m-btn">
         <button type="button" class="u-btn-cancel" @click="onCancel">取消</button>
         <button type="button" class="u-btn-confirm" @click="onConfirm">确定</button>
@@ -45,27 +51,27 @@ export default {
   data() {
     return {
       visible: false // 对话框显示状态
-    };
+    }
   },
   methods: {
     // 点击文本
     handleClick() {
-      this.visible = true;
+      this.visible = true
     },
     // 点击取消按钮
     onCancel() {
-      const that = this;
-      that.visible = false;
-      that.$MeToast("你点击了取消按钮");
+      const that = this
+      that.visible = false
+      that.$MeToast('你点击了取消按钮')
     },
     // 点击确定按钮
     onConfirm() {
-      const that = this;
-      that.visible = false;
-      that.$MeToast("你点击了确定按钮");
+      const that = this
+      that.visible = false
+      that.$MeToast('你点击了确定按钮')
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-demo {

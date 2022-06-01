@@ -15,8 +15,8 @@
 
 ```JavaScript
 this.$MePreview({
-  url: require("../assets/empty.png")
-});
+  url: require('../assets/empty.png')
+})
 ```
 
 ### 自定义样式
@@ -26,9 +26,9 @@ this.$MePreview({
 
 ```JavaScript
 this.$MePreview({
-  url: require("../assets/empty.png"),
-  background: "#fff"
-});
+  url: require('../assets/empty.png'),
+  background: '#fff'
+})
 ```
 
 ## API

@@ -7,11 +7,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeSwiper, MeSwiperItem } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeSwiper, MeSwiperItem } from 'mine-h5-ui'
 
-Vue.use(MeSwiper);
-Vue.use(MeSwiperItem);
+Vue.use(MeSwiper)
+Vue.use(MeSwiperItem)
 ```
 
 :::
@@ -44,7 +44,7 @@ Vue.use(MeSwiperItem);
   <!-- 演示demo -->
   <div class="m-demo">
     <me-swiper>
-      <me-swiper-item v-for="(item,index) in listData" :key="index" v-bind="item"></me-swiper-item>
+      <me-swiper-item v-for="(item, index) in listData" :key="index" v-bind="item"></me-swiper-item>
     </me-swiper>
   </div>
 </template>
@@ -55,21 +55,21 @@ export default {
       // 列表数据
       listData: [
         {
-          text: "一月不读书，耳目失精爽。",
-          url: "https://app.biaov.cn/mineapp/images/home/1.png"
+          text: '一月不读书，耳目失精爽。',
+          url: 'https://app.biaov.cn/mineapp/images/home/1.png'
         },
         {
-          text: "穷且益坚，不坠青云之志。",
-          url: "https://app.biaov.cn/mineapp/images/home/2.png"
+          text: '穷且益坚，不坠青云之志。',
+          url: 'https://app.biaov.cn/mineapp/images/home/2.png'
         },
         {
-          text: "我见青山多妩媚，料青山见我应如是。",
-          url: "https://app.biaov.cn/mineapp/images/home/3.png"
+          text: '我见青山多妩媚，料青山见我应如是。',
+          url: 'https://app.biaov.cn/mineapp/images/home/3.png'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 ```
 
@@ -99,7 +99,7 @@ export default {
   <!-- 演示demo -->
   <div class="m-demo">
     <me-swiper loop :height="150">
-      <me-swiper-item v-for="(item,index) in listData" :key="index" v-bind="item"></me-swiper-item>
+      <me-swiper-item v-for="(item, index) in listData" :key="index" v-bind="item"></me-swiper-item>
     </me-swiper>
   </div>
 </template>
@@ -110,21 +110,21 @@ export default {
       // 列表数据
       listData: [
         {
-          text: "青，取之于蓝而青于蓝；冰，水为之而寒于水。",
-          background: "#B32FF5"
+          text: '青，取之于蓝而青于蓝；冰，水为之而寒于水。',
+          background: '#B32FF5'
         },
         {
-          text: "路漫漫其修远兮，吾将上下而求索。",
-          background: "#F53698"
+          text: '路漫漫其修远兮，吾将上下而求索。',
+          background: '#F53698'
         },
         {
-          text: "尺有所短；寸有所长。物有所不足；智有所不明。",
-          background: "#F5A02E"
+          text: '尺有所短；寸有所长。物有所不足；智有所不明。',
+          background: '#F5A02E'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 ```
 

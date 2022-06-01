@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeSlider } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeSlider } from 'mine-h5-ui'
 
-Vue.use(MeSlider);
+Vue.use(MeSlider)
 ```
 
 :::
@@ -63,19 +63,14 @@ export default {
       value: 30, // 当前滑块值
       // 自定义滑块样式
       styles: {
-        height: "10px", // 高度
-        radius: "6px", // 倒角
-        lineBgc: "#f60" // 线背景色
+        height: '10px', // 高度
+        radius: '6px', // 倒角
+        lineBgc: '#f60' // 线背景色
       }
-    };
+    }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 ### 自定义按钮
@@ -87,7 +82,7 @@ export default {
   <!-- 演示demo -->
   <div class="m-demo">
     <me-slider v-model="value" :is-btn="true">
-      <div class="u-btn">{{value}}</div>
+      <div class="u-btn">{{ value }}</div>
     </me-slider>
   </div>
 </template>
@@ -96,9 +91,9 @@ export default {
   data() {
     return {
       value: 30 // 当前滑块值
-    };
+    }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-demo {

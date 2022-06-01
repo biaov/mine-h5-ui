@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeScreenshot } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeScreenshot } from 'mine-h5-ui'
 
-Vue.use(MeScreenshot);
+Vue.use(MeScreenshot)
 ```
 
 :::
@@ -27,7 +27,7 @@ Vue.use(MeScreenshot);
 
 ```Vue
 <template>
-  <screenshot v-bind="{start}">
+  <screenshot v-bind="{ start }">
     <p @click="onClick">点击截图</p>
   </screenshot>
 </template>
@@ -36,15 +36,15 @@ export default {
   data() {
     return {
       start: false // 截图状态
-    };
+    }
   },
   methods: {
     // 点击截图
     onClick() {
-      this.start = true;
+      this.start = true
     }
   }
-};
+}
 </script>
 ```
 
@@ -54,7 +54,7 @@ export default {
 
 ```Vue
 <template>
-  <screenshot v-bind="{start}" allow-down>
+  <screenshot v-bind="{ start }" allow-down>
     <p @click="onClick">点击截图</p>
   </screenshot>
 </template>
@@ -63,15 +63,15 @@ export default {
   data() {
     return {
       start: false // 截图状态
-    };
+    }
   },
   methods: {
     // 点击截图
     onClick() {
-      this.start = true;
+      this.start = true
     }
   }
-};
+}
 </script>
 ```
 

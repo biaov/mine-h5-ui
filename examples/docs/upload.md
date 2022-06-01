@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeUpload } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeUpload } from 'mine-h5-ui'
 
-Vue.use(MeUpload);
+Vue.use(MeUpload)
 ```
 
 :::
@@ -46,19 +46,14 @@ export default {
     return {
       // 展示文件
       fileList: [
-        { id: 1, url: "https://app.biaov.cn/mineapp/images/avatar/1.png" },
-        { id: 2, url: "https://app.biaov.cn/mineapp/images/avatar/2.png" },
-        { id: 3, url: "https://app.biaov.cn/mineapp/images/avatar/5.png" }
+        { id: 1, url: 'https://app.biaov.cn/mineapp/images/avatar/1.png' },
+        { id: 2, url: 'https://app.biaov.cn/mineapp/images/avatar/2.png' },
+        { id: 3, url: 'https://app.biaov.cn/mineapp/images/avatar/5.png' }
       ]
-    };
+    }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 ### 限制上传数量

@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MePullRefresh } from "mine-h5-ui";
+import Vue from 'vue'
+import { MePullRefresh } from 'mine-h5-ui'
 
-Vue.use(MePullRefresh);
+Vue.use(MePullRefresh)
 ```
 
 :::
@@ -29,7 +29,7 @@ Vue.use(MePullRefresh);
 <template>
   <!-- 演示demo -->
   <div class="m-demo">
-    <me-pull-refresh v-model="loading" @on-refresh="onRefresh">刷新次数{{count}}</me-pull-refresh>
+    <me-pull-refresh v-model="loading" @on-refresh="onRefresh">刷新次数{{ count }}</me-pull-refresh>
   </div>
 </template>
 <script>
@@ -37,24 +37,20 @@ export default {
   data() {
     return {
       loading: 0, // 加载状态
-      count: 0, // 刷新次数
-    };
+      count: 0 // 刷新次数
+    }
   },
   methods: {
     // 刷新
     onRefresh() {
       setTimeout(() => {
-        this.count++;
-        this.loading = false;
-      }, 3000);
+        this.count++
+        this.loading = false
+      }, 3000)
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
 }
-</style>
+</script>
 ```
 
 ### 自定义提示文本
@@ -65,7 +61,7 @@ export default {
 <template>
   <!-- 演示demo -->
   <div class="m-demo">
-    <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @on-refresh="onRefresh">刷新次数{{count}}</me-pull-refresh>
+    <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @on-refresh="onRefresh">刷新次数{{ count }}</me-pull-refresh>
   </div>
 </template>
 <script>
@@ -75,24 +71,20 @@ export default {
       loading: 0, // 加载状态
       count: 0, // 刷新次数
       // 自定义加载文本
-      loadText: ["开始下拉...", "释放刷新...", "还在请求后台...", "成功了"]
-    };
+      loadText: ['开始下拉...', '释放刷新...', '还在请求后台...', '成功了']
+    }
   },
   methods: {
     // 刷新
     onRefresh() {
       setTimeout(() => {
-        this.count++;
-        this.loading = false;
-      }, 3000);
+        this.count++
+        this.loading = false
+      }, 3000)
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
 }
-</style>
+</script>
 ```
 
 ## API

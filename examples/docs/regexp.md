@@ -7,11 +7,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
+import Vue from 'vue'
+import MINEH5UI from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/index.css'
 
-Vue.use(MINEH5UI);
+Vue.use(MINEH5UI)
 ```
 
 :::
@@ -43,8 +43,8 @@ Vue.use(MINEH5UI);
 ### 验证-手机号码
 
 ```JavaScript
-const valid = this.$Validator.validPhone; // 获取规则
-console.log(valid); // /^1[3456789]\d{9}$/
-console.log(valid.test(18888888888)); // true
-console.log(valid.test(12888888888)); // false
+const valid = this.$Validator.validPhone // 获取规则
+console.log(valid) // /^1[3456789]\d{9}$/
+console.log(valid.test(18888888888)) // true
+console.log(valid.test(12888888888)) // false
 ```

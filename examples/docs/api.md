@@ -9,11 +9,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
+import Vue from 'vue'
+import MINEH5UI from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/index.css'
 
-Vue.use(MINEH5UI);
+Vue.use(MINEH5UI)
 ```
 
 :::

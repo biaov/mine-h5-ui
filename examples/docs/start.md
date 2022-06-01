@@ -15,11 +15,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
+import Vue from 'vue'
+import MINEH5UI from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/index.css'
 
-Vue.use(MINEH5UI);
+Vue.use(MINEH5UI)
 ```
 
 :::
@@ -31,11 +31,11 @@ Vue.use(MINEH5UI);
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeButton } from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/MeButton.css";
+import Vue from 'vue'
+import { MeButton } from 'mine-h5-ui'
+import 'mine-h5-ui/lib/theme-default/MeButton.css'
 
-Vue.use(MeButton);
+Vue.use(MeButton)
 ```
 
 :::
@@ -47,7 +47,7 @@ Vue.use(MeButton);
 :::CopyCode
 
 ```JavaScript
-import "mine-h5-ui/lib/theme-default/index.css";
+import 'mine-h5-ui/lib/theme-default/index.css'
 ```
 
 :::

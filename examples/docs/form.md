@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeForm } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeForm } from 'mine-h5-ui'
 
-Vue.use(MeForm);
+Vue.use(MeForm)
 ```
 
 :::
@@ -44,46 +44,41 @@ export default {
     return {
       // 表单数据
       form: {
-        username: "", // 用户名
-        password: "", // 密码
-        sms: "" // 短信验证码
+        username: '', // 用户名
+        password: '', // 密码
+        sms: '' // 短信验证码
       },
       // 规则
       rules: [
         {
-          type: "username",
+          type: 'username',
           required: true,
-          message: "用户名不能为空"
+          message: '用户名不能为空'
         },
         {
-          type: "password",
+          type: 'password',
           pattern: this.$Validator.validPwd,
-          message: "密码必须为6-12位数字+字母组合"
+          message: '密码必须为6-12位数字+字母组合'
         },
         {
-          type: "sms",
+          type: 'sms',
           validator: value => /^\d{4}$/.test(value),
-          message: "短信验证码只能是4位纯数字"
+          message: '短信验证码只能是4位纯数字'
         }
       ]
-    };
+    }
   },
   methods: {
     // 点击提交按钮
     onSubmit({ valid, message, value }) {
       // 判断是否通过验证
       if (valid) {
-        console.log(value); // 通过验证的值
+        console.log(value) // 通过验证的值
       }
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
-
 }
-</style>
+</script>
 ```
 
 ## API

@@ -13,7 +13,7 @@
 - 通过 API 直接调用即可。
 
 ```JavaScript
-this.$MeToast("显示信息");
+this.$MeToast('显示信息')
 ```
 
 ## API

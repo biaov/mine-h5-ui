@@ -7,11 +7,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeStep, MeStepItem } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeStep, MeStepItem } from 'mine-h5-ui'
 
-Vue.use(MeStep);
-Vue.use(MeStepItem);
+Vue.use(MeStep)
+Vue.use(MeStepItem)
 ```
 
 :::
@@ -39,10 +39,10 @@ Vue.use(MeStepItem);
 export default {
   data() {
     return {
-      active: ["first"] // 活动项
-    };
+      active: ['first'] // 活动项
+    }
   }
-};
+}
 </script>
 ```
 
@@ -65,10 +65,10 @@ export default {
 export default {
   data() {
     return {
-      active: ["first"] // 活动项
-    };
+      active: ['first'] // 活动项
+    }
   }
-};
+}
 </script>
 ```
 
@@ -91,10 +91,10 @@ export default {
 export default {
   data() {
     return {
-      active: ["first"] // 活动项
-    };
+      active: ['first'] // 活动项
+    }
   }
-};
+}
 </script>
 ```
 
@@ -117,10 +117,10 @@ export default {
 export default {
   data() {
     return {
-      active: ["first"] // 活动项
-    };
+      active: ['first'] // 活动项
+    }
   }
-};
+}
 </script>
 ```
 
@@ -149,10 +149,10 @@ export default {
 export default {
   data() {
     return {
-      active: ["first"] // 活动项
-    };
+      active: ['first'] // 活动项
+    }
   }
-};
+}
 </script>
 ```
 

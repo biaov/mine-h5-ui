@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeLoading } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeLoading } from 'mine-h5-ui'
 
-Vue.use(MeLoading);
+Vue.use(MeLoading)
 ```
 
 :::

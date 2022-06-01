@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeSwiperCell } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeSwiperCell } from 'mine-h5-ui'
 
-Vue.use(MeSwiperCell);
+Vue.use(MeSwiperCell)
 ```
 
 :::
@@ -34,7 +34,7 @@ Vue.use(MeSwiperCell);
   <div class="m-demo">
     <!-- 滑动单元格 -->
     <me-swiper-cell>
-      <h3 class="u-tit" slot="content">{{item.liText}}</h3>
+      <h3 class="u-tit" slot="content">{{ item.liText }}</h3>
       <div class="m-btns" slot="hidden">
         <me-button type="danger" icon="icon-delete1" @on-click="onDelete">删除</me-button>
       </div>
@@ -46,22 +46,22 @@ export default {
   data() {
     return {
       visible: false // 对话框显示状态
-    };
+    }
   },
   methods: {
     // 删除按钮
     onDelete() {
-      const that = this;
+      const that = this
       that.$MeMessageBox.confirm({
-        tips: "警告",
-        message: "你确定要删除此项吗？",
+        tips: '警告',
+        message: '你确定要删除此项吗？',
         onOk() {
-          that.$MeToast("删除成功");
+          that.$MeToast('删除成功')
         }
-      });
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="less">
 .m-demo {

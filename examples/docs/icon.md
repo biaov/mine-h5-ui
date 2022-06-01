@@ -9,10 +9,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeIcon } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeIcon } from 'mine-h5-ui'
 
-Vue.use(MeIcon);
+Vue.use(MeIcon)
 ```
 
 :::
@@ -31,7 +31,7 @@ Vue.use(MeIcon);
 
 ```JavaScript
 // 引入iconfont图标
-import "//at.alicdn.com/t/font_1774902_nar195smdvf.css"; // 线上地址，也可以使用线下文件
+import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可以使用线下文件
 
 // 使用iconfont图标
 <el-icon name="icon-close"></el-icon>

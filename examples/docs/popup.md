@@ -9,10 +9,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MePopup } from "mine-h5-ui";
+import Vue from 'vue'
+import { MePopup } from 'mine-h5-ui'
 
-Vue.use(MePopup);
+Vue.use(MePopup)
 ```
 
 :::

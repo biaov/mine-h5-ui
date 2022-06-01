@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeDivider } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeDivider } from 'mine-h5-ui'
 
-Vue.use(MeDivider);
+Vue.use(MeDivider)
 ```
 
 :::
@@ -54,20 +54,20 @@ export default {
     return {
       // 分割线
       divider: {
-        list: ["流影"],
+        list: ['流影'],
         line: {
           width: 4,
-          color: "#F06B51",
+          color: '#F06B51',
           radius: 4
         },
         text: {
-          color: "#FFA18F",
+          color: '#FFA18F',
           size: 16
         }
       }
-    };
+    }
   }
-};
+}
 </script>
 ```
 
@@ -89,21 +89,21 @@ export default {
     return {
       // 分割线-三角形
       divider: {
-        list: ["羽裳", "轩辕", "紫萱"],
+        list: ['羽裳', '轩辕', '紫萱'],
         width: 100,
         height: 100,
         origin: 41,
         line: {
           width: 6,
-          color: "#f60"
+          color: '#f60'
         },
         text: {
-          color: "#f66"
+          color: '#f66'
         }
       }
-    };
+    }
   }
-};
+}
 </script>
 ```
 

@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeTag } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeTag } from 'mine-h5-ui'
 
-Vue.use(MeTag);
+Vue.use(MeTag)
 ```
 
 :::

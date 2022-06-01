@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeIndexBar } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeIndexBar } from 'mine-h5-ui'
 
-Vue.use(MeIndexBar);
+Vue.use(MeIndexBar)
 ```
 
 :::
@@ -36,20 +36,16 @@ Vue.use(MeIndexBar);
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 点击内容列表
     onClick(item) {
-      console.log(item);
+      console.log(item)
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
 }
-</style>
+</script>
 ```
 
 #### 数据格式
@@ -59,8 +55,8 @@ export default {
 ```JavaScript
 [
   {
-    name: "A",
-    cities: [{ code: "AR", cn: "阿根廷" }]
+    name: 'A',
+    cities: [{ code: 'AR', cn: '阿根廷' }]
   }
 ]
 ```

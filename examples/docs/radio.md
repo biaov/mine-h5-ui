@@ -7,11 +7,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeRadio, MeRadioGroup } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeRadio, MeRadioGroup } from 'mine-h5-ui'
 
-Vue.use(MeRadio);
-Vue.use(MeRadioGroup);
+Vue.use(MeRadio)
+Vue.use(MeRadioGroup)
 ```
 
 :::

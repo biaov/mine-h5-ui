@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeNavBar } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeNavBar } from 'mine-h5-ui'
 
-Vue.use(MeNavBar);
+Vue.use(MeNavBar)
 ```
 
 :::
@@ -59,21 +59,16 @@ export default {
     return {
       // 自定义样式
       styles: {
-        borderColor: "#ccc", // 边框颜色
-        background: "linear-gradient(-45deg, #4bb0ff, #6149f6)", // 背景颜色
-        titleColor: "#f56c6c", // 标题颜色
-        leftColor: "#aedbff", // 左侧按钮颜色
-        rightColor: "#fff" // 右侧按钮颜色
+        borderColor: '#ccc', // 边框颜色
+        background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景颜色
+        titleColor: '#f56c6c', // 标题颜色
+        leftColor: '#aedbff', // 左侧按钮颜色
+        rightColor: '#fff' // 右侧按钮颜色
       }
-    };
-  },
-  methods: {}
-};
-</script>
-<style scoped lang="less">
-.m-demo {
+    }
+  }
 }
-</style>
+</script>
 ```
 
 ## API

@@ -9,10 +9,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeImg } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeImg } from 'mine-h5-ui'
 
-Vue.use(MeImg);
+Vue.use(MeImg)
 ```
 
 :::

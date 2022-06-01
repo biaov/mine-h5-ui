@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeKeyboard } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeKeyboard } from 'mine-h5-ui'
 
-Vue.use(MeKeyboard);
+Vue.use(MeKeyboard)
 ```
 
 :::
@@ -53,13 +53,13 @@ export default {
       isShow: false, // 数字键盘显示状态
       // 自定义样式
       skinStyle: {
-        background: "linear-gradient(-45deg, #4bb0ff, #6149f6)", // 背景色
-        textBg: "rgba(255,255,255,0.1)", // 按钮背景色
-        color: "#fff" // 按钮颜色
+        background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景色
+        textBg: 'rgba(255,255,255,0.1)', // 按钮背景色
+        color: '#fff' // 按钮颜色
       }
-    };
+    }
   }
-};
+}
 </script>
 ```
 

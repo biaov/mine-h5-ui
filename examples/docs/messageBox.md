@@ -15,9 +15,9 @@
 
 ```JavaScript
 this.$MeMessageBox({
-  type: "alert",
-  message: "你可以像猪一样的生活，但你永远都不能像猪那样快乐！"
-});
+  type: 'alert',
+  message: '你可以像猪一样的生活，但你永远都不能像猪那样快乐！'
+})
 ```
 
 ### 确认弹出框
@@ -25,18 +25,18 @@ this.$MeMessageBox({
 - 直接调用确认弹出框的 API 即可。
 
 ```JavaScript
-const that = this;
+const that = this
 that.$MeMessageBox.prompt({
-  message: "你认为作者帅吗？",
-  cancelButtonText: "看不清",
-  confirmButtonText: "作者真帅",
+  message: '你认为作者帅吗？',
+  cancelButtonText: '看不清',
+  confirmButtonText: '作者真帅',
   onOk() {
-    that.$MeToast("你点击了确认按钮");
+    that.$MeToast('你点击了确认按钮')
   },
   onOff() {
-    that.$MeToast("你点击了取消按钮");
+    that.$MeToast('你点击了取消按钮')
   }
-});
+})
 ```
 
 ### 输入弹出框
@@ -44,16 +44,16 @@ that.$MeMessageBox.prompt({
 - 直接调用输入弹出框的 API 即可。
 
 ```JavaScript
-const that = this;
+const that = this
 that.$MeMessageBox.prompt({
-  message: "请输入你的手机号码",
+  message: '请输入你的手机号码',
   onOk(value) {
-    that.$MeToast(value); // 手机号码
+    that.$MeToast(value) // 手机号码
   },
   onOff() {
-    that.$MeToast("你点击了取消按钮");
+    that.$MeToast('你点击了取消按钮')
   }
-});
+})
 ```
 
 ### 自定义弹出框
@@ -68,30 +68,26 @@ that.$MeMessageBox.prompt({
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 点击文本
     handleClick() {
-      const that = this;
+      const that = this
       // 弹出模态框
       that.$MeMessageBox.custom({
         html: `<div class="m-message-cont">假如生活欺骗了你，不要悲伤的哭泣，如果真的热爱生活你会自己骗自己的。</div>`,
         onOk() {
-          that.$MeToast("你点击了确认按钮");
+          that.$MeToast('你点击了确认按钮')
         },
         onOff() {
-          that.$MeToast("你点击了取消按钮");
+          that.$MeToast('你点击了取消按钮')
         }
-      });
+      })
     }
   }
-};
-</script>
-<style scoped lang="less">
-.m-demo {
 }
-</style>
+</script>
 <style lang="less">
 // 自定义模态框内容
 .m-message-cont {

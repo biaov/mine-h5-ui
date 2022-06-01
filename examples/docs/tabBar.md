@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeTabBar } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeTabBar } from 'mine-h5-ui'
 
-Vue.use(MeTabBar);
+Vue.use(MeTabBar)
 ```
 
 :::
@@ -37,32 +37,32 @@ export default {
       listData: [
         {
           id: 1,
-          icon: "icon-home",
-          text: "首页",
+          icon: 'icon-home',
+          text: '首页',
           state: true
         },
         {
           id: 2,
-          icon: "icon-tupian",
-          text: "图片",
+          icon: 'icon-tupian',
+          text: '图片',
           state: false
         },
         {
           id: 3,
-          icon: "icon-gongnengguanli",
-          text: "功能",
+          icon: 'icon-gongnengguanli',
+          text: '功能',
           state: false
         },
         {
           id: 4,
-          icon: "icon-user1",
-          text: "用户",
+          icon: 'icon-user1',
+          text: '用户',
           state: false
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 ```
 
@@ -79,35 +79,35 @@ export default {
       listData: [
         {
           id: 1,
-          icon: "icon-home",
-          text: "首页",
+          icon: 'icon-home',
+          text: '首页',
           state: true
         },
         {
           id: 2,
-          icon: "icon-tupian",
-          text: "图片",
-          badge: "6",
+          icon: 'icon-tupian',
+          text: '图片',
+          badge: '6',
           state: false
         },
         {
           id: 3,
-          icon: "icon-gongnengguanli",
-          text: "功能",
-          badge: "A",
+          icon: 'icon-gongnengguanli',
+          text: '功能',
+          badge: 'A',
           state: false
         },
         {
           id: 4,
-          icon: "icon-user1",
-          text: "用户",
+          icon: 'icon-user1',
+          text: '用户',
           dot: true,
           state: false
         }
       ]
-    };
+    }
   }
-};
+}
 ```
 
 ### 自定义图标
@@ -125,33 +125,33 @@ export default {
       listData: [
         {
           id: 1,
-          text: "安全",
+          text: '安全',
           state: true,
-          img: require("../assets/verify.png"),
-          imgSelected: require("../assets/verify_selected.png")
+          img: require('../assets/verify.png'),
+          imgSelected: require('../assets/verify_selected.png')
         },
         {
           id: 2,
-          icon: "icon-tupian",
-          text: "图片",
+          icon: 'icon-tupian',
+          text: '图片',
           state: false
         },
         {
           id: 3,
-          icon: "icon-gongnengguanli",
-          text: "功能",
+          icon: 'icon-gongnengguanli',
+          text: '功能',
           state: false
         },
         {
           id: 4,
-          icon: "icon-user1",
-          text: "用户",
+          icon: 'icon-user1',
+          text: '用户',
           state: false
         }
       ]
-    };
+    }
   }
-};
+}
 ```
 
 ### 自定义颜色
@@ -159,7 +159,7 @@ export default {
 - 通过 `border-color` 和 `background` 属性来设置组件的背景颜色和上边框颜色，它们的默认分别为 #dcdfe6 和 #fff。
 - 通过 `color` 和 `color-selected` 属性来设置组件未选中和选中状态的颜色，它们的默认分别为 #949494 和 #409eff。
 
-```HTML
+```Vue
 <template>
   <me-tab-bar :list="listData" v-bind="colors"></me-tab-bar>
 </template>
@@ -169,42 +169,43 @@ export default {
     return {
       // 自定义颜色
       colors: {
-        color: "", // 颜色
-        colorSelected: "", // 选中颜色
-        background: "", // 背景颜色
-        borderColor: "" // 上边框颜色
+        color: '', // 颜色
+        colorSelected: '', // 选中颜色
+        background: '', // 背景颜色
+        borderColor: '' // 上边框颜色
       },
       // 列表数据
       listData: [
         {
           id: 1,
-          icon: "icon-home",
-          text: "首页",
+          icon: 'icon-home',
+          text: '首页',
           state: true
         },
         {
           id: 2,
-          icon: "icon-tupian",
-          text: "图片",
+          icon: 'icon-tupian',
+          text: '图片',
           state: false
         },
         {
           id: 3,
-          icon: "icon-gongnengguanli",
-          text: "功能",
+          icon: 'icon-gongnengguanli',
+          text: '功能',
           state: false
         },
         {
           id: 4,
-          icon: "icon-user1",
-          text: "用户",
+          icon: 'icon-user1',
+          text: '用户',
           state: false
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
+
 ```
 
 ## API

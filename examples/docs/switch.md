@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeSwitch } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeSwitch } from 'mine-h5-ui'
 
-Vue.use(MeSwitch);
+Vue.use(MeSwitch)
 ```
 
 :::

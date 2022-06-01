@@ -7,11 +7,11 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeCheckbox, MeCheckboxGroup } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeCheckbox, MeCheckboxGroup } from 'mine-h5-ui'
 
-Vue.use(MeCheckbox);
-Vue.use(MeCheckboxGroup);
+Vue.use(MeCheckbox)
+Vue.use(MeCheckboxGroup)
 ```
 
 :::

@@ -7,10 +7,10 @@
 :::CopyCode
 
 ```JavaScript
-import Vue from "vue";
-import { MeActionSheet } from "mine-h5-ui";
+import Vue from 'vue'
+import { MeActionSheet } from 'mine-h5-ui'
 
-Vue.use(MeActionSheet);
+Vue.use(MeActionSheet)
 ```
 
 :::
@@ -40,13 +40,13 @@ export default {
       list: [
         {
           id: 1,
-          value: "微信",
-          label: "Wechat"
+          value: '微信',
+          label: 'Wechat'
         },
         {
           id: 2,
-          value: "支付宝",
-          label: "Alipay"
+          value: '支付宝',
+          label: 'Alipay'
         }
       ]
     }
