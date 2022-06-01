@@ -4,5 +4,5 @@
 /lib
 dist-ssr
 *.local
-format.vue
+format.*
 pnpm-lock.yaml
