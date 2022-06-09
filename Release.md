@@ -33,8 +33,6 @@ npm run test:unit:single
 
 ## 打包
 
-- `--max_old_space_size=8192`
-
 ```Basic
 npm run build
 ```

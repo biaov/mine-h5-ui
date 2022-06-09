@@ -47,7 +47,7 @@ https://codeload.github.com/biaov/MINE-H5-UI/zip/master
 ::: CopyCode
 
 ```Basic
-npm install
+npm i
 ```
 
 :::

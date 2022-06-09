@@ -25,7 +25,6 @@ npm start
 ## 打包项目
 
 - 打包组件库文档和组件库
-- `--max_old_space_size=8192`
 
 ```Basic
 npm run build

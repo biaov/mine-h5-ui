@@ -15,7 +15,7 @@
     "build:docs": "vite build",
     "build:theme": "gulp build -f build/gulpfile.prod.ts",
     "build:theme:rem": "gulp build -f build/gulpfile.rem.ts",
-    "build:package": "rollup -c build/rollup.config.ts",
+    "build:package": "cross-env NODE_OPTIONS=--max_old_space_size=8192 rollup -c build/rollup.config.ts",
     "build:package:dts": "rollup -c build/rollup.config.dts.ts",
     "preview": "vite preview",
     "lint": "npm run lint:examples && npm run lint:mobile && npm run lint:packages && npm run lint:tests",
