@@ -1,5 +1,5 @@
 import { RouteComponent } from 'vue-router'
-import { SidebarChildItem } from '@/components/SideBar/interfaces'
+import { SidebarChildItem } from '@/components/SideBar'
 import { Lazy } from './types'
 
 // 文档

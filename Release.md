@@ -8,23 +8,18 @@ npm run prettier
 
 ## Eslint 检查
 
-- [MeLoading](./packages/MeLoading/hooks.ts)
-
 ```Basic
 npm run lint
 ```
 
 ## 单元测试
 
-- 注释 [iconfont.js](./packages/MeLoading/hooks.ts)
-- 单元测试完再去掉注释
-
 ```Basic
 npm run test:unit
 ```
 
 - 出现 Error
-  - 单独检查
+  - 单独检查（修改 packag.json 中的 `npm run test:unit:single` 命令到指定文件）
   - 重复开始步骤
 
 ```Basic

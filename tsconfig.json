@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "jest", "node"],
+    "types": ["vite/client", "node", "jest"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["./examples/*"],

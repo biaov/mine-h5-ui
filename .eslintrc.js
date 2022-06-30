@@ -23,6 +23,12 @@ const config = {
   settings: {},
   overrides: [
     {
+      files: ['**/components/*.vue'],
+      rules: {
+        'vue/multi-word-component-names': 'error'
+      }
+    },
+    {
       files: ['./mobile/**/*.ts'],
       rules: {
         'no-console': 'off' // 禁止 console
