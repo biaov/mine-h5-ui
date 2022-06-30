@@ -23,7 +23,7 @@
 ## 安装
 
 ```Basic
-npm i mine-h5-ui@latest
+npm i mine-h5-ui
 ```
 
 ### 使用
@@ -48,8 +48,3 @@ app.mount('#app')
 ## 贡献者
 
 - [x] biaov\<biaov@qq.com\>
-
-## License
-
-- [x] [MIT](https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE)
-- [x] Copyright (c) 2020-present biaov
