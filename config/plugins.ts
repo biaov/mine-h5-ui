@@ -22,13 +22,13 @@ export const vitePluginMdConfig: VitePluginMdOptions = {
   markdownItSetup: (md: MarkdownIt) => {
     // 时间线
     md.use(MarkdownItContainer, 'TimeLine', {
-      validate: (params: string): string[] => params.trim().match(/^TimeLine\s*(.*)$/),
+      validate: (params: string): RegExpMatchArray | null => params.trim().match(/^TimeLine\s*(.*)$/),
       render: (tokens: TokenItem[], i: number): string => (tokens[i].nesting === 1 ? `<time-line>` : `</time-line>\n`)
     })
 
     // 复制
     md.use(MarkdownItContainer, 'CopyCode', {
-      validate: (params: string): string[] => params.trim().match(/^CopyCode\s*(.*)$/),
+      validate: (params: string): RegExpMatchArray | null => params.trim().match(/^CopyCode\s*(.*)$/),
       render: (tokens: TokenItem[], i: number): string => (tokens[i].nesting === 1 ? `<copy-code>` : `</copy-code>\n`)
     })
   }
