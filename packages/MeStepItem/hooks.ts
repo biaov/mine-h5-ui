@@ -1,10 +1,9 @@
 import { ref, inject, watch } from 'vue'
 import { MeStepKey } from '../MeStep/token'
-import { StepContext } from './interfaces'
-import { Props } from './types'
+import { Props, StepContext } from './types'
 
 // 操作
-export const useHandler = (props: Props) => {
+export const useHandler = (props: Readonly<Props>) => {
   const { parentProps } = inject(MeStepKey, {} as StepContext) // 父组件参数
   const isActive = ref(false) // 激活状态
 

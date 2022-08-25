@@ -1,4 +1,4 @@
-import { ListItem, Emits } from './interfaces'
+import { ListItem, Emits } from './types'
 
 // 操作
 export const useHandler = (emit: Emits) => {

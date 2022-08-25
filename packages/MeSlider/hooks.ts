@@ -1,9 +1,8 @@
 import { ref, watch } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const currentValue = ref(100) // 当前 value 值
   let startX = 0 // 开始X坐标
   let changeValue = 0 // 触摸开始时的value

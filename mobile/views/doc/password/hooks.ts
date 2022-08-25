@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem, ChildListItem } from './interfaces'
+import { ListDataItem, ChildListItem } from './types'
 
 // 操作
 export const useHandle = () => {

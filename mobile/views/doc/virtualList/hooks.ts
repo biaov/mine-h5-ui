@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import initData from './data'
 import { createArr } from './function'
-import { ListDataItem, LoadMoreText } from './interfaces'
+import { ListDataItem, LoadMoreText } from './types'
 
 // 操作
 export const useHandler = () => {

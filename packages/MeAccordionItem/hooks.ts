@@ -1,10 +1,9 @@
 import { ref, watch, inject, nextTick } from 'vue'
 import { MeAccordionKey } from '../MeAccordion/token'
-import { Props } from './types'
-import { AccordionContext, Emits } from './interfaces'
+import { Props, AccordionContext, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const { name, currentValue, onChange } = inject(MeAccordionKey, {} as AccordionContext)
   const accordionItemCont = ref<HTMLDivElement>() // cont 节点
   const isShow = ref(false) // 显示状态

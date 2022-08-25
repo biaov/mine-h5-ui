@@ -14,7 +14,6 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import { ListItem } from './interfaces'
 
 const emit = defineEmits<{
   (event: 'load-more'): void
@@ -22,7 +21,7 @@ const emit = defineEmits<{
 
 const props = withDefaults(
   defineProps<{
-    list?: ListItem[] // 列表数据
+    list?: Record<string, any>[] // 列表数据
     interval?: number // 节流时间
     height?: string // 虚拟列表高度
     itemHeight?: number // 固定选项高度

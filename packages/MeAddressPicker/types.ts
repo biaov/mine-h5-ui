@@ -1,4 +1,13 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// emits
+export interface Emits {
+  (event: 'update:modelValue', str: string): void
+  (event: 'cancel'): void
+  (event: 'sure', currentValue: string[]): void
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// props
+export interface Props {
+  modelValue: string
+  visible: boolean
+  separator: string
+}

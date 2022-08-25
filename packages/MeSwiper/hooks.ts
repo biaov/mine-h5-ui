@@ -1,10 +1,9 @@
 import { ref, provide, watch, onMounted, onUnmounted } from 'vue'
 import { MeSwiperKey } from './token'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 移动列
-export const useHandMove = (props: Props, emit: Emits) => {
+export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
   const swiperDom = ref<HTMLDivElement>() // swiper节点
   const dots = ref(1) // 指示点的数量
   const dotIndex = ref(0) // 指示点索引

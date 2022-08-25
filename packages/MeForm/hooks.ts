@@ -1,9 +1,8 @@
 import MeToast from '../MeToast'
-import { Props } from './types'
-import { Emits, Option } from './interfaces'
+import { Props, Emits, Option } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   // 点击提交按钮按钮
   const onSubmit = (e: Event) => {
     e.preventDefault() // 取消默认行为，防止form提交

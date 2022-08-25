@@ -1,12 +1,11 @@
 import { ref, watch } from 'vue'
 import { CountDown } from '../MeAPI/function'
-import { FormatData } from '../MeAPI/interfaces'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { FormatData } from '../MeAPI/types'
+import { Props, Emits } from './types'
 
 // 倒计时
-export const useCountdown = (props: Props, emit: Emits) => {
-  const formatAfter = ref<FormatData>({}) // 格式化之后
+export const useCountdown = (props: Readonly<Props>, emit: Emits) => {
+  const formatAfter = ref<Partial<FormatData>>({}) // 格式化之后
   let timer: NodeJS.Timeout | undefined // 定时器
   const addSubNum = props.format.includes('ms') ? 10 : 1000 // 时间
   let curTime = 0 // 当前 time

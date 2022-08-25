@@ -1,10 +1,9 @@
 import { provide, ref, watch } from 'vue'
 import { MeAccordionKey } from './token'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Emits, Props } from './types'
 
 // 初始化 slot
-export const useInitSlots = (props: Props, emit: Emits) => {
+export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
   const currentValue = ref(props.modelValue) // 当前值
 
   // 状态改变时触发此方法

@@ -1,13 +1,12 @@
 import { ref, computed, watch, nextTick, ComponentPublicInstance } from 'vue'
 import { Throttle } from '../MeAPI/function'
-import { Props } from './types'
-import { ListItem, Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const scrollBarHeight = ref(0) // 滚动高度
   const scrollTranslateY = ref(0) // 纵向滚动
-  const listData = ref<ListItem[]>([]) // 列表数据
+  const listData = ref<Record<string, any>[]>([]) // 列表数据
   const startIndex = ref(0) // 开始数据索引
   const endIndex = ref(0) // 结束数据索引
   const nodes: HTMLLIElement[] = [] // 节点

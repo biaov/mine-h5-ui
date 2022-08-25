@@ -1,5 +1,17 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
-
 export type NativeType = 'button' | 'submit' | 'reset' // props nativeType
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+
+// emits
+export interface Emits {
+  (event: 'click', e: MouseEvent): void
+}
+
+// props
+export interface Props {
+  nativeType: NativeType
+  width: string
+  type: string
+  plain?: boolean
+  disabled?: boolean
+  icon: string
+  color: string
+}

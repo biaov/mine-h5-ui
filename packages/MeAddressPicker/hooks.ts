@@ -1,10 +1,9 @@
 /* eslint-disable no-restricted-syntax */
 import { ref } from 'vue'
 import areaData from './area'
-import { Props } from './types'
-import { InAreaData, Emits } from './interfaces'
+import { Emits, Props } from './types'
 
-const AreaData = areaData as InAreaData
+const AreaData = areaData as Record<string,Record<string,string>>
 
 // 移动列
 export const useHandMove = () => {
@@ -219,7 +218,7 @@ export const useHandMove = () => {
   return { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown }
 }
 // 按钮
-export const useBtns = (props: Props, emit: Emits, currentValue: string[]) => {
+export const useBtns = (props: Readonly<Props>, emit: Emits, currentValue: string[]) => {
   // 点击取消按钮
   const onCancel = () => {
     emit('cancel')

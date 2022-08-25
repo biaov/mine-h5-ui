@@ -1,6 +1,6 @@
 import { createVNode, render } from 'vue'
 import PreviewConstructor from './index.vue'
-import { Option } from './interfaces'
+import { Option } from './types'
 import { IsType } from '../MeAPI/function'
 
 /**

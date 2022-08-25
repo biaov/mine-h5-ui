@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { Random } from 'mockjs'
 import { RandomNum, RgbToHex } from '@/utils/functions'
 import initData from './data'
-import { ListItem } from './interfaces'
+import { ListItem } from './types'
 
 // 操作
 export const useWebData = () => {

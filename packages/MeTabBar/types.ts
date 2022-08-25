@@ -1,4 +1,24 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// props list
+export interface ListItem {
+  text: string
+  state: boolean
+  icon?: string
+  dot?: string
+  badge?: string
+  img?: string
+  imgSelected?: string
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// emits
+export interface Emits {
+  (event: 'change', item: ListItem): void
+}
+
+// props
+export interface Props {
+  list: ListItem[]
+  borderColor: string
+  background: string
+  color: string
+  colorSelected: string
+}

@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import CountryData from './countryData'
 import { useScroll, useBtns } from './hooks'
-import { ListItem, CityItem } from './interfaces'
+import { ListItem, CityItem } from './types'
 
 const emit = defineEmits<{
   (event: 'click', item: CityItem): void

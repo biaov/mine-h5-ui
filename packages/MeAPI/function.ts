@@ -1,6 +1,5 @@
 import Validator from './validator'
-import { DTCallback, LockedCallback, ThrottleBack, DebounceBack, LockedBack } from './types'
-import { FormatData, IsLocked, FormatTimeBack, CalculationBack } from './interfaces'
+import { DTCallback, LockedCallback, ThrottleBack, DebounceBack, LockedBack, FormatData, IsLocked, FormatTimeBack, CalculationBack } from './types'
 
 const { validThousand, validThousandFloat } = Validator
 
@@ -103,7 +102,8 @@ export const FormatTime = (arg: string | number | Date = new Date()): FormatTime
  * @returns { string } FormatData.ss - 秒
  * @returns { string } FormatData.ms - 毫秒
  */
-export const CountDown = (num: number, format = 'hh:mm:ss'): FormatData => {
+
+export const CountDown = (num: number, format = 'hh:mm:ss'): Partial<FormatData> => {
   if (!IsType('Number', num)) throw new Error(`${num} is not number`) // 是否是数字
   if (!'DD:hh:mm:ss:ms'.includes(format)) throw new Error(`${format} form error`) // 格式是否正确
 
@@ -113,7 +113,7 @@ export const CountDown = (num: number, format = 'hh:mm:ss'): FormatData => {
   let mm = ~~((num / (1000 * 60)) % 60) // 分
   let ss = ~~((num / 1000) % 60) // 秒
   let ms = ~~(num % 1000) // 毫秒
-  const formatData: FormatData = {} // 需要返回的格式化数据
+  const formatData: Partial<FormatData> = {} // 需要返回的格式化数据
   const doubleDigit = (digit: number) => (digit < 10 ? `0${digit}` : String(digit)) // 加 0
   format.includes('DD') ? (formatData.DD = doubleDigit(DD)) : (hh += DD * 24) // 天
   format.includes('hh') ? (formatData.hh = doubleDigit(hh)) : (mm += hh * 60) // 时

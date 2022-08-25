@@ -1,10 +1,9 @@
 import { ref, watch } from 'vue'
 import Validator from '../MeAPI/validator'
-import { Props } from './types'
-import { ListDataItem, Emits } from './interfaces'
+import { Props, ListDataItem, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const listData = ref<ListDataItem[]>(props.fileList) // 列表数据
   const curNum = ref(1) // 全屏预览图片当前索引
   const isPreview = ref(false) // 预览图片显示状态

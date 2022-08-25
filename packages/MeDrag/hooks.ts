@@ -1,11 +1,10 @@
 import { ref, computed, watch } from 'vue'
-import { Props, CalcSizeName } from './types'
-import { ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare, ScaleShare } from './interfaces'
+import { Props, CalcSizeName, ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare, ScaleShare } from './types'
 import calcSize, { getSymmPoint } from './calcSize'
 import { DeepCopyRA } from '../MeAPI/function'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const listData = ref<ListDataItem[]>([]) // 列表数据
   // 每个范围的角度对应的光标
   const angleToCursor = Object.freeze<AngleToCursorItem[]>([
@@ -79,7 +78,7 @@ export const useHandler = (props: Props, emit: Emits) => {
 }
 
 // 移动
-export const useMove = (props: Props, share: MoveShare) => {
+export const useMove = (props: Readonly<Props>, share: MoveShare) => {
   const { listData, getCurItem, onEmitChange, onUpdate } = share
 
   let startPoint: Point // 开始坐标
@@ -137,7 +136,7 @@ export const useMove = (props: Props, share: MoveShare) => {
 }
 
 // 调整大下
-export const useResize = (props: Props, share: ResizeShare) => {
+export const useResize = (props: Readonly<Props>, share: ResizeShare) => {
   const { listData, getCurItem, onEmitChange, onUpdate } = share
 
   let startPoint: Point // 开始坐标
@@ -210,7 +209,7 @@ export const useResize = (props: Props, share: ResizeShare) => {
 }
 
 // 旋转
-export const useRotate = (props: Props, share: RotateShare) => {
+export const useRotate = (props: Readonly<Props>, share: RotateShare) => {
   const { getCurItem, getCenterPoint, onUpdate, onEmitChange } = share
 
   // 角度对正
@@ -275,7 +274,7 @@ export const useRotate = (props: Props, share: RotateShare) => {
 }
 
 // 双指缩放
-export const useScale = (props: Props, share: ScaleShare) => {
+export const useScale = (props: Readonly<Props>, share: ScaleShare) => {
   const { listData, getCurItem, onEmitChange, onUpdate } = share
   let startTouchDist: number // 开始两指距离
   let startRect: Rect // 开始矩形区域

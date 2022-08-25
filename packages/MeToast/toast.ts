@@ -1,7 +1,6 @@
 import { createVNode, render } from 'vue'
 import ToastConstructor from './index.vue'
-import { Options } from './types'
-import { Option } from './interfaces'
+import { Options, Option } from './types'
 import { IsType } from '../MeAPI/function'
 
 /**

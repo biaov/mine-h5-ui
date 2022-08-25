@@ -15,7 +15,7 @@
 </template>
 <script lang="ts" setup>
 import { useShowAction } from './hooks'
-import { ListItem } from './interfaces'
+import { ListItem } from './types'
 
 const props = defineProps<{ list: ListItem[] }>()
 const { isShow, onClickFrame, onClickItem } = useShowAction(props)

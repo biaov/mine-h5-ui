@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import { CityItem, Emits } from './interfaces'
+import { CityItem, Emits } from './types'
 
 // 初始化数据
 export const useScroll = () => {

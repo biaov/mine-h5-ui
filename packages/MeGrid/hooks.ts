@@ -3,7 +3,7 @@ import { MeGridKey } from './token'
 import { Props } from './types'
 
 // 初始化 slot
-export const useInitSlots = (props: Props) => {
+export const useInitSlots = (props: Readonly<Props>) => {
   const grid = ref<HTMLDivElement>()
   const params = { cols: props.cols, borderColor: props.borderColor }
 

@@ -1,6 +1,6 @@
 import { getCurrentInstance } from 'vue'
 import initData from './data'
-import { ListDataItem, EventMsg } from './interfaces'
+import { ListDataItem, EventMsg } from './types'
 
 // 操作
 export const useHandle = () => {

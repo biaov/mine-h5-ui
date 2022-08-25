@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { BtnListItem, WebStatus } from './interfaces'
+import { BtnListItem, WebStatus } from './types'
 import initData from './data'
 
 // 操作

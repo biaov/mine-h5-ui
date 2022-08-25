@@ -14,9 +14,8 @@ export interface ListDataItem {
 }
 
 // loadMoreText
-export interface LoadMoreText {
+export interface LoadMoreText extends Record<string, string> {
   nomore: string
   more: string
   loading: string
-  [key: string]: string | undefined
 }

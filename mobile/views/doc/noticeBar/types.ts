@@ -1,8 +1,7 @@
 // 事件提示语
-export interface EventMsg {
+export interface EventMsg extends Record<string, string> {
   preappend: string
   append: string
-  [key: string]: string
 }
 
 // 列表项

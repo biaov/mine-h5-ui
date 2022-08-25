@@ -1,9 +1,8 @@
 import { ref, watch, onMounted } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const isActived = ref(props.modelValue) // 激活状态
   const background = ref('')
 

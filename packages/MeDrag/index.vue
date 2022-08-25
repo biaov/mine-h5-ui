@@ -33,7 +33,7 @@
 </template>
 <script lang="ts" setup>
 import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
-import { ListDataItem } from './interfaces'
+import { ListDataItem } from './types'
 
 const emit = defineEmits<{
   (event: 'change', list: ListDataItem[], type: string): void

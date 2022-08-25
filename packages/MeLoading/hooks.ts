@@ -1,10 +1,9 @@
 import { ref } from 'vue'
 import '../theme-default/fonts/iconfont.js'
-import { Props } from './types'
-import { TypeName } from './interfaces'
+import { Props, TypeName } from './types'
 
 // 操作
-export const useData = (props: Props) => {
+export const useData = (props: Readonly<Props>) => {
   // 默认图标名称
   const typeName: TypeName = {
     circle: 'icon-loading',

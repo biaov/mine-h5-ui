@@ -1,9 +1,8 @@
 import { ref } from 'vue'
-import { Props } from './types'
-import { FieldsetListItem } from './interfaces'
+import { Props, FieldsetListItem } from './types'
 
 // 操作
-export const useHandler = (props: Props) => {
+export const useHandler = (props: Readonly<Props>) => {
   const fieldsetList = ref<FieldsetListItem[]>([]) // 分割线
   const len = props.list.length // 数组长度
   const flagBool = len < 3 // 是否小于3

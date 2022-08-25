@@ -1,5 +1,5 @@
 import { getCurrentInstance } from 'vue'
-import { CityItem } from './interfaces'
+import { CityItem } from './types'
 
 // 操作
 export const useClick = () => {

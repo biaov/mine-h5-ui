@@ -11,8 +11,8 @@
 </template>
 <script lang="ts" setup>
 import MeIcon from '../MeIcon'
-import { SkinStyleValue } from './interfaces'
 import { useHandler, usePadding } from './hooks'
+import { SkinStyleValue } from './types'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void

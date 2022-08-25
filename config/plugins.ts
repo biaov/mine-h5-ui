@@ -3,7 +3,7 @@ import hljs from 'highlight.js'
 import MarkdownItContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
-import { VitePluginMdOptions, TokenItem } from './interfaces'
+import { VitePluginMdOptions, TokenItem } from './types'
 import { resolve } from 'path'
 
 // Vite 插件配置

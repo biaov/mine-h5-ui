@@ -1,9 +1,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
-import { Props } from './types'
-import { ListItem } from './interfaces'
+import { Props, ListItem } from './types'
 
 // 显示操作
-export const useShowAction = (props: Props) => {
+export const useShowAction = (props: Readonly<Props>) => {
   const isShow = ref(false) // 显示状态
 
   // 点击框

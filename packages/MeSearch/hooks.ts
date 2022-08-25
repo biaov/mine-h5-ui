@@ -1,9 +1,8 @@
 import { ref, watch } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 搜索框
-export const useSearch = (props: Props, emit: Emits) => {
+export const useSearch = (props: Readonly<Props>, emit: Emits) => {
   const inputVal = ref(props.modelValue) // 输入框值
 
   // 点击软键盘的搜索/回车按钮

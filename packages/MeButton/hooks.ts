@@ -1,4 +1,4 @@
-import { Emits } from './interfaces'
+import { Emits } from './types'
 
 // 操作
 export const useHandler = (emit: Emits) => {

@@ -12,7 +12,7 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import { ListItem } from './interfaces'
+import { ListItem } from './types'
 
 const emit = defineEmits<{
   (event: 'change', item: ListItem): void

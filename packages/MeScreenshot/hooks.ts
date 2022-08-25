@@ -1,10 +1,9 @@
 import { ref, watch } from 'vue'
 import HTML2Canvas from 'html2canvas'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const screenshotRef = ref<HTMLDivElement>() // 节点
 
   // 点击 dom

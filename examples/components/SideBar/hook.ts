@@ -1,5 +1,5 @@
 import NavData from '@/utils/nav.config'
-import { SidebarListItem } from './interfaces'
+import { SidebarListItem } from './types'
 
 // 使用页面数据
 export const useWebData = () => {

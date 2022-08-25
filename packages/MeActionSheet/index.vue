@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
 import { useShowSheet, useBtns } from './hooks'
-import { ListItem } from './interfaces'
+import { ListItem } from './types'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void

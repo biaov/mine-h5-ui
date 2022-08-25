@@ -2,7 +2,7 @@ import { ref, onMounted } from 'vue'
 import { Props } from './types'
 
 // 显示
-export const useShow = (props: Props) => {
+export const useShow = (props: Readonly<Props>) => {
   const isDestroy = ref(false) // 是否销毁
   const isShow = ref(false) // 是否显示
 

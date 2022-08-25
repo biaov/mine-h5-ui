@@ -1,4 +1,24 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// prop styles
+export type PropStyles = {
+  height: string
+  radius: string
+  lineBgc: string
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// emits
+export interface Emits {
+  (event: 'update:modelValue', num: number): void
+  (event: 'start', e: TouchEvent | MouseEvent): void
+  (event: 'move', e: TouchEvent | MouseEvent): void
+  (event: 'end', e: TouchEvent | MouseEvent): void
+}
+
+// props
+export interface Props {
+  modelValue: number
+  max: number
+  min: number
+  styles: PropStyles
+  disabled: boolean
+  isBtn: boolean
+}

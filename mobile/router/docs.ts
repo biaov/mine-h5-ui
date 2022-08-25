@@ -1,5 +1,5 @@
 import { componentConfig } from '@/utils/nav.config'
-import { Docs } from './interfaces'
+import { Docs } from './types'
 
 let docs: Docs[] = componentConfig
 // 添加组件

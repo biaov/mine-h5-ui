@@ -1,9 +1,8 @@
 import { ref, onMounted } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 显示
-export const useShow = (props: Props, emit: Emits) => {
+export const useShow = (props: Readonly<Props>, emit: Emits) => {
   const isDestroy = ref(false) // 是否销毁
   const isShow = ref(false) // 是否显示
   const inputValue = ref('') // 输入框的值

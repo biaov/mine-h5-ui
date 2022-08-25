@@ -1,9 +1,8 @@
 import { ref, watch } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 移动列
-export const useHandMove = (props: Props, emit: Emits) => {
+export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
   const activeState = ref(0) // 加载状态
   const transY = ref(0) // 垂直多少像素
   const scale = ref(0) // 放大倍数

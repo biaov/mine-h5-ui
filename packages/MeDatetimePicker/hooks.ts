@@ -1,7 +1,6 @@
 import { ref, computed } from 'vue'
 import { IsLeapyear } from '../MeAPI/function'
-import { Props } from './types'
-import { TypeIds, ListDataItem, Emits } from './interfaces'
+import { Props, TypeIds, ListDataItem, Emits } from './types'
 
 /**
  * 实际移动思路：通过触摸到移动中的距离，来设置滚动的距离。
@@ -23,7 +22,7 @@ import { TypeIds, ListDataItem, Emits } from './interfaces'
  ** 滑动的速度 > 0.12 才开启惯性滑动
  */
 // 移动列
-export const useHandMove = (props: Props) => {
+export const useHandMove = (props: Readonly<Props>) => {
   const max = props.maxDate.getFullYear() // 最大值
   const min = props.minDate.getFullYear() // 最小值
   // 列表数据
@@ -253,7 +252,7 @@ export const useHandMove = (props: Props) => {
   return { show, currentValue, listData, distance, duration, filterNumber, onTouchstart, onTouchmove, onTouchend, onMousedown }
 }
 // 按钮
-export const useBtns = (props: Props, emit: Emits, currentValue: number[]) => {
+export const useBtns = (props: Readonly<Props>, emit: Emits, currentValue: number[]) => {
   // 点击取消按钮
   const onCancel = () => {
     emit('cancel')

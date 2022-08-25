@@ -1,5 +1,17 @@
-import { PublicProps } from '../types'
-import { Option, Props as DefaultProps } from './interfaces'
+// 对象参数
+export interface Option {
+  message?: string | number
+  bgColor?: string
+  icon?: string
+  durction?: number
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
 export type Options = string | number | Option // 参数
+
+// props
+export interface Props {
+  message: string | number
+  bgColor: string
+  icon: string
+  durction: number
+}

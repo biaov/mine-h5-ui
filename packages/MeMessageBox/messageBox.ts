@@ -1,13 +1,12 @@
 import { createVNode, render } from 'vue'
 import MessageBoxConstructor from './index.vue'
-import { CurOption, OnOk } from './types'
-import { Option, InMessageBox } from './interfaces'
+import { CurOption, OnOk, Option, InMessageBox } from './types'
 import { IsType } from '../MeAPI/function'
 
 /**
  * 消息提示
- * @param {Option} arg 选项参数
- * @returns {void} 空
+ * @param { Option } arg 选项参数
+ * @returns { void } 空
  */
 const MessageBox = (option: Option, type: string): Promise<string | undefined> => {
   // 判断是否是对象

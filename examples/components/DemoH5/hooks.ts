@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { Emits } from './interfaces'
+import { Emits } from './types'
 
 // 抛出frame的DOM
 export const useFrames = (emit: Emits) => {

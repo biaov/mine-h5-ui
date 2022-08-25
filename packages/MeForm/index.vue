@@ -6,7 +6,7 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import { Model, RuleItem, Option } from './interfaces'
+import { RuleItem, Option } from './types'
 
 const emit = defineEmits<{
   (event: 'submit', option: Option): void
@@ -14,7 +14,7 @@ const emit = defineEmits<{
 
 const props = withDefaults(
   defineProps<{
-    model?: Model // 校验数据
+    model?: Record<string, any> // 校验数据
     rules?: RuleItem[] // 校验规则
   }>(),
   {

@@ -1,4 +1,13 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+import { Ref } from 'vue'
+import { Props as ParentProps } from '../MeStep/types'
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// 父组件参数
+export interface StepContext {
+  name: string
+  parentProps: Ref<ParentProps>
+}
+
+// props
+export interface Props {
+  name: string | number
+}

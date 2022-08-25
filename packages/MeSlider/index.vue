@@ -14,7 +14,7 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import { PropStyles } from './interfaces'
+import { PropStyles } from './types'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', num: number): void

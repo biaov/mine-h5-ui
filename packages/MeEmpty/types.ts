@@ -1,4 +1,15 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// names
+export interface Names extends Record<string, string> {
+  default: string
+  network: string
+  search: string
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// props
+export interface Props {
+  text: string
+  type: string
+  height: number
+  iconName: string
+  url: string
+}

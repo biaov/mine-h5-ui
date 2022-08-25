@@ -23,8 +23,7 @@
 <script lang="ts" setup>
 import MeIcon from '../MeIcon'
 import { useHandler } from './hooks'
-import { BeforeRead, BfterRead, BeforeDelete } from './types'
-import { ListDataItem } from './interfaces'
+import { BeforeRead, BfterRead, BeforeDelete, ListDataItem } from './types'
 
 const emit = defineEmits<{
   (event: 'update:fileList', list: ListDataItem[]): void

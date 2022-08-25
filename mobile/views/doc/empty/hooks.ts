@@ -1,5 +1,5 @@
 import initData from './data'
-import { ListDataItem } from './interfaces'
+import { ListDataItem } from './types'
 
 // 页面数据
 export const useWebData = () => {

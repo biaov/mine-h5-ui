@@ -1,4 +1,19 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+import { Ref } from 'vue'
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// onChange 参数
+export interface OnChangeParams {
+  name: string | number
+  isChecked: Ref<boolean>
+}
+
+// emits
+export interface Emits {
+  (event: 'update:modelValue', arr: (string | number)[]): void
+  (event: 'change', arr: (string | number)[]): void
+}
+
+// props
+export interface Props {
+  modelValue: (string | number)[]
+  direction: string
+}

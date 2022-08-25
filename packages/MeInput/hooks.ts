@@ -1,9 +1,8 @@
 import { Ref, ref, onMounted, watch } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 短信验证码
-export const useSms = (props: Props, emit: Emits) => {
+export const useSms = (props: Readonly<Props>, emit: Emits) => {
   const sms = ref<HTMLDivElement>() // label 标签
 
   // 点击短信验证码
@@ -16,7 +15,7 @@ export const useSms = (props: Props, emit: Emits) => {
 }
 
 // 图标
-export const useIcon = (props: Props, emit: Emits, inputType: Ref<string>) => {
+export const useIcon = (props: Readonly<Props>, emit: Emits, inputType: Ref<string>) => {
   // 点击图标
   const handleIcon = (e: MouseEvent) => {
     // 判断是否是密码输入框
@@ -31,7 +30,7 @@ export const useIcon = (props: Props, emit: Emits, inputType: Ref<string>) => {
 }
 
 // 输入框
-export const useInput = (props: Props, emit: Emits, sms: Ref<HTMLDivElement | undefined>) => {
+export const useInput = (props: Readonly<Props>, emit: Emits, sms: Ref<HTMLDivElement | undefined>) => {
   const inputLabel = ref<HTMLDivElement>() // label 标签
   const inputVal = ref<string | number>('') // 输入框值
   const inputType = ref(props.digit ? 'text' : props.password ? 'password' : props.type) // 输入框 type 值

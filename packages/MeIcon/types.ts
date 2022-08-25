@@ -1,4 +1,11 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// emits
+export interface Emits {
+  (event: 'click', e: MouseEvent): void
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// props
+export interface Props {
+  name: string
+  color: string
+  size: string
+}

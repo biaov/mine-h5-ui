@@ -1,4 +1,15 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// emits
+export interface Emits {
+  (event: 'load-more'): void
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// props
+export interface Props {
+  list: Record<string, any>[]
+  interval: number
+  height: string
+  itemHeight: number
+  distance: number
+  screen: number[]
+  remain: number
+}

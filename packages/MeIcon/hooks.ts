@@ -1,4 +1,4 @@
-import { Emits } from './interfaces'
+import { Emits } from './types'
 
 // 点击 hook
 export const useClick = (emit: Emits) => {

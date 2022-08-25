@@ -1,8 +1,8 @@
 import { ref, watch, onMounted } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
+
 // 动画
-export const useAnimate = (props: Props) => {
+export const useAnimate = (props: Readonly<Props>) => {
   const noticeList = ref<HTMLDivElement>() // noticeList节点
   const left = ref(0) // 距离左边的距离
   const listData = ref(Array.isArray(props.list) ? props.list : [props.list]) // 列表内容

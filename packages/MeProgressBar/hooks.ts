@@ -2,7 +2,7 @@ import { computed } from 'vue'
 import { Props } from './types'
 
 // 计算
-export const useCounts = (props: Props) => {
+export const useCounts = (props: Readonly<Props>) => {
   // 当前文本
   const curText = computed(() => {
     const defaultText = `${props.modelValue}%` // 默认文本

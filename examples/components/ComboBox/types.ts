@@ -1,5 +1,10 @@
-import { PublicProps } from '@/types'
-import { Props as PropsI } from './interfaces'
+// 列表项
+export interface ListItem {
+  href: string
+  version: string
+}
 
-// 当前 vue props
-export type Props = PublicProps<PropsI>
+// props 参数
+export interface Props {
+  list: ListItem[]
+}

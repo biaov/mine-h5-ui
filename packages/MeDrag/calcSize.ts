@@ -1,5 +1,4 @@
-import { Point, Rect, Option, ResizeGroup } from './interfaces'
-import { CalcSizeName } from './types'
+import { CalcSizeName, Point, Rect, Option, ResizeGroup } from './types'
 
 /**
  * 获取对称点坐标

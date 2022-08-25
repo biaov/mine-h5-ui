@@ -1,11 +1,10 @@
 import { ref, provide, onMounted, watch, computed } from 'vue'
-import { LabelName } from '../MeTabItem/interfaces'
+import { LabelName } from '../MeTabItem/types'
 import { MeTabKey } from './token'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 初始化 slot
-export const useInitSlots = (props: Props, emit: Emits) => {
+export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
   /**
    * 下活动线位移计算方式
    * 思路：当前活动item的一半宽度 + 前面的所有宽度

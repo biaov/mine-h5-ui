@@ -1,7 +1,6 @@
 import { onMounted, watch, ref, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 点击操作
 export const useHandler = (emit: Emits) => {
@@ -25,7 +24,7 @@ export const useHandler = (emit: Emits) => {
 }
 
 // 页面padding
-export const usePadding = (props: Props, emit: Emits) => {
+export const usePadding = (props: Readonly<Props>, emit: Emits) => {
   const isActive = ref(false) // 是否处于激活状态
 
   // 改变页面padding

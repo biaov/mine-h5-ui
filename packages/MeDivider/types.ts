@@ -1,4 +1,28 @@
-import { PublicProps } from '../types'
-import { Props as DefaultProps } from './interfaces'
+// props line
+export interface Line {
+  radius?: number
+  color: string
+  size?: number
+}
+// props text
+export interface Text {
+  color: string
+  size: number
+}
+// fieldsetList item
+export interface FieldsetListItem {
+  text: string
+  deg: number
+}
 
-export type Props = PublicProps<DefaultProps> // 当前 vue props
+// props
+export interface Props {
+  list: string[]
+  line: Line
+  text: Text
+  left?: number
+  right?: number
+  width?: number
+  height?: number
+  origin?: number
+}

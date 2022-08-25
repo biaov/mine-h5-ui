@@ -1,9 +1,8 @@
 import { computed } from 'vue'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandle = (props: Props, emit: Emits) => {
+export const useHandle = (emit: Emits) => {
   // 点击
   const onClick = (e: MouseEvent) => {
     emit('click', e)
@@ -13,7 +12,7 @@ export const useHandle = (props: Props, emit: Emits) => {
 }
 
 // 样式
-export const useStyle = (props: Props) => {
+export const useStyle = (props: Readonly<Props>) => {
   // 样式
   const getStyle = computed(() => `height:${props.height};--icon-color:${props.iconColor};`)
 

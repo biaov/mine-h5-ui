@@ -1,10 +1,9 @@
 import { inject } from 'vue'
 import { MeSwiperKey } from '../MeSwiper/token'
-import { Props } from './types'
-import { SwiperContext } from './interfaces'
+import { Props, SwiperContext } from './types'
 
 // name
-export const useName = (props: Props) => {
+export const useName = (props: Readonly<Props>) => {
   const { name, getName } = inject(MeSwiperKey, {} as SwiperContext)
   name === MeSwiperKey && getName(props.name)
 

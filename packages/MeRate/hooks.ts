@@ -1,9 +1,8 @@
 import { ref, watch } from 'vue'
-import { Props } from './types'
-import { ListDataItem, Emits } from './interfaces'
+import { Props, ListDataItem, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   // 列表样式
   const listData = ref(Array.from({ length: props.count }, (k, v) => ({ id: v + 1, state: false })))
 

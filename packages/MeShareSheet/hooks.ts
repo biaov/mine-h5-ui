@@ -1,9 +1,8 @@
 import { ref, watch } from 'vue'
-import { Props } from './types'
-import { ListItem, Emits } from './interfaces'
+import { Props, ListItem, Emits } from './types'
 
 // 显示
-export const useShow = (props: Props, emit: Emits) => {
+export const useShow = (props: Readonly<Props>, emit: Emits) => {
   const isShowMask = ref(false) // 是否显示模态框
   const isShow = ref(false) // 是否显示模态框的过渡动画
 

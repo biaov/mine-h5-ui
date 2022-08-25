@@ -1,10 +1,9 @@
 import { watch, computed, ref } from 'vue'
 import { FormatThousand } from '../MeAPI/function'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const curValue = ref(props.startValue) // 当前值
   const comValue = computed(() => (props.thousand ? FormatThousand(curValue.value) : curValue.value))
 

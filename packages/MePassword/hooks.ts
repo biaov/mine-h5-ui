@@ -1,11 +1,10 @@
 /* eslint-disable no-restricted-syntax */
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import { Props } from './types'
-import { Emits } from './interfaces'
+import { Props, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const clampValue = props.modelValue.slice(0, props.num)
 
   emit('update:modelValue', clampValue)

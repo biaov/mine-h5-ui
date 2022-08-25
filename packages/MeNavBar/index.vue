@@ -17,7 +17,7 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import { Styles } from './interfaces'
+import { Styles } from './types'
 
 const emit = defineEmits<{
   (event: 'click-left', e: MouseEvent): void

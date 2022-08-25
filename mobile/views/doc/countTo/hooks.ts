@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './interfaces'
+import { ListDataItem } from './types'
 
 // 初始化页面
 export const useWebData = () => {

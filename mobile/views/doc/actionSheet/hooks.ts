@@ -1,5 +1,5 @@
 import { getCurrentInstance, ref } from 'vue'
-import { ListDataItem, GrandsonListItem } from './interfaces'
+import { ListDataItem, GrandsonListItem } from './types'
 import initData from './data'
 
 // 操作

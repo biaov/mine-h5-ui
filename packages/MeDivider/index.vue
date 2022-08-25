@@ -25,7 +25,7 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import { Line, Text } from './interfaces'
+import { Line, Text } from './types'
 
 const props = withDefaults(
   defineProps<{

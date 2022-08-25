@@ -46,6 +46,6 @@ const props = withDefaults(
   }
 )
 
-const { onClick } = useHandle(props, emit)
+const { onClick } = useHandle(emit)
 const { getStyle } = useStyle(props)
 </script>

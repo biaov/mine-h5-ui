@@ -19,7 +19,7 @@
   </ul>
 </template>
 <script lang="ts" setup>
-import { ListItem } from './interfaces'
+import { ListItem } from './types'
 
 defineProps<{
   list: ListItem[]

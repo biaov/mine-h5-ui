@@ -2,7 +2,7 @@ import { onMounted, ref, getCurrentInstance } from 'vue'
 import ClipboardJS from 'clipboard'
 import IconData from './icon'
 import initData from './data'
-import { ListItem } from './interfaces'
+import { ListItem } from './types'
 
 // 列表数据
 export const useWebData = () => {

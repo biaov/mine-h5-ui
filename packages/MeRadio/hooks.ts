@@ -1,10 +1,9 @@
 import { ref, watch, inject } from 'vue'
 import { MeRadioGroupKey } from '../MeRadioGroup/token'
-import { Props } from './types'
-import { RadioGroupContext, Emits } from './interfaces'
+import { Props, RadioGroupContext, Emits } from './types'
 
 // 操作
-export const useHandler = (props: Props, emit: Emits) => {
+export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   const { name, currentValue, onChange } = inject(MeRadioGroupKey, {} as RadioGroupContext)
   const isChecked = ref(props.modelValue) // 是否选中
   const iconName = ref('') // 图标名称

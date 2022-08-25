@@ -1,6 +1,6 @@
 import { ref, inject } from 'vue'
 import { MeGridKey } from '../MeGrid/token'
-import { GridContext, Emits } from './interfaces'
+import { GridContext, Emits } from './types'
 
 // 操作
 export const useHandler = (emit: Emits) => {

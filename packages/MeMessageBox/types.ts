@@ -1,10 +1,6 @@
-import { PublicProps } from '../types'
-import { Option, Props as DefaultProps } from './interfaces'
-
 export type OnOk = (arg?: string) => void // onOk 函数
 export type OnOff = () => void // onOff 函数
 export type HookFn = OnOk | OnOff // onOk 函数 | onOff 函数
-export type Props = PublicProps<DefaultProps> // 当前 vue props
 
 // curOption
 export type CurOption = Option & {
@@ -13,3 +9,41 @@ export type CurOption = Option & {
 
 // alert, confirm, prompt, custom
 export type MessageBoxFn = (option: Option) => Promise<string | undefined>
+
+// 传参
+export interface Option extends Record<string, string | HookFn | undefined> {
+  tips?: string
+  type?: string
+  message?: string
+  html?: string
+  cancelButtonText?: string
+  confirmButtonText?: string
+  onOff?: OnOff
+  onOk?: OnOk
+}
+
+// MessageBox
+export interface InMessageBox extends Record<string, MessageBoxFn> {
+  (option: Option, type: string): Promise<string | undefined>
+  alert: MessageBoxFn
+  confirm: MessageBoxFn
+  prompt: MessageBoxFn
+  custom: MessageBoxFn
+}
+
+// emits
+export interface Emits {
+  (event: 'action', eventName: string, value?: string): void
+}
+
+// props
+export interface Props {
+  tips: string
+  type: string
+  message: string
+  html: string
+  cancelButtonText: string
+  confirmButtonText: string
+  onOk: OnOk
+  onOff: OnOff
+}

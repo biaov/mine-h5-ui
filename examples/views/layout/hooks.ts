@@ -1,5 +1,5 @@
 import { Ref } from 'vue'
-import { ListItem, ForItem } from './interfaces'
+import { ListItem, ForItem } from './types'
 
 // canvas
 export const useCanvas = (canvas: Ref<HTMLCanvasElement | undefined>) => {

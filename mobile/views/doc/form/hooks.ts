@@ -1,6 +1,6 @@
 import { getCurrentInstance, ref } from 'vue'
 import initData from './data'
-import { ListDataItem, SubmitCallBackParams } from './interfaces'
+import { ListDataItem, SubmitCallBackParams } from './types'
 
 // 操作
 export const useHandle = () => {

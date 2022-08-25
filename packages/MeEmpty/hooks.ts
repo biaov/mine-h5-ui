@@ -1,9 +1,8 @@
 import { ref } from 'vue'
-import { Props } from './types'
-import { Names } from './interfaces'
+import { Props, Names } from './types'
 
 // 图标名称
-export const useIconName = (props: Props) => {
+export const useIconName = (props: Readonly<Props>) => {
   // 类型对应图标名称
   const names: Names = {
     default: 'jigou_wushuju',
