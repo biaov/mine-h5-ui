@@ -35,7 +35,7 @@ const config = {
       }
     },
     {
-      files: ['**/*.vue', '**/types.ts', '**/interfaces.ts'],
+      files: ['**/*.vue', '**/types.ts'],
       rules: {
         'no-unused-vars': 'off' // 禁止未使用的变量, ts 变量
       }
