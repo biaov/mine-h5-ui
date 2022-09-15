@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeIcon from './index.vue'
+import icon from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeIcon: SFCWithInstall<typeof icon> = icon as SFCWithInstall<typeof icon> // 增加类型
 // 安装
 MeIcon.install = (app: App) => {
   app.component('MeIcon', MeIcon)
 }
-const InMeIcon: SFCWithInstall<typeof MeIcon> = MeIcon // 增加类型
 
-export default InMeIcon
+export { MeIcon }

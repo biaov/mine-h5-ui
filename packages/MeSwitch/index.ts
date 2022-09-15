@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeSwitch from './index.vue'
+import _switch from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeSwitch: SFCWithInstall<typeof _switch> = _switch as SFCWithInstall<typeof _switch> // 增加类型
 // 安装
 MeSwitch.install = (app: App) => {
   app.component('MeSwitch', MeSwitch)
 }
-const InMeSwitch: SFCWithInstall<typeof MeSwitch> = MeSwitch // 增加类型
 
-export default InMeSwitch
+export { MeSwitch }

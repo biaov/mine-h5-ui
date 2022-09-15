@@ -6,7 +6,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import MeIcon from '../MeIcon'
+import { MeIcon } from '../MeIcon'
 import { useShow } from './hooks'
 
 const props = withDefaults(

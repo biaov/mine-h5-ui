@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import areaData from './area'
 import { Emits, Props } from './types'
 
-const AreaData = areaData as Record<string,Record<string,string>>
+const AreaData = areaData as Record<string, Record<string, string>>
 
 // 移动列
 export const useHandMove = () => {

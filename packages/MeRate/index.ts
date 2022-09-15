@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeRate from './index.vue'
+import rate from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeRate: SFCWithInstall<typeof rate> = rate as SFCWithInstall<typeof rate> // 增加类型
 // 安装
 MeRate.install = (app: App) => {
   app.component('MeRate', MeRate)
 }
-const InMeRate: SFCWithInstall<typeof MeRate> = MeRate // 增加类型
 
-export default InMeRate
+export { MeRate }

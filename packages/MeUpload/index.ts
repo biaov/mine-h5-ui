@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeUpload from './index.vue'
+import upload from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeUpload: SFCWithInstall<typeof upload> = upload as SFCWithInstall<typeof upload> // 增加类型
 // 安装
 MeUpload.install = (app: App) => {
   app.component('MeUpload', MeUpload)
 }
-const InMeUpload: SFCWithInstall<typeof MeUpload> = MeUpload // 增加类型
 
-export default InMeUpload
+export { MeUpload }

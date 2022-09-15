@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeTabBar from './index.vue'
+import tabBar from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeTabBar: SFCWithInstall<typeof tabBar> = tabBar as SFCWithInstall<typeof tabBar> // 增加类型
 // 安装
 MeTabBar.install = (app: App) => {
   app.component('MeTabBar', MeTabBar)
 }
-const InMeTabBar: SFCWithInstall<typeof MeTabBar> = MeTabBar // 增加类型
 
-export default InMeTabBar
+export { MeTabBar }

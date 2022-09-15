@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MePopup from './index.vue'
+import popup from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MePopup: SFCWithInstall<typeof popup> = popup as SFCWithInstall<typeof popup> // 增加类型
 // 安装
 MePopup.install = (app: App) => {
   app.component('MePopup', MePopup)
 }
-const InMePopup: SFCWithInstall<typeof MePopup> = MePopup // 增加类型
 
-export default InMePopup
+export { MePopup }

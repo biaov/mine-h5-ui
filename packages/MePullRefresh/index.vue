@@ -18,7 +18,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import MeLoading from '../MeLoading'
+import { MeLoading } from '../MeLoading'
 import { useHandMove } from './hooks'
 
 const emit = defineEmits<{

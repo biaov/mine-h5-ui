@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MePreview from './preview'
+import preview from './preview'
 import { SFCWithInstall } from '../types'
 
-const InMePreview: SFCWithInstall<typeof MePreview> = MePreview as SFCWithInstall<typeof MePreview> // 增加类型
+const MePreview: SFCWithInstall<typeof preview> = preview as SFCWithInstall<typeof preview> // 增加类型
 // 安装
-InMePreview.install = (app: App) => {
-  app.config.globalProperties.$MePreview = MePreview
+MePreview.install = (app: App) => {
+  app.config.globalProperties.$MePreview = preview
 }
 
-export default InMePreview
+export { MePreview }

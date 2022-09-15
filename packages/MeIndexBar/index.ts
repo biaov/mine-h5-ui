@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeIndexBar from './index.vue'
+import indexBar from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeIndexBar: SFCWithInstall<typeof indexBar> = indexBar as SFCWithInstall<typeof indexBar> // 增加类型
 // 安装
 MeIndexBar.install = (app: App) => {
   app.component('MeIndexBar', MeIndexBar)
 }
-const InMeIndexBar: SFCWithInstall<typeof MeIndexBar> = MeIndexBar // 增加类型
 
-export default InMeIndexBar
+export { MeIndexBar }

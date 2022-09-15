@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeTag from './index.vue'
+import tag from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeTag: SFCWithInstall<typeof tag> = tag as SFCWithInstall<typeof tag> // 增加类型
 // 安装
 MeTag.install = (app: App) => {
   app.component('MeTag', MeTag)
 }
-const InMeTag: SFCWithInstall<typeof MeTag> = MeTag // 增加类型
 
-export default InMeTag
+export { MeTag }

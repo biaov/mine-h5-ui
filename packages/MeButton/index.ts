@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeButton from './index.vue'
+import button from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeButton: SFCWithInstall<typeof button> = button as SFCWithInstall<typeof button> // 增加类型
 // 安装
 MeButton.install = (app: App): void => {
   app.component('MeButton', MeButton)
 }
-const InMeButton: SFCWithInstall<typeof MeButton> = MeButton // 增加类型
 
-export default InMeButton
+export { MeButton }

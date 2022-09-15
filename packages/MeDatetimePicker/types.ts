@@ -1,5 +1,5 @@
 // type 值
-export interface TypeIds extends Record<string, number[]>  {
+export interface TypeIds extends Record<string, number[]> {
   'year-month': number[]
   'month-day': number[]
   time: number[]

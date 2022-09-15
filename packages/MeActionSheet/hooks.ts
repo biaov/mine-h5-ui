@@ -1,6 +1,5 @@
 import { ref, watch } from 'vue'
-import { Props } from './types'
-import { ListItem, Emits } from './types'
+import { Props, ListItem, Emits } from './types'
 
 // 显示
 export const useShowSheet = (props: Readonly<Props>, emit: Emits) => {

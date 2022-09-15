@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeForm from './index.vue'
+import form from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeForm: SFCWithInstall<typeof form> = form as SFCWithInstall<typeof form> // 增加类型
 // 安装
 MeForm.install = (app: App) => {
   app.component('MeForm', MeForm)
 }
-const InMeForm: SFCWithInstall<typeof MeForm> = MeForm // 增加类型
 
-export default InMeForm
+export { MeForm }

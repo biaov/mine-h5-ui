@@ -10,7 +10,7 @@
   </ul>
 </template>
 <script lang="ts" setup>
-import MeIcon from '../MeIcon'
+import { MeIcon } from '../MeIcon'
 import { useHandler, usePadding } from './hooks'
 import { SkinStyleValue } from './types'
 

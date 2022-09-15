@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import MeIcon from '../MeIcon'
+import { MeIcon } from '../MeIcon'
 import { useHandler } from './hooks'
 import { NativeType } from './types'
 

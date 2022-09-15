@@ -6,7 +6,7 @@ export interface BtnListItem {
 }
 
 // 页面状态值
-export interface WebStatus extends Record<string,boolean> {
+export interface WebStatus extends Record<string, boolean> {
   isStart: boolean
   isSuspend: boolean
   isReset: boolean

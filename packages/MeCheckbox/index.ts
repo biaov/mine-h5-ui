@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeCheckbox from './index.vue'
+import checkbox from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeCheckbox: SFCWithInstall<typeof checkbox> = checkbox as SFCWithInstall<typeof checkbox> // 增加类型
 // 安装
 MeCheckbox.install = (app: App) => {
   app.component('MeCheckbox', MeCheckbox)
 }
-const InMeCheckbox: SFCWithInstall<typeof MeCheckbox> = MeCheckbox // 增加类型
 
-export default InMeCheckbox
+export { MeCheckbox }

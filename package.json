@@ -1,23 +1,24 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "private": false,
   "author": {
     "name": "biaov",
     "email": "biaov@qq.com"
   },
-  "main": "lib/index.esm.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "sideEffects": false,
   "style": "lib/theme-default/index.css",
   "description": "一款轻量级、模块化基于 VUE3 的 H5 前端 UI 组件库 👍",
   "scripts": {
     "start": "npm run dev",
     "dev": "vite -m development",
-    "build": "npm run build:docs && npm run build:theme && npm run build:package && npm run build:package:dts",
+    "build": "npm run build:docs && npm run build:theme && npm run build:package",
     "build:docs": "vite build",
     "build:theme": "gulp build -f build/gulpfile.prod.ts",
     "build:theme:rem": "gulp build -f build/gulpfile.rem.ts",
     "build:package": "cross-env NODE_OPTIONS=--max_old_space_size=8192 rollup -c build/rollup.config.ts",
-    "build:package:dts": "rollup -c build/rollup.config.dts.ts",
     "preview": "vite preview",
     "lint": "npm run lint:examples && npm run lint:mobile && npm run lint:packages && npm run lint:tests",
     "lint:examples": "eslint --fix ./examples --ext .vue,.ts",
@@ -110,6 +111,7 @@
     "ts-jest": "^28.0.8",
     "typescript": "^4.7.4",
     "vite": "^3.0.9",
+    "vite-plugin-dts": "^1.5.0",
     "vite-plugin-md": "^0.20.2",
     "vite-plugin-pwa": "^0.12.3",
     "vue-tsc": "^0.40.1"

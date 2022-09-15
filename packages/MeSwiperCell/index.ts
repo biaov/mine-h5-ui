@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeSwiperCell from './index.vue'
+import swiperCell from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeSwiperCell: SFCWithInstall<typeof swiperCell> = swiperCell as SFCWithInstall<typeof swiperCell> // 增加类型
 // 安装
 MeSwiperCell.install = (app: App) => {
   app.component('MeSwiperCell', MeSwiperCell)
 }
-const InMeSwiperCell: SFCWithInstall<typeof MeSwiperCell> = MeSwiperCell // 增加类型
 
-export default InMeSwiperCell
+export { MeSwiperCell }

@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeCountTo from './index.vue'
+import countTo from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeCountTo: SFCWithInstall<typeof countTo> = countTo as SFCWithInstall<typeof countTo> // 增加类型
 // 安装
 MeCountTo.install = (app: App) => {
   app.component('MeCountTo', MeCountTo)
 }
-const InMeCountTo: SFCWithInstall<typeof MeCountTo> = MeCountTo // 增加类型
 
-export default InMeCountTo
+export { MeCountTo }

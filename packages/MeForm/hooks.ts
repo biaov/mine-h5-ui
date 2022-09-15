@@ -1,4 +1,4 @@
-import MeToast from '../MeToast'
+import { MeToast } from '../MeToast'
 import { Props, Emits, Option } from './types'
 
 // 操作

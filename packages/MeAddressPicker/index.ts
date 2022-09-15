@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeAddressPicker from './index.vue'
+import addressPicker from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeAddressPicker: SFCWithInstall<typeof addressPicker> = addressPicker as SFCWithInstall<typeof addressPicker> // 增加类型
 // 安装
 MeAddressPicker.install = (app: App) => {
   app.component('MeAddressPicker', MeAddressPicker)
 }
-const InMeAddressPicker: SFCWithInstall<typeof MeAddressPicker> = MeAddressPicker // 增加类型
 
-export default InMeAddressPicker
+export { MeAddressPicker }

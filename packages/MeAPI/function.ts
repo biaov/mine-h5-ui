@@ -72,7 +72,7 @@ export const FormatTime = (arg: string | number | Date = new Date()): FormatTime
   const str = IsType('Number', arg) && String(arg).length < 13 ? (arg as number) * 1000 : arg // 转化成ms
   IsType('string', arg) && (str as string).replace(/-/g, '/') // 为了支持 IOS
   const O = new Date(str) // 时间 Date 对象
-  const doubleDigit = (num: number) => (num < 10 ? `0${num}` : String(num)) // 加 0
+  const doubleDigit = (num: number): string => (num < 10 ? `0${num}` : String(num)) // 加 0
   const weeks = ['日', '一', '二', '三', '四', '五', '六'] // 日期
   // 年、月、日、星、期、时、分、秒
   const [Y, M, D, w, h, m, s] = [

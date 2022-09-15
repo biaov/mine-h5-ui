@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeStep from './index.vue'
+import step from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeStep: SFCWithInstall<typeof step> = step as SFCWithInstall<typeof step> // 增加类型
 // 安装
 MeStep.install = (app: App) => {
   app.component('MeStep', MeStep)
 }
-const InMeStep: SFCWithInstall<typeof MeStep> = MeStep // 增加类型
 
-export default InMeStep
+export { MeStep }

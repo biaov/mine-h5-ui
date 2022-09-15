@@ -6,4 +6,3 @@ export type Lazy<T> = () => Promise<T> // 懒加载
 export interface Docs extends SidebarChildItem {
   component?: Lazy<RouteComponent>
 }
-

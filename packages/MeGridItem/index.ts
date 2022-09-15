@@ -1,11 +1,11 @@
 import type { App } from 'vue'
-import MeGridItem from './index.vue'
+import gridItem from './index.vue'
 import { SFCWithInstall } from '../types'
 
+const MeGridItem: SFCWithInstall<typeof gridItem> = gridItem as SFCWithInstall<typeof gridItem> // 增加类型
 // 安装
 MeGridItem.install = (app: App) => {
   app.component('MeGridItem', MeGridItem)
 }
-const InMeGridItem: SFCWithInstall<typeof MeGridItem> = MeGridItem // 增加类型
 
-export default InMeGridItem
+export { MeGridItem }

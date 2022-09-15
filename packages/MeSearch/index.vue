@@ -23,7 +23,7 @@
 </template>
 <script lang="ts" setup>
 import { useSearch, useBtns } from './hooks'
-import MeIcon from '../MeIcon'
+import { MeIcon } from '../MeIcon'
 
 const emit = defineEmits<{
   (event: 'update:modelValue', str: string): void
