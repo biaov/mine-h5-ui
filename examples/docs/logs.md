@@ -14,7 +14,14 @@
 
 :::TimeLine
 
-## v1.6.5-Latest release
+## v1.6.6-Latest release
+
+`2022-09-23`
+
+- Bug Fixes
+  - 修复已知 Bug
+
+## v1.6.5
 
 `2022-05-31`
 
