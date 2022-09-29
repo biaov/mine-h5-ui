@@ -32,6 +32,6 @@ package-lock.json
 pre-publish.json
 pre-publish-github.json
 vue.config.js
-Release.md
+RELEASE.md
 deploy.yml
 .ncurc.json
