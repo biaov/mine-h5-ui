@@ -1,4 +1,4 @@
 {
   "upgrade": true,
-  "reject": ["del"]
+  "reject": ["del", "@types/node"]
 }
