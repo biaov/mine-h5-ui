@@ -4,6 +4,7 @@ export { MeIcon } from './MeIcon' // 图标
 export { MeImg } from './MeImg' // 图片
 export { MePopup } from './MePopup' // 弹出层
 export { MeCell } from './MeCell' // 单元格
+export { MeSpace } from './MeSpace' // 间距
 /* 基础组件 end */
 
 /* 表单组件 start */

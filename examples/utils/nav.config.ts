@@ -78,6 +78,13 @@ export const componentConfig = [
         },
         path: 'cell',
         name: 'cell'
+      },
+      {
+        meta: {
+          title: 'Space 间距'
+        },
+        path: 'space',
+        name: 'space'
       }
     ]
   },

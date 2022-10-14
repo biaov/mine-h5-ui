@@ -7,4 +7,5 @@ const install = (app: App) => {
     value.install && value.install(app)
   })
 }
+
 export { install }

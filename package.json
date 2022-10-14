@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "private": false,
   "author": {
     "name": "biaov",
@@ -26,7 +26,7 @@
     "lint:packages": "eslint --fix ./packages --ext .vue,.ts",
     "lint:tests": "eslint --fix ./tests --ext .ts",
     "test:unit": "jest -c=jest.config.js --detectOpenHandles",
-    "test:unit:single": "jest tests/unit/loading.spec.ts -c=jest.config.js --detectOpenHandles",
+    "test:unit:single": "jest tests/unit/space.spec.ts -c=jest.config.js --detectOpenHandles",
     "prepare": "husky install",
     "pre-publish": "node build/pre-publish.ts",
     "pre-publish:github": "cross-env NODE_PRE=github node build/pre-publish.ts",
@@ -112,6 +112,6 @@
     "vite": "^3.1.7",
     "vite-plugin-md": "^0.20.4",
     "vite-plugin-pwa": "^0.13.1",
-    "vue-tsc": "^1.0.3"
+    "vue-tsc": "^1.0.7"
   }
 }
