@@ -14,7 +14,17 @@
 
 :::TimeLine
 
-## v1.6.6-Latest release
+## v1.6.7-Latest release
+
+`2022-10-14`
+
+- 更新基础组件
+  - [新增间距组件](/doc/space)
+- Bug Fixes
+  - 优化代码
+  - 修复已知 Bug
+
+## v1.6.6
 
 `2022-09-23`
 

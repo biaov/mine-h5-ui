@@ -1,0 +1,27 @@
+/**
+  * @file 间距
+*/
+
+@import './variable.less';
+
+.me-space {
+  display: inline-flex;
+  &.horizontal {
+    flex-direction: row;
+    .me-space-item {
+      margin-right: var(--size);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &.vertical {
+    flex-direction: column;
+    .me-space-item {
+      margin-bottom: var(--size);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

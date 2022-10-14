@@ -9,7 +9,8 @@ node_modules/
 packages/
 public/
 tests/
-.husky
+.husky/
+.vscode/
 
 # 忽略指定文件
 .editorconfig
@@ -20,7 +21,7 @@ tests/
 .prettierrc
 .prettierignore
 babel.config.js
-Explain.md
+EXPLAIN.md
 format.vue
 .npmrc
 *.html

@@ -40,7 +40,7 @@ Vue.use(MINEH5UI);
 
 ## 项目文档
 
-- [Explain.md](https://github.com/biaov/MINE-H5-UI/blob/master/Explain.md)
+- [EXPLAIN.md](https://github.com/biaov/MINE-H5-UI/blob/master/EXPLAIN.md)
 
 ## 贡献者
 
