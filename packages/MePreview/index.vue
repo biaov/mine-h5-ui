@@ -1,6 +1,6 @@
 <template>
   <!-- 图片预览 -->
-  <div class="me-preview" :class="{ show: isShow }" :style="`z-index:${zIndex};background:${background};`" @click="onClose" v-if="!isDestroy">
+  <div class="me-preview" :class="{ show: isShow }" :style="`z-index:${zIndex};background:${background};--animation-duration:${animationDuration}ms;`" @click="onClose" v-if="!isDestroy">
     <img class="img" :src="url" alt="preview-img" />
     <slot></slot>
   </div>
@@ -20,5 +20,5 @@ const props = withDefaults(
   }
 )
 
-const { isShow, isDestroy, onClose } = useShow()
+const { isShow, isDestroy, onClose, animationDuration } = useShow()
 </script>

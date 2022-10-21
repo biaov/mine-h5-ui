@@ -1,6 +1,6 @@
 <template>
   <!-- 消息提示 -->
-  <div class="me-toast" :class="{ show: isShow }" :style="`background:${bgColor};`" v-if="!isDestroy">
+  <div class="me-toast" :class="{ show: isShow }" :style="`background:${bgColor};--animation-duration:${animationDuration}ms;`" v-if="!isDestroy">
     <me-icon :name="icon" color="#fff" v-if="icon"></me-icon>
     <span>{{ message }}</span>
   </div>
@@ -23,6 +23,5 @@ const props = withDefaults(
     durction: 1000
   }
 )
-
-const { isShow, isDestroy } = useShow(props)
+const { isShow, isDestroy, animationDuration } = useShow(props)
 </script>

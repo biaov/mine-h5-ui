@@ -1,6 +1,6 @@
 <template>
   <!-- 弹出层 -->
-  <div class="me-popup" :class="{ show: isShow }" :style="`background:rgba(0,0,0,${modal ? 0.7 : 0});`" @click="hideMask" v-show="isShowMask">
+  <div class="me-popup" :class="{ show: isShow }" :style="`background:rgba(0,0,0,${modal ? 0.7 : 0});--animation-duration:${animationDuration}ms;`" @click="hideMask" v-show="isShowMask">
     <div :class="position" :style="setRadius" @click.stop>
       <me-icon name="icon-baseline-close-px" size="20px" @click="hideMask" v-if="closeable"></me-icon>
       <slot></slot>
@@ -33,6 +33,6 @@ const props = withDefaults(
   }
 )
 
-const { isShow, isShowMask, hideMask } = useMask(props, emit)
+const { isShow, isShowMask, hideMask, animationDuration } = useMask(props, emit)
 const { setRadius } = useRadius(props)
 </script>

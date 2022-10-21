@@ -1,6 +1,6 @@
 <template>
   <!-- 遮罩层 -->
-  <div class="me-mask" :class="{ show: isShow }" @click="clickMask" v-show="isShowMask">
+  <div class="me-mask" :class="{ show: isShow }" @click="clickMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
     <slot :class="{ on: isShow }" @click.stop></slot>
   </div>
 </template>
@@ -22,5 +22,5 @@ const props = withDefaults(
   }
 )
 
-const { isShowMask, isShow, clickMask } = useHandler(props, emit)
+const { isShowMask, isShow, clickMask, animationDuration } = useHandler(props, emit)
 </script>

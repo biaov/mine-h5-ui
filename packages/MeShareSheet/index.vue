@@ -1,6 +1,6 @@
 <template>
   <!-- 分享面板 -->
-  <div class="me-share-sheet" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask">
+  <div class="me-share-sheet" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
     <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
       <h3 class="tips">{{ tips }}</h3>
@@ -46,6 +46,6 @@ const props = defineProps({
   }
 })
 
-const { isShowMask, isShow, hideMask } = useShow(props, emit)
+const { isShowMask, isShow, hideMask, animationDuration } = useShow(props, emit)
 const { onLi, onCancel } = useBtns(emit)
 </script>

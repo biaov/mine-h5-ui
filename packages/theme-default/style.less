@@ -69,7 +69,7 @@ each(@modes, {
 
 /* 浮动 end */
 /* 遮罩层 start */
-.mask {
+.mask(@animationDuration: 400ms) {
   position: fixed;
   top: 0;
   left: 0;
@@ -79,7 +79,7 @@ each(@modes, {
   height: 100vh;
   min-width: 100%;
   background: rgba(0, 0, 0, 0);
-  transition: 0.4s all;
+  transition: @animationDuration all;
   opacity: 0;
 
   &.show {
@@ -93,7 +93,7 @@ each(@modes, {
     position: absolute;
     padding: 15px;
     background: #fff;
-    transition: 0.4s all;
+    transition: @animationDuration all;
     color: #494949;
     font-size: 14px;
   }

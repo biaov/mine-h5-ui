@@ -5,7 +5,7 @@
 @import './variable.less';
 
 .me-message-box {
-  .mask;
+  .mask(var(--animation-duration));
 
   // 内容块
   .picker {
@@ -58,7 +58,7 @@
         border: 1px solid @border-color-default;
         border-radius: @border-radius-default;
         padding: 0 15px;
-        transition: border 0.4s;
+        transition: border var(--animation-duration);
         outline: none;
 
         &:focus {

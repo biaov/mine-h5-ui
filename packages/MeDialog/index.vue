@@ -1,6 +1,6 @@
 <template>
   <!-- 对话框 -->
-  <div class="me-dialog" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask">
+  <div class="me-dialog" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
     <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
       <h3 class="tips">{{ tips }}</h3>
@@ -27,5 +27,5 @@ const props = withDefaults(
   }
 )
 
-const { isShowMask, isShow, hideMask } = useShow(props, emit)
+const { isShowMask, isShow, hideMask, animationDuration } = useShow(props, emit)
 </script>

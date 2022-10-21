@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue'
+import { ref, nextTick } from 'vue'
 import { Props, Emits } from './types'
 
 // 显示
@@ -6,6 +6,7 @@ export const useShow = (props: Readonly<Props>, emit: Emits) => {
   const isDestroy = ref(false) // 是否销毁
   const isShow = ref(false) // 是否显示
   const inputValue = ref('') // 输入框的值
+  const animationDuration = 400 // 动画时间
 
   // 关闭显示
   const closeShow = (cusEventName: string, value?: string) => {
@@ -13,7 +14,7 @@ export const useShow = (props: Readonly<Props>, emit: Emits) => {
     emit('action', cusEventName, value)
     setTimeout(() => {
       isDestroy.value = true
-    }, 400)
+    }, animationDuration)
   }
 
   // 点击取消按钮
@@ -26,11 +27,11 @@ export const useShow = (props: Readonly<Props>, emit: Emits) => {
     closeShow('onOk', props.type === 'prompt' ? inputValue.value : undefined)
   }
 
-  onMounted(() => {
+  nextTick(() => {
     setTimeout(() => {
       isShow.value = true
-    }, 100)
+    }, 0)
   })
 
-  return { isShow, isDestroy, inputValue, onCancel, onConfirm }
+  return { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration }
 }

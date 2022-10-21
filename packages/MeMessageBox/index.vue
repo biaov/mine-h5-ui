@@ -1,6 +1,6 @@
 <template>
   <!-- 弹出框 -->
-  <div class="me-message-box" :class="{ show: isShow }" @click="onCancel" v-if="!isDestroy">
+  <div class="me-message-box" :class="{ show: isShow }" @click="onCancel" v-if="!isDestroy" :style="`--animation-duration:${animationDuration}ms;`">
     <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
       <h3 class="tips">{{ tips }}</h3>
@@ -56,5 +56,5 @@ const props = withDefaults(
   }
 )
 
-const { isShow, isDestroy, inputValue, onCancel, onConfirm } = useShow(props, emit)
+const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } = useShow(props, emit)
 </script>
