@@ -9,7 +9,7 @@
 </template>
 <script lang="ts" setup>
 import { useMask, useRadius } from './hooks'
-import { MeIcon } from '../MeIcon'
+import MeIcon from '../MeIcon/index.vue'
 
 const emit = defineEmits<{
   (event: 'update:visible', bool: boolean): void

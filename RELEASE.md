@@ -53,13 +53,13 @@ npm publish --tag=beta-v2
 npm publish [--tag=latest]
 ```
 
-- github 发布
+- Github 发布
 
 ```Basic
 npm publish
 ```
 
-## 更新 github 代码
+## 更新 Github 代码
 
 - git push
-- 更新 github 状态
+- 更新 Github 状态

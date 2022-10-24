@@ -24,7 +24,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { MeIcon } from '../MeIcon'
+import MeIcon from '../MeIcon/index.vue'
 import { useSms, useIcon, useInput } from './hooks'
 
 const emit = defineEmits<{
