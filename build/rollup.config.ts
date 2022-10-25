@@ -5,7 +5,7 @@ import { resolve } from 'path'
 // import { RollupOptions } from 'rollup'
 
 const input = resolve(__dirname, '../packages') // 入口文件
-const output = resolve(__dirname, '../lib') // 输出文件
+const output = resolve(__dirname, '../dist/packages') // 输出文件
 
 const config = [
   {
@@ -26,7 +26,7 @@ const config = [
       })
     ],
     output: {
-      dir: output,
+      dir: `${output}/es`,
       format: 'es',
       preserveModules: true,
       preserveModulesRoot: 'packages'

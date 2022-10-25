@@ -32,6 +32,7 @@ const config: UserConfig = {
     }
   },
   build: {
+    outDir: './dist/docs',
     ssrManifest: false,
     manifest: false,
     // 多页面

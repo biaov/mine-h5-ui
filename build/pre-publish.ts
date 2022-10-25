@@ -1,4 +1,4 @@
-const { writeFileSync, existsSync, unlinkSync } = require('fs')
+const { writeFileSync, existsSync, unlinkSync, copyFileSync } = require('fs')
 const { resolve } = require('path')
 const package = require('../package.json')
 const needSave = ['vue', 'html2canvas']
@@ -21,7 +21,17 @@ switch (process.env.NODE_PRE) {
     break
 }
 
-const prePackagePath = resolve(__dirname, `../package.json`) // 新路径
+const outDir = `../dist/packages` // 外层目录
 
+// 修改文件
+const prePackagePath = resolve(__dirname, `${outDir}/package.json`) // 新路径
 existsSync(prePackagePath) && unlinkSync(prePackagePath) // 删除旧的
 writeFileSync(prePackagePath, JSON.stringify(package, null, 2)) // 写入最新的
+
+// 复制文件
+const copyFiles = ['README.md', 'LICENSE'] // 需要复制的文件
+copyFiles.forEach(fileName => {
+  const include = resolve(__dirname, `../${fileName}`)
+  const output = resolve(__dirname, `${outDir}/${fileName}`)
+  copyFileSync(include, output) // 复制文件
+})

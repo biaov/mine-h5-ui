@@ -6,8 +6,8 @@ import router from './router'
 import MINEH5UI from '~/index' // 开发
 import '~/theme-default/index.less' // 开发
 
-/* import MINEH5UI from "../lib"; // 测试
-import "../lib/theme-default/index.css"; // 测试 */
+/* import MINEH5UI from '../dist/packages/lib' // 测试
+import '../dist/packages/lib/theme-default/index.css' // 测试 */
 
 const app = createApp(App)
 app.use(MINEH5UI)

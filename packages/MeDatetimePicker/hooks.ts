@@ -62,7 +62,7 @@ export const useHandMove = (props: Readonly<Props>) => {
 
   ids.forEach((elem, i) => {
     const { list } = listData.value[elem - 1] // 获取list
-    currentValue[i] = typeof list === 'number' ? +!(i === 3 || i === 4) : list[0] // 判断是否为数值
+    currentValue[i] = typeof list === 'number' ? +![3, 4].includes(i) : list[0] // 判断是否为数值
   })
 
   let startY = 0 // 开始Y坐标
@@ -106,7 +106,7 @@ export const useHandMove = (props: Readonly<Props>) => {
     const { list } = listData.value[i - 1]
     let current = 0 // 当前拖动值
 
-    if (i === 4 || i === 5) {
+    if ([4, 5].includes(i)) {
       // 判断是否为数值
       current = typeof list === 'number' ? count : list[count]
     } else {

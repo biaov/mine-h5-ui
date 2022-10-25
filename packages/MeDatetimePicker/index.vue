@@ -21,7 +21,7 @@
           >
             <!-- 移动的区域 -->
             <ol :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`">
-              <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(item.id === 5 || item.id === 4 ? num - 1 : num) }}</li>
+              <li v-for="(num, i) in item.list" :key="i">{{ filterNumber([4, 5].includes(item.id) ? num - 1 : num) }}</li>
             </ol>
           </li>
         </template>
