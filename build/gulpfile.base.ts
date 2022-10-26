@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const gulpCssmin = require('gulp-cssmin')
-const del = require('del')
+const gulpClean = require('gulp-clean')
 
 // 打包配置
 const config = {
@@ -20,10 +20,4 @@ exports.minifontCss = () =>
     .pipe(gulp.dest(`${config.output}/fonts`))
 
 // 删除之前css打包文件
-exports.clean = done => {
-  del(
-    ['*.css', 'fonts'].map(name => `${config.output}/${name}`),
-    { force: true }
-  )
-  done()
-}
+exports.clean = () => gulp.src(config.output, { allowEmpty: true }).pipe(gulpClean({ force: true }))

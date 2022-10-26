@@ -1,4 +1,4 @@
 {
   "upgrade": true,
-  "reject": ["del", "@types/node", "@rollup/plugin-node-resolve", "rollup"]
+  "reject": ["@types/node", "@rollup/plugin-node-resolve", "rollup"]
 }
