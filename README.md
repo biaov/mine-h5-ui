@@ -17,8 +17,8 @@
 
 ## 使用文档
 
-- **[😎 1.x](https://mineh5ui.biaov.cn/)**
-- **[😎 2.x](https://mineh5ui.biaov.cn/v2)**
+- [x] **[😎 MINE-H5-UI@1.x 基于 Vue2.x](https://mineh5ui.biaov.cn/)**
+- [x] **[😎 MINE-H5-UI@2.x 基于 Vue3.x](https://mineh5ui.biaov.cn/v2)**
 
 ## 安装
 
