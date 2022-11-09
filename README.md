@@ -45,8 +45,3 @@ Vue.use(MINEH5UI);
 ## 贡献者
 
 - biaov\<biaov@qq.com\>
-
-## License
-
-- [MIT](http://opensource.org/licenses/MIT)
-- Copyright © 2020-present, TalkingData.
