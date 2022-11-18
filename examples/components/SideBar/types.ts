@@ -4,18 +4,15 @@ export interface SidebarMeta {
 }
 
 // 导航子栏目
-export interface SidebarItems {
+export interface SidebarItem {
   name: string
   path: string
   meta: SidebarMeta
 }
 
 // 导航子类型
-export interface SidebarChildItem {
-  name?: string
-  path?: string
-  meta: SidebarMeta
-  items?: SidebarItems[]
+export interface SidebarChildItem extends Partial<Pick<SidebarItem, 'name' | 'path'>>, Pick<SidebarItem, 'meta'> {
+  items?: SidebarItem[]
 }
 
 // 导航类型
