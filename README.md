@@ -47,4 +47,4 @@ app.mount('#app')
 
 ## 贡献者
 
-- [x] biaov\<biaov@qq.com\>
+[![贡献者](https://contrib.rocks/image?repo=biaov/MINE-H5-UI)](https://github.com/biaov/MINE-H5-UI/graphs/contributors)
