@@ -7,7 +7,7 @@
     <me-count-down :time="time" format="hh:mm:ss:ms"></me-count-down>
     <div class="u-label">自定义样式</div>
     <me-count-down :time="time">
-      <template #default="{hh,mm,ss}">
+      <template #default="{ hh, mm, ss }">
         <span class="u-block">{{ hh }}</span>
         :
         <span class="u-block">{{ mm }}</span>

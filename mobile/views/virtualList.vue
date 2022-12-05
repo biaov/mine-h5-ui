@@ -4,7 +4,7 @@
     <li v-for="list in listData" :key="list.id">
       <div class="u-label">{{ list.label }}</div>
       <me-virtual-list height="300px" :list="list.list" :itemHeight="list.itemHeight" :remain="16" @on-load-more="onLoadMore(list)">
-        <template #default="{item}">
+        <template #default="{ item }">
           <div class="item" :class="{ auto: list.auto }">
             <p>
               <span>#{{ item.virtualId }}.</span>

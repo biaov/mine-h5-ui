@@ -3,7 +3,7 @@
   <div class="m-drag">
     <div class="u-label">基础使用</div>
     <me-drag :list.sync="list" :current.sync="current" @on-change="onChange">
-      <template #default="{item}">
+      <template #default="{ item }">
         <img :src="item.url" alt="img" mode="fill" draggable="false" />
       </template>
     </me-drag>

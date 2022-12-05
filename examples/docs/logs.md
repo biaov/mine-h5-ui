@@ -14,7 +14,17 @@
 
 :::TimeLine
 
-## v1.6.7-Latest release
+## v1.6.8-Latest release
+
+`2022-12-05`
+
+- 更新基础组件
+  - [新增画图组件](/doc/mspaint)
+- Bug Fixes
+  - 修复已知 Bug
+  - 优化代码
+
+## v1.6.7
 
 `2022-10-14`
 

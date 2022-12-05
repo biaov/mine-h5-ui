@@ -95,10 +95,7 @@ export default {
     onDelete(item) {
       // 判断是否为空
       if (!!item.value) {
-        item.value = item.value
-          .split('')
-          .slice(0, -1)
-          .join('')
+        item.value = item.value.split('').slice(0, -1).join('')
       }
     },
     // 点击完成

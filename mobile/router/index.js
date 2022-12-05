@@ -23,7 +23,7 @@ addComponent(docs)
 // 获取原型对象上的 push 函数
 const originalPush = Router.prototype.push
 // 修改原型对象中的 push 方法
-Router.prototype.push = function(location) {
+Router.prototype.push = function (location) {
   return originalPush.call(this, location).catch(err => err)
 }
 const routes = [

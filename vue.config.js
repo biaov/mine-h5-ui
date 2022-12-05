@@ -3,6 +3,7 @@ const { vueMarkdown, addStyleResource } = require('./build')
 
 module.exports = {
   lintOnSave: true,
+  outputDir: './dist/docs',
   devServer: {
     port: 8888,
     // 配置eslint的warning and error
@@ -32,18 +33,7 @@ module.exports = {
     // stylus修改成less
     types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
     // vue默认@指向src目录，这里要修正为examples，另外新增一个~指向packages
-    config.resolve.alias
-      .set('@', resolve('examples'))
-      .set('~', resolve('packages'))
-      .set('^', resolve('mobile'))
-    config.module
-      .rule('md')
-      .test(/\.md/)
-      .use('vue-loader')
-      .loader('vue-loader')
-      .end()
-      .use('vue-markdown-loader')
-      .loader('vue-markdown-loader/lib/markdown-compiler')
-      .options(vueMarkdown)
+    config.resolve.alias.set('@', resolve('examples')).set('~', resolve('packages')).set('^', resolve('mobile'))
+    config.module.rule('md').test(/\.md/).use('vue-loader').loader('vue-loader').end().use('vue-markdown-loader').loader('vue-markdown-loader/lib/markdown-compiler').options(vueMarkdown)
   }
 }
