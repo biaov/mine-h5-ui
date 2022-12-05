@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.3.8",
+  "version": "2.3.9",
   "private": false,
   "author": {
     "name": "biaov",
@@ -27,7 +27,7 @@
     "lint:packages": "eslint --fix ./packages --ext .vue,.ts",
     "lint:tests": "eslint --fix ./tests --ext .ts",
     "test:unit": "jest -c=jest.config.js --detectOpenHandles",
-    "test:unit:single": "jest tests/unit/button.spec.ts -c=jest.config.js",
+    "test:unit:single": "jest tests/unit/mspaint.spec.ts -c=jest.config.js",
     "prepare": "husky install",
     "pre-publish": "node build/pre-publish.ts && start cmd /k cd ./dist/packages",
     "pre-publish:github": "cross-env NODE_PRE=github node build/pre-publish.ts && start cmd /k cd ./dist/packages",

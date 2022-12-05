@@ -414,6 +414,13 @@ export const componentConfig = [
         },
         path: 'coupon',
         name: 'coupon'
+      },
+      {
+        meta: {
+          title: 'Mspaint 画图'
+        },
+        path: 'mspaint',
+        name: 'mspaint'
       }
     ]
   }
