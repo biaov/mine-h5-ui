@@ -61,7 +61,7 @@ describe('MeInput', () => {
     expect(viewer.text()).toBe(label)
   })
 
-  test('props labelIcon', () => {
+  test('props label-icon', () => {
     const labelIcon = 'icon-github'
     // 向组件里传参
     const wrapper = mount(MeInput, {
@@ -105,7 +105,7 @@ describe('MeInput', () => {
     expect(viewer.attributes('type')).toBe('text')
   })
 
-  test('props smsMsg', () => {
+  test('props sms-msg', () => {
     const smsMsg = '短信验证码'
     // 向组件里传参
     const wrapper = mount(MeInput, {
@@ -117,7 +117,7 @@ describe('MeInput', () => {
     expect(viewer.text()).toBe(smsMsg)
   })
 
-  test('props smsIs', () => {
+  test('props sms-is', () => {
     // 向组件里传参
     const wrapper = mount(MeInput, {
       props: { smsMsg: '短信验证码', smsIs: true }

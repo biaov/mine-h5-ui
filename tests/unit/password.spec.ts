@@ -25,7 +25,7 @@ describe('MePassword', () => {
     expect(viewer.length).toBe(num)
   })
 
-  test('props skinType', () => {
+  test('props skin-type', () => {
     const skinType = 'dark'
     // 向组件里传参
     const wrapper = mount(MePassword, {

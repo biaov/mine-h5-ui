@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import MeUpload from '~/MeUpload/index.vue'
 
 describe('MeUpload', () => {
-  test('props fileList', () => {
+  test('props file-list', () => {
     const url = 'https://dummyimage.com/100x100/4BC7F5/fff&text=1'
     const fileList = [{ id: 1, url }]
     // 向组件里传参

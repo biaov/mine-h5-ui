@@ -13,7 +13,7 @@ describe('MeSlider', () => {
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
-  test('props isBtn', () => {
+  test('props is-btn', () => {
     const TestComponent = {
       template: `<MeSlider><button class="btn-custom"></button></MeSlider>`,
       components: {

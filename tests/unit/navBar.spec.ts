@@ -18,7 +18,7 @@ describe('MeNavBar', () => {
     expect(titleEl.text()).toBe(title)
   })
 
-  test('props leftArrow', () => {
+  test('props left-arrow', () => {
     // 向组件里传参
     const wrapper = mount(MeNavBar, {
       props: { leftArrow: true }
@@ -29,7 +29,7 @@ describe('MeNavBar', () => {
     expect(viewer.classes('icon-left')).toBe(true)
   })
 
-  test('props leftText', () => {
+  test('props left-text', () => {
     const leftText = '测试左侧按钮内容'
     // 向组件里传参
     const wrapper = mount(MeNavBar, {
@@ -41,7 +41,7 @@ describe('MeNavBar', () => {
     expect(viewer.text()).toBe(leftText)
   })
 
-  test('props rightText', () => {
+  test('props right-text', () => {
     const rightText = '测试右侧按钮内容'
     // 向组件里传参
     const wrapper = mount(MeNavBar, {

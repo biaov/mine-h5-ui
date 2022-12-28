@@ -18,7 +18,7 @@ describe('MeRate', () => {
     expect(iconEl.classes(icon)).toBe(true)
   })
 
-  test('props iconSelect', async () => {
+  test('props icon-select', async () => {
     const iconSelect = 'icon-github'
     // 向组件里传参
     const wrapper = mount(MeRate, {

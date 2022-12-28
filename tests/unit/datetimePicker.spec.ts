@@ -25,7 +25,7 @@ describe('MeDatetimePicker', () => {
     expect(viewer.length).toBe(3)
   })
 
-  test('props minDate', async () => {
+  test('props min-date', async () => {
     const year = new Date().getFullYear() - 6
     const minDate = new Date()
     minDate.setFullYear(year)
@@ -40,7 +40,7 @@ describe('MeDatetimePicker', () => {
     expect(viewer.text()).toBe(`${year}`)
   })
 
-  test('props maxDate', async () => {
+  test('props max-date', async () => {
     const year = new Date().getFullYear() + 6
     const maxDate = new Date()
     maxDate.setFullYear(year)

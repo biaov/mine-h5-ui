@@ -19,7 +19,7 @@ describe('MeCheckbox', () => {
     expect(iconEl.classes()).toContain(icon)
   })
 
-  test('props iconSelect', async () => {
+  test('props icon-select', async () => {
     const iconSelect = 'icon-github'
     // 向组件里传参
     const wrapper = mount(MeCheckbox, {

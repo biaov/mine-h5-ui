@@ -29,7 +29,7 @@ describe('MeRadio', () => {
     expect(viewer.classes(icon)).toBe(true)
   })
 
-  test('props iconSelect', () => {
+  test('props icon-select', () => {
     const iconSelect = 'icon-github'
     // 向组件里传参
     const wrapper = mount(MeRadio, {

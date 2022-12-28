@@ -30,7 +30,7 @@ describe('MeProgressBar', () => {
     expect(viewer.text()).toBe(text)
   })
 
-  test('props textShow', () => {
+  test('props text-show', () => {
     // 向组件里传参
     const wrapper = mount(MeProgressBar, {
       props: { modelValue, textShow: false }

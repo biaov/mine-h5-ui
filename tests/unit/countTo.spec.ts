@@ -5,7 +5,7 @@ import MeCountTo from '~/MeCountTo/index.vue'
 describe('MeCountTo', () => {
   const endValue = 1000
 
-  test('props endValue', async () => {
+  test('props end-value', async () => {
     // 向组件里传参
     const wrapper = mount(MeCountTo, {
       props: { endValue }
@@ -19,7 +19,7 @@ describe('MeCountTo', () => {
     expect(viewer.text()).toBe(`${endValue}`)
   })
 
-  test('props startValue', () => {
+  test('props start-value', () => {
     const startValue = 100
     // 向组件里传参
     const wrapper = mount(MeCountTo, {

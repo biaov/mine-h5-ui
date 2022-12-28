@@ -55,7 +55,7 @@ describe('MeMessageBox', () => {
     expect(viewer.html()).toBe(html)
   })
 
-  test('props cancelButtonText', async () => {
+  test('props cancel-button-text', async () => {
     const cancelButtonText = '取消按钮文字'
     // 向组件里传参
     const wrapper = mount(MeMessageBox, {
@@ -66,7 +66,7 @@ describe('MeMessageBox', () => {
     expect(viewer.text()).toBe(cancelButtonText)
   })
 
-  test('props confirmButtonText', async () => {
+  test('props confirm-button-text', async () => {
     const confirmButtonText = '确认按钮文字'
     // 向组件里传参
     const wrapper = mount(MeMessageBox, {

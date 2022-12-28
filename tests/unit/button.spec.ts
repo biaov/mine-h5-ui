@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import MeButton from '~/MeButton/index.vue'
 
 describe('MeButton', () => {
-  test('props nativeType', () => {
+  test('props native-type', () => {
     const nativeType = 'submit'
     // 向组件里传参
     const wrapper = mount(MeButton, {

@@ -17,7 +17,7 @@ describe('MeMask', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props maskClose', async () => {
+  test('props mask-close', async () => {
     // 向组件里传参
     const wrapper = mount(MeMask, {
       props: { maskClose: true }

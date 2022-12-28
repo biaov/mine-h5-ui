@@ -29,7 +29,7 @@ describe('MeNoticeBar', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('props preappendIcon', () => {
+  test('props preappend-icon', () => {
     const preappendIcon = 'github'
     // 向组件里传参
     const wrapper = mount(MeNoticeBar, {
@@ -41,7 +41,7 @@ describe('MeNoticeBar', () => {
     expect(viewer.classes(`icon-${preappendIcon}`)).toBe(true)
   })
 
-  test('props appendIcon', () => {
+  test('props append-icon', () => {
     const appendIcon = 'github'
     // 向组件里传参
     const wrapper = mount(MeNoticeBar, {

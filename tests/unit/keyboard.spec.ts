@@ -13,7 +13,7 @@ describe('MeKeyboard', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props skinType', () => {
+  test('props skin-type', () => {
     const skinType = 'dark'
     // 向组件里传参
     const wrapper = mount(MeKeyboard, {

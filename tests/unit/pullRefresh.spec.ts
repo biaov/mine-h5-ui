@@ -4,7 +4,7 @@ import MePullRefresh from '~/MePullRefresh/index.vue'
 describe('MePullRefresh', () => {
   const modelValue = true
 
-  test('props loadText', () => {
+  test('props load-text', () => {
     const text = '测试文本内容'
     // 向组件里传参
     const wrapper = mount(MePullRefresh, {

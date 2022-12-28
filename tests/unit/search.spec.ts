@@ -19,7 +19,7 @@ describe('MeSearch', () => {
     expect(inputEl.attributes('placeholder')).toBe(placeholder)
   })
 
-  test('props btnText', () => {
+  test('props btn-text', () => {
     const btnText = '测试右侧按钮内容'
     // 向组件里传参
     const wrapper = mount(MeSearch, {

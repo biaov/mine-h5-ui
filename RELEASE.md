@@ -44,7 +44,7 @@ npm run preview
 
 - fxp 上传 dist 文件夹
 
-### 发布 package
+### 发布 Package
 
 - npm 发布
 

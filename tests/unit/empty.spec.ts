@@ -29,7 +29,7 @@ describe('MeEmpty', () => {
     expect(viewer.classes('icon-wangluocuowu')).toBe(true)
   })
 
-  test('props iconName', () => {
+  test('props icon-name', () => {
     const url = 'http://dummyimage.com/200x200/f60/fff'
     // 向组件里传参
     const wrapper = mount(MeEmpty, {
