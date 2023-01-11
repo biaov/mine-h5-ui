@@ -13,7 +13,7 @@
   </ul>
 </template>
 <script>
-import IconData from '^/utils/data/icon.json'
+import IconData from '^/config/icon.json'
 export default {
   data() {
     return {

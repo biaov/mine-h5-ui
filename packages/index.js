@@ -75,6 +75,7 @@ import MeStepItem from './MeStepItem' // 步骤条选项
 import MeDrag from './MeDrag' // 拖拽
 import MeCoupon from './MeCoupon' // 优惠券
 import MeMspaint from './MeMspaint' // 画图
+import MeJigsawValidate from './MeJigsawValidate' // 拼图校验
 /* 业务组件 end */
 
 /* API start */
@@ -135,7 +136,8 @@ const components = {
   MeStepItem,
   MeDrag,
   MeCoupon,
-  MeMspaint
+  MeMspaint,
+  MeJigsawValidate
 }
 
 // 需要添加到 VUE 实例的 API
@@ -216,7 +218,8 @@ export {
   MeStepItem,
   MeDrag,
   MeCoupon,
-  MeMspaint
+  MeMspaint,
+  MeJigsawValidate
 }
 
 // 全部导出

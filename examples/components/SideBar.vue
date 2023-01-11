@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import NavConfig from '@/utils/data/nav.config.json'
+import NavConfig from '@/config/nav.config.json'
 export default {
   name: 'SideBar',
   data() {

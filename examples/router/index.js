@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import NavConfig from '@/utils/data/nav.config.json'
+import NavConfig from '@/config/nav.config.json'
 Vue.use(Router)
 let docs = []
 // 添加组件

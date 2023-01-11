@@ -19,7 +19,7 @@ export default {
 }
 </script>
 <style lang="less">
-@import './utils/styles/index.less';
+@import './styles/index.less';
 #app {
   padding-top: 100px;
 }

@@ -4,14 +4,12 @@
 
 @import './reset.less';
 
-/* 图片 start */
+// 图片填充方式
 img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
-  @modes: contain,
-  cover,
-  fill;
+  @modes: contain, cover, fill;
 
   each(@modes, {
       &[mode="@{value}"] {
@@ -21,11 +19,10 @@ img {
       }
     }
 
-  )
+  );
 }
-/* 图片 end */
 
-/* 清理 start */
+// 清理
 .me-clear-ft:after {
   content: '';
   display: block;
@@ -37,37 +34,31 @@ img {
   display: table;
 }
 
-/* 自定义滚动条 start */
+// 自定义滚动条
 .me-clear-scroll {
   overflow-x: hidden;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #dadee0;
+  }
 }
 
-.me-clear-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-
-.me-clear-scroll::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: #dadee0;
-}
-
-/* 自定义滚动条 end */
-/* 英文或数字强制换行 start */
+// 英文或数字强制换行
 .me-wrap-en {
   word-wrap: break-word;
 }
 
-/* 英文或数字强制换行 end */
-/* 清理 end */
-/* 行内块居中 start */
+// 行内块居中
 .me-inline-block {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* 行内块居中 end */
-/* 浮动 start */
+// 浮动
 .me-lf {
   float: left;
 }
@@ -76,8 +67,7 @@ img {
   float: right;
 }
 
-/* 浮动 end */
-/* 遮罩层 start */
+// 遮罩层
 .m-mask {
   position: fixed;
   top: 0;
@@ -96,8 +86,8 @@ img {
     background: rgba(0, 0, 0, 0.7);
   }
 
-  >ul,
-  >div {
+  > ul,
+  > div {
     .me-clear-scroll;
     position: absolute;
     padding: 15px;
@@ -108,9 +98,7 @@ img {
   }
 }
 
-/* 遮罩层 end */
-/* 裁剪 start */
-
+// 裁剪
 .me-clamp(@line: 1) when (@line =1) {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -127,15 +115,30 @@ img {
   -webkit-box-orient: vertical;
 }
 
-/* 裁剪 end */
-
-/* 全局warp start */
+// warp
 .g-wrap {
   width: 90%;
   margin: 0 auto;
 }
 
-/* 全局warp end */
+// 节流
+.me-throttle {
+  // 节流动画
+  @keyframes throttle {
+    from {
+      pointer-events: none;
+    }
+    to {
+      pointer-events: all;
+    }
+  }
+
+  animation: throttle 1s step-end forwards;
+
+  &:active {
+    animation: none;
+  }
+}
 
 /* vue过渡动画 start*/
 // 透明过渡

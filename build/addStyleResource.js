@@ -5,7 +5,7 @@ const addStyleResource = rule => {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, '../examples/utils/styles/variable.less') // 路径为你的文件路径
+        path.resolve(__dirname, '../examples/styles/variable.less') // 路径为你的文件路径
       ]
     })
 }
