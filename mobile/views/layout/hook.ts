@@ -1,6 +1,6 @@
 import { useRoute } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
-import { componentConfig } from '@/utils/nav.config'
+import { componentConfig } from '@/config/nav.config'
 
 // 页面数据
 export const useWebData = () => {

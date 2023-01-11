@@ -2,14 +2,14 @@ import { createApp } from 'vue'
 import TimeLine from '@/components/TimeLine'
 import CopyCode from '@/components/CopyCode'
 import { MessageEventListener } from '@/utils/functions'
-import { componentConfig } from '@/utils/nav.config'
+import { componentConfig } from '@/config/nav.config'
 import router from './router'
 import App from './App.vue'
 
 import MINEH5UI from '~/index' // 开发
 import '~/theme-default/index.less' // 开发
 
-/* import MINEH5UI from '../dist/packages/lib' // 测试
+/* import MINEH5UI from '../dist/packages/es' // 测试
 import '../dist/packages/lib/theme-default/index.css' // 测试 */
 
 const app = createApp(App)

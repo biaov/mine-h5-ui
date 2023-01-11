@@ -1,4 +1,4 @@
-import { componentConfig } from '@/utils/nav.config'
+import { componentConfig } from '@/config/nav.config'
 import { Docs } from './types'
 
 let docs: Docs[] = componentConfig

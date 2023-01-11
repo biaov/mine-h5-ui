@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import vitePluginMd from 'vite-plugin-md'
 import { VitePWA } from 'vite-plugin-pwa'
 import { vitePluginMdConfig, vueConfig, vitePwaConfig } from './config/plugins'
-import { useGlobalVars } from './examples/utils/variables'
+import { useGlobalVars } from './examples/config/variables'
 
 const { BaseRouter: base } = useGlobalVars()
 // 配置信息

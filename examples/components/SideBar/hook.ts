@@ -1,4 +1,4 @@
-import NavData from '@/utils/nav.config'
+import NavData from '@/config/nav.config'
 import { SidebarListItem } from './types'
 
 // 使用页面数据

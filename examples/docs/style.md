@@ -54,16 +54,17 @@ import 'mine-h5-ui/lib/theme-default/style.css'
 
 | class 类名          | 说明                                         | 版本   |
 | ------------------- | -------------------------------------------- | ------ |
-| me-lf               | 向左浮动                                     | v2.3.5 |
-| me-rt               | 向右浮动                                     | v2.3.5 |
-| me-clear-ft         | 清理浮动（在浮动元素的父元素上设置清理浮动） | v2.3.5 |
-| me-clear-mg         | 清理外边距 margin                            | v2.3.5 |
-| me-clamp            | 溢出隐藏一行···                              | v2.3.5 |
-| me-clamp-two        | 溢出隐藏两行···                              | v2.3.5 |
-| me-wrap-en          | 英文或数字强制换行                           | v2.3.5 |
-| me-clear-scroll     | 设置轮动条样式                               | v2.3.5 |
-| me-inline-block     | 行内块居中                                   | v2.3.5 |
-| me-animation-cursor | animation 光标动画                           | v2.3.5 |
+| me-lf               | 向左浮动                                     | 2.3.5  |
+| me-rt               | 向右浮动                                     | 2.3.5  |
+| me-clear-ft         | 清理浮动（在浮动元素的父元素上设置清理浮动） | 2.3.5  |
+| me-clear-mg         | 清理外边距 margin                            | 2.3.5  |
+| me-clamp            | 溢出隐藏一行···                              | 2.3.5  |
+| me-clamp-two        | 溢出隐藏两行···                              | 2.3.5  |
+| me-wrap-en          | 英文或数字强制换行                           | 2.3.5  |
+| me-clear-scroll     | 设置轮动条样式                               | 2.3.5  |
+| me-inline-block     | 行内块居中                                   | 2.3.5  |
+| me-animation-cursor | animation 光标动画                           | 2.3.5  |
+| me-throttle         | 节流                                         | 2.3.10 |
 
 | 属性名                         | 说明         | class 类名 | 说明 | 版本 |
 | ------------------------------ | ------------ | ---------- | ---- | ---- |

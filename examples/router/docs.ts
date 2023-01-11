@@ -1,4 +1,4 @@
-import NavConfig from '@/utils/nav.config'
+import NavConfig from '@/config/nav.config'
 import { Docs } from './types'
 
 let docs: Docs[] = []

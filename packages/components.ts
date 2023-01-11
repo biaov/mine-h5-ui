@@ -70,6 +70,7 @@ export { MeStepItem } from './MeStepItem' // 步骤条选项
 export { MeDrag } from './MeDrag' // 拖拽
 export { MeCoupon } from './MeCoupon' // 优惠券
 export { MeMspaint } from './MeMspaint' // 画图
+export { MeJigsawValidate } from './MeJigsawValidate' // 拼图校验
 /* 业务组件 end */
 
 /* API start */

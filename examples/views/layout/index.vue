@@ -29,7 +29,7 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { useGlobalVars } from '@/utils/variables'
+import { useGlobalVars } from '@/config/variables'
 import MineHeader from '@/components/MineHeader'
 import ReloadPrompt from '@/components/ReloadPrompt'
 import { useCanvas } from './hooks'

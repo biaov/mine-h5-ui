@@ -10,7 +10,7 @@
 ::: CopyCode
 
 ```Basic
-npm i mine-h5-ui@latest
+npm i mine-h5-ui
 ```
 
 :::

@@ -1,5 +1,8 @@
-import API from './function' // 封装API
+import Function from './function' // 封装API
 import BindEvent from './event' // 绑定事件
-import Validator from './validator'
+import Validator from './validator' // 校验
+import { AddInstall } from './types'
 
-export const MeAPI = Object.assign(API, BindEvent, Validator)
+const API = Object.assign(Function, BindEvent, Validator)
+
+export const MeAPI = API as AddInstall<typeof API>

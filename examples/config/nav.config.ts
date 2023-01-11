@@ -421,6 +421,13 @@ export const componentConfig = [
         },
         path: 'mspaint',
         name: 'mspaint'
+      },
+      {
+        meta: {
+          title: 'JigsawValidate 拼图校验'
+        },
+        path: 'jigsawValidate',
+        name: 'jigsawValidate'
       }
     ]
   }

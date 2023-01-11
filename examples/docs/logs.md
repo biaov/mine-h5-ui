@@ -14,7 +14,20 @@
 
 :::TimeLine
 
-## v2.3.9-Latest release
+## v2.3.10-Latest release
+
+`2023-01-11`
+
+- 更新 Style 样式类
+  - [新增 throttle（节流）样式类](/v2/doc/style)
+- 更新业务组件
+  - [新增拼图校验组件](/v2/doc/jigsawValidate)
+- Bug Fixes
+  - 修复已知 Bug
+  - 优化代码
+  - 更新依赖版本
+
+## v2.3.9
 
 `2022-12-05`
 

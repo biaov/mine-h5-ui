@@ -5,7 +5,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useGlobalVars } from '@/utils/variables'
+import { useGlobalVars } from '@/config/variables'
 import { useFrames } from './hooks'
 
 const emit = defineEmits(['getframe'])

@@ -39,3 +39,6 @@ export interface CalculationBack {
   multiply: () => number
   divide: () => number
 }
+
+// 添加 install 属性
+export type AddInstall<T> = T & { install: undefined }

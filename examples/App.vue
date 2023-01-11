@@ -3,7 +3,7 @@
 </template>
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import { useGlobalVars } from '@/utils/variables'
+import { useGlobalVars } from '@/config/variables'
 
 const { BaseRouter } = useGlobalVars()
 
