@@ -1,7 +1,7 @@
 import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import vitePluginMd from 'vite-plugin-md'
+import vitePluginMd from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
 import { vitePluginMdConfig, vueConfig, vitePwaConfig } from './config/plugins'
 import { useGlobalVars } from './examples/config/variables'
