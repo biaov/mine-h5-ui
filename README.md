@@ -45,6 +45,6 @@ app.mount('#app')
 
 - [EXPLAIN.md](https://github.com/biaov/MINE-H5-UI/blob/master/EXPLAIN.md)
 
-## 贡献者
+## 贡献者们
 
-[![贡献者](https://contrib.rocks/image?repo=biaov/MINE-H5-UI)](https://github.com/biaov/MINE-H5-UI/graphs/contributors)
+[![贡献者们](https://contrib.rocks/image?repo=biaov/MINE-H5-UI)](https://github.com/biaov/MINE-H5-UI/graphs/contributors)

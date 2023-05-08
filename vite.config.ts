@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import vitePluginMd from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
+import eslint from 'vite-plugin-eslint'
 import { vitePluginMdConfig, vueConfig, vitePwaConfig } from './config/plugins'
 import { useGlobalVars } from './examples/config/variables'
 
@@ -10,7 +11,7 @@ const { BaseRouter: base } = useGlobalVars()
 // 配置信息
 const config: UserConfig = {
   base,
-  plugins: [vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],
+  plugins: [eslint(), vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],
   server: {
     host: '0.0.0.0',
     port: 3333

@@ -36,14 +36,13 @@ export const vitePluginMdConfig: VitePluginMdOptions = {
 
 // Vue 插件配置
 export const vueConfig: Options = {
-  include: [/\.vue$/, /\.md$/],
-  reactivityTransform: true
+  include: [/\.vue$/, /\.md$/]
 }
 
 // PWA 配置
 export const vitePwaConfig: Partial<VitePWAOptions> = {
   registerType: 'prompt',
-  includeAssets: ['logo.svg', 'favicon.ico', 'loading.gif'],
+  includeAssets: ['logo.svg', 'loading.gif'],
   manifest: {
     id: '/v2/',
     name: 'mine-h5-ui',

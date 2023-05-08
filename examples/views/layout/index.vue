@@ -40,12 +40,6 @@ const canvas = ref<HTMLCanvasElement>() // canvas 对象
 onMounted(() => {
   useCanvas(canvas)
 })
-
-// const canvas = $ref<HTMLCanvasElement>() // canvas 对象
-
-// onMounted(() => {
-//   useCanvas($$(canvas))
-// })
 </script>
 <style scoped lang="less">
 @import './index.less';

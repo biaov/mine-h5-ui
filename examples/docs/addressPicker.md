@@ -29,6 +29,8 @@ app.mount('#app')
 
 - 通过 `v-model` 绑定点击确定按钮之后选中的地址，通过 `visible` 属性设置地址选择器的显示和隐藏。
 
+::: CopyCode
+
 ```HTML
 <me-address-picker v-model="value" :visible="true"></me-address-picker>
 ```
@@ -38,6 +40,8 @@ app.mount('#app')
 ### 自定义分隔符
 
 - 通过 `separator` 属性设置 value 的分隔符，默认值为 `-`。
+
+::: CopyCode
 
 ```HTML
 <me-address-picker v-model="value" :visible="true"></me-address-picker>
