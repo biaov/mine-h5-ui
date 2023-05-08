@@ -1,4 +1,4 @@
-import { ref, computed, watch, nextTick, ComponentPublicInstance } from 'vue'
+import { ref, computed, watch, nextTick } from 'vue'
 import { Throttle } from '../MeAPI/function'
 import { Props, Emits } from './types'
 
