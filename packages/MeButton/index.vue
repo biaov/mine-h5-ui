@@ -18,51 +18,33 @@
   </button>
 </template>
 <script lang="ts" setup>
-import { PropType } from 'vue'
+import { withDefaults } from 'vue'
 import MeIcon from '../MeIcon/index.vue'
 import { useHandler } from './hooks'
-import { NativeType } from './types'
+import { NativeType, ButtonType } from './types'
 
 const emit = defineEmits<{
   (event: 'click', e: MouseEvent): void
 }>()
 
-const props = defineProps({
-  // 原生 button 标签的 type 属性
-  nativeType: {
-    type: String as PropType<NativeType>,
-    default: 'button' // button | reset | submit
-  },
-  // 宽度
-  width: {
-    type: String,
-    default: ''
-  },
-  // 类型
-  type: {
-    type: String,
-    validator: (val: string): boolean => ['default', 'primary', 'success', 'info', 'warning', 'danger'].includes(val),
-    default: 'default'
-  },
-  // 朴素按钮
-  plain: {
-    type: Boolean
-  },
-  // 禁用状态
-  disabled: {
-    type: Boolean
-  },
-  // 图标按钮
-  icon: {
-    type: String,
-    default: ''
-  },
-  // 自定义颜色
-  color: {
-    type: String,
-    default: ''
+withDefaults(
+  defineProps<{
+    nativeType?: NativeType
+    width?: string
+    type?: ButtonType
+    plain?: boolean
+    disabled?: boolean
+    icon?: string
+    color?: string
+  }>(),
+  {
+    nativeType: 'button',
+    width: '',
+    type: 'default',
+    icon: '',
+    color: ''
   }
-})
+)
 
 const { onClick } = useHandler(emit)
 </script>

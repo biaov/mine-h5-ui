@@ -1,7 +1,7 @@
 <template>
   <!-- 倒计时 -->
   <div class="me-count-down">
-    <slot v-bind="formatAfter">
+    <slot :DD="formatAfter.DD" :hh="formatAfter.hh" :mm="formatAfter.mm" :ss="formatAfter.ss" :ms="formatAfter.ms">
       <template v-if="formatAfter.DD !== undefined">{{ formatAfter.DD }} 天</template>
       <template v-if="formatAfter.hh !== undefined">{{ formatAfter.hh }} 时</template>
       <template v-if="formatAfter.mm !== undefined">{{ formatAfter.mm }} 分</template>
@@ -35,5 +35,5 @@ const props = withDefaults(
   }
 )
 
-const { formatAfter } = useCountdown(props, emit)
+const { formatAfter, bindFormatAfter } = useCountdown(props, emit)
 </script>

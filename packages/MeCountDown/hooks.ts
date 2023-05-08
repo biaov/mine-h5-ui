@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { CountDown } from '../MeAPI/function'
 import { FormatData } from '../MeAPI/types'
 import { Props, Emits } from './types'
@@ -70,5 +70,7 @@ export const useCountdown = (props: Readonly<Props>, emit: Emits) => {
 
   resetCountdown()
 
-  return { formatAfter }
+  const bindFormatAfter = computed(() => formatAfter.value as Record<string, any>)
+
+  return { formatAfter, bindFormatAfter }
 }

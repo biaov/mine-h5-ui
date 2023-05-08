@@ -71,7 +71,7 @@ export const useHandMove = (props: Readonly<Props>) => {
   const duration = ref(0) // 过渡时间
 
   const filterNumber = computed(() => (num: number) => num < 10 ? `0${num}` : num)
-
+  const getCurNum = (id: number, num: number) => ([4, 5].includes(id) ? num - 1 : num)
   // 开始过渡
   const openTransition = (time: number) => {
     duration.value = time
@@ -249,7 +249,7 @@ export const useHandMove = (props: Readonly<Props>) => {
     }
   }
 
-  return { show, currentValue, listData, distance, duration, filterNumber, onTouchstart, onTouchmove, onTouchend, onMousedown }
+  return { show, currentValue, listData, distance, duration, filterNumber, getCurNum, onTouchstart, onTouchmove, onTouchend, onMousedown }
 }
 // 按钮
 export const useBtns = (props: Readonly<Props>, emit: Emits, currentValue: number[]) => {

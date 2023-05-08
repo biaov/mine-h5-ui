@@ -72,8 +72,8 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   onScroll = Throttle(onScroll, props.interval) // 节流
 
   // 设置 ref
-  const setItemRef = (el: Element | ComponentPublicInstance | null, index: number) => {
-    el && (nodes[index] = el as HTMLLIElement)
+  const setItemRef = (el: any) => {
+    el && (nodes[+el.dataset.index] = el as HTMLLIElement)
   }
 
   // watch props list

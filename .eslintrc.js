@@ -1,5 +1,6 @@
 // eslint-plugin-vue:https://eslint.vuejs.org/
 
+const developmentOff = process.env.NODE_ENV === 'development' ? 'off' : 'error'
 // 配置信息
 const config = {
   env: {
@@ -42,6 +43,8 @@ const config = {
     }
   ],
   rules: {
+    'no-unused-vars': developmentOff, // 禁止未使用的变量
+    'no-console': developmentOff, // 禁止 console
     'no-unused-expressions': [
       'error',
       {

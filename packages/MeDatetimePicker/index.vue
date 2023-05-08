@@ -20,8 +20,11 @@
             @mousedown.prevent="onMousedown($event, item.id)"
           >
             <!-- 移动的区域 -->
-            <ol :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`">
-              <li v-for="(num, i) in item.list" :key="i">{{ filterNumber([4, 5].includes(item.id) ? num - 1 : num) }}</li>
+            <ol
+              :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`"
+              v-if="Array.isArray(item.list)"
+            >
+              <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
             </ol>
           </li>
         </template>
@@ -63,6 +66,6 @@ const props = withDefaults(
   }
 )
 
-const { show, currentValue, listData, distance, duration, filterNumber, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
+const { show, currentValue, listData, distance, duration, filterNumber, getCurNum, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
 const { onCancel, onSure } = useBtns(props, emit, currentValue)
 </script>
