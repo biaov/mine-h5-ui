@@ -12,7 +12,7 @@
   <a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/npm/v/mine-h5-ui.svg?logo=npm" /></a>
   <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://img.shields.io/npm/dt/mine-h5-ui?logo=Markdown" /></a>
   <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://packagephobia.com/badge?p=mine-h5-ui" /></a>
-  <a href="https://github.com/biaov/MINE-H5-UI/blob/master/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg?logo=Unlicense" /></a>
+  <a href="https://github.com/biaov/MINE-H5-UI/blob/main/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg?logo=Unlicense" /></a>
 </h2>
 
 ## 使用文档
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ## 项目文档
 
-- [EXPLAIN.md](https://github.com/biaov/MINE-H5-UI/blob/master/EXPLAIN.md)
+- [EXPLAIN.md](https://github.com/biaov/MINE-H5-UI/blob/main/EXPLAIN.md)
 
 ## 贡献者们
 

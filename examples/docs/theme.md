@@ -37,7 +37,7 @@ git clone https://github.com/biaov/MINE-H5-UI.git --depth=1
 ::: CopyCode
 
 ```Text
-https://codeload.github.com/biaov/MINE-H5-UI/zip/master
+https://codeload.github.com/biaov/MINE-H5-UI/zip/main
 ```
 
 :::

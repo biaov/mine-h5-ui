@@ -47,7 +47,7 @@ console.log(valid.test(12888888888)) // false
 
 ## 源码
 
-- 源码地址：[正则校验](https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/validator.js)
+- 源码地址：[正则校验](https://github.com/biaov/MINE-H5-UI/blob/main/packages/MeAPI/validator.js)
 
 ## 正则内容
 
