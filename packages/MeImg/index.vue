@@ -14,7 +14,7 @@ const emit = defineEmits<{
   (event: 'error', e: Event): void
 }>()
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     src: string // 图片地址
     width?: string // 宽度

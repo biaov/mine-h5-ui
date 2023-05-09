@@ -466,6 +466,13 @@ export const apiConfig = [
         },
         path: 'regexp',
         name: 'regexp'
+      },
+      {
+        meta: {
+          title: '组合式 API'
+        },
+        path: 'composable',
+        name: 'composable'
       }
     ]
   }

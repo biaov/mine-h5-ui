@@ -10,7 +10,7 @@ export const useHandle = () => {
     preappend: '你点击了前面的图标',
     append: '你点击了后面的图标'
   })
-  const listData = Object.freeze<ListDataItem>(initData) // 列表数据
+  const listData = Object.freeze<ListDataItem[]>(initData) // 列表数据
 
   // 当标签栏改变时
   const onClick = (type: string, index: number) => {

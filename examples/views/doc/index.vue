@@ -29,7 +29,7 @@ let postMessage: PostMessageReturn // 发送消息对象
 
 // frame 跳转
 const navigateTo = (path: string) => {
-  postMessage.send(path)
+  postMessage && postMessage.send(path)
 }
 
 // 路由更新

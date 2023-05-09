@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { useShow } from './hooks'
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     url: string // 图片地址
     zIndex?: number // 层级位置

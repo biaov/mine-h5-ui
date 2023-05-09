@@ -10,7 +10,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-const props = withDefaults(
+withDefaults(
   defineProps<{
     width?: string // 宽度
     height?: string // 高度

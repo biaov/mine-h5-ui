@@ -24,7 +24,7 @@ const emit = defineEmits<{
   (event: 'click-right', e: MouseEvent): void
 }>()
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     title?: string // 标题
     leftArrow?: boolean // 左侧按钮箭头显示状态

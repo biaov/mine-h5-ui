@@ -75,4 +75,5 @@ export { MeJigsawValidate } from './MeJigsawValidate' // 拼图校验
 
 /* API start */
 export { MeAPI } from './MeAPI'
+export { useValidator, useBind, useVisible, useUtils } from './MeComposable'
 /* API end */

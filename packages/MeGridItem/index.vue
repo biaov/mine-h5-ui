@@ -15,7 +15,7 @@ const emit = defineEmits<{
   (event: 'click', e: MouseEvent): void
 }>()
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     icon?: string // 图标
     iconColor?: string // 图标的颜色

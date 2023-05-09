@@ -18,8 +18,11 @@ const config = [
       typescript({
         useTsconfigDeclarationDir: false,
         tsconfigOverride: {
+          compilerOptions: {
+            removeComments: false
+          },
           include: ['packages/**/*'],
-          exclude: ['node_modules', 'examples', 'mobile', 'tests']
+          exclude: ['node_modules', 'examples', 'mobile', 'dist', 'tests', 'scripts']
         },
         abortOnError: false,
         clean: true
@@ -33,4 +36,5 @@ const config = [
     }
   }
 ]
+
 export default config

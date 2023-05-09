@@ -27,7 +27,7 @@ const emit = defineEmits<{
   (event: 'click', item: CityItem): void
 }>()
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     list?: ListItem[] // 自定义国家数据
     topHeight?: string // 自定义顶部定位高度

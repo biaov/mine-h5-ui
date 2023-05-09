@@ -6,8 +6,8 @@ import { componentConfig } from '@/config/nav.config'
 export const useWebData = () => {
   const listData = Object.freeze(componentConfig)
   const { path } = useRoute()
-
-  PostMessage(window.parent!).send(path)
+  const postMsg = PostMessage(window.parent!)
+  postMsg && postMsg.send(path)
 
   return { listData }
 }

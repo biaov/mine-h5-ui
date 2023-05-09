@@ -14,7 +14,7 @@ const emit = defineEmits<{
   (event: 'close', e: MouseEvent): void
 }>()
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     type?: string // 类型, primary | success | info | warning | danger
     plain?: boolean // 空心

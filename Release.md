@@ -49,6 +49,7 @@ npm run preview
 - npm 发布
 
 ```Basic
+npm run pre-publish
 npm publish --tag=beta-v2
 npm publish [--tag=latest]
 ```

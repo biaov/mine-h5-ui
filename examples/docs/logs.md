@@ -14,7 +14,21 @@
 
 :::TimeLine
 
-## v2.3.11-Latest release
+## v2.4.0-Latest release
+
+`2023-05-09`
+
+- 新增组合式 API
+  - [新增 useValidator（校验器）](/v2/doc/composable)
+  - [新增 useBind（事件绑定）](/v2/doc/composable)
+  - [新增 useUtils（工具函数）](/v2/doc/composable)
+  - [新增 useVisible（显示隐藏）](/v2/doc/composable)
+- Bug Fixes
+  - 修复已知 Bug
+  - 优化代码
+  - 更新依赖版本
+
+## v2.3.11
 
 `2023-05-08`
 
