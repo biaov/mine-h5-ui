@@ -1,8 +1,6 @@
 import type { App } from 'vue'
-import shareSheet from './index.vue'
-import { SFCWithInstall } from '../types'
+import MeShareSheet from './index.vue'
 
-const MeShareSheet = shareSheet as SFCWithInstall<typeof shareSheet> // 增加类型
 // 安装
 MeShareSheet.install = (app: App) => {
   app.component('MeShareSheet', MeShareSheet)

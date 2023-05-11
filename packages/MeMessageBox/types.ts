@@ -1,4 +1,4 @@
-export type OnOk = (arg?: string) => void // onOk 函数
+export type OnOk = (value?: string) => void // onOk 函数
 export type OnOff = () => void // onOff 函数
 export type HookFn = OnOk | OnOff // onOk 函数 | onOff 函数
 
@@ -15,7 +15,7 @@ export interface Option extends Record<string, string | HookFn | undefined> {
 }
 
 // alert, confirm, prompt, custom
-export type MessageBoxFn = (option: Option) => Promise<string | undefined>
+export type MessageBoxFn = (option: string | Option) => Promise<string | undefined>
 
 // curOption
 export type CurOption = Option & {
@@ -24,7 +24,7 @@ export type CurOption = Option & {
 
 // MessageBox
 export interface InMessageBox extends Record<string, MessageBoxFn> {
-  (option: Option, type: string): Promise<string | undefined>
+  (option: Option, type?: string): Promise<string | undefined>
   alert: MessageBoxFn
   confirm: MessageBoxFn
   prompt: MessageBoxFn

@@ -21,7 +21,8 @@ const config: UserConfig = {
     alias: {
       '@': resolve(__dirname, './examples'),
       '~': resolve(__dirname, './packages'),
-      '^': resolve(__dirname, './mobile')
+      '^': resolve(__dirname, './mobile'),
+      '#': resolve(__dirname, './dist/packages')
     }
   },
   css: {

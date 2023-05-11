@@ -1,8 +1,6 @@
 import type { App } from 'vue'
-import keyboard from './index.vue'
-import { SFCWithInstall } from '../types'
+import MeKeyboard from './index.vue'
 
-const MeKeyboard = keyboard as SFCWithInstall<typeof keyboard> // 增加类型
 // 安装
 MeKeyboard.install = (app: App) => {
   app.component('MeKeyboard', MeKeyboard)

@@ -1,15 +1,9 @@
 import type { App } from 'vue'
-import messageBox, { alert, confirm, prompt, custom } from './messageBox'
-import { SFCWithInstall } from '../types'
+import MeMessageBox from './messageBox'
 
-const MeMessageBox = messageBox as SFCWithInstall<typeof messageBox> // 增加类型
 // 安装
 MeMessageBox.install = (app: App) => {
-  app.config.globalProperties.$MeMessageBox = messageBox
-  app.config.globalProperties.$MeAlert = alert
-  app.config.globalProperties.$MeConfirm = confirm
-  app.config.globalProperties.$MePrompt = prompt
-  app.config.globalProperties.$MeCustom = custom
+  app.config.globalProperties.$MeMessageBox = MeMessageBox
 }
 
 export { MeMessageBox }

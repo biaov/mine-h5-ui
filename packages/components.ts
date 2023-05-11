@@ -1,3 +1,6 @@
+/**
+ * @file 组件入口文件 - 此入口都含有 install 方法，用于全局注册
+ */
 /* 基础组件 start */
 export { MeButton } from './MeButton' // 按钮
 export { MeIcon } from './MeIcon' // 图标
@@ -27,10 +30,10 @@ export { MeForm } from './MeForm' // 表单
 
 /* 反馈组件 start */
 export { MeActionSheet } from './MeActionSheet' // 动作面板
-export { MeToast } from './MeToast' // 消息提示
+export { MeToast } from './MeToast' // 消息提示-JS
 export { MeLoading } from './MeLoading' // 加载
 export { MeMask } from './MeMask' // 遮罩层
-export { MeMessageBox } from './MeMessageBox' // 弹出框
+export { MeMessageBox } from './MeMessageBox' // 弹出框-JS
 export { MeDialog } from './MeDialog' // 对话框
 export { MeShareSheet } from './MeShareSheet' // 分享面板
 export { MeSwiperCell } from './MeSwiperCell' // 滑动单元格
@@ -54,7 +57,7 @@ export { MeAccordionItem } from './MeAccordionItem' // 手风琴选项
 export { MeCountDown } from './MeCountDown' // 倒计时
 export { MeDivider } from './MeDivider' // 分割线
 export { MeEmpty } from './MeEmpty' // 空状态
-export { MePreview } from './MePreview' // 图片预览
+export { MePreview } from './MePreview' // 图片预览-JS
 export { MeNoticeBar } from './MeNoticeBar' // 公告栏
 export { MeSwiper } from './MeSwiper' // 轮播图
 export { MeSwiperItem } from './MeSwiperItem' // 轮播图选项
@@ -75,5 +78,4 @@ export { MeJigsawValidate } from './MeJigsawValidate' // 拼图校验
 
 /* API start */
 export { MeAPI } from './MeAPI'
-export { useValidator, useBind, useVisible, useUtils } from './MeComposable'
 /* API end */

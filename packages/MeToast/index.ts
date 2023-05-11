@@ -1,12 +1,9 @@
 import type { App } from 'vue'
-import toast from './toast'
-import { SFCWithInstall } from '../types'
-
-const MeToast = toast as SFCWithInstall<typeof toast> // 增加类型
+import MeToast from './toast'
 
 // 安装
 MeToast.install = (app: App) => {
-  app.config.globalProperties.$MeToast = toast
+  app.config.globalProperties.$MeToast = MeToast
 }
 
 export { MeToast }

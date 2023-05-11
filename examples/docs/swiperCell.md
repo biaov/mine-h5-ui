@@ -49,16 +49,15 @@ app.mount('#app')
   </me-swiper-cell>
 </template>
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
+import { MeMessageBox, MeToast } from 'mine-h5-ui'
 
-const { $MeMessageBox, $MeToast } = getCurrentInstance().appContext.config.globalProperties
 // 删除按钮
 const onDelete = () => {
-  $MeMessageBox.confirm({
+  MeMessageBox.confirm({
     tips: '警告',
     message: '你确定要删除此项吗？',
     onOk() {
-      $MeToast('删除成功')
+      MeToast('删除成功')
     }
   })
 }

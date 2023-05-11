@@ -61,9 +61,8 @@ app.mount('#app')
   </me-grid>
 </template>
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
+import { MeToast } from 'mine-h5-ui'
 
-const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
 const grids = Object.freeze([
   {
     icon: 'icon-wechat',
@@ -109,7 +108,7 @@ const grids = Object.freeze([
 ])
 // 点击列表
 const handleLi = ({ text }) => {
-  $MeToast(text)
+  MeToast(text)
 }
 </script>
 <style scoped lang="less">

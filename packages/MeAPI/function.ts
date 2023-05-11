@@ -9,7 +9,7 @@ const { validThousand, validThousandFloat } = Validator
  * @param { any } value - 需要判断的值
  * @returns { boolean } - 是否该类型
  */
-export const IsType = (type: string, value: any): boolean => Object.prototype.toString.call(value).slice(8, -1) === type
+export const IsType = (type: string, value: any): boolean => Object.prototype.toString.call(value).slice(8, -1).toLowerCase() === type.toLowerCase()
 
 /**
  * 深拷贝变量-递归算法(recursive algorithm)

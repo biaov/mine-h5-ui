@@ -50,6 +50,7 @@ npm run preview
 
 ```Basic
 npm run pre-publish
+npm run pre-publish:github
 npm publish --tag=beta-v2
 npm publish [--tag=latest]
 ```

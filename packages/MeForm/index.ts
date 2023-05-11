@@ -1,8 +1,6 @@
 import type { App } from 'vue'
-import form from './index.vue'
-import { SFCWithInstall } from '../types'
+import MeForm from './index.vue'
 
-const MeForm = form as SFCWithInstall<typeof form> // 增加类型
 // 安装
 MeForm.install = (app: App) => {
   app.component('MeForm', MeForm)

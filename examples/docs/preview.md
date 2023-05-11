@@ -13,8 +13,8 @@ import { MePreview } from 'mine-h5-ui'
 import 'mine-h5-ui/lib/theme-default/MePreview.css'
 
 const app = createApp(App)
+app.use(MePreview)
 app.mount('#app')
-app.config.globalProperties['$MePreview'] = $MePreview
 ```
 
 :::
@@ -34,13 +34,9 @@ app.config.globalProperties['$MePreview'] = $MePreview
 
 ```Vue
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
-import url from '../assets/empty.png'
+import { MePreview } from 'mine-h5-ui'
 
-const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
-$MePreview({
-  url
-})
+MePreview('https://dummyimage.com/300x300')
 </script>
 ```
 
@@ -55,12 +51,10 @@ $MePreview({
 
 ```Vue
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
-import url from '../assets/empty.png'
+import { MePreview } from 'mine-h5-ui'
 
-const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
-$MePreview({
-  url,
+MePreview({
+  url: 'https://dummyimage.com/300x300',
   background: '#fff'
 })
 </script>
@@ -72,17 +66,17 @@ $MePreview({
 
 ### 参数
 
+| 参数 | 说明     | 类型            | 可选值 | 默认值 | 版本 |
+| ---- | -------- | --------------- | ------ | ------ | ---- |
+| url  | 图片地址 | string / Option | --     | --     | --   |
+
+#### Option
+
 | 参数       | 说明         | 类型   | 可选值 | 默认值 | 版本 |
 | ---------- | ------------ | ------ | ------ | ------ | ---- |
 | url        | 图片地址     | string | --     | --     | --   |
 | z-index    | 层级位置     | number | --     | 99     | --   |
 | background | 遮罩层背景色 | string | --     | #000   | --   |
-
-#### Slots
-
-| 具名插槽 | 说明     | scopedSlots | 版本 |
-| -------- | -------- | ----------- | ---- |
-| default  | 默认名称 | --          | --   |
 
 ### 方法
 

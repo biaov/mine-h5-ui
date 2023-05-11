@@ -1,8 +1,6 @@
 import type { App } from 'vue'
-import pullRefresh from './index.vue'
-import { SFCWithInstall } from '../types'
+import MePullRefresh from './index.vue'
 
-const MePullRefresh = pullRefresh as SFCWithInstall<typeof pullRefresh> // 增加类型
 // 安装
 MePullRefresh.install = (app: App) => {
   app.component('MePullRefresh', MePullRefresh)

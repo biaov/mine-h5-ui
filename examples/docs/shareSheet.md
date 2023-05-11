@@ -49,9 +49,8 @@ app.mount('#app')
   </ul>
 </template>
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
+import { MeToast } from 'mine-h5-ui'
 
-const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
 const listData = $ref([
   {
     id: 1,
@@ -103,11 +102,11 @@ const onClick = item => {
 }
 // 点击分享面板列表
 const onChange = item => {
-  $MeToast(JSON.stringify(item))
+  MeToast(JSON.stringify(item))
 }
 // 点击分享面板取消按钮
 const onCancel = () => {
-  $MeToast('你点击了取消按钮')
+  MeToast('你点击了取消按钮')
 }
 </script>
 <style scoped lang="less">

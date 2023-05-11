@@ -14,7 +14,19 @@
 
 :::TimeLine
 
-## v2.4.0-Latest release
+## v2.4.1-Latest release
+
+`2023-05-11`
+
+- 优化代码
+  - 优化组件 .d.ts 提示
+  - 优化组件 `MeMessageBox`, `MeToast`, `MePreview` 的使用方式和使用文档
+  - 优化打包流程
+- Bug Fixes
+  - 修复已知 BUG
+  - 更新依赖版本
+
+## v2.4.0
 
 `2023-05-09`
 

@@ -1,8 +1,6 @@
 import type { App } from 'vue'
-import mspaint from './index.vue'
-import { SFCWithInstall } from '../types'
+import MeMspaint from './index.vue'
 
-const MeMspaint = mspaint as SFCWithInstall<typeof mspaint> // 增加类型
 // 安装
 MeMspaint.install = (app: App) => {
   app.component('MeMspaint', MeMspaint)

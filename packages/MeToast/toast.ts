@@ -1,6 +1,7 @@
 import { createVNode, render } from 'vue'
 import ToastConstructor from './index.vue'
 import { Options, Option } from './types'
+import { SFCWithInstall } from '../types'
 import { IsType } from '../MeAPI/function'
 
 /**
@@ -17,4 +18,4 @@ const Toast = (arg: Options) => {
   document.body.appendChild(container.firstElementChild!) // 把虚拟DOM插入到真实DOM树中
 }
 
-export default Toast
+export default Toast as SFCWithInstall<typeof Toast>

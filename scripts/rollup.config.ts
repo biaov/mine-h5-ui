@@ -1,5 +1,5 @@
 import nodeResolve from '@rollup/plugin-node-resolve' // 告诉 Rollup 如何查找外部模块
-import typescript from 'rollup-plugin-typescript2'
+import typescript2 from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue' // 处理vue文件
 import { resolve } from 'path'
 // import { RollupOptions } from 'rollup'
@@ -15,14 +15,14 @@ const config = [
     plugins: [
       nodeResolve(),
       vue(),
-      typescript({
+      typescript2({
         useTsconfigDeclarationDir: false,
         tsconfigOverride: {
           compilerOptions: {
             removeComments: false
           },
-          include: ['packages/**/*'],
-          exclude: ['node_modules', 'examples', 'mobile', 'dist', 'tests', 'scripts']
+          include: ['../packages/**/*'],
+          exclude: ['node_modules', 'examples', 'mobile', 'dist', 'tests', 'scripts', 'theme-default']
         },
         abortOnError: false,
         clean: true

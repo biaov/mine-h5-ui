@@ -1,6 +1,7 @@
 import { createVNode, render } from 'vue'
 import MessageBoxConstructor from './index.vue'
-import { CurOption, OnOk, Option, InMessageBox } from './types'
+import { OnOk, Option, InMessageBox, CurOption } from './types'
+import { SFCWithInstall } from '../types'
 import { IsType } from '../MeAPI/function'
 
 /**
@@ -8,7 +9,7 @@ import { IsType } from '../MeAPI/function'
  * @param { Option } arg 选项参数
  * @returns { void } 空
  */
-const MessageBox = (option: Option, type: string): Promise<string | undefined> => {
+const MessageBox = (option: Option, type?: string): Promise<string | undefined> => {
   // 判断是否是对象
   if (!IsType('Object', option)) {
     throw new Error(`${option} is not Object`) // 抛出错误
@@ -38,17 +39,12 @@ const MessageBox = (option: Option, type: string): Promise<string | undefined> =
   }
 }
 
+const MessageBoxConst = MessageBox as SFCWithInstall<InMessageBox>
+
 /* 导出 fn.type */
 const types = ['alert', 'confirm', 'prompt', 'custom'] // 列表
 types.forEach(type => {
-  const tempMessageBox = MessageBox as InMessageBox
-  tempMessageBox[type] = (option: Option) => MessageBox(option, type)
+  MessageBoxConst[type] = (option: Option | string) => (IsType('String', option) ? MessageBox({ message: option as string }, type) : MessageBox(option as Option, type))
 })
 
-/* 导出 type */
-export const alert = (option: Option) => MessageBox(option, 'alert') // 警告框
-export const confirm = (option: Option) => MessageBox(option, 'confirm') // 确认框
-export const prompt = (option: Option) => MessageBox(option, 'prompt') // 提示框
-export const custom = (option: Option) => MessageBox(option, 'custom') // 自定义框
-
-export default MessageBox
+export default MessageBoxConst

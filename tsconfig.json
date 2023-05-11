@@ -16,7 +16,8 @@
     "paths": {
       "@/*": ["./examples/*"],
       "~/*": ["./packages/*"],
-      "^/*": ["./mobile/*"]
+      "^/*": ["./mobile/*"],
+      "#/*": ["./dist/packages/*"]
     }
   },
   "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],

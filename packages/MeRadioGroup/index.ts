@@ -1,8 +1,6 @@
 import type { App } from 'vue'
-import radioGroup from './index.vue'
-import { SFCWithInstall } from '../types'
+import MeRadioGroup from './index.vue'
 
-const MeRadioGroup = radioGroup as SFCWithInstall<typeof radioGroup> // 增加类型
 // 安装
 MeRadioGroup.install = (app: App) => {
   app.component('MeRadioGroup', MeRadioGroup)

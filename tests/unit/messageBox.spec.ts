@@ -37,7 +37,7 @@ describe('MeMessageBox', () => {
     const message = '提示文本内容'
     // 向组件里传参
     const wrapper = mount(MeMessageBox, {
-      props: { message }
+      props: { message, type: 'confirm' }
     })
     const viewer = wrapper.find('.me-message-box .text') // 获取 DOM
     expect(viewer).toBeTruthy()
@@ -59,7 +59,7 @@ describe('MeMessageBox', () => {
     const cancelButtonText = '取消按钮文字'
     // 向组件里传参
     const wrapper = mount(MeMessageBox, {
-      props: { cancelButtonText }
+      props: { cancelButtonText, type: 'confirm' }
     })
     const viewer = wrapper.find('.me-message-box .btn .btn-cancel') // 获取 DOM
     expect(viewer).toBeTruthy()
@@ -70,7 +70,7 @@ describe('MeMessageBox', () => {
     const confirmButtonText = '确认按钮文字'
     // 向组件里传参
     const wrapper = mount(MeMessageBox, {
-      props: { confirmButtonText }
+      props: { confirmButtonText, type: 'confirm' }
     })
     const viewer = wrapper.find('.me-message-box .btn .btn-confirm') // 获取 DOM
     expect(viewer).toBeTruthy()

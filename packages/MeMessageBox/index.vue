@@ -46,7 +46,7 @@ const props = withDefaults(
   }>(),
   {
     tips: '提示',
-    type: 'confirm',
+    type: 'alert',
     message: '',
     html: '',
     cancelButtonText: '取消',

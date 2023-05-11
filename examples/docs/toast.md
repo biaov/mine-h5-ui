@@ -13,8 +13,8 @@ import { MeToast } from 'mine-h5-ui'
 import 'mine-h5-ui/lib/theme-default/MeToast.css'
 
 const app = createApp(App)
+app.use(MeToast)
 app.mount('#app')
-app.config.globalProperties['$MeToast'] = $MeToast
 ```
 
 :::
@@ -32,30 +32,22 @@ app.config.globalProperties['$MeToast'] = $MeToast
 ::: CopyCode
 
 ```JavaScript
-import { getCurrentInstance } from 'vue'
+import { MeToast } from 'mine-h5-ui'
 
-const { $MeToast } = getCurrentInstance().appContext.config.globalProperties
-$MeToast('显示信息')
+MeToast('显示信息')
 ```
 
 :::
 
 ## API
 
-### 方法
-
-| 方法名   | 说明         | 参数   | 返回值 | 版本 |
-| -------- | ------------ | ------ | ------ | ---- |
-| $MeToast | 展示消息提示 | `参数` | --     | --   |
-
 ### 参数
 
-| 参数    | 说明                               | 类型   | 可选值 | 默认值 | 版本 |
-| ------- | ---------------------------------- | ------ | ------ | ------ | ---- |
-| message | 需要提示的信息内容                 | string | --     | --     | --   |
-| object  | 参数对象，具体请看 [详情](#object) | Object | --     | --     | --   |
+| 参数    | 说明               | 类型            | 可选值 | 默认值 | 版本 |
+| ------- | ------------------ | --------------- | ------ | ------ | ---- |
+| message | 需要提示的信息内容 | string / Option | --     | --     | --   |
 
-<h4 id="object">Object 详情</h4>
+### Option
 
 | 参数     | 说明               | 类型    | 可选值       | 默认值 | 版本 |
 | -------- | ------------------ | ------- | ------------ | ------ | ---- |
