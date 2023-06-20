@@ -65,3 +65,7 @@ npm publish
 
 - git push
 - 更新 Github 状态
+
+<!--
+可以使用其它的 CLI 工具发布操作。
+-->
