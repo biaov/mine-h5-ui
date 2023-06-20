@@ -1,4 +1,4 @@
 {
   "upgrade": true,
-  "reject": ["@rollup/plugin-node-resolve", "rollup"]
+  "reject": ["@rollup/plugin-node-resolve", "rollup", "typescript"]
 }
