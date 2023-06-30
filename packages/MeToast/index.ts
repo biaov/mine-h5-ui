@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeToast from './toast'
+import { addInstallAPI } from '../utils'
+import toast from './toast'
 
-// 安装
-MeToast.install = (app: App) => {
-  app.config.globalProperties.$MeToast = MeToast
-}
-
-export { MeToast }
+export const MeToast = addInstallAPI(toast)

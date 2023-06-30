@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeForm from './index.vue'
+import { addInstall } from '../utils'
+import form from './index.vue'
 
-// 安装
-MeForm.install = (app: App) => {
-  app.component('MeForm', MeForm)
-}
-
-export { MeForm }
+export const MeForm = addInstall(form)

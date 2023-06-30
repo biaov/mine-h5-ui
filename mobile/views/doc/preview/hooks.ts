@@ -1,13 +1,20 @@
 import { getCurrentInstance, ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 操作项
+/**
+ * 操作
+ */
 export const useHandler = () => {
   const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
-  // 点击图片预览
+  /**
+   * 点击图片预览
+   */
   const onPreview = (item: ListDataItem) => {
     $MePreview(item)
   }

@@ -5,18 +5,20 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
+import type { Props } from './types'
 
-const props = withDefaults(
-  defineProps<{
-    cols?: number // 一行几个
-    borderColor?: string // 边框颜色
-  }>(),
-  {
-    cols: 4,
-    borderColor: '#edeff2'
-  }
-)
+defineOptions({
+  name: 'MeGrid'
+})
+
+defineSlots<DefaultSlots>()
+
+const props = withDefaults(defineProps<Props>(), {
+  cols: 4,
+  borderColor: '#edeff2'
+})
 
 const { grid } = useInitSlots(props)
 </script>

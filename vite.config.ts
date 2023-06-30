@@ -8,7 +8,10 @@ import { vitePluginMdConfig, vueConfig, vitePwaConfig } from './config/plugins'
 import { useGlobalVars } from './examples/config/variables'
 
 const { BaseRouter: base } = useGlobalVars()
-// 配置信息
+
+/**
+ * 配置信息
+ */
 const config: UserConfig = {
   base,
   plugins: [eslint(), vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],

@@ -5,37 +5,52 @@ describe('MeNoticeBar', () => {
   const list = '测试公告文本内容'
 
   test('props list', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-notice-bar') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar')
 
     expect(viewer.exists()).toBeTruthy()
 
-    const liEl = wrapper.find('.notice-horizontal>li:first-child') // 获取 DOM
+    const liEl = wrapper.find('.notice-horizontal>li:first-child')
 
     expect(liEl.exists()).toBeTruthy()
     expect(liEl.text()).toBe(list)
   })
 
   test('props scroll', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list, scroll: 'vertical' }
     })
-    const viewer = wrapper.find('.me-notice-bar .notice-vertical') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar .notice-vertical')
 
     expect(viewer.exists()).toBeTruthy()
   })
 
   test('props preappend-icon', () => {
     const preappendIcon = 'github'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list, preappendIcon }
     })
-    const viewer = wrapper.find('.me-notice-bar .icon-preappend .iconfont') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar .icon-preappend .iconfont')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(`icon-${preappendIcon}`)).toBe(true)
@@ -43,22 +58,32 @@ describe('MeNoticeBar', () => {
 
   test('props append-icon', () => {
     const appendIcon = 'github'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list, appendIcon }
     })
-    const viewer = wrapper.find('.me-notice-bar .icon-append .iconfont') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar .icon-append .iconfont')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(`icon-${appendIcon}`)).toBe(true)
   })
 
   test('emit click', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-notice-bar .notice-horizontal>li:first-child') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar .notice-horizontal>li:first-child')
 
     await viewer.trigger('click')
 
@@ -66,11 +91,16 @@ describe('MeNoticeBar', () => {
   })
 
   test('emit click:preappend', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-notice-bar .icon-preappend') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar .icon-preappend')
 
     await viewer.trigger('click')
 
@@ -78,11 +108,16 @@ describe('MeNoticeBar', () => {
   })
 
   test('emit click:append', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeNoticeBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-notice-bar .icon-append') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-notice-bar .icon-append')
 
     await viewer.trigger('click')
 

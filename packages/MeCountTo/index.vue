@@ -6,27 +6,20 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', bool: boolean): void
-  (event: 'end'): void
-}>()
+defineOptions({
+  name: 'MeCountTo'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: boolean // 开始状态
-    startValue?: number // 开始数字
-    endValue: number // 结束数字
-    duration?: number // 持续时间
-    thousand?: boolean // 千分符
-  }>(),
-  {
-    modelValue: true,
-    startValue: 0,
-    duration: 1500,
-    thousand: false
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: true,
+  startValue: 0,
+  duration: 1500,
+  thousand: false
+})
 
 const { comValue } = useHandler(props, emit)
 </script>

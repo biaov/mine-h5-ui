@@ -1,10 +1,14 @@
-// 子项目
+/**
+ * 子项目
+ */
 export interface ChildListItem {
   id: number
   value: string
 }
 
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   id: number
   label: string

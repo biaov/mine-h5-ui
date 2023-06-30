@@ -1,19 +1,47 @@
 export type NativeType = 'button' | 'submit' | 'reset' // props nativeType
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'click', e: MouseEvent): void
 }
 
+/**
+ * 按钮类型
+ */
 export type ButtonType = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  nativeType: NativeType
-  width: string
-  type: ButtonType
+  /**
+   * 原生 type
+   */
+  nativeType?: NativeType
+  /**
+   * 宽度
+   */
+  width?: string
+  /**
+   * 类型
+   */
+  type?: ButtonType
+  /**
+   * 是否朴素按钮
+   */
   plain?: boolean
+  /**
+   * 是否禁用
+   */
   disabled?: boolean
-  icon: string
-  color: string
+  /**
+   * 图标
+   */
+  icon?: string
+  /**
+   * 颜色
+   */
+  color?: string
 }

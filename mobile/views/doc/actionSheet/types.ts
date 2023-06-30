@@ -1,11 +1,15 @@
-// 三级 list 项
+/**
+ * 三级 list 项
+ */
 export interface GrandsonListItem {
   id: number
   value: string
   label: string
 }
 
-// 子 list 项
+/**
+ * 二级 list 项
+ */
 export interface ChildListItem {
   id: number
   value: string
@@ -13,7 +17,9 @@ export interface ChildListItem {
   list: GrandsonListItem[]
 }
 
-// 列表项
+/**
+ * 一级列表项
+ */
 export interface ListDataItem {
   id: number
   label: string

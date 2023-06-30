@@ -1,11 +1,16 @@
 import NavConfig from '@/config/nav.config'
-import { Docs } from './types'
+import type { Docs } from './types'
 
 let docs: Docs[] = []
 
-// 添加组件
+/**
+ * 添加组件
+ */
 const addComponent = (arr: Docs[]) => {
-  const indexArr: number[] = [] // 索引数组
+  /**
+   * 索引数组
+   */
+  const indexArr: number[] = []
 
   // 循环遍历参数数组
   arr.forEach((elem, i) => {

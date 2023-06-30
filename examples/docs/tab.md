@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeTab, MeTabItem } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeTab.css'
-import 'mine-h5-ui/lib/theme-default/MeTabItem.css'
+import 'mine-h5-ui/styles/MeTab.css'
+import 'mine-h5-ui/styles/MeTabItem.css'
 
 const app = createApp(App)
 app.use(MeTab)
@@ -34,7 +34,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-tab v-model="active" @change="onChange">
     <me-tab-item v-for="item in listData" :key="item.id" :name="item.id" :label="item.label" v-text="item.content"></me-tab-item>

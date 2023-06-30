@@ -1,10 +1,14 @@
-// 事件提示语
+/**
+ * 事件提示语
+ */
 export interface EventMsg extends Record<string, string> {
   preappend: string
   append: string
 }
 
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   label: string
   list: string[] | string

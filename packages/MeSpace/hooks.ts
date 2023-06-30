@@ -1,9 +1,14 @@
 import { useSlots, onMounted, h, ref, render } from 'vue'
-import { Props } from './types'
+import type { Props } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>) => {
-  const spaceRef = ref<HTMLDivElement>() // space 节点
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<Required<Props>>) => {
+  /**
+   * space 节点
+   */
+  const spaceRef = ref<HTMLDivElement>()
 
   onMounted(() => {
     const slots = useSlots().default?.() || []

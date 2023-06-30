@@ -1,10 +1,15 @@
-// 子列表
+/**
+ * 子列表
+ */
 export interface ChildListItem {
   name: string
   label: string
   time?: string
 }
-// 列表项
+
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   id: number
   label: string

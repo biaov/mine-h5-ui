@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeLoading from './index.vue'
+import { addInstall } from '../utils'
+import loading from './index.vue'
 
-// 安装
-MeLoading.install = (app: App) => {
-  app.component('MeLoading', MeLoading)
-}
-
-export { MeLoading }
+export const MeLoading = addInstall(loading)

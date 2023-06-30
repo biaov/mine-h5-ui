@@ -24,11 +24,16 @@ describe('MeDrag', () => {
   ]
 
   test('props list', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeDrag, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-drag') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-drag')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -39,11 +44,16 @@ describe('MeDrag', () => {
 
   test('props current', () => {
     const current = 0
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeDrag, {
       props: { list, current }
     })
-    const viewer = wrapper.find(`.me-drag .item:first-child`) // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find(`.me-drag .item:first-child`)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('active')).toBe(true)

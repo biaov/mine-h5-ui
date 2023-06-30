@@ -1,4 +1,6 @@
-// 指南配置
+/**
+ * 指南配置
+ */
 export const guideConfig = [
   {
     path: 'introduce',
@@ -37,7 +39,9 @@ export const guideConfig = [
   }
 ]
 
-// 组件配置
+/**
+ * 组件配置
+ */
 export const componentConfig = [
   {
     meta: {
@@ -433,6 +437,9 @@ export const componentConfig = [
   }
 ]
 
+/**
+ * API 文档配置
+ */
 export const apiConfig = [
   {
     meta: {

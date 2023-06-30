@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeAddressPicker } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeAddressPicker.css'
+import 'mine-h5-ui/styles/MeAddressPicker.css'
 
 const app = createApp(App)
 app.use(MeAddressPicker)

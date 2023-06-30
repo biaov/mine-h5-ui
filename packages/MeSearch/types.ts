@@ -1,4 +1,6 @@
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:modelValue', str: string): void
   (event: 'click'): void
@@ -9,14 +11,40 @@ export interface Emits {
   (event: 'change', e: Event): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
+  /**
+   * v-model 绑定值
+   */
   modelValue: string
-  placeholder: string
-  btnText: string
-  align: string
-  radius: string
-  background: string
-  color: string
-  disabled: boolean
+  /**
+   * 占位符
+   */
+  placeholder?: string
+  /**
+   * 右侧按钮内容
+   */
+  btnText?: string
+  /**
+   * 搜索框对齐方式
+   */
+  align?: 'left' | 'center' | 'right' | 'justify' | 'inherit'
+  /**
+   * 搜索框倒角
+   */
+  radius?: string
+  /**
+   * 搜索框背景色
+   */
+  background?: string
+  /**
+   * 字体颜色
+   */
+  color?: string
+  /**
+   * 是否禁用输入框
+   */
+  disabled?: boolean
 }

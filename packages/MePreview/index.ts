@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MePreview from './preview'
+import { addInstallAPI } from '../utils'
+import preview from './preview'
 
-// 安装
-MePreview.install = (app: App) => {
-  app.config.globalProperties.$MePreview = MePreview
-}
-
-export { MePreview }
+export const MePreview = addInstallAPI(preview)

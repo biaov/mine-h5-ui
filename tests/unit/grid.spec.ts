@@ -17,9 +17,14 @@ describe('MeGrid', () => {
   }
 
   test('props cols', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent)
-    const viewer = wrapper.find('.me-grid') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-grid')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -46,9 +51,14 @@ describe('MeGridItem', () => {
       <MeGridItem icon="icon-github"></MeGridItem>
       <MeGridItem icon="icon-github"></MeGridItem>
     </MeGrid>`
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent)
-    const viewer = wrapper.find('.me-grid-item .iconfont') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-grid-item .iconfont')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('icon-github')).toBe(true)
@@ -62,9 +72,14 @@ describe('MeGridItem', () => {
       <MeGridItem text="${testText}"></MeGridItem>
       <MeGridItem text="${testText}"></MeGridItem>
     </MeGrid>`
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent)
-    const viewer = wrapper.find('.me-grid-item') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-grid-item')
     const descEl = viewer.find('.desc')
 
     expect(descEl.exists()).toBeTruthy()

@@ -1,5 +1,5 @@
 import { Random } from 'mockjs'
-import { ChildListItem } from './types'
+import type { ChildListItem } from './types'
 
 /**
  * 生成数组

@@ -12,28 +12,23 @@
 </template>
 <script lang="ts" setup>
 import { useCountdown } from './hooks'
+import type { Props, Emits, Slots } from './types'
 
-const emit = defineEmits<{
-  (event: 'end'): void
-  (event: 'progress', time: number): void
-}>()
+defineOptions({
+  name: 'MeCountDown'
+})
 
-const props = withDefaults(
-  defineProps<{
-    time?: number // 需要倒计的时间
-    format?: string // 时间格式化, DD:hh:mm:ss:ms
-    isStart?: boolean // 是否开始
-    isSuspend?: boolean // 是否暂停
-    isReset?: boolean // 是否重置
-  }>(),
-  {
-    time: 0,
-    format: 'hh:mm:ss',
-    isStart: true,
-    isSuspend: false,
-    isReset: false
-  }
-)
+defineSlots<Slots>()
 
-const { formatAfter, bindFormatAfter } = useCountdown(props, emit)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  time: 0,
+  format: 'hh:mm:ss',
+  isStart: true,
+  isSuspend: false,
+  isReset: false
+})
+
+const { formatAfter } = useCountdown(props, emit)
 </script>

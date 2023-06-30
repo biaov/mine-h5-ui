@@ -24,34 +24,24 @@
 </template>
 <script lang="ts" setup>
 import { useCounts } from './hooks'
+import type { Props } from './types'
 
-const props = withDefaults(
-  defineProps<{
-    modelValue: number // v-model 绑定值, 0-100 的整数
-    type?: string // 进度条类型, line | circle
-    text?: string // 自定义文本
-    textShow?: boolean // 文本显示状态
-    width?: string // 进度条宽度
-    borderRadius?: string // 线性进度条倒角, type:line
-    size?: number // 进度条粗细
-    textColor?: string // 文本颜色
-    activeColor?: string // 进度条活动色
-    backgorund?: string // 进度条背景色
-    padding?: string // 整体边距, type:line
-  }>(),
-  {
-    type: 'line',
-    text: '',
-    textShow: true,
-    width: '100px',
-    borderRadius: '8px',
-    size: 4,
-    textColor: '',
-    activeColor: '#409eff',
-    backgorund: '#ccc',
-    padding: '0 10px'
-  }
-)
+defineOptions({
+  name: 'MeProgressBar'
+})
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'line',
+  text: '',
+  textShow: true,
+  width: '100px',
+  borderRadius: '8px',
+  size: 4,
+  textColor: '',
+  activeColor: '#409eff',
+  backgorund: '#ccc',
+  padding: '0 10px'
+})
 
 const { curText, curPosi } = useCounts(props)
 </script>

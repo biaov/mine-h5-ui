@@ -8,21 +8,21 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useName } from './hooks'
+import type { Props } from './types'
 
-const props = withDefaults(
-  defineProps<{
-    name: string | number // 属性名称
-    url?: string // 图片地址
-    text?: string // 文本
-    background?: string // 背景色
-  }>(),
-  {
-    url: '',
-    text: '',
-    background: ''
-  }
-)
+defineOptions({
+  name: 'MeSwiperItem'
+})
+
+defineSlots<DefaultSlots>()
+
+const props = withDefaults(defineProps<Props>(), {
+  url: '',
+  text: '',
+  background: ''
+})
 
 useName(props)
 </script>

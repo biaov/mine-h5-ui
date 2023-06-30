@@ -37,7 +37,7 @@ export default [
         label: '弹出自定义主题',
         value: false,
         skinStyle: {
-          bgc: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景色
+          bgc: 'linear-gradient(-45deg, #4bb0ff, #6149f6)',
           textBgc: 'rgba(255,255,255,0.1)',
           color: '#fff'
         }

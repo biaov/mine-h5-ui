@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeAccordion, MeAccordionItem } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeAccordion.css'
-import 'mine-h5-ui/lib/theme-default/MeAccordionItem.css'
+import 'mine-h5-ui/styles/MeAccordion.css'
+import 'mine-h5-ui/styles/MeAccordionItem.css'
 
 const app = createApp(App)
 app.use(MeAccordion)
@@ -34,7 +34,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <div class="label">基础用法</div>
   <me-accordion v-model="accordionActive">

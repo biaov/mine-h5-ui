@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeSwitch from './index.vue'
+import { addInstall } from '../utils'
+import switchAlias from './index.vue'
 
-// 安装
-MeSwitch.install = (app: App) => {
-  app.component('MeSwitch', MeSwitch)
-}
-
-export { MeSwitch }
+export const MeSwitch = addInstall(switchAlias)

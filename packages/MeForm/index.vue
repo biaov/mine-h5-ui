@@ -5,23 +5,22 @@
   </form>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
-import { RuleItem, Option } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'submit', option: Option): void
-}>()
+defineOptions({
+  name: 'MeForm'
+})
 
-const props = withDefaults(
-  defineProps<{
-    model?: Record<string, any> // 校验数据
-    rules?: RuleItem[] // 校验规则
-  }>(),
-  {
-    model: () => ({}),
-    rules: () => []
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  model: () => ({}),
+  rules: () => []
+})
 
 const { onSubmit } = useHandler(props, emit)
 </script>

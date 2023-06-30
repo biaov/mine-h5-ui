@@ -2,18 +2,28 @@ import { onMounted, ref, getCurrentInstance } from 'vue'
 import ClipboardJS from 'clipboard'
 import IconData from './icon'
 import initData from './data'
-import { ListItem } from './types'
+import type { ListItem } from './types'
 
-// 列表数据
+/**
+ * 列表数据
+ */
 export const useWebData = () => {
-  const icons = ref<HTMLUListElement>() // 列表所有
+  /**
+   * 列表所有
+   */
+  const icons = ref<HTMLUListElement>()
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   let copyText: string
-  const listData: ListItem[] = initData // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData: ListItem[] = initData
 
   listData[3].list = IconData.map((name, id) => ({ id, name }))
 
-  // 点击列表
+  /**
+   * 点击列表
+   */
   const onClick = (name: string) => {
     copyText = name
   }

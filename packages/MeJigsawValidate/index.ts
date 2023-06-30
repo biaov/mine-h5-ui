@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeJigsawValidate from './index.vue'
+import { addInstall } from '../utils'
+import jigsawValidate from './index.vue'
 
-// 安装
-MeJigsawValidate.install = (app: App) => {
-  app.component('MeJigsawValidate', MeJigsawValidate)
-}
-
-export { MeJigsawValidate }
+export const MeJigsawValidate = addInstall(jigsawValidate)

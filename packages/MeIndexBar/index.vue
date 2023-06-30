@@ -21,22 +21,18 @@
 <script lang="ts" setup>
 import CountryData from './countryData'
 import { useScroll, useBtns } from './hooks'
-import { ListItem, CityItem } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', item: CityItem): void
-}>()
+defineOptions({
+  name: 'MeIndexBar'
+})
 
-withDefaults(
-  defineProps<{
-    list?: ListItem[] // 自定义国家数据
-    topHeight?: string // 自定义顶部定位高度
-  }>(),
-  {
-    list: () => CountryData,
-    topHeight: '50px'
-  }
-)
+const emit = defineEmits<Emits>()
+
+withDefaults(defineProps<Props>(), {
+  list: () => CountryData,
+  topHeight: '50px'
+})
 
 const { curLetter, listCont } = useScroll()
 const { handleLi } = useBtns(emit)

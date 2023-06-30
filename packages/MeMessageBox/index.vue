@@ -27,34 +27,24 @@
 </template>
 <script lang="ts" setup>
 import { useShow } from './hooks'
-import { OnOk, OnOff } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'action', eventName: string, value?: string): void
-}>()
+defineOptions({
+  name: 'MeMessageBox'
+})
 
-const props = withDefaults(
-  defineProps<{
-    tips?: string // 标题内容
-    type?: string // 弹出框类型, alert | confirm | prompt | custom
-    message?: string // 警告语
-    html?: string // 自定义 HTML
-    cancelButtonText?: string // 取消按钮内容
-    confirmButtonText?: string // 确认按钮内容
-    onOk?: OnOk // 点击确定函数
-    onOff?: OnOff // 点击取消函数
-  }>(),
-  {
-    tips: '提示',
-    type: 'alert',
-    message: '',
-    html: '',
-    cancelButtonText: '取消',
-    confirmButtonText: '确认',
-    onOk: () => () => {},
-    onOff: () => () => {}
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  tips: '提示',
+  type: 'alert',
+  message: '',
+  html: '',
+  cancelButtonText: '取消',
+  confirmButtonText: '确认',
+  onOk: () => () => {},
+  onOff: () => () => {}
+})
 
 const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } = useShow(props, emit)
 </script>

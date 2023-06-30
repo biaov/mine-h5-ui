@@ -1,11 +1,22 @@
 import { ref } from 'vue'
-import { Props, FieldsetListItem } from './types'
+import type { PropsHookParam, FieldsetListItem } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>) => {
-  const fieldsetList = ref<FieldsetListItem[]>([]) // 分割线
-  const len = props.list.length // 数组长度
-  const flagBool = len < 3 // 是否小于3
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<PropsHookParam>) => {
+  /**
+   * 分割线
+   */
+  const fieldsetList = ref<FieldsetListItem[]>([])
+  /**
+   * 数组长度
+   */
+  const len = props.list.length
+  /**
+   * 是否小于 3
+   */
+  const flagBool = len < 3
   const curLine = ref(props.line)
 
   // 设置默认值
@@ -16,7 +27,10 @@ export const useHandler = (props: Readonly<Props>) => {
 
   // 循环遍历
   fieldsetList.value = props.list.map((item, index) => {
-    let deg = (360 / len) * index // 旋转角度
+    /**
+     * 旋转角度
+     */
+    let deg = (360 / len) * index
     deg = flagBool ? 0 : deg
     return {
       text: item,

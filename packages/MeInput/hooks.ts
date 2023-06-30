@@ -1,11 +1,18 @@
 import { Ref, ref, onMounted, watch } from 'vue'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 短信验证码
-export const useSms = (props: Readonly<Props>, emit: Emits) => {
-  const sms = ref<HTMLDivElement>() // label 标签
+/**
+ * 短信验证码
+ */
+export const useSms = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * label 标签
+   */
+  const sms = ref<HTMLDivElement>()
 
-  // 点击短信验证码
+  /**
+   * 点击短信验证码
+   */
   const handleSMS = (e: MouseEvent) => {
     // 判断是否处于倒计时状态
     !props.smsIs && emit('click-sms', e)
@@ -14,9 +21,13 @@ export const useSms = (props: Readonly<Props>, emit: Emits) => {
   return { sms, handleSMS }
 }
 
-// 图标
-export const useIcon = (props: Readonly<Props>, emit: Emits, inputType: Ref<string>) => {
-  // 点击图标
+/**
+ * 图标
+ */
+export const useIcon = (props: Readonly<Required<Props>>, emit: Emits, inputType: Ref<string>) => {
+  /**
+   * 点击图标
+   */
   const handleIcon = (e: MouseEvent) => {
     // 判断是否是密码输入框
     if (props.password) {
@@ -29,16 +40,38 @@ export const useIcon = (props: Readonly<Props>, emit: Emits, inputType: Ref<stri
   return { handleIcon }
 }
 
-// 输入框
-export const useInput = (props: Readonly<Props>, emit: Emits, sms: Ref<HTMLDivElement | undefined>) => {
-  const inputLabel = ref<HTMLDivElement>() // label 标签
-  const inputVal = ref<string | number>('') // 输入框值
-  const inputType = ref(props.digit ? 'text' : props.password ? 'password' : props.type) // 输入框 type 值
-  const paddingLeft = ref(0) // label 宽度
-  const paddingRight = ref(0) // span 宽度
-  const isFocus = ref(false) // 是否聚焦
+/**
+ * 输入框
+ */
+export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref<HTMLDivElement | undefined>) => {
+  /**
+   * label 标签
+   */
+  const inputLabel = ref<HTMLDivElement>()
+  /**
+   * 输入框值
+   */
+  const inputVal = ref<string | number>('')
+  /**
+   * 输入框 type 值
+   */
+  const inputType = ref(props.digit ? 'text' : props.password ? 'password' : props.type)
+  /**
+   * label 宽度
+   */
+  const paddingLeft = ref(0)
+  /**
+   * span 宽度
+   */
+  const paddingRight = ref(0)
+  /**
+   * 是否聚焦
+   */
+  const isFocus = ref(false)
 
-  // 设置输入框的 padding
+  /**
+   * 设置输入框的 padding
+   */
   const setInputPadding = (type: number) => {
     // 0:左侧,1:右侧
     if (type === 1) {
@@ -49,25 +82,33 @@ export const useInput = (props: Readonly<Props>, emit: Emits, sms: Ref<HTMLDivEl
     }
   }
 
-  // 输入框聚焦
+  /**
+   * 输入框聚焦
+   */
   const onFocus = (e: FocusEvent) => {
     isFocus.value = !isFocus.value
     emit('focus', e)
   }
 
-  // 输入框失去焦点
+  /**
+   * 输入框失去焦点
+   */
   const onBlur = (e: FocusEvent) => {
     isFocus.value = !isFocus.value
     emit('blur', e)
   }
 
-  // 输入框 change 事件
+  /**
+   * 输入框 change 事件
+   */
   const onChange = (e: Event) => {
     isFocus.value = !isFocus.value
     emit('change', e)
   }
 
-  // 输入框 input 事件
+  /**
+   * 输入框 input 事件
+   */
   const onInput = (e: Event) => {
     isFocus.value = !isFocus.value
     emit('input', e)

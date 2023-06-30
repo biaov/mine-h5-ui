@@ -1,30 +1,75 @@
-// listData
+/**
+ * listData
+ */
 export type ListDataItem = {
   id: number
   url: string
 }
 
-export type BeforeRead = (item: File[]) => boolean // props beforeRead
-export type BfterRead = (arr: File[]) => boolean // props bfterRead
-export type BeforeDelete = (item: ListDataItem) => boolean // props beforeDelete
+/**
+ * props beforeRead
+ */
+export type BeforeRead = (item: File[]) => boolean
+/**
+ * props bfterRead
+ */
+export type BfterRead = (arr: File[]) => boolean
+/**
+ * props beforeDelete
+ */
+export type BeforeDelete = (item: ListDataItem) => boolean
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:fileList', list: ListDataItem[]): void
   (event: 'update:file-list', list: ListDataItem[]): void
   (event: 'change', list: ListDataItem[]): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  fileList: ListDataItem[]
-  preview: boolean
-  maxCount: number
-  maxSize: number
-  multiple: boolean
-  deletable: boolean
-  disabled: boolean
-  beforeRead: BeforeRead
-  afterRead: BfterRead
-  beforeDelete: BeforeDelete
+  /**
+   * v-model:fileList 绑定值
+   */
+  fileList?: ListDataItem[]
+  /**
+   * 图片是否可预览
+   */
+  preview?: boolean
+  /**
+   * 最大上传数量
+   */
+  maxCount?: number
+  /**
+   * 文件大小设置
+   */
+  maxSize?: number
+  /**
+   * 是否多选
+   */
+  multiple?: boolean
+  /**
+   * 是否展示删除按钮
+   */
+  deletable?: boolean
+  /**
+   * 禁止状态
+   */
+  disabled?: boolean
+  /**
+   * 文件读取前钩子函数
+   */
+  beforeRead?: BeforeRead
+  /**
+   * 文件读取完钩子函数
+   */
+  afterRead?: BfterRead
+  /**
+   * 文件删除前钩子函数
+   */
+  beforeDelete?: BeforeDelete
 }

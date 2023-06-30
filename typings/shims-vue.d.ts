@@ -1,12 +1,17 @@
 /// <reference types="vue/macros-global" />
 
-// vue
+/**
+ * vue
+ */
 declare module '*.vue' {
   import { DefineComponent, App } from 'vue'
   const component: DefineComponent<{}, {}, unknown> & { install: (app: App) => void }
   export default component
 }
 
+/**
+ * pwa
+ */
 declare module 'virtual:pwa-register/vue' {
   // @ts-ignore ignore when vue is not installed
   import type { Ref } from 'vue'

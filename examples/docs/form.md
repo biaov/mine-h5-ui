@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeForm } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeForm.css'
+import 'mine-h5-ui/styles/MeForm.css'
 
 const app = createApp(App)
 app.use(MeForm)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-form :model="form" :rules="rules" @submit="onSubmit">
     <me-input v-model="form.username" placeholder="请输入用户名" label-width="70px" label="用户名"></me-input>

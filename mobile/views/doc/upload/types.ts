@@ -1,10 +1,14 @@
-// 文件列表
+/**
+ * 文件列表
+ */
 export interface FileListItem {
   id: number
   url: string
 }
 
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   id: number
   label: string

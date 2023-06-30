@@ -4,11 +4,14 @@ import docs from './docs'
 
 const { BaseRouter } = useGlobalVars()
 
-// 路由配置
+/**
+ * 路由配置
+ */
 const routes: RouteRecordRaw[] = [
   {
     path: '/:pathMatch(.*)*',
-    redirect: { name: 'Layout' }
+    name: 'NotFound',
+    component: () => import(`@/views/404/index.vue`)
   },
   {
     path: '/',
@@ -25,7 +28,9 @@ const routes: RouteRecordRaw[] = [
   }
 ]
 
-// 路由实例
+/**
+ * 路由实例
+ */
 const router: Router = createRouter({
   history: createWebHistory(BaseRouter),
   routes

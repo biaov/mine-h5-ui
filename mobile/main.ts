@@ -4,10 +4,10 @@ import App from './App.vue'
 import router from './router'
 
 import MINEH5UI from '~/index'
-import '~/theme-default/index.less'
+import '~/styles/index.less'
 
 /* import MINEH5UI from '#/es'
-import '#/lib/theme-default/index.css' */
+import '#/styles/index.css' */
 
 const app = createApp(App)
 app.use(MINEH5UI)

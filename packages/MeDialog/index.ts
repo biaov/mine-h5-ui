@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeDialog from './index.vue'
+import { addInstall } from '../utils'
+import dialog from './index.vue'
 
-// 安装
-MeDialog.install = (app: App) => {
-  app.component('MeDialog', MeDialog)
-}
-
-export { MeDialog }
+export const MeDialog = addInstall(dialog)

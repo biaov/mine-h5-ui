@@ -4,22 +4,18 @@
 </template>
 <script lang="ts" setup>
 import { useClick } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeIcon'
+})
 
-withDefaults(
-  defineProps<{
-    name: string // class 名称
-    color?: string // 图标颜色
-    size?: string // 图标大小
-  }>(),
-  {
-    color: '',
-    size: ''
-  }
-)
+const emit = defineEmits<Emits>()
+
+withDefaults(defineProps<Props>(), {
+  color: '',
+  size: ''
+})
 
 const { onClick } = useClick(emit)
 </script>

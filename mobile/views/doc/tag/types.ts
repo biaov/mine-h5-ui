@@ -1,4 +1,6 @@
-// 子项目
+/**
+ * 子项目
+ */
 export interface ChildListItem {
   type?: string
   plain?: boolean
@@ -11,7 +13,9 @@ export interface ChildListItem {
   closeable?: boolean
 }
 
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   label: string
   children: ChildListItem[]

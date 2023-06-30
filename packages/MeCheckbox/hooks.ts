@@ -1,27 +1,39 @@
 import { ref, watch, inject } from 'vue'
 import { MeCheckboxGroupKey } from '../MeCheckboxGroup/token'
-import { Props, CheckboxGroupContext, Emits } from './types'
+import type { Props, CheckboxGroupContext, Emits } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>, emit: Emits) => {
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   const { name, currentValue, onChange } = inject(MeCheckboxGroupKey, {} as CheckboxGroupContext)
-  const isChecked = ref(props.modelValue) // 是否选中
-  const iconName = ref('') // 图标名称
+  /**
+   * 是否选中
+   */
+  const isChecked = ref(props.modelValue)
+  /**
+   * 图标名称
+   */
+  const iconName = ref('')
 
-  // 设置图标
+  /**
+   * 设置图标
+   */
   const setIcon = () => {
     iconName.value = isChecked.value
       ? props.iconSelect || (props.shape === 'round' ? 'icon-radio' : 'icon-baseline-check_box-px')
       : props.icon || (props.shape === 'round' ? 'icon-radio3' : 'icon-baseline-check_box_outline_blank-px')
   }
 
-  // 点击单选框
+  /**
+   * 点击单选框
+   */
   const handleClick = (e: MouseEvent) => {
     // 判断当前是否被禁用
     if (!props.disabled) {
       // 判断是否存在父组件
       if (name === MeCheckboxGroupKey) {
-        onChange({ name: props.name!, isChecked })
+        onChange({ name: props.name, isChecked })
       } else {
         isChecked.value = !isChecked.value // 改变当前状态
         emit('update:modelValue', !isChecked.value)
@@ -32,9 +44,11 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 设置状态
+  /**
+   * 设置状态
+   */
   const setStatus = () => {
-    isChecked.value = name === MeCheckboxGroupKey ? currentValue.value.includes(props.name!) : props.modelValue
+    isChecked.value = name === MeCheckboxGroupKey ? currentValue.value.includes(props.name) : props.modelValue
     setIcon()
   }
 

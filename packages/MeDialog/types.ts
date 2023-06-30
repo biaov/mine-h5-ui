@@ -1,10 +1,20 @@
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:visible', bool: boolean): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  visible: boolean
-  tips: string
+  /**
+   * v-model 绑定值
+   */
+  visible?: boolean
+  /**
+   * 提示文本
+   */
+  tips?: string
 }

@@ -19,10 +19,10 @@
 <script lang="ts" setup>
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
-import { PostMessageReturn } from '@/utils/types'
 import MineHeader from '@/components/MineHeader'
 import SideBar from '@/components/SideBar'
 import DemoH5 from '@/components/DemoH5'
+import type { PostMessageReturn } from '@/utils/types'
 
 const route = useRoute()
 let postMessage: PostMessageReturn // 发送消息对象

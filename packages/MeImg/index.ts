@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeImg from './index.vue'
+import { addInstall } from '../utils'
+import img from './index.vue'
 
-// 安装
-MeImg.install = (app: App) => {
-  app.component('MeImg', MeImg)
-}
-
-export { MeImg }
+export const MeImg = addInstall(img)

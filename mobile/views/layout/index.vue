@@ -6,8 +6,8 @@
   <div class="layout">
     <div class="hd">
       <h3 class="tit">
-        <img src="../../../examples/assets/logo.svg" alt="MINE-H5-UI logo" />
-        <span>MINE-H5-UI</span>
+        <img src="../../../examples/assets/logo.svg" alt="mine-h5-ui logo" />
+        <span>mine-h5-ui</span>
       </h3>
       <p class="desc">一款轻量级、模块化基于VUE的H5前端UI组件库</p>
     </div>

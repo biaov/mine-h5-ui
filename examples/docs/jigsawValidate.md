@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeJigsawValidate } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeJigsawValidate.css'
+import 'mine-h5-ui/styles/MeJigsawValidate.css'
 
 const app = createApp(App)
 app.use(MeJigsawValidate)
@@ -79,7 +79,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :slideStyle="slideStyle"></me-jigsaw-validate>
 </template>

@@ -1,21 +1,46 @@
 /* eslint-disable no-restricted-syntax */
 import { ref } from 'vue'
 import areaData from './area'
-import { Emits, Props } from './types'
+import type { Emits, Props } from './types'
 
 const AreaData = areaData as Record<string, Record<string, string>>
 
-// 移动列
+/**
+ * 移动列
+ */
 export const useHandMove = () => {
-  const listData = ref<string[][]>([Object.values(AreaData['86']), [], []]) // 列表数据,获取所有省数据
-  const distance = ref([88, 88, 88]) // 滚动的距离
-  const duration = ref(0) // 过渡时间
-  const currentValue: string[] = [listData.value[0][0]] //  // 设置初始化省数据
-  let startY = 0 // 开始Y坐标
-  let startDistence = 0 // 开始滚动的距离
-  let startTime = 0 // 触摸开始时间
+  /**
+   * 列表数据,获取所有省数据
+   */
+  const listData = ref<string[][]>([Object.values(AreaData['86']), [], []])
+  /**
+   * 滚动的距离
+   */
+  const distance = ref([88, 88, 88])
+  /**
+   * 过渡时间
+   */
+  const duration = ref(0)
+  /**
+   * 设置初始化省数据
+   */
+  const currentValue: string[] = [listData.value[0][0]]
+  /**
+   * 开始Y坐标
+   */
+  let startY = 0
+  /**
+   * 开始滚动的距离
+   */
+  let startDistence = 0
+  /**
+   * 触摸开始时间
+   */
+  let startTime = 0
 
-  // 开始过渡
+  /**
+   * 开始过渡
+   */
   const openTransition = (time: number) => {
     duration.value = time
     setTimeout(() => {
@@ -23,9 +48,14 @@ export const useHandMove = () => {
     }, time)
   }
 
-  // 设置地区
+  /**
+   * 设置地区
+   */
   const setArea = () => {
-    let index = 0 // 数值索引
+    /**
+     * 数值索引
+     */
+    let index = 0
 
     for (const keys in AreaData['86']) {
       // 判断当前选中的value值是否相等
@@ -45,10 +75,18 @@ export const useHandMove = () => {
     currentValue[2] = arrOne // 设置第一个area值
   }
 
-  // 当日期值改变时，修改相应的状态
+  /**
+   * 当日期值改变时，修改相应的状态
+   */
   const setDateDist = (i: number) => {
-    let oldDist = distance.value[i] // 实际移动的距离
-    const len = listData.value[i].length - 1 // 获取天个数
+    /**
+     * 实际移动的距离
+     */
+    let oldDist = distance.value[i]
+    /**
+     * 获取天个数
+     */
+    const len = listData.value[i].length - 1
 
     // 最大不能大于88，最小不能小于88-len*44
     if (oldDist > 88) {
@@ -62,9 +100,14 @@ export const useHandMove = () => {
     openTransition(400) // 开启过渡效果
   }
 
-  // 设置市地址
+  /**
+   * 设置市地址
+   */
   const setCity = () => {
-    let index = 0 // 数值索引
+    /**
+     * 数值索引
+     */
+    let index = 0
 
     for (const key in AreaData['86']) {
       // 判断当前选中的value值是否相等
@@ -79,9 +122,14 @@ export const useHandMove = () => {
     setArea()
   }
 
-  // 获取当前value值
+  /**
+   * 获取当前 value 值
+   */
   const setValue = (tarDir: number, i: number) => {
-    const count = Math.abs(tarDir / 44 - 2) // 个数
+    /**
+     * 个数
+     */
+    const count = Math.abs(tarDir / 44 - 2)
     currentValue[i] = listData.value[i][count] // 设置currentValue
     i !== 2 && setDateDist(i + 1) // 拖动地址不需要改变
 
@@ -96,14 +144,18 @@ export const useHandMove = () => {
     setDateDist(i + 1) // 设置
   }
 
-  // 触摸开始
+  /**
+   * 触摸开始
+   */
   const onTouchstart = (e: TouchEvent, i: number) => {
     startY = e.changedTouches[0].clientY // 获取初始位置
     startDistence = distance.value[i] // 记录开始距离
     startTime = +new Date() // 记录开始的时间
   }
 
-  // 接触点改变，滑动时
+  /**
+   * 接触点改变，滑动时
+   */
   const onTouchmove = (e: TouchEvent, i: number) => {
     const currentY = e.changedTouches[0].clientY // 获取当前移动的Y坐标
     const diffX = currentY - startY // 移动位置
@@ -111,11 +163,22 @@ export const useHandMove = () => {
     distance.value[i] = actualDist // 设置实际移动的距离
   }
 
-  // 触摸结束
+  /**
+   * 触摸结束
+   */
   const onTouchend = (e: TouchEvent, i: number) => {
-    let oldDist = distance.value[i] // 实际移动的距离
-    const endTime = +new Date() // 触摸结束时间
-    const speed = +((e.changedTouches[0].clientY - startY) / (endTime - startTime)).toFixed(2) // 速度
+    /**
+     * 实际移动的距离
+     */
+    let oldDist = distance.value[i]
+    /**
+     *  触摸结束时间
+     */
+    const endTime = +new Date()
+    /**
+     *  速度
+     */
+    const speed = +((e.changedTouches[0].clientY - startY) / (endTime - startTime)).toFixed(2)
 
     // 判断速度是否过大，大于0.1才能开始惯性滑动
     if (speed > 0.12 || speed < -0.12) {
@@ -154,7 +217,9 @@ export const useHandMove = () => {
     }
   }
 
-  // pc端鼠标按下移动
+  /**
+   * PC 端鼠标按下移动
+   */
   const onMousedown = (e: MouseEvent, i: number) => {
     startY = e.clientY // 获取初始位置
     startDistence = distance.value[i] // 记录开始距离
@@ -162,26 +227,49 @@ export const useHandMove = () => {
 
     // 表达式声明移动事件
     document.onmousemove = (ev: MouseEvent) => {
-      const currentY = ev.clientY // 获取当前移动的Y坐标
-      const diffX = currentY - startY // 移动位置
-      const actualDist = startDistence + diffX // 实际移动的距离
+      /**
+       * 获取当前移动的Y坐标
+       */
+      const currentY = ev.clientY
+      /**
+       * 移动位置
+       */
+      const diffX = currentY - startY
+      /**
+       * 实际移动的距离
+       */
+      const actualDist = startDistence + diffX
       distance.value[i] = actualDist // 设置实际移动的距离
     }
 
     // 表达式声明抬起事件
     document.onmouseup = (ev: MouseEvent) => {
-      let oldDist = distance.value[i] // 实际移动的距离
-      const endTime = +new Date() // 触摸结束时间
-      const speed = +((ev.clientY - startY) / (endTime - startTime)).toFixed(2) // 速度
+      /**
+       * 实际移动的距离
+       */
+      let oldDist = distance.value[i]
+      /**
+       * 触摸结束时间
+       */
+      const endTime = +new Date()
+      /**
+       * 速度
+       */
+      const speed = +((ev.clientY - startY) / (endTime - startTime)).toFixed(2)
 
       // 判断速度是否过大，大于0.1才能开始惯性滑动
       if (speed > 0.12 || speed < -0.12) {
-        const wantDist = Math.ceil(speed * 400) // 还需要滚动的距离
+        /**
+         * 还需要滚动的距离
+         */
+        const wantDist = Math.ceil(speed * 400)
         oldDist += wantDist // 惯性实际滑动的距离
       }
 
-      const surplus = oldDist % 44 // 剩余数
-
+      /**
+       * 剩余数
+       */
+      const surplus = oldDist % 44
       // 判断是否处于理想位置，0表示理想位置，不需要再移动到理想位置
       if (surplus !== 0) {
         let tarDir = 0
@@ -194,8 +282,14 @@ export const useHandMove = () => {
           tarDir = surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus // 理想移动的距离
         }
 
-        const list = listData.value[i] // 获取当前列项的列表内容
-        const len = typeof list === 'number' ? list - 1 : list.length - 1 // 获取个数
+        /**
+         * 获取当前列项的列表内容
+         */
+        const list = listData.value[i]
+        /**
+         * 获取个数
+         */
+        const len = typeof list === 'number' ? list - 1 : list.length - 1
 
         // 最大不能大于88，最小不能小于88-len*44
         if (tarDir > 88) {
@@ -217,14 +311,21 @@ export const useHandMove = () => {
 
   return { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown }
 }
-// 按钮
-export const useBtns = (props: Readonly<Props>, emit: Emits, currentValue: string[]) => {
-  // 点击取消按钮
+
+/**
+ * 按钮
+ */
+export const useBtns = (props: Readonly<Required<Props>>, emit: Emits, currentValue: string[]) => {
+  /**
+   * 点击取消按钮
+   */
   const onCancel = () => {
     emit('cancel')
   }
 
-  // 点击确定按钮
+  /**
+   * 点击确定按钮
+   */
   const onSure = () => {
     const str = currentValue.reduce((prev, elem, i) => prev + (i === 0 ? '' : props.separator) + elem, '')
     emit('update:modelValue', str)

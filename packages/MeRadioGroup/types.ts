@@ -1,11 +1,21 @@
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:modelValue', name: string | number): void
   (event: 'change', name: string | number): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  modelValue: string | number
-  direction: string
+  /**
+   * v-model 值
+   */
+  modelValue?: string | number
+  /**
+   * 排列方向,
+   */
+  direction?: 'vertical' | 'horizontal'
 }

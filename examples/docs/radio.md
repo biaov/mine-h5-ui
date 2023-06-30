@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeRadio, MeRadioGroup } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeRadio.css'
-import 'mine-h5-ui/lib/theme-default/MeRadioGroup.css'
+import 'mine-h5-ui/styles/MeRadio.css'
+import 'mine-h5-ui/styles/MeRadioGroup.css'
 
 const app = createApp(App)
 app.use(MeRadio)

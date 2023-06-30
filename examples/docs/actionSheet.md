@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeActionSheet } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeActionSheet.css'
+import 'mine-h5-ui/styles/MeActionSheet.css'
 
 const app = createApp(App)
 app.use(MeActionSheet)
@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-action-sheet v-model:visible="visible" :list="listData" index="id" label="value"></me-action-sheet>
 </template>

@@ -1,11 +1,19 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useWebData = () => {
-  const accordionActive = ref('') // 当前活动值
-  const listData = Object.freeze<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 当前活动值
+   */
+  const accordionActive = ref('')
+  /**
+   * 列表数据
+   */
+  const listData = Object.freeze<ListDataItem[]>(initData)
 
   return { accordionActive, listData }
 }

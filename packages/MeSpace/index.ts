@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeSpace from './index.vue'
+import { addInstall } from '../utils'
+import space from './index.vue'
 
-// 安装
-MeSpace.install = (app: App) => {
-  app.component('MeSpace', MeSpace)
-}
-
-export { MeSpace }
+export const MeSpace = addInstall(space)

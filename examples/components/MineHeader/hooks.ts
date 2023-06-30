@@ -7,7 +7,10 @@ import QrcodeIcon from '@/assets/icon-qrcode.svg'
 
 export const useListData = () => {
   const { GithubAddress, BaseRouter } = useGlobalVars()
-  // 导航列表
+
+  /**
+   * 导航列表
+   */
   const navList = ref([
     {
       name: 'introduce',
@@ -32,7 +35,9 @@ export const useListData = () => {
     navList.value[3].href = data
   })
 
-  // 版本列表
+  /**
+   * 版本列表
+   */
   const versionList = [
     {
       href: '/',
@@ -44,7 +49,10 @@ export const useListData = () => {
     }
   ]
   const { path } = useRoute()
-  const isHome = Object.freeze(path === '/') // 是否是首页
+  /**
+   * 是否是首页
+   */
+  const isHome = Object.freeze(path === '/')
 
   return { navList, versionList, isHome }
 }

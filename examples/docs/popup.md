@@ -2,17 +2,17 @@
 
 ---
 
-`MINE-H5-UI` 常用的弹出层。
+`mine-h5-ui` 常用的弹出层。
 
 ## 按需引入
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MePopup } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MePopup.css'
+import 'mine-h5-ui/styles/MePopup.css'
 
 const app = createApp(App)
 app.use(MePopup)

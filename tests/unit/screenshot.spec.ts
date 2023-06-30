@@ -10,20 +10,30 @@ describe('MeScreenshot', () => {
         MeScreenshot
       }
     }
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent, {
       props: { start: false }
     })
-    const viewer = wrapper.find('.me-screenshot') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-screenshot')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(testText)
   })
 
   test('emit click', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeScreenshot)
-    const viewer = wrapper.find('.me-screenshot') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-screenshot')
 
     await viewer.trigger('click')
 

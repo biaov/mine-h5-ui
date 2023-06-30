@@ -1,4 +1,6 @@
-// 矩形区域
+/**
+ * 矩形区域
+ */
 export interface Rect {
   w: number
   h: number
@@ -6,7 +8,10 @@ export interface Rect {
   y: number
   r: number
 }
-// 列表项
+
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   rect: Rect
   url: string

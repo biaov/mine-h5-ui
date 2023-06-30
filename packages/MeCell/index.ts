@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeCell from './index.vue'
+import { addInstall } from '../utils'
+import cell from './index.vue'
 
-// 安装
-MeCell.install = (app: App) => {
-  app.component('MeCell', MeCell)
-}
-
-export { MeCell }
+export const MeCell = addInstall(cell)

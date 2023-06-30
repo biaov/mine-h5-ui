@@ -1,13 +1,26 @@
 import { ref, watch, computed, nextTick } from 'vue'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// mask
-export const useMask = (props: Readonly<Props>, emit: Emits) => {
-  const isShowMask = ref(false) // 是否显示模态框
-  const isShow = ref(false) // 是否显示模态框的过渡动画
-  const animationDuration = 400 // 动画时间
+/**
+ * mask
+ */
+export const useMask = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 是否显示模态框
+   */
+  const isShowMask = ref(false)
+  /**
+   * 是否显示模态框的过渡动画
+   */
+  const isShow = ref(false)
+  /**
+   * 动画时间
+   */
+  const animationDuration = 400
 
-  // 显示模态框
+  /**
+   * 显示模态框
+   */
   const showMask = () => {
     isShowMask.value = true
     nextTick(() => {
@@ -17,7 +30,9 @@ export const useMask = (props: Readonly<Props>, emit: Emits) => {
     })
   }
 
-  // 隐藏模态框
+  /**
+   * 隐藏模态框
+   */
   const hideMask = () => {
     isShow.value = false
     setTimeout(() => {
@@ -40,9 +55,13 @@ export const useMask = (props: Readonly<Props>, emit: Emits) => {
   return { isShowMask, isShow, showMask, hideMask, animationDuration }
 }
 
-// radius
+/**
+ * radius
+ */
 export const useRadius = ({ position, radius }: Props) => {
-  // 设置 radius
+  /**
+   * 设置 radius
+   */
   const setRadius = computed(() => {
     let radiusStyle = ''
     switch (position) {

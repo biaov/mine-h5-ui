@@ -7,30 +7,21 @@
 </template>
 <script lang="ts" setup>
 import { useImgEvent } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-  (event: 'load', e: Event): void
-  (event: 'error', e: Event): void
-}>()
+defineOptions({
+  name: 'MeImg'
+})
 
-withDefaults(
-  defineProps<{
-    src: string // 图片地址
-    width?: string // 宽度
-    height?: string // 高度
-    fill?: string // 填充方式
-    radius?: string // 倒角
-    alt?: string // 错误显示 alt
-  }>(),
-  {
-    width: '',
-    height: '',
-    fill: '',
-    radius: '0',
-    alt: ''
-  }
-)
+const emit = defineEmits<Emits>()
+
+withDefaults(defineProps<Props>(), {
+  width: '',
+  height: '',
+  fill: '',
+  radius: '0',
+  alt: ''
+})
 
 const { onClick, onLoad, onError } = useImgEvent(emit)
 </script>

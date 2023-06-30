@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeSearch from './index.vue'
+import { addInstall } from '../utils'
+import search from './index.vue'
 
-// 安装
-MeSearch.install = (app: App) => {
-  app.component('MeSearch', MeSearch)
-}
-
-export { MeSearch }
+export const MeSearch = addInstall(search)

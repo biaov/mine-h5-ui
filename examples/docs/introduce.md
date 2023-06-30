@@ -7,7 +7,7 @@
         <img src="../assets/logo.svg" width="200px" title="mineh5ui" alt="mineh5ui">
     </a>
 </p>
-<h2 align="center">MINE-H5-UI</h2>
+<h2 align="center">mine-h5-ui</h2>
 <p align="center">一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库</p>
 
 ## 温馨提示 😊
@@ -30,11 +30,11 @@
 
 ## 贡献
 
-- 如果你在使用 `MINE-H5-UI` 时遇到问题，或者有好的建议，欢迎给作者提 👉 [Issue](https://github.com/biaov/MINE-H5-UI/issues)。
+- 如果你在使用 `mine-h5-ui` 时遇到问题，或者有好的建议，欢迎给作者提 👉 [Issue](https://github.com/biaov/mine-h5-ui/issues)。
 
 ## 链接
 
-- [👉 意见反馈](https://github.com/biaov/MINE-H5-UI/issues)
+- [👉 意见反馈](https://github.com/biaov/mine-h5-ui/issues)
 - [👉 更新日志](/v2/doc/logs)
 
 ## 开源协议

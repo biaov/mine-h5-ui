@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeDialog } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeDialog.css'
+import 'mine-h5-ui/styles/MeDialog.css'
 
 const app = createApp(App)
 app.use(MeDialog)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <div @click="handleClick">点击弹出自义定弹出框</div>
   <me-dialog v-model:visible="visible" tips="提示">

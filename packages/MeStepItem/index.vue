@@ -12,11 +12,17 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
+import type { Props } from './types'
 
-const props = defineProps<{
-  name: string | number // 索引名称
-}>()
+defineOptions({
+  name: 'MeStepItem'
+})
+
+defineSlots<DefaultSlots>()
+
+const props = defineProps<Props>()
 
 const { isActive, parentProps } = useHandler(props)
 </script>

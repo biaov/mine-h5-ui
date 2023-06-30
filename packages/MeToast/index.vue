@@ -8,20 +8,17 @@
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import { useShow } from './hooks'
+import type { Props } from './types'
 
-const props = withDefaults(
-  defineProps<{
-    message?: string | number // 提示语
-    bgColor?: string // 背景颜色
-    icon?: string // 图标
-    durction?: number // 延迟时间
-  }>(),
-  {
-    message: '',
-    bgColor: '',
-    icon: '',
-    durction: 1000
-  }
-)
+defineOptions({
+  name: 'MeToast'
+})
+
+const props = withDefaults(defineProps<Props>(), {
+  message: '',
+  bgColor: '',
+  icon: '',
+  durction: 1000
+})
 const { isShow, isDestroy, animationDuration } = useShow(props)
 </script>

@@ -3,9 +3,14 @@ import MeForm from '~/MeForm/index.vue'
 
 describe('MeForm', () => {
   test('emit submit', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeForm)
-    const viewer = wrapper.find('.me-form') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-form')
 
     expect(viewer.exists()).toBeTruthy()
 

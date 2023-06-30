@@ -13,38 +13,30 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
-import { PropStyles } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', num: number): void
-  (event: 'start', e: TouchEvent | MouseEvent): void
-  (event: 'move', e: TouchEvent | MouseEvent): void
-  (event: 'end', e: TouchEvent | MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeSlider'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: number // v-model 绑定值
-    max?: number // 最大值
-    min?: number // 最小值
-    styles?: PropStyles // 自定义样式
-    disabled?: boolean // 禁用状态
-    isBtn?: boolean // 自定义按钮状态
-  }>(),
-  {
-    modelValue: 0,
-    max: 100,
-    min: 0,
-    styles: () => ({
-      height: '', // 大小
-      radius: '', // 倒角
-      lineBgc: '' // 线背景色
-    }),
-    disabled: false,
-    isBtn: false
-  }
-)
+defineSlots<Partial<DefaultSlots>>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: 0,
+  max: 100,
+  min: 0,
+  styles: () => ({
+    height: '',
+    radius: '',
+    lineBgc: ''
+  }),
+  disabled: false,
+  isBtn: false
+})
 
 const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler(props, emit)
 </script>

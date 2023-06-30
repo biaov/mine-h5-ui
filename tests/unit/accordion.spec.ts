@@ -4,7 +4,9 @@ import MeAccordionItem from '~/MeAccordionItem/index.vue'
 
 describe('MeAccordion', () => {
   test('accordion exist', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount({
       template: `
         <me-accordion modelValue="1">
@@ -14,7 +16,10 @@ describe('MeAccordion', () => {
       `,
       components: { MeAccordion, MeAccordionItem }
     })
-    const viewer = wrapper.find('.me-accordion') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-accordion')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.findAll('.me-accordion-item').length).toBe(2)
@@ -24,7 +29,9 @@ describe('MeAccordion', () => {
 describe('MeAccordionItem', () => {
   test('props label', () => {
     const label = '名称一'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount({
       template: `
         <me-accordion modelValue="1">
@@ -34,7 +41,10 @@ describe('MeAccordionItem', () => {
       `,
       components: { MeAccordion, MeAccordionItem }
     })
-    const viewer = wrapper.find('.me-accordion') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-accordion')
     const itemEl = viewer.findAll('.me-accordion-item')[0]
 
     expect(itemEl.html()).toContain(label) // 是否存在

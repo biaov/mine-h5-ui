@@ -1,9 +1,7 @@
-import { PostMessageReturn, MessageCallback } from './types'
+import type { PostMessageReturn, MessageCallback } from './types'
 
 /**
  * 监听消息
- * @param {void}
- * @returns {void}
  */
 export const MessageEventListener = (callback: MessageCallback, customizeCheck = false) => {
   const localOrigin = window.location.origin
@@ -19,12 +17,14 @@ export const MessageEventListener = (callback: MessageCallback, customizeCheck =
 
 /**
  * 发送消息
- * @param {Window} otherWindow 需要向该窗口发送消息
- * @param {string} origin 源地址
- * @returns {PostMessageReturn} 返回信息
+ * @param { Window } otherWindow 需要向该窗口发送消息
+ * @param { string } origin 源地址
+ * @returns { PostMessageReturn } 返回信息
  */
 export const PostMessage = (otherWindow: Window, origin = window.location.origin): PostMessageReturn => {
-  // 发送数据
+  /**
+   * 发送数据
+   */
   const send = (data: string) => {
     otherWindow.postMessage(data, origin)
   }
@@ -34,7 +34,7 @@ export const PostMessage = (otherWindow: Window, origin = window.location.origin
 
 /**
  * 颜色 rgb 转十六进制
- * @param {string} rgb
+ * @param { string } rgb
  * @returns
  */
 export const RgbToHex = (rgb: string) => {
@@ -46,16 +46,16 @@ export const RgbToHex = (rgb: string) => {
 
 /**
  * 随机数
- * @param {number} [min=0] 最小值
- * @param {number} [max=255] 最大值
- * @returns {number} 生成的随机数
+ * @param { number } [min=0] 最小值
+ * @param { number } [max=255] 最大值
+ * @returns { number } 生成的随机数
  */
 export const RandomNum = (min = 0, max = 255) => ~~(Math.random() * (max - min + 1) + min)
 
 /**
  * 延迟器
- * @param {number} [time=500] 延迟时间
- * @returns {Promise<boolean>} Promise
+ * @param { number } [time=500] 延迟时间
+ * @returns { Promise<boolean> } Promise
  */
 export const Retarder = (time = 500) =>
   new Promise<boolean>(resolve => {

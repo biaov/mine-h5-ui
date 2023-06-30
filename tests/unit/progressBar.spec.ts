@@ -5,11 +5,16 @@ describe('MeProgressBar', () => {
   const modelValue = 0
 
   test('props type', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeProgressBar, {
       props: { modelValue, type: 'circle' }
     })
-    const viewer = wrapper.find('.me-progress-bar') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-progress-bar')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -20,22 +25,32 @@ describe('MeProgressBar', () => {
 
   test('props text', () => {
     const text = '测试文本'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeProgressBar, {
       props: { modelValue, text }
     })
-    const viewer = wrapper.find('.me-progress-bar .line .txt') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-progress-bar .line .txt')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(text)
   })
 
   test('props text-show', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeProgressBar, {
       props: { modelValue, textShow: false }
     })
-    const viewer = wrapper.find('.me-progress-bar .line .txt') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-progress-bar .line .txt')
 
     expect(viewer.exists()).toBeFalsy()
   })

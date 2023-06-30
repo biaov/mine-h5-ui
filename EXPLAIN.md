@@ -4,21 +4,21 @@
 
 ### 克隆项目
 
-```Basic
-git clone https://github.com/biaov/MINE-H5-UI.git
+```sh
+git clone https://github.com/biaov/mine-h5-ui.git
 ```
 
 ### 安装依赖
 
 - 项目根目录安装项目依赖
 
-```Basic
+```sh
 npm i
 ```
 
 ### 运行项目
 
-```Basic
+```sh
 npm start
 ```
 
@@ -26,17 +26,17 @@ npm start
 
 - 打包组件库文档和组件库
 
-```Basic
+```sh
 npm run build
 ```
 
 ## 项目目录
 
 <details>
-<summary>👀 查看目录</summary>
+<summary>👀 点击查看目录</summary>
 
 ```Markdown
-|-- MINE-H5-UI -------------------------- 项目名称
+|-- mine-h5-ui -------------------------- 项目名称
     |-- .editorconfig ------------------- 编码配置文件
     |-- .eslintignore ------------------- Eslint 忽略文件
     |-- .eslintrc.js -------------------- Eslint 配置文件
@@ -48,7 +48,7 @@ npm run build
     |-- README.md ----------------------- 项目介绍文档
     |-- tsconfig.json ------------------- TS 配置文件
     |-- vite.config.ts ------------------ Vite 配置文件
-    |-- build --------------------------- 项目打包配置信息目录
+    |-- scripts ------------------------- 项目打包配置信息目录
     |-- examples ------------------------ 项目示例目录
     |   |-- App.vue --------------------- 项目主入口
     |   |-- main.ts --------------------- 项目入口文件
@@ -59,7 +59,7 @@ npm run build
     |   |-- styles ---------------------- 公共样式
     |   |-- utils ----------------------- 工具包
     |   |-- views ----------------------- 页面目录
-    |-- lib ----------------------------- NPM 依赖打包目录
+    |-- dist ---------------------------- NPM 依赖打包目录
     |-- mobile -------------------------- H5 示例目录
     |   |-- App.vue --------------------- 项目主入口
     |   |-- main.ts --------------------- 项目入口文件
@@ -78,4 +78,57 @@ npm run build
 
 ## 技术栈
 
-> HTML5 + CSS3 + Less + ES6<sup>+</sup> + TS + Vue3.x + Composition-API + Vite + Gulp + Rollup + Jest
+> Less + ES6<sup>+</sup> + TS + Vue3.x + Vite + Gulp  + Jest
+
+## 依赖解析
+
+### dependencies
+
+- `clipboard`: 剪切板
+- `html2canvas`: 截屏
+- `mockjs`: 模拟数据
+- `qrcode`: 二维码
+- `vue`: 前端框架
+- `vue-router`: 路由
+- `@types/jest`: `jest` 的类型
+- `@types/mockjs`: `mockjs` 的类型
+- `@types/node`: `node` 的类型
+- `@types/qrcode`: `qrcode` 的类型
+- `@typescript-eslint/eslint-plugin`: 检测和修复 TS 代码
+- `@typescript-eslint/parser`: 解析 TS 代码并生成抽象语法树（AST），以供 Eslint 进行代码检查
+- `@vitejs/plugin-vue`: Vite 解析 Vue 文件
+- `@vue/compiler-sfc`: 编译 Vue 单文件组件
+- `@vue/test-utils`: 单元测试和集成测试
+- `@vue/vue3-jest`: Jest 预设，用于测试 Vue3.x 应用程序
+- `autoprefixer`: 添加浏览器厂商前缀
+- `eslint`: 代码检查工具
+- `eslint-config-airbnb-base`: airbnb-base 代码编写规范
+- `eslint-config-prettier`: 将 Prettier 规则集成到 ESlint 检查中
+- `eslint-plugin-import`: 检测和修复 JS 中的模块导入导出问题
+- `eslint-plugin-jest`: 检测和修复 jest 代码
+- `eslint-plugin-prettier`: 检测不符合 Prettier 格式的代码
+- `eslint-plugin-vue`: 检测和修复 Vue 代码
+- `gulp`: CSS 构建工具
+- `gulp-autoprefixer`: 使用 Gulp 添加浏览器厂商前缀
+- `gulp-clean`: 使用 Gulp 清理文件
+- `gulp-cssmin`: 使用 Gulp 压缩 CSS 代码
+- `gulp-less`: 使用 Gulp 解析 LESS
+- `gulp-postcss`: 使用 Gulp 添加浏览器厂商前缀等其它操作
+- `highlight.js`: 设置 Markdown 文件样式
+- `husky`:  Git 操作时自动触发脚本
+- `jest`: JS 测试框架
+- `jest-environment-jsdom`: `jest` 的环境插件
+- `less`: CSS 预编译器
+- `markdown-it-container`: Markdown 解析器
+- `postcss-pxtorem`: 生成 Rem 的 Postcss 插件
+- `prettier`: 代码格式化
+- `rollup-plugin-license`: 生成版权的 Rollup 插件
+- `ts-jest`: `jest` 解析 TS 文件
+- `tslib`: TS 库
+- `typescript`: 编程语言
+- `vite`: 项目构建工具
+- `vite-plugin-dts`: 生成 `.d.ts` 文件的 Vite 插件
+- `vite-plugin-eslint`: 检查代码格式的 Vite 插件
+- `vite-plugin-pwa`: 生成 PWA 的 Vite 插件
+- `vite-plugin-vue-markdown`: 解析 Markdown 文件的 Vite 插件
+- `vue-tsc`: 编译 TS 单文件 Vue 文件的工具

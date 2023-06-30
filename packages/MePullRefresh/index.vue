@@ -19,24 +19,22 @@
 </template>
 <script lang="ts" setup>
 import MeLoading from '../MeLoading/index.vue'
+import type { DefaultSlots } from '../types'
 import { useHandMove } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', bool: boolean): void
-  (event: 'refresh'): void
-}>()
+defineOptions({
+  name: 'MePullRefresh'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue: boolean // v-model 绑定值
-    loadText?: string[] // 自定义状态文本
-    loadIcon?: boolean // 是否要显示加载图标
-  }>(),
-  {
-    loadText: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功'],
-    loadIcon: true
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  loadText: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功'],
+  loadIcon: true
+})
 
 const { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props, emit)
 </script>

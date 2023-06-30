@@ -18,33 +18,28 @@
   </button>
 </template>
 <script lang="ts" setup>
-import { withDefaults } from 'vue'
 import MeIcon from '../MeIcon/index.vue'
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
-import { NativeType, ButtonType } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeButton'
+})
 
-withDefaults(
-  defineProps<{
-    nativeType?: NativeType
-    width?: string
-    type?: ButtonType
-    plain?: boolean
-    disabled?: boolean
-    icon?: string
-    color?: string
-  }>(),
-  {
-    nativeType: 'button',
-    width: '',
-    type: 'default',
-    icon: '',
-    color: ''
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+withDefaults(defineProps<Props>(), {
+  nativeType: 'button',
+  width: '',
+  type: 'default',
+  plain: false,
+  disabled: false,
+  icon: '',
+  color: ''
+})
 
 const { onClick } = useHandler(emit)
 </script>

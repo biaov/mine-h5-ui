@@ -6,11 +6,16 @@ describe('MeSearch', () => {
 
   test('props placeholder', () => {
     const placeholder = '测试占位符'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue, placeholder }
     })
-    const viewer = wrapper.find('.me-search') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -21,32 +26,47 @@ describe('MeSearch', () => {
 
   test('props btn-text', () => {
     const btnText = '测试右侧按钮内容'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue, btnText }
     })
-    const viewer = wrapper.find('.me-search .btn') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .btn')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(btnText)
   })
 
   test('props disabled', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue, disabled: true }
     })
-    const viewer = wrapper.find('.me-search .input') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .input')
 
     expect(viewer.attributes('disabled')).toBeDefined()
   })
 
   test('emit focus', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue }
     })
-    const viewer = wrapper.find('.me-search .input') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .input')
 
     await viewer.trigger('focus')
 
@@ -54,11 +74,16 @@ describe('MeSearch', () => {
   })
 
   test('emit blur', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue }
     })
-    const viewer = wrapper.find('.me-search .input') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .input')
 
     await viewer.trigger('blur')
 
@@ -66,11 +91,16 @@ describe('MeSearch', () => {
   })
 
   test('emit input', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue }
     })
-    const viewer = wrapper.find('.me-search .input') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .input')
 
     await viewer.trigger('input')
 
@@ -78,11 +108,16 @@ describe('MeSearch', () => {
   })
 
   test('emit change', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue }
     })
-    const viewer = wrapper.find('.me-search .input') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .input')
 
     await viewer.trigger('change')
 
@@ -90,11 +125,16 @@ describe('MeSearch', () => {
   })
 
   test('emit click', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSearch, {
       props: { modelValue, btnText: '按钮' }
     })
-    const viewer = wrapper.find('.me-search .btn') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-search .btn')
 
     await viewer.trigger('click')
 

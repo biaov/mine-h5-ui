@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeNoticeBar from './index.vue'
+import { addInstall } from '../utils'
+import noticeBar from './index.vue'
 
-// 安装
-MeNoticeBar.install = (app: App) => {
-  app.component('MeNoticeBar', MeNoticeBar)
-}
-
-export { MeNoticeBar }
+export const MeNoticeBar = addInstall(noticeBar)

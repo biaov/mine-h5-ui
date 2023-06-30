@@ -6,11 +6,16 @@ import MeTabItem from '~/MeTabItem/index.vue'
 const modelValue = 0
 describe('MeTab', () => {
   test('exists', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeTab, {
       props: { modelValue }
     })
-    const viewer = wrapper.find('.me-tab') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-tab')
 
     expect(viewer.exists()).toBeTruthy()
   })
@@ -28,14 +33,19 @@ describe('MeTabItem', () => {
         MeTabItem
       }
     }
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent, {
       props: { modelValue }
     })
 
     await Retarder(0)
 
-    const viewer = wrapper.find('.me-tab') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-tab')
     const labelEl = viewer.find('.tabs .tab-item:first-child')
 
     expect(labelEl.exists()).toBeTruthy()

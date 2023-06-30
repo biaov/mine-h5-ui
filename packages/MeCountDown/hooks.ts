@@ -1,16 +1,32 @@
-import { computed, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { CountDown } from '../MeAPI/function'
 import { FormatData } from '../MeAPI/types'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 倒计时
-export const useCountdown = (props: Readonly<Props>, emit: Emits) => {
-  const formatAfter = ref<Partial<FormatData>>({}) // 格式化之后
-  let timer: NodeJS.Timeout | undefined // 定时器
-  const addSubNum = props.format.includes('ms') ? 10 : 1000 // 时间
-  let curTime = 0 // 当前 time
+/**
+ * 倒计时
+ */
+export const useCountdown = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 格式化之后
+   */
+  const formatAfter = ref<Partial<FormatData>>({})
+  /**
+   * 定时器
+   */
+  let timer: NodeJS.Timeout | undefined
+  /**
+   * 时间
+   */
+  const addSubNum = props.format.includes('ms') ? 10 : 1000
+  /**
+   * 当前 time
+   */
+  let curTime = 0
 
-  // 开启倒计时
+  /**
+   * 开启倒计时
+   */
   const startCountdown = () => {
     if (timer) return // 倒计时是否存在
 
@@ -29,13 +45,17 @@ export const useCountdown = (props: Readonly<Props>, emit: Emits) => {
     }, addSubNum)
   }
 
-  // 暂停倒计时
+  /**
+   * 暂停倒计时
+   */
   const suspendCountdown = () => {
     clearInterval(timer as NodeJS.Timeout)
     timer = undefined
   }
 
-  // 重置倒计时
+  /**
+   * 重置倒计时
+   */
   const resetCountdown = () => {
     curTime = props.time
     formatAfter.value = CountDown(curTime, props.format)
@@ -70,7 +90,5 @@ export const useCountdown = (props: Readonly<Props>, emit: Emits) => {
 
   resetCountdown()
 
-  const bindFormatAfter = computed(() => formatAfter.value as Record<string, any>)
-
-  return { formatAfter, bindFormatAfter }
+  return { formatAfter }
 }

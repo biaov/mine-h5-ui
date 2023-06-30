@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeSwitch } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeSwitch.css'
+import 'mine-h5-ui/styles/MeSwitch.css'
 
 const app = createApp(App)
 app.use(MeSwitch)

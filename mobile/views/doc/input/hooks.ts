@@ -1,17 +1,26 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem, ChildListItem } from './types'
+import type { ListDataItem, ChildListItem } from './types'
 
-// 操作输入框
+/**
+ * 操作输入框
+ */
 export const useHandlerInput = () => {
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
-  // 点击短信验证码
+  /**
+   * 点击短信验证码
+   */
   const onSMS = (item: ChildListItem) => {
     let num = 60
     item.smsIs = true
     item.smsMsg = `${num}s后重发`
-    // 开启倒计时
+    /**
+     * 开启倒计时
+     */
     const timer = setInterval(() => {
       num--
       item.smsMsg = `${num}s后重发`
@@ -24,7 +33,9 @@ export const useHandlerInput = () => {
     }, 1000)
   }
 
-  // 点击图标
+  /**
+   * 点击图标
+   */
   const onIcon = (item: ChildListItem) => {
     // 判断是否为清理按钮
     item.icon === 'icon-close' && (item.value = '')

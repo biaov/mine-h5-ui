@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MePreview } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MePreview.css'
+import 'mine-h5-ui/styles/MePreview.css'
 
 const app = createApp(App)
 app.use(MePreview)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <script lang="ts" setup>
 import { MePreview } from 'mine-h5-ui'
 
@@ -49,7 +49,7 @@ MePreview('https://dummyimage.com/300x300')
 
 ::: CopyCode
 
-```Vue
+```vue
 <script lang="ts" setup>
 import { MePreview } from 'mine-h5-ui'
 

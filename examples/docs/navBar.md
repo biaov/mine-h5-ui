@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeNavBar } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeNavBar.css'
+import 'mine-h5-ui/styles/MeNavBar.css'
 
 const app = createApp(App)
 app.use(MeNavBar)

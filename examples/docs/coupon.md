@@ -6,9 +6,9 @@
 
 :::CopyCode
 
-```JavaScript
-import Vue from "vue"
-import { MeCoupon } from "mine-h5-ui"
+```js
+import Vue from 'vue'
+import { MeCoupon } from 'mine-h5-ui'
 
 Vue.use(MeCoupon)
 ```

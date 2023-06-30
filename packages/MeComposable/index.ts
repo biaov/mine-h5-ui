@@ -5,7 +5,7 @@ import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Deboun
 /**
  * 校验
  * @example
- * ```TS
+ * ```ts
  * import { useValidator } from 'mine-h5-ui'
  *
  * const {
@@ -33,7 +33,7 @@ export const useValidator = () => ({
 /**
  * 事件绑定
  * @example
- * ```TS
+ * ```ts
  * import { useBind } from 'mine-h5-ui'
  *
  * const { addBind, removeBind } = useBind()
@@ -55,7 +55,7 @@ export const useBind = () => {
 /**
  * 工具函数
  * @example
- * ```TS
+ * ```ts
  * import { useUtils } from 'mine-h5-ui'
  *
  * const {
@@ -94,7 +94,7 @@ export const useUtils = () => ({
 /**
  * 显示隐藏
  * @example
- * ```TS
+ * ```ts
  * import { useVisible } from 'mine-h5-ui'
  *
  * const { visible, setVisible } = useVisible()

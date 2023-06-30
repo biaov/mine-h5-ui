@@ -2,7 +2,6 @@
 *.git/
 *.husky/
 dist/
-lib/
 node_modules/
 fonts
 

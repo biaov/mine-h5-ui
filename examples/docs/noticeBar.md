@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeNoticeBar } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeNoticeBar.css'
+import 'mine-h5-ui/styles/MeNoticeBar.css'
 
 const app = createApp(App)
 app.use(MeNoticeBar)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-notice-bar :list="listData" loop></me-notice-bar>
 </template>
@@ -56,7 +56,7 @@ const listData = Object.freeze([
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-notice-bar v-bind="noticeBar"></me-notice-bar>
 </template>
@@ -85,7 +85,7 @@ const noticeBar = Object.freeze({
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-notice-bar v-bind="noticeBar"></me-notice-bar>
 </template>

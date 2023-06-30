@@ -20,26 +20,23 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', value: string | number): void
-  (event: 'change', value: string | number): void
-}>()
+defineOptions({
+  name: 'MeTab'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue: string | number // v-model 绑定值
-    color?: string // 未聚焦时的颜色
-    activeColor?: string // 聚焦时显示的颜色
-    lineColor?: string // 位移边框颜色
-  }>(),
-  {
-    color: '#949494',
-    activeColor: '#494949',
-    lineColor: '#f56c6c'
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  color: '#949494',
+  activeColor: '#494949',
+  lineColor: '#f56c6c'
+})
 
 const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots(props, emit)
 </script>

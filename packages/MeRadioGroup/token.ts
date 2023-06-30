@@ -1,1 +1,4 @@
-export const MeRadioGroupKey = 'MeRadioGroup' // token 校验 key
+/**
+ * token 校验 key
+ */
+export const MeRadioGroupKey = 'MeRadioGroup'

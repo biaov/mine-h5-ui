@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeScreenshot } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeScreenshot.css'
+import 'mine-h5-ui/styles/MeScreenshot.css'
 
 const app = createApp(App)
 app.use(MeScreenshot)
@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-screenshot v-bind="{ start }">
     <p @click="onClick">点击截图</p>
@@ -54,7 +54,7 @@ const onClick = () => {
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-screenshot v-bind="{ start }" allow-down>
     <p @click="onClick">点击截图</p>

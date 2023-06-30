@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeTabBar } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeTabBar.css'
+import 'mine-h5-ui/styles/MeTabBar.css'
 
 const app = createApp(App)
 app.use(MeTabBar)
@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-tab-bar :list="listData"></me-tab-bar>
 </template>
@@ -75,7 +75,7 @@ const listData = Object.freeze([
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-tab-bar :list="listData"></me-tab-bar>
 </template>
@@ -111,7 +111,6 @@ const listData = Object.freeze([
   }
 ])
 </script>
-
 ```
 
 :::
@@ -125,7 +124,7 @@ const listData = Object.freeze([
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-tab-bar :list="listData"></me-tab-bar>
 </template>
@@ -173,7 +172,7 @@ const listData = Object.freeze([
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-tab-bar :list="listData" v-bind="colors"></me-tab-bar>
 </template>

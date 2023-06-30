@@ -1,1 +1,4 @@
-export const MeCheckboxGroupKey = 'MeCheckboxGroup' // token 校验 key
+/**
+ * token 校验 key
+ */
+export const MeCheckboxGroupKey = 'MeCheckboxGroup'

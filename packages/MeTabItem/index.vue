@@ -5,12 +5,17 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
+import type { Props } from './types'
 
-const props = defineProps<{
-  label: string // 标签内容
-  name: string | number // 名称
-}>()
+defineOptions({
+  name: 'MeTabItem'
+})
+
+defineSlots<DefaultSlots>()
+
+const props = defineProps<Props>()
 
 const { isShow } = useHandler(props)
 </script>

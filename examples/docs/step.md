@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeStep, MeStepItem } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeStep.css'
-import 'mine-h5-ui/lib/theme-default/MeStepItem.css'
+import 'mine-h5-ui/styles/MeStep.css'
+import 'mine-h5-ui/styles/MeStepItem.css'
 
 const app = createApp(App)
 app.use(MeStep)
@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-step :active="active">
     <me-step-item name="first">步骤一</me-step-item>
@@ -53,7 +53,7 @@ const active = $ref(['first']) // 活动项
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-step :active="active" type="danger">
     <me-step-item name="first">步骤一</me-step-item>
@@ -73,7 +73,7 @@ const active = $ref(['first']) // 活动项
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-step :active="active" color="#ff66a6" active-color="#a079de">
     <me-step-item name="first">步骤一</me-step-item>
@@ -93,7 +93,7 @@ const active = $ref(['first']) // 活动项
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-step :active="active" icon="in_biyan" active-icon="in_zhengyan">
     <me-step-item name="first">步骤一</me-step-item>
@@ -113,7 +113,7 @@ const active = $ref(['first']) // 活动项
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-step :active="active" direction="vertical">
     <me-step-item name="first">

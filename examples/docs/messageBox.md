@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeMessageBox } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeMessageBox.css'
+import 'mine-h5-ui/styles/MeMessageBox.css'
 
 const app = createApp(App)
 app.use(MeMessageBox)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { MeMessageBox } from 'mine-h5-ui'
 
 MeMessageBox.alert('至于未来会怎样，要走下去才知道，反正路还很长，天总会亮！')
@@ -46,7 +46,7 @@ MeMessageBox.alert('至于未来会怎样，要走下去才知道，反正路还
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { MeMessageBox, MeToast } from 'mine-h5-ui'
 
 MeMessageBox.prompt({
@@ -70,7 +70,7 @@ MeMessageBox.prompt({
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { MeMessageBox, MeToast } from 'mine-h5-ui'
 
 MeMessageBox.prompt({
@@ -92,7 +92,7 @@ MeMessageBox.prompt({
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <div @click="handleClick">点击弹出自义定弹出框</div>
 </template>

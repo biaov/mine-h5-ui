@@ -1,5 +1,5 @@
-[bind]: https://github.com/biaov/MINE-H5-UI/blob/main/packages/MeAPI/event.js
-[unbind]: https://github.com/biaov/MINE-H5-UI/blob/main/packages/MeAPI/event.js
+[bind]: https://github.com/biaov/mine-h5-ui/blob/main/packages/MeAPI/event.js
+[unbind]: https://github.com/biaov/mine-h5-ui/blob/main/packages/MeAPI/event.js
 
 # API 方法
 
@@ -9,7 +9,7 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeAPI } from 'mine-h5-ui'
@@ -30,7 +30,7 @@ Object.keys(MeAPI).forEach(key => {
 
 ## 源码
 
-- 源码地址：[API 方法](https://github.com/biaov/MINE-H5-UI/blob/main/packages/MeAPI/function.js)
+- 源码地址：[API 方法](https://github.com/biaov/mine-h5-ui/blob/main/packages/MeAPI/function.js)
 - 注意：该 API 方法基于 ES6+，如果只想使用单个方法，复制代码后自行使用 [babel](https://www.babeljs.cn/) 转换。
 
 ## API 方法名称
@@ -56,7 +56,7 @@ Object.keys(MeAPI).forEach(key => {
 
 ### 判断是否是闰年
 
-```Vue
+```vue
 <script lang="ts" setup>
 import { getCurrentInstance } from 'vue'
 
@@ -66,5 +66,3 @@ console.log($IsLeapyear(2000)) // true
 console.log($IsLeapyear(1900)) // false
 </script>
 ```
-
-:::

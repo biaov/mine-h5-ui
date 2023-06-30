@@ -1,22 +1,59 @@
 import { ref, provide, watch, onMounted, onUnmounted } from 'vue'
 import { MeSwiperKey } from './token'
-import { Props, Emits } from './types'
+import type { PropsHookParam, Emits } from './types'
 
-// 移动列
-export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
-  const swiperDom = ref<HTMLDivElement>() // swiper节点
-  const dots = ref(1) // 指示点的数量
-  const dotIndex = ref(0) // 指示点索引
-  const currentValue = ref(0) // 当前 value 值
-  const isActive = ref(false) // 是否过渡
-  let maxDistance = 0 // 最大滑动距离
-  let initialValue = 0 // 初始值
-  let startX = 0 // 开始 X 坐标
-  let minDistance = 0 // 滑动超过多少算滑动过
-  let timer: NodeJS.Timeout | undefined // 定时器
-  const names: (string | number)[] = [] // 子组件 name
+/**
+ * 移动列
+ */
+export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
+  /**
+   * swiper节点
+   */
+  const swiperDom = ref<HTMLDivElement>()
+  /**
+   * 指示点的数量
+   */
+  const dots = ref(1)
+  /**
+   * 指示点索引
+   */
+  const dotIndex = ref(0)
+  /**
+   * 当前 value 值
+   */
+  const currentValue = ref(0)
+  /**
+   * 是否过渡
+   */
+  const isActive = ref(false)
+  /**
+   * 最大滑动距离
+   */
+  let maxDistance = 0
+  /**
+   * 初始值
+   */
+  let initialValue = 0
+  /**
+   * 开始 X 坐标
+   */
+  let startX = 0
+  /**
+   * 滑动超过多少算滑动过
+   */
+  let minDistance = 0
+  /**
+   * 定时器
+   */
+  let timer: NodeJS.Timeout | undefined
+  /**
+   * 子组件 name
+   */
+  const names: (string | number)[] = []
 
-  // 开始动画
+  /**
+   * 开始动画
+   */
   const startAnimate = () => {
     // 开启定时器
     timer = setInterval(() => {
@@ -26,73 +63,143 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     }, props.delay)
   }
 
-  // 关闭动画
+  /**
+   * 关闭动画
+   */
   const closeAnimate = () => {
     clearInterval(timer as NodeJS.Timeout) // 关闭动画
   }
 
-  // 触摸开始
+  /**
+   * 触摸开始
+   */
   const onTouchstart = (e: TouchEvent) => {
     initialValue = currentValue.value
     isActive.value = false
     startX = e.changedTouches[0].clientX // 获取初始位置
   }
 
-  // 接触点改变，滑动时
+  /**
+   * 接触点改变，滑动时
+   */
   const onTouchmove = (e: TouchEvent) => {
-    const currentX = e.changedTouches[0].clientX // 获取当前移动的X坐标
-    const diffX = currentX - startX // 移动位置
-    // diffX,大于0:向右拖拽,小于0:向左拖拽
+    /**
+     * 获取当前移动的X坐标
+     */
+    const currentX = e.changedTouches[0].clientX
+    /**
+     * 移动位置
+     */
+    const diffX = currentX - startX
+    /**
+     * diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+     */
     const distanceX = diffX < -maxDistance ? -maxDistance : diffX > maxDistance ? maxDistance : diffX
     currentValue.value = distanceX + initialValue
   }
 
-  // 触摸结束
+  /**
+   * 触摸结束
+   */
   const onTouchend = (e: TouchEvent) => {
     isActive.value = true
-    const currentX = e.changedTouches[0].clientX // 获取当前移动的X坐标
-    const diffX = currentX - startX // 移动位置
+    /**
+     * 获取当前移动的X坐标
+     */
+    const currentX = e.changedTouches[0].clientX
+    /**
+     * 移动位置
+     */
+    const diffX = currentX - startX
 
-    // diffX,大于0:向右拖拽,小于0:向左拖拽，等于0不滑动
+    // diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
     if (diffX > 0) {
-      const distanceX = diffX > minDistance ? maxDistance : 0 // 拖动距离
-      const idealX = initialValue + distanceX // 理想位移
-      currentValue.value = idealX > 0 ? 0 : idealX // 实际位移，0:最小位移
+      /**
+       * 拖动距离
+       */
+      const distanceX = diffX > minDistance ? maxDistance : 0
+      /**
+       * 理想位移
+       */
+      const idealX = initialValue + distanceX
+      currentValue.value = idealX > 0 ? 0 : idealX // 实际位移，0: 最小位移
     } else if (diffX < 0) {
-      const distanceX = diffX < -minDistance ? -maxDistance : 0 // 拖动距离
-      const idealX = initialValue + distanceX // 理想位移
-      const maxDistanceX = (1 - dots.value) * maxDistance // 最大位移
+      /**
+       * 拖动距离
+       */
+      const distanceX = diffX < -minDistance ? -maxDistance : 0
+      /**
+       * 理想位移
+       */
+      const idealX = initialValue + distanceX
+      /**
+       * 最大位移
+       */
+      const maxDistanceX = (1 - dots.value) * maxDistance
       currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX // 实际位移
     }
     dotIndex.value = -currentValue.value / maxDistance
     emit('change', names[dotIndex.value - 1])
   }
 
-  // pc 端鼠标按下移动
+  /**
+   * PC 端鼠标按下移动
+   */
   const onMousemove = (e: MouseEvent) => {
     isActive.value = false
-    const currentX = e.clientX // 获取当前移动的x坐标
-    const diffX = currentX - startX // 移动位置
-    // diffX,大于0:向右拖拽,小于0:向左拖拽
+    /**
+     * 获取当前移动的x坐标
+     */
+    const currentX = e.clientX
+    /**
+     * 移动位置
+     */
+    const diffX = currentX - startX
+    /**
+     * diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+     */
     const distanceX = diffX < -maxDistance ? -maxDistance : diffX > maxDistance ? maxDistance : diffX
     currentValue.value = distanceX + initialValue
   }
 
-  // pc 端鼠标抬起
+  /**
+   * PC 端鼠标抬起
+   */
   const onMouseup = (e: MouseEvent) => {
     isActive.value = true
-    const currentX = e.clientX // 获取当前移动的X坐标
-    const diffX = currentX - startX // 移动位置
+    /**
+     * 获取当前移动的X坐标
+     */
+    const currentX = e.clientX
+    /**
+     * 移动位置
+     */
+    const diffX = currentX - startX
 
-    // diffX,大于0:向右拖拽,小于0:向左拖拽，等于0不滑动
+    // diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
     if (diffX > 0) {
-      const distanceX = diffX > minDistance ? maxDistance : 0 // 拖动距离
-      const idealX = initialValue + distanceX // 理想位移
-      currentValue.value = idealX > 0 ? 0 : idealX // 实际位移，0:最小位移
+      /**
+       * 拖动距离
+       */
+      const distanceX = diffX > minDistance ? maxDistance : 0
+      /**
+       * 理想位移
+       */
+      const idealX = initialValue + distanceX
+      currentValue.value = idealX > 0 ? 0 : idealX // 实际位移, 0: 最小位移
     } else if (diffX < 0) {
-      const distanceX = diffX < -minDistance ? -maxDistance : 0 // 拖动距离
-      const idealX = initialValue + distanceX // 理想位移
-      const maxDistanceX = (1 - dots.value) * maxDistance // 最大位移
+      /**
+       * 拖动距离
+       */
+      const distanceX = diffX < -minDistance ? -maxDistance : 0
+      /**
+       * 理想位移
+       */
+      const idealX = initialValue + distanceX
+      /**
+       * 最大位移
+       */
+      const maxDistanceX = (1 - dots.value) * maxDistance
       currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX // 实际位移
     }
 
@@ -102,7 +209,9 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     document.onmouseup = null // 清理上次的抬起事件
   }
 
-  // pc 端鼠标按下
+  /**
+   * PC 端鼠标按下
+   */
   const onMousedown = (e: MouseEvent) => {
     initialValue = currentValue.value
     startX = e.clientX // 获取x初始位置
@@ -110,9 +219,14 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     document.onmouseup = onMouseup // 表达式声明抬起事件
   }
 
-  // 更新子组件的状态
+  /**
+   * 更新子组件的状态
+   */
   const updateValue = () => {
-    const { offsetWidth } = swiperDom.value! // 设置最大滑动距离
+    /**
+     * 设置最大滑动距离
+     */
+    const { offsetWidth } = swiperDom.value!
     maxDistance = offsetWidth
     minDistance = offsetWidth / 4
     props.loop && startAnimate()
@@ -128,7 +242,9 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     }
   )
 
-  // 获取name
+  /**
+   * 获取 name
+   */
   const getName = (name: string | number) => {
     names.push(name)
   }

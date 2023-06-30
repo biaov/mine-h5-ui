@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeUpload } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeUpload.css'
+import 'mine-h5-ui/styles/MeUpload.css'
 
 const app = createApp(App)
 app.use(MeUpload)
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-upload v-model:fileList="fileList" :preview="true"></me-upload>
 </template>

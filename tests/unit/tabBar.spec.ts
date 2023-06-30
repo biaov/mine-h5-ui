@@ -3,7 +3,9 @@ import MeTabBar from '~/MeTabBar/index.vue'
 
 describe('MeTabBar', () => {
   const text = '测试文本'
-  // 列表数据
+  /**
+   * 列表数据
+   */
   const list = [
     {
       text,
@@ -12,11 +14,16 @@ describe('MeTabBar', () => {
   ]
 
   test('props list', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeTabBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-tab-bar') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-tab-bar')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -27,11 +34,16 @@ describe('MeTabBar', () => {
   })
 
   test('emit change', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeTabBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-tab-bar>li:first-child') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-tab-bar>li:first-child')
 
     expect(viewer.exists()).toBeTruthy()
 

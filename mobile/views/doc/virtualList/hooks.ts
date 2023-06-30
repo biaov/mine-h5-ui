@@ -1,19 +1,29 @@
 import { ref } from 'vue'
 import initData from './data'
 import { createArr } from './function'
-import { ListDataItem, LoadMoreText } from './types'
+import type { ListDataItem, LoadMoreText } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useHandler = () => {
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
-  // 状态文本
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
+
+  /**
+   * 状态文本
+   */
   const loadMoreText = ref<LoadMoreText>({
     nomore: '没有更多数据了',
     more: '加载更多',
     loading: '正在加载中...'
   })
 
-  // 加载更多
+  /**
+   * 加载更多
+   */
   const onLoadMore = (item: ListDataItem) => {
     if (item.loadStatus !== 'more') return
     item.loadStatus = 'loading'

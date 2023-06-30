@@ -1,12 +1,19 @@
 import { provide, ref, watch } from 'vue'
 import { MeAccordionKey } from './token'
-import { Emits, Props } from './types'
+import type { Emits, Props } from './types'
 
-// 初始化 slot
+/**
+ * 初始化 slots
+ */
 export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
-  const currentValue = ref(props.modelValue) // 当前值
+  /**
+   * 当前值
+   */
+  const currentValue = ref(props.modelValue)
 
-  // 状态改变时触发此方法
+  /**
+   * 状态改变时触发此方法
+   */
   const onChange = (name: string | number) => {
     const value = name !== props.modelValue ? name : ''
     emit('update:modelValue', value)

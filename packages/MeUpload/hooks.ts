@@ -1,13 +1,27 @@
 import { ref, watch } from 'vue'
 import Validator from '../MeAPI/validator'
-import { Props, ListDataItem, Emits } from './types'
+import type { Props, ListDataItem, Emits } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>, emit: Emits) => {
-  const listData = ref<ListDataItem[]>(props.fileList) // 列表数据
-  const curNum = ref(1) // 全屏预览图片当前索引
-  const isPreview = ref(false) // 预览图片显示状态
-  let timer: NodeJS.Timeout | null = null // 定时器
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(props.fileList)
+  /**
+   * 全屏预览图片当前索引
+   */
+  const curNum = ref(1)
+  /**
+   * 预览图片显示状态
+   */
+  const isPreview = ref(false)
+  /**
+   * 定时器
+   */
+  let timer: NodeJS.Timeout | null = null
 
   // 点击删除按钮
   const onDelete = (e: Event, item: ListDataItem) => {
@@ -15,7 +29,10 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
 
     // 判断是否允许删除文件
     if (!props.disabled && props.beforeDelete(item) !== false) {
-      const index = listData.value.findIndex(({ id }) => id === item.id) ?? 0 // 索引
+      /**
+       * 索引
+       */
+      const index = listData.value.findIndex(({ id }) => id === item.id) ?? 0
       listData.value.splice(index, 1) // 删除
       emit('update:fileList', listData.value)
       emit('update:file-list', listData.value)
@@ -23,7 +40,9 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 开启轮播
+  /**
+   * 开启轮播
+   */
   const startTimer = () => {
     // 判断数组是否大于1
     if (listData.value.length > 1) {
@@ -38,26 +57,44 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 点击预览图片
+  /**
+   * 点击预览图片
+   */
   const closePreview = () => {
     clearInterval(timer as NodeJS.Timeout)
     isPreview.value = false
   }
 
-  // 点击上传图片按钮
+  /**
+   * 点击上传图片按钮
+   */
   const onChange = (e: Event) => {
-    const files = Object.values((e.target as HTMLInputElement).files as FileList).slice(0, props.maxCount) // 获取不超过maxCount文件
+    /**
+     * 获取不超过 maxCount 文件
+     */
+    const files = Object.values((e.target as HTMLInputElement).files as FileList).slice(0, props.maxCount)
 
     // 判断是否允许读取文件
     if (props.beforeRead(files) !== false) {
-      // 循环遍历添加数据
+      /**
+       * 循环遍历添加数据
+       */
       const arr: File[] = []
       files.forEach(elem => {
         // 判断大小是否小于或等于maxSize
         if (elem.size <= props.maxSize && Validator.validImgs.test(elem.name)) {
-          const len = listData.value.length // 数组长度
-          const id = len === 0 ? 1 : listData.value[len - 1].id + 1 // 获取id
-          const url = window.URL.createObjectURL(elem) // 创建blob预览图片地址
+          /**
+           * 数组长度
+           */
+          const len = listData.value.length
+          /**
+           * 获取 id
+           */
+          const id = len === 0 ? 1 : listData.value[len - 1].id + 1
+          /**
+           * 创建 blob 预览图片地址
+           */
+          const url = window.URL.createObjectURL(elem)
           listData.value.push({ id, url }) // 添加进数组
           arr.push(elem)
         }
@@ -71,7 +108,9 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 点击预览图片
+  /**
+   * 点击预览图片
+   */
   const onPreview = ({ id }: ListDataItem) => {
     // 判断是否允许预览
     if (!props.disabled && props.preview) {

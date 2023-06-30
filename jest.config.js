@@ -1,4 +1,6 @@
-// 配置
+/**
+ * 配置
+ */
 const config = {
   moduleFileExtensions: ['vue', 'json', 'js', 'ts'],
   preset: 'ts-jest',
@@ -19,7 +21,7 @@ const config = {
   verbose: true, // 显示冗余代码，true：显示测试用例，false：显示 console.log
   bail: true, // 经历几次失败后停止运行测试
   displayName: {
-    name: 'MINE-H5-UI',
+    name: 'mine-h5-ui',
     color: 'green'
   }
 }

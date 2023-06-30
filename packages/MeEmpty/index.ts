@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeEmpty from './index.vue'
+import { addInstall } from '../utils'
+import empty from './index.vue'
 
-// 安装
-MeEmpty.install = (app: App) => {
-  app.component('MeEmpty', MeEmpty)
-}
-
-export { MeEmpty }
+export const MeEmpty = addInstall(empty)

@@ -1,12 +1,19 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useHandle = () => {
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
-  // 点击下一步
+  /**
+   * 点击下一步
+   */
   const onClickNext = (item: ListDataItem) => {
     const child = item.children
     if (item.active.length < child.length) {

@@ -10,22 +10,22 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useShow } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:visible', bool: boolean): void
-}>()
+defineOptions({
+  name: 'MeDialog'
+})
 
-const props = withDefaults(
-  defineProps<{
-    visible?: boolean // v-model 绑定值
-    tips?: string // 提示文本
-  }>(),
-  {
-    visible: false,
-    tips: '提示'
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  visible: false,
+  tips: '提示'
+})
 
 const { isShowMask, isShow, hideMask, animationDuration } = useShow(props, emit)
 </script>

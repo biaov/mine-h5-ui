@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeIndexBar from './index.vue'
+import { addInstall } from '../utils'
+import indexBar from './index.vue'
 
-// 安装
-MeIndexBar.install = (app: App) => {
-  app.component('MeIndexBar', MeIndexBar)
-}
-
-export { MeIndexBar }
+export const MeIndexBar = addInstall(indexBar)

@@ -6,7 +6,7 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeAPI } from 'mine-h5-ui'
@@ -31,7 +31,7 @@ Object.keys(MeAPI).forEach(key => {
 
 ::: CopyCode
 
-```Vue
+```vue
 <script lang="ts" setup>
 import { getCurrentInstance } from 'vue'
 
@@ -47,7 +47,7 @@ console.log(valid.test(12888888888)) // false
 
 ## 源码
 
-- 源码地址：[正则校验](https://github.com/biaov/MINE-H5-UI/blob/main/packages/MeAPI/validator.js)
+- 源码地址：[正则校验](https://github.com/biaov/mine-h5-ui/blob/main/packages/MeAPI/validator.js)
 
 ## 正则内容
 

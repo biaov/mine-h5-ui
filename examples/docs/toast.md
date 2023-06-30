@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeToast } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeToast.css'
+import 'mine-h5-ui/styles/MeToast.css'
 
 const app = createApp(App)
 app.use(MeToast)
@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { MeToast } from 'mine-h5-ui'
 
 MeToast('显示信息')

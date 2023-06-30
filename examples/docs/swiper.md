@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeSwiper, MeSwiperItem } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeSwiper.css'
-import 'mine-h5-ui/lib/theme-default/MeSwiperItem.css'
+import 'mine-h5-ui/styles/MeSwiper.css'
+import 'mine-h5-ui/styles/MeSwiperItem.css'
 
 const app = createApp(App)
 app.use(MeSwiper)
@@ -50,7 +50,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-swiper>
     <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
@@ -102,7 +102,7 @@ const listData = Object.freeze([
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-swiper loop :height="150">
     <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>

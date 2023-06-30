@@ -1,17 +1,42 @@
 import { ref, watch } from 'vue'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 移动列
-export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
-  const activeState = ref(0) // 加载状态
-  const transY = ref(0) // 垂直多少像素
-  const scale = ref(0) // 放大倍数
-  const showValue = ref(50) // 显示值
-  const duration = ref(0) // 过渡时间
-  let startY = 0 // 开始位置
-  let step = 0 // 步进器
+/**
+ * 移动列
+ */
+export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 加载状态
+   */
+  const activeState = ref(0)
+  /**
+   * 垂直多少像素
+   */
+  const transY = ref(0)
+  /**
+   * 放大倍数
+   */
+  const scale = ref(0)
+  /**
+   * 显示值
+   */
+  const showValue = ref(50)
+  /**
+   * 过渡时间
+   */
+  const duration = ref(0)
+  /**
+   * 开始位置
+   */
+  let startY = 0
+  /**
+   * 步进器
+   */
+  let step = 0
 
-  // 触摸开始
+  /**
+   * 触摸开始
+   */
   const onTouchstart = (e: TouchEvent) => {
     // 是否可触发
     if (props.modelValue) return
@@ -21,12 +46,17 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     duration.value = 0 // 关闭过渡器
   }
 
-  // 接触点改变，滑动时
+  /**
+   * 接触点改变，滑动时
+   */
   const onTouchmove = (e: TouchEvent) => {
     // 是否可触发
     if (props.modelValue) return
 
-    const distY = e.changedTouches[0].clientY - startY // 计算位置
+    /**
+     * 计算位置
+     */
+    const distY = e.changedTouches[0].clientY - startY
 
     // 是否超过显示值
     if (distY > showValue.value) {
@@ -41,7 +71,9 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 触摸结束
+  /**
+   * 触摸结束
+   */
   const onTouchend = (e: TouchEvent) => {
     // 是否可触发
     if (props.modelValue) return
@@ -63,12 +95,17 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // pc端鼠标按下移动
+  /**
+   * PC 端鼠标按下移动
+   */
   const onMousemove = (e: MouseEvent) => {
     // 是否可触发
     if (props.modelValue) return
 
-    const distY = e.clientY - startY // 计算位置
+    /**
+     * 计算位置
+     */
+    const distY = e.clientY - startY
 
     // 是否超过显示值
     if (distY > showValue.value) {
@@ -83,7 +120,9 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // pc端鼠标抬起
+  /**
+   * PC 端鼠标抬起
+   */
   const onMouseup = (e: MouseEvent) => {
     // 是否可触发
     if (props.modelValue) return
@@ -108,7 +147,9 @@ export const useHandMove = (props: Readonly<Props>, emit: Emits) => {
     document.onmouseup = null // 清理上次的抬起事件
   }
 
-  // pc端鼠标按下
+  /**
+   * PC 端鼠标按下
+   */
   const onMousedown = (e: MouseEvent) => {
     // 是否可触发
     if (props.modelValue) return

@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeMessageBox from './messageBox'
+import { addInstallAPI } from '../utils'
+import messageBox from './messageBox'
 
-// 安装
-MeMessageBox.install = (app: App) => {
-  app.config.globalProperties.$MeMessageBox = MeMessageBox
-}
-
-export { MeMessageBox }
+export const MeMessageBox = addInstallAPI(messageBox)

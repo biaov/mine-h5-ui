@@ -6,11 +6,16 @@ describe('MePullRefresh', () => {
 
   test('props load-text', () => {
     const text = '测试文本内容'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MePullRefresh, {
       props: { modelValue, loadText: [text] }
     })
-    const viewer = wrapper.find('.me-pull-refresh') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-pull-refresh')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(text)

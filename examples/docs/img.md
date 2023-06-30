@@ -2,17 +2,17 @@
 
 ---
 
-`MINE-H5-UI` 常用的图片规则。
+`mine-h5-ui` 常用的图片规则。
 
 ## 按需引入
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeImg } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeImg.css'
+import 'mine-h5-ui/styles/MeImg.css'
 
 const app = createApp(App)
 app.use(MeImg)
