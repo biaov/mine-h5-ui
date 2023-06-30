@@ -33,36 +33,26 @@
 </template>
 <script lang="ts" setup>
 import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
-import { ListDataItem } from './types'
+import { Props, Emits, Slots } from './types'
 
-const emit = defineEmits<{
-  (event: 'change', list: ListDataItem[], type: string): void
-  (event: 'update:list', list: ListDataItem[]): void
-  (event: 'update:current', index: number): void
-}>()
+defineOptions({
+  name: 'MeDrag'
+})
 
-const props = withDefaults(
-  defineProps<{
-    current?: number // 选中项
-    list?: ListDataItem[] // 列表数据
-    width?: string // 容器宽度
-    height?: string // 容器高度
-    theme?: string // 选中主题色
-    themeText?: string // 选中主题文本色
-    angleRange?: number // 对正角度范围
-    scale?: number // 双指缩放一倍的像素
-  }>(),
-  {
-    current: -1,
-    list: () => [],
-    width: '300px',
-    height: '300px',
-    theme: '#f56c6c',
-    themeText: '#fff',
-    angleRange: 5,
-    scale: 100
-  }
-)
+defineSlots<Slots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  current: -1,
+  list: () => [],
+  width: '300px',
+  height: '300px',
+  theme: '#f56c6c',
+  themeText: '#fff',
+  angleRange: 5,
+  scale: 100
+})
 
 const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler(props, emit)
 const share = { getCurItem, onEmitChange, onUpdate }

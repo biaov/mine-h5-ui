@@ -1,20 +1,34 @@
 import { watch, computed, ref } from 'vue'
 import { FormatThousand } from '../MeAPI/function'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>, emit: Emits) => {
-  const curValue = ref(props.startValue) // 当前值
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 当前值
+   */
+  const curValue = ref(props.startValue)
   const comValue = computed(() => (props.thousand ? FormatThousand(curValue.value) : curValue.value))
 
-  // 开始动画
+  /**
+   * 开始动画
+   */
   const startAnimate = () => {
     let startTime: number | undefined
-    // 开始当前动画
+    /**
+     * 开始当前动画
+     */
     const startCurAnimate = (timestamp: number) => {
       startTime === undefined && (startTime = timestamp) // 设置开始时间
-      const elapsed = timestamp - startTime // 当前距离开始时间
-      // 虚拟计算值
+      /**
+       * 当前距离开始时间
+       */
+      const elapsed = timestamp - startTime
+      /**
+       * 虚拟计算值
+       */
       const virtual = ~~(((props.endValue - props.startValue) * elapsed) / props.duration + props.startValue)
       curValue.value = Math.min(virtual, props.endValue) // 当前值
 

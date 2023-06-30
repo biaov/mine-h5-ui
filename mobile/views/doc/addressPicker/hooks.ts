@@ -1,19 +1,28 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useHandle = () => {
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
-  // 点击选项
+  /**
+   * 点击选项
+   */
   const onClickItem = ({ id }: ListDataItem) => {
     listData.value.forEach(elem => {
       elem.visible = elem.id === id
     })
   }
 
-  // 点击确定按钮
+  /**
+   * 点击确定按钮
+   */
   const onSure = (item: ListDataItem) => {
     item.title = item.value
     item.visible = false

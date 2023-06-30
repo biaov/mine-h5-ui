@@ -9,29 +9,21 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', str: string): void
-  (event: 'focus', e: MouseEvent): void
-  (event: 'blur', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MePassword'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: string // v-model 的值
-    type?: string // 输入框模式, number | password
-    num?: number // 输入框数量
-    skinType?: string // 系统皮肤样式, white | dark
-    isFocus?: boolean // 聚焦状态
-  }>(),
-  {
-    modelValue: '',
-    type: 'password',
-    num: 6,
-    skinType: 'white',
-    isFocus: false
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: '',
+  type: 'password',
+  num: 6,
+  skinType: 'white',
+  isFocus: false
+})
 
 const { listData, handleClick } = useHandler(props, emit)
 </script>

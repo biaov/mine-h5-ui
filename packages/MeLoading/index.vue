@@ -8,22 +8,22 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useData } from './hooks'
+import type { Props } from './types'
 
-const props = withDefaults(
-  defineProps<{
-    type?: string // 类型, circle | circle2 | circle3 | circle4 | circle5 | circle6
-    size?: string // 图标大小
-    color?: string // 图标颜色
-    icon?: string // 自定义图标名称
-  }>(),
-  {
-    type: 'circle',
-    size: '30px',
-    color: '#949494',
-    icon: ''
-  }
-)
+defineOptions({
+  name: 'MeLoading'
+})
+
+defineSlots<DefaultSlots>()
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'circle',
+  size: '30px',
+  color: '#949494',
+  icon: ''
+})
 
 const { iconName } = useData(props)
 </script>

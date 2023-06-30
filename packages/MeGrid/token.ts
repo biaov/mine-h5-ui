@@ -1,1 +1,4 @@
-export const MeGridKey = 'MeGrid' // token 校验 key
+/**
+ * token 校验 key
+ */
+export const MeGridKey = 'MeGrid'

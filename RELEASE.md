@@ -2,19 +2,19 @@
 
 ## 格式化
 
-```Basic
+```sh
 npm run prettier
 ```
 
 ## Eslint 检查
 
-```Basic
+```sh
 npm run lint
 ```
 
 ## 单元测试
 
-```Basic
+```sh
 npm run test:unit
 ```
 
@@ -22,19 +22,19 @@ npm run test:unit
   - 单独检查（修改 packag.json 中的 `npm run test:unit:single` 命令到指定文件）
   - 重复开始步骤
 
-```Basic
+```sh
 npm run test:unit:single
 ```
 
 ## 打包
 
-```Basic
+```sh
 npm run build
 ```
 
 ## 预览
 
-```Basic
+```sh
 npm run preview
 ```
 
@@ -48,7 +48,7 @@ npm run preview
 
 - npm 发布
 
-```Basic
+```sh
 npm run pre-publish
 npm run pre-publish:github
 npm publish --tag=beta-v2
@@ -57,7 +57,7 @@ npm publish [--tag=latest]
 
 - Github 发布
 
-```Basic
+```sh
 npm publish
 ```
 
@@ -65,9 +65,3 @@ npm publish
 
 - git push
 - 更新 Github 状态
-
-<!--
-测
-试
-中...
--->

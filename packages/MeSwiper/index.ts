@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeSwiper from './index.vue'
+import { addInstall } from '../utils'
+import swiper from './index.vue'
 
-// 安装
-MeSwiper.install = (app: App) => {
-  app.component('MeSwiper', MeSwiper)
-}
-
-export { MeSwiper }
+export const MeSwiper = addInstall(swiper)

@@ -4,7 +4,7 @@
 
 ## 介绍
 
-`MINE-H5-UI` 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
+`mine-h5-ui` 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ### 发布节奏
 
@@ -14,7 +14,31 @@
 
 :::TimeLine
 
-## v2.4.1-Latest release
+## v2.5.0-Latest release
+
+`2023-06-30`
+
+- 优化代码
+  - 基于`vue@3.3.x`
+    - 优化代码使用 `props` 类型引入
+    - 优化代码使用 `defineEmits`
+    - 优化代码使用 `defineOptions`
+    - 优化代码使用 `defineSlots`
+  - Rollup 打包改为 Vite 打包
+    - 以便于 Vue 特性更快的支持
+    - 移除依赖 `cross-env`, `rollup`, `rollup-plugin-vue`, `rollup-plugin-typescript2`, `@rollup/plugin-node-resolve`
+    - 增加依赖 `vite-plugin-dts`
+  - 优化代码注释
+    - 部分声明变量的 `//` 改为 JSDoc 注释
+- 样式
+  - 调整样式目录
+  - 简化样式路径
+- 新增 404 页面
+- Bug Fixes
+  - 修复已知 BUG
+  - 更新依赖版本
+
+## v2.4.1
 
 `2023-05-11`
 
@@ -202,7 +226,7 @@
 `2021-10-09`
 
 - Feature
-  - 基于 Vue3.x 重构 `MINE-H5-UI`
+  - 基于 Vue3.x 重构 `mine-h5-ui`
 - Bug Fixes
   - 修复已知 Bug
   - 优化代码

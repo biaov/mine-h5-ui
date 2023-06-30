@@ -29,25 +29,19 @@
 </template>
 <script lang="ts" setup>
 import { useHandMove, useBtns } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', str: string): void
-  (event: 'cancel'): void
-  (event: 'sure', currentValue: string[]): void
-}>()
+defineOptions({
+  name: 'MeAddressPicker'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: string // v-model绑定值
-    visible?: boolean // 是否显示时间选择器
-    separator?: string // 分割符
-  }>(),
-  {
-    modelValue: '',
-    visible: false,
-    separator: '-'
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: '',
+  visible: false,
+  separator: '-'
+})
 
 const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
 const { onCancel, onSure } = useBtns(props, emit, currentValue)

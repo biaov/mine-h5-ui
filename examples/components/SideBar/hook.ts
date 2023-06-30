@@ -1,7 +1,9 @@
 import NavData from '@/config/nav.config'
-import { SidebarListItem } from './types'
+import type { SidebarListItem } from './types'
 
-// 使用页面数据
+/**
+ * 使用页面数据
+ */
 export const useWebData = () => {
   const sidebarList: SidebarListItem[] = []
 

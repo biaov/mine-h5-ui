@@ -4,7 +4,9 @@ export interface ListItem extends Record<string, number | string | undefined> {
   label: string
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:visible', bool: boolean): void
   (event: 'change', item: ListItem): void
@@ -13,8 +15,20 @@ export interface Emits {
 
 // props
 export interface Props {
-  visible: boolean
+  /**
+   * v-model:visible 绑定值
+   */
+  visible?: boolean
+  /**
+   * 数据列表
+   */
   list: ListItem[]
-  index: string
-  label: string
+  /**
+   * 索引名
+   */
+  index?: string
+  /**
+   * 数据展示属性名
+   */
+  label?: string
 }

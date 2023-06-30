@@ -1,17 +1,55 @@
-// emits
+import type { PickNotRequiredUnion } from '../types'
+
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'close', e: MouseEvent): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  type: string
-  plain: boolean
-  radius: number
+  /**
+   * 类型
+   */
+  type?: 'primary' | 'success' | 'info' | 'warning' | 'danger'
+  /**
+   * 空心
+   */
+  plain?: boolean
+  /**
+   * 倒角
+   */
+  radius?: number
+  /**
+   * 宽度
+   */
   width?: number
-  height: number
-  color: string
-  text: string
-  textColor: string
-  closeable: boolean
+  /**
+   * 高度
+   */
+  height?: number
+  /**
+   * 标签颜色
+   */
+  color?: string
+  /**
+   * 标签内容
+   */
+  text?: string
+  /**
+   * 文本颜色
+   */
+  textColor?: string
+  /**
+   * 关闭状态
+   */
+  closeable?: boolean
 }
+
+/**
+ * hook
+ */
+export type PropsHookParam = PickNotRequiredUnion<Props, 'width'>

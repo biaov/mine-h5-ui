@@ -7,8 +7,9 @@
 <script lang="ts" setup>
 import { useGlobalVars } from '@/config/variables'
 import { useFrames } from './hooks'
+import type { Emits } from './types'
 
-const emit = defineEmits(['getframe'])
+const emit = defineEmits<Emits>()
 const { mobileIframe, onFrameLoad } = useFrames(emit)
 const { BaseRouter } = useGlobalVars()
 </script>

@@ -1,21 +1,33 @@
 import { ref, watch, inject } from 'vue'
 import { MeRadioGroupKey } from '../MeRadioGroup/token'
-import { Props, RadioGroupContext, Emits } from './types'
+import type { PropsHookParam, RadioGroupContext, Emits } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>, emit: Emits) => {
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<PropsHookParam>, emit: Emits) => {
   const { name, currentValue, onChange } = inject(MeRadioGroupKey, {} as RadioGroupContext)
-  const isChecked = ref(props.modelValue) // 是否选中
-  const iconName = ref('') // 图标名称
+  /**
+   * 是否选中
+   */
+  const isChecked = ref(props.modelValue)
+  /**
+   * 图标名称
+   */
+  const iconName = ref('')
 
-  // 设置图标
+  /**
+   * 设置图标
+   */
   const setIcon = () => {
     iconName.value = isChecked.value
       ? props.iconSelect || (props.shape === 'round' ? 'icon-radio' : 'icon-baseline-check_box-px')
       : props.icon || (props.shape === 'round' ? 'icon-radio3' : 'icon-baseline-check_box_outline_blank-px')
   }
 
-  // 点击单选框
+  /**
+   * 点击单选框
+   */
   const handleClick = () => {
     // 判断当前是否被禁用
     if (!props.disabled) {
@@ -31,7 +43,9 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 设置状态
+  /**
+   * 设置状态
+   */
   const setStatus = () => {
     isChecked.value = name === MeRadioGroupKey ? props.name === currentValue.value : props.modelValue
     setIcon()

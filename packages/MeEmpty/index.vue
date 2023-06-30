@@ -14,24 +14,23 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useIconName } from './hooks'
+import type { Props } from './types'
 
-const props = withDefaults(
-  defineProps<{
-    text?: string // 文本内容
-    type?: string // 类型, default | network | search
-    height?: number // 高度
-    iconName?: string // 自定义图标
-    url?: string // 自定义图片
-  }>(),
-  {
-    text: '',
-    type: 'default',
-    height: 200,
-    iconName: '',
-    url: ''
-  }
-)
+defineOptions({
+  name: 'MeEmpty'
+})
+
+defineSlots<DefaultSlots>()
+
+const props = withDefaults(defineProps<Props>(), {
+  text: '',
+  type: 'default',
+  height: 200,
+  iconName: '',
+  url: ''
+})
 
 const { icon } = useIconName(props)
 </script>

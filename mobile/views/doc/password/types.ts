@@ -1,4 +1,6 @@
-// 子列表项
+/**
+ * 子列表项
+ */
 export interface ChildListItem {
   id: number
   value: string
@@ -9,7 +11,10 @@ export interface ChildListItem {
   num?: number
   type?: string
 }
-// 列表项
+
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   id: number
   label: string

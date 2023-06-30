@@ -12,33 +12,24 @@
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import { useHandler, usePadding } from './hooks'
-import { SkinStyleValue } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:visible', bool: boolean): void
-  (event: 'click', num: number): void
-  (event: 'delete', e: MouseEvent): void
-  (event: 'complate', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeKeyboard'
+})
 
-const props = withDefaults(
-  defineProps<{
-    visible?: boolean // 数字输入显示状态
-    skinType?: string // 系统皮肤样式, gray | dark
-    skinStyle?: SkinStyleValue // 自定义皮肤样式
-    isPadding?: boolean // 是否动态改变 padding
-  }>(),
-  {
-    visible: false,
-    skinType: 'gray',
-    skinStyle: () => ({
-      bgc: '', // 背景色
-      textBgc: '', // 文本背景
-      color: '' // 字体颜色
-    }),
-    isPadding: true
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  visible: false,
+  skinType: 'gray',
+  skinStyle: () => ({
+    bgc: '',
+    textBgc: '',
+    color: ''
+  }),
+  isPadding: true
+})
 
 const { isActive } = usePadding(props, emit)
 const { onClick, onDelete, onComplate } = useHandler(emit)

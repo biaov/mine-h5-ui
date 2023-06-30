@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeMspaint from './index.vue'
+import { addInstall } from '../utils'
+import mspaint from './index.vue'
 
-// 安装
-MeMspaint.install = (app: App) => {
-  app.component('MeMspaint', MeMspaint)
-}
-
-export { MeMspaint }
+export const MeMspaint = addInstall(mspaint)

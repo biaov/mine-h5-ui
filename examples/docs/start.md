@@ -4,7 +4,7 @@
 
 ## 前提
 
-- 由于 `MINE-H5-UI` 是基于 VUE 的 UI 组件库，因此你需要先安装 Vue。
+- 由于 `mine-h5-ui` 是基于 VUE 的 UI 组件库，因此你需要先安装 Vue。
 
 ## 引入组件
 
@@ -14,11 +14,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import MINEH5UI from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/index.css'
+import 'mine-h5-ui/styles/index.css'
 
 const app = createApp(App)
 app.use(MINEH5UI)
@@ -33,11 +33,11 @@ app.mount('#app')
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeButton } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeButton.css'
+import 'mine-h5-ui/styles/MeButton.css'
 
 const app = createApp(App)
 app.use(MeButton)
@@ -52,8 +52,8 @@ app.mount('#app')
 
 ::: CopyCode
 
-```JavaScript
-import 'mine-h5-ui/lib/theme-default/index.css'
+```js
+import 'mine-h5-ui/styles/index.css'
 ```
 
 :::
@@ -62,14 +62,14 @@ import 'mine-h5-ui/lib/theme-default/index.css'
 
 ### Rem 适配
 
-- `MINE-H5-UI` 中的样式单位默认使用 `px` 作为单位，如果要使用 `rem` 单位，推荐使用以下两个工具：
+- `mine-h5-ui` 中的样式单位默认使用 `px` 作为单位，如果要使用 `rem` 单位，推荐使用以下两个工具：
   - [👉postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 `postcss` 插件，用于将单位转化为 `rem`。
   - [👉amfe-flexible](https://github.com/amfe/lib-flexible) 用于设置 `rem` 基准值。
-- 如果你不要使用以上插件，但是想要 `MINE-H5-UI` 中的样式单位使用 `rem` 作为单位，那么在自定义主题中使用以下命令去生成单位为 `rem` 的样式：
+- 如果你不要使用以上插件，但是想要 `mine-h5-ui` 中的样式单位使用 `rem` 作为单位，那么在自定义主题中使用以下命令去生成单位为 `rem` 的样式：
 
 ::: CopyCode
 
-```Basic
+```sh
 npm run build:theme-rem
 ```
 
@@ -77,7 +77,7 @@ npm run build:theme-rem
 
 ::: CopyCode
 
-```Basic
+```sh
 npm i -S postcss-pxtorem amfe-flexible
 ```
 

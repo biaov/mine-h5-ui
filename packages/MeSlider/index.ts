@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeSlider from './index.vue'
+import { addInstall } from '../utils'
+import slider from './index.vue'
 
-// 安装
-MeSlider.install = (app: App) => {
-  app.component('MeSlider', MeSlider)
-}
-
-export { MeSlider }
+export const MeSlider = addInstall(slider)

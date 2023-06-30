@@ -10,11 +10,11 @@
     <mine-header></mine-header>
     <!-- 内容 -->
     <div class="content">
-      <div class="logo"><img src="../../assets/logo.svg" alt="MINE-H5-UI Logo" /></div>
+      <div class="logo"><img src="../../assets/logo.svg" alt="mine-h5-ui Logo" /></div>
       <h1 class="tit">一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库</h1>
       <p class="desc">
         如果你还冇心仪的 UI 框架，不妨试试
-        <router-link to="/doc">MINE-H5-UI</router-link>
+        <router-link to="/doc">mine-h5-ui</router-link>
         ，也许会让你有意外的收获。
       </p>
       <ul class="btns">

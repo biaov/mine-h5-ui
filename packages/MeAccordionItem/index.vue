@@ -15,20 +15,19 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeAccordionItem'
+})
 
-const props = withDefaults(
-  defineProps<{
-    label: string // 标题
-    name: string | number // index 值
-    borderColor?: string // 下边框颜色
-  }>(),
-  { borderColor: '#dcdfe6' }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), { borderColor: '#dcdfe6' })
 
 const { accordionItemCont, isShow, curHeight, onClick } = useHandler(props, emit)
 </script>

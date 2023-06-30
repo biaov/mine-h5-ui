@@ -2,17 +2,17 @@
 
 ---
 
-`MINE-H5-UI` 常用的图标。
+`mine-h5-ui` 常用的图标。
 
 ## 按需引入
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeIcon } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeIcon.css'
+import 'mine-h5-ui/styles/MeIcon.css'
 
 const app = createApp(App)
 app.use(MeIcon)
@@ -24,7 +24,7 @@ app.mount('#app')
 ## 提示
 
 - 如果你觉得重新编写 HTML 结构麻烦，可以直接复制下面的代码，也可以点击右侧的图标实现复制效果。
-- 右侧演示里最下面有 `MINE-H5-UI` 的所有图标，你可以点击直接复制即可。
+- 右侧演示里最下面有 `mine-h5-ui` 的所有图标，你可以点击直接复制即可。
 
 ## 使用 Iconfont-阿里巴巴矢量图标库
 
@@ -33,12 +33,12 @@ app.mount('#app')
 
 ::: CopyCode
 
-```JavaScript
+```js
 // 引入iconfont图标
 import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可以使用线下文件
 
 // 使用iconfont图标
-<me-icon name="icon-close"></me-icon>
+;<me-icon name="icon-close"></me-icon>
 ```
 
 :::
@@ -88,7 +88,7 @@ import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可
 
 ### 所有图标
 
-- 这是 `MINE-H5-UI` 的所有图标，你可以点击右侧图标即可复制该图标的 `name` 属性。
+- 这是 `mine-h5-ui` 的所有图标，你可以点击右侧图标即可复制该图标的 `name` 属性。
 
 ## API
 

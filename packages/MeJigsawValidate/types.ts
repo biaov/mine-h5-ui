@@ -1,11 +1,15 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'change', resultBool: boolean): void
 }
 
-// slideStyle
+/**
+ * slideStyle
+ */
 export interface SlideStyle {
   height: string
   background: string
@@ -13,29 +17,58 @@ export interface SlideStyle {
   tips: string
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
+  /**
+   * 图片地址
+   */
   url: string
-  width: string
-  height: string
-  random: boolean
-  slideStyle: SlideStyle
-  tips: string
-  range: number
+  /**
+   * 图片宽度
+   */
+  width?: string
+  /**
+   * 图片高度
+   */
+  height?: string
+  /**
+   * 随机位置
+   */
+  random?: boolean
+  /**
+   * 滑块样式
+   */
+  slideStyle?: SlideStyle
+  /**
+   * 提示语
+   */
+  tips?: string
+  /**
+   * 容错值
+   */
+  range?: number
 }
 
-// 横向点
+/**
+ * 横向点
+ */
 export interface XPoint {
   x: number
 }
 
-// shareData
+/**
+ * shareData
+ */
 export interface ShareData {
   dragPoint: Ref<XPoint>
   missingPoint: Ref<XPoint>
 }
 
-// imgRect
+/**
+ * imgRect
+ */
 export interface ImgRect {
   width: number
   height: number

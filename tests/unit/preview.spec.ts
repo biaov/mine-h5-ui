@@ -4,11 +4,16 @@ import MePreview from '~/MePreview/index.vue'
 describe('MePreview', () => {
   test('props url', () => {
     const url = 'https://dummyimage.com/100x100/f60/fff'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MePreview, {
       props: { url }
     })
-    const viewer = wrapper.find('.me-preview') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-preview')
 
     expect(viewer.exists()).toBeTruthy()
 

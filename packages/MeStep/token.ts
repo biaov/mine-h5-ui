@@ -1,1 +1,4 @@
-export const MeStepKey = 'MeStep' // token 校验 key
+/**
+ * token 校验 key
+ */
+export const MeStepKey = 'MeStep'

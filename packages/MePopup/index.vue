@@ -8,30 +8,26 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useMask, useRadius } from './hooks'
 import MeIcon from '../MeIcon/index.vue'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:visible', bool: boolean): void
-  (event: 'cancel'): void
-}>()
+defineOptions({
+  name: 'MePopup'
+})
 
-const props = withDefaults(
-  defineProps<{
-    visible?: boolean // 是否显示弹出层
-    modal?: boolean // 是否显示模态框
-    position?: string // 弹出位置
-    closeable?: boolean // 是否显示关闭图标
-    radius?: string // 倒角数值
-  }>(),
-  {
-    visible: false,
-    modal: true,
-    position: 'center',
-    closeable: false,
-    radius: ''
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  visible: false,
+  modal: true,
+  position: 'center',
+  closeable: false,
+  radius: ''
+})
 
 const { isShow, isShowMask, hideMask, animationDuration } = useMask(props, emit)
 const { setRadius } = useRadius(props)

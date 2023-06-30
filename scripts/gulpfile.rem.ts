@@ -4,13 +4,18 @@ const autoprefixer = require('autoprefixer')
 const cssmin = require('gulp-cssmin')
 const postcss = require('gulp-postcss')
 const pxtorem = require('postcss-pxtorem')
+/**
+ * 基础方法
+ */
 const {
   clean,
   copyfont,
   minifontCss,
   config: { input, output }
-} = require('./gulpfile.base.ts') // 基础方法
-// 编译 LESS
+} = require('./gulpfile.base.ts')
+/**
+ * 编译 LESS
+ */
 const compile = () =>
   src([`${input}*.less`, ...['base', 'variable'].map(name => `!${input}${name}.less`)])
     .pipe(gulpLess())

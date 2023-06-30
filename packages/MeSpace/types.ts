@@ -1,5 +1,13 @@
-// props
+/**
+ * props
+ */
 export interface Props {
-  size: string
-  direction: string
+  /**
+   * 间距大小
+   */
+  size?: string
+  /**
+   * 间距方向
+   */
+  direction?: 'horizontal' | 'vertical'
 }

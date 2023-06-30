@@ -15,9 +15,9 @@
 </template>
 <script lang="ts" setup>
 import { useShowAction } from './hooks'
-import { ListItem } from './types'
+import type { Props } from './types'
 
-const props = defineProps<{ list: ListItem[] }>()
+const props = defineProps<Props>()
 const { isShow, onClickFrame, onClickItem } = useShowAction(props)
 </script>
 <style scoped lang="less">

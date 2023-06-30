@@ -1,4 +1,6 @@
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   label: string
   width: string

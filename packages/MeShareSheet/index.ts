@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeShareSheet from './index.vue'
+import { addInstall } from '../utils'
+import shareSheet from './index.vue'
 
-// 安装
-MeShareSheet.install = (app: App) => {
-  app.component('MeShareSheet', MeShareSheet)
-}
-
-export { MeShareSheet }
+export const MeShareSheet = addInstall(shareSheet)

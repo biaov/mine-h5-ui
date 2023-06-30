@@ -1,13 +1,27 @@
-import { Ref } from 'vue'
-import { ListItem, ForItem } from './types'
+import type { Ref } from 'vue'
+import type { ListItem, ForItem } from './types'
 
-// canvas
+/**
+ * canvas
+ */
 export const useCanvas = (canvas: Ref<HTMLCanvasElement | undefined>) => {
   const d = {
-    z: 0, // 层级
-    o: 0.8, // 不透明度
-    c: 'rgba(64,158,255,1)', // 颜色
-    n: 99 // 数量
+    /**
+     * 层级
+     */
+    z: 0,
+    /**
+     * 不透明度
+     */
+    o: 0.8,
+    /**
+     * 颜色
+     */
+    c: 'rgba(64,158,255,1)',
+    /**
+     * 数量
+     */
+    n: 99
   }
   const canvasDom = canvas.value!
   canvasDom.width = globalThis.innerWidth || document.documentElement.clientWidth || document.body.clientWidth

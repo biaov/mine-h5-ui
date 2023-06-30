@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeCheckbox from './index.vue'
+import { addInstall } from '../utils'
+import checkbox from './index.vue'
 
-// 安装
-MeCheckbox.install = (app: App) => {
-  app.component('MeCheckbox', MeCheckbox)
-}
-
-export { MeCheckbox }
+export const MeCheckbox = addInstall(checkbox)

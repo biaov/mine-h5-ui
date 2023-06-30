@@ -1,8 +1,14 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
+import type { DefaultSlotProp } from '../types'
 
-export type CalcSizeName = 'nw' | 'n' | 'ne' | 'e' | 'se' | 's' | 'sw' | 'w' // calcSize name
+/**
+ * calcSize name
+ */
+export type CalcSizeName = 'nw' | 'n' | 'ne' | 'e' | 'se' | 's' | 'sw' | 'w'
 
-// 矩形区域
+/**
+ * 矩形区域
+ */
 export interface Rect {
   w: number
   h: number
@@ -11,53 +17,71 @@ export interface Rect {
   r: number
 }
 
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   rect: Rect
 }
 
-// 角度和 cursor的列表项
+/**
+ * 角度和 cursor 的列表项
+ */
 export interface AngleToCursorItem {
   start: number
   end: number
   cursor: string
 }
 
-// 坐标
+/**
+ * 坐标
+ */
 export interface Point {
   x: number
   y: number
 }
 
-// 距离
+/**
+ * 距离
+ */
 export interface Distance {
   distX: number
   distY: number
 }
 
-// 共享数据和方法
+/**
+ * 共享数据和方法
+ */
 export interface Share {
   getCurItem: Ref<Rect>
   onEmitChange: (type: string) => void
   onUpdate: () => void
 }
 
-// useMove 共享数据和方法
+/**
+ * useMove 共享数据和方法
+ */
 export interface MoveShare extends Share {
   listData: Ref<ListDataItem[]>
 }
 
-// useMove 共享数据和方法
+/**
+ * useMove 共享数据和方法
+ */
 export interface ResizeShare extends Share {
   listData: Ref<ListDataItem[]>
 }
 
-// useRotate 共享数据和方法
+/**
+ * useRotate 共享数据和方法
+ */
 export interface RotateShare extends Share {
   getCenterPoint: () => Point
 }
 
-// northResize 方法参数
+/**
+ * northResize 方法参数
+ */
 export interface Option {
   startPoint: Point
   centerPoint: Point
@@ -66,7 +90,9 @@ export interface Option {
   rect: Rect
 }
 
-// resizeGroup
+/**
+ * resizeGroup
+ */
 export interface ResizeGroup {
   nw: (option: Option) => Rect
   n: (option: Option) => Rect
@@ -78,26 +104,63 @@ export interface ResizeGroup {
   w: (option: Option) => Rect
 }
 
-// ScaleShare 共享数据和方法
+/**
+ * ScaleShare 共享数据和方法
+ */
 export interface ScaleShare extends Share {
   listData: Ref<ListDataItem[]>
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'change', list: ListDataItem[], type: string): void
   (event: 'update:list', list: ListDataItem[]): void
   (event: 'update:current', index: number): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  current: number
-  list: ListDataItem[]
-  width: string
-  height: string
-  theme: string
-  themeText: string
-  angleRange: number
-  scale: number
+  /**
+   * 选中项
+   */
+  current?: number
+  /**
+   * 列表数据
+   */
+  list?: ListDataItem[]
+  /**
+   * 容器宽度
+   */
+  width?: string
+  /**
+   * 容器高度
+   */
+  height?: string
+  /**
+   * 选中主题色
+   */
+  theme?: string
+  /**
+   * 选中主题文本色
+   */
+  themeText?: string
+  /**
+   * 对正角度范围
+   */
+  angleRange?: number
+  /**
+   * 双指缩放一倍的像素
+   */
+  scale?: number
+}
+
+/**
+ * defineSlots
+ */
+export interface Slots {
+  default: (props: { item: ListDataItem; index: number }) => ReturnType<DefaultSlotProp>
 }

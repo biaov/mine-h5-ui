@@ -1,4 +1,6 @@
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:modelValue', value: string | number): void
   (event: 'focus', e: FocusEvent): void
@@ -9,24 +11,80 @@ export interface Emits {
   (event: 'click-icon', e: MouseEvent): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  modelValue: string | number
-  type: string
-  placeholder: string
-  readonly: boolean
-  disabled: boolean
-  label: string
-  labelWidth: string
-  labelAlign: string
-  labelColor: string
-  labelIcon: string
-  focusType: string
-  focusColor: string
-  icon: string
-  password: boolean
-  digit: boolean
-  smsMsg: string
-  smsColor: string
-  smsIs: boolean
+  /**
+   * input 绑定值
+   */
+  modelValue?: string | number
+  /**
+   * 输入框值
+   */
+  type?: string
+  /**
+   * 占位符
+   */
+  placeholder?: string
+  /**
+   * 只读状态
+   */
+  readonly?: boolean
+  /**
+   * 禁用状态
+   */
+  disabled?: boolean
+  /**
+   * label 内容
+   */
+  label?: string
+  /**
+   * label 宽度
+   */
+  labelWidth?: string
+  /**
+   * label 对齐方式
+   */
+  labelAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | 'start' | 'end' | 'initial' | 'inherit'
+  /**
+   * label 颜色
+   */
+  labelColor?: string
+  /**
+   * label 图标
+   */
+  labelIcon?: string
+  /**
+   * 聚焦边框样式
+   */
+  focusType?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
+  /**
+   * 聚焦颜色
+   */
+  focusColor?: string
+  /**
+   * 图标
+   */
+  icon?: string
+  /**
+   * 密码输入框
+   */
+  password?: boolean
+  /**
+   * 整数输入
+   */
+  digit?: boolean
+  /**
+   * 短信验证码
+   */
+  smsMsg?: string
+  /**
+   * 短信颜色
+   */
+  smsColor?: string
+  /**
+   * 是否开启倒计时
+   */
+  smsIs?: boolean
 }

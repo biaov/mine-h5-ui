@@ -1,6 +1,6 @@
 # Button 按钮
 
-`MINE-H5-UI` 常用的操作按钮。
+`mine-h5-ui` 常用的操作按钮。
 
 ---
 
@@ -8,11 +8,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeButton } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeButton.css'
+import 'mine-h5-ui/styles/MeButton.css'
 
 const app = createApp(App)
 app.use(MeButton)

@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MePassword from './index.vue'
+import { addInstall } from '../utils'
+import password from './index.vue'
 
-// 安装
-MePassword.install = (app: App) => {
-  app.component('MePassword', MePassword)
-}
-
-export { MePassword }
+export const MePassword = addInstall(password)

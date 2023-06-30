@@ -1,4 +1,4 @@
-import { CalcSizeName, Point, Rect, Option, ResizeGroup } from './types'
+import type { CalcSizeName, Point, Rect, Option, ResizeGroup } from './types'
 
 /**
  * 获取对称点坐标
@@ -34,7 +34,10 @@ export const getCenterPoint = <T extends Point>(curPoint: T, symmPoint: T): Poin
  * @returns { number } 转换之后角度/弧度的值
  */
 export const angleMutualRadian = (value: number, type = 'angle'): number => {
-  const ratio = Math.PI / 180 // 比例
+  /**
+   * 比例
+   */
+  const ratio = Math.PI / 180
 
   return type === 'angle' ? value * ratio : value / ratio
 }
@@ -47,12 +50,27 @@ export const angleMutualRadian = (value: number, type = 'angle'): number => {
  * @returns { Point } { x, y } 旋转之后的点
  */
 export const getRotatePoint = (point: Point, center: Point, angle: number): Point => {
-  const radian = angleMutualRadian(angle) // 弧度
-  const sin = Math.sin(radian) // sin
-  const cos = Math.cos(radian) // cos
+  /**
+   * 弧度
+   */
+  const radian = angleMutualRadian(angle)
+  /**
+   * sin
+   */
+  const sin = Math.sin(radian)
+  /**
+   * cos
+   */
+  const cos = Math.cos(radian)
 
-  const relativeX = point.x - center.x // 相对横坐标
-  const relativeY = point.y - center.y // 相对纵坐标
+  /**
+   * 相对横坐标
+   */
+  const relativeX = point.x - center.x
+  /**
+   * 相对纵坐标
+   */
+  const relativeY = point.y - center.y
   const x = relativeX * cos - relativeY * sin + center.x
   const y = relativeX * sin + relativeY * cos + center.y
 
@@ -65,12 +83,26 @@ export const getRotatePoint = (point: Point, center: Point, angle: number): Poin
  * @returns { Rect } 计算之后的大小
  */
 const northWestResize = ({ symmPoint, curPoint, rect }: Option): Rect => {
-  const newCenter = getCenterPoint(curPoint, symmPoint) // 新的中心点坐标
-  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r) // 新的坐标点
-  const newSymmPoint = getSymmPoint(newPoint, newCenter) // 新的对称点
-
-  const newW = newSymmPoint.x - newPoint.x // 新的宽度
-  const newH = newSymmPoint.y - newPoint.y // 新的高度
+  /**
+   * 新的中心点坐标
+   */
+  const newCenter = getCenterPoint(curPoint, symmPoint)
+  /**
+   * 新的坐标点
+   */
+  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  /**
+   * 新的对称点
+   */
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
+  /**
+   * 新的宽度
+   */
+  const newW = newSymmPoint.x - newPoint.x
+  /**
+   * 新的高度
+   */
+  const newH = newSymmPoint.y - newPoint.y
 
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
@@ -268,7 +300,7 @@ const westResize = ({ startPoint, symmPoint, curPoint, rect }: Option): Rect => 
   return rect
 }
 
-// 调整大下集合,左西右东,上北下南
+// 调整大小集合, 左西右东, 上北下南
 const resizeGroup: ResizeGroup = {
   nw: northWestResize,
   n: northResize,
@@ -286,8 +318,6 @@ const resizeGroup: ResizeGroup = {
  * @param { Object } option 计算参数
  * @returns { Object } 计算之后的大小
  */
-const calcSize = (name: CalcSizeName, option: Option) => {
-  return resizeGroup[name](JSON.parse(JSON.stringify(option)))
-}
+const calcSize = (name: CalcSizeName, option: Option) => resizeGroup[name](JSON.parse(JSON.stringify(option)))
 
 export default calcSize

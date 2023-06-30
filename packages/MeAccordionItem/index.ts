@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeAccordionItem from './index.vue'
+import { addInstall } from '../utils'
+import accordionItem from './index.vue'
 
-// 安装
-MeAccordionItem.install = (app: App) => {
-  app.component('MeAccordionItem', MeAccordionItem)
-}
-
-export { MeAccordionItem }
+export const MeAccordionItem = addInstall(accordionItem)

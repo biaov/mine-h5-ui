@@ -1,26 +1,62 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
+import type { PickNotRequiredUnion } from '../types'
 
-// 父组件参数
+/**
+ * 父组件参数
+ */
 export interface RadioGroupContext {
   name: string
   currentValue: Ref<string | number>
   onChange: (name: string | number) => void
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:modelValue', bool: boolean): void
   (event: 'click'): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  modelValue: boolean
+  /**
+   * v-model 的值
+   */
+  modelValue?: boolean
+  /**
+   * 单选框索引名称
+   */
   name?: string | number
-  shape: string
-  icon: string
-  iconSelect: string
-  iconSize: string
-  checkedColor: string
-  disabled: boolean
+  /**
+   * 图标形状
+   */
+  shape?: 'square' | 'round'
+  /**
+   * 自定义图标
+   */
+  icon?: string
+  /**
+   * 自定义选中图标
+   */
+  iconSelect?: string
+  /**
+   * 图标大小
+   */
+  iconSize?: string
+  /**
+   * 选中状态颜色
+   */
+  checkedColor?: string
+  /**
+   * 禁用状态
+   */
+  disabled?: boolean
 }
+
+/**
+ * hook
+ */
+export type PropsHookParam = PickNotRequiredUnion<Props, 'name'>

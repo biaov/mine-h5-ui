@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeScreenshot from './index.vue'
+import { addInstall } from '../utils'
+import screenshot from './index.vue'
 
-// 安装
-MeScreenshot.install = (app: App) => {
-  app.component('MeScreenshot', MeScreenshot)
-}
-
-export { MeScreenshot }
+export const MeScreenshot = addInstall(screenshot)

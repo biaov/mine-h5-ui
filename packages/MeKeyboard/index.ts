@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeKeyboard from './index.vue'
+import { addInstall } from '../utils'
+import keyboard from './index.vue'
 
-// 安装
-MeKeyboard.install = (app: App) => {
-  app.component('MeKeyboard', MeKeyboard)
-}
-
-export { MeKeyboard }
+export const MeKeyboard = addInstall(keyboard)

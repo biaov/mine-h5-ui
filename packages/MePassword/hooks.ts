@@ -1,19 +1,28 @@
 /* eslint-disable no-restricted-syntax */
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>, emit: Emits) => {
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   const clampValue = props.modelValue.slice(0, props.num)
 
   emit('update:modelValue', clampValue)
 
-  const valueArr = clampValue.split('') // 传入数据转化为数组
-  // 生成对象
-  const listData = ref(Array.from({ length: props.num }, (v, k) => ({ id: k + 1, value: valueArr[k] || '', state: false })))
+  /**
+   * 传入数据转化为数组
+   */
+  const valueArr = clampValue.split('')
+  /**
+   * 生成对象
+   */
+  const listData = ref(Array.from({ length: props.num }, (_, k) => ({ id: k + 1, value: valueArr[k] || '', state: false })))
 
-  // 点击按钮
+  /**
+   * 点击按钮
+   */
   const handleClick = (e: MouseEvent) => {
     let flag = true
 
@@ -43,22 +52,32 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 设置数组变化
+  /**
+   * 设置数组变化
+   */
   const updateList = () => {
     const curClampValue = props.modelValue.slice(0, props.num)
     emit('update:modelValue', curClampValue)
-    const arr = curClampValue.split('') // 传入数据转化为数组
+    /**
+     * 传入数据转化为数组
+     */
+    const arr = curClampValue.split('')
     // 遍历迭代设置值
     listData.value.forEach((elem, i) => {
       elem.value = arr[i] || ''
     })
-    const len = arr.length // 传入数据长度
+    /**
+     * 传入数据长度
+     */
+    const len = arr.length
     len !== props.num && (listData.value[len].state = true)
     len > 0 && (listData.value[len - 1].state = false)
     len < props.num - 1 && (listData.value[len + 1].state = false)
   }
 
-  // 清理聚焦
+  /**
+   * 清理聚焦
+   */
   const closeFocus = () => {
     // 循环遍历清理聚焦
     listData.value.forEach(elem => {
@@ -66,7 +85,9 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     })
   }
 
-  // 点击 Document
+  /**
+   * 点击 Document
+   */
   const clickDocument = () => {
     listData.value.forEach(elem => {
       elem.state = false

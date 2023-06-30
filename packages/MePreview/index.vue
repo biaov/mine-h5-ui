@@ -6,19 +6,20 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useShow } from './hooks'
+import type { Props } from './types'
 
-withDefaults(
-  defineProps<{
-    url: string // 图片地址
-    zIndex?: number // 层级位置
-    background?: string // 遮罩层背景色
-  }>(),
-  {
-    zIndex: 99,
-    background: '#000'
-  }
-)
+defineOptions({
+  name: 'MePreview'
+})
+
+defineSlots<DefaultSlots>()
+
+withDefaults(defineProps<Props>(), {
+  zIndex: 99,
+  background: '#000'
+})
 
 const { isShow, isDestroy, onClose, animationDuration } = useShow()
 </script>

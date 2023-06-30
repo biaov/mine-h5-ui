@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MePassword } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MePassword.css'
+import 'mine-h5-ui/styles/MePassword.css'
 
 const app = createApp(App)
 app.use(MePassword)
@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur"></me-password>
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
@@ -71,7 +71,7 @@ const onComplate = () => {
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" skin-type="dark"></me-password>
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
@@ -111,7 +111,7 @@ const onComplate = () => {
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" :num="4"></me-password>
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>

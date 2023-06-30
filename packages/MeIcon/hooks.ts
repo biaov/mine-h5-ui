@@ -1,8 +1,12 @@
-import { Emits } from './types'
+import type { Emits } from './types'
 
-// 点击 hook
+/**
+ * 点击 hook
+ */
 export const useClick = (emit: Emits) => {
-  // 点击按钮
+  /**
+   * 点击按钮
+   */
   const onClick = (e: MouseEvent) => {
     emit('click', e)
   }

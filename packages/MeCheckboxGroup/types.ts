@@ -1,4 +1,4 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
 
 // onChange 参数
 export interface OnChangeParams {
@@ -6,7 +6,9 @@ export interface OnChangeParams {
   isChecked: Ref<boolean>
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:modelValue', arr: (string | number)[]): void
   (event: 'change', arr: (string | number)[]): void
@@ -14,6 +16,6 @@ export interface Emits {
 
 // props
 export interface Props {
-  modelValue: (string | number)[]
-  direction: string
+  modelValue?: (string | number)[] // v-model 值
+  direction?: string // 排列方向, vertical | horizontal
 }

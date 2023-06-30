@@ -1,15 +1,23 @@
-// 线
+/**
+ * 线
+ */
 export interface Line {
   radius?: number
   color?: string
   size?: number
 }
-// 文本
+
+/**
+ * 文本
+ */
 export interface Text {
   color?: string
   size?: number
 }
-// 列表项
+
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   label: string
   list?: string[]

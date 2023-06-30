@@ -1,5 +1,68 @@
 import type { App } from 'vue'
 
-export type SFCWithInstall<T> = T & {
-  install(app: App): void
+/**
+ * 安装方法
+ */
+export interface InstallRecord {
+  install: (app: App) => void
 }
+
+/**
+ * 组件名称
+ */
+export interface NameRecord {
+  name: string
+}
+
+/**
+ * 组件自定义名称
+ */
+export interface ComponentNameRecord {
+  componentName: string
+}
+
+/**
+ * 增加组件名称
+ */
+export type AddNameRecord<T> = T & NameRecord
+
+/**
+ * 增加组件自定义名称
+ */
+export type AddComponentNameRecord<T> = T & ComponentNameRecord
+
+/**
+ * 默认插槽参数
+ */
+export type DefaultSlotProp = (props: {}) => unknown
+
+/**
+ * 默认插槽类型
+ */
+export interface DefaultSlots {
+  default: DefaultSlotProp
+}
+
+/**
+ * 合并类型为交叉类型
+ */
+export type Merge<T, R> = {
+  [K in keyof T]: T[K]
+} & {
+  [K in keyof R]: R[K]
+}
+
+/**
+ * 合并交叉类型
+ */
+type MergeIntersection<T> = Pick<T, keyof T>
+
+/**
+ * 提取必传属性
+ */
+export type PickRequiredUnion<P, U extends keyof P> = MergeIntersection<Merge<Required<Pick<P, U>>, Omit<P, U>>>
+
+/**
+ * 除了提取的属性，其他都是必传属性
+ */
+export type PickNotRequiredUnion<P, U extends keyof P> = MergeIntersection<Merge<Pick<P, U>, Required<Omit<P, U>>>>

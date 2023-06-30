@@ -1,10 +1,31 @@
-export type DTCallback = (e: Event) => void // 防抖节流回调函数
-export type LockedCallback = (e?: Event, fn?: (value: boolean) => void) => void // 加锁回调函数
-export type ThrottleBack = (e: Event) => void // 节流返回值
-export type DebounceBack = (e: Event) => void // 防抖返回值
-export type LockedBack = (e?: Event) => void // 加锁返回值
+/**
+ * 防抖节流回调函数
+ */
+export type DTCallback = (e: Event) => void
 
-// 日期格式
+/**
+ * 加锁回调函数
+ */
+export type LockedCallback = (e?: Event, fn?: (value: boolean) => void) => void
+
+/**
+ * 节流返回值
+ */
+export type ThrottleBack = (e: Event) => void
+
+/**
+ * 防抖返回值
+ */
+export type DebounceBack = (e: Event) => void
+
+/**
+ * 加锁返回值
+ */
+export type LockedBack = (e?: Event) => void
+
+/**
+ * 日期格式化
+ */
 export interface FormatData {
   DD: string
   hh: string
@@ -13,12 +34,16 @@ export interface FormatData {
   ms: number
 }
 
-// 加锁
+/**
+ * 加锁
+ */
 export interface IsLocked extends Record<string, boolean | undefined> {
   value?: boolean
 }
 
-// FormatTime return
+/**
+ * FormatTime return
+ */
 export interface FormatTimeBack {
   Y: string
   M: string
@@ -32,7 +57,9 @@ export interface FormatTimeBack {
   datetime: string
 }
 
-// Calculation
+/**
+ * Calculation return
+ */
 export interface CalculationBack {
   add: () => number
   subtract: () => number
@@ -40,5 +67,7 @@ export interface CalculationBack {
   divide: () => number
 }
 
-// 添加 install 属性
+/**
+ * 添加 install 属性
+ */
 export type AddInstall<T> = T & { install: undefined }

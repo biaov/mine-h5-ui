@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeGrid from './index.vue'
+import { addInstall } from '../utils'
+import grid from './index.vue'
 
-// 安装
-MeGrid.install = (app: App) => {
-  app.component('MeGrid', MeGrid)
-}
-
-export { MeGrid }
+export const MeGrid = addInstall(grid)

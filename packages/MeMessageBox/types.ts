@@ -1,11 +1,24 @@
-export type OnOk = (value?: string) => void // onOk 函数
-export type OnOff = () => void // onOff 函数
-export type HookFn = OnOk | OnOff // onOk 函数 | onOff 函数
+/**
+ * onOk 函数
+ */
+export type OnOk = (value?: string) => void
+/**
+ * onOff 函数
+ */
+export type OnOff = () => void
+/**
+ * onOk 函数 | onOff 函数
+ */
+export type HookFn = OnOk | OnOff
 
-// 传参
+export type OptionType = 'alert' | 'confirm' | 'prompt' | 'custom'
+
+/**
+ * 传参
+ */
 export interface Option extends Record<string, string | HookFn | undefined> {
   tips?: string
-  type?: string
+  type?: OptionType
   message?: string
   html?: string
   cancelButtonText?: string
@@ -14,15 +27,21 @@ export interface Option extends Record<string, string | HookFn | undefined> {
   onOk?: OnOk
 }
 
-// alert, confirm, prompt, custom
+/**
+ * alert, confirm, prompt, custom
+ */
 export type MessageBoxFn = (option: string | Option) => Promise<string | undefined>
 
-// curOption
+/**
+ * curOption
+ */
 export type CurOption = Option & {
   onAction?: (arg: string) => void
 }
 
-// MessageBox
+/**
+ * MessageBox
+ */
 export interface InMessageBox extends Record<string, MessageBoxFn> {
   (option: Option, type?: string): Promise<string | undefined>
   alert: MessageBoxFn
@@ -31,19 +50,47 @@ export interface InMessageBox extends Record<string, MessageBoxFn> {
   custom: MessageBoxFn
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'action', eventName: string, value?: string): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  tips: string
-  type: string
-  message: string
-  html: string
-  cancelButtonText: string
-  confirmButtonText: string
-  onOk: OnOk
-  onOff: OnOff
+  /**
+   * 提示标题
+   */
+  tips?: string
+  /**
+   * 弹出框类型
+   */
+  type?: OptionType
+  /**
+   * 警告语
+   */
+  message?: string
+  /**
+   * 自定义 HTML
+   */
+  html?: string
+  /**
+   * 取消按钮内容
+   */
+  cancelButtonText?: string
+  /**
+   * 确认按钮内容
+   */
+  confirmButtonText?: string
+  /**
+   * 点击确定函数
+   */
+  onOk?: OnOk
+  /**
+   * 点击取消函数
+   */
+  onOff?: OnOff
 }

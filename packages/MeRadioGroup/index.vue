@@ -5,23 +5,22 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', name: string | number): void
-  (event: 'change', name: string | number): void
-}>()
+defineOptions({
+  name: 'MeRadioGroup'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: string | number // v-model 值
-    direction?: string // 排列方向, vertical | horizontal
-  }>(),
-  {
-    modelValue: '',
-    direction: 'vertical'
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: '',
+  direction: 'vertical'
+})
 
 useInitSlots(props, emit)
 </script>

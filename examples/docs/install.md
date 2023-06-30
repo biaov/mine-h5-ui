@@ -9,7 +9,7 @@
 
 ::: CopyCode
 
-```Basic
+```sh
 npm i mine-h5-ui
 ```
 

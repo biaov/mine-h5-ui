@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeTabBar from './index.vue'
+import { addInstall } from '../utils'
+import tabBar from './index.vue'
 
-// 安装
-MeTabBar.install = (app: App) => {
-  app.component('MeTabBar', MeTabBar)
-}
-
-export { MeTabBar }
+export const MeTabBar = addInstall(tabBar)

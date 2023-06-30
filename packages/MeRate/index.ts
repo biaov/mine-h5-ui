@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeRate from './index.vue'
+import { addInstall } from '../utils'
+import rate from './index.vue'
 
-// 安装
-MeRate.install = (app: App) => {
-  app.component('MeRate', MeRate)
-}
-
-export { MeRate }
+export const MeRate = addInstall(rate)

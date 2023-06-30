@@ -6,30 +6,22 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-  (event: 'update:modelValue', bool: boolean): void
-}>()
+defineOptions({
+  name: 'MeSwitch'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: boolean // v-model 绑定值
-    size?: string // 自定义大小
-    activeColor?: string // 自定义激活颜色
-    inactiveColor?: string // 自定义未激活颜色
-    async?: boolean // 异步状态
-    disabled?: boolean // 禁用状态
-  }>(),
-  {
-    modelValue: false,
-    size: '',
-    activeColor: '',
-    inactiveColor: '',
-    async: false,
-    disabled: false
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: false,
+  size: '',
+  activeColor: '',
+  inactiveColor: '',
+  async: false,
+  disabled: false
+})
 
 const { isActived, background, handleClick } = useHandler(props, emit)
 </script>

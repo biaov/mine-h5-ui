@@ -6,7 +6,7 @@
 
 :::CopyCode
 
-```JavaScript
+```js
 import Vue from 'vue'
 import { MeDrag } from 'mine-h5-ui'
 

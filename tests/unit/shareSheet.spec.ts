@@ -4,7 +4,9 @@ import MeShareSheet from '~/MeShareSheet/index.vue'
 
 describe('MeShareSheet', () => {
   const icon = 'icon-github'
-  // 列表
+  /**
+   * 列表
+   */
   const list = [
     {
       icon,
@@ -14,11 +16,16 @@ describe('MeShareSheet', () => {
   ]
 
   test('props list', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeShareSheet, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-share-sheet') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-share-sheet')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -29,24 +36,34 @@ describe('MeShareSheet', () => {
   })
 
   test('props visible', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeShareSheet, {
       props: { list, visible: true }
     })
     await Retarder()
 
-    const viewer = wrapper.find('.me-share-sheet') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-share-sheet')
 
     expect(viewer.classes('show')).toBe(true)
   })
 
   test('props tips', async () => {
     const tips = '提示文本'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeShareSheet, {
       props: { list, tips }
     })
-    const viewer = wrapper.find('.me-share-sheet .tips') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-share-sheet .tips')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(tips)

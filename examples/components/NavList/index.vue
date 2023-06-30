@@ -19,11 +19,9 @@
   </ul>
 </template>
 <script lang="ts" setup>
-import { ListItem } from './types'
+import type { Props } from './types'
 
-defineProps<{
-  list: ListItem[]
-}>()
+defineProps<Props>()
 </script>
 <style scoped lang="less">
 @import './index.less';

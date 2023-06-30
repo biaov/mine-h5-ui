@@ -26,59 +26,34 @@
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import { useSms, useIcon, useInput } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', value: string | number): void
-  (event: 'focus', e: FocusEvent): void
-  (event: 'blur', e: FocusEvent): void
-  (event: 'change', e: Event): void
-  (event: 'input', e: Event): void
-  (event: 'click-sms', e: MouseEvent): void
-  (event: 'click-icon', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeInput'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: string | number // input 绑定值
-    type?: string // 输入框值
-    placeholder?: string // 占位符
-    readonly?: boolean // 只读状态
-    disabled?: boolean // 禁用状态
-    label?: string // label 内容
-    labelWidth?: string // label 宽度
-    labelAlign?: string // label 对齐方式, auto | left | right | center | justify | start | end | initial | inherit
-    labelColor?: string // label 颜色
-    labelIcon?: string // label 图标
-    focusType?: string // 聚焦边框样式, default | primary | success | warning | danger
-    focusColor?: string // 聚焦颜色
-    icon?: string // 图标
-    password?: boolean // 密码输入框
-    digit?: boolean // 整数输入
-    smsMsg?: string // 短信验证码
-    smsColor?: string // 短信颜色
-    smsIs?: boolean // 是否开启倒计时
-  }>(),
-  {
-    modelValue: '',
-    type: 'text',
-    placeholder: '请输入...',
-    readonly: false,
-    disabled: false,
-    label: '',
-    labelWidth: '',
-    labelAlign: 'left',
-    labelColor: '',
-    labelIcon: '',
-    focusType: 'default',
-    focusColor: '',
-    icon: '',
-    password: false,
-    digit: false,
-    smsMsg: '',
-    smsColor: '',
-    smsIs: false
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: '',
+  type: 'text',
+  placeholder: '请输入...',
+  readonly: false,
+  disabled: false,
+  label: '',
+  labelWidth: '',
+  labelAlign: 'left',
+  labelColor: '',
+  labelIcon: '',
+  focusType: 'default',
+  focusColor: '',
+  icon: '',
+  password: false,
+  digit: false,
+  smsMsg: '',
+  smsColor: '',
+  smsIs: false
+})
 
 const { sms, handleSMS } = useSms(props, emit)
 const { inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput(props, emit, sms)

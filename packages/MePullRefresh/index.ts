@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MePullRefresh from './index.vue'
+import { addInstall } from '../utils'
+import pullRefresh from './index.vue'
 
-// 安装
-MePullRefresh.install = (app: App) => {
-  app.component('MePullRefresh', MePullRefresh)
-}
-
-export { MePullRefresh }
+export const MePullRefresh = addInstall(pullRefresh)

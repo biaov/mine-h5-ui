@@ -1,10 +1,12 @@
 import { ref, provide, onMounted, watch, computed } from 'vue'
-import { LabelName } from '../MeTabItem/types'
+import type { LabelName } from '../MeTabItem/types'
 import { MeTabKey } from './token'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 初始化 slot
-export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
+/**
+ * 初始化 slot
+ */
+export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 下活动线位移计算方式
    * 思路：当前活动item的一半宽度 + 前面的所有宽度
@@ -12,19 +14,35 @@ export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
    * transX：每个项的一半的宽度
    * value：活动索引
    */
-  const tabsDom = ref<HTMLDivElement>() // tab节点
-  const tabList = ref<LabelName[]>([]) // 标签列表
-  const transX = ref(0) // 初始移动值
-  const duration = ref(0) // 过渡动画时间
+  /**
+   * tab 节点
+   */
+  const tabsDom = ref<HTMLDivElement>()
+  /**
+   * 标签列表
+   */
+  const tabList = ref<LabelName[]>([])
+  /**
+   * 初始移动值
+   */
+  const transX = ref(0)
+  /**
+   * 过渡动画时间
+   */
+  const duration = ref(0)
   const currentValue = ref(props.modelValue)
 
-  // 计算初始移动值
+  /**
+   * 计算初始移动值
+   */
   const initTranslateX = () => {
     transX.value = tabsDom.value!.offsetWidth / (tabList.value.length * 2)
     duration.value = 0
   }
 
-  // 点击tabs item
+  /**
+   * 点击 tabs item
+   */
   const onClick = ({ name }: LabelName) => {
     // 点击不是活动项
     if (name !== props.modelValue) {
@@ -34,12 +52,17 @@ export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
     }
   }
 
-  // 获取 title
+  /**
+   * 获取 title
+   */
   const getLabelName = (item: LabelName) => {
     tabList.value.push(item)
   }
 
-  const curIndex = computed(() => tabList.value.findIndex(item => item.name === props.modelValue)) // 当前索引
+  /**
+   * 当前索引
+   */
+  const curIndex = computed(() => tabList.value.findIndex(item => item.name === props.modelValue))
 
   provide(MeTabKey, { name: MeTabKey, currentValue, getLabelName })
 

@@ -1,13 +1,20 @@
 import { getCurrentInstance, ref } from 'vue'
 import initData from './data'
-import { ListDataItem, ChildListItem } from './types'
+import type { ListDataItem, ChildListItem } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useHandle = () => {
   const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
-  // 点击 Switch 开关
+  /**
+   * 点击 Switch 开关
+   */
   const onClick = (item: ChildListItem) => {
     // 循环遍历关闭其他输入键盘
     listData.value.forEach(({ list }) => {
@@ -18,17 +25,23 @@ export const useHandle = () => {
     item.value = true // 设置当前键盘显示
   }
 
-  // 点击数字
+  /**
+   * 点击数字
+   */
   const handleNum = (e: number) => {
     $MeToast(e)
   }
 
-  // 点击删除按钮
+  /**
+   * 点击删除按钮
+   */
   const onDelete = () => {
     $MeToast('点击了删除')
   }
 
-  // 点击关闭
+  /**
+   * 点击关闭
+   */
   const onComplate = () => {
     $MeToast('点击了完成')
   }

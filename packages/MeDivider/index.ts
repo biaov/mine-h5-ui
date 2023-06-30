@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeDivider from './index.vue'
+import { addInstall } from '../utils'
+import divider from './index.vue'
 
-// 安装
-MeDivider.install = (app: App) => {
-  app.component('MeDivider', MeDivider)
-}
-
-export { MeDivider }
+export const MeDivider = addInstall(divider)

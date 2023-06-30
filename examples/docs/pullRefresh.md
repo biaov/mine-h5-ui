@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MePullRefresh } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MePullRefresh.css'
+import 'mine-h5-ui/styles/MePullRefresh.css'
 
 const app = createApp(App)
 app.use(MePullRefresh)

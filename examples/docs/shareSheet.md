@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeShareSheet } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeShareSheet.css'
+import 'mine-h5-ui/styles/MeShareSheet.css'
 
 const app = createApp(App)
 app.use(MeShareSheet)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <!-- 分享面板 -->
   <ul class="share-sheet">

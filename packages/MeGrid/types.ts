@@ -1,5 +1,13 @@
-// props
+/**
+ * props
+ */
 export interface Props {
-  cols: number
-  borderColor: string
+  /**
+   * 一行几个
+   */
+  cols?: number
+  /**
+   * 边框颜色
+   */
+  borderColor?: string
 }

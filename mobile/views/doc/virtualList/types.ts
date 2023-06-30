@@ -1,9 +1,13 @@
-// 子列表项
+/**
+ * 子列表项
+ */
 export interface ChildListItem {
   text: string
 }
 
-// list item
+/**
+ * list item
+ */
 export interface ListDataItem {
   id: number
   label: string
@@ -13,7 +17,9 @@ export interface ListDataItem {
   auto?: boolean
 }
 
-// loadMoreText
+/**
+ * loadMoreText
+ */
 export interface LoadMoreText extends Record<string, string> {
   nomore: string
   more: string

@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeRadio from './index.vue'
+import { addInstall } from '../utils'
+import radio from './index.vue'
 
-// 安装
-MeRadio.install = (app: App) => {
-  app.component('MeRadio', MeRadio)
-}
-
-export { MeRadio }
+export const MeRadio = addInstall(radio)

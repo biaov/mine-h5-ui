@@ -8,38 +8,19 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { PropType } from 'vue'
 import { useShowSheet, useBtns } from './hooks'
-import { ListItem } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:visible', bool: boolean): void
-  (event: 'change', item: ListItem): void
-  (event: 'cancel', item: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeActionSheet'
+})
 
-const props = defineProps({
-  // v-model:visible 绑定值
-  visible: {
-    type: Boolean,
-    default: false
-  },
-  // 数据列表
-  list: {
-    type: Array as PropType<ListItem[]>,
-    required: true,
-    validator: (value: ListItem[]) => value.length > 0 && Object.keys(value[0]).length > 0
-  },
-  // 索引名
-  index: {
-    type: String,
-    default: 'id'
-  },
-  // 数据展示属性名
-  label: {
-    type: String,
-    default: 'value'
-  }
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  visible: false,
+  index: 'id',
+  label: 'value'
 })
 
 const { isShowMask, isShow, hideMask, animationDuration } = useShowSheet(props, emit)

@@ -5,16 +5,19 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', value: string | number): void
-  (event: 'change', value: string | number): void
-}>()
+defineOptions({
+  name: 'MeAccordion'
+})
 
-const props = defineProps<{
-  modelValue: number | string // v-model 绑定值
-}>()
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = defineProps<Props>()
 
 useInitSlots(props, emit)
 </script>

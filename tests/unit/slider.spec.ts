@@ -3,11 +3,16 @@ import MeSlider from '~/MeSlider/index.vue'
 
 describe('MeSlider', () => {
   test('props disabled', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeSlider, {
       props: { disabled: true }
     })
-    const viewer = wrapper.find('.me-slider') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-slider')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.attributes('data-disabled')).toBe('true')
@@ -20,11 +25,16 @@ describe('MeSlider', () => {
         MeSlider
       }
     }
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent, {
       props: { isBtn: true }
     })
-    const viewer = wrapper.find('.me-slider .btn-custom') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-slider .btn-custom')
 
     expect(viewer.exists()).toBeTruthy()
   })

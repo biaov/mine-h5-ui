@@ -1,18 +1,38 @@
 import { ref, nextTick } from 'vue'
-import { Props, Emits, XPoint, ShareData, ImgRect } from './types'
+import type { Props, Emits, XPoint, ShareData, ImgRect } from './types'
 
-// 图片区域
-export const useImgRect = (props: Readonly<Props>) => {
-  const jigsawImgRef = ref<HTMLDivElement>() // 图片节点
-  const dragPoint = ref<XPoint>({ x: 10 }) // 拖拽点
-  const missingPoint = ref<XPoint>({ x: 200 }) // 缺失点
-  const crossPoint = ref({ y: 20, width: 50, height: 50 }) // 拖拽点和缺失点相同信息
-  const imgRect = ref<ImgRect>({ width: 0, height: 0 }) // 图片容器
+/**
+ * 图片区域
+ */
+export const useImgRect = (props: Readonly<Required<Props>>) => {
+  /**
+   * 图片节点
+   */
+  const jigsawImgRef = ref<HTMLDivElement>()
+  /**
+   * 拖拽点
+   */
+  const dragPoint = ref<XPoint>({ x: 10 })
+  /**
+   * 缺失点
+   */
+  const missingPoint = ref<XPoint>({ x: 200 })
+  /**
+   * 拖拽点和缺失点相同信息
+   */
+  const crossPoint = ref({ y: 20, width: 50, height: 50 })
+  /**
+   * 图片容器
+   */
+  const imgRect = ref<ImgRect>({ width: 0, height: 0 })
 
   nextTick(() => {
     const { width, height } = jigsawImgRef.value!.getBoundingClientRect()
     imgRect.value = { width, height }
-    const split = width / 2 // 分割值
+    /**
+     * 分割值
+     */
+    const split = width / 2
     const cw = crossPoint.value.width
     const ch = crossPoint.value.height
 
@@ -29,29 +49,58 @@ export const useImgRect = (props: Readonly<Props>) => {
   return { jigsawImgRef, dragPoint, missingPoint, crossPoint, imgRect }
 }
 
-// 滑块
-export const useSlider = (props: Readonly<Props>, emit: Emits, { dragPoint, missingPoint }: ShareData) => {
-  let startX = 0 // 横向开始点
-  const openAnimation = ref(false) // 动画开关
-  const moveX = ref(0) // 移动距离
+/**
+ * 滑块
+ */
+export const useSlider = (props: Readonly<Required<Props>>, emit: Emits, { dragPoint, missingPoint }: ShareData) => {
+  /**
+   * 横向开始点
+   */
+  let startX = 0
+  /**
+   * 动画开关
+   */
+  const openAnimation = ref(false)
+  /**
+   * 移动距离
+   */
+  const moveX = ref(0)
 
-  // 操作开始
+  /**
+   * 操作开始
+   */
   const handleStart = <T extends Touch | MouseEvent>({ clientX }: T) => {
     openAnimation.value = false
     startX = clientX
   }
 
-  // 操作移动
+  /**
+   * 操作移动
+   */
   const handleMove = <T extends Touch | MouseEvent>({ clientX }: T) => {
     moveX.value = clientX - startX
   }
 
-  // 操作结束
+  /**
+   * 操作结束
+   */
   const handleEnd = <T extends Touch | MouseEvent>({ clientX }: T) => {
-    const dx = dragPoint.value.x // 拖拽点 x
-    const mx = missingPoint.value.x // 缺失点 x
-    const curX = clientX - startX // 当前位移
-    const resultBool = Math.abs(dx + curX - mx) < props.range // 验证结果
+    /**
+     * 拖拽点 x
+     */
+    const dx = dragPoint.value.x
+    /**
+     * 缺失点 x
+     */
+    const mx = missingPoint.value.x
+    /**
+     * 当前位移
+     */
+    const curX = clientX - startX
+    /**
+     * 验证结果
+     */
+    const resultBool = Math.abs(dx + curX - mx) < props.range
 
     if (resultBool) {
       moveX.value = mx - dx
@@ -63,22 +112,30 @@ export const useSlider = (props: Readonly<Props>, emit: Emits, { dragPoint, miss
     emit('change', resultBool)
   }
 
-  // 手指触摸开始
+  /**
+   * 手指触摸开始
+   */
   const onTouchstart = (e: TouchEvent) => {
     handleStart(e.changedTouches[0])
   }
 
-  // 手指触摸移动
+  /**
+   * 手指触摸移动
+   */
   const onTouchmove = (e: TouchEvent) => {
     handleMove(e.changedTouches[0])
   }
 
-  // 手指触摸离开
+  /**
+   * 手指触摸离开
+   */
   const onTouchend = (e: TouchEvent) => {
     handleEnd(e.changedTouches[0])
   }
 
-  // 点击滑块
+  /**
+   * 点击滑块
+   */
   const onMousedown = (e: MouseEvent) => {
     handleStart(e)
     document.onmousemove = handleMove
@@ -88,7 +145,9 @@ export const useSlider = (props: Readonly<Props>, emit: Emits, { dragPoint, miss
     }
   }
 
-  // 动画结束
+  /**
+   * 动画结束
+   */
   const onAnimationend = () => {
     openAnimation.value = false
   }

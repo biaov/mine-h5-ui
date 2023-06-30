@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeKeyboard } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeKeyboard.css'
+import 'mine-h5-ui/styles/MeKeyboard.css'
 
 const app = createApp(App)
 app.use(MeKeyboard)

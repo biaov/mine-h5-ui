@@ -1,11 +1,24 @@
-// props SkinStyleValue
+/**
+ * props SkinStyleValue
+ */
 export interface SkinStyleValue {
+  /**
+   * 背景色
+   */
   bgc: string
+  /**
+   * 文本背景
+   */
   textBgc: string
+  /**
+   * 字体颜色
+   */
   color: string
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'update:visible', bool: boolean): void
   (event: 'click', num: number): void
@@ -15,8 +28,20 @@ export interface Emits {
 
 // props
 export interface Props {
-  visible: boolean
-  skinType: string
-  skinStyle: SkinStyleValue
-  isPadding: boolean
+  /**
+   * 数字输入显示状态
+   */
+  visible?: boolean
+  /**
+   * 系统皮肤样式
+   */
+  skinType?: 'gray' | 'dark'
+  /**
+   * 自定义皮肤样式
+   */
+  skinStyle?: SkinStyleValue
+  /**
+   * 是否动态改变 padding
+   */
+  isPadding?: boolean
 }

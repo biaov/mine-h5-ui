@@ -1,13 +1,23 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 刷新
+/**
+ * 刷新
+ */
 export const useRefresh = () => {
-  const active = ref(1) // 活动索引
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 活动索引
+   */
+  const active = ref(1)
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
-  // 刷新
+  /**
+   * 刷新
+   */
   const onRefresh = (item: ListDataItem) => {
     setTimeout(() => {
       item.count++

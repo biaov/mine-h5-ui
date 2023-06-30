@@ -25,36 +25,27 @@
 </template>
 <script lang="ts" setup>
 import { useImgRect, useSlider } from './hooks'
-import { SlideStyle } from './types'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'change', resultBool: boolean): void
-}>()
+defineOptions({
+  name: 'MeJigsawValidate'
+})
 
-const props = withDefaults(
-  defineProps<{
-    url: string // 图片地址
-    width?: string // 图片宽度
-    height?: string // 图片高度
-    random?: boolean // 随机位置
-    slideStyle?: SlideStyle // 滑块样式
-    tips?: string // 提示语
-    range?: number // 容错值
-  }>(),
-  {
-    width: '100%',
-    height: '300px',
-    random: true,
-    slideStyle: () => ({
-      height: '40px', // 滑块高度
-      background: '#f6f6f6', // 滑块背景色
-      dotBackground: '#409eff', // 拖拽点背景色
-      tips: '#494949' // 提示文本颜色
-    }),
-    tips: '按住左边按钮向右拖动完成上方图像验证',
-    range: 5
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  width: '100%',
+  height: '300px',
+  random: true,
+  slideStyle: () => ({
+    height: '40px', // 滑块高度
+    background: '#f6f6f6', // 滑块背景色
+    dotBackground: '#409eff', // 拖拽点背景色
+    tips: '#494949' // 提示文本颜色
+  }),
+  tips: '按住左边按钮向右拖动完成上方图像验证',
+  range: 5
+})
 const { jigsawImgRef, dragPoint, missingPoint, crossPoint, imgRect } = useImgRect(props)
 const { moveX, openAnimation, onTouchstart, onTouchmove, onTouchend, onMousedown, onAnimationend } = useSlider(props, emit, { dragPoint, missingPoint })
 </script>

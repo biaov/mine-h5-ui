@@ -1,10 +1,15 @@
 import { ref } from 'vue'
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 页面数据
+/**
+ * 页面数据
+ */
 export const useWebData = () => {
-  const listData = ref<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>(initData)
 
   return { listData }
 }

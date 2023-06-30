@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeMask from './index.vue'
+import { addInstall } from '../utils'
+import mask from './index.vue'
 
-// 安装
-MeMask.install = (app: App) => {
-  app.component('MeMask', MeMask)
-}
-
-export { MeMask }
+export const MeMask = addInstall(mask)

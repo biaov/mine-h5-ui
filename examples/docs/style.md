@@ -6,8 +6,8 @@
 
 ::: CopyCode
 
-```JavaScript
-import 'mine-h5-ui/lib/theme-default/style.css'
+```js
+import 'mine-h5-ui/styles/style.css'
 ```
 
 :::
@@ -46,7 +46,7 @@ import 'mine-h5-ui/lib/theme-default/style.css'
 
 ## 源码
 
-- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/main/packages/theme-default/style.less)
+- 源码地址：[CSS 代码块](https://github.com/biaov/mine-h5-ui/blob/main/packages/styles/style.less)
 
 ## Class 类名
 

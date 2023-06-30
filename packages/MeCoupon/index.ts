@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeCoupon from './index.vue'
+import { addInstall } from '../utils'
+import coupon from './index.vue'
 
-// 安装
-MeCoupon.install = (app: App) => {
-  app.component('MeCoupon', MeCoupon)
-}
-
-export { MeCoupon }
+export const MeCoupon = addInstall(coupon)

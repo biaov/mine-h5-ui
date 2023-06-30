@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeVirtualList } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeVirtualList.css'
+import 'mine-h5-ui/styles/MeVirtualList.css'
 
 const app = createApp(App)
 app.use(MeVirtualList)
@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-virtual-list height="300px" :list="listData" :itemHeight="50">
     <template #default="{ item }">
@@ -80,7 +80,7 @@ const listData = $ref(Array.from({ length: 100 }, () => ({ text: Random.cword(6,
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-virtual-list height="300px" :list="listData" :itemHeight="50" @load-more="onLoadMore">
     <template #default="{ item }">
@@ -157,7 +157,7 @@ const onLoadMore = () => {
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-virtual-list height="300px" :list="listData" @load-more="onLoadMore(list)">
     <template #default="{ item }">

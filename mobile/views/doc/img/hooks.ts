@@ -2,13 +2,21 @@ import { ref } from 'vue'
 import { Random } from 'mockjs'
 import { RandomNum, RgbToHex } from '@/utils/functions'
 import initData from './data'
-import { ListItem } from './types'
+import type { ListItem } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useWebData = () => {
-  const isShowMask = ref(true) // 模态框显示状态
+  /**
+   * 模态框显示状态
+   */
+  const isShowMask = ref(true)
   const labels = ['基础用法', '自定义大小', '填充模式', '倒角']
-  const list: ListItem[] = initData // 列表数据
+  /**
+   * 列表数据
+   */
+  const list: ListItem[] = initData
 
   list.forEach((item, index) => {
     item.id = index + 1
@@ -20,12 +28,16 @@ export const useWebData = () => {
     })
   })
 
-  // 列表数据
+  /**
+   * 列表数据
+   */
   const listData = Object.freeze(list)
   const listLen = listData.reduce((prev, item) => prev + (item.list[0] && item.list[0].fill ? 0 : item.list.length), 0)
   let imgCount = 0
 
-  // 结果处理
+  /**
+   * 结果处理
+   */
   const resultHandler = () => {
     listLen === imgCount &&
       setTimeout(() => {
@@ -33,13 +45,17 @@ export const useWebData = () => {
       }, 500)
   }
 
-  // 加载完图
+  /**
+   * 加载完图
+   */
   const onLoad = () => {
     imgCount++
     resultHandler()
   }
 
-  // 图片加载错误
+  /**
+   * 图片加载错误
+   */
   const onError = () => {
     imgCount++
     resultHandler()

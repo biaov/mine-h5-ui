@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeGrid, MeGridItem } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeGrid.css'
-import 'mine-h5-ui/lib/theme-default/MeGridItem.css'
+import 'mine-h5-ui/styles/MeGrid.css'
+import 'mine-h5-ui/styles/MeGridItem.css'
 
 const app = createApp(App)
 app.use(MeGrid)
@@ -48,7 +48,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-grid border-color="#d9d9d9" :cols="3">
     <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @click="handleLi(item)"></me-grid-item>

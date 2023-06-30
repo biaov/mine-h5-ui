@@ -1,4 +1,6 @@
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListItem {
   path?: string
   text?: string
@@ -7,7 +9,9 @@ export interface ListItem {
   name?: string
 }
 
-// props 参数
+/**
+ * props 参数
+ */
 export interface Props {
   list: ListItem[]
 }

@@ -1,13 +1,29 @@
-// 父组件参数
+/**
+ * 父组件参数
+ */
 export interface SwiperContext {
   name: string
   getName: (name: string | number) => void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
+  /**
+   * 属性名称
+   */
   name: string | number
-  url: string
-  text: string
-  background: string
+  /**
+   * 图片地址
+   */
+  url?: string
+  /**
+   * 文本
+   */
+  text?: string
+  /**
+   * 背景色
+   */
+  background?: string
 }

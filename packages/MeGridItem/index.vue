@@ -9,26 +9,24 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeGridItem'
+})
 
-withDefaults(
-  defineProps<{
-    icon?: string // 图标
-    iconColor?: string // 图标的颜色
-    text?: string // 文本
-    textColor?: string // 文本颜色
-  }>(),
-  {
-    icon: '',
-    iconColor: '',
-    text: '',
-    textColor: ''
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+withDefaults(defineProps<Props>(), {
+  icon: '',
+  iconColor: '',
+  text: '',
+  textColor: ''
+})
 
 const { widthValue, borderColor, handleClick } = useHandler(emit)
 </script>

@@ -4,14 +4,19 @@ import MePopup from '~/MePopup/index.vue'
 
 describe('MePopup', () => {
   test('props visible', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MePopup, {
       props: { visible: true }
     })
 
     await Retarder()
 
-    const viewer = wrapper.find('.me-popup') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-popup')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)
@@ -19,20 +24,30 @@ describe('MePopup', () => {
 
   test('props position', async () => {
     const position = 'left'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MePopup, {
       props: { position }
     })
-    const viewer = wrapper.find('.me-popup>div') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-popup>div')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(position)).toBe(true)
   })
 
   test('emit cancel', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MePopup)
-    const viewer = wrapper.find('.me-popup') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-popup')
 
     await viewer.trigger('click')
     await Retarder()

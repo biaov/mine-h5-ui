@@ -1,24 +1,44 @@
-// 参数
+/**
+ * 参数
+ */
 export interface Params {
   cols: number
   borderColor: string
 }
 
-// 父组件参数
+/**
+ * 父组件参数
+ */
 export interface GridContext {
   name: string
   params: Params
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'click', e: MouseEvent): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  icon: string
-  iconColor: string
-  text: string
-  textColor: string
+  /**
+   * 图标
+   */
+  icon?: string
+  /**
+   * 图标的颜色
+   */
+  iconColor?: string
+  /**
+   * 文本
+   */
+  text?: string
+  /**
+   * 文本颜色
+   */
+  textColor?: string
 }

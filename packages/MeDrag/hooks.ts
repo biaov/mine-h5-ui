@@ -1,12 +1,19 @@
 import { ref, computed, watch } from 'vue'
-import { Props, CalcSizeName, ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare, ScaleShare } from './types'
-import calcSize, { getSymmPoint } from './calcSize'
 import { DeepCopyRA } from '../MeAPI/function'
+import calcSize, { getSymmPoint } from './calcSize'
+import type { Props, CalcSizeName, ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare, ScaleShare } from './types'
 
-// 操作
-export const useHandler = (props: Readonly<Props>, emit: Emits) => {
-  const listData = ref<ListDataItem[]>([]) // 列表数据
-  // 每个范围的角度对应的光标
+/**
+ * 操作
+ */
+export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 列表数据
+   */
+  const listData = ref<ListDataItem[]>([])
+  /**
+   * 每个范围的角度对应的光标
+   */
   const angleToCursor = Object.freeze<AngleToCursorItem[]>([
     { start: 338, end: 23, cursor: 'nw' },
     { start: 23, end: 68, cursor: 'n' },
@@ -18,9 +25,14 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     { start: 293, end: 338, cursor: 'w' }
   ])
 
-  const getCurItem = computed(() => listData.value[props.current]?.rect ?? {}) // 获取当前 item
+  /**
+   * 获取当前 item
+   */
+  const getCurItem = computed(() => listData.value[props.current]?.rect ?? {})
 
-  // 获取当前 cursor
+  /**
+   * 获取当前 cursor
+   */
   const getCursor = computed(() => (i: number) => {
     const { r } = getCurItem.value || {}
     if (!r) return ''
@@ -28,31 +40,41 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
     const len = angleToCursor.length
     const index = angleToCursor.findIndex(({ start, end }, j) => (j ? r > start && r < end : r < end || r > start))
 
-    // 新的索引
+    /**
+     * 新的索引
+     */
     let newI = index + i
     newI >= len && (newI -= len)
 
     return `new-${angleToCursor[newI].cursor}`
   })
 
-  // 自定义事件
+  /**
+   * 自定义事件
+   */
   const onEmitChange = (type: string) => {
     emit('change', listData.value, type)
   }
 
-  // 更新 list
+  /**
+   * 更新 list
+   */
   const onUpdate = () => {
     emit('update:list', listData.value)
   }
 
-  // 点击删除按钮
+  /**
+   * 点击删除按钮
+   */
   const onDelete = () => {
     listData.value.splice(props.current, 1)
     onUpdate()
     onEmitChange('delete')
   }
 
-  // 点击选中项
+  /**
+   * 点击选中项
+   */
   const onClick = (index: number) => {
     emit('update:current', index)
   }
@@ -77,30 +99,57 @@ export const useHandler = (props: Readonly<Props>, emit: Emits) => {
   }
 }
 
-// 移动
-export const useMove = (props: Readonly<Props>, share: MoveShare) => {
+/**
+ * 移动
+ */
+export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
   const { listData, getCurItem, onEmitChange, onUpdate } = share
 
-  let startPoint: Point // 开始坐标
-  let startRect: Rect // 开始矩形区域
+  /**
+   * 开始坐标
+   */
+  let startPoint: Point
+  /**
+   * 开始矩形区域
+   */
+  let startRect: Rect
 
-  // 获取实际位移的距离
+  /**
+   * 获取实际位移的距离
+   */
   const getDistance = (point: Point): Distance => {
-    const diffX = point.x - startPoint.x // 手指横向移动距离
-    const diffY = point.y - startPoint.y // 手指纵向移动距离
-    const distX = startRect.x + diffX // 矩形移动的距离
-    const distY = startRect.y + diffY // 矩形移动的距离
+    /**
+     * 手指横向移动距离
+     */
+    const diffX = point.x - startPoint.x
+    /**
+     * 手指纵向移动距离
+     */
+    const diffY = point.y - startPoint.y
+    /**
+     * 矩形移动的距离
+     */
+    const distX = startRect.x + diffX
+    /**
+     * 矩形移动的距离
+     */
+    const distY = startRect.y + diffY
+
     return { distX, distY }
   }
 
-  // 触摸开始
+  /**
+   * 触摸开始
+   */
   const onTouchstart = (e: TouchEvent) => {
     const { clientX, clientY } = e.changedTouches[0]
     startPoint = { x: clientX, y: clientY }
     startRect = { ...getCurItem.value }
   }
 
-  // 接触点改变,滑动时
+  /**
+   * 接触点改变, 滑动时
+   */
   const onTouchmove = (e: TouchEvent) => {
     const { clientX, clientY } = e.changedTouches[0]
     const { distX, distY } = getDistance({ x: clientX, y: clientY })
@@ -110,7 +159,9 @@ export const useMove = (props: Readonly<Props>, share: MoveShare) => {
     onUpdate()
   }
 
-  // pc 端鼠标按下移动
+  /**
+   * PC 端鼠标按下移动
+   */
   const onMousedown = (e: MouseEvent) => {
     const { clientX, clientY } = e
     startPoint = { x: clientX, y: clientY }
@@ -135,27 +186,53 @@ export const useMove = (props: Readonly<Props>, share: MoveShare) => {
   return { onTouchstart, onTouchmove, onMousedown }
 }
 
-// 调整大下
-export const useResize = (props: Readonly<Props>, share: ResizeShare) => {
+/**
+ * 调整大小
+ */
+export const useResize = (props: Readonly<Required<Props>>, share: ResizeShare) => {
   const { listData, getCurItem, onEmitChange, onUpdate } = share
+  /**
+   * 开始坐标
+   */
+  let startPoint: Point
+  /**
+   * 中心点
+   */
+  let centerPoint: Point
+  /**
+   * 对称点
+   */
+  let symmPoint: Point
+  /**
+   * ref 节点
+   */
+  const dragRef = ref<HTMLDivElement>()
+  /**
+   * 获取容器 rect
+   */
+  const getDragRect = computed(() => dragRef.value?.getBoundingClientRect())
 
-  let startPoint: Point // 开始坐标
-  let centerPoint: Point // 中心点
-  let symmPoint: Point // 对称点
-  const dragRef = ref<HTMLDivElement>() // ref 节点
-  const getDragRect = computed(() => dragRef.value?.getBoundingClientRect()) // 获取容器 rect
-
-  // 获取中心点坐标
+  /**
+   * 获取中心点坐标
+   */
   const getCenterPoint = (): Point => {
     const { x: px, y: py } = getDragRect.value!
     const { w, h, x: ex, y: ey } = getCurItem.value
-    const x = w / 2 + ex + px // 横坐标
-    const y = h / 2 + ey + py // 纵坐标
+    /**
+     * 横坐标
+     */
+    const x = w / 2 + ex + px
+    /**
+     * 纵坐标
+     */
+    const y = h / 2 + ey + py
 
     return { x, y }
   }
 
-  // 触摸 resize 元素开始
+  /**
+   * 触摸 resize 元素开始
+   */
   const onResizeTouchstart = (e: TouchEvent) => {
     const { clientX, clientY } = e.changedTouches[0]
 
@@ -164,10 +241,15 @@ export const useResize = (props: Readonly<Props>, share: ResizeShare) => {
     symmPoint = getSymmPoint(startPoint, centerPoint)
   }
 
-  // 触摸 resize 元素接触点改变,滑动时
+  /**
+   * 触摸 resize 元素接触点改变, 滑动时
+   */
   const onResizeTouchmove = (e: TouchEvent, item: AngleToCursorItem) => {
     const { clientX, clientY } = e.changedTouches[0]
-    const curPoint = { x: clientX, y: clientY } // 当前触摸点坐标
+    /**
+     * 当前触摸点坐标
+     */
+    const curPoint = { x: clientX, y: clientY }
     const resultRect = calcSize(item.cursor as CalcSizeName, { startPoint, centerPoint, symmPoint, curPoint, rect: getCurItem.value })
     const { x, y } = getDragRect.value!
     resultRect.x -= x
@@ -178,7 +260,9 @@ export const useResize = (props: Readonly<Props>, share: ResizeShare) => {
     onEmitChange('resize')
   }
 
-  // resize 元素 pc 端鼠标按下移动
+  /**
+   * resize 元素 PC 端鼠标按下移动
+   */
   const onResizeMousedown = (e: MouseEvent, item: AngleToCursorItem) => {
     const { clientX, clientY } = e
 
@@ -188,7 +272,10 @@ export const useResize = (props: Readonly<Props>, share: ResizeShare) => {
 
     // 表达式声明移动事件
     document.onmousemove = (ev: MouseEvent) => {
-      const curPoint = { x: ev.clientX, y: ev.clientY } // 当前触摸点坐标
+      /**
+       * 当前触摸点坐标
+       */
+      const curPoint = { x: ev.clientX, y: ev.clientY }
       const resultRect = calcSize(item.cursor as CalcSizeName, { startPoint, centerPoint, symmPoint, curPoint, rect: getCurItem.value })
       const { x, y } = getDragRect.value!
       resultRect.x -= x
@@ -208,14 +295,20 @@ export const useResize = (props: Readonly<Props>, share: ResizeShare) => {
   return { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint }
 }
 
-// 旋转
-export const useRotate = (props: Readonly<Props>, share: RotateShare) => {
+/**
+ * 旋转
+ */
+export const useRotate = (props: Readonly<Required<Props>>, share: RotateShare) => {
   const { getCurItem, getCenterPoint, onUpdate, onEmitChange } = share
 
-  // 角度对正
+  /**
+   * 角度对正
+   */
   const getAngleAlign = (angle: number): number => [0, 90, 180, 270, 360, angle].find(deg => Math.abs(angle - deg) < props.angleRange)!
 
-  // 获取旋转角度
+  /**
+   * 获取旋转角度
+   */
   const getRotate = (point: Point): number => {
     const center = getCenterPoint()
 
@@ -245,7 +338,9 @@ export const useRotate = (props: Readonly<Props>, share: RotateShare) => {
     return getAngleAlign(angle)
   }
 
-  // 触摸 rotate 元素接触点改变,滑动时
+  /**
+   * 触摸 rotate 元素接触点改变, 滑动时
+   */
   const onRotateTouchmove = (e: TouchEvent) => {
     const { clientX, clientY } = e.changedTouches[0]
     getCurItem.value.r = getRotate({ x: clientX, y: clientY })
@@ -253,7 +348,9 @@ export const useRotate = (props: Readonly<Props>, share: RotateShare) => {
     onEmitChange('rotate')
   }
 
-  // rotate 元素 pc 端鼠标按下移动
+  /**
+   * rotate 元素 pc 端鼠标按下移动
+   */
   const onRotateMousedown = () => {
     // 表达式声明移动事件
     document.onmousemove = e => {
@@ -273,13 +370,23 @@ export const useRotate = (props: Readonly<Props>, share: RotateShare) => {
   return { onRotateTouchmove, onRotateMousedown }
 }
 
-// 双指缩放
-export const useScale = (props: Readonly<Props>, share: ScaleShare) => {
+/**
+ * 双指缩放
+ */
+export const useScale = (props: Readonly<Required<Props>>, share: ScaleShare) => {
   const { listData, getCurItem, onEmitChange, onUpdate } = share
-  let startTouchDist: number // 开始两指距离
-  let startRect: Rect // 开始矩形区域
+  /**
+   * 开始两指距离
+   */
+  let startTouchDist: number
+  /**
+   * 开始矩形区域
+   */
+  let startRect: Rect
 
-  // 计算距离
+  /**
+   * 计算距离
+   */
   const calcDistance = (list: TouchList): number => {
     const first = list[0]
     const last = list[1]
@@ -289,7 +396,9 @@ export const useScale = (props: Readonly<Props>, share: ScaleShare) => {
     return Math.sqrt(distX ** 2 + distY ** 2)
   }
 
-  // 触摸开始
+  /**
+   * 触摸开始
+   */
   const onTouchstartWrap = (e: TouchEvent) => {
     if (e.touches.length !== 2 || !props.scale || !Object.keys(getCurItem.value).length) return
 
@@ -297,7 +406,9 @@ export const useScale = (props: Readonly<Props>, share: ScaleShare) => {
     startRect = { ...getCurItem.value }
   }
 
-  // 触摸移动
+  /**
+   * 触摸移动
+   */
   const onTouchmoveWrap = (e: TouchEvent) => {
     if (e.touches.length !== 2 || !props.scale || !Object.keys(getCurItem.value).length) return
 

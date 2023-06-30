@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeInput from './index.vue'
+import { addInstall } from '../utils'
+import input from './index.vue'
 
-// 安装
-MeInput.install = (app: App) => {
-  app.component('MeInput', MeInput)
-}
-
-export { MeInput }
+export const MeInput = addInstall(input)

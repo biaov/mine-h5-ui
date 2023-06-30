@@ -34,37 +34,35 @@
 </template>
 <script lang="ts" setup>
 import { useHandMove, useBtns } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', str: string): void
-  (event: 'cancel'): void
-  (event: 'sure', arr: number[]): void
-}>()
+defineOptions({
+  name: 'MeDatetimePicker'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: string // v-model 绑定值
-    type?: string // 时间类型, date | year-month | month-day | time | datetime
-    visible?: boolean // 是否显示时间选择器
-    minDate?: Date // 最小值
-    maxDate?: Date // 最大值
-  }>(),
-  {
-    modelValue: '',
-    type: 'datetime',
-    visible: false,
-    minDate: () => {
-      const now = new Date() // 获取当前数据
-      now.setFullYear(now.getFullYear() - 10) // 设置新数据
-      return now
-    },
-    maxDate: () => {
-      const now = new Date() // 获取当前数据
-      now.setFullYear(now.getFullYear() + 10) // 设置新数据
-      return now
-    }
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: '',
+  type: 'datetime',
+  visible: false,
+  minDate: () => {
+    /**
+     * 获取当前数据
+     */
+    const now = new Date()
+    now.setFullYear(now.getFullYear() - 10) // 设置新数据
+    return now
+  },
+  maxDate: () => {
+    /**
+     * 获取当前数据
+     */
+    const now = new Date()
+    now.setFullYear(now.getFullYear() + 10) // 设置新数据
+    return now
   }
-)
+})
 
 const { show, currentValue, listData, distance, duration, filterNumber, getCurNum, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
 const { onCancel, onSure } = useBtns(props, emit, currentValue)

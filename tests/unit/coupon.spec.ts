@@ -3,9 +3,14 @@ import MeCoupon from '~/MeCoupon/index.vue'
 
 describe('MeCoupon', () => {
   test('exist', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeCoupon)
-    const viewer = wrapper.find('.me-coupon') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-coupon')
 
     expect(viewer.exists()).toBeTruthy()
   })

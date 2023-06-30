@@ -2,14 +2,22 @@ import { mount } from '@vue/test-utils'
 import MeImg from '~/MeImg/index.vue'
 
 describe('MeImg', () => {
-  const src = 'http://dummyimage.com/100x100/0079cb/fff' // 图片地址
+  /**
+   * 图片地址
+   */
+  const src = 'http://dummyimage.com/100x100/0079cb/fff'
 
   test('props src', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeImg, {
       props: { src }
     })
-    const viewer = wrapper.find('.me-img') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-img')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -20,32 +28,47 @@ describe('MeImg', () => {
   })
 
   test('props fill', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeImg, {
       props: { src, fill: 'contain' }
     })
-    const viewer = wrapper.find('.me-img>span') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-img>span')
 
     expect(viewer.exists()).toBeTruthy()
   })
 
   test('props alt', () => {
     const alt = '测试图片'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeImg, {
       props: { src, alt }
     })
-    const viewer = wrapper.find('.me-img>img') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-img>img')
 
     expect(viewer.attributes('alt')).toBe(alt)
   })
 
   test('emit click', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeImg, {
       props: { src }
     })
-    const viewer = wrapper.find('.me-img') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-img')
 
     await viewer.trigger('click')
 
@@ -53,11 +76,16 @@ describe('MeImg', () => {
   })
 
   test('emit load', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeImg, {
       props: { src }
     })
-    const viewer = wrapper.find('.me-img>img') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-img>img')
 
     await viewer.trigger('load')
 
@@ -65,11 +93,16 @@ describe('MeImg', () => {
   })
 
   test('emit error', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeImg, {
       props: { src }
     })
-    const viewer = wrapper.find('.me-img>img') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-img>img')
 
     await viewer.trigger('error')
 

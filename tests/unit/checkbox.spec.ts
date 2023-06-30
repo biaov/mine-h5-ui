@@ -5,11 +5,16 @@ import MeCheckboxGroup from '~/MeCheckboxGroup/index.vue'
 describe('MeCheckbox', () => {
   test('props icon', () => {
     const icon = 'icon-github'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeCheckbox, {
       props: { icon }
     })
-    const viewer = wrapper.find('.me-checkbox') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-checkbox')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -21,29 +26,44 @@ describe('MeCheckbox', () => {
 
   test('props icon-select', async () => {
     const iconSelect = 'icon-github'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeCheckbox, {
       props: { iconSelect, modelValue: true }
     })
-    const viewer = wrapper.find('.me-checkbox .me-icon') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-checkbox .me-icon')
 
     expect(viewer.classes(iconSelect)).toBe(true)
   })
 
   test('props disabled', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeCheckbox, {
       props: { disabled: true }
     })
-    const viewer = wrapper.find('.me-checkbox') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-checkbox')
 
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
   test('emit click', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeCheckbox)
-    const viewer = wrapper.find('.me-checkbox') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-checkbox')
 
     await viewer.trigger('click')
 
@@ -64,11 +84,16 @@ describe('MeCheckboxGroup', () => {
   }
 
   test('props direction', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(TestComponent, {
       props: { direction: 'horizontal' }
     })
-    const viewer = wrapper.find('.me-checkbox-group') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-checkbox-group')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('inline')).toBe(true)

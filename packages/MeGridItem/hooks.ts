@@ -1,15 +1,28 @@
 import { ref, inject } from 'vue'
 import { MeGridKey } from '../MeGrid/token'
-import { GridContext, Emits } from './types'
+import type { GridContext, Emits } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useHandler = (emit: Emits) => {
   const { name, params } = inject(MeGridKey, {} as GridContext)
-  const cols = ref(4) // 列数
-  const widthValue = ref(25) // item 宽度
-  const borderColor = ref('') // 边框颜色
+  /**
+   * 列数
+   */
+  const cols = ref(4)
+  /**
+   * item 宽度
+   */
+  const widthValue = ref(25)
+  /**
+   * 边框颜色
+   */
+  const borderColor = ref('')
 
-  // 设置下标数据
+  /**
+   * 设置下标数据
+   */
   const setData = () => {
     cols.value = params.cols
     widthValue.value = 100 / params.cols
@@ -18,7 +31,9 @@ export const useHandler = (emit: Emits) => {
 
   name === MeGridKey && setData()
 
-  // 点击列表项
+  /**
+   * 点击列表项
+   */
   const handleClick = (e: MouseEvent) => {
     emit('click', e)
   }

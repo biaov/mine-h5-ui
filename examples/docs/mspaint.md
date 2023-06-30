@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeMspaint } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeMspaint.css'
+import 'mine-h5-ui/styles/MeMspaint.css'
 
 const app = createApp(App)
 app.use(MeMspaint)

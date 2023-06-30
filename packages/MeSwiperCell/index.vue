@@ -24,6 +24,13 @@
 </template>
 <script lang="ts" setup>
 import { useHandMove } from './hooks'
+import type { Slots } from './types'
+
+defineOptions({
+  name: 'MeSwiperCell'
+})
+
+defineSlots<Slots>()
 
 const { hidden, maxDistance, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
 </script>

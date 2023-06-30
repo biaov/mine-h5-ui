@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeSearch } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeSearch.css'
+import 'mine-h5-ui/styles/MeSearch.css'
 
 const app = createApp(App)
 app.use(MeSearch)

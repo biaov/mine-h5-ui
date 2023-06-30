@@ -6,12 +6,12 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeCheckbox, MeCheckboxGroup } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeCheckbox.css'
-import 'mine-h5-ui/lib/theme-default/MeCheckboxGroup.css'
+import 'mine-h5-ui/styles/MeCheckbox.css'
+import 'mine-h5-ui/styles/MeCheckboxGroup.css'
 
 const app = createApp(App)
 app.use(MeCheckbox)

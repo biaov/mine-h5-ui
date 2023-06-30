@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -10,7 +10,7 @@
   "main": "es/index.js",
   "module": "es/index.js",
   "sideEffects": false,
-  "style": "lib/theme-default/index.css",
+  "style": "styles/index.css",
   "description": "一款轻量级、模块化基于 VUE3 的 H5 前端 UI 组件库 👍",
   "scripts": {
     "start": "npm run dev",
@@ -19,7 +19,7 @@
     "build:docs": "vite build",
     "build:theme": "gulp build -f scripts/gulpfile.prod.ts",
     "build:theme:rem": "gulp build -f scripts/gulpfile.rem.ts",
-    "build:package": "cross-env NODE_OPTIONS=--max_old_space_size=8192 rollup -c scripts/rollup.config.ts",
+    "build:package": "vite build --config scripts/vite.config.ts",
     "preview": "vite preview",
     "lint": "npm run lint:examples && npm run lint:mobile && npm run lint:packages && npm run lint:tests",
     "lint:examples": "eslint --fix ./examples --ext .vue,.ts",
@@ -46,11 +46,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/biaov/MINE-H5-UI.git"
+    "url": "https://github.com/biaov/mine-h5-ui.git"
   },
   "homepage": "https://mineh5ui.biaov.cn/v2",
   "bugs": {
-    "url": "https://github.com/biaov/MINE-H5-UI/issues"
+    "url": "https://github.com/biaov/mine-h5-ui/issues"
   },
   "publishConfig": {},
   "license": "ISC",
@@ -69,26 +69,24 @@
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^14.1.0",
     "@types/jest": "^29.5.2",
     "@types/mockjs": "^1.0.7",
-    "@types/node": "^20.3.1",
+    "@types/node": "^20.3.2",
     "@types/qrcode": "^1.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
-    "@typescript-eslint/parser": "^5.59.11",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/compiler-sfc": "^3.3.4",
-    "@vue/test-utils": "^2.3.2",
+    "@vue/test-utils": "^2.4.0",
     "@vue/vue3-jest": "^29.2.4",
     "autoprefixer": "^10.4.14",
-    "cross-env": "^7.0.3",
     "eslint": "^8.43.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.2",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.15.0",
+    "eslint-plugin-vue": "^9.15.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean": "^0.4.0",
@@ -103,16 +101,15 @@
     "markdown-it-container": "^3.0.0",
     "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.8",
-    "rollup": "^2.79.1",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "rollup-plugin-vue": "^6.0.0",
-    "ts-jest": "^29.1.0",
-    "tslib": "^2.5.3",
+    "rollup-plugin-license": "^3.0.1",
+    "ts-jest": "^29.1.1",
+    "tslib": "^2.6.0",
     "typescript": "5.0.4",
     "vite": "^4.3.9",
+    "vite-plugin-dts": "3.0.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.16.4",
     "vite-plugin-vue-markdown": "^0.23.5",
-    "vue-tsc": "^1.8.0"
+    "vue-tsc": "^1.8.3"
   }
 }

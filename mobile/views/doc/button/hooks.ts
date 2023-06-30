@@ -1,9 +1,14 @@
 import initData from './data'
-import { ListDataItem } from './types'
+import type { ListDataItem } from './types'
 
-// 操作
+/**
+ * 操作
+ */
 export const useWebData = () => {
-  const listData = Object.freeze<ListDataItem[]>(initData) // 列表数据
+  /**
+   * 列表数据
+   */
+  const listData = Object.freeze<ListDataItem[]>(initData)
 
   return { listData }
 }

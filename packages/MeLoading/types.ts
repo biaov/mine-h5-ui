@@ -1,4 +1,6 @@
-// 当前 type 类型的 name 所有值
+/**
+ * 当前 type 类型的 name 所有值
+ */
 export interface TypeName extends Record<string, string> {
   circle: string
   circle2: string
@@ -8,10 +10,24 @@ export interface TypeName extends Record<string, string> {
   circle6: string
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  type: string
-  size: string
-  color: string
-  icon: string
+  /**
+   * 类型
+   */
+  type?: 'circle' | 'circle2' | 'circle3' | 'circle4' | 'circle5' | 'circle6'
+  /**
+   * 图标大小
+   */
+  size?: string
+  /**
+   * 图标颜色
+   */
+  color?: string
+  /**
+   * 自定义图标名称
+   */
+  icon?: string
 }

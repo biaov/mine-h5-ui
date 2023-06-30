@@ -1,9 +1,11 @@
 import { ref, provide, onMounted } from 'vue'
 import { MeGridKey } from './token'
-import { Props } from './types'
+import type { Props } from './types'
 
-// 初始化 slot
-export const useInitSlots = (props: Readonly<Props>) => {
+/**
+ * 初始化 slot
+ */
+export const useInitSlots = (props: Readonly<Required<Props>>) => {
   const grid = ref<HTMLDivElement>()
   const params = { cols: props.cols, borderColor: props.borderColor }
 

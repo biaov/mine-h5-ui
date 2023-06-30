@@ -18,33 +18,26 @@
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import { useHandle, useStyle } from './hooks'
+import type { Slots, Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeCell'
+})
 
-const props = withDefaults(
-  defineProps<{
-    title?: string // 标题
-    value?: string | number // 内容
-    icon?: string // 图标名称
-    iconColor?: string // 图标颜色
-    placeholder?: string // 占位符
-    arrow?: boolean // 箭头的显示状态
-    height?: string // 高度
-    bottom?: boolean // 底部边框的显示状态
-  }>(),
-  {
-    title: '',
-    value: '',
-    icon: '',
-    iconColor: '#494949',
-    placeholder: '',
-    arrow: false,
-    height: '100%',
-    bottom: false
-  }
-)
+defineSlots<Slots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  value: '',
+  icon: '',
+  iconColor: '#494949',
+  placeholder: '',
+  arrow: false,
+  height: '100%',
+  bottom: false
+})
 
 const { onClick } = useHandle(emit)
 const { getStyle } = useStyle(props)

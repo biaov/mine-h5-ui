@@ -1,10 +1,14 @@
 import { ref } from 'vue'
-import '../theme-default/fonts/iconfont.js'
-import { Props, TypeName } from './types'
+import '../styles/fonts/iconfont.js'
+import type { Props, TypeName } from './types'
 
-// 操作
-export const useData = (props: Readonly<Props>) => {
-  // 默认图标名称
+/**
+ * 操作
+ */
+export const useData = (props: Readonly<Required<Props>>) => {
+  /**
+   * 默认图标名称
+   */
   const typeName: TypeName = {
     circle: 'icon-loading',
     circle2: 'icon-Loading',
@@ -13,7 +17,10 @@ export const useData = (props: Readonly<Props>) => {
     circle5: 'icon-financial_loading',
     circle6: 'icon-loading_ico'
   }
-  const iconName = ref(typeName[props.type] || 'icon-loading') // 自定义图标名称
+  /**
+   * 自定义图标名称
+   */
+  const iconName = ref(typeName[props.type] || 'icon-loading')
 
   return { iconName }
 }

@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeCountDown from './index.vue'
+import { addInstall } from '../utils'
+import countDown from './index.vue'
 
-// 安装
-MeCountDown.install = (app: App) => {
-  app.component('MeCountDown', MeCountDown)
-}
-
-export { MeCountDown }
+export const MeCountDown = addInstall(countDown)

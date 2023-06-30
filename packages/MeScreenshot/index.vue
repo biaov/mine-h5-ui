@@ -5,25 +5,23 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', e: MouseEvent): void
-  (event: 'end', url: string, canvas: HTMLCanvasElement): void
-}>()
+defineOptions({
+  name: 'MeScreenshot'
+})
 
-const props = withDefaults(
-  defineProps<{
-    start?: boolean // 开始截图状态
-    allowDown?: boolean // 允许下载状态
-    imageName?: string // 下载图片名称
-  }>(),
-  {
-    start: false,
-    allowDown: false,
-    imageName: 'screenshot'
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  start: false,
+  allowDown: false,
+  imageName: 'screenshot'
+})
 
 const { screenshotRef, onClick } = useHandler(props, emit)
 </script>

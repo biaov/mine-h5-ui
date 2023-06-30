@@ -1,12 +1,19 @@
 import { ref, provide, watch } from 'vue'
 import { MeRadioGroupKey } from './token'
-import { Props, Emits } from './types'
+import type { Props, Emits } from './types'
 
-// 初始化 slot
-export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
-  const currentValue = ref(props.modelValue) // 当前value值
+/**
+ * 初始化 slot
+ */
+export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
+  /**
+   * 当前 value 值
+   */
+  const currentValue = ref(props.modelValue)
 
-  // 改变value的值
+  /**
+   * 改变 value 的值
+   */
   const onChange = (name: string | number) => {
     emit('update:modelValue', name)
     emit('change', name)

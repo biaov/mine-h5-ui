@@ -1,9 +1,4 @@
-import type { App } from 'vue'
-import MeStep from './index.vue'
+import { addInstall } from '../utils'
+import step from './index.vue'
 
-// 安装
-MeStep.install = (app: App) => {
-  app.component('MeStep', MeStep)
-}
-
-export { MeStep }
+export const MeStep = addInstall(step)

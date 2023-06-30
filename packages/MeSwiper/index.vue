@@ -14,32 +14,29 @@
     </div>
     <!-- 指示点 -->
     <ul class="dot" v-if="dot">
-      <li v-for="(item, index) in dots" :key="index" :class="{ on: dotIndex === index }"></li>
+      <li v-for="(_, index) in dots" :key="index" :class="{ on: dotIndex === index }"></li>
     </ul>
   </div>
 </template>
 <script lang="ts" setup>
+import type { DefaultSlots } from '../types'
 import { useHandMove } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'change', value: string | number): void
-}>()
+defineOptions({
+  name: 'MeSwiper'
+})
 
-const props = withDefaults(
-  defineProps<{
-    loop?: boolean // 自动
-    delay?: number // 延迟时间
-    height?: number // 组件高度
-    dot?: boolean // 指示点
-    radius?: number // 倒角
-  }>(),
-  {
-    loop: false,
-    delay: 3000,
-    dot: false,
-    radius: 4
-  }
-)
+defineSlots<DefaultSlots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  loop: false,
+  delay: 3000,
+  dot: false,
+  radius: 4
+})
 
 const { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props, emit)
 </script>

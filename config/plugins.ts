@@ -3,10 +3,12 @@ import hljs from 'highlight.js'
 import MarkdownItContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
-import { VitePluginMdOptions, TokenItem } from './types'
+import type { VitePluginMdOptions, TokenItem } from './types'
 import { resolve } from 'path'
 
-// Vite 插件配置
+/**
+ * Vite 插件配置
+ */
 export const vitePluginMdConfig: VitePluginMdOptions = {
   wrapperClasses: 'md-demo',
   markdownItOptions: {
@@ -34,20 +36,24 @@ export const vitePluginMdConfig: VitePluginMdOptions = {
   }
 }
 
-// Vue 插件配置
+/**
+ * Vue 插件配置
+ */
 export const vueConfig: Options = {
   include: [/\.vue$/, /\.md$/]
 }
 
-// PWA 配置
+/**
+ * PWA 配置
+ */
 export const vitePwaConfig: Partial<VitePWAOptions> = {
   registerType: 'prompt',
   includeAssets: ['logo.svg', 'loading.gif'],
   manifest: {
     id: '/v2/',
     name: 'mine-h5-ui',
-    short_name: 'PWA for MINE-H5-UI',
-    description: '关于 MINE-H5-UI 的 PWA',
+    short_name: 'PWA for mine-h5-ui',
+    description: '关于 mine-h5-ui 的 PWA',
     theme_color: '#ffffff',
     icons: [
       {

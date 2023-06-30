@@ -4,11 +4,16 @@ import MeRate from '~/MeRate/index.vue'
 describe('MeRate', () => {
   test('props icon', () => {
     const icon = 'icon-github'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeRate, {
       props: { icon }
     })
-    const viewer = wrapper.find('.me-rate') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-rate')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -20,11 +25,16 @@ describe('MeRate', () => {
 
   test('props icon-select', async () => {
     const iconSelect = 'icon-github'
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeRate, {
       props: { iconSelect }
     })
-    const viewer = wrapper.find('.me-rate .iconfont:first-child') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-rate .iconfont:first-child')
 
     await viewer.trigger('click')
 
@@ -33,29 +43,44 @@ describe('MeRate', () => {
 
   test('props count', () => {
     const count = 4
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeRate, {
       props: { count }
     })
-    const viewer = wrapper.findAll('.me-rate .iconfont') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.findAll('.me-rate .iconfont')
 
     expect(viewer.length).toBe(count)
   })
 
   test('props disabled', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeRate, {
       props: { disabled: true }
     })
-    const viewer = wrapper.find('.me-rate') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-rate')
 
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
   test('emit change', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeRate)
-    const viewer = wrapper.find('.me-rate .iconfont:first-child') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-rate .iconfont:first-child')
 
     await viewer.trigger('click')
 

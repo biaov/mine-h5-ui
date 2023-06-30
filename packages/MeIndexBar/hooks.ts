@@ -1,14 +1,27 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import { CityItem, Emits } from './types'
+import type { CityItem, Emits } from './types'
 
-// 初始化数据
+/**
+ * 初始化数据
+ */
 export const useScroll = () => {
-  const curLetter = ref('') // 当前字母
-  const listCont = ref<HTMLDivElement>() // listCont 节点
-  let arrLi: HTMLCollection // 子节点
+  /**
+   * 当前字母
+   */
+  const curLetter = ref('')
+  /**
+   * listCont 节点
+   */
+  const listCont = ref<HTMLDivElement>()
+  /**
+   * 子节点
+   */
+  let arrLi: HTMLCollection
 
-  // 滚动条
+  /**
+   * 滚动条
+   */
   const onScroll = () => {
     const { scrollTop } = document.documentElement
 
@@ -16,7 +29,10 @@ export const useScroll = () => {
     if (scrollTop >= (arrLi[0] as HTMLDivElement).offsetTop) {
       // 遍历节点数组
       for (let i = 0; i < arrLi.length; i++) {
-        const el = arrLi[i] as HTMLDivElement // 当前节点
+        /**
+         * 当前节点
+         */
+        const el = arrLi[i] as HTMLDivElement
         // 判断是否可显示
         if (el.nodeName === 'LI' && scrollTop > (arrLi[0] as HTMLDivElement).offsetTop && scrollTop < el.offsetTop) {
           curLetter.value = arrLi[i - 1].children[0].children[0].innerHTML // 设置
@@ -40,9 +56,13 @@ export const useScroll = () => {
   return { curLetter, listCont }
 }
 
-// 按钮
+/**
+ * 按钮
+ */
 export const useBtns = (emit: Emits) => {
-  // 点击内容列表
+  /**
+   * 点击内容列表
+   */
   const handleLi = (item: CityItem) => {
     emit('click', { ...item })
   }

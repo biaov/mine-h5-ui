@@ -14,31 +14,22 @@
 </template>
 <script lang="ts" setup>
 import { useDraw } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', node: HTMLCanvasElement): void
-}>()
+defineOptions({
+  name: 'MeMspaint'
+})
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: HTMLCanvasElement // v-model 绑定值
-    width?: string // 宽度
-    height?: string // 高度
-    background?: string // 背景色
-    borderStyle?: boolean | string // 边框样式
-    strokeStyle?: string // 线条颜色
-    lineWidth?: number // 线条粗细
-    visible?: boolean // 显示操作
-  }>(),
-  {
-    width: '200px',
-    height: '200px',
-    background: '#fff',
-    borderStyle: false,
-    strokeStyle: '#f56c6c',
-    lineWidth: 1,
-    visible: true
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  width: '200px',
+  height: '200px',
+  background: '#fff',
+  borderStyle: false,
+  strokeStyle: '#f56c6c',
+  lineWidth: 1,
+  visible: true
+})
 const { canvasRef, getBorder } = useDraw(props, emit)
 </script>

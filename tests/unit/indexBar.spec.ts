@@ -14,11 +14,16 @@ describe('MeIndexBar', () => {
   ]
 
   test('props list', () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeIndexBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-index-bar') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-index-bar')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -32,11 +37,16 @@ describe('MeIndexBar', () => {
   })
 
   test('emit click', async () => {
-    // 向组件里传参
+    /**
+     * 向组件里传参
+     */
     const wrapper = mount(MeIndexBar, {
       props: { list }
     })
-    const viewer = wrapper.find('.me-index-bar .list-cont>li:first-child .list-item>dd:first-of-type') // 获取 DOM
+    /**
+     * 获取 DOM
+     */
+    const viewer = wrapper.find('.me-index-bar .list-cont>li:first-child .list-item>dd:first-of-type')
     expect(viewer.exists()).toBeTruthy()
 
     await viewer.trigger('click')

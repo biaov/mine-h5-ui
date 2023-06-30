@@ -6,11 +6,11 @@
 
 ::: CopyCode
 
-```JavaScript
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeIndexBar } from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/MeIndexBar.css'
+import 'mine-h5-ui/styles/MeIndexBar.css'
 
 const app = createApp(App)
 app.use(MeIndexBar)
@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```Vue
+```vue
 <template>
   <me-index-bar @click="onClick"></me-index-bar>
 </template>
@@ -52,8 +52,8 @@ const onClick = item => {
 
 ::: CopyCode
 
-```JavaScript
-[
+```js
+;[
   {
     name: 'A',
     cities: [{ code: 'AR', cn: '阿根廷' }]

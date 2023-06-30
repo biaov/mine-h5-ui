@@ -26,42 +26,27 @@
 </template>
 <script lang="ts" setup>
 import { useAnimate, useBtns } from './hooks'
+import type { Props, Emits } from './types'
 
-const emit = defineEmits<{
-  (event: 'click', index: number): void
-  (event: 'click:preappend', e: MouseEvent): void
-  (event: 'click:append', e: MouseEvent): void
-}>()
+defineOptions({
+  name: 'MeNoticeBar'
+})
 
-const props = withDefaults(
-  defineProps<{
-    list: string | string[] // 列表内容
-    scroll?: string // 滚动方向, horizontal | vertical
-    loop?: boolean // 开启动画
-    delay?: number // 间隔时间，滚动方向为 vertical 才有效
-    preappendIcon?: string // 前面图标
-    preappendColor?: string // 前面图标颜色
-    appendIcon?: string // 后面图标
-    appendColor?: string // 后面图标颜色
-    height?: number // 高度
-    radius?: string | number // 倒角
-    background?: string // 背景颜色
-    color?: string // 文本颜色
-  }>(),
-  {
-    scroll: 'horizontal',
-    loop: false,
-    delay: 3000,
-    preappendIcon: 'notice',
-    preappendColor: '#f56c6c',
-    appendIcon: 'right1',
-    appendColor: '#c8c7cc',
-    height: 40,
-    radius: 4,
-    background: '#f6f6f6',
-    color: '#494949'
-  }
-)
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  scroll: 'horizontal',
+  loop: false,
+  delay: 3000,
+  preappendIcon: 'notice',
+  preappendColor: '#f56c6c',
+  appendIcon: 'right1',
+  appendColor: '#c8c7cc',
+  height: 40,
+  radius: 4,
+  background: '#f6f6f6',
+  color: '#494949'
+})
 
 const { noticeList, left, listData, listIndex } = useAnimate(props)
 const { onClick, onClickPreappend, onClickAppend } = useBtns(emit)

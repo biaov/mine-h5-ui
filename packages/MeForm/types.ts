@@ -1,4 +1,6 @@
-// props rules
+/**
+ * props rules
+ */
 export interface RuleItem {
   type: string
   required?: boolean
@@ -7,7 +9,9 @@ export interface RuleItem {
   pattern: RegExp
 }
 
-// option
+/**
+ * option
+ */
 export interface Option {
   valid: boolean
   message: string
@@ -15,13 +19,23 @@ export interface Option {
   value: Record<string, any>
 }
 
-// emits
+/**
+ * emits
+ */
 export interface Emits {
   (event: 'submit', option: Option): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  model: Record<string, any>
-  rules: RuleItem[]
+  /**
+   * 校验数据
+   */
+  model?: Record<string, any>
+  /**
+   * 校验规则
+   */
+  rules?: RuleItem[]
 }

@@ -1,4 +1,6 @@
-// 子项目
+/**
+ * 子项目
+ */
 export interface ChildListItem {
   id: number
   text: string
@@ -10,7 +12,9 @@ export interface ChildListItem {
   imgSelected?: string
 }
 
-// 列表项
+/**
+ * 列表项
+ */
 export interface ListDataItem {
   label: string
   list: ChildListItem[]

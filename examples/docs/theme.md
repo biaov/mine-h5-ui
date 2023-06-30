@@ -4,13 +4,13 @@
 
 ## 介绍
 
-- `MINE-H5-UI` 提供了一套默认主题，CSS 命名采用 `网易NEC` 的风格，方便使用者覆盖样式。
+- `mine-h5-ui` 提供了一套默认主题，CSS 命名采用 `网易NEC` 的风格，方便使用者覆盖样式。
 - 如果你想完全替换主题色或者其他样式，可以使用下面提供的方法。
 
 ## 样式变量
 
-- `MINE-H5-UI` 使用了 Less 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
-- 所有可用的颜色变量请参考[👉 配置文件](https://github.com/biaov/MINE-H5-UI)。
+- `mine-h5-ui` 使用了 Less 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
+- 所有可用的颜色变量请参考[👉 配置文件](https://github.com/biaov/mine-h5-ui)。
 
 ## 定制方法
 
@@ -24,8 +24,8 @@
 
 ::: CopyCode
 
-```Basic
-git clone https://github.com/biaov/MINE-H5-UI.git --depth=1
+```sh
+git clone https://github.com/biaov/mine-h5-ui.git --depth=1
 ```
 
 :::
@@ -37,7 +37,7 @@ git clone https://github.com/biaov/MINE-H5-UI.git --depth=1
 ::: CopyCode
 
 ```Text
-https://codeload.github.com/biaov/MINE-H5-UI/zip/main
+https://codeload.github.com/biaov/mine-h5-ui/zip/main
 ```
 
 :::
@@ -46,7 +46,7 @@ https://codeload.github.com/biaov/MINE-H5-UI/zip/main
 
 ::: CopyCode
 
-```Basic
+```sh
 npm i
 ```
 
@@ -57,8 +57,8 @@ npm i
 
 ::: CopyCode
 
-```Basic
-git clone https://github.com/biaov/MINE-H5-UI.git --depth=1 && cd MINE-H5-UI && npm i && code ./
+```sh
+git clone https://github.com/biaov/mine-h5-ui.git --depth=1 && cd mine-h5-ui && npm i && code ./
 ```
 
 :::

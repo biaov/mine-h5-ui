@@ -6,21 +6,20 @@
 </template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
+import type { Props, Emits, Slots } from './types'
 
-const emit = defineEmits<{
-  (event: 'update:visible', bool: boolean): void
-}>()
+defineOptions({
+  name: 'MeMask'
+})
 
-const props = withDefaults(
-  defineProps<{
-    visible?: boolean // 显示状态
-    maskClose?: boolean // 点击遮罩层是否关闭
-  }>(),
-  {
-    visible: false,
-    maskClose: false
-  }
-)
+defineSlots<Slots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  visible: false,
+  maskClose: false
+})
 
 const { isShowMask, isShow, clickMask, animationDuration } = useHandler(props, emit)
 </script>

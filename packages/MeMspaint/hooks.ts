@@ -1,10 +1,17 @@
 import { ref, onMounted, computed } from 'vue'
-import { Props, Emits } from './types'
+import type { PropsHookParam, Emits } from './types'
 
-// 绘制
-export const useDraw = (props: Readonly<Props>, emit: Emits) => {
-  const canvasRef = ref<HTMLCanvasElement>() // canvas 节点
-  // 获取边框
+/**
+ * 绘制
+ */
+export const useDraw = (props: Readonly<PropsHookParam>, emit: Emits) => {
+  /**
+   * canvas 节点
+   */
+  const canvasRef = ref<HTMLCanvasElement>()
+  /**
+   * 获取边框
+   */
   const getBorder = computed(() => {
     switch (props.borderStyle) {
       case true:
@@ -16,7 +23,9 @@ export const useDraw = (props: Readonly<Props>, emit: Emits) => {
     }
   })
 
-  // 获取点坐标
+  /**
+   * 获取点坐标
+   */
   const getPoint = <T extends Touch | MouseEvent>({ clientX, clientY }: T) => {
     const { offsetLeft, offsetTop } = canvasRef.value!
 
@@ -25,14 +34,21 @@ export const useDraw = (props: Readonly<Props>, emit: Emits) => {
       y: clientY - offsetTop + parseInt(getBorder.value, 10)
     }
   }
-  // 获取移动端坐标
+  /**
+   * 获取移动端坐标
+   */
   const getTouchPoint = (e: TouchEvent) => getPoint(e.touches[0])
-  // 获取客户端坐标
+  /**
+   * 获取客户端坐标
+   */
   const getMousePoint = (e: MouseEvent) => getPoint(e)
 
   onMounted(() => {
     if (!props.visible) return
-    const canvas = canvasRef.value! // 节点
+    /**
+     * 节点
+     */
+    const canvas = canvasRef.value!
     emit('update:modelValue', canvas)
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
     ctx.strokeStyle = props.strokeStyle
