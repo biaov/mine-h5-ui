@@ -60,9 +60,10 @@ app.mount('#app')
   <me-search v-model="iptValue" btnText="取消" @click="btnCancel"></me-search>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { MeToast } from 'mine-h5-ui'
 
-const iptValue = $ref('') // 当前搜索框值
+const iptValue = ref('') // 当前搜索框值
 // 点击取消按钮
 const btnCancel = () => {
   MeToast('点击了取消按钮')

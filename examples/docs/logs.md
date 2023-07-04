@@ -14,7 +14,17 @@
 
 :::TimeLine
 
-## v2.5.0-Latest release
+## v2.5.1-Latest release
+
+`2023-07-04`
+
+- 优化代码
+  - 优化 docs 文档 $ref 改为 ref
+- Bug Fixes
+  - 修复 drag 组件的类型
+  - 更新依赖版本
+
+## v2.5.0
 
 `2023-06-30`
 

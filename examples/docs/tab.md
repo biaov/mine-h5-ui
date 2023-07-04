@@ -41,9 +41,11 @@ app.mount('#app')
   </me-tab>
 </template>
 <script lang="ts" setup>
-const active = $ref(0)
+import { ref } from 'vue'
+
+const active = ref(0)
 // 列表数据
-const listData = $ref([
+const listData = ref([
   {
     id: 1,
     label: '标签一',

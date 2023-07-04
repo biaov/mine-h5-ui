@@ -37,8 +37,10 @@ app.mount('#app')
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
-let iptValue = $ref('') // 当前输入框值
-let keyboardValue = $ref(false) // 数字键盘显示状态
+import { ref } from 'vue'
+
+let iptValue = ref('') // 当前输入框值
+let keyboardValue = ref(false) // 数字键盘显示状态
 // 密码输入框聚焦
 const onFocus = () => {
   keyboardValue = true
@@ -77,8 +79,10 @@ const onComplate = () => {
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
-let iptValue = $ref('') // 当前输入框值
-let keyboardValue = $ref(false) // 数字键盘显示状态
+import { ref } from 'vue'
+
+let iptValue = ref('') // 当前输入框值
+let keyboardValue = ref(false) // 数字键盘显示状态
 // 密码输入框聚焦
 const onFocus = () => {
   keyboardValue = true
@@ -117,8 +121,10 @@ const onComplate = () => {
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
-let iptValue = $ref('') // 当前输入框值
-let keyboardValue = $ref(false) // 数字键盘显示状态
+import { ref } from 'vue'
+
+let iptValue = ref('') // 当前输入框值
+let keyboardValue = ref(false) // 数字键盘显示状态
 // 密码输入框聚焦
 const onFocus = () => {
   keyboardValue = true
@@ -157,8 +163,10 @@ const onComplate = () => {
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
 <script lang="ts" setup>
-let iptValue = $ref('') // 当前输入框值
-let keyboardValue = $ref(false) // 数字键盘显示状态
+import { ref } from 'vue'
+
+const iptValue = ref('') // 当前输入框值
+const keyboardValue = ref(false) // 数字键盘显示状态
 // 密码输入框聚焦
 const onFocus = () => {
   keyboardValue = true
@@ -169,16 +177,16 @@ const onBlur = () => {
 }
 // 点击密码输入框数字按钮
 const handleNum = e => {
-  iptValue += String(e)
+  iptValue.value += String(e)
 }
 // 点击密码输入框删除按钮
 const onDelete = () => {
   // 判断是否为空
-  iptValue && (iptValue = iptValue.split('').slice(0, -1).join(''))
+  iptValue.value && (iptValue.value = iptValue.value.split('').slice(0, -1).join(''))
 }
 // 点击密码输入框完成按钮
 const onComplate = () => {
-  keyboardValue = false
+  keyboardValue.value = false
 }
 </script>
 ```

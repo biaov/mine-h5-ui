@@ -42,11 +42,11 @@ app.mount('#app')
   </me-form>
 </template>
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
+import { getCurrentInstance, ref } from 'vue'
 
 const { $Validator } = getCurrentInstance().appContext.config.globalProperties
 // 表单数据
-const form = $ref({
+const form = ref({
   username: '', // 用户名
   password: '', // 密码
   sms: '' // 短信验证码

@@ -49,9 +49,10 @@ app.mount('#app')
   </ul>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { MeToast } from 'mine-h5-ui'
 
-const listData = $ref([
+const listData = ref([
   {
     id: 1,
     label: '基础用法',

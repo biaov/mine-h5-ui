@@ -38,9 +38,11 @@ app.mount('#app')
   <me-action-sheet v-model:visible="visible" :list="listData" index="id" label="value"></me-action-sheet>
 </template>
 <script lang="ts" setup>
-const visible = $ref(false) // 动作面板的显示状态
+import { ref } from 'vue'
+
+const visible = ref(false) // 动作面板的显示状态
 // 列表数据
-const listData = $ref([
+const listData = ref([
   {
     id: 1,
     value: '微信',

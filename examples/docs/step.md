@@ -41,7 +41,9 @@ app.mount('#app')
   </me-step>
 </template>
 <script lang="ts" setup>
-const active = $ref(['first']) // 活动项
+import { ref } from 'vue'
+
+const active = ref(['first']) // 活动项
 </script>
 ```
 
@@ -61,7 +63,9 @@ const active = $ref(['first']) // 活动项
   </me-step>
 </template>
 <script lang="ts" setup>
-const active = $ref(['first']) // 活动项
+import { ref } from 'vue'
+
+const active = ref(['first']) // 活动项
 </script>
 ```
 
@@ -81,7 +85,9 @@ const active = $ref(['first']) // 活动项
   </me-step>
 </template>
 <script lang="ts" setup>
-const active = $ref(['first']) // 活动项
+import { ref } from 'vue'
+
+const active = ref(['first']) // 活动项
 </script>
 ```
 
@@ -101,7 +107,9 @@ const active = $ref(['first']) // 活动项
   </me-step>
 </template>
 <script lang="ts" setup>
-const active = $ref(['first']) // 活动项
+import { ref } from 'vue'
+
+const active = ref(['first']) // 活动项
 </script>
 ```
 
@@ -127,7 +135,9 @@ const active = $ref(['first']) // 活动项
   </me-step>
 </template>
 <script lang="ts" setup>
-const active = $ref(['first']) // 活动项
+import { ref } from 'vue'
+
+const active = ref(['first']) // 活动项
 </script>
 ```
 

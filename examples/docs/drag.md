@@ -36,8 +36,10 @@ Vue.use(MeDrag)
   </me-drag>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
+
 // 列表数据
-const list = $ref([
+const list = ref([
   {
     rect: {
       w: 100,
@@ -59,7 +61,7 @@ const list = $ref([
     url: 'https://dummyimage.com/80x80/409eff/fff&text=2'
   }
 ])
-const current = $ref(0) // 当前选中项
+const current = ref(0) // 当前选中项
 </script>
 ```
 

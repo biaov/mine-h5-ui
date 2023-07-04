@@ -37,7 +37,9 @@ app.mount('#app')
   <me-progress-bar v-model="progress" type="line"></me-progress-bar>
 </template>
 <script lang="ts" setup>
-const progress = $ref(0) // 进度条值
+import { ref } from 'vue'
+
+const progress = ref(0) // 进度条值
 </script>
 ```
 
@@ -55,7 +57,9 @@ const progress = $ref(0) // 进度条值
   <me-progress-bar v-model="progress" type="line" :size="10" :text-show="false"></me-progress-bar>
 </template>
 <script lang="ts" setup>
-const progress = $ref(0) // 进度条值
+import { ref } from 'vue'
+
+const progress = ref(0) // 进度条值
 </script>
 ```
 
@@ -73,7 +77,9 @@ const progress = $ref(0) // 进度条值
   <me-progress-bar v-model="progress" type="line" background="linear-gradient(90deg, #8af2ba, #1e57f5)" active-color="#f66" padding="0 25px"></me-progress-bar>
 </template>
 <script lang="ts" setup>
-const progress = $ref(0) // 进度条值
+import { ref } from 'vue'
+
+const progress = ref(0) // 进度条值
 </script>
 ```
 

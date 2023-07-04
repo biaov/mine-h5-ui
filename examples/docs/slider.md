@@ -60,7 +60,9 @@ app.mount('#app')
   <me-slider v-model="sliderValue" :styles="styles"></me-slider>
 </template>
 <script lang="ts" setup>
-const sliderValue = $ref(30) // 当前滑块值
+import { ref } from 'vue'
+
+const sliderValue = ref(30) // 当前滑块值
 // 自定义滑块样式
 const styles = Object.freeze({
   height: '10px', // 高度
@@ -85,7 +87,9 @@ const styles = Object.freeze({
   </me-slider>
 </template>
 <script lang="ts" setup>
-const sliderValue = $ref(30) // 当前滑块值
+import { ref } from 'vue'
+
+const sliderValue = ref(30) // 当前滑块值
 </script>
 <style scoped lang="less">
 .me-slider {
