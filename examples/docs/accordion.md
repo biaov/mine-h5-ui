@@ -44,7 +44,9 @@ app.mount('#app')
   </me-accordion>
 </template>
 <script lang="ts" setup>
-const accordionActive = $ref('') // 当前活动值
+import { ref } from 'vue'
+
+const accordionActive = ref('') // 当前活动值
 const listData = Object.freeze([
   {
     title: '《桐花》',

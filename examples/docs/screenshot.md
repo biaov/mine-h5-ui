@@ -38,7 +38,9 @@ app.mount('#app')
   </me-screenshot>
 </template>
 <script lang="ts" setup>
-let start = $ref(false) // 截图状态
+import { ref } from 'vue'
+
+let start = ref(false) // 截图状态
 // 点击截图
 const onClick = () => {
   start = true
@@ -61,10 +63,12 @@ const onClick = () => {
   </me-screenshot>
 </template>
 <script lang="ts" setup>
-let start = $ref(false) // 截图状态
+import { ref } from 'vue'
+
+const start = ref(false) // 截图状态
 // 点击截图
 const onClick = () => {
-  start = true
+  start.value = true
 }
 </script>
 ```

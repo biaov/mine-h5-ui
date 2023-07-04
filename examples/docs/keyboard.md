@@ -61,7 +61,9 @@ app.mount('#app')
   <me-keyboard v-model:visible="isShow" :skin-style="skinStyle"></me-keyboard>
 </template>
 <script lang="ts" setup>
-const isShow = $ref(false) // 数字键盘显示状态
+import { ref } from 'vue'
+
+const isShow = ref(false) // 数字键盘显示状态
 // 自定义样式
 const skinStyle = Object.freeze({
   background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景色

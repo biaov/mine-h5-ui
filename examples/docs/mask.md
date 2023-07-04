@@ -52,7 +52,9 @@ app.mount('#app')
   </me-mask>
 </template>
 <script lang="ts" setup>
-const visible = $ref(false) // 模态框显示状态
+import { ref } from 'vue'
+
+const visible = ref(false) // 模态框显示状态
 </script>
 <style scoped lang="less">
 .me-loading {

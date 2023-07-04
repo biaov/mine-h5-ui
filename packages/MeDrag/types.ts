@@ -22,6 +22,7 @@ export interface Rect {
  */
 export interface ListDataItem {
   rect: Rect
+  url: string
 }
 
 /**

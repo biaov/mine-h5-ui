@@ -50,21 +50,22 @@ app.mount('#app')
   </me-dialog>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { MeToast } from 'mine-h5-ui'
 
-let visible = $ref(false) // 对话框显示状态
+const visible = ref(false) // 对话框显示状态
 // 点击文本
 const handleClick = () => {
-  visible = true
+  visible.value = true
 }
 // 点击取消按钮
 const onCancel = () => {
-  visible = false
+  visible.value = false
   MeToast('你点击了取消按钮')
 }
 // 点击确定按钮
 const onConfirm = () => {
-  visible = false
+  visible.value = false
   MeToast('你点击了确定按钮')
 }
 </script>
