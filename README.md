@@ -1,4 +1,4 @@
-# MINEH5UI
+# mine-h5-ui
 
 一款轻量级、模块化基于 VUE3 的 H5 前端 UI 组件库 👍
 
