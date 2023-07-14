@@ -108,7 +108,7 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
    */
   const duration = ref(0)
 
-  const filterNumber = computed(() => (num: number) => num < 10 ? `0${num}` : num)
+  const filterNumber = computed(() => (num: number) => (num < 10 ? `0${num}` : num))
   const getCurNum = (id: number, num: number) => ([4, 5].includes(id) ? num - 1 : num)
   // 开始过渡
   const openTransition = (time: number) => {

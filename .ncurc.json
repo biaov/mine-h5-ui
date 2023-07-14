@@ -1,4 +1,4 @@
 {
   "upgrade": true,
-  "reject": ["typescript", "vite-plugin-dts"]
+  "reject": []
 }
