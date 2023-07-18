@@ -27,7 +27,9 @@ export default {
     const initList = this.createArr()
     const autoList = this.createArr(14, 50)
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -50,7 +52,9 @@ export default {
           auto: true
         }
       ],
-      // 状态文本
+      /**
+       * 状态文本
+       */
       loadMoreText: {
         nomore: '没有更多数据了',
         more: '加载更多',
@@ -59,11 +63,15 @@ export default {
     }
   },
   methods: {
-    // 生成数组
+    /**
+     * 生成数组
+     */
     createArr(min = 6, max = 14) {
       return Array.from({ length: 100 }, () => ({ text: Random.cword(min, max) }))
     },
-    // 加载更多
+    /**
+     * 加载更多
+     */
     onLoadMore(item) {
       if (item.loadStatus !== 'more') return
       item.loadStatus = 'loading'

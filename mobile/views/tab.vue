@@ -13,8 +13,13 @@
 export default {
   data() {
     return {
-      active: 0, // 活动索引
-      // 列表数据
+      /**
+       * 活动索引
+       */
+      active: 0,
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -77,7 +82,9 @@ export default {
     }
   },
   methods: {
-    // 当标签栏改变时
+    /**
+     * 当标签栏改变时
+     */
     onChange(index) {
       console.log('活动项' + index)
     }

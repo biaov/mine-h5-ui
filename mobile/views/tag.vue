@@ -11,7 +11,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           label: '基础用法',
@@ -99,7 +101,9 @@ export default {
     }
   },
   methods: {
-    // 点击关闭按钮
+    /**
+     * 点击关闭按钮
+     */
     onClose() {
       this.$MeToast('点击关闭按钮')
     }

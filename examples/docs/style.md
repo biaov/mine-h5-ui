@@ -9,7 +9,7 @@
 ```JavaScript
 import Vue from 'vue'
 import MINEH5UI from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/index.css'
+import 'mine-h5-ui/styles/index.css'
 
 Vue.use(MINEH5UI)
 ```
@@ -22,7 +22,7 @@ Vue.use(MINEH5UI)
 
 ## 源码
 
-- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/v1/packages/theme-default/style.less)
+- 源码地址：[CSS 代码块](https://github.com/biaov/MINE-H5-UI/blob/v1/packages/styles/style.less)
 
 ## Class 类名
 

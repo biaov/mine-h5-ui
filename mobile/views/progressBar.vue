@@ -12,7 +12,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           label: '基础用法',
@@ -60,21 +62,42 @@ export default {
     }
   },
   methods: {
-    // 点击开始按钮
+    /**
+     * 点击开始按钮
+     */
     onStart(item) {
-      // 是否已到终点
+      /**
+       * 是否已到终点
+       */
       if (item.value === 100) {
         item.value = 0
         item.start = undefined
       }
-      // 开始动画API
+      /**
+       * 开始动画 API
+       */
       function startAnimate(timestamp) {
-        item.start === undefined && (item.start = timestamp) // 设置开始
-        const elapsed = timestamp - item.start // 当前距离开始时间
-        item.value = Math.round(Math.min(elapsed * 0.05, 100)) // 当前进度
-        elapsed < 2000 && window.requestAnimationFrame(startAnimate) // 2s之内完结
+        /**
+         * 设置开始
+         */
+        item.start === undefined && (item.start = timestamp)
+        /**
+         * 当前距离开始时间
+         */
+        const elapsed = timestamp - item.start
+        /**
+         * 当前进度
+         */
+        item.value = Math.round(Math.min(elapsed * 0.05, 100))
+        /**
+         * 2s 之内完结
+         */
+        elapsed < 2000 && window.requestAnimationFrame(startAnimate)
       }
-      window.requestAnimationFrame(startAnimate) // 开启帧动画
+      /**
+       * 开启帧动画
+       */
+      window.requestAnimationFrame(startAnimate)
     }
   }
 }

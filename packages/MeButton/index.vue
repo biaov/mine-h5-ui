@@ -19,35 +19,49 @@ export default {
     MeIcon
   },
   props: {
-    // 原生 button 标签的 type 属性
+    /**
+     * 原生 button 标签的 type 属性
+     */
     nativeType: {
       type: String,
-      default: 'button' // button|reset|submit
+      default: 'button' // button | reset | submit
     },
-    // 宽度
+    /**
+     * 宽度
+     */
     width: {
       type: String,
       default: ''
     },
-    // 类型
+    /**
+     * 类型
+     */
     type: {
       validator: value => value === 'default' || value === 'primary' || value === 'success' || value === 'info' || value === 'warning' || value === 'danger',
       default: 'default'
     },
-    // 朴素按钮
+    /**
+     * 朴素按钮
+     */
     plain: {
       type: Boolean
     },
-    // 禁用状态
+    /**
+     * 禁用状态
+     */
     disabled: {
       type: Boolean
     },
-    // 图标按钮
+    /**
+     * 图标按钮
+     */
     icon: {
       type: String,
       default: ''
     },
-    // 自定义颜色
+    /**
+     * 自定义颜色
+     */
     color: {
       type: String,
       default: ''

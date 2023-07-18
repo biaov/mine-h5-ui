@@ -23,14 +23,18 @@ import CountryData from './CountryData'
 export default {
   name: 'MeIndexBar',
   props: {
-    // 自定义国家数据
+    /**
+     * 自定义国家数据
+     */
     list: {
       type: Array,
       default() {
         return CountryData
       }
     },
-    // 自定义顶部定位高度
+    /**
+     * 自定义顶部定位高度
+     */
     topHeight: {
       type: String,
       default: '50px'
@@ -38,11 +42,16 @@ export default {
   },
   data() {
     return {
-      curLetter: '' // 当前字母
+      /**
+       * 当前字母
+       */
+      curLetter: ''
     }
   },
   methods: {
-    // 点击内容列表
+    /**
+     * 点击内容列表
+     */
     handleLi(item) {
       this.$emit('on-click', { ...item })
     }
@@ -51,14 +60,26 @@ export default {
     const arrLi = this.$refs.listCont.children
     document.onscroll = () => {
       const scrollTop = document.documentElement.scrollTop
-      // 是否滚动
+      /**
+       * 是否滚动
+       */
       if (scrollTop >= arrLi[0].offsetTop) {
-        // 遍历节点数组
+        /**
+         * 遍历节点数组
+         */
         for (let i = 0; i < arrLi.length; i++) {
-          const el = arrLi[i] // 当前节点
-          // 判断是否可显示
+          /**
+           * 当前节点
+           */
+          const el = arrLi[i]
+          /**
+           * 判断是否可显示
+           */
           if (el.nodeName === 'LI' && scrollTop > arrLi[0].offsetTop && scrollTop < el.offsetTop) {
-            this.curLetter = arrLi[i - 1].children[0].children[0].innerHTML // 设置
+            /**
+             * 设置
+             */
+            this.curLetter = arrLi[i - 1].children[0].children[0].innerHTML
             break
           }
         }

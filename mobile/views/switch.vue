@@ -11,7 +11,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -47,9 +49,13 @@ export default {
     }
   },
   methods: {
-    // 点击 Switch 开关
+    /**
+     * 点击 Switch 开关
+     */
     onClick({ async, value }) {
-      // 判断是否为异步
+      /**
+       * 判断是否为异步
+       */
       if (async) {
         this.$MeToast('当前为异步状态，可自行控制开关的打开和关闭')
       } else {

@@ -4,11 +4,17 @@ const vueMarkdown = {
   raw: true,
   preprocess: (MarkdownIt, source) => {
     MarkdownIt.renderer.rules.table_open = () => `<table class="table">`
-    // ```html``` 给这种样式加个class hljs
+    /**
+     * ```html``` 给这种样式加个 class hljs
+     */
     MarkdownIt.renderer.rules.fence = utils.wrapCustomClass(MarkdownIt.renderer.rules.fence)
-    // 给```Vue 给这种样式加个class hljs
+    /**
+     * 给```Vue 给这种样式加个 class hljs
+     */
     MarkdownIt.renderer.rules.Vue = utils.wrapCustomClass(MarkdownIt.renderer.rules.fence)
-    // ```code``` 给这种样式加个class code_inline
+    /**
+     * ```code``` 给这种样式加个 class code_inline
+     */
     const codeInline = MarkdownIt.renderer.rules.code_inline
     MarkdownIt.renderer.rules.code_inline = (...args) => {
       args[0][args[1]].attrJoin('class', 'code_inline')
@@ -35,4 +41,5 @@ const vueMarkdown = {
     ]
   ]
 }
+
 module.exports = vueMarkdown

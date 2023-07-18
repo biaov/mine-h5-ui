@@ -18,7 +18,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -153,11 +155,15 @@ export default {
     }
   },
   methods: {
-    // 点击组选框里的单选框
+    /**
+     * 点击组选框里的单选框
+     */
     onChange(value) {
       this.$MeToast(`你当前选中了 ${JSON.stringify(value)} 项`)
     },
-    // 点击单独选框
+    /**
+     * 点击单独选框
+     */
     onClick(value) {
       this.$MeToast(value ? '选中' : '取消选中')
     }

@@ -14,7 +14,9 @@
 export default {
   name: 'MeTabBar',
   props: {
-    // 列表数据
+    /**
+     * 列表数据
+     */
     list: {
       type: Array,
       required: true
@@ -29,22 +31,30 @@ export default {
        * @param {string} [imgSelected] - 自定义选中图标
        */
     },
-    // 上边框颜色
+    /**
+     * 上边框颜色
+     */
     borderColor: {
       type: String,
       default: '#dcdfe6'
     },
-    // 背景颜色
+    /**
+     * 背景颜色
+     */
     background: {
       type: String,
       default: '#fff'
     },
-    // 未选中状态颜色
+    /**
+     * 未选中状态颜色
+     */
     color: {
       type: String,
       default: '#949494'
     },
-    // 选中状态颜色
+    /**
+     * 选中状态颜色
+     */
     colorSelected: {
       type: String,
       default: '#409eff'
@@ -54,7 +64,9 @@ export default {
     return {}
   },
   methods: {
-    // 点击列表项
+    /**
+     * 点击列表项
+     */
     onclick(item) {
       !item.state && this.$emit('on-change', { ...item })
     }

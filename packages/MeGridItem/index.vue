@@ -12,22 +12,30 @@
 export default {
   name: 'MeGridItem',
   props: {
-    // 图标
+    /**
+     * 图标
+     */
     icon: {
       type: String,
       default: ''
     },
-    // 图标的颜色
+    /**
+     * 图标的颜色
+     */
     iconColor: {
       type: String,
       default: ''
     },
-    // 文本
+    /**
+     * 文本
+     */
     text: {
       type: String,
       default: ''
     },
-    // 文本颜色
+    /**
+     * 文本颜色
+     */
     textColor: {
       type: String,
       default: ''
@@ -35,27 +43,46 @@ export default {
   },
   data() {
     return {
-      cols: 4, // 列数
-      currentId: 0, // 当前 id
-      widthValue: 25, // item 宽度
-      borderColor: '' // 边框颜色
+      /**
+       * 列数
+       */
+      cols: 4,
+      /**
+       * 当前 id
+       */
+      currentId: 0,
+      /**
+       * item 宽度
+       */
+      widthValue: 25,
+      /**
+       * 边框颜色
+       */
+      borderColor: ''
     }
   },
   methods: {
-    // 设置下标数据
+    /**
+     * 设置下标数据
+     */
     setData(id, cols, color) {
       this.currentId = id
       this.cols = cols
       this.widthValue = 100 / cols
       this.borderColor = color
     },
-    // 点击列表项
+    /**
+     * 点击列表项
+     */
     handleClick() {
       const {
         $parent: { $options, onChange },
         currentId
       } = this
-      $options._componentTag === 'me-grid' && onChange(currentId) // 向父组件传递数据
+      /**
+       * 向父组件传递数据
+       */
+      $options._componentTag === 'me-grid' && onChange(currentId)
       this.$emit('on-click')
     }
   }

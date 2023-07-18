@@ -1,4 +1,5 @@
 import MeButton from './index.vue'
+
 MeButton.install = Vue => {
   Vue.component(MeButton.name, MeButton)
 }

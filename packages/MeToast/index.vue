@@ -14,11 +14,26 @@ export default {
   },
   data() {
     return {
-      message: '', // 提示语
-      isShow: false, // 是否显示
-      bgColor: '', // 背景颜色
-      icon: '', // 图标
-      durction: 1000 // 延迟时间
+      /**
+       * 提示语
+       */
+      message: '',
+      /**
+       * 是否显示
+       */
+      isShow: false,
+      /**
+       * 背景颜色
+       */
+      bgColor: '',
+      /**
+       * 图标
+       */
+      icon: '',
+      /**
+       * 延迟时间
+       */
+      durction: 1000
     }
   }
 }

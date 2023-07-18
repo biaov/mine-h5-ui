@@ -18,17 +18,23 @@ export default {
     MeLoading
   },
   props: {
-    // v-model绑定值
+    /**
+     * v-model 绑定值
+     */
     value: {
       type: Boolean,
       required: true
     },
-    // 自定义状态文本
+    /**
+     * 自定义状态文本
+     */
     loadText: {
       type: Array,
       default: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功']
     },
-    // 是否要显示加载图标
+    /**
+     * 是否要显示加载图标
+     */
     loadIcon: {
       type: Boolean,
       default: true
@@ -36,31 +42,74 @@ export default {
   },
   data() {
     return {
-      activeState: 0, // 加载状态
-      transY: 0, // 垂直多少像素
-      scale: 0, // 放大倍数
-      startY: 0, // 开始位置
-      step: 0, // 步进器
-      showValue: 50, // 显示值
-      duration: 0 // 过渡时间
+      /**
+       * 加载状态
+       */
+      activeState: 0,
+      /**
+       * 垂直多少像素
+       */
+      transY: 0,
+      /**
+       * 放大倍数
+       */
+      scale: 0,
+      /**
+       * 开始位置
+       */
+      startY: 0,
+      /**
+       * 步进器
+       */
+      step: 0,
+      /**
+       * 显示值
+       */
+      showValue: 50,
+      /**
+       * 过渡时间
+       */
+      duration: 0
     }
   },
   methods: {
-    // 触摸开始
+    /**
+     * 触摸开始
+     */
     onTouchstart(e) {
-      // 是否可触发
+      /**
+       * 是否可触发
+       */
       if (this.value) return
-      this.startY = e.changedTouches[0].clientY // 获取初始位置
-      this.step = 0 // 初始化步进器
-      this.duration = 0 // 关闭过渡器
+      /**
+       * 获取初始位置
+       */
+      this.startY = e.changedTouches[0].clientY
+      /**
+       * 初始化步进器
+       */
+      this.step = 0
+      /**
+       * 关闭过渡器
+       */
+      this.duration = 0
     },
-    // 接触点改变，滑动时
+    /**
+     * 接触点改变，滑动时
+     */
     onTouchmove(e) {
       const { value, startY, showValue } = this
-      // 是否可触发
+      /**
+       * 是否可触发
+       */
       if (value) return
-      const distY = e.changedTouches[0].clientY - startY // 计算位置
-      // 是否超过显示值
+      /**
+       * 计算位置
+       */
+      const distY = e.changedTouches[0].clientY - startY
+      /**
+       * 是否超过显示值
+       */
       if (distY > showValue) {
         this.activeState = 1
         this.step += 0.09
@@ -72,14 +121,23 @@ export default {
         this.activeState = 0
       }
     },
-    // 触摸结束
+    /**
+     * 触摸结束
+     */
     onTouchend(e) {
-      // 是否可触发
+      /**
+       * 是否可触发
+       */
       if (this.value) return
       const { startY, showValue } = this
       const distY = e.changedTouches[0].clientY - startY
-      this.duration = 400 // 打开过渡器
-      // 是否超过显示值
+      /**
+       * 打开过渡器
+       */
+      this.duration = 400
+      /**
+       * 是否超过显示值
+       */
       if (distY > showValue) {
         this.activeState = 2
         this.transY = showValue
@@ -92,24 +150,52 @@ export default {
         this.scale = 0
       }
     },
-    // pc端鼠标按下
+    /**
+     * PC 端鼠标按下
+     */
     onMousedown(e) {
       const { value, onMousemove, onMouseup } = this
-      // 是否可触发
+      /**
+       * 是否可触发
+       */
       if (value) return
-      this.startY = e.clientY // 获取初始位置
-      this.step = 0 // 初始化步进器
-      this.duration = 0 // 关闭过渡器
-      document.onmousemove = onMousemove // 表达式声明移动事件
-      document.onmouseup = onMouseup // 表达式声明抬起事件
+      /**
+       * 获取初始位置
+       */
+      this.startY = e.clientY
+      /**
+       * 初始化步进器
+       */
+      this.step = 0
+      /**
+       * 关闭过渡器
+       */
+      this.duration = 0
+      /**
+       * 表达式声明移动事件
+       */
+      document.onmousemove = onMousemove
+      /**
+       * 表达式声明抬起事件
+       */
+      document.onmouseup = onMouseup
     },
-    // pc 端鼠标按下移动
+    /**
+     * PC 端鼠标按下移动
+     */
     onMousemove(e) {
       const { value, startY, showValue } = this
-      // 是否可触发
+      /**
+       * 是否可触发
+       */
       if (value) return
-      const distY = e.clientY - startY // 计算位置
-      // 是否超过显示值
+      /**
+       * 计算位置
+       */
+      const distY = e.clientY - startY
+      /**
+       * 是否超过显示值
+       */
       if (distY > showValue) {
         this.activeState = 1
         this.step += 0.09
@@ -121,14 +207,23 @@ export default {
         this.activeState = 0
       }
     },
-    // pc端鼠标抬起
+    /**
+     * PC 端鼠标抬起
+     */
     onMouseup(e) {
-      // 是否可触发
+      /**
+       * 是否可触发
+       */
       if (this.value) return
       const { startY, showValue } = this
       const distY = e.clientY - startY
-      this.duration = 400 // 打开过渡器
-      // 是否超过显示值
+      /**
+       * 打开过渡器
+       */
+      this.duration = 400
+      /**
+       * 是否超过显示值
+       */
       if (distY > showValue) {
         this.activeState = 2
         this.transY = showValue
@@ -140,17 +235,29 @@ export default {
         this.transY = 0
         this.scale = 0
       }
-      document.onmousemove = null // 清理上次的移动事件
-      document.onmouseup = null // 清理上次的抬起事件
+      /**
+       * 清理上次的移动事件
+       */
+      document.onmousemove = null
+      /**
+       * 清理上次的抬起事件
+       */
+      document.onmouseup = null
     }
   },
   watch: {
-    // 监听value变化
+    /**
+     * 监听 value 变化
+     */
     value(value) {
-      // 是否可滑动
+      /**
+       * 是否可滑动
+       */
       if (!value) {
         this.activeState = 3
-        // 延迟关闭
+        /**
+         * 延迟关闭
+         */
         setTimeout(() => {
           this.transY = 0
           this.scale = 0

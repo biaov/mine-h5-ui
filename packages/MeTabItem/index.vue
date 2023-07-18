@@ -8,7 +8,9 @@
 export default {
   name: 'MeTabItem',
   props: {
-    // 标签内容
+    /**
+     * 标签内容
+     */
     title: {
       type: String,
       required: true
@@ -16,17 +18,27 @@ export default {
   },
   data() {
     return {
-      currentId: 0, // 当前 id
-      isShow: false // 是否显示
+      /**
+       * 当前 id
+       */
+      currentId: 0,
+      /**
+       * 是否显示
+       */
+      isShow: false
     }
   },
   methods: {
-    // 设置下标数据
+    /**
+     * 设置下标数据
+     */
     setData(id) {
       this.currentId = id
       this.initShow()
     },
-    // 设置初始化显示
+    /**
+     * 设置初始化显示
+     */
     initShow() {
       const {
         $parent: { $options, value },

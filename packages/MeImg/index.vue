@@ -9,32 +9,44 @@
 export default {
   name: 'MeImg',
   props: {
-    // 图片地址
+    /**
+     * 图片地址
+     */
     src: {
       type: String,
       required: true
     },
-    // 宽度
+    /**
+     * 宽度
+     */
     width: {
       type: String,
       default: ''
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: String,
       default: ''
     },
-    // 填充方式
+    /**
+     * 填充方式
+     */
     fill: {
       type: String,
       default: ''
     },
-    // 倒角
+    /**
+     * 倒角
+     */
     radius: {
       type: String,
       default: '0'
     },
-    // 错误显示alt
+    /**
+     * 错误显示 alt
+     */
     alt: {
       type: String,
       default: ''
@@ -44,7 +56,9 @@ export default {
     return {}
   },
   methods: {
-    // 点击图片
+    /**
+     * 点击图片
+     */
     handleImg() {
       this.$emit('on-click')
     }

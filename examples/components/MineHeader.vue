@@ -25,7 +25,9 @@ export default {
   },
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -44,7 +46,9 @@ export default {
           value: 'Github'
         }
       ],
-      // 版本列表数据
+      /**
+       * 版本列表数据
+       */
       listVersion: [
         {
           value: '1.x',

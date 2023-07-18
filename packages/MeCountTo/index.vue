@@ -9,27 +9,37 @@ import { FormatThousand } from '~/MeAPI/function'
 export default {
   name: 'MeCountTo',
   props: {
-    // 开始状态
+    /**
+     * 开始状态
+     */
     value: {
       type: Boolean,
       default: true
     },
-    // 开始数字
+    /**
+     * 开始数字
+     */
     startValue: {
       type: Number,
       default: 0
     },
-    // 结束数字
+    /**
+     * 结束数字
+     */
     endValue: {
       type: Number,
       required: true
     },
-    // 持续时间
+    /**
+     * 持续时间
+     */
     duration: {
       type: Number,
       default: 1500
     },
-    // 千分符
+    /**
+     * 千分符
+     */
     thousand: {
       type: Boolean,
       default: false
@@ -37,7 +47,10 @@ export default {
   },
   data() {
     return {
-      curValue: 0 // 当前值
+      /**
+       * 当前值
+       */
+      curValue: 0
     }
   },
   computed: {
@@ -47,17 +60,32 @@ export default {
     }
   },
   methods: {
-    // 开始动画
+    /**
+     * 开始动画
+     */
     startAnimate() {
       let startTime = null
       const { duration, endValue, startValue } = this
-      // 开始当前动画
+      /**
+       * 开始当前动画
+       */
       const startCurAnimate = timestamp => {
-        startTime === null && (startTime = timestamp) // 设置开始时间
-        const elapsed = timestamp - startTime // 当前距离开始时间
-        // 虚拟计算值
+        /**
+         * 设置开始时间
+         */
+        startTime === null && (startTime = timestamp)
+        /**
+         * 当前距离开始时间
+         */
+        const elapsed = timestamp - startTime
+        /**
+         * 虚拟计算值
+         */
         const virtual = ~~(((endValue - startValue) * elapsed) / duration + startValue)
-        this.curValue = Math.min(virtual, endValue) // 当前值
+        /**
+         * 当前值
+         */
+        this.curValue = Math.min(virtual, endValue)
         if (elapsed < duration) {
           window.requestAnimationFrame(startCurAnimate)
         } else {

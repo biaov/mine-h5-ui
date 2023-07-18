@@ -17,7 +17,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -66,11 +68,15 @@ export default {
     }
   },
   methods: {
-    // 点击分享面板列表
+    /**
+     * 点击分享面板列表
+     */
     onChange(item) {
       this.$MeToast(JSON.stringify(item))
     },
-    // 点击分享面板取消按钮
+    /**
+     * 点击分享面板取消按钮
+     */
     onCancel() {
       this.$MeToast('你点击了取消按钮')
     }

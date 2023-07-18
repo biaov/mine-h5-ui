@@ -36,7 +36,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -192,26 +194,39 @@ export default {
     }
   },
   methods: {
-    // 点击短信验证码
+    /**
+     * 点击短信验证码
+     */
     handleSMS(item) {
       let num = 60
       item.smsIs = true
       item.smsMsg = num + 's后重发'
-      // 开启倒计时
+      /**
+       * 开启倒计时
+       */
       const timer = setInterval(() => {
         num--
         item.smsMsg = num + 's后重发'
-        // 判断倒计时是否归零
+        /**
+         * 判断倒计时是否归零
+         */
         if (num <= 0) {
-          clearTimeout(timer) // 关闭倒计时
+          /**
+           * 关闭倒计时
+           */
+          clearTimeout(timer)
           item.smsIs = false
           item.smsMsg = '短信验证码'
         }
       }, 1000)
     },
-    // 点击图标
+    /**
+     * 点击图标
+     */
     handleIcon(item) {
-      // 判断是否为清理按钮
+      /**
+       * 判断是否为清理按钮
+       */
       item.icon === 'icon-close' && (item.value = '')
     }
   }

@@ -16,17 +16,30 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
           label: '基础用法',
           form: {
-            username: '', // 用户名
-            password: '', // 密码
-            sms: '' // 短信验证码
+            /**
+             * 用户名
+             */
+            username: '',
+            /**
+             * 密码
+             */
+            password: '',
+            /**
+             * 短信验证码
+             */
+            sms: ''
           },
-          // 规则
+          /**
+           * 规则
+           */
           rules: [
             {
               type: 'username',
@@ -49,11 +62,18 @@ export default {
     }
   },
   methods: {
-    // 点击提交按钮
+    /**
+     * 点击提交按钮
+     */
     onSubmit({ valid, message, type, value }) {
-      // 判断是否通过验证
+      /**
+       * 判断是否通过验证
+       */
       if (valid) {
-        console.log(value) // 通过验证的值
+        /**
+         * 通过验证的值
+         */
+        console.log(value)
       }
     }
   }

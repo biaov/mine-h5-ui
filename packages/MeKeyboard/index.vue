@@ -21,28 +21,45 @@ export default {
     prop: 'show'
   },
   props: {
-    // 是否显示数字输入
+    /**
+     * 是否显示数字输入
+     */
     show: {
       type: Boolean,
       default: false
     },
-    // 系统皮肤样式
+    /**
+     * 系统皮肤样式
+     */
     skinType: {
       type: String,
-      default: 'gray' // gray|dark
+      default: 'gray' // gray | dark
     },
-    // 自定义皮肤样式
+    /**
+     * 自定义皮肤样式
+     */
     skinStyle: {
       type: Object,
       default() {
         return {
-          bgc: '', // 背景色
-          textBgc: '', // 文本背景
-          color: '' // 字体颜色
+          /**
+           * 背景色
+           */
+          bgc: '',
+          /**
+           * 文本背景
+           */
+          textBgc: '',
+          /**
+           * 字体颜色
+           */
+          color: ''
         }
       }
     },
-    // 是否动态改变padding
+    /**
+     * 是否动态改变 padding
+     */
     isPadding: {
       type: Boolean,
       default: true
@@ -50,54 +67,87 @@ export default {
   },
   data() {
     return {
-      isActive: false // 是否处于激活状态
+      /**
+       * 是否处于激活状态
+       */
+      isActive: false
     }
   },
   methods: {
-    // 点击数字
+    /**
+     * 点击数字
+     */
     onClick(num) {
       this.$emit('on-click', num)
     },
-    // 点击删除按钮
+    /**
+     * 点击删除按钮
+     */
     onDelete() {
       this.$emit('on-delete')
     },
-    // 点击完成按钮
+    /**
+     * 点击完成按钮
+     */
     onComplate() {
       this.$emit('input', false)
       this.$emit('on-complate')
     },
-    // 改变页面padding
+    /**
+     * 改变页面 padding
+     */
     setPadding() {
       const { isPadding, show } = this
-      // 判断是否可设置padding
+      /**
+       * 判断是否可设置 padding
+       */
       if (isPadding) {
-        // 判断是否处于激活状态
+        /**
+         * 判断是否处于激活状态
+         */
         if (show) {
-          document.body.className += ' me-keyboard-padding' // 设置className
+          /**
+           * 设置 className
+           */
+          document.body.className += ' me-keyboard-padding'
         } else {
-          const className = document.body.className // 获取className
+          /**
+           * 获取 className
+           */
+          const className = document.body.className
           let index = className.indexOf('me-keyboard-padding')
-          index = index > 0 ? index : undefined // 判断是否存在padding
-          document.body.className = className.slice(0, index) // 设置className
+          /**
+           *  判断是否存在 padding
+           */
+          index = index > 0 ? index : undefined
+          /**
+           * 设置 className
+           */
+          document.body.className = className.slice(0, index)
         }
       }
     },
-    // 点击 document
+    /**
+     * 点击 document
+     */
     clickDocument() {
       this.$emit('input', false)
     }
   },
   mounted() {
     this.setPadding()
-    // 点击非键盘区域
+    /**
+     * 点击非键盘区域
+     */
     Bind(document, 'click', this.clickDocument)
   },
   destroyed() {
     Unbind(document, 'click', this.clickDocument)
   },
   watch: {
-    // 监听value值变化
+    /**
+     * 监听 value 值变化
+     */
     show() {
       this.setPadding()
     }

@@ -11,46 +11,64 @@
 export default {
   name: 'MeTag',
   props: {
-    // 类型
+    /**
+     * 类型
+     */
     type: {
       type: String,
-      default: 'primary' // primary|success|info|warning|danger
+      default: 'primary' // primary | success | info | warning | danger
     },
-    // 空心
+    /**
+     * 空心
+     */
     plain: {
       type: Boolean,
       default: false
     },
-    // 倒角
+    /**
+     * 倒角
+     */
     radius: {
       type: Number,
       default: 4
     },
-    // 宽度
+    /**
+     * 宽度
+     */
     width: {
       type: Number
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: Number,
       default: 24
     },
-    // 标签颜色
+    /**
+     * 标签颜色
+     */
     color: {
       type: String,
       default: ''
     },
-    // 标签内容
+    /**
+     * 标签内容
+     */
     text: {
       type: String,
       default: '标签'
     },
-    // 文本颜色
+    /**
+     * 文本颜色
+     */
     textColor: {
       type: String,
       default: ''
     },
-    // 关闭状态
+    /**
+     * 关闭状态
+     */
     closeable: {
       type: Boolean,
       default: false
@@ -60,7 +78,9 @@ export default {
     return {}
   },
   methods: {
-    // 点击关闭按钮
+    /**
+     * 点击关闭按钮
+     */
     onClose() {
       this.$emit('on-close')
     }

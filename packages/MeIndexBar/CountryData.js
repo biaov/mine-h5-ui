@@ -1,4 +1,6 @@
-// 默认国家数据
+/**
+ * 默认国家数据
+ */
 const CountryData = [
   {
     name: 'A',
@@ -375,4 +377,5 @@ const CountryData = [
     ]
   }
 ]
+
 export default CountryData

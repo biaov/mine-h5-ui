@@ -23,7 +23,14 @@ export const Unbind = (dom, event, fn, flag = false) => {
   dom.removeEventListener(event, fn, flag)
   return dom
 }
+
 export default {
-  Bind, // 绑定事件
-  Unbind // 移除绑定事件
+  /**
+   * 绑定事件
+   */
+  Bind,
+  /**
+   * 移除绑定事件
+   */
+  Unbind
 }

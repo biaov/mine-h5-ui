@@ -14,7 +14,9 @@
 export default {
   name: 'ComboBox',
   props: {
-    // 列表
+    /**
+     * 列表
+     */
     list: {
       type: Array,
       required: true
@@ -22,17 +24,27 @@ export default {
   },
   data() {
     return {
-      title: '', // 内容
-      isShowDropdown: false // 是否显示下拉框
+      /**
+       * 内容
+       */
+      title: '',
+      /**
+       * 是否显示下拉框
+       */
+      isShowDropdown: false
     }
   },
   methods: {
-    // 点击标题
+    /**
+     * 点击标题
+     */
     handleTitle(e) {
       e.stopPropagation()
       this.isShowDropdown = !this.isShowDropdown
     },
-    // 点击列表
+    /**
+     * 点击列表
+     */
     handleLi({ value, href }) {
       value !== this.list[0].value && (location.href = href)
     }

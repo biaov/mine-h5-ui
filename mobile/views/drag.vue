@@ -13,7 +13,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       list: [
         {
           rect: {
@@ -36,11 +38,16 @@ export default {
           url: 'https://dummyimage.com/80x80/409eff/fff&text=2'
         }
       ],
-      current: 0 // 当前选中项
+      /**
+       * 当前选中项
+       */
+      current: 0
     }
   },
   methods: {
-    // 状态改变
+    /**
+     * 状态改变
+     */
     onChange(data, name) {
       console.log(name)
     }

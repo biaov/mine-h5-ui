@@ -10,17 +10,23 @@ import HTML2Canvas from 'html2canvas'
 export default {
   name: 'MeScreenshot',
   props: {
-    // 开始截图状态
+    /**
+     * 开始截图状态
+     */
     start: {
       type: Boolean,
       default: false
     },
-    // 允许下载状态
+    /**
+     * 允许下载状态
+     */
     allowDown: {
       type: Boolean,
       default: false
     },
-    // 下载图片名称
+    /**
+     * 下载图片名称
+     */
     imageName: {
       type: String,
       default: 'screenshot'
@@ -30,11 +36,15 @@ export default {
     return {}
   },
   methods: {
-    // 点击 dom
+    /**
+     * 点击 dom
+     */
     onClick(e) {
       this.$emit('on-click', e)
     },
-    // 开始截图
+    /**
+     * 开始截图
+     */
     startScreenshot() {
       HTML2Canvas(this.$refs.screenshot).then(canvas => {
         const img = canvas.toDataURL()
@@ -42,16 +52,23 @@ export default {
         this.$emit('on-end', img, canvas)
       })
     },
-    // 下载图片
+    /**
+     * 下载图片
+     */
     downImg(imgData) {
       const aDom = document.createElement('a')
       aDom.href = imgData
       aDom.download = `${this.imageName}.png`
-      aDom.click() // 下载图片
+      /**
+       * 下载图片
+       */
+      aDom.click()
     }
   },
   watch: {
-    // 开始截图
+    /**
+     * 开始截图
+     */
     start: {
       handler(value) {
         value && this.startScreenshot()

@@ -12,8 +12,13 @@
 export default {
   data() {
     return {
-      active: 0, // 活动索引
-      // 数据列表
+      /**
+       * 活动索引
+       */
+      active: 0,
+      /**
+       * 数据列表
+       */
       listData: [
         {
           title: '基础',
@@ -31,7 +36,9 @@ export default {
     }
   },
   methods: {
-    // 刷新
+    /**
+     * 刷新
+     */
     onRefresh(item) {
       setTimeout(() => {
         item.count++

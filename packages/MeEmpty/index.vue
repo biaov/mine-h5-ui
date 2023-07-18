@@ -17,27 +17,37 @@
 export default {
   name: 'MeEmpty',
   props: {
-    // 文本内容
+    /**
+     * 文本内容
+     */
     text: {
       type: String,
       default: ''
     },
-    // 类型
+    /**
+     * 类型
+     */
     type: {
       type: String,
-      default: 'default' // default|network|search
+      default: 'default' // default | network | search
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: Number,
       default: 200
     },
-    // 自定义图标
+    /**
+     * 自定义图标
+     */
     iconName: {
       type: String,
       default: ''
     },
-    // 自定义图片
+    /**
+     * 自定义图片
+     */
     url: {
       type: String,
       default: ''
@@ -45,17 +55,25 @@ export default {
   },
   data() {
     return {
-      icon: '' // 图标名称
+      /**
+       * 图标名称
+       */
+      icon: ''
     }
   },
   created() {
-    // 类型对应图标名称
+    /**
+     * 类型对应图标名称
+     */
     const names = {
       default: 'jigou_wushuju',
       network: 'wangluocuowu',
       search: 'wushuju'
     }
-    this.icon = this.iconName || names[this.type] // 设置图标名称
+    /**
+     * 设置图标名称
+     */
+    this.icon = this.iconName || names[this.type]
   }
 }
 </script>

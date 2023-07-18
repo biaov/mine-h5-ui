@@ -13,7 +13,9 @@
 export default {
   data() {
     return {
-      // 信息按钮
+      /**
+       * 信息按钮
+       */
       listData: [
         {
           id: 1,
@@ -194,7 +196,9 @@ export default {
     }
   },
   methods: {
-    // 点击按钮
+    /**
+     * 点击按钮
+     */
     handleBtn(it) {
       const { $copyText, $MeToast } = this
       $copyText(`<me-button type="${it.type}" color="${!it.color ? '' : it.color}" icon="${!it.icon ? '' : it.icon}"${!!it.plain ? ' plain' : ''}${!!it.disabled ? ' disabled' : ''}>${it.value}</me-button>`)

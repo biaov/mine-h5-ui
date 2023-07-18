@@ -14,42 +14,68 @@
 export default {
   name: 'MeJigsawValidate',
   props: {
-    // 图片地址
+    /**
+     * 图片地址
+     */
     url: {
       type: String,
       required: true
     },
-    // 图片宽度
+    /**
+     * 图片宽度
+     */
     width: {
       type: String,
       default: '100%'
     },
-    // 图片高度
+    /**
+     * 图片高度
+     */
     height: {
       type: String,
       default: '300px'
     },
-    // 随机位置
+    /**
+     * 随机位置
+     */
     random: {
       type: Boolean,
       default: true
     },
-    // 滑块样式
+    /**
+     * 滑块样式
+     */
     slideStyle: {
       type: Object,
       default: () => ({
-        height: '40px', // 滑块高度
-        background: '#f6f6f6', // 滑块背景色
-        dotBackground: '#409eff', // 拖拽点背景色
-        tips: '#494949' // 提示文本颜色
+        /**
+         * 滑块高度
+         */
+        height: '40px',
+        /**
+         * 滑块背景色
+         */
+        background: '#f6f6f6',
+        /**
+         * 拖拽点背景色
+         */
+        dotBackground: '#409eff',
+        /**
+         * 提示文本颜色
+         */
+        tips: '#494949'
       })
     },
-    // 提示语
+    /**
+     * 提示语
+     */
     tips: {
       type: String,
       default: '按住左边按钮向右拖动完成上方图像验证'
     },
-    // 容错值
+    /**
+     * 容错值
+     */
     range: {
       type: Number,
       default: 5
@@ -57,31 +83,70 @@ export default {
   },
   data() {
     return {
-      dragPoint: { x: 10 }, // 拖拽点
-      missingPoint: { x: 200 }, // 缺失点
-      crossPoint: { y: 20, width: 50, height: 50 }, // 拖拽点和缺失点相同信息
-      startX: 0, // 横向开始点
-      openAnimation: false, // 动画开关
-      moveX: 0, // 移动距离
-      imgRect: { width: 0, height: 0 } // 图片范围
+      /**
+       * 拖拽点
+       */
+      dragPoint: { x: 10 },
+      /**
+       * 缺失点
+       */
+      missingPoint: { x: 200 },
+      /**
+       * 拖拽点和缺失点相同信息
+       */
+      crossPoint: { y: 20, width: 50, height: 50 },
+      /**
+       * 横向开始点
+       */
+      startX: 0,
+      /**
+       * 动画开关
+       */
+      openAnimation: false,
+      /**
+       * 移动距离
+       */
+      moveX: 0,
+      /**
+       * 图片范围
+       */
+      imgRect: { width: 0, height: 0 }
     }
   },
   methods: {
-    // 操作开始
+    /**
+     * 操作开始
+     */
     handleStart({ clientX }) {
       this.openAnimation = false
       this.startX = clientX
     },
-    // 操作移动
+    /**
+     * 操作移动
+     */
     handleMove({ clientX }) {
       this.moveX = clientX - this.startX
     },
-    // 操作结束
+    /**
+     * 操作结束
+     */
     handleEnd({ clientX }) {
-      const dx = this.dragPoint.x // 拖拽点 x
-      const mx = this.missingPoint.x // 缺失点 x
-      const curX = clientX - this.startX // 当前位移
-      const resultBool = Math.abs(dx + curX - mx) < this.range // 验证结果
+      /**
+       * 拖拽点 x
+       */
+      const dx = this.dragPoint.x
+      /**
+       * 缺失点 x
+       */
+      const mx = this.missingPoint.x
+      /**
+       * 当前位移
+       */
+      const curX = clientX - this.startX
+      /**
+       * 验证结果
+       */
+      const resultBool = Math.abs(dx + curX - mx) < this.range
 
       if (resultBool) {
         this.moveX = mx - dx
@@ -92,19 +157,27 @@ export default {
 
       this.$emit('change', resultBool)
     },
-    // 手指触摸开始
+    /**
+     * 手指触摸开始
+     */
     onTouchstart(e) {
       this.handleStart(e.changedTouches[0])
     },
-    // 手指触摸移动
+    /**
+     * 手指触摸移动
+     */
     onTouchmove(e) {
       this.handleMove(e.changedTouches[0])
     },
-    // 手指触摸离开
+    /**
+     * 手指触摸离开
+     */
     onTouchend(e) {
       this.handleEnd(e.changedTouches[0])
     },
-    // 点击滑块
+    /**
+     * 点击滑块
+     */
     onMousedown(e) {
       this.handleStart(e)
       document.onmousemove = this.handleMove
@@ -113,7 +186,9 @@ export default {
         document.onmousemove = document.onmouseup = null
       }
     },
-    // 动画结束
+    /**
+     * 动画结束
+     */
     onAnimationend() {
       this.openAnimation = false
     }
@@ -121,7 +196,10 @@ export default {
   mounted() {
     const { width, height } = this.$refs.jigsawImgRef?.getBoundingClientRect()
     this.imgRect = { width, height }
-    const split = width / 2 // 分割值
+    /**
+     * 分割值
+     */
+    const split = width / 2
     const cw = this.crossPoint.width
     const ch = this.crossPoint.height
 

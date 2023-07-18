@@ -8,38 +8,54 @@
 export default {
   name: 'MeRadioGroup',
   props: {
-    // v-model值
+    /**
+     * v-model 值
+     */
     value: {
       type: [String, Number],
       default: ''
     },
-    // 排列方向
+    /**
+     * 排列方向
+     */
     direction: {
       type: String,
-      default: '' // vertical|horizontal
+      default: '' // vertical | horizontal
     }
   },
   data() {
     return {
-      currentValue: this.value // 当前value值
+      /**
+       * 当前 value 值
+       */
+      currentValue: this.value
     }
   },
   methods: {
-    // 更新子组件状态
+    /**
+     * 更新子组件状态
+     */
     updateValue() {
       this.$children.forEach(elem => elem.setStatus())
     },
-    // 改变触发
+    /**
+     * 改变触发
+     */
     onChange(data) {
       this.$emit('input', data)
       this.$emit('on-change', data)
     }
   },
   watch: {
-    // 监听vue变化
+    /**
+     * 监听 vue 变化
+     */
     value(value) {
       this.currentValue = value
-      this.updateValue() // 更新子组件状态
+      /**
+       * 更新子组件状态
+       */
+      this.updateValue()
     }
   }
 }

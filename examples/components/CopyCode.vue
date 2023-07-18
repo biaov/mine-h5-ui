@@ -15,13 +15,24 @@ export default {
   name: 'CopyCode',
   data() {
     return {
-      copyText: '', // 需要复制之后的内容
-      isShowMore: false, // 是否显示更多
-      isMore: false // 是否需要显示更多操作
+      /**
+       * 需要复制之后的内容
+       */
+      copyText: '',
+      /**
+       * 是否显示更多
+       */
+      isShowMore: false,
+      /**
+       * 是否需要显示更多操作
+       */
+      isMore: false
     }
   },
   methods: {
-    // 点击复制按钮
+    /**
+     * 点击复制按钮
+     */
     onCopy() {
       const { $copyText, $api, $slots, $MeToast } = this
       $copyText($api.GetNodeText($slots.highlight))
@@ -34,8 +45,13 @@ export default {
     }
   },
   mounted() {
-    const copyStyle = this.$refs.copy.style // 获取DOM节点style属性
-    // 判断是否超过最低限制高度
+    /**
+     * 获取 DOM 节点 style 属性
+     */
+    const copyStyle = this.$refs.copy.style
+    /**
+     * 判断是否超过最低限制高度
+     */
     if (this.$slots.highlight[0].elm.offsetHeight > 200) {
       this.isMore = true
       copyStyle.height = '200px'
@@ -47,14 +63,23 @@ export default {
     }
   },
   watch: {
-    // 监听isShowMore属性
+    /**
+     * 监听 isShowMore 属性
+     */
     isShowMore(value) {
-      const copyStyle = this.$refs.copy.style // 获取DOM节点style属性
+      /**
+       * 获取 DOM 节点 style 属性
+       */
+      const copyStyle = this.$refs.copy.style
       if (value) {
-        // 设置高度自动为内容高度
+        /**
+         * 设置高度自动为内容高度
+         */
         copyStyle.height = this.$slots.highlight[0].elm.offsetHeight + 50 + 'px'
       } else {
-        // 设置基础高度为200px
+        /**
+         * 设置基础高度为 200px
+         */
         copyStyle.height = '200px'
       }
     }

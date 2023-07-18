@@ -11,22 +11,30 @@
 export default {
   name: 'MeActionSheet',
   props: {
-    // v-model 绑定值
+    /**
+     * v-model 绑定值
+     */
     value: {
       type: Boolean,
       default: false
     },
-    // 数据列表
+    /**
+     * 数据列表
+     */
     list: {
       type: Array,
       validator: value => value.length > 0 && Object.keys(value[0]).length > 0
     },
-    // 索引名
+    /**
+     * 索引名
+     */
     index: {
       type: String,
       default: 'id'
     },
-    // 数据展示属性名
+    /**
+     * 数据展示属性名
+     */
     label: {
       type: String,
       default: 'value'
@@ -34,12 +42,20 @@ export default {
   },
   data() {
     return {
-      isShowMask: false, // 是否显示模态框
-      isShow: false // 是否显示模态框的过渡动画
+      /**
+       * 是否显示模态框
+       */
+      isShowMask: false,
+      /**
+       * 是否显示模态框的过渡动画
+       */
+      isShow: false
     }
   },
   methods: {
-    // 显示模态框
+    /**
+     * 显示模态框
+     */
     showMask() {
       const that = this
       that.isShowMask = true
@@ -47,7 +63,9 @@ export default {
         that.isShow = true
       }, 100)
     },
-    // 隐藏模态框
+    /**
+     * 隐藏模态框
+     */
     hideMask() {
       const that = this
       that.isShow = false
@@ -56,13 +74,17 @@ export default {
         that.$emit('input', false)
       }, 400)
     },
-    // 点击列表
+    /**
+     * 点击列表
+     */
     onLi(item) {
       const that = this
       that.$emit('input', false)
       that.$emit('on-change', item)
     },
-    // 点击取消按钮
+    /**
+     * 点击取消按钮
+     */
     onCancel() {
       const that = this
       that.$emit('input', false)
@@ -70,7 +92,9 @@ export default {
     }
   },
   watch: {
-    // 监听是否显示弹出层参数
+    /**
+     * 监听是否显示弹出层参数
+     */
     value(value) {
       const { showMask, hideMask } = this
       value ? showMask() : hideMask()

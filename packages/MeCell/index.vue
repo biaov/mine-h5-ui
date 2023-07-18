@@ -23,42 +23,58 @@ export default {
     MeIcon
   },
   props: {
-    // 标题
+    /**
+     * 标题
+     */
     title: {
       type: String,
       default: ''
     },
-    // 内容
+    /**
+     * 内容
+     */
     value: {
       type: [String, Number],
       default: ''
     },
-    // 图标名称
+    /**
+     * 图标名称
+     */
     icon: {
       type: String,
       default: ''
     },
-    // 图标颜色
+    /**
+     * 图标颜色
+     */
     iconColor: {
       type: String,
       default: '#494949'
     },
-    // 占位符
+    /**
+     * 占位符
+     */
     placeholder: {
       type: String,
       default: ''
     },
-    // 箭头的显示状态
+    /**
+     * 箭头的显示状态
+     */
     arrow: {
       type: Boolean,
       default: false
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: String,
       default: '100%'
     },
-    // 底部边框的显示状态
+    /**
+     * 底部边框的显示状态
+     */
     bottom: {
       type: Boolean,
       default: false
@@ -68,13 +84,17 @@ export default {
     return {}
   },
   computed: {
-    // 样式
+    /**
+     * 样式
+     */
     getStyle() {
       return `height:${this.height};--icon-color:${this.iconColor};`
     }
   },
   methods: {
-    // 点击
+    /**
+     * 点击
+     */
     onClick(e) {
       this.$emit('on-click', e)
     }

@@ -11,22 +11,30 @@
 export default {
   name: 'MeLoading',
   props: {
-    // 类型
+    /**
+     * 类型
+     */
     type: {
       type: String,
-      default: 'circle' // circle|circle2|circle3|circle4|circle5|circle6
+      default: 'circle' // circle | circle2 | circle3 | circle4 | circle5 | circle6
     },
-    // 图标大小
+    /**
+     * 图标大小
+     */
     size: {
       type: String,
       default: '30px'
     },
-    // 图标颜色
+    /**
+     * 图标颜色
+     */
     color: {
       type: String,
       default: '#949494' // #494949
     },
-    // 自定义图标名称
+    /**
+     * 自定义图标名称
+     */
     icon: {
       type: String,
       default: ''
@@ -34,8 +42,13 @@ export default {
   },
   data() {
     return {
-      iconName: '', // 自定义图标名称
-      // 默认图标名称
+      /**
+       * 自定义图标名称
+       */
+      iconName: '',
+      /**
+       * 默认图标名称
+       */
       typeName: {
         circle: 'icon-loading',
         circle2: 'icon-Loading',
@@ -48,10 +61,13 @@ export default {
   },
   created() {
     const { typeName, type } = this
-    this.iconName = typeName[type] || 'icon-loading' // 设置名称
+    /**
+     * 设置名称
+     */
+    this.iconName = typeName[type] || 'icon-loading'
   },
   mounted() {
-    require('~/theme-default/fonts/iconfont.js')
+    require('~/styles/fonts/iconfont.js')
   }
 }
 </script>

@@ -20,7 +20,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -95,7 +97,9 @@ export default {
     }
   },
   methods: {
-    // 点击图片
+    /**
+     * 点击图片
+     */
     onCopy({ src, width, height, fill, radius }) {
       const { $copyText, $MeToast } = this
       $copyText(`<me-img src="${src}"${!width ? '' : ' width="' + width + '"'}${!height ? '' : ' height="' + height + '"'}${!fill ? '' : ' fill="' + fill + '"'}${!radius ? '' : ' radius="' + radius + '"'}></me-img>`)

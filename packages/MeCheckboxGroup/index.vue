@@ -8,15 +8,19 @@
 export default {
   name: 'MeCheckboxGroup',
   props: {
-    // v-model值
+    /**
+     * v-model 值
+     */
     value: {
       type: Array,
       default: () => []
     },
-    // 排列方向
+    /**
+     * 排列方向
+     */
     direction: {
       type: String,
-      default: 'vertical' // vertical|horizontal
+      default: 'vertical' // vertical | horizontal
     }
   },
   data() {

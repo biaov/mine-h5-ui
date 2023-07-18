@@ -13,12 +13,16 @@
 export default {
   name: 'MeDialog',
   props: {
-    // v-model 绑定值
+    /**
+     * v-model 绑定值
+     */
     value: {
       type: Boolean,
       default: false
     },
-    // 提示文本
+    /**
+     * 提示文本
+     */
     tips: {
       type: String,
       default: '提示'
@@ -26,8 +30,14 @@ export default {
   },
   data() {
     return {
-      isShowMask: false, // 是否显示模态框
-      isShow: false // 是否显示模态框的过渡动画
+      /**
+       * 是否显示模态框
+       */
+      isShowMask: false,
+      /**
+       * 是否显示模态框的过渡动画
+       */
+      isShow: false
     }
   },
   methods: {
