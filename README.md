@@ -29,19 +29,19 @@ npm i mine-h5-ui@version1
 ### 使用
 
 ```JavaScript
-import Vue from "vue";
-import MINEH5UI from "mine-h5-ui";
-import "mine-h5-ui/lib/theme-default/index.css";
+import Vue from 'vue'
+import MINEH5UI from 'mine-h5-ui'
+import 'mine-h5-ui/styles/index.css'
 
-Vue.use(MINEH5UI);
+Vue.use(MINEH5UI)
 ```
 
 - 👉 在[快速开始](https://mineh5ui.biaov.cn/doc/start)中查看更多信息。
 
 ## 项目文档
 
-- [EXPLAIN.md](https://github.com/biaov/MINE-H5-UI/blob/master/EXPLAIN.md)
+- [EXPLAIN.md](https://github.com/biaov/MINE-H5-UI/blob/v1/EXPLAIN.md)
 
-## 贡献者
+## 贡献者们
 
-- biaov\<biaov@qq.com\>
+- `biaov<biaov@qq.com>`

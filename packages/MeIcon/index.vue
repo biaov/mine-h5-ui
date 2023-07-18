@@ -6,17 +6,23 @@
 export default {
   name: 'MeIcon',
   props: {
-    // class名称
+    /**
+     * class 名称
+     */
     name: {
       type: String,
       required: true
     },
-    // 图标颜色
+    /**
+     * 图标颜色
+     */
     color: {
       type: String,
       default: ''
     },
-    // 图标大小
+    /**
+     * 图标大小
+     */
     size: {
       type: String,
       default: ''
@@ -26,7 +32,9 @@ export default {
     return {}
   },
   methods: {
-    // 点击图标
+    /**
+     * 点击图标
+     */
     onClick(e) {
       this.$emit('on-click', e)
     }

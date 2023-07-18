@@ -19,27 +19,37 @@ export default {
     event: 'input'
   },
   props: {
-    // 是否显示弹出层
+    /**
+     * 是否显示弹出层
+     */
     visible: {
       type: Boolean,
       default: false
     },
-    // 是否显示模态框
+    /**
+     * 是否显示模态框
+     */
     modal: {
       type: Boolean,
       default: true
     },
-    // 弹出位置
+    /**
+     * 弹出位置
+     */
     position: {
       type: String,
       default: 'center'
     },
-    // 是否显示关闭图标
+    /**
+     * 是否显示关闭图标
+     */
     closeable: {
       type: Boolean,
       default: false
     },
-    // 倒角数值
+    /**
+     * 倒角数值
+     */
     radius: {
       type: String,
       default: ''
@@ -47,12 +57,20 @@ export default {
   },
   data() {
     return {
-      isShowMask: false, // 是否显示模态框
-      isShow: false // 是否显示模态框的过渡动画
+      /**
+       * 是否显示模态框
+       */
+      isShowMask: false,
+      /**
+       * 是否显示模态框的过渡动画
+       */
+      isShow: false
     }
   },
   computed: {
-    // 设置倒角
+    /**
+     * 设置倒角
+     */
     setRadius() {
       let radiusStyle = ''
       const { position, radius } = this
@@ -74,14 +92,18 @@ export default {
     }
   },
   methods: {
-    // 显示模态框
+    /**
+     * 显示模态框
+     */
     showMask() {
       this.isShowMask = true
       setTimeout(() => {
         this.isShow = true
       }, 100)
     },
-    // 隐藏模态框
+    /**
+     * 隐藏模态框
+     */
     hideMask() {
       this.isShow = false
       setTimeout(() => {
@@ -92,7 +114,9 @@ export default {
     }
   },
   watch: {
-    // 监听是否显示弹出层参数
+    /**
+     * 监听是否显示弹出层参数
+     */
     visible(value) {
       value ? this.showMask() : this.hideMask()
     }

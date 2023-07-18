@@ -13,7 +13,10 @@ export default {
   },
   data() {
     return {
-      title: '' // 标题
+      /**
+       * 标题
+       */
+      title: ''
     }
   },
   watch: {

@@ -10,7 +10,9 @@
   </div>
 </template>
 <script>
-// 列表数据
+/**
+ * 列表数据
+ */
 const listData = [
   {
     title: '《桐花》',
@@ -40,8 +42,14 @@ const listData = [
 export default {
   data() {
     return {
-      accordionActive: '', // 当前活动值
-      listData: Object.freeze(listData) // 列表数据
+      /**
+       * 当前活动值
+       */
+      accordionActive: '',
+      /**
+       * 列表数据
+       */
+      listData: Object.freeze(listData)
     }
   },
   methods: {}

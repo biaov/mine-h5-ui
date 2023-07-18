@@ -2,12 +2,16 @@
 export default {
   name: 'MeSpace',
   props: {
-    // 间距大小
+    /**
+     * 间距大小
+     */
     size: {
       type: String,
       default: '10px'
     },
-    // 间距方向
+    /**
+     * 间距方向
+     */
     direction: {
       type: String,
       default: 'horizontal' // horizontal | vertical

@@ -11,17 +11,23 @@
 export default {
   name: 'MeSwiperItem',
   props: {
-    // 图片地址
+    /**
+     * 图片地址
+     */
     url: {
       type: String,
       default: ''
     },
-    // 文本
+    /**
+     * 文本
+     */
     text: {
       type: String,
       default: ''
     },
-    // 背景色
+    /**
+     * 背景色
+     */
     background: {
       type: String,
       default: ''

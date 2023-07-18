@@ -29,42 +29,58 @@ export default {
     MeIcon
   },
   props: {
-    // v-model绑定值
+    /**
+     * v-model 绑定值
+     */
     value: {
       type: String,
       required: true
     },
-    // 占位符
+    /**
+     * 占位符
+     */
     placeholder: {
       type: String,
       default: '请搜索'
     },
-    // 右侧按钮内容
+    /**
+     * 右侧按钮内容
+     */
     btnText: {
       type: String,
       default: ''
     },
-    // 搜索框对齐方式
+    /**
+     * 搜索框对齐方式
+     */
     align: {
       type: String,
-      default: 'left' // left|center|right|justify|inherit
+      default: 'left' // left | center | right | justify | inherit
     },
-    // 搜索框倒角
+    /**
+     * 搜索框倒角
+     */
     radius: {
       type: String,
       default: '4px'
     },
-    // 搜索框背景色
+    /**
+     * 搜索框背景色
+     */
     background: {
       type: String,
       default: ''
     },
-    // 字体颜色
+    /**
+     * 字体颜色
+     */
     color: {
       type: String,
       default: ''
     },
-    // 是否禁用输入框
+    /**
+     * 是否禁用输入框
+     */
     disabled: {
       type: Boolean,
       default: false
@@ -72,33 +88,51 @@ export default {
   },
   data() {
     return {
-      inputVal: this.value // 输入框值
+      /**
+       * 输入框值
+       */
+      inputVal: this.value
     }
   },
   methods: {
-    // 点击清理按钮
+    /**
+     * 点击清理按钮
+     */
     onClean() {
       this.$emit('input', '')
     },
-    // 点击软键盘的搜索/回车按钮
+    /**
+     * 点击软键盘的搜索 / 回车按钮
+     */
     onKeypress(e) {
       e.keyCode === 13 && this.$emit('on-search')
     },
-    // 点击自定义按钮
+    /**
+     * 点击自定义按钮
+     */
     handleBtn() {
       this.$emit('on-click')
     },
-    // 搜索框聚焦时触发
+    /**
+     * 搜索框聚焦时触发
+     */
     onEvent(name, e) {
       this.$emit(name, e)
     }
   },
   watch: {
-    // 监听参数value的变化
+    /**
+     * 监听参数 value 的变化
+     */
     value(value) {
-      this.inputVal = value // 设置value
+      /**
+       * 设置 value
+       */
+      this.inputVal = value
     },
-    // 监听输入框的值的变化
+    /**
+     * 监听输入框的值的变化
+     */
     inputVal(value) {
       this.$emit('input', value)
     }

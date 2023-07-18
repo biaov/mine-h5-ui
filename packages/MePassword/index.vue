@@ -12,27 +12,37 @@ import { Bind, Unbind } from '~/MeAPI/event'
 export default {
   name: 'MePassword',
   props: {
-    // v-model的值
+    /**
+     * v-model 的值
+     */
     value: {
       type: String,
       default: ''
     },
-    // 输入框模式
+    /**
+     * 输入框模式
+     */
     type: {
       type: String,
-      default: 'password' // number|password
+      default: 'password' // number | password
     },
-    // 输入框数量
+    /**
+     * 输入框数量
+     */
     num: {
       type: Number,
       default: 6
     },
-    // 系统皮肤样式
+    /**
+     * 系统皮肤样式
+     */
     skinType: {
       type: String,
-      default: 'white' // white|dark
+      default: 'white' // white | dark
     },
-    // 聚焦状态
+    /**
+     * 聚焦状态
+     */
     isFocus: {
       type: Boolean,
       default: false
@@ -40,26 +50,39 @@ export default {
   },
   data() {
     return {
-      listData: [] // 列表数据
+      /**
+       * 列表数据
+       */
+      listData: []
     }
   },
   methods: {
-    // 点击按钮
+    /**
+     * 点击按钮
+     */
     handleClick() {
       const { listData } = this
       let flag = true
-      // 循环遍历列表数据
+      /**
+       * 循环遍历列表数据
+       */
       for (const elem of listData) {
-        // 判断是否存在已激活选项
+        /**
+         * 判断是否存在已激活选项
+         */
         if (elem.state) {
           flag = false
           elem.state = false
           break
         }
       }
-      // 判断是否所有的选项都未激活
+      /**
+       * 判断是否所有的选项都未激活
+       */
       if (flag) {
-        // 循环遍历列表数据
+        /**
+         * 循环遍历列表数据
+         */
         for (const elem of listData) {
           if (elem.value === '') {
             elem.state = true
@@ -71,34 +94,57 @@ export default {
         this.$emit('on-blur')
       }
     },
-    // 设置数组变化
+    /**
+     * 设置数组变化
+     */
     setList() {
       const { num, value } = this
-      const valueArr = value.split('').slice(0, num) // 传入数据转化为数组
-      // 生成对象
+      /**
+       * 传入数据转化为数组
+       */
+      const valueArr = value.split('').slice(0, num)
+      /**
+       * 生成对象
+       */
       this.listData = Array.from({ length: num }, (v, k) => ({ id: k + 1, value: valueArr[k] || '', state: false }))
     },
-    // 设置数组变化
+    /**
+     * 设置数组变化
+     */
     updateList() {
       const { num, value, listData } = this
-      const valueArr = value.split('').slice(0, num) // 传入数据转化为数组
-      // 遍历迭代设置值
+      /**
+       * 传入数据转化为数组
+       */
+      const valueArr = value.split('').slice(0, num)
+      /**
+       * 遍历迭代设置值
+       */
       listData.forEach((elem, i) => {
         elem.value = valueArr[i] || ''
       })
-      const len = valueArr.length // 传入数据长度
+      /**
+       * 传入数据长度
+       */
+      const len = valueArr.length
       len !== num && (listData[len].state = true)
       len > 0 && (listData[len - 1].state = false)
       len < num - 1 && (listData[len + 1].state = false)
     },
-    // 清理聚焦
+    /**
+     * 清理聚焦
+     */
     closeFocus() {
-      // 循环遍历清理聚焦
+      /**
+       * 循环遍历清理聚焦
+       */
       this.listData.forEach(elem => {
         elem.state = false
       })
     },
-    // 点击 document
+    /**
+     * 点击 document
+     */
     clickDocument() {
       this.listData.forEach(elem => {
         elem.state = false
@@ -109,22 +155,32 @@ export default {
     this.setList()
   },
   mounted() {
-    Bind(document, 'click', this.clickDocument) // document 绑定点击事件
+    /**
+     * document 绑定点击事件
+     */
+    Bind(document, 'click', this.clickDocument)
   },
   destroyed() {
-    Unbind(document, 'click', this.clickDocument) // document 移除绑定点击事件
+    /**
+     * document 移除绑定点击事件
+     */
+    Unbind(document, 'click', this.clickDocument)
   },
   watch: {
-    // 监听value的变化
+    /**
+     * 监听 value 的变化
+     */
     value() {
       this.updateList()
     },
-    // 监听是否聚焦状态
+    /**
+     * 监听是否聚焦状态
+     */
     isFocus(value) {
-      // 是否清理聚焦状态
-      if (!value) {
-        this.closeFocus()
-      }
+      /**
+       * 是否清理聚焦状态
+       */
+      !value && this.closeFocus()
     }
   }
 }

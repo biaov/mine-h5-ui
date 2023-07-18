@@ -10,7 +10,9 @@ export default {
     return {}
   },
   methods: {
-    // 点击内容列表
+    /**
+     * 点击内容列表
+     */
     onClick(item) {
       console.log(item)
       this.$MeToast(item.cn)

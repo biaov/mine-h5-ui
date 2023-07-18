@@ -11,7 +11,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -59,11 +61,15 @@ export default {
     }
   },
   methods: {
-    // 点击键盘搜索或者回车按钮
+    /**
+     * 点击键盘搜索或者回车按钮
+     */
     onSearch() {
       this.$MeToast('搜索中...')
     },
-    // 点击右侧按钮
+    /**
+     * 点击右侧按钮
+     */
     onClick() {
       this.$MeToast('点击了取消按钮')
     }

@@ -33,52 +33,72 @@ export default {
     prop: 'fileList'
   },
   props: {
-    // v-model绑定值
+    /**
+     * v-model 绑定值
+     */
     fileList: {
       type: Array,
       default: () => []
     },
-    // 图片是否可预览
+    /**
+     * 图片是否可预览
+     */
     preview: {
       type: Boolean,
       default: true
     },
-    // 最大上传数量
+    /**
+     * 最大上传数量
+     */
     maxCount: {
       type: Number,
       default: 1000
     },
-    // 文件大小设置
+    /**
+     * 文件大小设置
+     */
     maxSize: {
       type: Number,
       default: 2 * 1024 * 1024
     },
-    // 是否多选
+    /**
+     * 是否多选
+     */
     multiple: {
       type: Boolean,
       default: false
     },
-    // 是否展示删除按钮
+    /**
+     * 是否展示删除按钮
+     */
     deletable: {
       type: Boolean,
       default: true
     },
-    // 禁止状态
+    /**
+     * 禁止状态
+     */
     disabled: {
       type: Boolean,
       default: false
     },
-    // 文件读取前钩子函数
+    /**
+     * 文件读取前钩子函数
+     */
     beforeRead: {
       type: Function,
       default: () => () => true
     },
-    // 文件读取完钩子函数
+    /**
+     * 文件读取完钩子函数
+     */
     afterRead: {
       type: Function,
       default: () => () => true
     },
-    // 文件删除前钩子函数
+    /**
+     * 文件删除前钩子函数
+     */
     beforeDelete: {
       type: Function,
       default: () => () => true
@@ -86,88 +106,152 @@ export default {
   },
   data() {
     return {
-      listData: this.fileList, // 列表数据
-      curNum: 1, // 全屏预览图片当前索引
-      isPreview: false // 预览图片显示状态
+      /**
+       * 列表数据
+       */
+      listData: this.fileList,
+      /**
+       * 全屏预览图片当前索引
+       */
+      curNum: 1,
+      /**
+       * 预览图片显示状态
+       */
+      isPreview: false
     }
   },
   methods: {
-    // 点击删除按钮
+    /**
+     * 点击删除按钮
+     */
     onDelete(e, item) {
       e.stopPropagation()
       const { disabled, beforeDelete, listData } = this
-      // 判断是否允许删除文件
+      /**
+       * 判断是否允许删除文件
+       */
       if (!disabled && beforeDelete(item) !== false) {
-        let i = 0 // 索引
-        // 循环遍历数组定位下标位置
+        /**
+         * 索引
+         */
+        let i = 0
+        /**
+         * 循环遍历数组定位下标位置
+         */
         for (; i < listData.length; i++) {
-          // 判断id是否相等
-          if (listData[i].id === item.id) {
-            break
-          }
+          /**
+           * 判断 id 是否相等
+           */
+          if (listData[i].id === item.id) break
         }
-        listData.splice(i, 1) // 删除
+        /**
+         * 删除
+         */
+        listData.splice(i, 1)
         this.$emit('input', listData)
         this.$emit('on-change', listData)
       }
     },
-    // 开启轮播
+    /**
+     * 开启轮播
+     */
     startTimer() {
       const { listData } = this
-      // 判断数组是否大于1
+      /**
+       * 判断数组是否大于 1
+       */
       if (listData.length > 1) {
         timer = setInterval(() => {
           this.curNum++
-          // 改变当前图片索引
-          if (this.curNum > listData.length) {
-            this.curNum = 1
-          }
+          /**
+           * 改变当前图片索引
+           */
+          this.curNum > listData.length && (this.curNum = 1)
         }, 3000)
       }
     },
-    // 点击预览图片
+    /**
+     * 点击预览图片
+     */
     closePreview() {
       clearInterval(timer)
       this.isPreview = false
     },
-    // 点击上传图片按钮
+    /**
+     * 点击上传图片按钮
+     */
     onChange(e) {
       const { beforeRead, afterRead, maxSize, maxCount, listData } = this
-      const files = Object.values(e.target.files).slice(0, maxCount) // 获取不超过maxCount文件
-      // 判断是否允许读取文件
+      /**
+       * 获取不超过 maxCount 文件
+       */
+      const files = Object.values(e.target.files).slice(0, maxCount)
+      /**
+       * 判断是否允许读取文件
+       */
       if (beforeRead(files) !== false) {
-        // 循环遍历添加数据
+        /**
+         * 循环遍历添加数据
+         */
         const arr = []
         files.forEach(elem => {
-          // 判断大小是否小于或等于maxSize
+          /**
+           * 判断大小是否小于或等于 maxSize
+           */
           if (elem.size <= maxSize && Validator.validImgs.test(elem.name)) {
-            const len = listData.length // 数组长度
-            const id = len === 0 ? 1 : listData[len - 1].id + 1 // 获取id
-            const url = window.URL.createObjectURL(elem) // 创建blob预览图片地址
-            listData.push({ id, url }) // 添加进数组
+            /**
+             * 数组长度
+             */
+            const len = listData.length
+            /**
+             * 获取 id
+             */
+            const id = len === 0 ? 1 : listData[len - 1].id + 1
+            /**
+             * 创建 blob 预览图片地址
+             */
+            const url = window.URL.createObjectURL(elem)
+            /**
+             * 添加进数组
+             */
+            listData.push({ id, url })
             arr.push(elem)
           }
         })
-        // 符合规则的图片数组
+        /**
+         * 符合规则的图片数组
+         */
         if (arr.length > 0) {
           afterRead(arr)
           this.$emit('on-change', listData)
         }
       }
     },
-    // 点击预览图片
+    /**
+     * 点击预览图片
+     */
     onPreview({ id }) {
       const { disabled, preview } = this
-      // 判断是否允许预览
+      /**
+       * 判断是否允许预览
+       */
       if (!disabled && preview) {
         this.curNum = id
-        this.isPreview = true // 打开图片预览
-        this.startTimer() // 开启自动轮播图
+        /**
+         * 打开图片预览
+         */
+        this.isPreview = true
+        /**
+         * 开启自动轮播图
+         */
+        this.startTimer()
       }
     }
   },
   watch: {
-    // 监听列表数据
+    /**
+     * 监听列表数据
+     */
     fileList: {
       handler(value) {
         this.listData = value

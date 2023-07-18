@@ -11,7 +11,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           label: '基础用法',
@@ -141,9 +143,13 @@ export default {
     }
   },
   methods: {
-    // 点击标签栏项
+    /**
+     * 点击标签栏项
+     */
     onChange({ id }, item) {
-      // 遍历设置每一项的数据
+      /**
+       * 遍历设置每一项的数据
+       */
       item.list.forEach(elem => {
         elem.state = elem.id === id
       })

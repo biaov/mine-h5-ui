@@ -13,7 +13,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           label: '基础用法',
@@ -28,7 +30,9 @@ export default {
     }
   },
   methods: {
-    // 点击图片预览
+    /**
+     * 点击图片预览
+     */
     onPreview(item) {
       this.$MePreview(item)
     }

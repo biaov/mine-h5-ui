@@ -13,7 +13,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -32,9 +34,18 @@ export default {
           label: '自定义样式',
           value: 30,
           styles: {
-            height: '10px', // 高度
-            radius: '6px', // 倒角
-            lineBgc: 'linear-gradient(135deg, #8af2ba, #4ccce7, #4fabf9, #46a5f8, #1e57f5)' // 线背景色
+            /**
+             * 高度
+             */
+            height: '10px',
+            /**
+             * 倒角
+             */
+            radius: '6px',
+            /**
+             * 线背景色
+             */
+            lineBgc: 'linear-gradient(135deg, #8af2ba, #4ccce7, #4fabf9, #46a5f8, #1e57f5)'
           }
         },
         {

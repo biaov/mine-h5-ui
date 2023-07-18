@@ -33,7 +33,9 @@ export default {
           thousand: true
         }
       ],
-      // 手动控制值
+      /**
+       * 手动控制值
+       */
       manual: {
         thousand: true,
         endValue: 6666.66,

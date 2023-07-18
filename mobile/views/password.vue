@@ -14,7 +14,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -86,29 +88,41 @@ export default {
     }
   },
   methods: {
-    // 点击数字
+    /**
+     * 点击数字
+     */
     handleNum(e, item) {
       // this.$MeToast(e);
       item.value += String(e)
     },
-    // 点击删除按钮
+    /**
+     * 点击删除按钮
+     */
     onDelete(item) {
-      // 判断是否为空
+      /**
+       * 判断是否为空
+       */
       if (!!item.value) {
         item.value = item.value.split('').slice(0, -1).join('')
       }
     },
-    // 点击完成
+    /**
+     * 点击完成
+     */
     onComplate(item) {
       item.isFocus = false
       // this.$MeToast("点击了完成");
     },
-    // 聚焦输入框
+    /**
+     * 聚焦输入框
+     */
     onFocus(item) {
       item.isFocus = true
       item.keyboardValue = true
     },
-    // 失焦输入框
+    /**
+     * 失焦输入框
+     */
     onBlur(item) {
       item.keyboardValue = false
     }

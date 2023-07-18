@@ -17,7 +17,9 @@ import IconData from '^/config/icon.json'
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -76,7 +78,9 @@ export default {
     }
   },
   methods: {
-    // 点击列表项复制
+    /**
+     * 点击列表项复制
+     */
     onCopy({ name }) {
       const { $copyText, $MeToast } = this
       $copyText(name)
@@ -89,7 +93,9 @@ export default {
     }
   },
   created() {
-    // 循环遍历设置所有图标
+    /**
+     * 循环遍历设置所有图标
+     */
     this.listData[3].list = IconData.map((name, id) => {
       return { id, name }
     })

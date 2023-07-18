@@ -19,36 +19,61 @@
 export default {
   name: 'MeNavBar',
   props: {
-    // 标题
+    /**
+     * 标题
+     */
     title: {
       type: String,
       default: ''
     },
-    // 左侧按钮箭头显示状态
+    /**
+     * 左侧按钮箭头显示状态
+     */
     leftArrow: {
       type: Boolean,
       default: true
     },
-    // 左侧按钮文本
+    /**
+     * 左侧按钮文本
+     */
     leftText: {
       type: String,
       default: ''
     },
-    // 右侧按钮文本
+    /**
+     * 右侧按钮文本
+     */
     rightText: {
       type: String,
       default: ''
     },
-    // 组件样式
+    /**
+     * 组件样式
+     */
     styles: {
       type: Object,
       default() {
         return {
-          borderColor: '#dcdfe6', // 边框颜色
-          background: '#fff', // 背景颜色
-          titleColor: '#494949', // 标题颜色
-          leftColor: '#949494', // 左侧按钮颜色
-          rightColor: '#949494' // 右侧按钮颜色
+          /**
+           * 边框颜色
+           */
+          borderColor: '#dcdfe6',
+          /**
+           * 背景颜色
+           */
+          background: '#fff',
+          /**
+           * 标题颜色
+           */
+          titleColor: '#494949',
+          /**
+           * 左侧按钮颜色
+           */
+          leftColor: '#949494',
+          /**
+           * 右侧按钮颜色
+           */
+          rightColor: '#949494'
         }
       }
     }
@@ -57,7 +82,9 @@ export default {
     return {}
   },
   methods: {
-    // 点击左侧按钮
+    /**
+     * 点击左侧按钮
+     */
     handleClick(e, name) {
       this.$emit(`click-${name}`, e)
     }

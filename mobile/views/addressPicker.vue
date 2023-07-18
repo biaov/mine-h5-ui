@@ -15,7 +15,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -37,7 +39,9 @@ export default {
     }
   },
   methods: {
-    // 点击确定按钮
+    /**
+     * 点击确定按钮
+     */
     onSure(item) {
       item.title = item.value
       item.visible = false

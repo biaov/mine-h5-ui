@@ -18,37 +18,51 @@ import { Throttle } from '~/MeAPI/function'
 export default {
   name: 'MeVirtualList',
   props: {
-    // 列表数据
+    /**
+     * 列表数据
+     */
     list: {
       type: Array,
       default: () => []
     },
-    // 节流时间
+    /**
+     * 节流时间
+     */
     interval: {
       type: Number,
       default: 100
     },
-    // 虚拟列表高度
+    /**
+     * 虚拟列表高度
+     */
     height: {
       type: String,
       default: '100%'
     },
-    // 固定选项高度
+    /**
+     * 固定选项高度
+     */
     itemHeight: {
       type: Number,
       default: 0
     },
-    // 距离底部的距离
+    /**
+     * 距离底部的距离
+     */
     distance: {
       type: Number,
       default: 50
     },
-    // 前后各渲染几屏
+    /**
+     * 前后各渲染几屏
+     */
     screen: {
       type: Array,
       default: () => [1, 1]
     },
-    // 每屏可见的数据条数
+    /**
+     * 每屏可见的数据条数
+     */
     remain: {
       type: Number,
       default: 8
@@ -56,37 +70,64 @@ export default {
   },
   data() {
     return {
-      scrollBarHeight: 0, // 滚动高度
-      listData: [], // 列表数据
-      scrollTranslateY: 0, // 纵向滚动
-      startIndex: 0, // 开始数据索引
-      endIndex: 0 // 结束数据索引
+      /**
+       * 滚动高度
+       */
+      scrollBarHeight: 0,
+      /**
+       * 列表数据
+       */
+      listData: [],
+      /**
+       * 纵向滚动
+       */
+      scrollTranslateY: 0,
+      /**
+       * 开始数据索引
+       */
+      startIndex: 0,
+      /**
+       * 结束数据索引
+       */
+      endIndex: 0
     }
   },
   computed: {
-    // 渲染数据
+    /**
+     * 渲染数据
+     */
     renderData() {
       return this.listData.slice(this.startIndex - this.prevCount, this.endIndex + this.nextCount)
     },
-    // 前屏总显示数
+    /**
+     * 前屏总显示数
+     */
     prevScreen() {
       return this.remain * this.screen[0]
     },
-    // 后屏总显示数
+    /**
+     * 后屏总显示数
+     */
     nextScreen() {
       return this.remain * this.screen[1]
     },
-    // 前屏总数
+    /**
+     * 前屏总数
+     */
     prevCount() {
       return Math.min(this.startIndex, this.prevScreen)
     },
-    // 后屏总数
+    /**
+     * 后屏总数
+     */
     nextCount() {
       return Math.min(this.list.length - this.endIndex, this.nextScreen)
     }
   },
   methods: {
-    // 滚动条滚动
+    /**
+     * 滚动条滚动
+     */
     onScroll(e) {
       const { scrollTop, clientHeight, scrollHeight } = e.target
       if (this.itemHeight) {
@@ -117,11 +158,16 @@ export default {
         scrollTop + clientHeight >= scrollHeight - this.distance && this.$emit('on-load-more')
       })
     },
-    // 更新高度
+    /**
+     * 更新高度
+     */
     updateHeight() {
       this.$nextTick(() => {
         if (this.itemHeight === 0) {
-          const nodesEl = this.$refs.nodes // 节点
+          /**
+           * 节点
+           */
+          const nodesEl = this.$refs.nodes
           nodesEl.forEach(node => {
             const { height } = node.getBoundingClientRect()
             const index = +node.dataset.index
@@ -134,7 +180,9 @@ export default {
     }
   },
   watch: {
-    // 监听 props list
+    /**
+     * 监听 props list
+     */
     list: {
       handler(value) {
         const height = this.itemHeight || 100
@@ -146,7 +194,10 @@ export default {
     }
   },
   created() {
-    this.onScroll = Throttle(this.onScroll, this.interval) // 节流
+    /**
+     * 节流
+     */
+    this.onScroll = Throttle(this.onScroll, this.interval)
   }
 }
 </script>

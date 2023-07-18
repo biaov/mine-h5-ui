@@ -22,9 +22,13 @@ export default {
     return {}
   },
   methods: {
-    // 路由跳转
+    /**
+     * 路由跳转
+     */
     routerPath(path) {
-      // 子窗口跳转路由
+      /**
+       * 子窗口跳转路由
+       */
       this.$refs.mobileIframe.contentWindow.Vue.$router.push({
         path
       })
@@ -36,7 +40,9 @@ export default {
     }
   },
   mounted() {
-    // 页面渲染之后
+    /**
+     * 页面渲染之后
+     */
     setTimeout(() => {
       this.routerPath(this.$route.path)
     }, 500)

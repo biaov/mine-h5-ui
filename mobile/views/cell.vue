@@ -20,7 +20,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           label: '基础用法',
@@ -62,7 +64,9 @@ export default {
     }
   },
   methods: {
-    // 点击
+    /**
+     * 点击
+     */
     onClick(index) {
       this.$MeToast(`你点击了第${index + 1}项`)
     }

@@ -11,12 +11,16 @@
 export default {
   data() {
     return {
-      // 事件提示语
+      /**
+       * 事件提示语
+       */
       eventMsg: {
         preappend: '你点击了前面的图标',
         append: '你点击了后面的图标'
       },
-      // 文本内容
+      /**
+       * 文本内容
+       */
       listData: [
         {
           label: '基础用法',
@@ -43,9 +47,13 @@ export default {
     }
   },
   methods: {
-    // 点击列
+    /**
+     * 点击列
+     */
     onClick(type, index) {
-      // 提示语
+      /**
+       * 提示语
+       */
       const msg = type === 'notice' ? `你点击了第 ${index + 1} 个公告` : this.eventMsg[type]
       this.$MeToast(msg)
     }

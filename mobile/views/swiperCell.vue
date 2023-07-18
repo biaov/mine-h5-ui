@@ -17,7 +17,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -35,7 +37,9 @@ export default {
     }
   },
   methods: {
-    // 删除按钮
+    /**
+     * 删除按钮
+     */
     onDelete() {
       const that = this
       that.$MeMessageBox.confirm({
@@ -46,7 +50,9 @@ export default {
         }
       })
     },
-    // 点击收藏按钮
+    /**
+     * 点击收藏按钮
+     */
     onCollect() {
       this.$MeToast('收藏成功')
     }

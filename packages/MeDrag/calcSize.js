@@ -44,12 +44,26 @@ export const angleMutualRadian = (value, type = 'angle') => {
  * @returns { Object } { x, y } 旋转之后的点
  */
 export const getRotatePoint = (point, center, angle) => {
-  const radian = angleMutualRadian(angle) // 弧度
-  const sin = Math.sin(radian) // sin
-  const cos = Math.cos(radian) // cos
-
-  const relativeX = point.x - center.x // 相对横坐标
-  const relativeY = point.y - center.y // 相对纵坐标
+  /**
+   * 弧度
+   */
+  const radian = angleMutualRadian(angle)
+  /**
+   * sin
+   */
+  const sin = Math.sin(radian)
+  /**
+   * cos
+   */
+  const cos = Math.cos(radian)
+  /**
+   * 相对横坐标
+   */
+  const relativeX = point.x - center.x
+  /**
+   * 相对纵坐标
+   */
+  const relativeY = point.y - center.y
   const x = relativeX * cos - relativeY * sin + center.x
   const y = relativeX * sin + relativeY * cos + center.y
 
@@ -62,12 +76,26 @@ export const getRotatePoint = (point, center, angle) => {
  * @returns { Object } 计算之后的大小
  */
 const northWestResize = ({ symmPoint, curPoint, rect }) => {
-  const newCenter = getCenterPoint(curPoint, symmPoint) // 新的中心点坐标
-  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r) // 新的坐标点
-  const newSymmPoint = getSymmPoint(newPoint, newCenter) // 新的对称点
-
-  const newW = newSymmPoint.x - newPoint.x // 新的宽度
-  const newH = newSymmPoint.y - newPoint.y // 新的高度
+  /**
+   * 新的中心点坐标
+   */
+  const newCenter = getCenterPoint(curPoint, symmPoint)
+  /**
+   * 新的坐标点
+   */
+  const newPoint = getRotatePoint(curPoint, newCenter, -rect.r)
+  /**
+   * 新的对称点
+   */
+  const newSymmPoint = getSymmPoint(newPoint, newCenter)
+  /**
+   * 新的宽度
+   */
+  const newW = newSymmPoint.x - newPoint.x
+  /**
+   * 新的高度
+   */
+  const newH = newSymmPoint.y - newPoint.y
 
   if (newW > 0 && newH > 0) {
     rect.w = Math.round(newW)
@@ -265,7 +293,9 @@ const westResize = ({ startPoint, symmPoint, curPoint, rect }) => {
   return rect
 }
 
-// 调整大下集合,左西右东,上北下南
+/**
+ * 调整大下集合, 左西右东, 上北下南
+ */
 const resizeGroup = {
   nw: northWestResize,
   n: northResize,

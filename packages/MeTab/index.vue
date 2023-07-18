@@ -23,22 +23,30 @@
 export default {
   name: 'MeTab',
   props: {
-    // v-model绑定值
+    /**
+     * v-model 绑定值
+     */
     value: {
       type: Number,
       required: true
     },
-    // 未聚焦时的颜色
+    /**
+     * 未聚焦时的颜色
+     */
     color: {
       type: String,
       default: '#949494'
     },
-    // 聚焦时显示的颜色
+    /**
+     * 聚焦时显示的颜色
+     */
     activeColor: {
       type: String,
       default: '#494949'
     },
-    // 位移边框颜色
+    /**
+     * 位移边框颜色
+     */
     lineColor: {
       type: String,
       default: '#f56c6c'
@@ -46,44 +54,72 @@ export default {
   },
   data() {
     return {
-      tabList: [], // 标签列表
-      transX: 0, // 初始移动值
-      duration: 0 // 过渡动画时间
+      /**
+       * 标签列表
+       */
+      tabList: [],
+      /**
+       * 初始移动值
+       */
+      transX: 0,
+      /**
+       * 过渡动画时间
+       */
+      duration: 0
     }
   },
   methods: {
-    // 更新子组件状态
+    /**
+     * 更新子组件状态
+     */
     updateValue() {
       const { $children } = this
-      const labelArr = [] // 标签数组
-      // 循环遍历
+      /**
+       * 标签数组
+       */
+      const labelArr = []
+      /**
+       * 循环遍历
+       */
       $children.forEach((elem, i) => {
         elem.setData(i)
         labelArr.push(elem.title)
       })
       this.tabList = labelArr
     },
-    // 计算初始移动值
+    /**
+     * 计算初始移动值
+     */
     initTranslateX() {
       this.transX = this.$refs.tabs.offsetWidth / (this.tabList.length * 2)
       this.duration = 0
     },
-    // 点击tabs item
+    /**
+     * 点击 tabs item
+     */
     onClick(index) {
-      // 点击不是活动项
+      /**
+       * 点击不是活动项
+       */
       if (index !== this.value) {
         this.duration = 0.4
         this.$emit('input', index)
         this.$emit('on-change', index)
-        // 防止还没更新完就更新字组件状态
+        /**
+         * 防止还没更新完就更新字组件状态
+         */
         this.$nextTick(() => {
           this.updateItemState()
         })
       }
     },
-    // 更新子组件的状态
+    /**
+     * 更新子组件的状态
+     */
     updateItemState() {
-      // 循环遍历
+      /**
+       * 循环遍历
+       */
       this.$children.forEach(elem => {
         elem.initShow()
       })

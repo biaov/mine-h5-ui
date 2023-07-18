@@ -8,7 +8,9 @@
 export default {
   name: 'MeMask',
   props: {
-    // v-model 的绑定主
+    /**
+     * v-model 的绑定主
+     */
     value: {
       type: Boolean,
       default: false
@@ -16,12 +18,20 @@ export default {
   },
   data() {
     return {
-      isShowMask: false, // 是否显示模态框
-      isShow: false // 是否显示模态框的过渡动画
+      /**
+       * 是否显示模态框
+       */
+      isShowMask: false,
+      /**
+       * 是否显示模态框的过渡动画
+       */
+      isShow: false
     }
   },
   methods: {
-    // 显示模态框
+    /**
+     * 显示模态框
+     */
     showMask() {
       const that = this
       that.isShowMask = true
@@ -29,7 +39,9 @@ export default {
         that.isShow = true
       }, 100)
     },
-    // 隐藏模态框
+    /**
+     * 隐藏模态框
+     */
     hideMask() {
       const that = this
       that.isShow = false
@@ -40,7 +52,9 @@ export default {
     }
   },
   watch: {
-    // 监听是否显示弹出层参数
+    /**
+     * 监听是否显示弹出层参数
+     */
     value(value) {
       const { showMask, hideMask } = this
       value ? showMask() : hideMask()

@@ -16,7 +16,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -73,7 +75,9 @@ export default {
     }
   },
   methods: {
-    // 点击列表
+    /**
+     * 点击列表
+     */
     onLi({ type, tips, message, html, cancelButtonText, confirmButtonText }) {
       const that = this
       that.$MeMessageBox({

@@ -29,14 +29,21 @@
 export default {
   data() {
     return {
-      time: 2 * 60 * 60 * 1000, // 时间
-      // 状态
+      /**
+       * 时间
+       */
+      time: 2 * 60 * 60 * 1000,
+      /**
+       * 状态
+       */
       handleStatus: {
         isStart: false,
         isSuspend: false,
         isReset: false
       },
-      // 按钮列表
+      /**
+       * 按钮列表
+       */
       btnList: [
         {
           type: 'isStart',
@@ -57,7 +64,9 @@ export default {
     }
   },
   methods: {
-    // 点击操作按钮
+    /**
+     * 点击操作按钮
+     */
     onClickBtn(type) {
       Object.keys(this.handleStatus).forEach(item => {
         this.handleStatus[item] = type === item

@@ -1,22 +1,26 @@
 {
   "name": "mine-h5-ui",
-  "version": "1.6.9",
+  "version": "1.7.0",
   "private": false,
-  "author": "biaov<biaov@qq.com>",
+  "author":{
+    "name": "biaov",
+    "email": "biaov@qq.com",
+    "url": "https://biaov.cn/"
+  },
   "main": "lib/mine-h5-ui.umd.min.js",
-  "style": "lib/theme-default/index.css",
+  "style": "styles/index.css",
   "scripts": {
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "npm run build:docs && npm run build:lib && npm run build:theme",
     "build:docs": "vue-cli-service build",
     "build:lib": "vue-cli-service build --target lib --name mine-h5-ui --dest ./dist/packages/lib packages/index.js",
-    "build:theme": "gulp build -f build/gulpfile.prod.js",
-    "build:theme-rem": "gulp build -f build/gulpfile.rem.js",
+    "build:theme": "gulp build -f scripts/gulpfile.prod.js",
+    "build:theme-rem": "gulp build -f scripts/gulpfile.rem.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "prepare": "husky install",
-    "pre-publish": "node build/pre-publish && start cmd /k cd ./dist/packages",
+    "pre-publish": "node scripts/pre-publish && start cmd /k cd ./dist/packages",
     "prettier": "prettier --write '**/*.{ts,js,md,json,vue}'"
   },
   "browserslist": [

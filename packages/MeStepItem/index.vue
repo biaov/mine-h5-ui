@@ -17,7 +17,9 @@
 export default {
   name: 'MeStepItem',
   props: {
-    // 索引名称
+    /**
+     * 索引名称
+     */
     name: {
       type: [String, Number],
       required: true
@@ -25,18 +27,25 @@ export default {
   },
   data() {
     return {
-      isActive: false // 激活状态
+      /**
+       * 激活状态
+       */
+      isActive: false
     }
   },
   computed: {
-    // 父组件参数
+    /**
+     * 父组件参数
+     */
     parentProps() {
       const { $options, _props } = this.$parent
       return $options._componentTag === 'me-step' ? _props : {}
     }
   },
   watch: {
-    // 监听父组件参数
+    /**
+     * 监听父组件参数
+     */
     parentProps: {
       handler() {
         this.isActive = this.parentProps.active.includes(this.name)

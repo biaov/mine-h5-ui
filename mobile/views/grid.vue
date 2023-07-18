@@ -16,7 +16,9 @@
 export default {
   data() {
     return {
-      // 宫格列表数据
+      /**
+       * 宫格列表数据
+       */
       grids: [
         {
           icon: 'icon-wechat',
@@ -63,11 +65,15 @@ export default {
     }
   },
   methods: {
-    // 点击格子项
+    /**
+     * 点击格子项
+     */
     handleLi({ text }) {
       this.$MeToast(text)
     },
-    // 点击第几个
+    /**
+     * 点击第几个
+     */
     onChange(index) {
       console.log(`你点击了第${index + 1}个`)
     }

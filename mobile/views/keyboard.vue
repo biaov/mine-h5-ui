@@ -17,7 +17,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -68,25 +70,38 @@ export default {
     }
   },
   methods: {
-    // 点击列表
+    /**
+     * 点击列表
+     */
     onClick(item) {
-      // 循环遍历关闭其他输入键盘
+      /**
+       * 循环遍历关闭其他输入键盘
+       */
       this.listData.forEach(({ list }) => {
         list.forEach(el => {
           el.value = false
         })
       })
-      item.value = true // 设置当前键盘显示
+      /**
+       * 设置当前键盘显示
+       */
+      item.value = true
     },
-    // 点击数字
+    /**
+     * 点击数字
+     */
     handleNum(e) {
       this.$MeToast(e)
     },
-    // 点击删除按钮
+    /**
+     * 点击删除按钮
+     */
     onDelete() {
       this.$MeToast('点击了删除')
     },
-    // 点击关闭
+    /**
+     * 点击关闭
+     */
     onComplate() {
       this.$MeToast('点击了完成')
     }

@@ -22,10 +22,22 @@
 export default {
   data() {
     return {
-      isShowTitle: false, // 是否显示标题
-      isShowBtn: false, // 是否显示按钮
-      isShowPreface: false, // 是否显示 Preface
-      isShowBtnBg: false // 是否显示按钮背景
+      /**
+       * 是否显示标题
+       */
+      isShowTitle: false,
+      /**
+       * 是否显示按钮
+       */
+      isShowBtn: false,
+      /**
+       * 是否显示 Preface
+       */
+      isShowPreface: false,
+      /**
+       * 是否显示按钮背景
+       */
+      isShowBtnBg: false
     }
   },
   mounted() {

@@ -28,7 +28,9 @@
 export default {
   name: 'MeNoticeBar',
   props: {
-    // 列表内容
+    /**
+     * 列表内容
+     */
     list: {
       type: [Array, String],
       required: true
@@ -36,54 +38,74 @@ export default {
     // 滚动方向
     scroll: {
       type: String,
-      default: 'horizontal' // horizontal|vertical
+      default: 'horizontal' // horizontal | vertical
     },
-    // 开启动画
+    /**
+     * 开启动画
+     */
     loop: {
       type: Boolean,
       default: false
     },
-    // 间隔时间，滚动方向为 vertical 才有效
+    /**
+     * 间隔时间，滚动方向为 vertical 才有效
+     */
     delay: {
       type: Number,
       default: 3000
     },
-    // 前面图标
+    /**
+     * 前面图标
+     */
     preappendIcon: {
       type: String,
       default: 'notice'
     },
-    // 前面图标颜色
+    /**
+     * 前面图标颜色
+     */
     preappendColor: {
       type: String,
       default: '#f56c6c'
     },
-    // 后面图标
+    /**
+     * 后面图标
+     */
     appendIcon: {
       type: String,
       default: 'right1'
     },
-    // 后面图标颜色
+    /**
+     * 后面图标颜色
+     */
     appendColor: {
       type: String,
       default: '#c8c7cc'
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: Number,
       default: 40
     },
-    // 倒角
+    /**
+     * 倒角
+     */
     radius: {
       type: [Number, String],
       default: 4
     },
-    // 背景颜色
+    /**
+     * 背景颜色
+     */
     background: {
       type: String,
       default: '#f6f6f6'
     },
-    // 文本颜色
+    /**
+     * 文本颜色
+     */
     color: {
       type: String,
       default: '#494949'
@@ -91,26 +113,58 @@ export default {
   },
   data() {
     return {
-      left: 0, // 距离左边的距离
-      listData: [], // 列表内容
-      listIndex: 0, // 列表索引
-      timer: null, // 定时器
-      isSwitch: true // 允许开启动画
+      /**
+       * 距离左边的距离
+       */
+      left: 0,
+      /**
+       * 列表内容
+       */
+      listData: [],
+      /**
+       * 列表索引
+       */
+      listIndex: 0,
+      /**
+       * 定时器
+       */
+      timer: null,
+      /**
+       * 允许开启动画
+       */
+      isSwitch: true
     }
   },
   methods: {
-    // 开启动画
+    /**
+     * 开启动画
+     */
     startAnimate() {
-      // 水平方向
+      /**
+       * 水平方向
+       */
       if (this.scroll === 'horizontal') {
         const { offsetWidth, parentNode } = this.$refs.noticeList
         let startTime = null
-        // 开始当前动画
+        /**
+         * 开始当前动画
+         */
         const startCurAnimate = timestamp => {
-          startTime === null && (startTime = timestamp) // 设置开始时间
-          const elapsed = timestamp - startTime // 当前距离开始时间
-          const left = this.left // 上次的 left
-          // 是否到达最大值
+          /**
+           * 设置开始时间
+           */
+          startTime === null && (startTime = timestamp)
+          /**
+           * 当前距离开始时间
+           */
+          const elapsed = timestamp - startTime
+          /**
+           * 上次的 left
+           */
+          const left = this.left
+          /**
+           * 是否到达最大值
+           */
           if (left < -offsetWidth) {
             this.left = parentNode.offsetWidth
             startTime = null
@@ -121,37 +175,66 @@ export default {
         }
         window.requestAnimationFrame(startCurAnimate)
       } else {
-        // 垂直方向
+        /**
+         * 垂直方向
+         */
         const { listData, delay } = this
         const len = listData.length
-        // 是否是多条数据
+        /**
+         * 是否是多条数据
+         */
         if (len <= 1) return
-        // 定时器
+        /**
+         * 定时器
+         */
         this.timer = setInterval(() => {
-          const index = this.listIndex // 索引
-          this.listIndex = index >= len - 1 ? 0 : index + 1 // 设置索引
+          /**
+           * 索引
+           */
+          const index = this.listIndex
+          /**
+           * 设置索引
+           */
+          this.listIndex = index >= len - 1 ? 0 : index + 1
         }, delay)
       }
     },
-    // 关闭动画
+    /**
+     * 关闭动画
+     */
     closeAnimate() {
-      // 水平方向
+      /**
+       * 水平方向
+       */
       if (this.scroll === 'horizontal') {
-        this.isSwitch = false // 关闭开关
+        /**
+         * 关闭开关
+         */
+        this.isSwitch = false
       } else {
-        clearInterval(this.timer) // 关闭定时器
+        /**
+         * 关闭定时器
+         */
+        clearInterval(this.timer)
       }
     },
-    // 点击公告
+    /**
+     * 点击公告
+     */
     onClick(name, index) {
       this.$emit(`on-click${name}`, index)
     }
   },
   watch: {
     loop(value) {
-      // 是否开启
+      /**
+       * 是否开启
+       */
       if (value) {
-        this.startAnimate() // 执行开始动画
+        /**
+         * 执行开始动画
+         */
+        this.startAnimate()
       } else {
         this.closeAnimate()
       }
@@ -159,10 +242,16 @@ export default {
   },
   created() {
     const list = this.list
-    this.listData = Array.isArray(list) ? list : [list] // 设置为数组
+    /**
+     * 设置为数组
+     */
+    this.listData = Array.isArray(list) ? list : [list]
   },
   mounted() {
-    this.loop && this.startAnimate() // 开启动画
+    /**
+     * 开启动画
+     */
+    this.loop && this.startAnimate()
   },
   destroyed() {
     this.closeAnimate()

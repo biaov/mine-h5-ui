@@ -1,4 +1,4 @@
-[bind]: https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/event.js
+[bind]: https://github.com/biaov/MINE-H5-UI/blob/v1/packages/MeAPI/event.js
 
 # API 方法
 
@@ -11,7 +11,7 @@
 ```JavaScript
 import Vue from 'vue'
 import MINEH5UI from 'mine-h5-ui'
-import 'mine-h5-ui/lib/theme-default/index.css'
+import 'mine-h5-ui/styles/index.css'
 
 Vue.use(MINEH5UI)
 ```
@@ -24,7 +24,7 @@ Vue.use(MINEH5UI)
 
 ## 源码
 
-- 源码地址：[API 方法](https://github.com/biaov/MINE-H5-UI/blob/master/packages/MeAPI/function.js)
+- 源码地址：[API 方法](https://github.com/biaov/MINE-H5-UI/blob/v1/packages/MeAPI/function.js)
 - 注意：该 API 方法基于 ES6+，如果只想使用单个方法，复制代码后自行使用 [babel](https://www.babeljs.cn/) 转换。
 
 ## API 方法名称

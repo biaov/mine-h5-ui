@@ -30,23 +30,51 @@ export default {
   name: 'MeMessageBox',
   data() {
     return {
-      isShow: false, // 是否显示
-      tips: '提示', // 标题内容
-      type: 'confirm', // 弹出框类型，alert | confirm | prompt | custom
-      message: '', // 警告语
-      html: '', // 自定义 HTML
-      cancelButtonText: '取消', // 取消按钮内容
-      confirmButtonText: '确认', // 确认按钮内容
-      inputValue: '' // 输入框的值
+      /**
+       * 是否显示
+       */
+      isShow: false,
+      /**
+       * 标题内容
+       */
+      tips: '提示',
+      /**
+       * 弹出框类型，alert | confirm | prompt | custom
+       */
+      type: 'confirm',
+      /**
+       * 警告语
+       */
+      message: '',
+      /**
+       * 自定义 HTML
+       */
+      html: '',
+      /**
+       * 取消按钮内容
+       */
+      cancelButtonText: '取消',
+      /**
+       * 确认按钮内容
+       */
+      confirmButtonText: '确认',
+      /**
+       * 输入框的值
+       */
+      inputValue: ''
     }
   },
   methods: {
-    // 点击取消按钮
+    /**
+     * 点击取消按钮
+     */
     onCancel() {
       const that = this
       that.end && that.end('onOff')
     },
-    // 点击确认按钮
+    /**
+     * 点击确认按钮
+     */
     onConfirm() {
       const that = this
       const args = that.type === 'prompt' ? [that.inputValue] : []

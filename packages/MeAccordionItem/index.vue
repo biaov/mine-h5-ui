@@ -18,16 +18,22 @@
 export default {
   name: 'MeAccordionItem',
   props: {
-    // 标题
+    /**
+     * 标题
+     */
     title: {
       type: String,
       default: ''
     },
-    // index值
+    /**
+     * index 值
+     */
     index: {
       type: [Number, String]
     },
-    // 下边框颜色
+    /**
+     * 下边框颜色
+     */
     borderColor: {
       type: String,
       default: '#dcdfe6'
@@ -35,30 +41,48 @@ export default {
   },
   data() {
     return {
-      isShow: false, // 显示状态
-      curHeight: 0, // 当前组件高度
-      curVal: '' // 当前value值
+      /**
+       * 显示状态
+       */
+      isShow: false,
+      /**
+       * 当前组件高度
+       */
+      curHeight: 0,
+      /**
+       * 当前 value 值
+       */
+      curVal: ''
     }
   },
   methods: {
-    // 设置下标数据
+    /**
+     * 设置下标数据
+     */
     setData(index, activeVal) {
       this.curVal = this.index || index
       this.isShow = activeVal === this.curVal
     },
-    // 点击标题
+    /**
+     * 点击标题
+     */
     onClick() {
       const {
         $parent: { $options, onChange },
         curVal,
         isShow
       } = this
-      $options._componentTag === 'me-accordion' && onChange(isShow ? '' : curVal) // 向父组件传递数据
+      /**
+       * 向父组件传递数据
+       */
+      $options._componentTag === 'me-accordion' && onChange(isShow ? '' : curVal)
       this.$emit('on-click')
     }
   },
   watch: {
-    // 监听组件状态值的变化
+    /**
+     * 监听组件状态值的变化
+     */
     isShow(value) {
       this.curHeight = value ? this.$refs.cont.offsetHeight : 0
     }

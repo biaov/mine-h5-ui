@@ -23,67 +23,114 @@
 export default {
   name: 'MeDivider',
   props: {
-    // 线条数和文本
+    /**
+     * 线条数和文本
+     */
     list: {
       type: Array,
       default: () => []
     },
-    // 距离左边的距离
+    /**
+     * 距离左边的距离
+     */
     left: {
       type: Number
     },
-    // 距离右边的距离
+    /**
+     * 距离右边的距离
+     */
     right: {
       type: Number
     },
-    // 宽度
+    /**
+     * 宽度
+     */
     width: {
       type: Number
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: Number
     },
-    // 旋转元素Y轴的基点位置
+    /**
+     * 旋转元素 Y 轴的基点位置
+     */
     origin: {
       type: Number
     },
-    // 线条样式
+    /**
+     * 线条样式
+     */
     line: {
       type: Object,
       default: () => ({
-        radius: undefined, // 线条倒角
-        color: '#dcdfe6', // 线条颜色
-        size: undefined // 线条大小
+        /**
+         * 线条倒角
+         */
+        radius: undefined,
+        /**
+         * 线条颜色
+         */
+        color: '#dcdfe6',
+        /**
+         * 线条大小
+         */
+        size: undefined
       })
     },
-    // 文本样式
+    /**
+     * 文本样式
+     */
     text: {
       type: Object,
       default: () => ({
-        color: '#494949', // 文本颜色
-        size: 14 // 文本大小
+        /**
+         * 文本颜色
+         */
+        color: '#494949',
+        /**
+         * 文本大小
+         */
+        size: 14
       })
     }
   },
   data() {
     return {
-      fieldsetList: [] // 分割线
+      /**
+       * 分割线
+       */
+      fieldsetList: []
     }
   },
   methods: {},
   created() {
     const list = this.list
-    const len = list.length // 数组长度
-    const flagBool = len < 3 // 是否小于3
-    // 设置默认值
+    /**
+     * 数组长度
+     */
+    const len = list.length
+    /**
+     * 是否小于 3
+     */
+    const flagBool = len < 3
+    /**
+     * 设置默认值
+     */
     if (flagBool) {
       this.line.radius === undefined && (this.line.radius = 0)
       this.line.size === undefined && (this.line.size = 1)
     }
-    // 循环遍历
+    /**
+     * 循环遍历
+     */
     this.fieldsetList = list.map((item, index) => {
-      let deg = (360 / len) * index // 旋转角度
+      /**
+       * 旋转角度
+       */
+      let deg = (360 / len) * index
       deg = flagBool ? 0 : deg
       return {
         text: item,

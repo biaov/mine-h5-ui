@@ -11,7 +11,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -67,7 +69,9 @@ export default {
     }
   },
   methods: {
-    // 改变状态
+    /**
+     * 改变状态
+     */
     onChange({ value }) {}
   }
 }

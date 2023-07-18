@@ -17,7 +17,9 @@
 <script>
 export default {
   props: {
-    // 列表数据
+    /**
+     * 列表数据
+     */
     list: {
       type: Array,
       required: true

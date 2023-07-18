@@ -22,7 +22,7 @@ git checkout v1
 npm install
 ```
 
-- 样式根目录安装样式依赖，路径：`/packages/theme-default`
+- 样式根目录安装样式依赖，路径：`/packages/styles`
 
 ```Basic
 npm install
@@ -82,7 +82,7 @@ npm run build
     |   |-- views ----------------------- 页面目录
     |-- packages ------------------------ UI 库组件目录
     |   |-- index.js -------------------- 入口文件
-    |   |-- theme-default --------------- 默认样式目录
+    |   |-- styles --------------- 默认样式目录
     |       |-- .gitignore -------------- Git 忽略文件
     |       |-- package-lock.json ------- 项目依赖版本信息文件
     |       |-- package.json ------------ 项目依赖文件

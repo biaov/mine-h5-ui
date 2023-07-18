@@ -9,17 +9,23 @@
 export default {
   name: 'MePreview',
   props: {
-    // 图片地址
+    /**
+     * 图片地址
+     */
     url: {
       type: String,
       default: ''
     },
-    // 层级位置
+    /**
+     * 层级位置
+     */
     zIndex: {
       type: Number,
       default: 99
     },
-    // 遮罩层背景色
+    /**
+     * 遮罩层背景色
+     */
     background: {
       type: String,
       default: '#000'
@@ -27,11 +33,16 @@ export default {
   },
   data() {
     return {
-      isShow: false // 是否显示
+      /**
+       * 是否显示
+       */
+      isShow: false
     }
   },
   methods: {
-    // 点击遮罩层
+    /**
+     * 点击遮罩层
+     */
     onClose() {
       this.end && this.end()
     }

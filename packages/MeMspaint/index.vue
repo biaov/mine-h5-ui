@@ -16,36 +16,50 @@
 export default {
   name: 'MeMspaint',
   props: {
-    // v-model 绑定值
+    /**
+     * v-model 绑定值
+     */
     value: {
       type: HTMLCanvasElement
     },
-    // 宽度
+    /**
+     * 宽度
+     */
     width: {
       type: String,
       default: '200px'
     },
-    // 高度
+    /**
+     * 高度
+     */
     height: {
       type: String,
       default: '200px'
     },
-    // 背景色
+    /**
+     * 背景色
+     */
     background: {
       type: String,
       default: '#fff'
     },
-    // 边框样式
+    /**
+     * 边框样式
+     */
     borderStyle: {
       type: [String, Boolean],
       default: false
     },
-    // 线条颜色
+    /**
+     * 线条颜色
+     */
     strokeStyle: {
       type: String,
       default: '#f56c6c'
     },
-    // 线条粗细
+    /**
+     * 线条粗细
+     */
     lineWidth: {
       type: Number,
       default: 1
@@ -67,7 +81,9 @@ export default {
     }
   },
   methods: {
-    // 获取点坐标
+    /**
+     * 获取点坐标
+     */
     getPoint({ clientX, clientY }) {
       const { offsetLeft, offsetTop } = this.$refs.canvasRef
 
@@ -76,23 +92,32 @@ export default {
         y: clientY - offsetTop + parseInt(this.getBorder)
       }
     },
-    // 获取移动端坐标
+    /**
+     * 获取移动端坐标
+     */
     getTouchPoint(e) {
       return this.getPoint(e.touches[0])
     },
-    // 获取客户端坐标
+    /**
+     * 获取客户端坐标
+     */
     getMousePoint(e) {
       return this.getPoint(e)
     }
   },
   mounted() {
     const { getTouchPoint, getMousePoint } = this
-    const canvas = this.$refs.canvasRef // 节点
+    /**
+     * 节点
+     */
+    const canvas = this.$refs.canvasRef
     this.$emit('input', canvas)
     const ctx = canvas.getContext('2d')
     ctx.strokeStyle = this.strokeStyle
     ctx.lineWidth = this.lineWidth
-    // 移动端
+    /**
+     * 移动端
+     */
     canvas.ontouchstart = e => {
       ctx.moveTo(getTouchPoint(e).x, getTouchPoint(e).y)
       document.ontouchmove = ev => {
@@ -105,7 +130,9 @@ export default {
       }
     }
 
-    // 客户端
+    /**
+     * 客户端
+     */
     canvas.onmousedown = e => {
       ctx.moveTo(getMousePoint(e).x, getMousePoint(e).y)
       document.onmousemove = ev => {

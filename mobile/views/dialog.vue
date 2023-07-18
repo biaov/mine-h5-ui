@@ -29,7 +29,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -46,12 +48,16 @@ export default {
     }
   },
   methods: {
-    // 点击取消按钮
+    /**
+     * 点击取消按钮
+     */
     onCancel(item) {
       item.visible = false
       this.$MeToast('你点击了取消按钮')
     },
-    // 点击确定按钮
+    /**
+     * 点击确定按钮
+     */
     onConfirm(item) {
       item.visible = false
       this.$MeToast('你点击了确定按钮')

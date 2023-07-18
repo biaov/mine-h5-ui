@@ -16,7 +16,9 @@
 export default {
   data() {
     return {
-      // 列表数据
+      /**
+       * 列表数据
+       */
       listData: [
         {
           id: 1,
@@ -44,14 +46,18 @@ export default {
     }
   },
   methods: {
-    // 生成图时
+    /**
+     * 生成图时
+     */
     onEnd(data) {
       console.log(data)
       this.$MeMessageBox.alert({
         message: '截图成功，F12可调出控制台查看截图数据'
       })
     },
-    // 点击 cell
+    /**
+     * 点击 cell
+     */
     onClick(item) {
       item.start = true
     }
