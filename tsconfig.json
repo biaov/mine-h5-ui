@@ -1,25 +1,20 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
-    "declaration": true,
-    "removeComments": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "node", "jest"],
+    "types": ["@dcloudio/types"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./examples/*"],
-      "~/*": ["./packages/*"],
-      "^/*": ["./mobile/*"],
-      "#/*": ["./dist/packages/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
 }

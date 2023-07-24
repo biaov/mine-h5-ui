@@ -1,5 +1,2 @@
-/node_modules
-.DS_Store
-/dist
-format.*
-pnpm-lock.yaml
+node_modules
+dist

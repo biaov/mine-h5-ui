@@ -1,0 +1,14 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index"
+    }
+  ],
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "mine-h5-ui",
+    "backgroundColor": "#ffffff",
+    "navigationStyle": "custom"
+  }
+}

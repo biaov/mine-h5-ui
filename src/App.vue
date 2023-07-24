@@ -1,0 +1,51 @@
+<template></template>
+<style lang="less">
+page,
+cover-image,
+cover-view,
+match-media,
+movable-area,
+movable-view,
+page-container,
+scroll-view,
+share-element,
+swiper,
+swiper-item,
+view,
+icon,
+progress,
+rich-text,
+text,
+button,
+checkbox,
+checkbox-group,
+editor,
+form,
+input,
+keyboard-accessory,
+label,
+picker,
+picker-view,
+picker-view-column,
+radio,
+radio-group,
+slider,
+switch,
+textarea,
+functional-page-navigator,
+navigator,
+audio,
+camera,
+image,
+live-player,
+live-pusher,
+video,
+voip-room,
+map,
+canvas {
+  box-sizing: border-box;
+  font-family: 'PingFang SC', 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+</style>
