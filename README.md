@@ -21,6 +21,12 @@
 - [x] **[😎 mine-h5-ui@1.x 基于 Vue2.x](https://mineh5ui.biaov.cn/)**
 - [x] **[😎 mine-h5-ui@2.x 基于 Vue3.x](https://mineh5ui.biaov.cn/v2)**
 
+### 演示
+
+> H5 地址：[mine-h5-ui](https://mineh5ui.biaov.cn/v2/)
+> Android 端 - app 下载地址：[mine-h5-ui](https://github.com/biaov/mine-h5-ui/releases)
+> 微信小程序搜索：`mineh5ui`
+
 ## 安装
 
 ```sh
