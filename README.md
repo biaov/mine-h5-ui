@@ -25,7 +25,6 @@
 
 > H5 地址：[mine-h5-ui](https://mineh5ui.biaov.cn/v2/)
 > Android 端 - app 下载地址：[mine-h5-ui](https://github.com/biaov/mine-h5-ui/releases)
-> 微信小程序搜索：`mineh5ui`
 
 ## 安装
 
