@@ -14,7 +14,16 @@
 
 :::TimeLine
 
-## v2.5.1-Latest release
+## v2.5.2-Latest release
+
+`2023-07-27`
+
+- 删除冗余文件
+- Bug Fixes
+  - 修复已知 BUG
+  - 更新依赖版本
+
+## v2.5.1
 
 `2023-07-04`
 

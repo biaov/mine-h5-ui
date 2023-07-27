@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "private": false,
   "author": {
     "name": "biaov",
@@ -71,10 +71,10 @@
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "@types/mockjs": "^1.0.7",
-    "@types/node": "^20.4.4",
+    "@types/node": "^20.4.5",
     "@types/qrcode": "^1.5.1",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/compiler-sfc": "^3.3.4",
     "@vue/test-utils": "^2.4.1",
@@ -103,13 +103,13 @@
     "prettier": "^3.0.0",
     "rollup-plugin-license": "^3.0.1",
     "ts-jest": "^29.1.1",
-    "tslib": "^2.6.0",
+    "tslib": "^2.6.1",
     "typescript": "^5.1.6",
-    "vite": "^4.4.6",
+    "vite": "^4.4.7",
     "vite-plugin-dts": "3.3.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.16.4",
     "vite-plugin-vue-markdown": "^0.23.7",
-    "vue-tsc": "^1.8.6"
+    "vue-tsc": "^1.8.8"
   }
 }
