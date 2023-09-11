@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-nav-bar title="标题" left-text="返回" right-text="按钮"></me-nav-bar>
 ```
 
@@ -46,7 +46,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-nav-bar title="标题" :left-arrow="false">
   <me-icon name="icon-search1" size="20px" color="#409eff"></me-icon>
 </me-nav-bar>
@@ -60,19 +60,19 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
   <me-nav-bar title="标题" left-text="返回" right-text="自定义" v-bind="{ styles }"></me-nav-bar>
 </template>
 <script lang="ts" setup>
-// 自定义样式
-const styles = Object.freeze({
-  borderColor: '#ccc', // 边框颜色
-  background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景颜色
-  titleColor: '#f56c6c', // 标题颜色
-  leftColor: '#aedbff', // 左侧按钮颜色
-  rightColor: '#fff' // 右侧按钮颜色
-})
+  // 自定义样式
+  const styles = Object.freeze({
+    borderColor: '#ccc', // 边框颜色
+    background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景颜色
+    titleColor: '#f56c6c', // 标题颜色
+    leftColor: '#aedbff', // 左侧按钮颜色
+    rightColor: '#fff' // 右侧按钮颜色
+  })
 </script>
 ```
 

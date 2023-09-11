@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-slider v-model="value"></me-slider>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-slider v-model="value" :max="50" :min="-50"></me-slider>
 ```
 
@@ -55,20 +55,20 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
   <me-slider v-model="sliderValue" :styles="styles"></me-slider>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const sliderValue = ref(30) // 当前滑块值
-// 自定义滑块样式
-const styles = Object.freeze({
-  height: '10px', // 高度
-  radius: '6px', // 倒角
-  lineBgc: '#f60' // 线背景色
-})
+  const sliderValue = ref(30) // 当前滑块值
+  // 自定义滑块样式
+  const styles = Object.freeze({
+    height: '10px', // 高度
+    radius: '6px', // 倒角
+    lineBgc: '#f60' // 线背景色
+  })
 </script>
 ```
 
@@ -80,30 +80,30 @@ const styles = Object.freeze({
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
   <me-slider v-model="sliderValue" :is-btn="true">
     <div class="btn" v-text="sliderValue"></div>
   </me-slider>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const sliderValue = ref(30) // 当前滑块值
+  const sliderValue = ref(30) // 当前滑块值
 </script>
 <style scoped lang="less">
-.me-slider {
-  .btn {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 3px;
-    background: #f60;
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
+  .me-slider {
+    .btn {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 3px;
+      background: #f60;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+    }
   }
-}
 </style>
 ```
 
@@ -115,7 +115,7 @@ const sliderValue = ref(30) // 当前滑块值
 
 ::: CopyCode
 
-```HTML
+```html
 <me-slider v-model="value" :disabled="true"></me-slider>
 ```
 

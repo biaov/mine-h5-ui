@@ -31,22 +31,25 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
-  <me-pull-refresh v-model="loading" @refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
+  <me-pull-refresh v-model="loading" @refresh="onRefresh">
+    刷新次数
+    <template v-text="count"></template>
+  </me-pull-refresh>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-let loading = ref(false) // 加载状态
-let count = ref(0) // 刷新次数
-// 刷新
-const onRefresh = () => {
-  setTimeout(() => {
-    count++
-    loading = false
-  }, 3000)
-}
+  let loading = ref(false) // 加载状态
+  let count = ref(0) // 刷新次数
+  // 刷新
+  const onRefresh = () => {
+    setTimeout(() => {
+      count++
+      loading = false
+    }, 3000)
+  }
 </script>
 ```
 
@@ -58,23 +61,26 @@ const onRefresh = () => {
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
-  <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @refresh="onRefresh">刷新次数<template v-text="count"></template></me-pull-refresh>
+  <me-pull-refresh v-model="loading" :load-text="loadText" :load-icon="false" @refresh="onRefresh">
+    刷新次数
+    <template v-text="count"></template>
+  </me-pull-refresh>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const loadText = Object.freeze(['开始下拉...', '释放刷新...', '还在请求后台...', '成功了']) // 自定义加载文本
-const loading = ref(false) // 加载状态
-const count = ref(0) // 刷新次数
-// 刷新
-const onRefresh = () => {
-  setTimeout(() => {
-    count.value++
-    loading.vale = false
-  }, 3000)
-}
+  const loadText = Object.freeze(['开始下拉...', '释放刷新...', '还在请求后台...', '成功了']) // 自定义加载文本
+  const loading = ref(false) // 加载状态
+  const count = ref(0) // 刷新次数
+  // 刷新
+  const onRefresh = () => {
+    setTimeout(() => {
+      count.value++
+      loading.vale = false
+    }, 3000)
+  }
 </script>
 ```
 

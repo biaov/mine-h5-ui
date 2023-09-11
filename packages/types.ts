@@ -41,6 +41,7 @@ export type DefaultSlotProp = (props: {}) => unknown
  */
 export interface DefaultSlots {
   default: DefaultSlotProp
+  icon?: DefaultSlotProp
 }
 
 /**

@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-count-to :end-value="6666"></me-count-to>
 ```
 
@@ -44,7 +44,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-count-to :start-value="100" :end-value="6666" :duration="5000"></me-count-to>
 ```
 
@@ -56,7 +56,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-count-to :start-value="100" :end-value="6666" thousand></me-count-to>
 ```
 

@@ -3,7 +3,7 @@
   <div class="header" :class="{ home: isHome }">
     <div class="cont">
       <!-- logo -->
-      <router-link to="/" class="logo"><img src="../../assets/logo.svg" title="MINEH5UI" alt="mineh5ui logo" /></router-link>
+      <router-link to="/" class="logo"><img src="../../assets/logo.svg" title="mineh5ui" alt="mineh5ui logo" /></router-link>
       <!-- 右侧内容 -->
       <div class="rt-list">
         <!-- 导航 -->

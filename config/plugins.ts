@@ -80,3 +80,10 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
     clientsClaim: true
   }
 }
+
+/**
+ * eslint 配置
+ */
+export const eslintConfig = {
+  exclude: ['node_modules', 'packages/**/iconfont.js']
+}

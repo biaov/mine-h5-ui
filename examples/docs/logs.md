@@ -14,7 +14,19 @@
 
 :::TimeLine
 
-## v2.5.2-Latest release
+## v2.6.0-Latest release
+
+`2023-09-11`
+
+- 优化 [MeLoading](/v2/doc/loading) 组件
+  - 新增点状 `dot` 参数
+  - 移除组件的类型
+  - 修复组件的加载问题
+- Bug Fixes
+  - 优化文档代码风格
+  - 更新依赖版本
+
+## v2.5.2
 
 `2023-07-27`
 

@@ -4,20 +4,59 @@
 
 @import './variable.less';
 
+@keyframes loading-animation {
+  0%,
+  60%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(2.5);
+  }
+}
+
 .me-loading {
   text-align: center;
   color: @font-color;
   font-size: @font-size;
-
-  // 旋转图标
-  .icon {
+  &-animation {
+    display: inline-block;
+    vertical-align: middle;
     .me-animation-rotate;
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-    color: @font-color-light;
-    font-size: @font-size-icon;
+    // 旋转图标
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+      color: @font-color-light;
+      font-size: @font-size-icon;
+    }
+  }
+  &-dot {
+    text-align: center;
+    .dot-item {
+      display: inline-block;
+      vertical-align: middle;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      margin: 0 3px;
+      background: var(--item-bg);
+      animation: loading-animation 1s linear infinite;
+      @times: {
+        1: 0s;
+        2: 0.15s;
+        3: 0.3s;
+        4: 0.45s;
+        5: 0.6s;
+      };
+      each(@times,{
+        &:nth-child(@{key}) {
+          animation-delay: @value;
+        }
+      });
+    }
   }
 }

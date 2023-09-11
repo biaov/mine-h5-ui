@@ -34,7 +34,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox-group v-model="checkbox">
   <me-checkbox name="1">复选框 1</me-checkbox>
   <me-checkbox name="2">复选框 2</me-checkbox>
@@ -49,7 +49,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox v-model="checkbox">复选框</me-checkbox>
 ```
 
@@ -61,7 +61,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox-group v-model="checkbox" direction="horizontal">
   <me-checkbox name="1">复选框 1</me-checkbox>
   <me-checkbox name="2">复选框 2</me-checkbox>
@@ -76,7 +76,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox-group v-model="checkbox">
   <me-checkbox name="1" icon="icon-aixinD" icon-select="icon-love">复选框 1</me-checkbox>
   <me-checkbox name="2" icon="icon-aixinD" icon-select="icon-love">复选框 2</me-checkbox>
@@ -91,7 +91,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox-group v-model="checkbox">
   <me-checkbox name="1" checked-color="#f60">复选框 1</me-checkbox>
   <me-checkbox name="2" checked-color="#f60">复选框 2</me-checkbox>
@@ -106,7 +106,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox-group v-model="checkbox">
   <me-checkbox name="1" icon-size="24px">复选框 1</me-checkbox>
   <me-checkbox name="2" icon-size="24px">复选框 2</me-checkbox>
@@ -121,7 +121,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-checkbox-group v-model="checkbox">
   <me-checkbox name="1" :disabled="true">复选框 1</me-checkbox>
   <me-checkbox name="2" :disabled="true">复选框 2</me-checkbox>

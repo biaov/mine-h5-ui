@@ -17,11 +17,11 @@
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import MINEH5UI from 'mine-h5-ui'
+import mineh5ui from 'mine-h5-ui'
 import 'mine-h5-ui/styles/index.css'
 
 const app = createApp(App)
-app.use(MINEH5UI)
+app.use(mineh5ui)
 app.mount('#app')
 ```
 

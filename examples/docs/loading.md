@@ -27,12 +27,10 @@ app.mount('#app')
 
 ### 基础用法
 
-- 通过属性 `type` 来设置加载框图标的类型，默认为 circle。
-
 ::: CopyCode
 
-```HTML
-<me-loading type="circle"></me-loading>
+```html
+<me-loading />
 ```
 
 :::
@@ -43,8 +41,8 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
-<me-loading type="circle" size="24px"></me-loading>
+```html
+<me-loading size="24px" />
 ```
 
 :::
@@ -55,21 +53,31 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
-<me-loading type="circle" color="#c8c9cc"></me-loading>
+```html
+<me-loading color="#c8c9cc" />
 ```
 
 :::
 
 ### 自定义图标
 
-- 通过属性 `icon` 来设置加载框图标的名称。
-- 注意：这是使用 SVG 实现的，所以需要引入你的 iconfont.js 文件。
+- 通过插槽 `icon` 来设置加载框图标的名称。
 
 ::: CopyCode
 
-```HTML
-<me-loading type="circle" icon="icon-baseline-close-px"></me-loading>
+```vue
+<script setup>
+import svgIcon from '**/*.svg'
+
+const imgStyle = { width: '40px', height: '40rpx' }
+</script>
+<template>
+  <me-loading>
+    <template #icon>
+      <img :src="svgIcon" :style="imgStyle" />
+    </template>
+  </me-loading>
+</template>
 ```
 
 :::
@@ -81,8 +89,20 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
-<me-loading type="circle">加载中...</me-loading>
+```html
+<me-loading>加载中...</me-loading>
+```
+
+:::
+
+### 点状加载
+
+- 通过属性 `dot` 来设置组件的点状加载。
+
+::: CopyCode
+
+```html
+<me-loading dot />
 ```
 
 :::
@@ -91,15 +111,15 @@ app.mount('#app')
 
 ### 参数
 
-| 参数  | 说明             | 类型   | 可选值                                                   | 默认值  | 版本 |
-| ----- | ---------------- | ------ | -------------------------------------------------------- | ------- | ---- |
-| type  | 加载框图标的类型 | string | circle / circle2 / circle3 / circle4 / circle5 / circle6 | circle  | --   |
-| size  | 加载框图标的大小 | string | --                                                       | 24px    | --   |
-| color | 加载框图标的颜色 | string | --                                                       | #c8c9cc | --   |
-| icon  | 自定义图标       | string | --                                                       | --      | --   |
+| 参数  | 说明                                 | 类型   | 可选值       | 默认值  | 版本  |
+| ----- | ------------------------------------ | ------ | ------------ | ------- | ----- |
+| size  | 加载框图标的大小                     | string | --           | 24px    | --    |
+| color | 加载框图标的颜色                     | string | --           | #c8c9cc | --    |
+| dot   | 点状加载，为 true 时，icon slot 无效 | string | true / false | false   | 2.6.0 |
 
 ### Slots
 
-| 具名插槽 | 说明     | scopedSlots | 版本 |
-| -------- | -------- | ----------- | ---- |
-| default  | 默认名称 | --          | --   |
+| 具名插槽 | 说明       | scopedSlots | 版本  |
+| -------- | ---------- | ----------- | ----- |
+| default  | 默认名称   | --          | --    |
+| icon     | 自定义图标 | --          | 2.6.0 |

@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value"></me-rate>
 ```
 
@@ -44,7 +44,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" icon="icon-aixinD" icon-select="icon-love"></me-rate>
 ```
 
@@ -56,7 +56,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" color="#f66"></me-rate>
 ```
 
@@ -69,7 +69,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" :count="6" :tips="['青铜', '白银', '黄金', '钻石', '王者', '无敌']"></me-rate>
 ```
 
@@ -81,7 +81,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" :readonly="true"></me-rate>
 ```
 
@@ -93,7 +93,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" :disabled="true"></me-rate>
 ```
 
@@ -105,7 +105,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" :tips="['一级', '二级', '三级', '四级', '五级']" tips-color="#f60"></me-rate>
 ```
 
@@ -117,7 +117,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-rate v-model="value" size="26px"></me-rate>
 ```
 

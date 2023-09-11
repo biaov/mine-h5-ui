@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-popup v-model:visible="false"></me-popup>
 ```
 
@@ -45,7 +45,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-popup v-model:visible="false" position="top"></me-popup>
 <me-popup v-model:visible="false" position="right"></me-popup>
 <me-popup v-model:visible="false" position="bottom"></me-popup>
@@ -60,7 +60,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-popup v-model:visible="false" :closeable="true"></me-popup>
 ```
 
@@ -72,7 +72,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-popup v-model:visible="false" position="bottom" radius="6px"></me-popup>
 ```
 

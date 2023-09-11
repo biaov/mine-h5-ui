@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-button type="default">默认按钮</me-button>
 <me-button type="primary">主要按钮</me-button>
 <me-button type="success">成功按钮</me-button>
@@ -50,7 +50,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-button type="primary" plain>主要按钮</me-button>
 <me-button type="success" plain>成功按钮</me-button>
 <me-button type="info" plain>信息按钮</me-button>
@@ -66,7 +66,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-button type="primary" disabled>禁用状态</me-button>
 <me-button type="success" disabled>禁用状态</me-button>
 <me-button type="primary" plain disabled>禁用状态</me-button>
@@ -81,7 +81,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-button type="default" icon="icon-copy">复制图标</me-button>
 <me-button type="success" icon="icon-success">成功图标</me-button>
 <me-button type="primary" icon="icon-star">星星图标</me-button>
@@ -98,7 +98,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-button type="success" color="#ff8133">#ff8133</me-button>
 <me-button type="primary" color="#547aff" plain>#547aff</me-button>
 <me-button type="warning" color="#ffc262">#ffc262</me-button>

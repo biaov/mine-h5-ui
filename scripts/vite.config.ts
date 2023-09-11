@@ -5,6 +5,7 @@ import eslint from 'vite-plugin-eslint'
 import dts from 'vite-plugin-dts'
 import license from 'rollup-plugin-license'
 import pkg from '../package.json'
+import { eslintConfig } from '../config/plugins'
 
 /**
  * 入口文件
@@ -20,7 +21,7 @@ const outDir = resolve(__dirname, '../dist/packages/es')
 const config: UserConfig = {
   publicDir: false,
   plugins: [
-    eslint(),
+    eslint(eslintConfig),
     vue(),
     dts({
       entryRoot: input,

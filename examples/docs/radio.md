@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio-group v-model="radio">
   <me-radio name="1">单选框 1</me-radio>
   <me-radio name="2">单选框 2</me-radio>
@@ -48,7 +48,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio v-model="radio">单选框</me-radio>
 ```
 
@@ -60,7 +60,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio-group v-model="radio" shape="square">
   <me-radio name="1">单选框 1</me-radio>
   <me-radio name="2">单选框 2</me-radio>
@@ -75,7 +75,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio-group v-model="radio">
   <me-radio name="1" icon="icon-aixinD" icon-select="icon-love">单选框 1</me-radio>
   <me-radio name="2" icon="icon-aixinD" icon-select="icon-love">单选框 2</me-radio>
@@ -90,7 +90,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio-group v-model="radio">
   <me-radio name="1" checked-color="#f60">单选框 1</me-radio>
   <me-radio name="2" checked-color="#f60">单选框 2</me-radio>
@@ -105,7 +105,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio-group v-model="radio">
   <me-radio name="1" icon-size="24px">单选框 1</me-radio>
   <me-radio name="2" icon-size="24px">单选框 2</me-radio>
@@ -120,7 +120,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-radio-group v-model="radio">
   <me-radio name="1" :disabled="true">单选框 1</me-radio>
   <me-radio name="2" :disabled="true">单选框 2</me-radio>

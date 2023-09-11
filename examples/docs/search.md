@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-search v-model="value"></me-search>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-search v-model="value" placeholder="请输入搜索内容"></me-search>
 ```
 
@@ -55,19 +55,19 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
   <me-search v-model="iptValue" btnText="取消" @click="btnCancel"></me-search>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { MeToast } from 'mine-h5-ui'
+  import { ref } from 'vue'
+  import { MeToast } from 'mine-h5-ui'
 
-const iptValue = ref('') // 当前搜索框值
-// 点击取消按钮
-const btnCancel = () => {
-  MeToast('点击了取消按钮')
-}
+  const iptValue = ref('') // 当前搜索框值
+  // 点击取消按钮
+  const btnCancel = () => {
+    MeToast('点击了取消按钮')
+  }
 </script>
 ```
 
@@ -79,7 +79,7 @@ const btnCancel = () => {
 
 ::: CopyCode
 
-```HTML
+```html
 <me-search v-model="value" align="center"></me-search>
 ```
 
@@ -91,7 +91,7 @@ const btnCancel = () => {
 
 ::: CopyCode
 
-```HTML
+```html
 <me-search v-model="value" radius="20px"></me-search>
 ```
 
@@ -103,7 +103,7 @@ const btnCancel = () => {
 
 ::: CopyCode
 
-```HTML
+```html
 <me-search v-model="value" background="linear-gradient(-45deg, #4bb0ff, #6149f6)" color="#fff"></me-search>
 ```
 
@@ -115,7 +115,7 @@ const btnCancel = () => {
 
 ::: CopyCode
 
-```HTML
+```html
 <me-search v-model="value" :disabled="true"></me-search>
 ```
 

@@ -32,14 +32,14 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
   <me-progress-bar v-model="progress" type="line"></me-progress-bar>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const progress = ref(0) // 进度条值
+  const progress = ref(0) // 进度条值
 </script>
 ```
 

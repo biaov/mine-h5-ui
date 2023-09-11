@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-keyboard v-model:visible="isShow"></me-keyboard>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-keyboard v-model:visible="isShow" skin-type="gray"></me-keyboard>
 <me-keyboard v-model:visible="isShow" skin-type="dark"></me-keyboard>
 ```
@@ -56,20 +56,20 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <template>
   <me-keyboard v-model:visible="isShow" :skin-style="skinStyle"></me-keyboard>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const isShow = ref(false) // 数字键盘显示状态
-// 自定义样式
-const skinStyle = Object.freeze({
-  background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景色
-  textBg: 'rgba(255,255,255,0.1)', // 按钮背景色
-  color: '#fff' // 按钮颜色
-})
+  const isShow = ref(false) // 数字键盘显示状态
+  // 自定义样式
+  const skinStyle = Object.freeze({
+    background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景色
+    textBg: 'rgba(255,255,255,0.1)', // 按钮背景色
+    color: '#fff' // 按钮颜色
+  })
 </script>
 ```
 
