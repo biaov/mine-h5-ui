@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-datetime-picker type="date" v-model="value" :visible="true"></me-datetime-picker>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-datetime-picker type="year-month" v-model="value" :visible="true"></me-datetime-picker>
 ```
 
@@ -55,7 +55,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-datetime-picker type="month-day" v-model="value" :visible="true"></me-datetime-picker>
 ```
 
@@ -67,7 +67,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-datetime-picker type="time" v-model="value" :visible="true"></me-datetime-picker>
 ```
 
@@ -79,7 +79,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-datetime-picker type="datetime" v-model="value" :visible="true"></me-datetime-picker>
 ```
 
@@ -91,8 +91,8 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
-<me-datetime-picker type="datetime" v-model="value" :visible="true" :min-date="" :max-date="" ></me-datetime-picker>
+```html
+<me-datetime-picker type="datetime" v-model="value" :visible="true" :min-date="" :max-date=""></me-datetime-picker>
 ```
 
 :::

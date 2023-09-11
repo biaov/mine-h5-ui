@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-jigsaw-validate url="https://dummyimage.com/340x300/f60"></me-jigsaw-validate>
 ```
 
@@ -44,7 +44,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" width="300px" height="260px"></me-jigsaw-validate>
 ```
 
@@ -56,7 +56,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :random="false"></me-jigsaw-validate>
 ```
 
@@ -67,7 +67,7 @@ app.mount('#app')
 - 通过属性 `slideStyle` 来设置组件的滑块样式，默认为 `slideStyle`。
 - slideStyle:
 
-```JS
+```js
 
 {
   height: '40px', // 滑块的高度
@@ -101,7 +101,7 @@ const slideStyle = {
 
 ::: CopyCode
 
-```HTML
+```html
 <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" tips="这是一段提示文字"></me-jigsaw-validate>
 ```
 
@@ -113,7 +113,7 @@ const slideStyle = {
 
 ::: CopyCode
 
-```HTML
+```html
 <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :range="20"></me-jigsaw-validate>
 ```
 

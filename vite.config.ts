@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import vitePluginMd from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslint from 'vite-plugin-eslint'
-import { vitePluginMdConfig, vueConfig, vitePwaConfig } from './config/plugins'
+import { vitePluginMdConfig, vueConfig, vitePwaConfig, eslintConfig } from './config/plugins'
 import { useGlobalVars } from './examples/config/variables'
 
 const { BaseRouter: base } = useGlobalVars()
@@ -14,7 +14,7 @@ const { BaseRouter: base } = useGlobalVars()
  */
 const config: UserConfig = {
   base,
-  plugins: [eslint(), vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],
+  plugins: [eslint(eslintConfig), vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],
   server: {
     host: '0.0.0.0',
     port: 3333

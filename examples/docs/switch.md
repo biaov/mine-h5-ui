@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-switch v-model="switch"></me-switch>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-switch v-model="switch" size="24px"></me-switch>
 ```
 
@@ -55,7 +55,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-switch v-model="switch" inactive-color="#f60" active-color="#e4393c"></me-switch>
 ```
 
@@ -67,7 +67,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-switch v-model="switch" :async="true"></me-switch>
 ```
 
@@ -79,7 +79,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-switch v-model="switch" :disabled="true"></me-switch>
 ```
 

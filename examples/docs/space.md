@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-space size="10px">
   <div>1</div>
   <div>2</div>
@@ -47,7 +47,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-space direction="vertical">
   <div>1</div>
   <div>2</div>

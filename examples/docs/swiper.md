@@ -34,7 +34,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-swiper dot>
   <me-swiper-item name="1" url="https://dummyimage.com/750x350/4BC7F5/fff&text=1"></me-swiper-item>
   <me-swiper-item name="2" url="https://dummyimage.com/750x350/7A51F5/fff&text=2"></me-swiper-item>
@@ -85,7 +85,7 @@ const listData = Object.freeze([
   - 当没有设置组件的图片时，必须指定组件的高度。
   - 当设置组件的图片和高度时，设置的高度优先图片自身的高度。
 
-```HTML
+```html
 <me-swiper :height="150" dot>
   <me-swiper-item name="first" background="#4BC7F5"></me-swiper-item>
   <me-swiper-item name="second" background="#7A51F5"></me-swiper-item>

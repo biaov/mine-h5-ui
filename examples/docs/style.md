@@ -24,7 +24,7 @@ import 'mine-h5-ui/styles/style.css'
 
 ::: CopyCode
 
-```HTML
+```html
 <div class="me-lf"></div>
 ```
 
@@ -38,7 +38,7 @@ import 'mine-h5-ui/styles/style.css'
 
 ::: CopyCode
 
-```HTML
+```html
 <transition name="fade"></transition>
 ```
 

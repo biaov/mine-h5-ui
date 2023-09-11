@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-upload></me-upload>
 ```
 
@@ -65,7 +65,7 @@ const fileList = [
 
 ::: CopyCode
 
-```HTML
+```html
 <me-upload :max-count="3"></me-upload>
 ```
 
@@ -77,7 +77,7 @@ const fileList = [
 
 ::: CopyCode
 
-```HTML
+```html
 <me-upload :max-size="4*1024*1024"></me-upload>
 ```
 
@@ -89,7 +89,7 @@ const fileList = [
 
 ::: CopyCode
 
-```HTML
+```html
 <me-upload multiple></me-upload>
 ```
 
@@ -101,7 +101,7 @@ const fileList = [
 
 ::: CopyCode
 
-```HTML
+```html
 <me-upload :deletable="false"></me-upload>
 ```
 
@@ -113,7 +113,7 @@ const fileList = [
 
 ::: CopyCode
 
-```HTML
+```html
 <me-upload disabled></me-upload>
 ```
 

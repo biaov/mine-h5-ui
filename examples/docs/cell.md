@@ -32,7 +32,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-cell title="标题" value="内容"></me-cell>
 ```
 
@@ -42,7 +42,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-cell title="昵称" placeholder="请输入昵称"></me-cell>
 ```
 
@@ -53,7 +53,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-cell title="相机" icon="icon-xiangji" icon-color="#409eff"></me-cell>
 ```
 
@@ -63,7 +63,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-cell title="生日" arrow></me-cell>
 ```
 
@@ -73,7 +73,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-cell title="服务" arrow bottom></me-cell>
 ```
 
@@ -83,7 +83,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-cell>
   <template #left>左侧内容</template>
   <template #right>右侧内容</template>

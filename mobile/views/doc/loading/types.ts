@@ -8,6 +8,7 @@ export interface ChildListItem {
   color?: string
   icon?: string
   text?: string
+  dot?: boolean
 }
 
 /**

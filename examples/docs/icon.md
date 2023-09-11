@@ -51,7 +51,7 @@ import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可
 
 ::: CopyCode
 
-```HTML
+```html
 <me-icon name="icon-baseline-close-px">icon-baseline-close-px</me-icon>
 <me-icon name="icon-success">icon-success</me-icon>
 ```
@@ -64,7 +64,7 @@ import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可
 
 ::: CopyCode
 
-```HTML
+```html
 <me-icon name="icon-warning1" color="#e6a23c"></me-icon>
 <me-icon name="icon-Danger" color="#f56c6c"></me-icon>
 <me-icon name="icon-Success" color="#67c23a"></me-icon>
@@ -78,7 +78,7 @@ import '//at.alicdn.com/t/font_1774902_nar195smdvf.css' // 线上地址，也可
 
 ::: CopyCode
 
-```HTML
+```html
 <me-icon name="icon-tuichu" size="16px"></me-icon>
 <me-icon name="icon-tuichu" size="20px"></me-icon>
 <me-icon name="icon-tuichu" size="24px"></me-icon>

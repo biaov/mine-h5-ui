@@ -26,7 +26,7 @@ Vue.use(MeCoupon)
 - 通过属性 `width` 来设置组件的宽度，默认为 100%。
 - 通过属性 `height` 来设置组件的高度，默认为 auto。
 
-```HTML
+```html
 <me-coupon width="80%" height="100px"></me-coupon>
 ```
 
@@ -34,7 +34,7 @@ Vue.use(MeCoupon)
 
 - 通过属性 `border` 来设置组件的边框，值同 css 的 border 属性。
 
-```HTML
+```html
 <me-coupon width="80%" height="100px" border="1px dashed rgba(0,0,0,0.2)"></me-coupon>
 ```
 
@@ -42,7 +42,7 @@ Vue.use(MeCoupon)
 
 - 通过属性 `circle-size` 来设置镂空圆的大小，默认为 20px。
 
-```HTML
+```html
 <me-coupon width="80%" height="100px" circle-size="26px"></me-coupon>
 ```
 
@@ -50,7 +50,7 @@ Vue.use(MeCoupon)
 
 - 通过属性 `circle-x` 来设置组件的宽度，默认为 30%。
 
-```HTML
+```html
 <me-coupon width="80%" height="100px" circle-x="50%"></me-coupon>
 ```
 
@@ -58,7 +58,7 @@ Vue.use(MeCoupon)
 
 - 通过属性 `background` 来设置渐变背景，默认为 #f5f5f5。
 
-```HTML
+```html
 <me-coupon width="80%" height="100px" background="linear-gradient(90deg, #FF8536, #FF435E)"></me-coupon>
 ```
 
@@ -67,7 +67,7 @@ Vue.use(MeCoupon)
 - 通过属性 `circle-bg` 来设置镂空圆的渐变背景，达到和外部一样的颜色，默认为 #fff。
 - 当设置此属性时，注意属性 `out-width` 的值要和外部宽度一致且只能水平渐变。
 
-```HTML
+```html
 <me-coupon width="80%" height="100px" out-width="345px" circleBg="linear-gradient(-45deg, #FF8536, #f56c6c)"></me-coupon>
 ```
 

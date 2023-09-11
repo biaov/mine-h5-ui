@@ -6,7 +6,7 @@
 
 ## useValidator 校验器
 
-```JS
+```js
 import { useValidator } from 'mine-h5-ui'
 
 const {
@@ -23,7 +23,7 @@ const {
 
 ## useBind 事件绑定
 
-```JS
+```js
 import { useBind } from 'mine-h5-ui'
 
 const { addBind, removeBind } = useBind()
@@ -34,7 +34,7 @@ removeBind(document, 'click', fn)
 
 ## useUtils 工具函数
 
-```JS
+```js
 import { useUtils } from 'mine-h5-ui'
 
 const {
@@ -56,7 +56,7 @@ const {
 
 ## useVisible 显示隐藏
 
-```JS
+```js
 import { useVisible } from 'mine-h5-ui'
 
 const { visible, setVisible } = useVisible()

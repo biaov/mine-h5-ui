@@ -34,7 +34,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-grid :cols="4">
   <me-grid-item icon="icon-wechat" text="微信"></me-grid-item>
 </me-grid>

@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-empty text="暂无数据"></me-empty>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-empty type="network" text="一帘清雨，垂下了一汪泪，一份缠绵，揉断了心碎。"></me-empty>
 ```
 
@@ -55,7 +55,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-empty icon-name="Loading" text="快乐很简单，就是春天的鲜花，夏天的绿荫，秋天的野果，冬天的漫天飞雪。"></me-empty>
 ```
 
@@ -67,7 +67,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-empty :url="require('../assets/empty.png')" text="用心聆听，深深呼吸，烟花雨，梨花月，寄一缕风的香魂，远离喧嚣。"></me-empty>
 ```
 

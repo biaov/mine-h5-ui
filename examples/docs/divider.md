@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-divider :list="['缥缈']"></me-divider>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-divider :list="['青衣']" :left="20"></me-divider>
 ```
 

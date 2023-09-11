@@ -6,16 +6,16 @@ import { componentConfig } from '@/config/nav.config'
 import router from './router'
 import App from './App.vue'
 
-import MINEH5UI from '~/index'
+import mineh5ui from '~/index'
 import '~/styles/index.less'
 
-// import MINEH5UI from '#/es'
+// import mineh5ui from '#/es'
 // import '#/styles/index.css'
 
 const app = createApp(App)
 app.component('TimeLine', TimeLine)
 app.component('CopyCode', CopyCode)
-app.use(MINEH5UI)
+app.use(mineh5ui)
 app.use(router)
 app.mount('#mine-h5-ui')
 

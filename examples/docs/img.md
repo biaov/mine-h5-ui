@@ -33,7 +33,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M"></me-img>
 ```
 
@@ -45,7 +45,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px"></me-img>
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" height="45px"></me-img>
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px" height="45px"></me-img>
@@ -60,7 +60,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="cover"></me-img>
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="contain"></me-img>
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="50% auto"></me-img>
@@ -74,7 +74,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="50%"></me-img>
 <me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="6px"></me-img>
 ```
@@ -87,7 +87,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-img :src="require('./image.png')" radius="50%"></me-img>
 ```
 

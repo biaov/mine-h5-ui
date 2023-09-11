@@ -31,7 +31,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-tag type="primary"></me-tag>
 ```
 
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-tag type="success" plain></me-tag>
 ```
 
@@ -58,7 +58,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-tag :width="100" :height="40" :radius="20" color="#6DA1F0"></me-tag>
 ```
 
@@ -71,7 +71,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-tag text="注意" text-color="rgba(255,255,255,0.6)"></me-tag>
 ```
 
@@ -83,7 +83,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```HTML
+```html
 <me-tag type="danger" closeable></me-tag>
 ```
 
