@@ -1,6 +1,8 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onSubmit } = useHandle()
+</script>
 <template>
   <!-- 表单 -->
   <ul class="form">
@@ -15,8 +17,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onSubmit } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

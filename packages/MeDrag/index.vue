@@ -1,3 +1,34 @@
+<script lang="ts" setup>
+import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
+import { Props, Emits, Slots } from './types'
+
+defineOptions({
+  name: 'MeDrag'
+})
+
+defineSlots<Slots>()
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  current: -1,
+  list: () => [],
+  width: '300px',
+  height: '300px',
+  theme: '#f56c6c',
+  themeText: '#fff',
+  angleRange: 5,
+  scale: 100
+})
+
+const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler(props, emit)
+const share = { getCurItem, onEmitChange, onUpdate }
+const { onTouchstart, onTouchmove, onMousedown } = useMove(props, { ...share, listData })
+const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize(props, { ...share, listData })
+const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
+const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listData })
+</script>
+
 <template>
   <!-- 拖拽 -->
   <div class="me-drag" ref="dragRef" :style="`width:${width};height:${height};`" @click="onClick(-1)" @touchstart="onTouchstartWrap" @touchmove="onTouchmoveWrap">
@@ -31,33 +62,3 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
-import { Props, Emits, Slots } from './types'
-
-defineOptions({
-  name: 'MeDrag'
-})
-
-defineSlots<Slots>()
-
-const emit = defineEmits<Emits>()
-
-const props = withDefaults(defineProps<Props>(), {
-  current: -1,
-  list: () => [],
-  width: '300px',
-  height: '300px',
-  theme: '#f56c6c',
-  themeText: '#fff',
-  angleRange: 5,
-  scale: 100
-})
-
-const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler(props, emit)
-const share = { getCurItem, onEmitChange, onUpdate }
-const { onTouchstart, onTouchmove, onMousedown } = useMove(props, { ...share, listData })
-const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize(props, { ...share, listData })
-const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
-const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listData })
-</script>

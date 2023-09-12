@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onSure, onClickItem } = useHandle()
+</script>
+
 <template>
   <!-- 地址选择器 -->
   <ul class="address-picker">
@@ -14,8 +17,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onSure, onClickItem } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

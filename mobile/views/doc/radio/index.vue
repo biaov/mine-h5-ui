@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onChange, onClick } = useHandle()
+</script>
+
 <template>
   <!-- 单选框 -->
   <ul class="radio">
@@ -27,8 +30,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onChange, onClick } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

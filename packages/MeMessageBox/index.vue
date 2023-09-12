@@ -1,3 +1,27 @@
+<script lang="ts" setup>
+import { useShow } from './hooks'
+import type { Props, Emits } from './types'
+
+defineOptions({
+  name: 'MeMessageBox'
+})
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  tips: '提示',
+  type: 'alert',
+  message: '',
+  html: '',
+  cancelButtonText: '取消',
+  confirmButtonText: '确认',
+  onOk: () => () => {},
+  onOff: () => () => {}
+})
+
+const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } = useShow(props, emit)
+</script>
+
 <template>
   <!-- 弹出框 -->
   <div class="me-message-box" :class="{ show: isShow }" @click="onCancel" v-if="!isDestroy" :style="`--animation-duration:${animationDuration}ms;`">
@@ -25,26 +49,3 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { useShow } from './hooks'
-import type { Props, Emits } from './types'
-
-defineOptions({
-  name: 'MeMessageBox'
-})
-
-const emit = defineEmits<Emits>()
-
-const props = withDefaults(defineProps<Props>(), {
-  tips: '提示',
-  type: 'alert',
-  message: '',
-  html: '',
-  cancelButtonText: '取消',
-  confirmButtonText: '确认',
-  onOk: () => () => {},
-  onOff: () => () => {}
-})
-
-const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } = useShow(props, emit)
-</script>

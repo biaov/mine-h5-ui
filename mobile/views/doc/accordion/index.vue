@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { accordionActive, listData } = useWebData()
+</script>
+
 <template>
   <!-- 手风琴 -->
   <div class="accordion">
@@ -12,8 +15,7 @@
     </me-accordion>
   </div>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { accordionActive, listData } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

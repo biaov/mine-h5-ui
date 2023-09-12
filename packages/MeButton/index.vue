@@ -1,22 +1,3 @@
-<template>
-  <!-- 按钮 -->
-  <button
-    :type="nativeType"
-    :class="[
-      'me-btn',
-      `me-btn-${type}`,
-      {
-        'me-btn-plain': plain,
-        disabled
-      }
-    ]"
-    :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
-    @click="onClick"
-  >
-    <me-icon :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" v-if="icon"></me-icon>
-    <slot></slot>
-  </button>
-</template>
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import type { DefaultSlots } from '../types'
@@ -43,3 +24,23 @@ withDefaults(defineProps<Props>(), {
 
 const { onClick } = useHandler(emit)
 </script>
+
+<template>
+  <!-- 按钮 -->
+  <button
+    :type="nativeType"
+    :class="[
+      'me-btn',
+      `me-btn-${type}`,
+      {
+        'me-btn-plain': plain,
+        disabled
+      }
+    ]"
+    :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
+    @click="onClick"
+  >
+    <me-icon :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" v-if="icon"></me-icon>
+    <slot></slot>
+  </button>
+</template>

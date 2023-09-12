@@ -1,7 +1,3 @@
-<template>
-  <!-- 间距 -->
-  <div ref="spaceRef" :style="`--size:${size};`"></div>
-</template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
 import type { Props } from './types'
@@ -17,3 +13,8 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { spaceRef } = useHandler(props)
 </script>
+
+<template>
+  <!-- 间距 -->
+  <div ref="spaceRef" :style="`--size:${size};`"></div>
+</template>

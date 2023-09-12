@@ -1,12 +1,3 @@
-<template>
-  <!-- 标签 -->
-  <div class="me-tag" :class="[type, plain && 'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
-    <div class="txt">
-      <span>{{ text }}</span>
-      <i class="iconfont icon-baseline-close-px" @click="onClose" v-if="closeable"></i>
-    </div>
-  </div>
-</template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
 import type { Props, Emits } from './types'
@@ -30,3 +21,13 @@ withDefaults(defineProps<Props>(), {
 
 const { onClose } = useHandler(emit)
 </script>
+
+<template>
+  <!-- 标签 -->
+  <div class="me-tag" :class="[type, plain && 'plain']" :style="`width:${width}px;height:${height}px;border-color:${color};border-radius:${radius}px;background:${color};color:${textColor};`">
+    <div class="txt">
+      <span>{{ text }}</span>
+      <i class="iconfont icon-baseline-close-px" @click="onClose" v-if="closeable"></i>
+    </div>
+  </div>
+</template>

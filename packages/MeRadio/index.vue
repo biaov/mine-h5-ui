@@ -1,12 +1,3 @@
-<template>
-  <!-- 单选框 -->
-  <div class="me-radio" @click="handleClick" :data-checked="isChecked + ''" :data-disabled="disabled + ''">
-    <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
-    <div class="value">
-      <slot></slot>
-    </div>
-  </div>
-</template>
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import type { DefaultSlots } from '../types'
@@ -33,3 +24,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { isChecked, iconName, handleClick } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 单选框 -->
+  <div class="me-radio" @click="handleClick" :data-checked="isChecked + ''" :data-disabled="disabled + ''">
+    <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
+    <div class="value">
+      <slot></slot>
+    </div>
+  </div>
+</template>

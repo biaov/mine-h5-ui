@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onClick, onChange, onCancel } = useHandle()
+</script>
+
 <template>
   <!-- 分享面板 -->
   <ul class="share-sheet">
@@ -16,8 +19,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onClick, onChange, onCancel } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

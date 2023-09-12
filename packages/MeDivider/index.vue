@@ -1,3 +1,27 @@
+<script lang="ts" setup>
+import { useHandler } from './hooks'
+import type { Props } from './types'
+
+defineOptions({
+  name: 'MeDivider'
+})
+
+const props = withDefaults(defineProps<Props>(), {
+  list: () => [],
+  line: () => ({
+    radius: 0,
+    color: '#dcdfe6',
+    size: 1
+  }),
+  text: () => ({
+    color: '#494949',
+    size: 14
+  })
+})
+
+const { fieldsetList, curLine } = useHandler(props)
+</script>
+
 <template>
   <!-- 分割线 -->
   <div class="me-divider" :style="`width:${width}px;height:${height}px;`">
@@ -23,26 +47,3 @@
     </template>
   </div>
 </template>
-<script lang="ts" setup>
-import { useHandler } from './hooks'
-import type { Props } from './types'
-
-defineOptions({
-  name: 'MeDivider'
-})
-
-const props = withDefaults(defineProps<Props>(), {
-  list: () => [],
-  line: () => ({
-    radius: 0,
-    color: '#dcdfe6',
-    size: 1
-  }),
-  text: () => ({
-    color: '#494949',
-    size: 14
-  })
-})
-
-const { fieldsetList, curLine } = useHandler(props)
-</script>

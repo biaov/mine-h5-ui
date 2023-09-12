@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { grids, handleLi } = useHandle()
+</script>
+
 <template>
   <!-- 宫格 -->
   <div class="grid">
@@ -15,8 +18,7 @@
     </me-grid>
   </div>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { grids, handleLi } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

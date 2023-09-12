@@ -1,3 +1,23 @@
+<script lang="ts" setup>
+import { useHandMove, useBtns } from './hooks'
+import type { Props, Emits } from './types'
+
+defineOptions({
+  name: 'MeAddressPicker'
+})
+
+const emit = defineEmits<Emits>()
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: '',
+  visible: false,
+  separator: '-'
+})
+
+const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
+const { onCancel, onSure } = useBtns(props, emit, currentValue)
+</script>
+
 <template>
   <!-- 时间选择器 -->
   <transition name="translate">
@@ -27,22 +47,3 @@
     </div>
   </transition>
 </template>
-<script lang="ts" setup>
-import { useHandMove, useBtns } from './hooks'
-import type { Props, Emits } from './types'
-
-defineOptions({
-  name: 'MeAddressPicker'
-})
-
-const emit = defineEmits<Emits>()
-
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
-  visible: false,
-  separator: '-'
-})
-
-const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
-const { onCancel, onSure } = useBtns(props, emit, currentValue)
-</script>

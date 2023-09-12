@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, handleNum, onDelete, onComplate, onFocus, onBlur } = useHandle()
+</script>
+
 <template>
   <!-- 密码输入框/短信输入框 -->
   <ul class="password">
@@ -13,8 +16,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, handleNum, onDelete, onComplate, onFocus, onBlur } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

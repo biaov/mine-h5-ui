@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { listData } = useWebData()
+</script>
+
 <template>
   <!-- 按钮 -->
   <ul class="button">
@@ -12,8 +15,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { listData } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

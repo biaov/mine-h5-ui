@@ -1,3 +1,27 @@
+<script lang="ts" setup>
+import { useCounts } from './hooks'
+import type { Props } from './types'
+
+defineOptions({
+  name: 'MeProgressBar'
+})
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'line',
+  text: '',
+  textShow: true,
+  width: '100px',
+  borderRadius: '8px',
+  size: 4,
+  textColor: '',
+  activeColor: '#409eff',
+  backgorund: '#ccc',
+  padding: '0 10px'
+})
+
+const { curText, curPosi } = useCounts(props)
+</script>
+
 <template>
   <!-- 进度条 -->
   <div class="me-progress-bar" :style="`padding:${padding};`">
@@ -22,26 +46,3 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { useCounts } from './hooks'
-import type { Props } from './types'
-
-defineOptions({
-  name: 'MeProgressBar'
-})
-
-const props = withDefaults(defineProps<Props>(), {
-  type: 'line',
-  text: '',
-  textShow: true,
-  width: '100px',
-  borderRadius: '8px',
-  size: 4,
-  textColor: '',
-  activeColor: '#409eff',
-  backgorund: '#ccc',
-  padding: '0 10px'
-})
-
-const { curText, curPosi } = useCounts(props)
-</script>

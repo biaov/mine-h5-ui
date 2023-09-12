@@ -1,9 +1,3 @@
-<template>
-  <!-- 标签页 -->
-  <div class="me-step" :class="direction">
-    <slot></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
@@ -26,3 +20,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 useInitSlots(props)
 </script>
+
+<template>
+  <!-- 标签页 -->
+  <div class="me-step" :class="direction">
+    <slot></slot>
+  </div>
+</template>

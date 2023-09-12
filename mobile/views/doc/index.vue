@@ -1,6 +1,10 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import MineHeader from '^/components/MineHeader'
+import { useRouteHandler } from './hooks'
+
+const { title } = useRouteHandler()
+</script>
+
 <template>
   <!-- 文档 -->
   <div class="docs">
@@ -10,9 +14,7 @@
     <router-view></router-view>
   </div>
 </template>
-<script lang="ts" setup>
-import MineHeader from '^/components/MineHeader'
-import { useRouteHandler } from './hooks'
 
-const { title } = useRouteHandler()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

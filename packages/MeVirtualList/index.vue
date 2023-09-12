@@ -1,17 +1,3 @@
-<template>
-  <!-- 虚拟列表 -->
-  <div class="me-virtual-list" :style="`height:${height};`" @scroll.passive="onScroll">
-    <!-- 滚动高度 -->
-    <div class="scroll-bar" :style="`height:${scrollBarHeight}px;`"></div>
-    <!-- 列表 -->
-    <ul class="list-scroll" :style="`transform:translateY(${scrollTranslateY}px);`">
-      <li v-for="item in renderData" :key="item.virtualId" :data-index="item.virtualId" :ref="setItemRef">
-        <slot :item="item"></slot>
-      </li>
-    </ul>
-    <slot name="more"></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
 import type { Props, Emits, Slots } from './types'
@@ -36,3 +22,18 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 虚拟列表 -->
+  <div class="me-virtual-list" :style="`height:${height};`" @scroll.passive="onScroll">
+    <!-- 滚动高度 -->
+    <div class="scroll-bar" :style="`height:${scrollBarHeight}px;`"></div>
+    <!-- 列表 -->
+    <ul class="list-scroll" :style="`transform:translateY(${scrollTranslateY}px);`">
+      <li v-for="item in renderData" :key="item.virtualId" :data-index="item.virtualId" :ref="setItemRef">
+        <slot :item="item"></slot>
+      </li>
+    </ul>
+    <slot name="more"></slot>
+  </div>
+</template>

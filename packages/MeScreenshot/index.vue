@@ -1,9 +1,3 @@
-<template>
-  <!-- 截长图 -->
-  <div class="me-screenshot" ref="screenshotRef" @click="onClick">
-    <slot></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
@@ -25,3 +19,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { screenshotRef, onClick } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 截长图 -->
+  <div class="me-screenshot" ref="screenshotRef" @click="onClick">
+    <slot></slot>
+  </div>
+</template>

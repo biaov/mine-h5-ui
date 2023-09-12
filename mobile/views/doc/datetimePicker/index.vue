@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onSure } = useHandle()
+</script>
+
 <template>
   <!-- 时间选择器 -->
   <ul class="datetime-picker">
@@ -22,8 +25,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onSure } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

@@ -14,7 +14,15 @@
 
 :::TimeLine
 
-## v2.6.0-Latest release
+## v2.6.1-Latest release
+
+`2023-00-00`
+
+- Bug Fixes
+  - 优化 vue 代码风格
+  - 更新依赖版本
+
+## v2.6.0
 
 `2023-09-11`
 

@@ -1,9 +1,3 @@
-<template>
-  <!-- 手风琴  -->
-  <div class="me-accordion">
-    <slot></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
@@ -21,3 +15,10 @@ const props = defineProps<Props>()
 
 useInitSlots(props, emit)
 </script>
+
+<template>
+  <!-- 手风琴  -->
+  <div class="me-accordion">
+    <slot></slot>
+  </div>
+</template>

@@ -1,9 +1,3 @@
-<template>
-  <!-- 宫格 -->
-  <div class="me-grid" ref="grid">
-    <slot></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
@@ -22,3 +16,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { grid } = useInitSlots(props)
 </script>
+
+<template>
+  <!-- 宫格 -->
+  <div class="me-grid" ref="grid">
+    <slot></slot>
+  </div>
+</template>

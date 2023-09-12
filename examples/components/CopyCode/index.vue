@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import { useRefs } from './hooks'
+
+const { copyDom, codeCont } = useRefs()
+</script>
+
 <template>
   <!-- 时间线 -->
   <div class="copy-code">
@@ -7,11 +13,7 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { useRefs } from './hooks'
 
-const { copyDom, codeCont } = useRefs()
-</script>
 <style scoped lang="less">
 @import './index.less';
 </style>

@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onConfirm, onCancel } = useHandle()
+</script>
+
 <template>
   <!-- 对话框 -->
   <ul class="dialog">
@@ -28,8 +31,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onConfirm, onCancel } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

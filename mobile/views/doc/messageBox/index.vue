@@ -1,9 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
-<style lang="less">
-@import './index.global.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onClick } = useHandle()
+</script>
+
 <template>
   <!-- 弹出框 -->
   <ul class="message-box">
@@ -18,8 +18,10 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onClick } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>
+<style lang="less">
+@import './index.global.less';
+</style>

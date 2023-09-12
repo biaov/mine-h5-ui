@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onDelete, onCollect } = useHandle()
+</script>
+
 <template>
   <!-- 滑动单元格 -->
   <ul class="swiper-cell">
@@ -20,8 +23,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onDelete, onCollect } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

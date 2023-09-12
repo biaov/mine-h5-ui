@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import type { Props } from './types'
+
+defineProps<Props>()
+</script>
+
 <template>
   <!-- 导航列表 -->
   <ul class="nav-list">
@@ -18,11 +24,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import type { Props } from './types'
 
-defineProps<Props>()
-</script>
 <style scoped lang="less">
 @import './index.less';
 </style>

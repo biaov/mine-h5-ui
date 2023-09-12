@@ -1,6 +1,10 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import ReloadPrompt from '@/components/ReloadPrompt'
+import { useWebData } from './hook'
+
+const { listData } = useWebData()
+</script>
+
 <template>
   <!-- layout -->
   <div class="layout">
@@ -28,9 +32,7 @@
   </div>
   <reload-prompt></reload-prompt>
 </template>
-<script lang="ts" setup>
-import ReloadPrompt from '@/components/ReloadPrompt'
-import { useWebData } from './hook'
 
-const { listData } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

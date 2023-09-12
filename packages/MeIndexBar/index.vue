@@ -1,3 +1,23 @@
+<script lang="ts" setup>
+import CountryData from './countryData'
+import { useScroll, useBtns } from './hooks'
+import type { Props, Emits } from './types'
+
+defineOptions({
+  name: 'MeIndexBar'
+})
+
+const emit = defineEmits<Emits>()
+
+withDefaults(defineProps<Props>(), {
+  list: () => CountryData,
+  topHeight: '50px'
+})
+
+const { curLetter, listCont } = useScroll()
+const { handleLi } = useBtns(emit)
+</script>
+
 <template>
   <!-- 索引栏 -->
   <div class="me-index-bar">
@@ -18,22 +38,3 @@
     </ul>
   </div>
 </template>
-<script lang="ts" setup>
-import CountryData from './countryData'
-import { useScroll, useBtns } from './hooks'
-import type { Props, Emits } from './types'
-
-defineOptions({
-  name: 'MeIndexBar'
-})
-
-const emit = defineEmits<Emits>()
-
-withDefaults(defineProps<Props>(), {
-  list: () => CountryData,
-  topHeight: '50px'
-})
-
-const { curLetter, listCont } = useScroll()
-const { handleLi } = useBtns(emit)
-</script>

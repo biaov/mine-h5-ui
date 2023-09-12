@@ -1,6 +1,3 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
 <template>
   <!-- 头部组件 -->
   <div class="header">
@@ -12,3 +9,7 @@
     </h3>
   </div>
 </template>
+
+<style scoped lang="less">
+@import './index.less';
+</style>

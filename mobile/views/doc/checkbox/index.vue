@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onChange, onClick } = useHandle()
+</script>
+
 <template>
   <!-- 复选框 -->
   <ul class="checkbox">
@@ -27,8 +30,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onChange, onClick } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useData } from './hooks'
+
+const { listData } = useData()
+</script>
+
 <template>
   <!-- 画图 -->
   <ul class="mspaint">
@@ -10,8 +13,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useData } from './hooks'
 
-const { listData } = useData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

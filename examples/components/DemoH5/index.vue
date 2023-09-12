@@ -1,9 +1,3 @@
-<template>
-  <!-- H5演示 -->
-  <div class="demo-h5">
-    <div class="bg-demo"><iframe ref="mobileIframe" :src="`${BaseRouter}mobile.html`" width="100%" height="100%" frameborder="0" @load="onFrameLoad"></iframe></div>
-  </div>
-</template>
 <script lang="ts" setup>
 import { useGlobalVars } from '@/config/variables'
 import { useFrames } from './hooks'
@@ -13,6 +7,13 @@ const emit = defineEmits<Emits>()
 const { mobileIframe, onFrameLoad } = useFrames(emit)
 const { BaseRouter } = useGlobalVars()
 </script>
+
+<template>
+  <!-- H5演示 -->
+  <div class="demo-h5">
+    <div class="bg-demo"><iframe ref="mobileIframe" :src="`${BaseRouter}mobile.html`" width="100%" height="100%" frameborder="0" @load="onFrameLoad"></iframe></div>
+  </div>
+</template>
 <style scoped lang="less">
 @import './index.less';
 </style>

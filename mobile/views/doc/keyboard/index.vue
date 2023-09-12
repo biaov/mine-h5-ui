@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onClick, handleNum, onDelete, onComplate } = useHandle()
+</script>
+
 <template>
   <!-- 数字键盘 -->
   <div class="keyboard">
@@ -16,8 +19,7 @@
     </ul>
   </div>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onClick, handleNum, onDelete, onComplate } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

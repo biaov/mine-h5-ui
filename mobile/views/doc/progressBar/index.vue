@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onStart } = useHandle()
+</script>
+
 <template>
   <!-- 进度条 -->
   <ul class="progress-bar">
@@ -11,8 +14,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onStart } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

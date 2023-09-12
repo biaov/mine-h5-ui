@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { styles, handleClick } = useHandle()
+</script>
+
 <template>
   <!-- 导航栏 -->
   <div class="navbar">
@@ -14,8 +17,7 @@
     <me-nav-bar title="标题" left-text="返回" right-text="自定义" @click-left="handleClick('返回')" v-bind="{ styles }" @click-right="handleClick('自定义')"></me-nav-bar>
   </div>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { styles, handleClick } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>
