@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils'
 import MeVirtualList from '~/MeVirtualList/index.vue'
 
-describe('MeVirtualList', () => {
+describe('MeVirtualList 虚拟列表', () => {
   /**
    * 列表数据
    */
   const list = [{ text: '内容一' }, { text: '内容二' }]
 
-  test('props list', () => {
+  test('属性 list', () => {
     /**
      * 向组件里传参
      */

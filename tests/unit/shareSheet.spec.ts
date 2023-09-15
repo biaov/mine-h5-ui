@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MeShareSheet from '~/MeShareSheet/index.vue'
 
-describe('MeShareSheet', () => {
+describe('MeShareSheet 分享面板', () => {
   const icon = 'icon-github'
   /**
    * 列表
@@ -15,7 +15,7 @@ describe('MeShareSheet', () => {
     }
   ]
 
-  test('props list', () => {
+  test('属性 list', () => {
     /**
      * 向组件里传参
      */
@@ -35,7 +35,7 @@ describe('MeShareSheet', () => {
     expect(iconEl.classes(icon)).toBe(true)
   })
 
-  test('props visible', async () => {
+  test('属性 visible', async () => {
     /**
      * 向组件里传参
      */
@@ -52,7 +52,7 @@ describe('MeShareSheet', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props tips', async () => {
+  test('属性 tips', async () => {
     const tips = '提示文本'
     /**
      * 向组件里传参

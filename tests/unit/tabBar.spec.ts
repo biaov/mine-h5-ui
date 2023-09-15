@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import MeTabBar from '~/MeTabBar/index.vue'
 
-describe('MeTabBar', () => {
+describe('MeTabBar 标签栏', () => {
   const text = '测试文本'
   /**
    * 列表数据
@@ -13,7 +13,7 @@ describe('MeTabBar', () => {
     }
   ]
 
-  test('props list', () => {
+  test('属性 list', () => {
     /**
      * 向组件里传参
      */
@@ -33,7 +33,7 @@ describe('MeTabBar', () => {
     expect(textEl.text()).toBe(text)
   })
 
-  test('emit change', async () => {
+  test('事件 change', async () => {
     /**
      * 向组件里传参
      */

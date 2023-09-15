@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeForm from '~/MeForm/index.vue'
 
-describe('MeForm', () => {
-  test('emit submit', async () => {
+describe('MeForm 表单', () => {
+  test('事件 submit', async () => {
     /**
      * 向组件里传参
      */

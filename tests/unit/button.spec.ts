@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeButton from '~/MeButton/index.vue'
 
-describe('MeButton', () => {
-  test('props native-type', () => {
+describe('MeButton 按钮', () => {
+  test('属性 native-type', () => {
     const nativeType = 'submit'
     /**
      * 向组件里传参
@@ -18,7 +18,7 @@ describe('MeButton', () => {
     expect(viewer.attributes('type')).toBe(nativeType) // 是否存在值
   })
 
-  test('props type', () => {
+  test('属性 type', () => {
     const type = 'primary'
     /**
      * 向组件里传参
@@ -33,7 +33,7 @@ describe('MeButton', () => {
     expect(viewer.classes(`me-btn-${type}`)).toBe(true) // 是否存在值
   })
 
-  test('props plain', () => {
+  test('属性 plain', () => {
     /**
      * 向组件里传参
      */
@@ -47,7 +47,7 @@ describe('MeButton', () => {
     expect(viewer.classes('me-btn-plain')).toBe(true) // 是否存在值
   })
 
-  test('props disabled', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -62,7 +62,7 @@ describe('MeButton', () => {
     expect(viewer.classes('disabled')).toBe(true) // 是否存在值
   })
 
-  test('props icon', () => {
+  test('属性 icon', () => {
     const icon = 'icon-github'
     /**
      * 向组件里传参
@@ -79,7 +79,7 @@ describe('MeButton', () => {
     expect(viewer.classes(icon)).toBe(true) // 是否存在值
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */

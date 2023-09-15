@@ -16,8 +16,12 @@
 
 ## v2.6.1-Latest release
 
-`2023-00-00`
+`2023-09-15`
 
+- 优化代码
+  - 单元测试工具由 jest 改为 vitest
+  - 优化测试流程, 移除关于 jest 的依赖
+  - 移除 eslint 校验命令，目录 `examples` `mobile` `packages` `tests` 全部改为项目运行时校验
 - Bug Fixes
   - 优化 vue 代码风格
   - 更新依赖版本

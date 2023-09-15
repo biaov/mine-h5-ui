@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import MePullRefresh from '~/MePullRefresh/index.vue'
 
-describe('MePullRefresh', () => {
+describe('MePullRefresh 下拉刷新', () => {
   const modelValue = true
 
-  test('props load-text', () => {
+  test('属性 load-text', () => {
     const text = '测试文本内容'
     /**
      * 向组件里传参

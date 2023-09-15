@@ -91,7 +91,6 @@ npm run build
     |-- .eslintrc.js -------------------- Eslint 配置文件
     |-- .gitignore ---------------------- Git 上传忽略文件
     |-- .npmignore ---------------------- NPM 上传忽略文件
-    |-- EXPLAIN.md ---------------------- 项目解释文档
     |-- package-lock.json --------------- 项目依赖版本信息文件
     |-- package.json -------------------- 项目依赖文件
     |-- README.md ----------------------- 项目介绍文档
@@ -127,7 +126,7 @@ npm run build
 
 ### 技术栈
 
-> Less + TypeScript + Vue3.x + Vite + Gulp + Jest
+> Less + TypeScript + Vue3.x + Vite + Gulp + Vitest
 
 ### 依赖解析
 
@@ -139,7 +138,6 @@ npm run build
 - `qrcode`: 二维码
 - `vue`: 前端框架
 - `vue-router`: 路由
-- `@types/jest`: `jest` 的类型
 - `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
 - `@types/qrcode`: `qrcode` 的类型
@@ -148,13 +146,11 @@ npm run build
 - `@vitejs/plugin-vue`: Vite 解析 Vue 文件
 - `@vue/compiler-sfc`: 编译 Vue 单文件组件
 - `@vue/test-utils`: 单元测试和集成测试
-- `@vue/vue3-jest`: Jest 预设，用于测试 Vue3.x 应用程序
 - `autoprefixer`: 添加浏览器厂商前缀
 - `eslint`: 代码检查工具
 - `eslint-config-airbnb-base`: airbnb-base 代码编写规范
 - `eslint-config-prettier`: 将 Prettier 规则集成到 ESlint 检查中
 - `eslint-plugin-import`: 检测和修复 JS 中的模块导入导出问题
-- `eslint-plugin-jest`: 检测和修复 jest 代码
 - `eslint-plugin-prettier`: 检测不符合 Prettier 格式的代码
 - `eslint-plugin-vue`: 检测和修复 Vue 代码
 - `gulp`: CSS 构建工具
@@ -165,14 +161,11 @@ npm run build
 - `gulp-postcss`: 使用 Gulp 添加浏览器厂商前缀等其它操作
 - `highlight.js`: 设置 Markdown 文件样式
 - `husky`: Git 操作时自动触发脚本
-- `jest`: JS 测试框架
-- `jest-environment-jsdom`: `jest` 的环境插件
 - `less`: CSS 预编译器
 - `markdown-it-container`: Markdown 解析器
 - `postcss-pxtorem`: 生成 Rem 的 Postcss 插件
 - `prettier`: 代码格式化
 - `rollup-plugin-license`: 生成版权的 Rollup 插件
-- `ts-jest`: `jest` 解析 TS 文件
 - `tslib`: TS 库
 - `typescript`: 编程语言
 - `vite`: 项目构建工具
@@ -180,6 +173,7 @@ npm run build
 - `vite-plugin-eslint`: 检查代码格式的 Vite 插件
 - `vite-plugin-pwa`: 生成 PWA 的 Vite 插件
 - `vite-plugin-vue-markdown`: 解析 Markdown 文件的 Vite 插件
+- `vitest`: JS 测试框架
 - `vue-tsc`: 编译 TS 单文件 Vue 文件的工具
 
 ## 贡献者们

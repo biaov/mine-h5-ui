@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    "types": ["vite/client", "node", "jest"],
+    "types": ["vite/client", "node", "vitest/globals"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["./examples/*"],

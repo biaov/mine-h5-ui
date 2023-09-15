@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import MeJigsawValidate from '~/MeJigsawValidate/index.vue'
 
-describe('MeJigsawValidate', () => {
-  const url = 'https://dummyimage.com/340x300/f60'
+describe('MeJigsawValidate 拼图校验', () => {
+  const url = 'https://biaov.cn/logo.svg'
 
-  test('props url', () => {
+  test('属性 url', () => {
     /**
      * 向组件里传参
      */
@@ -19,7 +19,7 @@ describe('MeJigsawValidate', () => {
     expect(viewer.html().includes(url)).toBe(true)
   })
 
-  test('props width', () => {
+  test('属性 width', () => {
     const width = '100px'
     /**
      * 向组件里传参
@@ -34,7 +34,7 @@ describe('MeJigsawValidate', () => {
     expect(viewer.attributes('style')?.includes(`width: ${width};`)).toBe(true)
   })
 
-  test('props height', () => {
+  test('属性 height', () => {
     const height = '100px'
     /**
      * 向组件里传参
@@ -53,7 +53,7 @@ describe('MeJigsawValidate', () => {
     expect(imgNode.attributes('style')?.includes(`height: ${height};`)).toBe(true)
   })
 
-  test('props slideStyle', () => {
+  test('属性 slideStyle', () => {
     const slideStyle = {
       height: '30px',
       background: 'radial-gradient(circle farthest-corner at 100% 0, #3eabff 0%, #3369e7 100%)',
@@ -77,7 +77,7 @@ describe('MeJigsawValidate', () => {
     expect(slideNode.attributes('style')?.includes(`height: ${slideStyle.height};`)).toBe(true)
   })
 
-  test('props tips', () => {
+  test('属性 tips', () => {
     const tips = '这是一段提示文字'
     /**
      * 向组件里传参

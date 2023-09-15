@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import MeProgressBar from '~/MeProgressBar/index.vue'
 
-describe('MeProgressBar', () => {
+describe('MeProgressBar 进度条', () => {
   const modelValue = 0
 
-  test('props type', () => {
+  test('属性 type', () => {
     /**
      * 向组件里传参
      */
@@ -23,7 +23,7 @@ describe('MeProgressBar', () => {
     expect(circleEl.exists()).toBeTruthy()
   })
 
-  test('props text', () => {
+  test('属性 text', () => {
     const text = '测试文本'
     /**
      * 向组件里传参
@@ -40,7 +40,7 @@ describe('MeProgressBar', () => {
     expect(viewer.text()).toBe(text)
   })
 
-  test('props text-show', () => {
+  test('属性 text-show', () => {
     /**
      * 向组件里传参
      */

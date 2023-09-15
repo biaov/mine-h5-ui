@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import MeSwiperCell from '~/MeSwiperCell/index.vue'
 
-describe('MeSwiperCell', () => {
+describe('MeSwiperCell 滑动单元格', () => {
   test('exists', () => {
     /**
      * 向组件里传参

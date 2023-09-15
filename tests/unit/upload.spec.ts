@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
 import MeUpload from '~/MeUpload/index.vue'
 
-describe('MeUpload', () => {
-  test('props file-list', () => {
-    const url = 'https://dummyimage.com/100x100/4BC7F5/fff&text=1'
+describe('MeUpload 上传', () => {
+  test('属性 file-list', () => {
+    const url = 'https://biaov.cn/logo.svg'
     const fileList = [{ id: 1, url }]
     /**
      * 向组件里传参
@@ -24,7 +24,7 @@ describe('MeUpload', () => {
     expect(imgEl.attributes('src')).toBe(url)
   })
 
-  test('props preview', () => {
+  test('属性 preview', () => {
     /**
      * 向组件里传参
      */
@@ -39,7 +39,7 @@ describe('MeUpload', () => {
     expect(viewer.exists()).toBe(false)
   })
 
-  test('props multiple', () => {
+  test('属性 multiple', () => {
     /**
      * 向组件里传参
      */
@@ -55,8 +55,8 @@ describe('MeUpload', () => {
     expect(viewer.attributes('multiple')).toBeDefined()
   })
 
-  test('props deletable', () => {
-    const url = 'https://dummyimage.com/100x100/4BC7F5/fff&text=1'
+  test('属性 deletable', () => {
+    const url = 'https://biaov.cn/logo.svg'
     const fileList = [{ id: 1, url }]
     /**
      * 向组件里传参
@@ -72,7 +72,7 @@ describe('MeUpload', () => {
     expect(viewer.exists()).toBe(false)
   })
 
-  test('props disabled', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */

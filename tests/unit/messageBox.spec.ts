@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MeMessageBox from '~/MeMessageBox/index.vue'
 
-describe('MeMessageBox', () => {
-  test('props tips', async () => {
+describe('MeMessageBox 弹窗', () => {
+  test('属性 tips', async () => {
     const tips = '提示语'
     /**
      * 向组件里传参
@@ -28,7 +28,7 @@ describe('MeMessageBox', () => {
     expect(tipsEl.text()).toBe(tips)
   })
 
-  test('props type', async () => {
+  test('属性 type', async () => {
     /**
      * 向组件里传参
      */
@@ -43,7 +43,7 @@ describe('MeMessageBox', () => {
     expect(viewer.length === 1).toBe(true)
   })
 
-  test('props message', async () => {
+  test('属性 message', async () => {
     const message = '提示文本内容'
     /**
      * 向组件里传参
@@ -59,7 +59,7 @@ describe('MeMessageBox', () => {
     expect(viewer.text()).toBe(message)
   })
 
-  test('props html', async () => {
+  test('属性 html', async () => {
     const html = `<div class="uni-test">自定义 HTML</div>`
     /**
      * 向组件里传参
@@ -75,7 +75,7 @@ describe('MeMessageBox', () => {
     expect(viewer.html()).toBe(html)
   })
 
-  test('props cancel-button-text', async () => {
+  test('属性 cancel-button-text', async () => {
     const cancelButtonText = '取消按钮文字'
     /**
      * 向组件里传参
@@ -91,7 +91,7 @@ describe('MeMessageBox', () => {
     expect(viewer.text()).toBe(cancelButtonText)
   })
 
-  test('props confirm-button-text', async () => {
+  test('属性 confirm-button-text', async () => {
     const confirmButtonText = '确认按钮文字'
     /**
      * 向组件里传参

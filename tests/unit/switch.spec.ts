@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeSwitch from '~/MeSwitch/index.vue'
 
-describe('MeSwitch', () => {
-  test('props disabled', () => {
+describe('MeSwitch 开关', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -18,7 +18,7 @@ describe('MeSwitch', () => {
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */

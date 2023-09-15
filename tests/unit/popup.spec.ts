@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MePopup from '~/MePopup/index.vue'
 
-describe('MePopup', () => {
-  test('props visible', async () => {
+describe('MePopup 弹出层', () => {
+  test('属性 visible', async () => {
     /**
      * 向组件里传参
      */
@@ -22,7 +22,7 @@ describe('MePopup', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props position', async () => {
+  test('属性 position', async () => {
     const position = 'left'
     /**
      * 向组件里传参
@@ -39,7 +39,7 @@ describe('MePopup', () => {
     expect(viewer.classes(position)).toBe(true)
   })
 
-  test('emit cancel', async () => {
+  test('事件 cancel', async () => {
     /**
      * 向组件里传参
      */

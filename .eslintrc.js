@@ -14,9 +14,12 @@ const config = {
     EventListenerOrEventListenerObject: 'readonly',
     NodeJS: 'readonly',
     defineSlots: 'readonly',
-    defineOptions: 'readonly'
+    defineOptions: 'readonly',
+    describe: 'readonly',
+    test: 'readonly',
+    expect: 'readonly'
   },
-  extends: ['plugin:vue/vue3-essential', 'airbnb-base', 'plugin:prettier/recommended', 'plugin:jest/recommended'],
+  extends: ['plugin:vue/vue3-essential', 'airbnb-base', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaVersion: 12,
     parser: '@typescript-eslint/parser',
@@ -32,7 +35,7 @@ const config = {
       }
     },
     {
-      files: ['./mobile/**/*.ts'],
+      files: ['./mobile/**/*.ts', './tests/**/*.ts'],
       rules: {
         'no-console': 'off' // 禁止 console
       }

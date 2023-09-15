@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeAddressPicker from '~/MeAddressPicker/index.vue'
 
-describe('MeAddressPicker', () => {
-  test('props visible', () => {
+describe('MeAddressPicker 地址选择器', () => {
+  test('属性 visible', () => {
     /**
      * 向组件里传参
      */
@@ -17,7 +17,7 @@ describe('MeAddressPicker', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('emit sure', async () => {
+  test('事件 sure', async () => {
     /**
      * 向组件里传参
      */
@@ -35,7 +35,7 @@ describe('MeAddressPicker', () => {
     expect(wrapper.emitted('sure')).toBeTruthy() // 是否为真
   })
 
-  test('emit cancel', async () => {
+  test('事件 cancel', async () => {
     /**
      * 向组件里传参
      */

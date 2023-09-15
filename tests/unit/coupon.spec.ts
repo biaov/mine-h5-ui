@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeCoupon from '~/MeCoupon/index.vue'
 
-describe('MeCoupon', () => {
-  test('exist', () => {
+describe('MeCoupon 优惠券', () => {
+  test('是否存在', () => {
     /**
      * 向组件里传参
      */

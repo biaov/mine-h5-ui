@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeSlider from '~/MeSlider/index.vue'
 
-describe('MeSlider', () => {
-  test('props disabled', () => {
+describe('MeSlider 滑块', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -18,7 +18,7 @@ describe('MeSlider', () => {
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
-  test('props is-btn', () => {
+  test('属性 is-btn', () => {
     const TestComponent = {
       template: `<MeSlider><button class="btn-custom"></button></MeSlider>`,
       components: {

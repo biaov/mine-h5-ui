@@ -2,10 +2,10 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MeCountDown from '~/MeCountDown/index.vue'
 
-describe('MeCountDown', () => {
+describe('MeCountDown 倒计时', () => {
   const time = 2 * 60 * 60 * 1000
 
-  test('props time', () => {
+  test('属性 time', () => {
     /**
      * 向组件里传参
      */
@@ -21,7 +21,7 @@ describe('MeCountDown', () => {
     expect(viewer.text().replace(/\s+/g, '')).toBe('02时00分00秒')
   })
 
-  test('props format', () => {
+  test('属性 format', () => {
     /**
      * 向组件里传参
      */
@@ -36,7 +36,7 @@ describe('MeCountDown', () => {
     expect(viewer.text().replace(/\s+/g, '')).toBe('00天02时00分00秒0毫秒')
   })
 
-  test('emit progress', async () => {
+  test('事件 progress', async () => {
     /**
      * 向组件里传参
      */
@@ -49,7 +49,7 @@ describe('MeCountDown', () => {
     expect(wrapper.emitted('progress')).toBeDefined()
   })
 
-  test('emit end', async () => {
+  test('事件 end', async () => {
     /**
      * 向组件里传参
      */

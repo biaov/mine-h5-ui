@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeScreenshot from '~/MeScreenshot/index.vue'
 
-describe('MeScreenshot', () => {
-  test('props start', () => {
+describe('MeScreenshot 截长图', () => {
+  test('属性 start', () => {
     const testText = '测试文本内容'
     const TestComponent = {
       template: `<MeScreenshot>${testText}</MeScreenshot>`,
@@ -25,7 +25,7 @@ describe('MeScreenshot', () => {
     expect(viewer.text()).toBe(testText)
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */

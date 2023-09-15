@@ -85,5 +85,5 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
  * eslint 配置
  */
 export const eslintConfig = {
-  exclude: ['node_modules', 'packages/**/iconfont.js']
+  exclude: ['node_modules']
 }

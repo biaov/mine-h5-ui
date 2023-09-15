@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
 import MePreview from '~/MePreview/index.vue'
 
-describe('MePreview', () => {
-  test('props url', () => {
-    const url = 'https://dummyimage.com/100x100/f60/fff'
+describe('MePreview 图片预览', () => {
+  test('属性 url', () => {
+    const url = 'https://biaov.cn/logo.svg'
     /**
      * 向组件里传参
      */

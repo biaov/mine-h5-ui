@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import MeGrid from '~/MeGrid/index.vue'
 import MeGridItem from '~/MeGridItem/index.vue'
 
-describe('MeGrid', () => {
+describe('MeGrid 宫格', () => {
   const TestComponent = {
     template: `<MeGrid :cols="3">
       <MeGridItem></MeGridItem>
@@ -16,7 +16,7 @@ describe('MeGrid', () => {
     }
   }
 
-  test('props cols', () => {
+  test('属性 cols', () => {
     /**
      * 向组件里传参
      */
@@ -44,7 +44,7 @@ describe('MeGridItem', () => {
     }
   }
 
-  test('props icon', () => {
+  test('属性 icon', () => {
     TestComponent.template = `<MeGrid>
       <MeGridItem icon="icon-github"></MeGridItem>
       <MeGridItem icon="icon-github"></MeGridItem>
@@ -64,7 +64,7 @@ describe('MeGridItem', () => {
     expect(viewer.classes('icon-github')).toBe(true)
   })
 
-  test('props text', () => {
+  test('属性 text', () => {
     const testText = '测试文本'
     TestComponent.template = `<MeGrid>
       <MeGridItem text="${testText}"></MeGridItem>

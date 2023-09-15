@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeIcon from '~/MeIcon/index.vue'
 
-describe('MeIcon', () => {
-  test('props name', () => {
+describe('MeIcon 图标', () => {
+  test('属性 name', () => {
     /**
      * 向组件里传参
      */
@@ -18,7 +18,7 @@ describe('MeIcon', () => {
     expect(viewer.classes('icon-github')).toBe(true) // 是否存在值
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */

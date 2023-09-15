@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeToast from '~/MeToast/index.vue'
 
-describe('MeToast', () => {
-  test('props message', () => {
+describe('MeToast 消息提示', () => {
+  test('属性 message', () => {
     const message = '提示语'
     /**
      * 向组件里传参
@@ -23,7 +23,7 @@ describe('MeToast', () => {
     expect(messageEl.text()).toBe(message)
   })
 
-  test('props icon', () => {
+  test('属性 icon', () => {
     const icon = 'icon-github'
     /**
      * 向组件里传参

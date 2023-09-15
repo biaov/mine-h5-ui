@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MeActionSheet from '~/MeActionSheet/index.vue'
 
-describe('MeActionSheet', () => {
+describe('MeActionSheet 动作面板', () => {
   /**
    * 列表数据
    */
@@ -11,7 +11,7 @@ describe('MeActionSheet', () => {
     { id: 2, label: '内容二二', value: '内容二' }
   ]
 
-  test('props list', async () => {
+  test('属性 list', async () => {
     /**
      * 向组件里传参
      */
@@ -27,7 +27,7 @@ describe('MeActionSheet', () => {
     expect(viewer.isVisible()).toBe(false)
   })
 
-  test('props visible', async () => {
+  test('属性 visible', async () => {
     /**
      * 向组件里传参
      */
@@ -45,7 +45,7 @@ describe('MeActionSheet', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props label', async () => {
+  test('属性 label', async () => {
     /**
      * 向组件里传参
      */

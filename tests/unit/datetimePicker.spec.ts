@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import MeDatetimePicker from '~/MeDatetimePicker/index.vue'
 
-describe('MeDatetimePicker', () => {
+describe('MeDatetimePicker 时间选择器', () => {
   const visible = true
 
-  test('props visible', () => {
+  test('属性 visible', () => {
     /**
      * 向组件里传参
      */
@@ -19,7 +19,7 @@ describe('MeDatetimePicker', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('props type', async () => {
+  test('属性 type', async () => {
     /**
      * 向组件里传参
      */
@@ -35,7 +35,7 @@ describe('MeDatetimePicker', () => {
     expect(viewer.length).toBe(3)
   })
 
-  test('props min-date', async () => {
+  test('属性 min-date', async () => {
     const year = new Date().getFullYear() - 6
     const minDate = new Date()
     minDate.setFullYear(year)
@@ -55,7 +55,7 @@ describe('MeDatetimePicker', () => {
     expect(viewer.text()).toBe(`${year}`)
   })
 
-  test('props max-date', async () => {
+  test('属性 max-date', async () => {
     const year = new Date().getFullYear() + 6
     const maxDate = new Date()
     maxDate.setFullYear(year)
@@ -75,7 +75,7 @@ describe('MeDatetimePicker', () => {
     expect(viewer.text()).toBe(`${year}`)
   })
 
-  test('emit cancel', async () => {
+  test('事件 cancel', async () => {
     /**
      * 向组件里传参
      */
@@ -94,7 +94,7 @@ describe('MeDatetimePicker', () => {
     expect(wrapper.emitted('cancel')).toBeDefined()
   })
 
-  test('emit sure', async () => {
+  test('事件 sure', async () => {
     /**
      * 向组件里传参
      */

@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeSpace from '~/MeSpace/index.vue'
 
-describe('MeSpace', () => {
-  test('props size', () => {
+describe('MeSpace 间距', () => {
+  test('属性 size', () => {
     /**
      * 向组件里传参
      */
@@ -16,7 +16,7 @@ describe('MeSpace', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('props direction', () => {
+  test('属性 direction', () => {
     const direction = 'vertical'
     /**
      * 向组件里传参

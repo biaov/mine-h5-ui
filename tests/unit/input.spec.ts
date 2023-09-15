@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeInput from '~/MeInput/index.vue'
 
-describe('MeInput', () => {
-  test('props type', () => {
+describe('MeInput 按钮', () => {
+  test('属性 type', () => {
     const type = 'search'
     /**
      * 向组件里传参
@@ -23,7 +23,7 @@ describe('MeInput', () => {
     expect(inputEl.attributes('type')).toBe(type)
   })
 
-  test('props placeholder', () => {
+  test('属性 placeholder', () => {
     const placeholder = '测试占位符'
     /**
      * 向组件里传参
@@ -39,7 +39,7 @@ describe('MeInput', () => {
     expect(viewer.attributes('placeholder')).toBe(placeholder)
   })
 
-  test('props readonly', () => {
+  test('属性 readonly', () => {
     /**
      * 向组件里传参
      */
@@ -54,7 +54,7 @@ describe('MeInput', () => {
     expect(viewer.attributes('readonly')).toBeDefined()
   })
 
-  test('props disabled', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -69,7 +69,7 @@ describe('MeInput', () => {
     expect(viewer.attributes('disabled')).toBeDefined()
   })
 
-  test('props label', () => {
+  test('属性 label', () => {
     const label = '测试'
     /**
      * 向组件里传参
@@ -86,7 +86,7 @@ describe('MeInput', () => {
     expect(viewer.text()).toBe(label)
   })
 
-  test('props label-icon', () => {
+  test('属性 label-icon', () => {
     const labelIcon = 'icon-github'
     /**
      * 向组件里传参
@@ -103,7 +103,7 @@ describe('MeInput', () => {
     expect(viewer.classes(labelIcon)).toBe(true)
   })
 
-  test('props icon', () => {
+  test('属性 icon', () => {
     const icon = 'icon-github'
     /**
      * 向组件里传参
@@ -120,7 +120,7 @@ describe('MeInput', () => {
     expect(viewer.classes(icon)).toBe(true)
   })
 
-  test('props password', () => {
+  test('属性 password', () => {
     /**
      * 向组件里传参
      */
@@ -135,7 +135,7 @@ describe('MeInput', () => {
     expect(viewer.attributes('type')).toBe('password')
   })
 
-  test('props digit', () => {
+  test('属性 digit', () => {
     /**
      * 向组件里传参
      */
@@ -150,7 +150,7 @@ describe('MeInput', () => {
     expect(viewer.attributes('type')).toBe('text')
   })
 
-  test('props sms-msg', () => {
+  test('属性 sms-msg', () => {
     const smsMsg = '短信验证码'
     /**
      * 向组件里传参
@@ -167,7 +167,7 @@ describe('MeInput', () => {
     expect(viewer.text()).toBe(smsMsg)
   })
 
-  test('props sms-is', () => {
+  test('属性 sms-is', () => {
     /**
      * 向组件里传参
      */
@@ -182,7 +182,7 @@ describe('MeInput', () => {
     expect(viewer.classes('countdown')).toBe(true)
   })
 
-  test('emit click-sms', async () => {
+  test('事件 click-sms', async () => {
     /**
      * 向组件里传参
      */
@@ -199,7 +199,7 @@ describe('MeInput', () => {
     expect(wrapper.emitted('click-sms')).toBeDefined()
   })
 
-  test('emit click-icon', async () => {
+  test('事件 click-icon', async () => {
     /**
      * 向组件里传参
      */
@@ -216,7 +216,7 @@ describe('MeInput', () => {
     expect(wrapper.emitted('click-icon')).toBeDefined()
   })
 
-  test('emit focus', async () => {
+  test('事件 focus', async () => {
     /**
      * 向组件里传参
      */
@@ -231,7 +231,7 @@ describe('MeInput', () => {
     expect(wrapper.emitted('focus')).toBeDefined()
   })
 
-  test('emit blur', async () => {
+  test('事件 blur', async () => {
     /**
      * 向组件里传参
      */
@@ -246,7 +246,7 @@ describe('MeInput', () => {
     expect(wrapper.emitted('blur')).toBeDefined()
   })
 
-  test('emit change', async () => {
+  test('事件 change', async () => {
     /**
      * 向组件里传参
      */
@@ -261,7 +261,7 @@ describe('MeInput', () => {
     expect(wrapper.emitted('change')).toBeDefined()
   })
 
-  test('emit input', async () => {
+  test('事件 input', async () => {
     /**
      * 向组件里传参
      */

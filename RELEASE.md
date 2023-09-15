@@ -1,17 +1,5 @@
 # 发布文档
 
-## 格式化
-
-```sh
-npm run prettier
-```
-
-## Eslint 检查
-
-```sh
-npm run lint
-```
-
 ## 单元测试
 
 ```sh

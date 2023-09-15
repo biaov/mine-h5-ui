@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils'
 import MeImg from '~/MeImg/index.vue'
 
-describe('MeImg', () => {
+describe('MeImg 图片', () => {
   /**
    * 图片地址
    */
-  const src = 'http://dummyimage.com/100x100/0079cb/fff'
+  const src = 'https://biaov.cn/logo.svg'
 
-  test('props src', () => {
+  test('属性 src', () => {
     /**
      * 向组件里传参
      */
@@ -27,7 +27,7 @@ describe('MeImg', () => {
     expect(imgEl.attributes('src')).toBe(src)
   })
 
-  test('props fill', () => {
+  test('属性 fill', () => {
     /**
      * 向组件里传参
      */
@@ -42,7 +42,7 @@ describe('MeImg', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('props alt', () => {
+  test('属性 alt', () => {
     const alt = '测试图片'
     /**
      * 向组件里传参
@@ -58,7 +58,7 @@ describe('MeImg', () => {
     expect(viewer.attributes('alt')).toBe(alt)
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */
@@ -75,7 +75,7 @@ describe('MeImg', () => {
     expect(wrapper.emitted('click')).toBeDefined()
   })
 
-  test('emit load', async () => {
+  test('事件 load', async () => {
     /**
      * 向组件里传参
      */
@@ -92,7 +92,7 @@ describe('MeImg', () => {
     expect(wrapper.emitted('load')).toBeDefined()
   })
 
-  test('emit error', async () => {
+  test('事件 error', async () => {
     /**
      * 向组件里传参
      */

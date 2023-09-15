@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import MeNoticeBar from '~/MeNoticeBar/index.vue'
 
-describe('MeNoticeBar', () => {
+describe('MeNoticeBar 公告栏', () => {
   const list = '测试公告文本内容'
 
-  test('props list', () => {
+  test('属性 list', () => {
     /**
      * 向组件里传参
      */
@@ -24,7 +24,7 @@ describe('MeNoticeBar', () => {
     expect(liEl.text()).toBe(list)
   })
 
-  test('props scroll', () => {
+  test('属性 scroll', () => {
     /**
      * 向组件里传参
      */
@@ -39,7 +39,7 @@ describe('MeNoticeBar', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('props preappend-icon', () => {
+  test('属性 preappend-icon', () => {
     const preappendIcon = 'github'
     /**
      * 向组件里传参
@@ -56,7 +56,7 @@ describe('MeNoticeBar', () => {
     expect(viewer.classes(`icon-${preappendIcon}`)).toBe(true)
   })
 
-  test('props append-icon', () => {
+  test('属性 append-icon', () => {
     const appendIcon = 'github'
     /**
      * 向组件里传参
@@ -73,7 +73,7 @@ describe('MeNoticeBar', () => {
     expect(viewer.classes(`icon-${appendIcon}`)).toBe(true)
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */
@@ -90,7 +90,7 @@ describe('MeNoticeBar', () => {
     expect(wrapper.emitted('click')).toBeDefined()
   })
 
-  test('emit click:preappend', async () => {
+  test('事件 click:preappend', async () => {
     /**
      * 向组件里传参
      */
@@ -107,7 +107,7 @@ describe('MeNoticeBar', () => {
     expect(wrapper.emitted('click:preappend')).toBeDefined()
   })
 
-  test('emit click:append', async () => {
+  test('事件 click:append', async () => {
     /**
      * 向组件里传参
      */

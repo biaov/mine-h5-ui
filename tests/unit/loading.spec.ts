@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import MeLoading from '~/MeLoading/index.vue'
 
-describe('MeLoading', () => {
+describe('MeLoading 加载', () => {
   test('是否存在', () => {
     /**
      * 向组件里传参
