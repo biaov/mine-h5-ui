@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import MeRadio from '~/MeRadio/index.vue'
 import MeRadioGroup from '~/MeRadioGroup/index.vue'
 
-describe('MeRadio', () => {
-  test('props shape', () => {
+describe('MeRadio 单选框', () => {
+  test('属性 shape', () => {
     /**
      * 向组件里传参
      */
@@ -23,7 +23,7 @@ describe('MeRadio', () => {
     expect(iconEl.classes('icon-baseline-check_box_outline_blank-px')).toBe(true)
   })
 
-  test('props icon', () => {
+  test('属性 icon', () => {
     const icon = 'icon-github'
     /**
      * 向组件里传参
@@ -39,7 +39,7 @@ describe('MeRadio', () => {
     expect(viewer.classes(icon)).toBe(true)
   })
 
-  test('props icon-select', () => {
+  test('属性 icon-select', () => {
     const iconSelect = 'icon-github'
     /**
      * 向组件里传参
@@ -55,7 +55,7 @@ describe('MeRadio', () => {
     expect(viewer.classes(iconSelect)).toBe(true)
   })
 
-  test('props disabled', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -70,7 +70,7 @@ describe('MeRadio', () => {
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */
@@ -98,7 +98,7 @@ describe('MeRadioGroup', () => {
     }
   }
 
-  test('props direction', () => {
+  test('属性 direction', () => {
     /**
      * 向组件里传参
      */

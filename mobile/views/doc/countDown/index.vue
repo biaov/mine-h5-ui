@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { time, btnList, handleStatus, onClick } = useHandle()
+</script>
+
 <template>
   <!-- 倒计时 -->
   <div class="count-down">
@@ -28,8 +31,7 @@
     </ul>
   </div>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { time, btnList, handleStatus, onClick } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

@@ -1,9 +1,3 @@
-<template>
-  <!-- 表单 -->
-  <form class="me-form" @submit="onSubmit">
-    <slot></slot>
-  </form>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
@@ -24,3 +18,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { onSubmit } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 表单 -->
+  <form class="me-form" @submit="onSubmit">
+    <slot></slot>
+  </form>
+</template>

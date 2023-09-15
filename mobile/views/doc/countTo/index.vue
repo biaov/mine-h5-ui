@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { listData, manual } = useWebData()
+</script>
+
 <template>
   <!-- 数字滚动 -->
   <ul class="count-to">
@@ -15,8 +18,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { listData, manual } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

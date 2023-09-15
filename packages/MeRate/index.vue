@@ -1,10 +1,3 @@
-<template>
-  <!-- 评分机制 -->
-  <div class="me-rate" :style="`font-size:${size};`" :data-disabled="disabled">
-    <me-icon v-for="item in listData" :key="item.id" :name="item.state ? iconSelect : icon" size="inherit" :color="item.state ? color : '#949494'" @click="onClick(item)"></me-icon>
-    <span class="tips" v-if="tips.length > 0 && modelValue > 0" :style="`color:${tipsColor};`">{{ tips[modelValue - 1] }}</span>
-  </div>
-</template>
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import { useHandler } from './hooks'
@@ -31,3 +24,11 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { listData, onClick } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 评分机制 -->
+  <div class="me-rate" :style="`font-size:${size};`" :data-disabled="disabled">
+    <me-icon v-for="item in listData" :key="item.id" :name="item.state ? iconSelect : icon" size="inherit" :color="item.state ? color : '#949494'" @click="onClick(item)"></me-icon>
+    <span class="tips" v-if="tips.length > 0 && modelValue > 0" :style="`color:${tipsColor};`">{{ tips[modelValue - 1] }}</span>
+  </div>
+</template>

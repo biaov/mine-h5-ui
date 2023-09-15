@@ -1,29 +1,3 @@
-<template>
-  <!-- 公告栏 -->
-  <div class="me-notice-bar" :style="`height:${height}px;border-radius:${radius + (String(radius).includes('px') ? '' : 'px')};background:${background};`">
-    <!-- 前面图标 -->
-    <div class="icon icon-preappend" :style="`color:${preappendColor};`" @click="onClickPreappend">
-      <i :class="`iconfont icon-${preappendIcon}`"></i>
-    </div>
-    <!-- 滚动公告 -->
-    <div class="notice">
-      <!-- 水平动画 -->
-      <ul class="notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll === 'horizontal'">
-        <li v-for="(item, index) in listData" :key="index" @click="onClick(index)">
-          <span>{{ item }}</span>
-        </li>
-      </ul>
-      <!-- 垂直动画 -->
-      <transition name="slide" mode="out-in" v-else>
-        <div class="notice-vertical" :key="listIndex" @click="onClick(listIndex)" :style="`color:${color};`">
-          <span>{{ listData[listIndex] }}</span>
-        </div>
-      </transition>
-    </div>
-    <!-- 后面图标 -->
-    <div class="icon icon-append" :style="`color:${appendColor};`" @click="onClickAppend"><i :class="`iconfont icon-${appendIcon}`"></i></div>
-  </div>
-</template>
 <script lang="ts" setup>
 import { useAnimate, useBtns } from './hooks'
 import type { Props, Emits } from './types'
@@ -51,3 +25,30 @@ const props = withDefaults(defineProps<Props>(), {
 const { noticeList, left, listData, listIndex } = useAnimate(props)
 const { onClick, onClickPreappend, onClickAppend } = useBtns(emit)
 </script>
+
+<template>
+  <!-- 公告栏 -->
+  <div class="me-notice-bar" :style="`height:${height}px;border-radius:${radius + (String(radius).includes('px') ? '' : 'px')};background:${background};`">
+    <!-- 前面图标 -->
+    <div class="icon icon-preappend" :style="`color:${preappendColor};`" @click="onClickPreappend">
+      <i :class="`iconfont icon-${preappendIcon}`"></i>
+    </div>
+    <!-- 滚动公告 -->
+    <div class="notice">
+      <!-- 水平动画 -->
+      <ul class="notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll === 'horizontal'">
+        <li v-for="(item, index) in listData" :key="index" @click="onClick(index)">
+          <span>{{ item }}</span>
+        </li>
+      </ul>
+      <!-- 垂直动画 -->
+      <transition name="slide" mode="out-in" v-else>
+        <div class="notice-vertical" :key="listIndex" @click="onClick(listIndex)" :style="`color:${color};`">
+          <span>{{ listData[listIndex] }}</span>
+        </div>
+      </transition>
+    </div>
+    <!-- 后面图标 -->
+    <div class="icon icon-append" :style="`color:${appendColor};`" @click="onClickAppend"><i :class="`iconfont icon-${appendIcon}`"></i></div>
+  </div>
+</template>

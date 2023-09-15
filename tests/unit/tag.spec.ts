@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeTag from '~/MeTag/index.vue'
 
-describe('MeTag', () => {
-  test('props type', () => {
+describe('MeTag 标签', () => {
+  test('属性 type', () => {
     const type = 'success'
     /**
      * 向组件里传参
@@ -19,7 +19,7 @@ describe('MeTag', () => {
     expect(viewer.classes(type)).toBe(true)
   })
 
-  test('props plain', () => {
+  test('属性 plain', () => {
     /**
      * 向组件里传参
      */
@@ -34,7 +34,7 @@ describe('MeTag', () => {
     expect(viewer.classes('plain')).toBe(true)
   })
 
-  test('props text', () => {
+  test('属性 text', () => {
     const text = '测试文本'
     /**
      * 向组件里传参
@@ -51,7 +51,7 @@ describe('MeTag', () => {
     expect(viewer.text()).toBe(text)
   })
 
-  test('props closeable', () => {
+  test('属性 closeable', () => {
     /**
      * 向组件里传参
      */
@@ -67,7 +67,7 @@ describe('MeTag', () => {
     expect(viewer.classes('icon-baseline-close-px')).toBe(true)
   })
 
-  test('emit close', async () => {
+  test('事件 close', async () => {
     /**
      * 向组件里传参
      */

@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { listData } = useWebData()
+</script>
+
 <template>
   <!-- 上传图片 -->
   <ul class="upload">
@@ -10,8 +13,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { listData } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

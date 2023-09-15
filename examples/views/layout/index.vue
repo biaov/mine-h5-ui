@@ -1,3 +1,18 @@
+<script lang="ts" setup>
+import { onMounted, ref } from 'vue'
+import { useGlobalVars } from '@/config/variables'
+import MineHeader from '@/components/MineHeader'
+import ReloadPrompt from '@/components/ReloadPrompt'
+import { useCanvas } from './hooks'
+
+const { GithubAddress } = useGlobalVars()
+const canvas = ref<HTMLCanvasElement>() // canvas 对象
+
+onMounted(() => {
+  useCanvas(canvas)
+})
+</script>
+
 <template>
   <!-- 首页 -->
   <div class="layout">
@@ -27,20 +42,7 @@
   </div>
   <reload-prompt></reload-prompt>
 </template>
-<script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import { useGlobalVars } from '@/config/variables'
-import MineHeader from '@/components/MineHeader'
-import ReloadPrompt from '@/components/ReloadPrompt'
-import { useCanvas } from './hooks'
 
-const { GithubAddress } = useGlobalVars()
-const canvas = ref<HTMLCanvasElement>() // canvas 对象
-
-onMounted(() => {
-  useCanvas(canvas)
-})
-</script>
 <style scoped lang="less">
 @import './index.less';
 </style>

@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useData } from './hooks'
+
+const { listData } = useData()
+</script>
+
 <template>
   <!-- 间距 -->
   <ul class="space">
@@ -14,8 +17,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useData } from './hooks'
 
-const { listData } = useData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeDivider from '~/MeDivider/index.vue'
 
-describe('MeDivider', () => {
-  test('props list', () => {
+describe('MeDivider 分割线', () => {
+  test('属性 list', () => {
     const list = ['缥缈']
     /**
      * 向组件里传参

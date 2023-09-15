@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandler } from './hooks'
+
+const { listData, onPreview } = useHandler()
+</script>
+
 <template>
   <!-- 图片预览 -->
   <ul class="preview">
@@ -12,8 +15,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandler } from './hooks'
 
-const { listData, onPreview } = useHandler()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

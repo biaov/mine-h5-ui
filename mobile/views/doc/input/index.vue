@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandlerInput } from './hooks'
+
+const { listData, onSMS, onIcon } = useHandlerInput()
+</script>
+
 <template>
   <!-- 输入框 -->
   <ul class="input">
@@ -33,8 +36,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandlerInput } from './hooks'
 
-const { listData, onSMS, onIcon } = useHandlerInput()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

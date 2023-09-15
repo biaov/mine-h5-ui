@@ -1,7 +1,3 @@
-<template>
-  <!-- 图标 -->
-  <i class="iconfont me-icon" :class="name" :style="`color:${color};font-size:${size};`" @click="onClick"></i>
-</template>
 <script lang="ts" setup>
 import { useClick } from './hooks'
 import type { Props, Emits } from './types'
@@ -19,3 +15,8 @@ withDefaults(defineProps<Props>(), {
 
 const { onClick } = useClick(emit)
 </script>
+
+<template>
+  <!-- 图标 -->
+  <i class="iconfont me-icon" :class="name" :style="`color:${color};font-size:${size};`" @click="onClick"></i>
+</template>

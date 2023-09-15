@@ -1,4 +1,4 @@
-import { defineConfig, UserConfig } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import vitePluginMd from 'vite-plugin-vue-markdown'
@@ -12,7 +12,7 @@ const { BaseRouter: base } = useGlobalVars()
 /**
  * 配置信息
  */
-const config: UserConfig = {
+export default defineConfig({
   base,
   plugins: [eslint(eslintConfig), vue(vueConfig), vitePluginMd(vitePluginMdConfig), VitePWA(vitePwaConfig)],
   server: {
@@ -48,6 +48,4 @@ const config: UserConfig = {
       }
     }
   }
-}
-
-export default defineConfig(config)
+})

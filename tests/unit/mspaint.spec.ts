@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
 import MeMspaint from '~/MeMspaint/index.vue'
 
-describe('MeMspaint', () => {
+describe('MeMspaint 画图', () => {
   const visible = false
-  test('props width', () => {
+  test('属性 width', () => {
     const width = '300'
     /**
      * 向组件里传参
@@ -17,7 +17,7 @@ describe('MeMspaint', () => {
     const viewer = wrapper.find('.me-mspaint')
     expect(viewer.attributes('width')).toBe(width)
   })
-  test('props height', () => {
+  test('属性 height', () => {
     const height = '300'
     /**
      * 向组件里传参
@@ -31,7 +31,7 @@ describe('MeMspaint', () => {
     const viewer = wrapper.find('.me-mspaint')
     expect(viewer.attributes('height')).toBe(height)
   })
-  test('props background', () => {
+  test('属性 background', () => {
     const background = 'rgb(255,102,0)'
     /**
      * 向组件里传参

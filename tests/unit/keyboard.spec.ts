@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeKeyboard from '~/MeKeyboard/index.vue'
 
-describe('MeKeyboard', () => {
-  test('props visible', () => {
+describe('MeKeyboard 数字键盘', () => {
+  test('属性 visible', () => {
     /**
      * 向组件里传参
      */
@@ -18,7 +18,7 @@ describe('MeKeyboard', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props skin-type', () => {
+  test('属性 skin-type', () => {
     const skinType = 'dark'
     /**
      * 向组件里传参
@@ -34,7 +34,7 @@ describe('MeKeyboard', () => {
     expect(viewer.classes(`me-keyboard-${skinType}`)).toBe(true)
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */
@@ -51,7 +51,7 @@ describe('MeKeyboard', () => {
     expect(wrapper.emitted('click')).toBeDefined()
   })
 
-  test('emit delete', async () => {
+  test('事件 delete', async () => {
     /**
      * 向组件里传参
      */
@@ -68,7 +68,7 @@ describe('MeKeyboard', () => {
     expect(wrapper.emitted('delete')).toBeDefined()
   })
 
-  test('emit complate', async () => {
+  test('事件 complate', async () => {
     /**
      * 向组件里传参
      */

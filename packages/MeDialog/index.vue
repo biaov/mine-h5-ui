@@ -1,14 +1,3 @@
-<template>
-  <!-- 对话框 -->
-  <div class="me-dialog" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
-    <div class="picker" :class="{ show: isShow }" @click.stop>
-      <!-- 提示语 -->
-      <h3 class="tips">{{ tips }}</h3>
-      <!-- 内容 -->
-      <slot></slot>
-    </div>
-  </div>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useShow } from './hooks'
@@ -29,3 +18,15 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { isShowMask, isShow, hideMask, animationDuration } = useShow(props, emit)
 </script>
+
+<template>
+  <!-- 对话框 -->
+  <div class="me-dialog" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
+    <div class="picker" :class="{ show: isShow }" @click.stop>
+      <!-- 提示语 -->
+      <h3 class="tips">{{ tips }}</h3>
+      <!-- 内容 -->
+      <slot></slot>
+    </div>
+  </div>
+</template>

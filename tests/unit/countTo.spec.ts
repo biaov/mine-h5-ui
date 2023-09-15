@@ -2,10 +2,10 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MeCountTo from '~/MeCountTo/index.vue'
 
-describe('MeCountTo', () => {
+describe('MeCountTo 数字滚动', () => {
   const endValue = 1000
 
-  test('props end-value', async () => {
+  test('属性 end-value', async () => {
     /**
      * 向组件里传参
      */
@@ -24,7 +24,7 @@ describe('MeCountTo', () => {
     expect(viewer.text()).toBe(`${endValue}`)
   })
 
-  test('props start-value', () => {
+  test('属性 start-value', () => {
     const startValue = 100
     /**
      * 向组件里传参
@@ -40,7 +40,7 @@ describe('MeCountTo', () => {
     expect(viewer.text()).toBe(`${startValue}`)
   })
 
-  test('props duration', async () => {
+  test('属性 duration', async () => {
     /**
      * 向组件里传参
      */
@@ -58,7 +58,7 @@ describe('MeCountTo', () => {
     expect(viewer.text()).toBe(`${endValue}`)
   })
 
-  test('props thousand', async () => {
+  test('属性 thousand', async () => {
     /**
      * 向组件里传参
      */
@@ -76,7 +76,7 @@ describe('MeCountTo', () => {
     expect(viewer.text()).toBe('1,000')
   })
 
-  test('emit end', async () => {
+  test('事件 end', async () => {
     /**
      * 向组件里传参
      */

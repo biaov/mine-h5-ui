@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import { useShowAction } from './hooks'
+import type { Props } from './types'
+
+const props = defineProps<Props>()
+const { isShow, onClickFrame, onClickItem } = useShowAction(props)
+</script>
+
 <template>
   <!-- 下拉框 -->
   <div class="combo-box" @click.stop="onClickFrame">
@@ -13,13 +21,7 @@
     </transition>
   </div>
 </template>
-<script lang="ts" setup>
-import { useShowAction } from './hooks'
-import type { Props } from './types'
 
-const props = defineProps<Props>()
-const { isShow, onClickFrame, onClickItem } = useShowAction(props)
-</script>
 <style scoped lang="less">
 @import './index.less';
 </style>

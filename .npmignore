@@ -25,10 +25,10 @@ EXPLAIN.md
 format.vue
 .npmrc
 *.html
-jest.config.js
 jsconfig.json
 tsconfig.json
 vite.config.ts
+vitest.config.ts
 package-lock.json
 pre-publish.json
 pre-publish-github.json

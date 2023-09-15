@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MePassword from '~/MePassword/index.vue'
 
-describe('MePassword', () => {
-  test('props type', () => {
+describe('MePassword 密码输入框', () => {
+  test('属性 type', () => {
     /**
      * 向组件里传参
      */
@@ -18,7 +18,7 @@ describe('MePassword', () => {
     expect(viewer.classes('me-password-number')).toBe(true)
   })
 
-  test('props num', () => {
+  test('属性 num', () => {
     const num = 4
     /**
      * 向组件里传参
@@ -35,7 +35,7 @@ describe('MePassword', () => {
     expect(viewer.length).toBe(num)
   })
 
-  test('props skin-type', () => {
+  test('属性 skin-type', () => {
     const skinType = 'dark'
     /**
      * 向组件里传参
@@ -51,7 +51,7 @@ describe('MePassword', () => {
     expect(viewer.classes(`me-password-${skinType}`)).toBe(true)
   })
 
-  test('emit focus', async () => {
+  test('事件 focus', async () => {
     /**
      * 向组件里传参
      */
@@ -66,7 +66,7 @@ describe('MePassword', () => {
     expect(wrapper.emitted('focus')).toBeDefined()
   })
 
-  test('emit blur', async () => {
+  test('事件 blur', async () => {
     /**
      * 向组件里传参
      */

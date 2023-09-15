@@ -1,9 +1,3 @@
-<template>
-  <!-- 数字滚动 -->
-  <div class="me-count-to">
-    {{ comValue }}
-  </div>
-</template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
 import type { Props, Emits } from './types'
@@ -23,3 +17,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { comValue } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 数字滚动 -->
+  <div class="me-count-to">
+    {{ comValue }}
+  </div>
+</template>

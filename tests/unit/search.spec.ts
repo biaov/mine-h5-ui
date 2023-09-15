@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import MeSearch from '~/MeSearch/index.vue'
 
-describe('MeSearch', () => {
+describe('MeSearch 搜索', () => {
   const modelValue = ''
 
-  test('props placeholder', () => {
+  test('属性 placeholder', () => {
     const placeholder = '测试占位符'
     /**
      * 向组件里传参
@@ -24,7 +24,7 @@ describe('MeSearch', () => {
     expect(inputEl.attributes('placeholder')).toBe(placeholder)
   })
 
-  test('props btn-text', () => {
+  test('属性 btn-text', () => {
     const btnText = '测试右侧按钮内容'
     /**
      * 向组件里传参
@@ -41,7 +41,7 @@ describe('MeSearch', () => {
     expect(viewer.text()).toBe(btnText)
   })
 
-  test('props disabled', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -56,7 +56,7 @@ describe('MeSearch', () => {
     expect(viewer.attributes('disabled')).toBeDefined()
   })
 
-  test('emit focus', async () => {
+  test('事件 focus', async () => {
     /**
      * 向组件里传参
      */
@@ -73,7 +73,7 @@ describe('MeSearch', () => {
     expect(wrapper.emitted('focus')).toBeDefined()
   })
 
-  test('emit blur', async () => {
+  test('事件 blur', async () => {
     /**
      * 向组件里传参
      */
@@ -90,7 +90,7 @@ describe('MeSearch', () => {
     expect(wrapper.emitted('blur')).toBeDefined()
   })
 
-  test('emit input', async () => {
+  test('事件 input', async () => {
     /**
      * 向组件里传参
      */
@@ -107,7 +107,7 @@ describe('MeSearch', () => {
     expect(wrapper.emitted('input')).toBeDefined()
   })
 
-  test('emit change', async () => {
+  test('事件 change', async () => {
     /**
      * 向组件里传参
      */
@@ -124,7 +124,7 @@ describe('MeSearch', () => {
     expect(wrapper.emitted('change')).toBeDefined()
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */

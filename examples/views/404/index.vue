@@ -1,6 +1,9 @@
-<style lang="less" scoped>
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+</script>
+
 <template>
   <!-- 404 -->
   <div class="not-found">
@@ -9,8 +12,6 @@
     <me-button type="primary" @click="router.push('/')">返回首页</me-button>
   </div>
 </template>
-<script lang="ts" setup>
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-</script>
+<style lang="less" scoped>
+@import './index.less';
+</style>

@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import MeStep from '~/MeStep/index.vue'
 import MeStepItem from '~/MeStepItem/index.vue'
 
-describe('MeStep', () => {
+describe('MeStep 步骤条', () => {
   const TestComponent = {
     template: `<MeStep>
       <MeStepItem name="first"></MeStepItem>
@@ -15,7 +15,7 @@ describe('MeStep', () => {
   }
   const active = ['first']
 
-  test('props active', () => {
+  test('属性 active', () => {
     /**
      * 向组件里传参
      */
@@ -36,7 +36,7 @@ describe('MeStep', () => {
     expect(itemDom.classes('active')).toBe(true)
   })
 
-  test('props direction', () => {
+  test('属性 direction', () => {
     const direction = 'vertical'
     /**
      * 向组件里传参
@@ -52,7 +52,7 @@ describe('MeStep', () => {
     expect(viewer.classes(direction)).toBe(true)
   })
 
-  test('props type', () => {
+  test('属性 type', () => {
     const type = 'danger'
     /**
      * 向组件里传参
@@ -70,7 +70,7 @@ describe('MeStep', () => {
 })
 
 describe('MeStepItem', () => {
-  test('props name', () => {
+  test('属性 name', () => {
     const TestComponent = {
       template: `<MeStep>
         <MeStepItem name="first"></MeStepItem>

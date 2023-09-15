@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { listData, current, onChange } = useWebData()
+</script>
+
 <template>
   <!-- 索引栏 -->
   <div class="drag">
@@ -12,8 +15,7 @@
     </me-drag>
   </div>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { listData, current, onChange } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

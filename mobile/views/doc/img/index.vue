@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { isShowMask, listData, onLoad, onError } = useWebData()
+</script>
+
 <template>
   <!-- 图片 -->
   <div class="img">
@@ -26,8 +29,7 @@
     </me-mask>
   </div>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { isShowMask, listData, onLoad, onError } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

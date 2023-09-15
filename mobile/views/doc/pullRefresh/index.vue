@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useRefresh } from './hooks'
+
+const { active, listData, onRefresh } = useRefresh()
+</script>
+
 <template>
   <!-- 下拉刷新 -->
   <div class="pull-refresh">
@@ -11,8 +14,7 @@
     </me-tab>
   </div>
 </template>
-<script lang="ts" setup>
-import { useRefresh } from './hooks'
 
-const { active, listData, onRefresh } = useRefresh()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import ComboBox from '@/components/ComboBox'
+import NavList from '@/components/NavList'
+import { useListData } from './hooks'
+
+const { navList: navListData, versionList, isHome } = useListData()
+</script>
+
 <template>
   <!-- 头部 -->
   <div class="header" :class="{ home: isHome }">
@@ -14,13 +22,7 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import ComboBox from '@/components/ComboBox'
-import NavList from '@/components/NavList'
-import { useListData } from './hooks'
 
-const { navList: navListData, versionList, isHome } = useListData()
-</script>
 <style scoped lang="less">
 @import './index.less';
 </style>

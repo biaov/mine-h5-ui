@@ -2,10 +2,10 @@ import { mount } from '@vue/test-utils'
 import { Retarder } from '@/utils/functions'
 import MeDialog from '~/MeDialog/index.vue'
 
-describe('MeDialog', () => {
+describe('MeDialog 对话框', () => {
   const visible = true
 
-  test('props visible', async () => {
+  test('属性 visible', async () => {
     /**
      * 向组件里传参
      */
@@ -24,7 +24,7 @@ describe('MeDialog', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('props tips', () => {
+  test('属性 tips', () => {
     const tips = '提示文本'
     /**
      * 向组件里传参

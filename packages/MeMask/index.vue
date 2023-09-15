@@ -1,9 +1,3 @@
-<template>
-  <!-- 遮罩层 -->
-  <div class="me-mask" :class="{ show: isShow }" @click="clickMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
-    <slot :class="{ on: isShow }" @click.stop></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import { useHandler } from './hooks'
 import type { Props, Emits, Slots } from './types'
@@ -23,3 +17,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { isShowMask, isShow, clickMask, animationDuration } = useHandler(props, emit)
 </script>
+
+<template>
+  <!-- 遮罩层 -->
+  <div class="me-mask" :class="{ show: isShow }" @click="clickMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
+    <slot :class="{ on: isShow }" @click.stop></slot>
+  </div>
+</template>

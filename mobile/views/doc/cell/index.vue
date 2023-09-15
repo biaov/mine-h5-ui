@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onClick } = useHandle()
+</script>
+
 <template>
   <!-- 单元格 -->
   <ul class="cell">
@@ -19,8 +22,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onClick } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

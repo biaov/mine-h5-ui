@@ -1,9 +1,3 @@
-<template>
-  <!-- 复选框组 -->
-  <div class="me-checkbox-group" :class="{ inline: direction === 'horizontal' }">
-    <slot></slot>
-  </div>
-</template>
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
@@ -24,3 +18,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 useInitSlots(props, emit)
 </script>
+
+<template>
+  <!-- 复选框组 -->
+  <div class="me-checkbox-group" :class="{ inline: direction === 'horizontal' }">
+    <slot></slot>
+  </div>
+</template>

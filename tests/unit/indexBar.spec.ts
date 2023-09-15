@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import MeIndexBar from '~/MeIndexBar/index.vue'
 
-describe('MeIndexBar', () => {
+describe('MeIndexBar 索引栏', () => {
   const list = [
     {
       name: 'A',
@@ -13,7 +13,7 @@ describe('MeIndexBar', () => {
     }
   ]
 
-  test('props list', () => {
+  test('属性 list', () => {
     /**
      * 向组件里传参
      */
@@ -36,7 +36,7 @@ describe('MeIndexBar', () => {
     expect(listContEl.length > 0).toBeTruthy()
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */

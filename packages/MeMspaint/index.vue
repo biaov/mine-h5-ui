@@ -1,17 +1,3 @@
-<template>
-  <!-- 画图 -->
-  <canvas
-    class="me-mspaint"
-    v-bind="{ width: parseInt(width), height: parseInt(height) }"
-    :style="{
-      width,
-      height,
-      background,
-      border: getBorder
-    }"
-    ref="canvasRef"
-  ></canvas>
-</template>
 <script lang="ts" setup>
 import { useDraw } from './hooks'
 import type { Props, Emits } from './types'
@@ -33,3 +19,18 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const { canvasRef, getBorder } = useDraw(props, emit)
 </script>
+
+<template>
+  <!-- 画图 -->
+  <canvas
+    class="me-mspaint"
+    v-bind="{ width: parseInt(width), height: parseInt(height) }"
+    :style="{
+      width,
+      height,
+      background,
+      border: getBorder
+    }"
+    ref="canvasRef"
+  ></canvas>
+</template>

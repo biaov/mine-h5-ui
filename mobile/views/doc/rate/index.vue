@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useHandle } from './hooks'
+
+const { listData, onChange } = useHandle()
+</script>
+
 <template>
   <!-- 评分 -->
   <ul class="rate">
@@ -22,8 +25,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useHandle } from './hooks'
 
-const { listData, onChange } = useHandle()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

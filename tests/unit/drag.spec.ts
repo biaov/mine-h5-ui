@@ -1,7 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeDrag from '~/MeDrag/index.vue'
 
-describe('MeDrag', () => {
+describe('MeDrag 拖拽', () => {
+  const url = 'https://biaov.cn/logo.svg'
   const list = [
     {
       rect: {
@@ -10,7 +11,8 @@ describe('MeDrag', () => {
         x: 0,
         y: 0,
         r: 0
-      }
+      },
+      url
     },
     {
       rect: {
@@ -19,11 +21,12 @@ describe('MeDrag', () => {
         x: 110,
         y: 110,
         r: 0
-      }
+      },
+      url
     }
   ]
 
-  test('props list', () => {
+  test('属性 list', () => {
     /**
      * 向组件里传参
      */
@@ -42,7 +45,7 @@ describe('MeDrag', () => {
     expect(items.length).toBe(list.length)
   })
 
-  test('props current', () => {
+  test('属性 current', () => {
     const current = 0
     /**
      * 向组件里传参

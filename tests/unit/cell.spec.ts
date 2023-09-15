@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeCell from '~/MeCell/index.vue'
 
-describe('MeCell', () => {
-  test('props title', async () => {
+describe('MeCell 单元格', () => {
+  test('属性 title', async () => {
     const title = '标题'
     /**
      * 向组件里传参
@@ -19,7 +19,7 @@ describe('MeCell', () => {
     expect(viewer.text()).toBe(title)
   })
 
-  test('props value', async () => {
+  test('属性 value', async () => {
     const value = '标题'
     /**
      * 向组件里传参
@@ -35,7 +35,7 @@ describe('MeCell', () => {
     expect(viewer.text()).toBe(value)
   })
 
-  test('props icon', async () => {
+  test('属性 icon', async () => {
     const icon = 'icon-xiangji'
     /**
      * 向组件里传参
@@ -52,7 +52,7 @@ describe('MeCell', () => {
     expect(viewer.classes(icon)).toBe(true)
   })
 
-  test('props placeholder', async () => {
+  test('属性 placeholder', async () => {
     const placeholder = '占位符'
     /**
      * 向组件里传参

@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeEmpty from '~/MeEmpty/index.vue'
 
-describe('MeEmpty', () => {
-  test('props text', () => {
+describe('MeEmpty 空状态', () => {
+  test('属性 text', () => {
     const text = '文本内容'
     /**
      * 向组件里传参
@@ -23,7 +23,7 @@ describe('MeEmpty', () => {
     expect(textEl.text()).toBe(text)
   })
 
-  test('props type', () => {
+  test('属性 type', () => {
     /**
      * 向组件里传参
      */
@@ -39,8 +39,8 @@ describe('MeEmpty', () => {
     expect(viewer.classes('icon-wangluocuowu')).toBe(true)
   })
 
-  test('props icon-name', () => {
-    const url = 'http://dummyimage.com/200x200/f60/fff'
+  test('属性 icon-name', () => {
+    const url = 'https://biaov.cn/logo.svg'
     /**
      * 向组件里传参
      */

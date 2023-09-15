@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useWebData } from './hooks'
+
+const { icons, listData, onClick } = useWebData()
+</script>
+
 <template>
   <!-- 图标 -->
   <p class="top-tips">点击图标即可复制名称</p>
@@ -16,8 +19,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hooks'
 
-const { icons, listData, onClick } = useWebData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

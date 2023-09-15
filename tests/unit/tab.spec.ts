@@ -4,7 +4,7 @@ import MeTab from '~/MeTab/index.vue'
 import MeTabItem from '~/MeTabItem/index.vue'
 
 const modelValue = 0
-describe('MeTab', () => {
+describe('MeTab 标签页', () => {
   test('exists', () => {
     /**
      * 向组件里传参
@@ -21,8 +21,8 @@ describe('MeTab', () => {
   })
 })
 
-describe('MeTabItem', () => {
-  test('props label', async () => {
+describe('MeTabItem 标签页选项', () => {
+  test('属性 label', async () => {
     const TestComponent = {
       template: `<MeTab>
         <MeTabItem name="1" label="1"></MeTabItem>

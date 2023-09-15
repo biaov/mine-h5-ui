@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import { useWebData } from './hook'
+
+const { sidebarList } = useWebData()
+</script>
+
 <template>
   <!-- H5演示 -->
   <ul class="side-bar">
@@ -22,11 +28,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useWebData } from './hook'
 
-const { sidebarList } = useWebData()
-</script>
 <style scoped lang="less">
 @import './index.less';
 </style>

@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import MeCheckbox from '~/MeCheckbox/index.vue'
 import MeCheckboxGroup from '~/MeCheckboxGroup/index.vue'
 
-describe('MeCheckbox', () => {
-  test('props icon', () => {
+describe('MeCheckbox 复选框', () => {
+  test('属性 icon', () => {
     const icon = 'icon-github'
     /**
      * 向组件里传参
@@ -24,7 +24,7 @@ describe('MeCheckbox', () => {
     expect(iconEl.classes()).toContain(icon)
   })
 
-  test('props icon-select', async () => {
+  test('属性 icon-select', async () => {
     const iconSelect = 'icon-github'
     /**
      * 向组件里传参
@@ -40,7 +40,7 @@ describe('MeCheckbox', () => {
     expect(viewer.classes(iconSelect)).toBe(true)
   })
 
-  test('props disabled', () => {
+  test('属性 disabled', () => {
     /**
      * 向组件里传参
      */
@@ -55,7 +55,7 @@ describe('MeCheckbox', () => {
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
 
-  test('emit click', async () => {
+  test('事件 click', async () => {
     /**
      * 向组件里传参
      */
@@ -83,7 +83,7 @@ describe('MeCheckboxGroup', () => {
     }
   }
 
-  test('props direction', () => {
+  test('属性 direction', () => {
     /**
      * 向组件里传参
      */

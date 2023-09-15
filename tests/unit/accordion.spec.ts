@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import MeAccordion from '~/MeAccordion/index.vue'
 import MeAccordionItem from '~/MeAccordionItem/index.vue'
 
-describe('MeAccordion', () => {
-  test('accordion exist', () => {
+describe('MeAccordion 手风琴', () => {
+  test('是否存在', () => {
     /**
      * 向组件里传参
      */
@@ -27,7 +27,7 @@ describe('MeAccordion', () => {
 })
 
 describe('MeAccordionItem', () => {
-  test('props label', () => {
+  test('属性 label', () => {
     const label = '名称一'
     /**
      * 向组件里传参

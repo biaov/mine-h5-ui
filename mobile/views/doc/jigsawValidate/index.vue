@@ -1,6 +1,9 @@
-<style scoped lang="less">
-@import './index.less';
-</style>
+<script lang="ts" setup>
+import { useData } from './hooks'
+
+const { listData, onChange } = useData()
+</script>
+
 <template>
   <!-- 拼图校验 -->
   <ul class="jigsaw-validate">
@@ -10,8 +13,7 @@
     </li>
   </ul>
 </template>
-<script lang="ts" setup>
-import { useData } from './hooks'
 
-const { listData, onChange } = useData()
-</script>
+<style scoped lang="less">
+@import './index.less';
+</style>

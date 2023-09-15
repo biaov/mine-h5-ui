@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import MeNavBar from '~/MeNavBar/index.vue'
 
-describe('MeNavBar', () => {
-  test('props title', () => {
+describe('MeNavBar 导航栏', () => {
+  test('属性 title', () => {
     const title = '测试标题'
     /**
      * 向组件里传参
@@ -23,7 +23,7 @@ describe('MeNavBar', () => {
     expect(titleEl.text()).toBe(title)
   })
 
-  test('props left-arrow', () => {
+  test('属性 left-arrow', () => {
     /**
      * 向组件里传参
      */
@@ -39,7 +39,7 @@ describe('MeNavBar', () => {
     expect(viewer.classes('icon-left')).toBe(true)
   })
 
-  test('props left-text', () => {
+  test('属性 left-text', () => {
     const leftText = '测试左侧按钮内容'
     /**
      * 向组件里传参
@@ -56,7 +56,7 @@ describe('MeNavBar', () => {
     expect(viewer.text()).toBe(leftText)
   })
 
-  test('props right-text', () => {
+  test('属性 right-text', () => {
     const rightText = '测试右侧按钮内容'
     /**
      * 向组件里传参
@@ -73,7 +73,7 @@ describe('MeNavBar', () => {
     expect(viewer.text()).toBe(rightText)
   })
 
-  test('emit click-left', async () => {
+  test('事件 click-left', async () => {
     /**
      * 向组件里传参
      */
@@ -88,7 +88,7 @@ describe('MeNavBar', () => {
     expect(wrapper.emitted('click-left')).toBeDefined()
   })
 
-  test('emit click-right', async () => {
+  test('事件 click-right', async () => {
     /**
      * 向组件里传参
      */

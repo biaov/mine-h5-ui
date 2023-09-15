@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import MeSwiper from '~/MeSwiper/index.vue'
 import MeSwiperItem from '~/MeSwiperItem/index.vue'
 
-describe('MeSwiper', () => {
-  test('props dot', () => {
+describe('MeSwiper 轮播图', () => {
+  test('属性 dot', () => {
     /**
      * 向组件里传参
      */
@@ -23,11 +23,11 @@ describe('MeSwiper', () => {
   })
 })
 
-describe('MeSwiperItem', () => {
+describe('MeSwiperItem 轮播图选项', () => {
   const name = 1
 
-  test('props url', () => {
-    const url = 'https://dummyimage.com/750x350/4BC7F5/fff&text=1'
+  test('属性 url', () => {
+    const url = 'https://biaov.cn/logo.svg'
     /**
      * 向组件里传参
      */
@@ -47,7 +47,7 @@ describe('MeSwiperItem', () => {
     expect(imgEl.attributes('src')).toBe(url)
   })
 
-  test('props text', () => {
+  test('属性 text', () => {
     const text = '测试文本'
     /**
      * 向组件里传参
