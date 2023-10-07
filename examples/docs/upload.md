@@ -123,21 +123,21 @@ const fileList = [
 
 ### 参数
 
-| 参数             | 说明                                                           | 类型    | 可选值       | 默认值            | 版本 |
-| ---------------- | -------------------------------------------------------------- | ------- | ------------ | ----------------- | ---- |
-| v-model:fileList | 双向绑定上传图片列表的内容                                     | Array   | --           | --                | --   |
-| preview          | 图片是否可预览                                                 | boolean | true / false | true              | --   |
-| max-count        | 上传图片数量                                                   | number  | --           | 1000              | --   |
-| max-size         | 上传图片大小，单位 B                                           | number  | --           | `2 * 1024 * 1024` | --   |
-| multiple         | 是否允许多传                                                   | boolean | true / false | false             | --   |
-| deletable        | 删除图片按钮的显示状态                                         | boolean | true / false | true              | --   |
-| disabled         | 禁用状态                                                       | boolean | true / false | false             | --   |
-| beforeRead       | 上传文件之前的钩子函数，返回 false 不上传文件，回调参数：files | string  | true / false | false             | --   |
-| afterRead        | 上传文件之后的钩子函数；回调参数：files                        | string  | true / false | false             | --   |
-| beforeDelete     | 删除图片之前的钩子函数，返回 false 不删除；回调参数：files     | string  | true / false | false             | --   |
+| 参数             | 说明                                                           | 类型    | 可选值       | 默认值            | 版本   |
+| ---------------- | -------------------------------------------------------------- | ------- | ------------ | ----------------- | ------ |
+| v-model:fileList | 双向绑定上传图片列表的内容                                     | Array   | --           | --                | v2.0.0 |
+| preview          | 图片是否可预览                                                 | boolean | true / false | true              | v2.0.0 |
+| max-count        | 上传图片数量                                                   | number  | --           | 1000              | v2.0.0 |
+| max-size         | 上传图片大小，单位 B                                           | number  | --           | `2 * 1024 * 1024` | v2.0.0 |
+| multiple         | 是否允许多传                                                   | boolean | true / false | false             | v2.0.0 |
+| deletable        | 删除图片按钮的显示状态                                         | boolean | true / false | true              | v2.0.0 |
+| disabled         | 禁用状态                                                       | boolean | true / false | false             | v2.0.0 |
+| beforeRead       | 上传文件之前的钩子函数，返回 false 不上传文件，回调参数：files | string  | true / false | false             | v2.0.0 |
+| afterRead        | 上传文件之后的钩子函数；回调参数：files                        | string  | true / false | false             | v2.0.0 |
+| beforeDelete     | 删除图片之前的钩子函数，返回 false 不删除；回调参数：files     | string  | true / false | false             | v2.0.0 |
 
 ### 方法
 
-| 方法名 | 说明                           | 回调参数   | 版本  |
-| ------ | ------------------------------ | ---------- | ----- |
-| change | 当上传图片列表的内容改变时触发 | arr: any[] | 2.3.5 |
+| 方法名 | 说明                           | 回调参数   | 版本   |
+| ------ | ------------------------------ | ---------- | ------ |
+| change | 当上传图片列表的内容改变时触发 | arr: any[] | v2.3.5 |

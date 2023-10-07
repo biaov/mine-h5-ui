@@ -58,18 +58,18 @@ app.mount('#app')
 
 ### 参数
 
-| 参数                | 说明               | 类型              | 可选值 | 默认值  | 版本  |
-| ------------------- | ------------------ | ----------------- | ------ | ------- | ----- |
-| modelValue(v-model) | 双向绑定弹出层状态 | HTMLCanvasElement | --     | --      | 2.3.9 |
-| width               | 宽度               | string            | --     | 200px   | 2.3.9 |
-| height              | 高度               | string            | --     | 200px   | 2.3.9 |
-| background          | 背景色             | string            | --     | #fff    | 2.3.9 |
-| border-style        | 边框样式           | boolean / string  | --     | false   | 2.3.9 |
-| stroke-style        | 线条颜色           | string            | --     | #f56c6c | 2.3.9 |
-| line-width          | 线条粗细           | number            | --     | 1       | 2.3.9 |
+| 参数                | 说明               | 类型              | 可选值 | 默认值  | 版本   |
+| ------------------- | ------------------ | ----------------- | ------ | ------- | ------ |
+| modelValue(v-model) | 双向绑定弹出层状态 | HTMLCanvasElement | --     | --      | v2.3.9 |
+| width               | 宽度               | string            | --     | 200px   | v2.3.9 |
+| height              | 高度               | string            | --     | 200px   | v2.3.9 |
+| background          | 背景色             | string            | --     | #fff    | v2.3.9 |
+| border-style        | 边框样式           | boolean / string  | --     | false   | v2.3.9 |
+| stroke-style        | 线条颜色           | string            | --     | #f56c6c | v2.3.9 |
+| line-width          | 线条粗细           | number            | --     | 1       | v2.3.9 |
 
 ### 方法
 
-| 方法名            | 说明                     | 回调参数                | 版本  |
-| ----------------- | ------------------------ | ----------------------- | ----- |
-| update:modelValue | 页面渲染完之后触发的事件 | node: HTMLCanvasElement | 2.3.9 |
+| 方法名            | 说明                     | 回调参数                | 版本   |
+| ----------------- | ------------------------ | ----------------------- | ------ |
+| update:modelValue | 页面渲染完之后触发的事件 | node: HTMLCanvasElement | v2.3.9 |

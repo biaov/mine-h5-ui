@@ -30,7 +30,7 @@ app.mount('#app')
 ### 基础用法
 
 - 通过 `v-model` 来绑定 `MeAccordion` 组件的当前状态。
-- 通过属性 `title` 和属性 `index` 来设置 `MeAccordionItem` 组件的标题和索引，默认值分别为 `""` 和当前索引。
+- 通过属性 `label` 和属性 `index` 来设置 `MeAccordionItem` 组件的标题和索引，默认值分别为 `""` 和当前索引。
 
 ::: CopyCode
 
@@ -38,7 +38,7 @@ app.mount('#app')
 <template>
   <div class="label">基础用法</div>
   <me-accordion v-model="accordionActive">
-    <me-accordion-item v-for="(item, index) in listData" :key="index" :title="item.title" :index="index">
+    <me-accordion-item v-for="(item, index) in listData" :key="index" :label="item.title" :name="index">
       <div v-html="item.html"></div>
     </me-accordion-item>
   </me-accordion>
@@ -105,36 +105,36 @@ const listData = Object.freeze([
 
 #### 参数
 
-| 参数                | 说明               | 类型             | 可选值 | 默认值 | 版本 |
-| ------------------- | ------------------ | ---------------- | ------ | ------ | ---- |
-| modelValue(v-model) | 双向绑定当前活动项 | [string, number] | --     | --     | --   |
+| 参数                | 说明               | 类型             | 可选值 | 默认值 | 版本   |
+| ------------------- | ------------------ | ---------------- | ------ | ------ | ------ |
+| modelValue(v-model) | 双向绑定当前活动项 | [string, number] | --     | --     | v2.0.0 |
 
 #### Slots
 
 - ⚠ 注意：此插槽只接 `MeAccordionItem` 组件。
 
-| 具名插槽 | 说明     | scopedSlots | 版本 |
-| -------- | -------- | ----------- | ---- |
-| default  | 默认名称 | --          |
+| 具名插槽 | 说明     | scopedSlots | 版本   |
+| -------- | -------- | ----------- | ------ |
+| default  | 默认名称 | --          | v2.0.0 |
 
 #### 方法
 
-| 方法名 | 说明                       | 回调参数                | 版本  |
-| ------ | -------------------------- | ----------------------- | ----- |
-| change | 点击列表头部项时触发的事件 | value: [string, number] | 2.3.5 |
+| 方法名 | 说明                       | 回调参数                | 版本   |
+| ------ | -------------------------- | ----------------------- | ------ |
+| change | 点击列表头部项时触发的事件 | value: [string, number] | v2.3.5 |
 
 ### MeAccordionItem
 
 #### 参数
 
-| 参数         | 说明           | 类型             | 可选值 | 默认值  | 版本 |
-| ------------ | -------------- | ---------------- | ------ | ------- | ---- |
-| label        | 标题           | string           | --     | --      | --   |
-| name         | 活动内容初始项 | [string, number] | --     | --      | --   |
-| border-color | 头部下边框颜色 | string           | --     | #dcdfe6 | --   |
+| 参数         | 说明           | 类型             | 可选值 | 默认值  | 版本   |
+| ------------ | -------------- | ---------------- | ------ | ------- | ------ |
+| label        | 标题           | string           | --     | --      | v2.0.0 |
+| name         | 活动内容初始项 | [string, number] | --     | --      | v2.0.0 |
+| border-color | 头部下边框颜色 | string           | --     | #dcdfe6 | v2.0.0 |
 
 #### 方法
 
-| 方法名 | 说明                     | 回调参数      | 版本  |
-| ------ | ------------------------ | ------------- | ----- |
-| click  | 点击列表头部项触发的事件 | e: MouseEvent | 2.3.5 |
+| 方法名 | 说明                     | 回调参数          | 版本   |
+| ------ | ------------------------ | ----------------- | ------ |
+| click  | 点击列表头部项触发的事件 | event: MouseEvent | v2.3.5 |

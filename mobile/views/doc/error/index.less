@@ -1,0 +1,23 @@
+.btn {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.error {
+  > li {
+    .label {
+      width: 100%;
+      margin-bottom: 10px;
+      color: @font-color-reduce;
+      font-size: @font-size-min;
+    }
+    :deep(.me-error) {
+      margin-bottom: 15px;
+    }
+    :deep(.me-button) {
+      cursor: pointer;
+    }
+  }
+}

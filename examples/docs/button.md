@@ -110,15 +110,15 @@ app.mount('#app')
 
 ### 参数
 
-| 参数        | 说明                         | 类型    | 可选值                                                | 默认值     | 版本 |
-| ----------- | ---------------------------- | ------- | ----------------------------------------------------- | ---------- | ---- |
-| width       | 按钮宽度                     | string  | --                                                    | 自适应内容 | --   |
-| type        | 按钮类型                     | string  | default / primary / success / info / warning / danger | default    | --   |
-| native-type | 原生 button 标签的 type 属性 | string  | button / reset / submit                               | button     | --   |
-| plain       | 是否为朴素按钮               | boolean | true / false                                          | false      | --   |
-| disabled    | 是否为禁用状态               | boolean | true / false                                          | false      | --   |
-| icon        | 图标按钮                     | string  | --                                                    | --         | --   |
-| color       | 自定义颜色                   | string  | --                                                    | #494949    | --   |
+| 参数        | 说明                         | 类型    | 可选值                                                | 默认值     | 版本   |
+| ----------- | ---------------------------- | ------- | ----------------------------------------------------- | ---------- | ------ |
+| width       | 按钮宽度                     | string  | --                                                    | 自适应内容 | v2.0.0 |
+| type        | 按钮类型                     | string  | default / primary / success / info / warning / danger | default    | v2.0.0 |
+| native-type | 原生 button 标签的 type 属性 | string  | button / reset / submit                               | button     | v2.0.0 |
+| plain       | 是否为朴素按钮               | boolean | true / false                                          | false      | v2.0.0 |
+| disabled    | 是否为禁用状态               | boolean | true / false                                          | false      | v2.0.0 |
+| icon        | 图标按钮                     | string  | --                                                    | --         | v2.0.0 |
+| color       | 自定义颜色                   | string  | --                                                    | #494949    | v2.0.0 |
 
 ### Slots
 
@@ -128,6 +128,6 @@ app.mount('#app')
 
 ### 方法
 
-| 方法名 | 说明                 | 回调参数      | 版本  |
-| ------ | -------------------- | ------------- | ----- |
-| click  | 点击按钮时触发的事件 | e: MouseEvent | 2.3.5 |
+| 方法名 | 说明                 | 回调参数          | 版本   |
+| ------ | -------------------- | ----------------- | ------ |
+| click  | 点击按钮时触发的事件 | event: MouseEvent | v2.3.5 |

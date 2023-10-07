@@ -149,35 +149,35 @@ const active = ref(['first']) // 活动项
 
 #### MeStep
 
-| 参数         | 说明     | 类型   | 可选值                               | 默认值     | 版本 |
-| ------------ | -------- | ------ | ------------------------------------ | ---------- | ---- |
-| active       | 激活状态 | Array  | --                                   | --         | --   |
-| direction    | 显示方向 | string | horizontal / vertical                | horizontal | --   |
-| type         | 主题类型 | string | primary / success / warning / danger | primary    | --   |
-| color        | 置灰颜色 | string | --                                   | --         | --   |
-| active-color | 激活颜色 | string | --                                   | --         | --   |
-| icon         | 置灰图标 | string | --                                   | dot        | --   |
-| active-icon  | 激活图标 | string | --                                   | radio      | --   |
+| 参数         | 说明     | 类型   | 可选值                               | 默认值     | 版本   |
+| ------------ | -------- | ------ | ------------------------------------ | ---------- | ------ |
+| active       | 激活状态 | Array  | --                                   | --         | v2.0.0 |
+| direction    | 显示方向 | string | horizontal / vertical                | horizontal | v2.0.0 |
+| type         | 主题类型 | string | primary / success / warning / danger | primary    | v2.0.0 |
+| color        | 置灰颜色 | string | --                                   | --         | v2.0.0 |
+| active-color | 激活颜色 | string | --                                   | --         | v2.0.0 |
+| icon         | 置灰图标 | string | --                                   | dot        | v2.0.0 |
+| active-icon  | 激活图标 | string | --                                   | radio      | v2.0.0 |
 
 ##### Slots
 
 - ⚠ 注意：此插槽只接 `MeStepItem` 组件。
 
-| 具名插槽 | 说明     | scopedSlots | 版本 |
-| -------- | -------- | ----------- | ---- |
-| default  | 默认名称 | --          | --   |
+| 具名插槽 | 说明     | scopedSlots | 版本   |
+| -------- | -------- | ----------- | ------ |
+| default  | 默认名称 | --          | v2.0.0 |
 
 #### MeStepItem
 
-| 参数 | 说明     | 类型            | 可选值 | 默认值 | 版本 |
-| ---- | -------- | --------------- | ------ | ------ | ---- |
-| name | 索引名称 | string / number | --     | --     | --   |
+| 参数 | 说明     | 类型            | 可选值 | 默认值 | 版本   |
+| ---- | -------- | --------------- | ------ | ------ | ------ |
+| name | 索引名称 | string / number | --     | --     | v2.0.0 |
 
 ##### Slots
 
-| 具名插槽 | 说明     | scopedSlots | 版本 |
-| -------- | -------- | ----------- | ---- |
-| default  | 默认名称 | --          | --   |
+| 具名插槽 | 说明     | scopedSlots | 版本   |
+| -------- | -------- | ----------- | ------ |
+| default  | 默认名称 | --          | v2.0.0 |
 
 ### 方法
 

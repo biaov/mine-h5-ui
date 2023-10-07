@@ -376,6 +376,13 @@ export const componentConfig = [
         },
         path: 'countTo',
         name: 'countTo'
+      },
+      {
+        meta: {
+          title: 'Error 错误'
+        },
+        path: 'error',
+        name: 'error'
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -63,19 +63,19 @@
     "mockjs": "^1.1.0",
     "qrcode": "^1.5.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@types/mockjs": "^1.0.7",
-    "@types/node": "^20.6.0",
+    "@types/mockjs": "^1.0.8",
+    "@types/node": "^20.8.3",
     "@types/qrcode": "^1.5.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
-    "@vitejs/plugin-vue": "^4.3.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "@vitejs/plugin-vue": "^4.4.0",
     "@vue/compiler-sfc": "^3.3.4",
     "@vue/test-utils": "^2.4.1",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.49.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
@@ -96,12 +96,12 @@
     "rollup-plugin-license": "^3.1.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vite-plugin-dts": "3.5.3",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "3.6.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.16.5",
     "vite-plugin-vue-markdown": "^0.23.7",
-    "vitest": "^0.34.4",
-    "vue-tsc": "^1.8.11"
+    "vitest": "^0.34.6",
+    "vue-tsc": "^1.8.16"
   }
 }

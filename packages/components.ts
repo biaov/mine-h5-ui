@@ -63,6 +63,7 @@ export { MeSwiper } from './MeSwiper' // 轮播图
 export { MeSwiperItem } from './MeSwiperItem' // 轮播图选项
 export { MeTag } from './MeTag' // 标签
 export { MeCountTo } from './MeCountTo' // 数字滚动
+export { MeError } from './MeError' // 页面错误
 /* 展示组件 end */
 
 /* 业务组件 start */

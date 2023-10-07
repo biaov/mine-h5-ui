@@ -135,23 +135,23 @@ const handleClick = () => {
 
 ### 方法
 
-| 方法名               | 说明             | 参数            | 返回值 | 版本               |
-| -------------------- | ---------------- | --------------- | ------ | ------------------ |
-| MeMessageBox         | 展示弹出框       | Option          | --     | --                 |
-| MeMessageBox.alert   | 展示警告弹出框   | string / Option | --     | string 类型 v2.4.1 |
-| MeMessageBox.confirm | 展示确认弹出框   | string / Option | --     | string 类型 v2.4.1 |
-| MeMessageBox.prompt  | 展示输入弹出框   | string / Option | --     | string 类型 v2.4.1 |
-| MeMessageBox.custom  | 展示自定义弹出框 | Option          | --     | --                 |
+| 方法名               | 说明             | 参数            | 返回值 | 版本   |
+| -------------------- | ---------------- | --------------- | ------ | ------ |
+| MeMessageBox         | 展示弹出框       | Option          | --     | v2.0.0 |
+| MeMessageBox.alert   | 展示警告弹出框   | string / Option | --     | v2.4.1 |
+| MeMessageBox.confirm | 展示确认弹出框   | string / Option | --     | v2.4.1 |
+| MeMessageBox.prompt  | 展示输入弹出框   | string / Option | --     | v2.4.1 |
+| MeMessageBox.custom  | 展示自定义弹出框 | Option          | --     | v2.0.0 |
 
 #### Option
 
-| 参数              | 说明                                                              | 类型                     | 可选值                            | 默认值 | 版本 |
-| ----------------- | ----------------------------------------------------------------- | ------------------------ | --------------------------------- | ------ | ---- |
-| type              | 弹出框类型                                                        | string                   | alert / confirm / prompt / custom | alert  | --   |
-| tips              | 提示文本                                                          | string                   | --                                | 提示   | --   |
-| message           | 弹出框内容，此参数在 `custom` 弹出框中不起作用                    | string                   | --                                | --     | --   |
-| html              | 自定义 HTML，此参数只有在 `custom` 弹出框中才起作用               | string                   | --                                | --     | --   |
-| cancelButtonText  | 取消按钮内容                                                      | string                   | --                                | 取消   | --   |
-| confirmButtonText | 确认按钮内容                                                      | string                   | --                                | 确认   | --   |
-| onOk              | 点击确认按钮回调函数，在 `prompt` 弹出框中接收输入框的 `value` 值 | (value?: string) => void | --                                | --     | --   |
-| onOff             | 点击取消按钮回调函数                                              | () => void               | --                                | --     | --   |
+| 参数              | 说明                                                              | 类型                     | 可选值                            | 默认值 | 版本   |
+| ----------------- | ----------------------------------------------------------------- | ------------------------ | --------------------------------- | ------ | ------ |
+| type              | 弹出框类型                                                        | string                   | alert / confirm / prompt / custom | alert  | v2.0.0 |
+| tips              | 提示文本                                                          | string                   | --                                | 提示   | v2.0.0 |
+| message           | 弹出框内容，此参数在 `custom` 弹出框中不起作用                    | string                   | --                                | --     | v2.0.0 |
+| html              | 自定义 HTML，此参数只有在 `custom` 弹出框中才起作用               | string                   | --                                | --     | v2.0.0 |
+| cancelButtonText  | 取消按钮内容                                                      | string                   | --                                | 取消   | v2.0.0 |
+| confirmButtonText | 确认按钮内容                                                      | string                   | --                                | 确认   | v2.0.0 |
+| onOk              | 点击确认按钮回调函数，在 `prompt` 弹出框中接收输入框的 `value` 值 | (value?: string) => void | --                                | --     | v2.0.0 |
+| onOff             | 点击取消按钮回调函数                                              | () => void               | --                                | --     | v2.0.0 |

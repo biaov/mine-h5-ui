@@ -125,23 +125,23 @@ app.mount('#app')
 
 ### 参数
 
-| 参数                | 说明               | 类型    | 可选值                                    | 默认值  | 版本 |
-| ------------------- | ------------------ | ------- | ----------------------------------------- | ------- | ---- |
-| modelValue(v-model) | 双向绑定弹出层状态 | boolean | true / false                              | --      | --   |
-| placeholder         | 搜索框占位符       | string  | --                                        | 请搜索  | --   |
-| btnText             | 搜索框右侧内容     | string  | --                                        | --      | --   |
-| align               | 搜索框内容对齐方式 | string  | left / center / right / justify / inherit | left    | --   |
-| radius              | 搜索框倒角         | string  | --                                        | 4px     | --   |
-| background          | 搜索框背景颜色     | string  | --                                        | #f6f6f6 | --   |
-| color               | 搜索框字体颜色     | string  | --                                        | #494949 | --   |
-| disabled            | 搜索框禁用状态     | boolean | true / false                              | false   | --   |
+| 参数                | 说明               | 类型    | 可选值                                    | 默认值  | 版本   |
+| ------------------- | ------------------ | ------- | ----------------------------------------- | ------- | ------ |
+| modelValue(v-model) | 双向绑定弹出层状态 | boolean | true / false                              | --      | v2.0.0 |
+| placeholder         | 搜索框占位符       | string  | --                                        | 请搜索  | v2.0.0 |
+| btnText             | 搜索框右侧内容     | string  | --                                        | --      | v2.0.0 |
+| align               | 搜索框内容对齐方式 | string  | left / center / right / justify / inherit | left    | v2.0.0 |
+| radius              | 搜索框倒角         | string  | --                                        | 4px     | v2.0.0 |
+| background          | 搜索框背景颜色     | string  | --                                        | #f6f6f6 | v2.0.0 |
+| color               | 搜索框字体颜色     | string  | --                                        | #494949 | v2.0.0 |
+| disabled            | 搜索框禁用状态     | boolean | true / false                              | false   | v2.0.0 |
 
 ### 方法
 
-| 方法名 | 说明                                      | 回调参数 | 版本  |
-| ------ | ----------------------------------------- | -------- | ----- |
-| focus  | 输入框聚焦时触发的事件                    | e: Event | 2.3.5 |
-| search | 输入框点击软键盘搜索/回车按钮时触发的事件 | e: Event | 2.3.5 |
-| input  | 输入框输入时触发的事件                    | e: Event | 2.3.5 |
-| change | 输入框内容发生改变时触发的事件            | e: Event | 2.3.5 |
-| blur   | 输入框移除焦点时触发的事件                | e: Event | 2.3.5 |
+| 方法名 | 说明                                      | 回调参数     | 版本   |
+| ------ | ----------------------------------------- | ------------ | ------ |
+| focus  | 输入框聚焦时触发的事件                    | event: Event | v2.3.5 |
+| search | 输入框点击软键盘搜索/回车按钮时触发的事件 | event: Event | v2.3.5 |
+| input  | 输入框输入时触发的事件                    | event: Event | v2.3.5 |
+| change | 输入框内容发生改变时触发的事件            | event: Event | v2.3.5 |
+| blur   | 输入框移除焦点时触发的事件                | event: Event | v2.3.5 |

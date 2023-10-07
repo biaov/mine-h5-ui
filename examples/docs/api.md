@@ -35,22 +35,22 @@ Object.keys(MeAPI).forEach(key => {
 
 ## API 方法名称
 
-| 函数名         | 说明                | 版本 |
-| -------------- | ------------------- | ---- |
-| [Bind]         | 绑定事件            | --   |
-| Unbind         | 移除绑定事件        | --   |
-| FormatTime     | 时间转换            | --   |
-| IsType         | 变量类型判断        | --   |
-| DeepCopyRA     | 深拷贝变量-递归算法 | --   |
-| Throttle       | 节流                | --   |
-| Debounce       | 防抖                | --   |
-| FormatThousand | 格式化千位符        | --   |
-| Locked         | 锁定                | --   |
-| AddZero        | 加 0 补位           | --   |
-| Calculation    | 加减乘除运算        | --   |
-| IsLeapyear     | 判断是否是闰年      | --   |
-| GenerateRandom | 生成随机数          | --   |
-| Retarder       | 延迟器              | --   |
+| 函数名         | 说明                | 版本   |
+| -------------- | ------------------- | ------ |
+| [Bind]         | 绑定事件            | v2.0.0 |
+| Unbind         | 移除绑定事件        | v2.0.0 |
+| FormatTime     | 时间转换            | v2.0.0 |
+| IsType         | 变量类型判断        | v2.0.0 |
+| DeepCopyRA     | 深拷贝变量-递归算法 | v2.0.0 |
+| Throttle       | 节流                | v2.0.0 |
+| Debounce       | 防抖                | v2.0.0 |
+| FormatThousand | 格式化千位符        | v2.0.0 |
+| Locked         | 锁定                | v2.0.0 |
+| AddZero        | 加 0 补位           | v2.0.0 |
+| Calculation    | 加减乘除运算        | v2.0.0 |
+| IsLeapyear     | 判断是否是闰年      | v2.0.0 |
+| GenerateRandom | 生成随机数          | v2.0.0 |
+| Retarder       | 延迟器              | v2.0.0 |
 
 ## 代码演示
 

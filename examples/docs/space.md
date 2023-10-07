@@ -61,7 +61,7 @@ app.mount('#app')
 
 ### 参数
 
-| 参数      | 说明     | 类型   | 可选值                | 默认值     | 版本  |
-| --------- | -------- | ------ | --------------------- | ---------- | ----- |
-| size      | 间距大小 | string | --                    | 10px       | 2.3.8 |
-| direction | 间距方向 | string | horizontal / vertical | horizontal | 2.3.8 |
+| 参数      | 说明     | 类型   | 可选值                | 默认值     | 版本   |
+| --------- | -------- | ------ | --------------------- | ---------- | ------ |
+| size      | 间距大小 | string | --                    | 10px       | v2.3.8 |
+| direction | 间距方向 | string | horizontal / vertical | horizontal | v2.3.8 |
