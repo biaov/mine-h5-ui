@@ -151,9 +151,9 @@ app.mount('#app')
 
 #### 方法
 
-| 方法名 | 说明                     | 回调参数    | 版本  |
-| ------ | ------------------------ | ----------- | ----- |
-| change | 当绑定值变化时触发的事件 | arr: item[] | 2.3.5 |
+| 方法名 | 说明                     | 回调参数    | 版本   |
+| ------ | ------------------------ | ----------- | ------ |
+| change | 当绑定值变化时触发的事件 | arr: item[] | v2.3.5 |
 
 - item: `string | number`
 
@@ -161,16 +161,16 @@ app.mount('#app')
 
 #### 参数
 
-| 参数                | 说明               | 类型             | 可选值         | 默认值      | 版本 |
-| ------------------- | ------------------ | ---------------- | -------------- | ----------- | ---- |
-| modelValue(v-model) | 双向绑定复选框状态 | boolean          | true / false   | --          | --   |
-| name                | 复选框唯一名称     | [string, number] | --             | --          | --   |
-| shape               | 图标形状           | string           | square / round | round       | --   |
-| icon                | 自定义图标         | string           | --             | icon-radio3 | --   |
-| iconSelect          | 自定义选中图标     | string           | --             | icon-radio  | --   |
-| iconSize            | 图标大小           | string           | --             | 20px        | --   |
-| checkedColor        | 选中图标颜色       | string           | --             | #409eff     | --   |
-| disabled            | 禁用状态           | boolean          | true / false   | false       | --   |
+| 参数                | 说明               | 类型             | 可选值         | 默认值      | 版本    |
+| ------------------- | ------------------ | ---------------- | -------------- | ----------- | ------- |
+| modelValue(v-model) | 双向绑定复选框状态 | boolean          | true / false   | --          | v2.0.0  |
+| name                | 复选框唯一名称     | [string, number] | --             | --          | v2.0.0  |
+| shape               | 图标形状           | string           | square / round | round       | v2.0.0- |
+| icon                | 自定义图标         | string           | --             | icon-radio3 | v2.0.0  |
+| iconSelect          | 自定义选中图标     | string           | --             | icon-radio  | v2.0.0  |
+| iconSize            | 图标大小           | string           | --             | 20px        | v2.0.0  |
+| checkedColor        | 选中图标颜色       | string           | --             | #409eff     | v2.0.0  |
+| disabled            | 禁用状态           | boolean          | true / false   | false       | v2.0.0  |
 
 #### Slots
 
@@ -180,6 +180,6 @@ app.mount('#app')
 
 #### 方法
 
-| 方法名 | 说明                   | 回调参数      | 版本  |
-| ------ | ---------------------- | ------------- | ----- |
-| click  | 点击复选框时触发的事件 | e: MouseEvent | 2.3.5 |
+| 方法名 | 说明                   | 回调参数          | 版本   |
+| ------ | ---------------------- | ----------------- | ------ |
+| click  | 点击复选框时触发的事件 | event: MouseEvent | v2.3.5 |

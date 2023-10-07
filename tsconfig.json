@@ -19,7 +19,7 @@
     },
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -27,10 +27,7 @@
     "jsx": "preserve",
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": true
   },
   "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],
   "exclude": ["node_modules"]

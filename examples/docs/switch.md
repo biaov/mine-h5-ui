@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-switch v-model="switch"></me-switch>
+<me-switch v-model="switch" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-switch v-model="switch" size="24px"></me-switch>
+<me-switch v-model="switch" size="24px" />
 ```
 
 :::
@@ -56,7 +56,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-switch v-model="switch" inactive-color="#f60" active-color="#e4393c"></me-switch>
+<me-switch v-model="switch" inactive-color="#f60" active-color="#e4393c" />
 ```
 
 :::
@@ -68,7 +68,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-switch v-model="switch" :async="true"></me-switch>
+<me-switch v-model="switch" :async="true" />
 ```
 
 :::
@@ -80,7 +80,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-switch v-model="switch" :disabled="true"></me-switch>
+<me-switch v-model="switch" :disabled="true" />
 ```
 
 :::
@@ -89,17 +89,17 @@ app.mount('#app')
 
 ### 参数
 
-| 参数                | 说明             | 类型    | 可选值       | 默认值  | 版本 |
-| ------------------- | ---------------- | ------- | ------------ | ------- | ---- |
-| modelValue(v-model) | 双向绑定开关状态 | boolean | true / false | --      | --   |
-| size                | 开关大小         | string  | --           | 30px    | --   |
-| inactiveColor       | 开关关闭颜色     | string  | --           | #fff    | --   |
-| activeColor         | 开关打开颜色     | string  | --           | #409eff | --   |
-| async               | 异步状态         | boolean | true / false | false   | --   |
-| disabled            | 禁用状态         | boolean | true / false | false   | --   |
+| 参数                | 说明             | 类型    | 可选值       | 默认值  | 版本   |
+| ------------------- | ---------------- | ------- | ------------ | ------- | ------ |
+| modelValue(v-model) | 双向绑定开关状态 | boolean | true / false | --      | v2.0.0 |
+| size                | 开关大小         | string  | --           | 30px    | v2.0.0 |
+| inactiveColor       | 开关关闭颜色     | string  | --           | #fff    | v2.0.0 |
+| activeColor         | 开关打开颜色     | string  | --           | #409eff | v2.0.0 |
+| async               | 异步状态         | boolean | true / false | false   | v2.0.0 |
+| disabled            | 禁用状态         | boolean | true / false | false   | v2.0.0 |
 
 ### 方法
 
-| 方法名 | 说明                 | 回调参数      | 版本  |
-| ------ | -------------------- | ------------- | ----- |
-| click  | 点击开关时触发的事件 | e: MouseEvent | 2.3.5 |
+| 方法名 | 说明                 | 回调参数          | 版本   |
+| ------ | -------------------- | ----------------- | ------ |
+| click  | 点击开关时触发的事件 | event: MouseEvent | v2.3.5 |

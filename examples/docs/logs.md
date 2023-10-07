@@ -14,7 +14,22 @@
 
 :::TimeLine
 
-## v2.6.1-Latest release
+## v2.7.0-Latest release
+
+`2023-10-07`
+
+- 更新展示组件
+  - [新增错误组件](/v2/doc/error)
+- 优化代码
+  - 移除 ts lint 检查，改为 eslint 检查
+  - 移动端文档主页优化显示改为手风琴显示
+  - 优化组件文档
+- Bug Fixes
+  - 处理按钮组件 focus 时的样式，取消 css outlint 属性样式
+  - 更新依赖版本
+  - 处理字体显示不全问题
+
+## v2.6.1
 
 `2023-09-15`
 

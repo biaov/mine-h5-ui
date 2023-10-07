@@ -93,20 +93,20 @@ app.mount('#app')
 
 ### 参数
 
-| 参数       | 说明     | 类型    | 可选值                                      | 默认值  | 版本 |
-| ---------- | -------- | ------- | ------------------------------------------- | ------- | ---- |
-| type       | 类型     | string  | primary / success / info / warning / danger | primary | --   |
-| plain      | 空心     | boolean | true / false                                | false   | --   |
-| radius     | 倒角     | number  | --                                          | 4       | --   |
-| width      | 宽度     | number  | --                                          | --      | --   |
-| height     | 高度     | number  | --                                          | 24      | --   |
-| color      | 标签颜色 | string  | --                                          | --      | --   |
-| text       | 标签内容 | string  | --                                          | 标签    | --   |
-| text-color | 文本颜色 | string  | --                                          | --      | --   |
-| closeable  | 关闭状态 | boolean | true / false                                | false   | --   |
+| 参数       | 说明     | 类型    | 可选值                                      | 默认值  | 版本   |
+| ---------- | -------- | ------- | ------------------------------------------- | ------- | ------ |
+| type       | 类型     | string  | primary / success / info / warning / danger | primary | v2.0.0 |
+| plain      | 空心     | boolean | true / false                                | false   | v2.0.0 |
+| radius     | 倒角     | number  | --                                          | 4       | v2.0.0 |
+| width      | 宽度     | number  | --                                          | --      | v2.0.0 |
+| height     | 高度     | number  | --                                          | 24      | v2.0.0 |
+| color      | 标签颜色 | string  | --                                          | --      | v2.0.0 |
+| text       | 标签内容 | string  | --                                          | 标签    | v2.0.0 |
+| text-color | 文本颜色 | string  | --                                          | --      | v2.0.0 |
+| closeable  | 关闭状态 | boolean | true / false                                | false   | v2.0.0 |
 
 ### 方法
 
-| 方法名 | 说明                     | 回调参数      | 版本  |
-| ------ | ------------------------ | ------------- | ----- |
-| close  | 点击关闭状态时触发的事件 | e: MouseEvent | 2.3.5 |
+| 方法名 | 说明                     | 回调参数          | 版本   |
+| ------ | ------------------------ | ----------------- | ------ |
+| close  | 点击关闭状态时触发的事件 | event: MouseEvent | v2.3.5 |

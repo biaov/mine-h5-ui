@@ -71,16 +71,16 @@ Vue.use(MeDrag)
 
 ### 参数
 
-| 参数            | 说明                   | 类型   | 可选值 | 默认值  | 版本  |
-| --------------- | ---------------------- | ------ | ------ | ------- | ----- |
-| v-model:current | 选中项                 | number | --     | -1      | --    |
-| v-model:list    | 列表数据               | Array  | --     | --      | --    |
-| width           | 容器宽度               | string | --     | 300px   | --    |
-| height          | 容器高度               | string | --     | 300px   | --    |
-| theme           | 选中主题色             | string | --     | #f56c6c | --    |
-| themeText       | 选中主题文本色         | string | --     | #fff    | --    |
-| angleRange      | 对正角度范围,单位度(°) | number | --     | 5       | --    |
-| scale           | 双指缩放一倍的像素     | number | --     | 100     | 2.3.3 |
+| 参数            | 说明                   | 类型   | 可选值 | 默认值  | 版本   |
+| --------------- | ---------------------- | ------ | ------ | ------- | ------ |
+| v-model:current | 选中项                 | number | --     | -1      | --     |
+| v-model:list    | 列表数据               | Array  | --     | --      | --     |
+| width           | 容器宽度               | string | --     | 300px   | --     |
+| height          | 容器高度               | string | --     | 300px   | --     |
+| theme           | 选中主题色             | string | --     | #f56c6c | --     |
+| themeText       | 选中主题文本色         | string | --     | #fff    | --     |
+| angleRange      | 对正角度范围,单位度(°) | number | --     | 5       | --     |
+| scale           | 双指缩放一倍的像素     | number | --     | 100     | v2.3.3 |
 
 ### Slots
 
@@ -90,8 +90,8 @@ Vue.use(MeDrag)
 
 ### 方法
 
-| 方法名         | 说明           | 回调参数                  | 版本  |
-| -------------- | -------------- | ------------------------- | ----- |
-| change         | 拖拽改变时触发 | list: any[], name: string | 2.3.5 |
-| update:current | 更新选中项触发 | value: number             | --    |
-| update:list    | 更新列表触发   | list: any[]               | --    |
+| 方法名         | 说明           | 回调参数                  | 版本   |
+| -------------- | -------------- | ------------------------- | ------ |
+| change         | 拖拽改变时触发 | list: any[], name: string | v2.3.5 |
+| update:current | 更新选中项触发 | value: number             | v2.0.0 |
+| update:list    | 更新列表触发   | list: any[]               | v2.0.0 |
