@@ -108,7 +108,10 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     })
   }
 
-  onScroll = Throttle(onScroll, props.interval) // 节流
+  /**
+   * 节流
+   */
+  onScroll = Throttle(onScroll, props.interval)
 
   /**
    * 设置 ref
@@ -117,7 +120,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     el && (nodes[+el.dataset.index] = el as HTMLLIElement)
   }
 
-  // watch props list
+  /**
+   * 监听 props list
+   */
   watch(
     () => props.list,
     value => {

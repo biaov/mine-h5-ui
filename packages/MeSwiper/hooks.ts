@@ -55,9 +55,14 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
    * 开始动画
    */
   const startAnimate = () => {
-    // 开启定时器
+    /**
+     * 开启定时器
+     */
     timer = setInterval(() => {
-      dotIndex.value = dotIndex.value < dots.value - 1 ? dotIndex.value + 1 : 0 // 设置指示点
+      /**
+       * 设置指示点
+       */
+      dotIndex.value = dotIndex.value < dots.value - 1 ? dotIndex.value + 1 : 0
       isActive.value = true
       currentValue.value = -dotIndex.value * maxDistance
     }, props.delay)
@@ -67,7 +72,10 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
    * 关闭动画
    */
   const closeAnimate = () => {
-    clearInterval(timer as NodeJS.Timeout) // 关闭动画
+    /**
+     * 关闭动画
+     */
+    clearInterval(timer as NodeJS.Timeout)
   }
 
   /**
@@ -76,7 +84,10 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
   const onTouchstart = (e: TouchEvent) => {
     initialValue = currentValue.value
     isActive.value = false
-    startX = e.changedTouches[0].clientX // 获取初始位置
+    /**
+     * 获取初始位置
+     */
+    startX = e.changedTouches[0].clientX
   }
 
   /**
@@ -112,7 +123,9 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
      */
     const diffX = currentX - startX
 
-    // diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+    /**
+     * diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+     */
     if (diffX > 0) {
       /**
        * 拖动距离
@@ -122,7 +135,10 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
        * 理想位移
        */
       const idealX = initialValue + distanceX
-      currentValue.value = idealX > 0 ? 0 : idealX // 实际位移，0: 最小位移
+      /**
+       * 实际位移，0: 最小位移
+       */
+      currentValue.value = idealX > 0 ? 0 : idealX
     } else if (diffX < 0) {
       /**
        * 拖动距离
@@ -136,7 +152,10 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
        * 最大位移
        */
       const maxDistanceX = (1 - dots.value) * maxDistance
-      currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX // 实际位移
+      /**
+       * 实际位移
+       */
+      currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX
     }
     dotIndex.value = -currentValue.value / maxDistance
     emit('change', names[dotIndex.value - 1])
@@ -176,7 +195,9 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
      */
     const diffX = currentX - startX
 
-    // diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+    /**
+     * diffX, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+     */
     if (diffX > 0) {
       /**
        * 拖动距离
@@ -186,7 +207,10 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
        * 理想位移
        */
       const idealX = initialValue + distanceX
-      currentValue.value = idealX > 0 ? 0 : idealX // 实际位移, 0: 最小位移
+      /**
+       * 实际位移, 0: 最小位移
+       */
+      currentValue.value = idealX > 0 ? 0 : idealX
     } else if (diffX < 0) {
       /**
        * 拖动距离
@@ -200,13 +224,22 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
        * 最大位移
        */
       const maxDistanceX = (1 - dots.value) * maxDistance
-      currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX // 实际位移
+      /**
+       * 实际位移
+       */
+      currentValue.value = idealX < maxDistanceX ? maxDistanceX : idealX
     }
 
     dotIndex.value = -currentValue.value / maxDistance
     emit('change', names[dotIndex.value - 1])
-    document.onmousemove = null // 清理上次的移动事件
-    document.onmouseup = null // 清理上次的抬起事件
+    /**
+     * 清理上次的移动事件
+     */
+    document.onmousemove = null
+    /**
+     * 清理上次的抬起事件
+     */
+    document.onmouseup = null
   }
 
   /**
@@ -214,9 +247,18 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
    */
   const onMousedown = (e: MouseEvent) => {
     initialValue = currentValue.value
-    startX = e.clientX // 获取x初始位置
-    document.onmousemove = onMousemove // 表达式声明移动事件
-    document.onmouseup = onMouseup // 表达式声明抬起事件
+    /**
+     * 获取 x 初始位置
+     */
+    startX = e.clientX
+    /**
+     * 表达式声明移动事件
+     */
+    document.onmousemove = onMousemove
+    /**
+     * 表达式声明抬起事件
+     */
+    document.onmouseup = onMouseup
   }
 
   /**
@@ -230,14 +272,21 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
     maxDistance = offsetWidth
     minDistance = offsetWidth / 4
     props.loop && startAnimate()
-    dots.value = names.length // 设置指示点的数量
+    /**
+     * 设置指示点的数量
+     */
+    dots.value = names.length
   }
 
-  // 监听动画
+  /**
+   * 监听动画
+   */
   watch(
     () => props.loop,
     value => {
-      // 是否开启动画
+      /**
+       * 是否开启动画
+       */
       value ? startAnimate() : closeAnimate()
     }
   )

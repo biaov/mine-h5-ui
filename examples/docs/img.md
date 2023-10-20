@@ -34,7 +34,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M"></me-img>
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" />
 ```
 
 :::
@@ -46,9 +46,9 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px"></me-img>
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" height="45px"></me-img>
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px" height="45px"></me-img>
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px" />
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" height="45px" />
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px" height="45px" />
 ```
 
 :::
@@ -61,9 +61,9 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="cover"></me-img>
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="contain"></me-img>
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="50% auto"></me-img>
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="cover" />
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="contain" />
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="50% auto" />
 ```
 
 :::
@@ -75,20 +75,18 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="50%"></me-img>
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="6px"></me-img>
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="50%" />
+<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="6px" />
 ```
 
 :::
 
 ### 相对路径图片
 
-- 如果你要使用相对路径图片的话，图片地址请用 `require` 引入。
-
 ::: CopyCode
 
 ```html
-<me-img :src="require('./image.png')" radius="50%"></me-img>
+<me-img src="./image.png" radius="50%" />
 ```
 
 :::

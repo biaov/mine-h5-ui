@@ -71,7 +71,7 @@ describe('MeCheckbox 复选框', () => {
   })
 })
 
-describe('MeCheckboxGroup', () => {
+describe('MeCheckboxGroup 复选框组', () => {
   const TestComponent = {
     template: `<MeCheckboxGroup>
       <MeCheckbox name="1">1</MeCheckbox>

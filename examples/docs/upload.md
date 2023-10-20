@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-upload></me-upload>
+<me-upload />
 ```
 
 :::
@@ -45,10 +45,12 @@ app.mount('#app')
 
 ```vue
 <template>
-  <me-upload v-model:fileList="fileList" :preview="true"></me-upload>
+  <me-upload v-model:fileList="fileList" :preview="true" />
 </template>
 <script lang="ts" setup>
-// 列表数据
+/**
+ * 列表数据
+ */
 const fileList = [
   { id: 1, url: 'https://dummyimage.com/100x100/4BC7F5/fff&text=1' },
   { id: 2, url: 'https://dummyimage.com/100x100/7A51F5/fff&text=2' },
@@ -66,7 +68,7 @@ const fileList = [
 ::: CopyCode
 
 ```html
-<me-upload :max-count="3"></me-upload>
+<me-upload :max-count="3" />
 ```
 
 :::
@@ -78,7 +80,7 @@ const fileList = [
 ::: CopyCode
 
 ```html
-<me-upload :max-size="4*1024*1024"></me-upload>
+<me-upload :max-size="4*1024*1024" />
 ```
 
 :::
@@ -90,7 +92,7 @@ const fileList = [
 ::: CopyCode
 
 ```html
-<me-upload multiple></me-upload>
+<me-upload multiple />
 ```
 
 :::
@@ -102,7 +104,7 @@ const fileList = [
 ::: CopyCode
 
 ```html
-<me-upload :deletable="false"></me-upload>
+<me-upload :deletable="false" />
 ```
 
 :::
@@ -114,7 +116,7 @@ const fileList = [
 ::: CopyCode
 
 ```html
-<me-upload disabled></me-upload>
+<me-upload disabled />
 ```
 
 :::

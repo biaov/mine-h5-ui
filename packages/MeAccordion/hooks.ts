@@ -22,7 +22,9 @@ export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
 
   provide(MeAccordionKey, { name: MeAccordionKey, currentValue, onChange })
 
-  // 监听值的改变
+  /**
+   * 监听值的改变
+   */
   watch(
     () => props.modelValue,
     value => {

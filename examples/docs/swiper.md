@@ -51,13 +51,10 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
-<template>
-  <me-swiper>
-    <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
-  </me-swiper>
-</template>
 <script lang="ts" setup>
-// 列表数据
+/**
+ * 列表数据
+ */
 const listData = Object.freeze([
   {
     text: '一月不读书，耳目失精爽。',
@@ -73,6 +70,12 @@ const listData = Object.freeze([
   }
 ])
 </script>
+
+<template>
+  <me-swiper>
+    <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
+  </me-swiper>
+</template>
 ```
 
 :::
@@ -103,13 +106,10 @@ const listData = Object.freeze([
 ::: CopyCode
 
 ```vue
-<template>
-  <me-swiper loop :height="150">
-    <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
-  </me-swiper>
-</template>
 <script lang="ts" setup>
-// 列表数据
+/**
+ * 列表数据
+ */
 const listData = Object.freeze([
   {
     text: '青，取之于蓝而青于蓝；冰，水为之而寒于水。',
@@ -125,6 +125,12 @@ const listData = Object.freeze([
   }
 ])
 </script>
+
+<template>
+  <me-swiper loop :height="150">
+    <me-swiper-item v-for="(item, index) in listData" :key="index" :name="index" v-bind="item"></me-swiper-item>
+  </me-swiper>
+</template>
 ```
 
 :::

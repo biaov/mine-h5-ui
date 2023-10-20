@@ -19,13 +19,17 @@ export const useHandler = (props: Readonly<PropsHookParam>) => {
   const flagBool = len < 3
   const curLine = ref(props.line)
 
-  // 设置默认值
+  /**
+   * 设置默认值
+   */
   if (flagBool) {
     curLine.value.radius = curLine.value.radius ?? 0
     curLine.value.size = curLine.value.size ?? 1
   }
 
-  // 循环遍历
+  /**
+   * 循环遍历
+   */
   fieldsetList.value = props.list.map((item, index) => {
     /**
      * 旋转角度

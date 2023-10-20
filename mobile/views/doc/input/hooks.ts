@@ -24,9 +24,15 @@ export const useHandlerInput = () => {
     const timer = setInterval(() => {
       num--
       item.smsMsg = `${num}s后重发`
-      // 判断倒计时是否归零
+
+      /**
+       * 判断倒计时是否归零
+       */
       if (num <= 0) {
-        clearTimeout(timer) // 关闭倒计时
+        /**
+         * 关闭倒计时
+         */
+        clearTimeout(timer)
         item.smsIs = false
         item.smsMsg = '短信验证码'
       }
@@ -37,7 +43,9 @@ export const useHandlerInput = () => {
    * 点击图标
    */
   const onIcon = (item: ChildListItem) => {
-    // 判断是否为清理按钮
+    /**
+     * 判断是否为清理按钮
+     */
     item.icon === 'icon-close' && (item.value = '')
   }
 

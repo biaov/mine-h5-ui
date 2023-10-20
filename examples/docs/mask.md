@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-mask visible="false"></me-mask>
+<me-mask visible="false" />
 ```
 
 :::
@@ -43,7 +43,7 @@ app.mount('#app')
 
 ::: CopyCode
 
-```html
+```vue
 <template>
   <me-mask v-model:visible="visible" mask-close>
     <me-loading type="circle2" color="#f56c6c" size="100px">
@@ -52,23 +52,26 @@ app.mount('#app')
   </me-mask>
 </template>
 <script lang="ts" setup>
-  import { ref } from 'vue'
+import { ref } from 'vue'
 
-  const visible = ref(false) // 模态框显示状态
+/**
+ * 模态框显示状态
+ */
+const visible = ref(false)
 </script>
 <style scoped lang="less">
-  .me-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    .text {
-      padding-top: 10px;
-      text-align: center;
-      color: @color-default;
-    }
+.me-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  .text {
+    padding-top: 10px;
+    text-align: center;
+    color: @color-default;
   }
+}
 </style>
 ```
 

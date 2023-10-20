@@ -40,8 +40,14 @@ app.mount('#app')
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-const visible = ref(false) // 动作面板的显示状态
-// 列表数据
+/**
+ * 动作面板的显示状态
+ */
+const visible = ref(false)
+
+/**
+ * 列表数据
+ */
 const listData = ref([
   {
     id: 1,

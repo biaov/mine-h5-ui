@@ -1,4 +1,7 @@
-export type NativeType = 'button' | 'submit' | 'reset' // props nativeType
+/**
+ * props nativeType
+ */
+export type NativeType = 'button' | 'submit' | 'reset'
 
 /**
  * emits

@@ -41,7 +41,10 @@ export const useWebData = () => {
   const resultHandler = () => {
     listLen === imgCount &&
       setTimeout(() => {
-        isShowMask.value = false // 关闭状态栏
+        /**
+         * 关闭状态栏
+         */
+        isShowMask.value = false
       }, 500)
   }
 

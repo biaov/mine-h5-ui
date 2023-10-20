@@ -16,7 +16,9 @@ export const useHandle = () => {
    * 点击 Switch 开关
    */
   const onClick = ({ async, value }: ListDataItem) => {
-    // 判断是否为异步
+    /**
+     * 判断是否为异步
+     */
     if (async) {
       $MeToast('当前为异步状态，可自行控制开关的打开和关闭')
     } else {

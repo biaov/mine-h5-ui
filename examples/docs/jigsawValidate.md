@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-jigsaw-validate url="https://dummyimage.com/340x300/f60"></me-jigsaw-validate>
+<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" />
 ```
 
 :::
@@ -45,7 +45,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" width="300px" height="260px"></me-jigsaw-validate>
+<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" width="300px" height="260px" />
 ```
 
 :::
@@ -57,7 +57,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :random="false"></me-jigsaw-validate>
+<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :random="false" />
 ```
 
 :::
@@ -68,21 +68,29 @@ app.mount('#app')
 - slideStyle:
 
 ```js
-
-{
-  height: '40px', // 滑块的高度
-  background: '#f6f6f6', // 滑块的背景色
-  dotBackground: '#409eff', // 拖动点的背景色
-  tips: '#494949' // 提示文字的颜色
+export default {
+  /**
+   * 滑块的高度
+   */
+  height: '40px',
+  /**
+   * 滑块的背景色
+   */
+  background: '#f6f6f6',
+  /**
+   * 拖动点的背景色
+   */
+  dotBackground: '#409eff',
+  /**
+   * 提示文字的颜色
+   */
+  tips: '#494949'
 }
 ```
 
 ::: CopyCode
 
 ```vue
-<template>
-  <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :slideStyle="slideStyle"></me-jigsaw-validate>
-</template>
 <script setup>
 const slideStyle = {
   height: '30px',
@@ -91,6 +99,10 @@ const slideStyle = {
   tips: '#fff'
 }
 </script>
+
+<template>
+  <me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :slideStyle="slideStyle" />
+</template>
 ```
 
 :::
@@ -102,7 +114,7 @@ const slideStyle = {
 ::: CopyCode
 
 ```html
-<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" tips="这是一段提示文字"></me-jigsaw-validate>
+<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" tips="这是一段提示文字" />
 ```
 
 :::
@@ -114,7 +126,7 @@ const slideStyle = {
 ::: CopyCode
 
 ```html
-<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :range="20"></me-jigsaw-validate>
+<me-jigsaw-validate url="https://dummyimage.com/340x300/f60" :range="20" />
 ```
 
 :::

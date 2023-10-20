@@ -33,6 +33,39 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { MeToast } from 'mine-h5-ui'
+
+/**
+ * 对话框显示状态
+ */
+const visible = ref(false)
+
+/**
+ * 点击文本
+ */
+const handleClick = () => {
+  visible.value = true
+}
+
+/**
+ * 点击取消按钮
+ */
+const onCancel = () => {
+  visible.value = false
+  MeToast('你点击了取消按钮')
+}
+
+/**
+ * 点击确定按钮
+ */
+const onConfirm = () => {
+  visible.value = false
+  MeToast('你点击了确定按钮')
+}
+</script>
+
 <template>
   <div @click="handleClick">点击弹出自义定弹出框</div>
   <me-dialog v-model:visible="visible" tips="提示">
@@ -49,26 +82,7 @@ app.mount('#app')
     </div>
   </me-dialog>
 </template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-import { MeToast } from 'mine-h5-ui'
 
-const visible = ref(false) // 对话框显示状态
-// 点击文本
-const handleClick = () => {
-  visible.value = true
-}
-// 点击取消按钮
-const onCancel = () => {
-  visible.value = false
-  MeToast('你点击了取消按钮')
-}
-// 点击确定按钮
-const onConfirm = () => {
-  visible.value = false
-  MeToast('你点击了确定按钮')
-}
-</script>
 <style scoped lang="less">
 .me-dialog {
   .text {

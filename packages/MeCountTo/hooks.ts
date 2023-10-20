@@ -21,7 +21,10 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 开始当前动画
      */
     const startCurAnimate = (timestamp: number) => {
-      startTime === undefined && (startTime = timestamp) // 设置开始时间
+      /**
+       * 设置开始时间
+       */
+      startTime === undefined && (startTime = timestamp)
       /**
        * 当前距离开始时间
        */
@@ -30,7 +33,10 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
        * 虚拟计算值
        */
       const virtual = ~~(((props.endValue - props.startValue) * elapsed) / props.duration + props.startValue)
-      curValue.value = Math.min(virtual, props.endValue) // 当前值
+      /**
+       * 当前值
+       */
+      curValue.value = Math.min(virtual, props.endValue)
 
       if (elapsed < props.duration) {
         window.requestAnimationFrame(startCurAnimate)
@@ -43,7 +49,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     window.requestAnimationFrame(startCurAnimate)
   }
 
-  // 监听开始状态
+  /**
+   * 监听开始状态
+   */
   watch(
     () => props.modelValue,
     value => {

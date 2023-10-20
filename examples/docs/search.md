@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-search v-model="value"></me-search>
+<me-search v-model="value" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-search v-model="value" placeholder="请输入搜索内容"></me-search>
+<me-search v-model="value" placeholder="请输入搜索内容" />
 ```
 
 :::
@@ -55,19 +55,25 @@ app.mount('#app')
 
 ::: CopyCode
 
-```html
+```vue
 <template>
-  <me-search v-model="iptValue" btnText="取消" @click="btnCancel"></me-search>
+  <me-search v-model="iptValue" btnText="取消" @click="btnCancel" />
 </template>
 <script lang="ts" setup>
-  import { ref } from 'vue'
-  import { MeToast } from 'mine-h5-ui'
+import { ref } from 'vue'
+import { MeToast } from 'mine-h5-ui'
 
-  const iptValue = ref('') // 当前搜索框值
-  // 点击取消按钮
-  const btnCancel = () => {
-    MeToast('点击了取消按钮')
-  }
+/**
+ * 当前搜索框值
+ */
+const iptValue = ref('')
+
+/**
+ * 点击取消按钮
+ */
+const btnCancel = () => {
+  MeToast('点击了取消按钮')
+}
 </script>
 ```
 
@@ -80,7 +86,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-search v-model="value" align="center"></me-search>
+<me-search v-model="value" align="center" />
 ```
 
 :::
@@ -92,7 +98,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-search v-model="value" radius="20px"></me-search>
+<me-search v-model="value" radius="20px" />
 ```
 
 :::
@@ -104,7 +110,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-search v-model="value" background="linear-gradient(-45deg, #4bb0ff, #6149f6)" color="#fff"></me-search>
+<me-search v-model="value" background="linear-gradient(-45deg, #4bb0ff, #6149f6)" color="#fff" />
 ```
 
 :::
@@ -116,7 +122,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-search v-model="value" :disabled="true"></me-search>
+<me-search v-model="value" :disabled="true" />
 ```
 
 :::

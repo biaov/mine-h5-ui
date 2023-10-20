@@ -8,16 +8,8 @@ import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Deboun
  * ```ts
  * import { useValidator } from 'mine-h5-ui'
  *
- * const {
- *   phone, // 校验手机号码
- *   password, // 校验密码6-12位数字+字母组合
- *   email, // 只允许英文字母、数字、下划线、英文句号、以及中划线组成
- *   idCard, // 校验身份证号
- *   imgs, // 校验图片格式
- *   thousand, // 千位符
- *   thousandFloat // 小数千位符
- * } = useValidator()
- * // phone.test('') // false
+ * const { phone, password, email, idCard, imgs, thousand, thousandFloat } = useValidator()
+ * console.log(phone.test('')) // 输出: false
  * ```
  */
 export const useValidator = () => ({
@@ -58,37 +50,63 @@ export const useBind = () => {
  * ```ts
  * import { useUtils } from 'mine-h5-ui'
  *
- * const {
- *   varType, // 变量类型判断
- *   cloneDeep, // 深拷贝变量-递归算法(recursive algorithm)
- *   isLeapyear, // 判断是否是闰年
- *   formatTime, // 时间转换
- *   countDown, // 倒计时
- *   throttle, // 节流
- *   debounce, // 防抖
- *   formatThousand, // 格式化千位符
- *   locked, // 锁定
- *   addZero, // 加 0 补位
- *   calculation, // 加减乘除运算
- *   generateRandom, // 生成随机数
- *   retarder // 延迟器
- * } = useUtils()
+ * const { varType, cloneDeep, isLeapyear, formatTime, countDown, throttle, debounce, formatThousand, locked, addZero, calculation, generateRandom, retarder } = useUtils()
+ * console.log(varType.isString('')) // 输出: true
  * ```
  */
 export const useUtils = () => ({
-  varType: IsType, // 变量类型判断
-  cloneDeep: DeepCopyRA, // 深拷贝变量-递归算法(recursive algorithm)
-  isLeapyear: IsLeapyear, // 判断是否是闰年
-  formatTime: FormatTime, // 时间转换
-  countDown: CountDown, // 倒计时
-  throttle: Throttle, // 节流
-  debounce: Debounce, // 防抖
-  formatThousand: FormatThousand, // 格式化千位符
-  locked: Locked, // 锁定
-  addZero: AddZero, // 加 0 补位
-  calculation: Calculation, // 加减乘除运算
-  generateRandom: GenerateRandom, // 生成随机数
-  retarder: Retarder // 延迟器
+  /**
+   * 变量类型判断
+   */
+  varType: IsType,
+  /**
+   * 深拷贝变量 - 递归算法(recursive algorithm)
+   */
+  cloneDeep: DeepCopyRA,
+  /**
+   * 判断是否是闰年
+   */
+  isLeapyear: IsLeapyear,
+  /**
+   * 时间转换
+   */
+  formatTime: FormatTime,
+  /**
+   * 倒计时
+   */
+  countDown: CountDown,
+  /**
+   * 节流
+   */
+  throttle: Throttle,
+  /**
+   * 防抖
+   */
+  debounce: Debounce,
+  /**
+   * 格式化千位符
+   */
+  formatThousand: FormatThousand,
+  /**
+   * 锁定
+   */
+  locked: Locked,
+  /**
+   * 加 0 补位
+   */
+  addZero: AddZero,
+  /**
+   * 加减乘除运算
+   */
+  calculation: Calculation,
+  /**
+   * 生成随机数
+   */
+  generateRandom: GenerateRandom,
+  /**
+   * 延迟器
+   */
+  retarder: Retarder
 })
 
 /**
@@ -97,7 +115,7 @@ export const useUtils = () => ({
  * ```ts
  * import { useVisible } from 'mine-h5-ui'
  *
- * const { visible, setVisible } = useVisible()
+ * const [visible, setVisible] = useVisible()
  * ```
  */
 export const useVisible = () => {
@@ -107,8 +125,5 @@ export const useVisible = () => {
     visible.value = value
   }
 
-  return {
-    visible,
-    setVisible
-  }
+  return [visible, setVisible] as const
 }

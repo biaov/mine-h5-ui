@@ -48,7 +48,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     props.maskClose && hideMask()
   }
 
-  // 监听是否显示弹出层参数
+  /**
+   * 监听是否显示弹出层参数
+   */
   watch(
     () => props.visible,
     value => {

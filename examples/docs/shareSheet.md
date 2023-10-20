@@ -52,6 +52,9 @@ app.mount('#app')
 import { ref } from 'vue'
 import { MeToast } from 'mine-h5-ui'
 
+/**
+ * 分享面板数据
+ */
 const listData = ref([
   {
     id: 1,
@@ -97,15 +100,24 @@ const listData = ref([
     ]
   }
 ])
-// 点击列表项
+
+/**
+ * 点击列表项
+ */
 const onClick = item => {
   item.visible = false
 }
-// 点击分享面板列表
+
+/**
+ * 点击分享面板列表
+ */
 const onChange = item => {
   MeToast(JSON.stringify(item))
 }
-// 点击分享面板取消按钮
+
+/**
+ * 点击分享面板取消按钮
+ */
 const onCancel = () => {
   MeToast('你点击了取消按钮')
 }

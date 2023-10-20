@@ -51,7 +51,9 @@ app.mount('#app')
 <script lang="ts" setup>
 import { MeMessageBox, MeToast } from 'mine-h5-ui'
 
-// 删除按钮
+/**
+ * 删除按钮
+ */
 const onDelete = () => {
   MeMessageBox.confirm({
     tips: '警告',
@@ -64,7 +66,6 @@ const onDelete = () => {
 </script>
 <style scoped lang="less">
 .me-swiper-cell {
-  // 标题
   .tit {
     height: 40px;
     line-height: 40px;
@@ -73,7 +74,6 @@ const onDelete = () => {
     color: #494949;
     font-size: 14px;
   }
-  // 按钮
   .btns {
     display: flex;
     justify-content: space-between;

@@ -15,7 +15,10 @@ describe('MeIcon 图标', () => {
     const viewer = wrapper.find('.me-icon')
 
     expect(viewer.exists()).toBeTruthy()
-    expect(viewer.classes('icon-github')).toBe(true) // 是否存在值
+    /**
+     * 是否存在值
+     */
+    expect(viewer.classes('icon-github')).toBe(true)
   })
 
   test('事件 click', async () => {

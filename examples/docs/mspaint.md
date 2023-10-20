@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-mspaint></me-mspaint>
+<me-mspaint />
 ```
 
 :::
@@ -49,7 +49,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-mspaint width="260px" height="200px" background="#000" border-style="5px dashed #f60" stroke-style="#fff" line-width="3"></me-mspaint>
+<me-mspaint width="260px" height="200px" background="#000" border-style="5px dashed #f60" stroke-style="#fff" line-width="3" />
 ```
 
 :::

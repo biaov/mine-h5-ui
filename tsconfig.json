@@ -11,6 +11,8 @@
     "skipLibCheck": true,
     "types": ["vite/client", "node", "vitest/globals"],
     "baseUrl": "./",
+
+    /* 路径别名 */
     "paths": {
       "@/*": ["./examples/*"],
       "~/*": ["./packages/*"],
@@ -18,7 +20,7 @@
       "#/*": ["./dist/packages/*"]
     },
 
-    /* Bundler mode */
+    /* 模块解析策略 */
     "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -26,7 +28,7 @@
     "noEmit": true,
     "jsx": "preserve",
 
-    /* Linting */
+    /* 校验 */
     "strict": true
   },
   "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],

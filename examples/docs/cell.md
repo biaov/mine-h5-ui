@@ -33,7 +33,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-cell title="标题" value="内容"></me-cell>
+<me-cell title="标题" value="内容" />
 ```
 
 ### 显示占位符
@@ -43,7 +43,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-cell title="昵称" placeholder="请输入昵称"></me-cell>
+<me-cell title="昵称" placeholder="请输入昵称" />
 ```
 
 ### 显示图标
@@ -54,7 +54,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-cell title="相机" icon="icon-xiangji" icon-color="#409eff"></me-cell>
+<me-cell title="相机" icon="icon-xiangji" icon-color="#409eff" />
 ```
 
 ### 显示箭头
@@ -64,7 +64,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-cell title="生日" arrow></me-cell>
+<me-cell title="生日" arrow />
 ```
 
 ### 显示下边框
@@ -74,7 +74,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-cell title="服务" arrow bottom></me-cell>
+<me-cell title="服务" arrow bottom />
 ```
 
 ### 使用插槽

@@ -45,13 +45,28 @@ app.mount('#app')
 import { getCurrentInstance, ref } from 'vue'
 
 const { $Validator } = getCurrentInstance().appContext.config.globalProperties
-// 表单数据
+
+/**
+ * 表单数据
+ */
 const form = ref({
-  username: '', // 用户名
-  password: '', // 密码
-  sms: '' // 短信验证码
+  /**
+   * 用户名
+   */
+  username: '',
+  /**
+   * 密码
+   */
+  password: '',
+  /**
+   * 短信验证码
+   */
+  sms: ''
 })
-// 规则
+
+/**
+ * 规则
+ */
 const rules = Object.freeze([
   {
     type: 'username',
@@ -69,12 +84,15 @@ const rules = Object.freeze([
     message: '短信验证码只能是4位纯数字'
   }
 ])
-// 点击提交按钮
+
+/**
+ * 点击提交按钮
+ */
 const onSubmit = ({ valid, message, value }) => {
-  // 判断是否通过校验
-  if (valid) {
-    console.log(value) // 通过校验的值
-  }
+  /**
+   * 判断是否通过校验
+   */
+  valid && console.log(value)
 }
 </script>
 ```

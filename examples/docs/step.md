@@ -34,17 +34,21 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+/**
+ * 活动项
+ */
+const active = ref(['first'])
+</script>
+
 <template>
   <me-step :active="active">
     <me-step-item name="first">步骤一</me-step-item>
     <me-step-item name="second">步骤二</me-step-item>
   </me-step>
 </template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const active = ref(['first']) // 活动项
-</script>
 ```
 
 :::
@@ -55,18 +59,11 @@ const active = ref(['first']) // 活动项
 
 ::: CopyCode
 
-```vue
-<template>
-  <me-step :active="active" type="danger">
-    <me-step-item name="first">步骤一</me-step-item>
-    <me-step-item name="second">步骤二</me-step-item>
-  </me-step>
-</template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const active = ref(['first']) // 活动项
-</script>
+```html
+<me-step :active="active" type="danger">
+  <me-step-item name="first">步骤一</me-step-item>
+  <me-step-item name="second">步骤二</me-step-item>
+</me-step>
 ```
 
 :::
@@ -77,18 +74,11 @@ const active = ref(['first']) // 活动项
 
 ::: CopyCode
 
-```vue
-<template>
-  <me-step :active="active" color="#ff66a6" active-color="#a079de">
-    <me-step-item name="first">步骤一</me-step-item>
-    <me-step-item name="second">步骤二</me-step-item>
-  </me-step>
-</template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const active = ref(['first']) // 活动项
-</script>
+```html
+<me-step :active="active" color="#ff66a6" active-color="#a079de">
+  <me-step-item name="first">步骤一</me-step-item>
+  <me-step-item name="second">步骤二</me-step-item>
+</me-step>
 ```
 
 :::
@@ -99,18 +89,11 @@ const active = ref(['first']) // 活动项
 
 ::: CopyCode
 
-```vue
-<template>
-  <me-step :active="active" icon="in_biyan" active-icon="in_zhengyan">
-    <me-step-item name="first">步骤一</me-step-item>
-    <me-step-item name="second">步骤二</me-step-item>
-  </me-step>
-</template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const active = ref(['first']) // 活动项
-</script>
+```html
+<me-step :active="active" icon="in_biyan" active-icon="in_zhengyan">
+  <me-step-item name="first">步骤一</me-step-item>
+  <me-step-item name="second">步骤二</me-step-item>
+</me-step>
 ```
 
 :::
@@ -121,24 +104,17 @@ const active = ref(['first']) // 活动项
 
 ::: CopyCode
 
-```vue
-<template>
-  <me-step :active="active" direction="vertical">
-    <me-step-item name="first">
-      <h3>状态一</h3>
-      <p>2021-12-18 17:51:01</p>
-    </me-step-item>
-    <me-step-item name="second">
-      <h3>状态二</h3>
-      <p>2021-12-18 17:51:02</p>
-    </me-step-item>
-  </me-step>
-</template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const active = ref(['first']) // 活动项
-</script>
+```html
+<me-step :active="active" direction="vertical">
+  <me-step-item name="first">
+    <h3>状态一</h3>
+    <p>2021-12-18 17:51:01</p>
+  </me-step-item>
+  <me-step-item name="second">
+    <h3>状态二</h3>
+    <p>2021-12-18 17:51:02</p>
+  </me-step-item>
+</me-step>
 ```
 
 :::

@@ -22,7 +22,9 @@ export const useHandler = (props: Readonly<Required<Props>>) => {
     isShow.value = name === MeTabKey && props.name === currentValue.value
   }
 
-  // 监听值的改变
+  /**
+   * 监听值的改变
+   */
   watch(currentValue, initShow, { immediate: true })
 
   return { isShow }

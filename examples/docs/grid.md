@@ -36,7 +36,7 @@ app.mount('#app')
 
 ```html
 <me-grid :cols="4">
-  <me-grid-item icon="icon-wechat" text="微信"></me-grid-item>
+  <me-grid-item icon="icon-wechat" text="微信" />
 </me-grid>
 ```
 
@@ -49,17 +49,6 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
-<template>
-  <me-grid border-color="#d9d9d9" :cols="3">
-    <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @click="handleLi(item)"></me-grid-item>
-    <me-grid-item>
-      <div class="cust">
-        <me-icon name="icon-love" color="#999" size="28px"></me-icon>
-        <p>自定义</p>
-      </div>
-    </me-grid-item>
-  </me-grid>
-</template>
 <script lang="ts" setup>
 import { MeToast } from 'mine-h5-ui'
 
@@ -106,13 +95,28 @@ const grids = Object.freeze([
     textColor: '#ff9249'
   }
 ])
-// 点击列表
+
+/**
+ * 点击列表
+ */
 const handleLi = ({ text }) => {
   MeToast(text)
 }
 </script>
+
+<template>
+  <me-grid border-color="#d9d9d9" :cols="3">
+    <me-grid-item v-for="item in grids" :keys="item.icon" v-bind="item" @click="handleLi(item)" />
+    <me-grid-item>
+      <div class="cust">
+        <me-icon name="icon-love" color="#999" size="28px"></me-icon>
+        <p>自定义</p>
+      </div>
+    </me-grid-item>
+  </me-grid>
+</template>
+
 <style scoped lang="less">
-// 自定义内容
 .cust {
   .me-icon {
     position: relative;

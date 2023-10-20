@@ -32,37 +32,62 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
-<template>
-  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur"></me-password>
-  <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
-</template>
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-let iptValue = ref('') // 当前输入框值
-let keyboardValue = ref(false) // 数字键盘显示状态
-// 密码输入框聚焦
+/**
+ * 当前输入框值
+ */
+const iptValue = ref('')
+
+/**
+ * 数字键盘显示状态
+ */
+const keyboardValue = ref(false)
+
+/**
+ * 密码输入框聚焦
+ */
 const onFocus = () => {
-  keyboardValue = true
+  keyboardValue.value = true
 }
-// 密码输入框失焦
+
+/**
+ * 密码输入框失焦
+ */
 const onBlur = () => {
-  keyboardValue = false
+  keyboardValue.value = false
 }
-// 点击密码输入框数字按钮
+
+/**
+ * 点击密码输入框数字按钮
+ */
 const handleNum = e => {
-  iptValue += String(e)
+  iptValue.value += String(e)
 }
-// 点击密码输入框删除按钮
+
+/**
+ * 点击密码输入框删除按钮
+ */
 const onDelete = () => {
-  // 判断是否为空
-  iptValue && (iptValue = iptValue.split('').slice(0, -1).join(''))
+  /**
+   * 判断是否为空
+   */
+  iptValue.value && (iptValue.value = iptValue.value.split('').slice(0, -1).join(''))
 }
-// 点击密码输入框完成按钮
+
+/**
+ * 点击密码输入框完成按钮
+ */
 const onComplate = () => {
-  keyboardValue = false
+  keyboardValue.value = false
 }
 </script>
+
+<template>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" />
+  <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
+</template>
 ```
 
 :::
@@ -75,36 +100,9 @@ const onComplate = () => {
 
 ```vue
 <template>
-  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" skin-type="dark"></me-password>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" skin-type="dark" />
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-let iptValue = ref('') // 当前输入框值
-let keyboardValue = ref(false) // 数字键盘显示状态
-// 密码输入框聚焦
-const onFocus = () => {
-  keyboardValue = true
-}
-// 密码输入框失焦
-const onBlur = () => {
-  keyboardValue = false
-}
-// 点击密码输入框数字按钮
-const handleNum = e => {
-  iptValue += String(e)
-}
-// 点击密码输入框删除按钮
-const onDelete = () => {
-  // 判断是否为空
-  iptValue && (iptValue = iptValue.split('').slice(0, -1).join(''))
-}
-// 点击密码输入框完成按钮
-const onComplate = () => {
-  keyboardValue = false
-}
-</script>
 ```
 
 :::
@@ -117,36 +115,9 @@ const onComplate = () => {
 
 ```vue
 <template>
-  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" :num="4"></me-password>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" :num="4" />
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-let iptValue = ref('') // 当前输入框值
-let keyboardValue = ref(false) // 数字键盘显示状态
-// 密码输入框聚焦
-const onFocus = () => {
-  keyboardValue = true
-}
-// 密码输入框失焦
-const onBlur = () => {
-  keyboardValue = false
-}
-// 点击密码输入框数字按钮
-const handleNum = e => {
-  iptValue += String(e)
-}
-// 点击密码输入框删除按钮
-const onDelete = () => {
-  // 判断是否为空
-  iptValue && (iptValue = iptValue.split('').slice(0, -1).join(''))
-}
-// 点击密码输入框完成按钮
-const onComplate = () => {
-  keyboardValue = false
-}
-</script>
 ```
 
 :::
@@ -157,38 +128,11 @@ const onComplate = () => {
 
 ::: CopyCode
 
-```html
+```vue
 <template>
-  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" type="number"></me-password>
+  <me-password v-model="iptValue" @focus="onFocus" @blur="onBlur" type="number" />
   <me-keyboard v-model="keyboardValue" @click="handleNum" @delete="onDelete" @complate="onComplate"></me-keyboard>
 </template>
-<script lang="ts" setup>
-  import { ref } from 'vue'
-
-  const iptValue = ref('') // 当前输入框值
-  const keyboardValue = ref(false) // 数字键盘显示状态
-  // 密码输入框聚焦
-  const onFocus = () => {
-    keyboardValue = true
-  }
-  // 密码输入框失焦
-  const onBlur = () => {
-    keyboardValue = false
-  }
-  // 点击密码输入框数字按钮
-  const handleNum = e => {
-    iptValue.value += String(e)
-  }
-  // 点击密码输入框删除按钮
-  const onDelete = () => {
-    // 判断是否为空
-    iptValue.value && (iptValue.value = iptValue.value.split('').slice(0, -1).join(''))
-  }
-  // 点击密码输入框完成按钮
-  const onComplate = () => {
-    keyboardValue.value = false
-  }
-</script>
 ```
 
 :::

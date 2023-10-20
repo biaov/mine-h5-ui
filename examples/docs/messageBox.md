@@ -76,7 +76,7 @@ import { MeMessageBox, MeToast } from 'mine-h5-ui'
 MeMessageBox.prompt({
   message: '请输入你的手机号码',
   onOk(value) {
-    MeToast(value) // 手机号码
+    MeToast(value)
   },
   onOff() {
     MeToast('你点击了取消按钮')
@@ -93,15 +93,16 @@ MeMessageBox.prompt({
 ::: CopyCode
 
 ```vue
-<template>
-  <div @click="handleClick">点击弹出自义定弹出框</div>
-</template>
 <script lang="ts" setup>
 import { MeMessageBox, MeToast } from 'mine-h5-ui'
 
-// 点击文本
+/**
+ * 点击文本
+ */
 const handleClick = () => {
-  // 弹出模态框
+  /**
+   * 弹出模态框
+   */
   MeMessageBox.custom({
     html: `<div class="message-cont">健康的身体是实现目标的基石</div>`,
     onOk() {
@@ -114,8 +115,11 @@ const handleClick = () => {
 }
 </script>
 
+<template>
+  <div @click="handleClick">点击弹出自义定弹出框</div>
+</template>
+
 <style lang="less">
-// 自定义模态框内容
 .message-cont {
   padding: 0 15px 20px 15px;
   -webkit-line-clamp: 2;

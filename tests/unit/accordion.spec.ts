@@ -26,7 +26,7 @@ describe('MeAccordion 手风琴', () => {
   })
 })
 
-describe('MeAccordionItem', () => {
+describe('MeAccordionItem 手风琴项', () => {
   test('属性 label', () => {
     const label = '名称一'
     /**
@@ -47,6 +47,9 @@ describe('MeAccordionItem', () => {
     const viewer = wrapper.find('.me-accordion')
     const itemEl = viewer.findAll('.me-accordion-item')[0]
 
-    expect(itemEl.html()).toContain(label) // 是否存在
+    /**
+     * 是否存在
+     */
+    expect(itemEl.html()).toContain(label)
   })
 })

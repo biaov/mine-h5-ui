@@ -10,11 +10,19 @@ import type { OnOk, Option, InMessageBox, CurOption, OptionType } from './types'
  * @returns { void } 空
  */
 const MessageBox = (option: Option, type?: OptionType): Promise<string | undefined> => {
-  // 判断是否是对象
+  /**
+   * 判断是否是对象
+   */
   if (!IsType('Object', option)) {
-    throw new Error(`${option} is not Object`) // 抛出错误
+    /**
+     * 抛出错误
+     */
+    throw new Error(`${option} is not Object`)
   } else if (option.html && option.html.includes('script')) {
-    throw new Error('Your HTML may be attacked by XSS') // 抛出错误
+    /**
+     * 抛出错误
+     */
+    throw new Error('Your HTML may be attacked by XSS')
   } else {
     return new Promise<string | undefined>((resolve, reject) => {
       /**
@@ -40,7 +48,10 @@ const MessageBox = (option: Option, type?: OptionType): Promise<string | undefin
       const vm = createVNode(MessageBoxConstructor, curOption)
       const container = document.createElement('div')
       render(vm, container)
-      document.body.appendChild(container.firstElementChild!) // 把虚拟DOM插入到真实DOM树中
+      /**
+       * 把虚拟DOM插入到真实 DOM 树中
+       */
+      document.body.appendChild(container.firstElementChild!)
     })
   }
 }

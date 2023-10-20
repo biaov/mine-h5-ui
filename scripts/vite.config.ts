@@ -11,10 +11,12 @@ import { eslintConfig } from '../config/plugins'
  * 入口文件
  */
 const input = resolve(__dirname, '../packages')
+
 /**
  * 输出文件
  */
 const outDir = resolve(__dirname, '../dist/packages/es')
+
 /**
  * 配置信息
  */
@@ -39,7 +41,10 @@ const config: UserConfig = {
   ],
   build: {
     outDir,
-    // 多页面
+
+    /**
+     * 多页面
+     */
     rollupOptions: {
       external: ['vue'],
       output: {
@@ -48,6 +53,9 @@ const config: UserConfig = {
         entryFileNames: '[name].js'
       },
       plugins: [
+        /**
+         * 添加头部注释
+         */
         license({
           banner: `
           /*!
@@ -56,7 +64,7 @@ const config: UserConfig = {
           * @license MIT
           */
         `
-        }) as Plugin
+        }) as unknown as Plugin
       ]
     },
     lib: {

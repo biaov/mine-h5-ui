@@ -1,7 +1,7 @@
 /// <reference types="vue/macros-global" />
 
 /**
- * vue
+ * vue 文件类型声明
  */
 declare module '*.vue' {
   import { DefineComponent, App } from 'vue'
@@ -13,7 +13,6 @@ declare module '*.vue' {
  * pwa
  */
 declare module 'virtual:pwa-register/vue' {
-  // @ts-ignore ignore when vue is not installed
   import type { Ref } from 'vue'
 
   export interface RegisterSWOptions {

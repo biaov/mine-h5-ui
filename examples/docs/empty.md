@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-empty text="暂无数据"></me-empty>
+<me-empty text="暂无数据" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-empty type="network" text="一帘清雨，垂下了一汪泪，一份缠绵，揉断了心碎。"></me-empty>
+<me-empty type="network" text="一帘清雨，垂下了一汪泪，一份缠绵，揉断了心碎。" />
 ```
 
 :::
@@ -56,19 +56,19 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-empty icon-name="Loading" text="快乐很简单，就是春天的鲜花，夏天的绿荫，秋天的野果，冬天的漫天飞雪。"></me-empty>
+<me-empty icon-name="Loading" text="快乐很简单，就是春天的鲜花，夏天的绿荫，秋天的野果，冬天的漫天飞雪。" />
 ```
 
 :::
 
 ### 自定义图片
 
-- 通过属性 `url` 来设置组件的自定义图标，如果是项目内图片，请使用 require 引入，如果是网络图片直接填写地址即可。
+- 通过属性 `url` 来设置组件的自定义图标。
 
 ::: CopyCode
 
 ```html
-<me-empty :url="require('../assets/empty.png')" text="用心聆听，深深呼吸，烟花雨，梨花月，寄一缕风的香魂，远离喧嚣。"></me-empty>
+<me-empty url="'../assets/empty.png'" text="用心聆听，深深呼吸，烟花雨，梨花月，寄一缕风的香魂，远离喧嚣。" />
 ```
 
 :::
