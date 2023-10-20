@@ -126,7 +126,7 @@ npm run build
 
 ### 技术栈
 
-> Less + TypeScript + Vue3.x + Vite + Gulp + Vitest
+ `Vite` + `Vue3.x` + `Vue-Router` + `TypeScript` + `Less`  + `Gulp` + `Vitest`
 
 ### 依赖解析
 

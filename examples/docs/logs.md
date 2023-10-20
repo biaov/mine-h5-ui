@@ -14,7 +14,14 @@
 
 :::TimeLine
 
-## v2.7.1-Latest release
+## v2.7.2-Latest release
+
+`2023-00-00`
+
+- 优化代码
+  - 优化文档
+
+## v2.7.1
 
 `2023-10-20`
 

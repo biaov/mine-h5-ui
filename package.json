@@ -63,7 +63,7 @@
     "html2canvas": "^1.4.1",
     "mockjs": "^1.1.0",
     "qrcode": "^1.5.3",
-    "vue": "^3.3.4",
+    "vue": "^3.3.5",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
@@ -73,7 +73,7 @@
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "@vitejs/plugin-vue": "^4.4.0",
-    "@vue/compiler-sfc": "^3.3.4",
+    "@vue/compiler-sfc": "^3.3.5",
     "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.51.0",
