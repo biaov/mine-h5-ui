@@ -17,7 +17,10 @@ const props = withDefaults(defineProps<Props>(), {
      * 获取当前数据
      */
     const now = new Date()
-    now.setFullYear(now.getFullYear() - 10) // 设置新数据
+    /**
+     * 设置新数据
+     */
+    now.setFullYear(now.getFullYear() - 10)
     return now
   },
   maxDate: () => {
@@ -25,7 +28,10 @@ const props = withDefaults(defineProps<Props>(), {
      * 获取当前数据
      */
     const now = new Date()
-    now.setFullYear(now.getFullYear() + 10) // 设置新数据
+    /**
+     * 设置新数据
+     */
+    now.setFullYear(now.getFullYear() + 10)
     return now
   }
 })

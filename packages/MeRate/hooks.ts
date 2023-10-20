@@ -14,11 +14,15 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击按钮
    */
   const onClick = ({ id, state }: ListDataItem) => {
-    // 判断是否为只读/禁用/选中状态
+    /**
+     * 判断是否为只读 / 禁用 / 选中状态
+     */
     if ((state && !listData.value[id].state) || props.disabled || props.readonly) return
     emit('update:modelValue', id)
     emit('change')
-    // 循环遍历设置状态值的改变
+    /**
+     * 循环遍历设置状态值的改变
+     */
     listData.value.forEach(elem => {
       elem.state = elem.id <= id
     })
@@ -28,7 +32,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 设置页面状态
    */
   const setStatus = () => {
-    // 循环遍历设置状态值的改变
+    /**
+     * 循环遍历设置状态值的改变
+     */
     listData.value.forEach(elem => {
       elem.state = elem.id <= props.modelValue
     })

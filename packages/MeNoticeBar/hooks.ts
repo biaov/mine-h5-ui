@@ -34,7 +34,9 @@ export const useAnimate = (props: Readonly<Required<Props>>) => {
    * 开启动画
    */
   const startAnimate = () => {
-    // 水平方向
+    /**
+     * 水平方向
+     */
     if (props.scroll === 'horizontal') {
       const { offsetWidth, parentNode } = noticeList.value!
       let startTime: number | undefined
@@ -42,7 +44,10 @@ export const useAnimate = (props: Readonly<Required<Props>>) => {
        * 开始当前动画
        */
       const startCurAnimate = (timestamp: number) => {
-        startTime === undefined && (startTime = timestamp) // 设置开始时间
+        /**
+         * 设置开始时间
+         */
+        startTime === undefined && (startTime = timestamp)
         /**
          * 当前距离开始时间
          */
@@ -51,7 +56,9 @@ export const useAnimate = (props: Readonly<Required<Props>>) => {
          * 上次的 left
          */
         const beforeLeft = left.value
-        // 是否到达最大值
+        /**
+         * 是否到达最大值
+         */
         if (beforeLeft < -offsetWidth) {
           left.value = (parentNode as HTMLDivElement).offsetWidth
           startTime = undefined
@@ -67,15 +74,22 @@ export const useAnimate = (props: Readonly<Required<Props>>) => {
        * 垂直方向
        */
       const len = listData.value.length
-      // 是否是多条数据
+      /**
+       * 是否是多条数据
+       */
       if (len <= 1) return
-      // 定时器
+      /**
+       * 定时器
+       */
       timer = setInterval(() => {
         /**
          * 索引
          */
         const index = listIndex.value
-        listIndex.value = index >= len - 1 ? 0 : index + 1 // 设置索引
+        /**
+         * 设置索引
+         */
+        listIndex.value = index >= len - 1 ? 0 : index + 1
       }, props.delay)
     }
   }
@@ -84,15 +98,25 @@ export const useAnimate = (props: Readonly<Required<Props>>) => {
    * 关闭动画
    */
   const closeAnimate = () => {
-    // 水平方向
+    /**
+     * 水平方向
+     */
     if (props.scroll === 'horizontal') {
-      isSwitch = false // 关闭开关
+      /**
+       * 关闭开关
+       */
+      isSwitch = false
     } else {
-      clearInterval(timer as NodeJS.Timeout) // 关闭定时器
+      /**
+       * 关闭定时器
+       */
+      clearInterval(timer as NodeJS.Timeout)
     }
   }
 
-  // 监听动画是否开启
+  /**
+   * 监听动画是否开启
+   */
   watch(
     () => props.loop,
     value => {
@@ -101,7 +125,10 @@ export const useAnimate = (props: Readonly<Required<Props>>) => {
   )
 
   onMounted(() => {
-    props.loop && startAnimate() // 开启动画
+    /**
+     * 开启动画
+     */
+    props.loop && startAnimate()
   })
 
   return { noticeList, left, listData, listIndex }

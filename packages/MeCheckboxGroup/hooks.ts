@@ -17,12 +17,18 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
   const onChange = ({ name, isChecked }: OnChangeParams) => {
     const arr = currentValue.value
 
-    // 判断之前是否选中
+    /**
+     * 判断之前是否选中
+     */
     if (isChecked.value) {
-      // 取消选中状态
+      /**
+       * 取消选中状态
+       */
       arr.splice(arr.indexOf(name), 1)
     } else {
-      // 选中状态
+      /**
+       * 选中状态
+       */
       arr.push(name)
     }
 

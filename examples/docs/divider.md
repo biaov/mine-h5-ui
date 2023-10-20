@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-divider :list="['缥缈']"></me-divider>
+<me-divider :list="['缥缈']" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-divider :list="['青衣']" :left="20"></me-divider>
+<me-divider :list="['青衣']" :left="20" />
 ```
 
 :::
@@ -56,11 +56,10 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
-<template>
-  <me-divider v-bind="divider"></me-divider>
-</template>
 <script lang="ts" setup>
-// 分割线
+/**
+ * 分割线
+ */
 const divider = Object.freeze({
   list: ['流影'],
   line: {
@@ -74,6 +73,10 @@ const divider = Object.freeze({
   }
 })
 </script>
+
+<template>
+  <me-divider v-bind="divider" />
+</template>
 ```
 
 :::
@@ -86,11 +89,10 @@ const divider = Object.freeze({
 ::: CopyCode
 
 ```vue
-<template>
-  <me-divider v-bind="divider"></me-divider>
-</template>
 <script lang="ts" setup>
-// 分割线
+/**
+ * 分割线
+ */
 const divider = Object.freeze({
   list: ['羽裳', '轩辕', '紫萱'],
   width: 100,
@@ -104,8 +106,10 @@ const divider = Object.freeze({
     color: '#f66'
   }
 })
-return { divider }
 </script>
+<template>
+  <me-divider v-bind="divider" />
+</template>
 ```
 
 :::

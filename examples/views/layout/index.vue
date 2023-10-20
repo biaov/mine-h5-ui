@@ -6,7 +6,11 @@ import ReloadPrompt from '@/components/ReloadPrompt'
 import { useCanvas } from './hooks'
 
 const { GithubAddress } = useGlobalVars()
-const canvas = ref<HTMLCanvasElement>() // canvas 对象
+
+/**
+ * canvas 对象
+ */
+const canvas = ref<HTMLCanvasElement>()
 
 onMounted(() => {
   useCanvas(canvas)

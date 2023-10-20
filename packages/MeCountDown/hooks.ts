@@ -28,11 +28,18 @@ export const useCountdown = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 开启倒计时
    */
   const startCountdown = () => {
-    if (timer) return // 倒计时是否存在
+    /**
+     * 倒计时是否存在
+     */
+    if (timer) return
 
-    // 开启倒计时
+    /**
+     * 开启倒计时
+     */
     timer = setInterval(() => {
-      // 是否已经倒计到0
+      /**
+       * 是否已经倒计到 0
+       */
       if (curTime <= 0) {
         clearInterval(timer as NodeJS.Timeout)
         timer = undefined
@@ -61,7 +68,9 @@ export const useCountdown = (props: Readonly<Required<Props>>, emit: Emits) => {
     formatAfter.value = CountDown(curTime, props.format)
   }
 
-  // 监听开始状态
+  /**
+   * 监听开始状态
+   */
   watch(
     () => props.isStart,
     value => {
@@ -72,7 +81,9 @@ export const useCountdown = (props: Readonly<Required<Props>>, emit: Emits) => {
     }
   )
 
-  // 监听暂停状态
+  /**
+   * 监听暂停状态
+   */
   watch(
     () => props.isSuspend,
     value => {
@@ -80,7 +91,9 @@ export const useCountdown = (props: Readonly<Required<Props>>, emit: Emits) => {
     }
   )
 
-  // 监听重置状态
+  /**
+   * 监听重置状态
+   */
   watch(
     () => props.isReset,
     value => {

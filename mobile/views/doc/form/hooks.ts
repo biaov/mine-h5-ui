@@ -17,9 +17,14 @@ export const useHandle = () => {
    * 点击提交按钮
    */
   const onSubmit = ({ valid, value }: SubmitCallBackParams) => {
-    // 判断是否通过校验
+    /**
+     * 判断是否通过校验
+     */
     if (valid) {
-      console.log(value) // form 校验的值
+      /**
+       * form 校验的值
+       */
+      console.log(value)
       $MeToast('提交成功')
     }
   }

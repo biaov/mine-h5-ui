@@ -69,7 +69,7 @@ describe('MeStep 步骤条', () => {
   })
 })
 
-describe('MeStepItem', () => {
+describe('MeStepItem 步骤条项', () => {
   test('属性 name', () => {
     const TestComponent = {
       template: `<MeStep>

@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-input type="text" v-model="inputValue"></me-input>
+<me-input type="text" v-model="inputValue" />
 ```
 
 :::
@@ -44,10 +44,10 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-input v-model="inputValue" label="用户名" label-width="78px" placeholder="请输入用户名"></me-input>
-<me-input v-model="inputValue" label="整数" label-width="78px" placeholder="请输入整数" :digit="true"></me-input>
-<me-input v-model="inputValue" label="颜色自定" label-width="78px" label-color="#f60" placeholder="请输入文本"></me-input>
-<me-input v-model="inputValue" label="图标" label-width="78px" label-color="#ec632f" label-icon="icon-star" placeholder="请输入文本"></me-input>
+<me-input v-model="inputValue" label="用户名" label-width="78px" placeholder="请输入用户名" />
+<me-input v-model="inputValue" label="整数" label-width="78px" placeholder="请输入整数" :digit="true" />
+<me-input v-model="inputValue" label="颜色自定" label-width="78px" label-color="#f60" placeholder="请输入文本" />
+<me-input v-model="inputValue" label="图标" label-width="78px" label-color="#ec632f" label-icon="icon-star" placeholder="请输入文本" />
 ```
 
 :::
@@ -59,11 +59,11 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-input v-model="inputValue" label="信息聚焦" focus-type="primary"></me-input>
-<me-input v-model="inputValue" label="成功聚焦" focus-type="success"></me-input>
-<me-input v-model="inputValue" label="警告聚焦" focus-type="warning"></me-input>
-<me-input v-model="inputValue" label="危险聚焦" focus-type="danger"></me-input>
-<me-input v-model="inputValue" label="自定聚焦" focus-color="#f100ff"></me-input>
+<me-input v-model="inputValue" label="信息聚焦" focus-type="primary" />
+<me-input v-model="inputValue" label="成功聚焦" focus-type="success" />
+<me-input v-model="inputValue" label="警告聚焦" focus-type="warning" />
+<me-input v-model="inputValue" label="危险聚焦" focus-type="danger" />
+<me-input v-model="inputValue" label="自定聚焦" focus-color="#f100ff" />
 ```
 
 :::
@@ -75,8 +75,8 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-input v-model="inputValue" label="密码" :password="true"></me-input>
-<me-input v-model="inputValue" label="清理" icon="icon-close" @click-icon="handleIcon"></me-input>
+<me-input v-model="inputValue" label="密码" :password="true" />
+<me-input v-model="inputValue" label="清理" icon="icon-close" @click-icon="handleIcon" />
 ```
 
 :::
@@ -88,8 +88,8 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-input v-model="inputValue" sms-msg="短信验证码" :sms-is="false"></me-input>
-<me-input v-model="inputValue" sms-msg="短信验证码" sms-is="icon-close" sms-color="#549ff2" placeholder="自定义验证码颜色" @click-sms="handleSMS"></me-input>
+<me-input v-model="inputValue" sms-msg="短信验证码" :sms-is="false" />
+<me-input v-model="inputValue" sms-msg="短信验证码" sms-is="icon-close" sms-color="#549ff2" placeholder="自定义验证码颜色" @click-sms="handleSMS" />
 ```
 
 :::
@@ -101,8 +101,8 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-input v-model="inputValue" label="只读状态" :readonly="true"></me-input>
-<me-input v-model="inputValue" label="禁用状态" :disabled="true"></me-input>
+<me-input v-model="inputValue" label="只读状态" :readonly="true" />
+<me-input v-model="inputValue" label="禁用状态" :disabled="true" />
 ```
 
 :::

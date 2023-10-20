@@ -15,7 +15,9 @@ export const useHandler = (props: Readonly<Required<Props>>) => {
    */
   const isActive = ref(false)
 
-  // 监听父组件传参
+  /**
+   * 监听父组件传参
+   */
   watch(
     parentProps,
     () => {

@@ -13,10 +13,22 @@ const props = withDefaults(defineProps<Props>(), {
   height: '300px',
   random: true,
   slideStyle: () => ({
-    height: '40px', // 滑块高度
-    background: '#f6f6f6', // 滑块背景色
-    dotBackground: '#409eff', // 拖拽点背景色
-    tips: '#494949' // 提示文本颜色
+    /**
+     * 滑块高度
+     */
+    height: '40px',
+    /**
+     * 滑块背景色
+     */
+    background: '#f6f6f6',
+    /**
+     * 拖拽点背景色
+     */
+    dotBackground: '#409eff',
+    /**
+     * 提示文本颜色
+     */
+    tips: '#494949'
   }),
   tips: '按住左边按钮向右拖动完成上方图像验证',
   range: 5

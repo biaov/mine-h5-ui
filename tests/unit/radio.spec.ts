@@ -86,7 +86,7 @@ describe('MeRadio 单选框', () => {
   })
 })
 
-describe('MeRadioGroup', () => {
+describe('MeRadioGroup 单选框组', () => {
   const TestComponent = {
     template: `<MeRadioGroup>
       <MeRadio name="1">1</MeRadio>

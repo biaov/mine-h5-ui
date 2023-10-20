@@ -65,9 +65,28 @@ export const Retarder = (time = 500) =>
   })
 
 export default {
-  MessageEventListener, // 监听消息
-  PostMessage, // 发送消息
-  RgbToHex, // 颜色 rgb 转十六进制
-  RandomNum, // 随机数
-  Retarder // 延迟器
+  /**
+   * 监听消息
+   */
+  MessageEventListener,
+
+  /**
+   * 发送消息
+   */
+  PostMessage,
+
+  /**
+   * 颜色 rgb 转十六进制
+   */
+  RgbToHex,
+
+  /**
+   * 随机数
+   */
+  RandomNum,
+
+  /**
+   * 延迟器
+   */
+  Retarder
 }

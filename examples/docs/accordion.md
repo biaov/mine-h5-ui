@@ -46,7 +46,10 @@ app.mount('#app')
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-const accordionActive = ref('') // 当前活动值
+/**
+ * 当前活动值
+ */
+const accordionActive = ref('')
 const listData = Object.freeze([
   {
     title: '《桐花》',

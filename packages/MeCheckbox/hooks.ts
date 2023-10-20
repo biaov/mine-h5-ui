@@ -29,13 +29,20 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击单选框
    */
   const handleClick = (e: MouseEvent) => {
-    // 判断当前是否被禁用
+    /**
+     * 判断当前是否被禁用
+     */
     if (!props.disabled) {
-      // 判断是否存在父组件
+      /**
+       * 判断是否存在父组件
+       */
       if (name === MeCheckboxGroupKey) {
         onChange({ name: props.name, isChecked })
       } else {
-        isChecked.value = !isChecked.value // 改变当前状态
+        /**
+         * 改变当前状态
+         */
+        isChecked.value = !isChecked.value
         emit('update:modelValue', !isChecked.value)
       }
 
@@ -54,7 +61,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
 
   setStatus()
 
-  // 监听数据绑定
+  /**
+   * 监听数据绑定
+   */
   watch(
     () => props.modelValue,
     value => {
@@ -63,7 +72,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     }
   )
 
-  // 监听状态值的改变
+  /**
+   * 监听状态值的改变
+   */
   name === MeCheckboxGroupKey && watch(currentValue, setStatus)
 
   return { isChecked, iconName, handleClick }

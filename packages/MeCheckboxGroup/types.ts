@@ -14,8 +14,17 @@ export interface Emits {
   (event: 'change', arr: (string | number)[]): void
 }
 
-// props
+/**
+ * props
+ */
 export interface Props {
-  modelValue?: (string | number)[] // v-model 值
-  direction?: string // 排列方向, vertical | horizontal
+  /**
+   * v-model 值
+   */
+  modelValue?: (string | number)[]
+
+  /**
+   * 排列方向, vertical | horizontal
+   */
+  direction?: string
 }

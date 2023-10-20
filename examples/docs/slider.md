@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-slider v-model="value"></me-slider>
+<me-slider v-model="value" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-slider v-model="value" :max="50" :min="-50"></me-slider>
+<me-slider v-model="value" :max="50" :min="-50" />
 ```
 
 :::
@@ -55,21 +55,37 @@ app.mount('#app')
 
 ::: CopyCode
 
-```html
-<template>
-  <me-slider v-model="sliderValue" :styles="styles"></me-slider>
-</template>
+```vue
 <script lang="ts" setup>
-  import { ref } from 'vue'
+import { ref } from 'vue'
 
-  const sliderValue = ref(30) // 当前滑块值
-  // 自定义滑块样式
-  const styles = Object.freeze({
-    height: '10px', // 高度
-    radius: '6px', // 倒角
-    lineBgc: '#f60' // 线背景色
-  })
+/**
+ * 当前滑块值
+ */
+const sliderValue = ref(30)
+
+/**
+ * 自定义滑块样式
+ */
+const styles = Object.freeze({
+  /**
+   * 高度
+   */
+  height: '10px',
+  /**
+   * 倒角
+   */
+  radius: '6px',
+  /**
+   * 线背景色
+   */
+  lineBgc: '#f60'
+})
 </script>
+
+<template>
+  <me-slider v-model="sliderValue" :styles="styles" />
+</template>
 ```
 
 :::
@@ -80,30 +96,35 @@ app.mount('#app')
 
 ::: CopyCode
 
-```html
+```vue
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+/**
+ * 当前滑块值
+ */
+const sliderValue = ref(30)
+</script>
+
 <template>
   <me-slider v-model="sliderValue" :is-btn="true">
     <div class="btn" v-text="sliderValue"></div>
   </me-slider>
 </template>
-<script lang="ts" setup>
-  import { ref } from 'vue'
 
-  const sliderValue = ref(30) // 当前滑块值
-</script>
 <style scoped lang="less">
-  .me-slider {
-    .btn {
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 3px;
-      background: #f60;
-      text-align: center;
-      color: #fff;
-      font-size: 12px;
-    }
+.me-slider {
+  .btn {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    background: #f60;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
   }
+}
 </style>
 ```
 
@@ -116,7 +137,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-slider v-model="value" :disabled="true"></me-slider>
+<me-slider v-model="value" :disabled="true" />
 ```
 
 :::

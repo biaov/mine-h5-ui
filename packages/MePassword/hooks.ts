@@ -26,9 +26,13 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   const handleClick = (e: MouseEvent) => {
     let flag = true
 
-    // 循环遍历列表数据
+    /**
+     * 循环遍历列表数据
+     */
     for (const elem of listData.value) {
-      // 判断是否存在已激活选项
+      /**
+       * 判断是否存在已激活选项
+       */
       if (elem.state) {
         flag = false
         elem.state = false
@@ -36,9 +40,13 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
       }
     }
 
-    // 判断是否所有的选项都未激活
+    /**
+     * 判断是否所有的选项都未激活
+     */
     if (flag) {
-      // 循环遍历列表数据
+      /**
+       * 循环遍历列表数据
+       */
       for (const elem of listData.value) {
         if (elem.value === '') {
           elem.state = true
@@ -62,7 +70,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 传入数据转化为数组
      */
     const arr = curClampValue.split('')
-    // 遍历迭代设置值
+    /**
+     * 遍历迭代设置值
+     */
     listData.value.forEach((elem, i) => {
       elem.value = arr[i] || ''
     })
@@ -79,7 +89,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 清理聚焦
    */
   const closeFocus = () => {
-    // 循环遍历清理聚焦
+    /**
+     * 循环遍历清理聚焦
+     */
     listData.value.forEach(elem => {
       elem.state = false
     })
@@ -94,24 +106,35 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     })
   }
 
-  // 监听 value 的变化
+  /**
+   * 监听 value 的变化
+   */
   watch(() => props.modelValue, updateList)
 
-  // 监听是否聚焦状态
+  /**
+   * 监听是否聚焦状态
+   */
   watch(
     () => props.isFocus,
     value => {
-      !value && closeFocus() // 是否清理聚焦状态
+      /**
+       * 是否清理聚焦状态
+       */
+      !value && closeFocus()
     }
   )
 
   onMounted(() => {
-    // document 绑定点击事件
+    /**
+     * document 绑定点击事件
+     */
     Bind(document, 'click', clickDocument)
   })
 
   onUnmounted(() => {
-    // document 移除绑定点击事件
+    /**
+     * document 移除绑定点击事件
+     */
     Unbind(document, 'click', clickDocument)
   })
 

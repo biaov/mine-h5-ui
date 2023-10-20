@@ -25,7 +25,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     const aDom = document.createElement('a')
     aDom.href = imgData
     aDom.download = `${props.imageName}.png`
-    aDom.click() // 下载图片
+    aDom.click()
   }
 
   /**
@@ -39,7 +39,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     })
   }
 
-  // 监听 props start
+  /**
+   * 监听 props start
+   */
   watch(
     () => props.start,
     value => {

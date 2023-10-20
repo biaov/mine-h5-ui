@@ -31,13 +31,21 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击标题
    */
   const onClick = (e: MouseEvent) => {
-    name === MeAccordionKey && onChange(props.name) // 向父组件传递数据
+    /**
+     * 向父组件传递数据
+     */
+    name === MeAccordionKey && onChange(props.name)
     emit('click', e)
   }
 
-  watch(currentValue, setData, { immediate: true }) // 监听状态值的改变
+  /**
+   * 监听状态值的改变
+   */
+  watch(currentValue, setData, { immediate: true })
 
-  // 监听组件状态值的变化
+  /**
+   * 监听组件状态值的变化
+   */
   watch(isShow, value => {
     nextTick(() => {
       curHeight.value = value ? accordionItemCont.value!.offsetHeight : 0

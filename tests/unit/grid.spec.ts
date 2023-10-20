@@ -35,7 +35,7 @@ describe('MeGrid 宫格', () => {
   })
 })
 
-describe('MeGridItem', () => {
+describe('MeGridItem 宫格项', () => {
   const TestComponent = {
     template: '',
     components: {

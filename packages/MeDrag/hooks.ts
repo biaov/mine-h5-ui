@@ -153,8 +153,14 @@ export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
   const onTouchmove = (e: TouchEvent) => {
     const { clientX, clientY } = e.changedTouches[0]
     const { distX, distY } = getDistance({ x: clientX, y: clientY })
-    listData.value[props.current].rect.x = distX // 矩形移动的距离
-    listData.value[props.current].rect.y = distY // 矩形移动的距离
+    /**
+     * 矩形移动的距离
+     */
+    listData.value[props.current].rect.x = distX
+    /**
+     * 矩形移动的距离
+     */
+    listData.value[props.current].rect.y = distY
     onEmitChange('translate')
     onUpdate()
   }
@@ -167,19 +173,35 @@ export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
     startPoint = { x: clientX, y: clientY }
     startRect = { ...getCurItem.value }
 
-    // 表达式声明移动事件
+    /**
+     * 表达式声明移动事件
+     */
     document.onmousemove = (ev: MouseEvent) => {
       const { distX, distY } = getDistance({ x: ev.clientX, y: ev.clientY })
-      listData.value[props.current].rect.x = distX // 矩形移动的距离
-      listData.value[props.current].rect.y = distY // 矩形移动的距离
+      /**
+       * 矩形移动的距离
+       */
+      listData.value[props.current].rect.x = distX
+      /**
+       * 矩形移动的距离
+       */
+      listData.value[props.current].rect.y = distY
       onEmitChange('translate')
       onUpdate()
     }
 
-    // 表达式声明抬起事件
+    /**
+     * 表达式声明抬起事件
+     */
     document.onmouseup = () => {
-      document.onmousemove = null // 清理上次的移动事件
-      document.onmouseup = null // 清理上次的抬起事件
+      /**
+       * 清理上次的移动事件
+       */
+      document.onmousemove = null
+      /**
+       * 清理上次的抬起事件
+       */
+      document.onmouseup = null
     }
   }
 
@@ -270,7 +292,9 @@ export const useResize = (props: Readonly<Required<Props>>, share: ResizeShare) 
     centerPoint = getCenterPoint()
     symmPoint = getSymmPoint(startPoint, centerPoint)
 
-    // 表达式声明移动事件
+    /**
+     * 表达式声明移动事件
+     */
     document.onmousemove = (ev: MouseEvent) => {
       /**
        * 当前触摸点坐标
@@ -285,10 +309,18 @@ export const useResize = (props: Readonly<Required<Props>>, share: ResizeShare) 
       onEmitChange('resize')
     }
 
-    // 表达式声明抬起事件
+    /**
+     * 表达式声明抬起事件
+     */
     document.onmouseup = () => {
-      document.onmousemove = null // 清理上次的移动事件
-      document.onmouseup = null // 清理上次的抬起事件
+      /**
+       * 清理上次的移动事件
+       */
+      document.onmousemove = null
+      /**
+       * 清理上次的抬起事件
+       */
+      document.onmouseup = null
     }
   }
 
@@ -323,15 +355,23 @@ export const useRotate = (props: Readonly<Required<Props>>, share: RotateShare) 
     const y = point.y - center.y
     let angle = (Math.atan(Math.abs(x / y)) / Math.PI) * 180
 
-    // 默认从第三象限(x<0 && y>0)开始为正
+    /**
+     * 默认从第三象限(x<0 && y>0)开始为正
+     */
     if (x < 0 && y < 0) {
-      // 第二象限
+      /**
+       * 第二象限
+       */
       angle = 180 - angle
     } else if (x > 0 && y < 0) {
-      // 第一象限
+      /**
+       * 第一象限
+       */
       angle += 180
     } else if (x > 0 && y > 0) {
-      // 第四象限
+      /**
+       * 第四象限
+       */
       angle = 360 - angle
     }
 
@@ -352,7 +392,9 @@ export const useRotate = (props: Readonly<Required<Props>>, share: RotateShare) 
    * rotate 元素 pc 端鼠标按下移动
    */
   const onRotateMousedown = () => {
-    // 表达式声明移动事件
+    /**
+     * 表达式声明移动事件
+     */
     document.onmousemove = e => {
       const { clientX, clientY } = e
       getCurItem.value.r = getRotate({ x: clientX, y: clientY })
@@ -360,10 +402,18 @@ export const useRotate = (props: Readonly<Required<Props>>, share: RotateShare) 
       onEmitChange('rotate')
     }
 
-    // 表达式声明抬起事件
+    /**
+     * 表达式声明抬起事件
+     */
     document.onmouseup = () => {
-      document.onmousemove = null // 清理上次的移动事件
-      document.onmouseup = null // 清理上次的抬起事件
+      /**
+       * 清理上次的移动事件
+       */
+      document.onmousemove = null
+      /**
+       * 清理上次的抬起事件
+       */
+      document.onmouseup = null
     }
   }
 

@@ -16,13 +16,18 @@ export const useHandle = () => {
    * 点击 Switch 开关
    */
   const onClick = (item: ChildListItem) => {
-    // 循环遍历关闭其他输入键盘
+    /**
+     * 循环遍历关闭其他输入键盘
+     */
     listData.value.forEach(({ list }) => {
       list.forEach(el => {
         el.value = false
       })
     })
-    item.value = true // 设置当前键盘显示
+    /**
+     * 设置当前键盘显示
+     */
+    item.value = true
   }
 
   /**

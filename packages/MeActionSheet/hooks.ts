@@ -41,7 +41,9 @@ export const useShowSheet = (props: Readonly<Required<Props>>, emit: Emits) => {
     }, animationDuration)
   }
 
-  // 监听是否显示弹出层参数
+  /**
+   * 监听是否显示弹出层参数
+   */
   watch(
     () => props.visible,
     value => {

@@ -2,6 +2,7 @@ const { src, dest, series, parallel } = require('gulp')
 const gulpLess = require('gulp-less')
 const autoprefixer = require('gulp-autoprefixer')
 const cssmin = require('gulp-cssmin')
+
 /**
  * 基础方法
  */
@@ -26,4 +27,7 @@ const compile = () =>
     .pipe(cssmin())
     .pipe(dest(output))
 
+/**
+ * 打包
+ */
 exports.build = series(clean, parallel(compile, copyfont, minifontCss))

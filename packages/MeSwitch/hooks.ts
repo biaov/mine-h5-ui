@@ -15,9 +15,14 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击 Switch 开关
    */
   const handleClick = (e: MouseEvent) => {
-    if (props.disabled) return // 是否被禁用
-
-    !props.async && emit('update:modelValue', !isActived.value) // 是否异步
+    /**
+     * 是否被禁用
+     */
+    if (props.disabled) return
+    /**
+     * 是否异步
+     */
+    !props.async && emit('update:modelValue', !isActived.value)
     emit('click', e)
   }
 
@@ -25,7 +30,10 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 设置自定义颜色
    */
   const setColor = () => {
-    background.value = props.activeColor && isActived.value ? props.activeColor : props.inactiveColor && !isActived.value ? props.inactiveColor : '' // 判断是否处于未激活状态
+    /**
+     * 判断是否处于未激活状态
+     */
+    background.value = props.activeColor && isActived.value ? props.activeColor : props.inactiveColor && !isActived.value ? props.inactiveColor : ''
   }
 
   onMounted(setColor)

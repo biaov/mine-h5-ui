@@ -10,16 +10,26 @@ const config = {
   output: '../dist/packages/styles'
 }
 
-exports.config = config // 导出配置项
+/**
+ * 导出配置项
+ */
+exports.config = config
 
-exports.copyfont = () => gulp.src([`${config.input}fonts/*`, `!${config.input}fonts/*.css`]).pipe(gulp.dest(`${config.output}/fonts`)) // 复制字体
+/**
+ * 复制字体
+ */
+exports.copyfont = () => gulp.src([`${config.input}fonts/*`, `!${config.input}fonts/*.css`]).pipe(gulp.dest(`${config.output}/fonts`))
 
-// 压缩 font 里的 CSS
+/**
+ * 压缩 `font` 里的 CSS
+ */
 exports.minifontCss = () =>
   gulp
     .src(`${config.input}fonts/*.css`)
     .pipe(gulpCssmin())
     .pipe(gulp.dest(`${config.output}/fonts`))
 
-// 删除之前css打包文件
+/**
+ * 删除之前 CSS 打包文件
+ */
 exports.clean = () => gulp.src(config.output, { allowEmpty: true }).pipe(gulpClean({ force: true }))

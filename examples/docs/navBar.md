@@ -34,7 +34,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-nav-bar title="标题" left-text="返回" right-text="按钮"></me-nav-bar>
+<me-nav-bar title="标题" left-text="返回" right-text="按钮" />
 ```
 
 :::
@@ -60,19 +60,36 @@ app.mount('#app')
 
 ::: CopyCode
 
-```html
+```vue
 <template>
-  <me-nav-bar title="标题" left-text="返回" right-text="自定义" v-bind="{ styles }"></me-nav-bar>
+  <me-nav-bar title="标题" left-text="返回" right-text="自定义" v-bind="{ styles }" />
 </template>
 <script lang="ts" setup>
-  // 自定义样式
-  const styles = Object.freeze({
-    borderColor: '#ccc', // 边框颜色
-    background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)', // 背景颜色
-    titleColor: '#f56c6c', // 标题颜色
-    leftColor: '#aedbff', // 左侧按钮颜色
-    rightColor: '#fff' // 右侧按钮颜色
-  })
+/**
+ * 自定义样式
+ */
+const styles = Object.freeze({
+  /**
+   * 边框颜色
+   */
+  borderColor: '#ccc',
+  /**
+   * 背景颜色
+   */
+  background: 'linear-gradient(-45deg, #4bb0ff, #6149f6)',
+  /**
+   * 标题颜色
+   */
+  titleColor: '#f56c6c',
+  /**
+   * 左侧按钮颜色
+   */
+  leftColor: '#aedbff',
+  /**
+   * 右侧按钮颜色
+   */
+  rightColor: '#fff'
+})
 </script>
 ```
 

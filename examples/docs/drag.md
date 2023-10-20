@@ -27,7 +27,42 @@ Vue.use(MeDrag)
 
 :::CopyCode
 
-```html
+```vue
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+/**
+ * 列表数据
+ */
+const list = ref([
+  {
+    rect: {
+      w: 100,
+      h: 100,
+      x: 0,
+      y: 0,
+      r: 0
+    },
+    url: 'https://dummyimage.com/100x100/67c23a/fff&text=1'
+  },
+  {
+    rect: {
+      w: 80,
+      h: 80,
+      x: 110,
+      y: 110,
+      r: 0
+    },
+    url: 'https://dummyimage.com/80x80/409eff/fff&text=2'
+  }
+])
+
+/**
+ * 当前选中项
+ */
+const current = ref(0)
+</script>
+
 <template>
   <me-drag v-model:list="list" v-model:current="current">
     <template #default="{ item }">
@@ -35,34 +70,6 @@ Vue.use(MeDrag)
     </template>
   </me-drag>
 </template>
-<script lang="ts" setup>
-  import { ref } from 'vue'
-
-  // 列表数据
-  const list = ref([
-    {
-      rect: {
-        w: 100,
-        h: 100,
-        x: 0,
-        y: 0,
-        r: 0
-      },
-      url: 'https://dummyimage.com/100x100/67c23a/fff&text=1'
-    },
-    {
-      rect: {
-        w: 80,
-        h: 80,
-        x: 110,
-        y: 110,
-        r: 0
-      },
-      url: 'https://dummyimage.com/80x80/409eff/fff&text=2'
-    }
-  ])
-  const current = ref(0) // 当前选中项
-</script>
 ```
 
 :::

@@ -40,6 +40,13 @@ export const Unbind = (dom: EventTarget, event: string, fn: EventListenerOrEvent
 }
 
 export default {
-  Bind, // 绑定事件
-  Unbind // 移除绑定事件
+  /**
+   * 绑定事件
+   */
+  Bind,
+
+  /**
+   * 移除绑定事件
+   */
+  Unbind
 }

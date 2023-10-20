@@ -44,7 +44,9 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击 tabs item
    */
   const onClick = ({ name }: LabelName) => {
-    // 点击不是活动项
+    /**
+     * 点击不是活动项
+     */
     if (name !== props.modelValue) {
       duration.value = 0.4
       emit('update:modelValue', name)
@@ -70,7 +72,9 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
     initTranslateX()
   })
 
-  // 监听 modelValue 值
+  /**
+   * 监听 modelValue 值
+   */
   watch(
     () => props.modelValue,
     value => {

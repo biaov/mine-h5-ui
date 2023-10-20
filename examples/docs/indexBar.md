@@ -33,15 +33,18 @@ app.mount('#app')
 ::: CopyCode
 
 ```vue
-<template>
-  <me-index-bar @click="onClick"></me-index-bar>
-</template>
 <script lang="ts" setup>
-// 点击内容列表
+/**
+ * 点击内容列表
+ */
 const onClick = item => {
   console.log(item)
 }
 </script>
+
+<template>
+  <me-index-bar @click="onClick" />
+</template>
 ```
 
 :::
@@ -53,7 +56,7 @@ const onClick = item => {
 ::: CopyCode
 
 ```js
-;[
+export default [
   {
     name: 'A',
     cities: [{ code: 'AR', cn: '阿根廷' }]

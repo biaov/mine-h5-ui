@@ -14,7 +14,23 @@
 
 :::TimeLine
 
-## v2.7.0-Latest release
+## v2.7.1-Latest release
+
+`2023-10-20`
+
+- Markdown 主题更改
+  - 主题由 `highlight.js` 改为 `shiki`，更好的样式支持
+  - 插件 `vite-plugin-vue-markdown` 更新为 `unplugin-vue-markdown`
+- 优化代码
+  - 调整组合式 API useVisible 的返回值，由 `{ visible, setVisible }` 改为 `[visible, setVisible]`，以便于自定义命名
+  - 优化项目代码注释
+  - 新增 .vscode 推荐扩展，以便于更好的开发
+  - 简化 docs 文档标签
+- Bug Fixes
+  - 处理已知 BUG
+  - 更新依赖版本
+
+## v2.7.0
 
 `2023-10-07`
 
@@ -288,11 +304,5 @@
 - Bug Fixes
   - 修复已知 Bug
   - 优化代码
-
-## v1.x
-
-`0000-00-00`
-
-- [查看文档](https://mineh5ui.biaov.cn/)
 
 :::

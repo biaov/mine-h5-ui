@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-address-picker v-model="value" :visible="true"></me-address-picker>
+<me-address-picker v-model="value" :visible="true" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-address-picker v-model="value" :visible="true"></me-address-picker>
+<me-address-picker v-model="value" :visible="true" />
 ```
 
 :::

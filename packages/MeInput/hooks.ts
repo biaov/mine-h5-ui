@@ -14,7 +14,9 @@ export const useSms = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击短信验证码
    */
   const handleSMS = (e: MouseEvent) => {
-    // 判断是否处于倒计时状态
+    /**
+     * 判断是否处于倒计时状态
+     */
     !props.smsIs && emit('click-sms', e)
   }
 
@@ -29,7 +31,9 @@ export const useIcon = (props: Readonly<Required<Props>>, emit: Emits, inputType
    * 点击图标
    */
   const handleIcon = (e: MouseEvent) => {
-    // 判断是否是密码输入框
+    /**
+     * 判断是否是密码输入框
+     */
     if (props.password) {
       inputType.value = inputType.value === 'password' ? 'text' : 'password'
     } else {
@@ -73,11 +77,18 @@ export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref
    * 设置输入框的 padding
    */
   const setInputPadding = (type: number) => {
-    // 0:左侧,1:右侧
+    /**
+     *  type, 0: 左侧, 1: 右侧
+     */
     if (type === 1) {
-      paddingRight.value = !props.smsMsg ? 10 : sms.value?.offsetWidth! // 设置 input 右侧 padding
+      /**
+       * 设置 input 右侧 padding
+       */
+      paddingRight.value = !props.smsMsg ? 10 : sms.value?.offsetWidth!
     } else {
-      // 设置 input 左侧 padding
+      /**
+       * 设置 input 左侧 padding
+       */
       paddingLeft.value = !props.label ? 10 : Math.max(parseFloat(props.labelWidth || '0'), inputLabel.value?.offsetWidth!)
     }
   }
@@ -119,29 +130,43 @@ export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref
     setInputPadding(1)
   })
 
-  // 监听参数 value 的变化
+  /**
+   * 监听参数 value 的变化
+   */
   watch(
     () => props.modelValue,
     value => {
-      inputVal.value = value // 设置 value
+      /**
+       * 设置 value
+       */
+      inputVal.value = value
     },
     {
       immediate: true
     }
   )
 
-  // 监听输入框的值的变化
+  /**
+   * 监听输入框的值的变化
+   */
   watch(inputVal, (value, oldValue) => {
-    // 判断是否为整数输入并设置value
+    /**
+     * 判断是否为整数输入并设置 value
+     */
     props.digit && !/^\d*$/g.test(value as string) && (inputVal.value = +oldValue)
     emit('update:modelValue', value)
   })
 
-  // 监听短信校验状态
+  /**
+   * 监听短信校验状态
+   */
   watch(
     () => props.smsIs,
     () => {
-      setInputPadding(1) // 设置 input 的 padding
+      /**
+       * 设置 input 的 padding
+       */
+      setInputPadding(1)
     }
   )
 

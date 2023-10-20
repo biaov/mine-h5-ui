@@ -26,16 +26,28 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 处理 currentValue
    */
   const handleCurrent = () => {
-    currentValue.value = 100 + props.min - props.modelValue // 设置当前偏移 value 值
+    /**
+     * 设置当前偏移 value 值
+     */
+    currentValue.value = 100 + props.min - props.modelValue
   }
 
   /**
    * 触摸开始
    */
   const onTouchstart = (e: TouchEvent) => {
-    startX = e.changedTouches[0].clientX // 获取初始位置
-    changeValue = props.modelValue // 保存第一次的 value 参数值
-    screenW = document.body.offsetWidth // 获取元素整体宽度
+    /**
+     * 获取初始位置
+     */
+    startX = e.changedTouches[0].clientX
+    /**
+     * 保存第一次的 value 参数值
+     */
+    changeValue = props.modelValue
+    /**
+     * 获取元素整体宽度
+     */
+    screenW = document.body.offsetWidth
     emit('start', e)
   }
 
@@ -55,7 +67,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 改变后的值
      */
     let afterVal = changeValue + diffX
-    // 判断是否大于0,大于0:向右拖拽,小于0:向左拖拽
+    /**
+     * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+     */
     afterVal = diffX > 0 ? (afterVal > props.max ? props.max : afterVal) : afterVal < props.min ? props.min : afterVal
     emit('update:modelValue', afterVal)
     emit('move', e)
@@ -84,7 +98,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 改变后的值
      */
     let afterVal = changeValue + diffX
-    // 判断是否大于0,大于0:向右拖拽,小于0:向左拖拽
+    /**
+     * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+     */
     afterVal = diffX > 0 ? (afterVal > props.max ? props.max : afterVal) : afterVal < props.min ? props.min : afterVal
     emit('update:modelValue', afterVal)
     emit('move', e)
@@ -94,8 +110,14 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * PC 端鼠标抬起
    */
   const onMouseup = (e: MouseEvent) => {
-    document.onmousemove = null // 清理上次的移动事件
-    document.onmouseup = null // 清理上次的抬起事件
+    /**
+     * 清理上次的移动事件
+     */
+    document.onmousemove = null
+    /**
+     * 清理上次的抬起事件
+     */
+    document.onmouseup = null
     emit('end', e)
   }
 
@@ -103,11 +125,26 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * PC 端鼠标按下
    */
   const onMousedown = (e: MouseEvent) => {
-    startX = e.clientX // 获取x初始位置
-    changeValue = props.modelValue // 保存第一次的value参数值
-    screenW = document.body.offsetWidth // 获取元素整体宽度
-    document.onmousemove = onMousemove // 表达式声明移动事件
-    document.onmouseup = onMouseup // 表达式声明抬起事件
+    /**
+     * 获取 x 初始位置
+     */
+    startX = e.clientX
+    /**
+     * 保存第一次的 value 参数值
+     */
+    changeValue = props.modelValue
+    /**
+     * 获取元素整体宽度
+     */
+    screenW = document.body.offsetWidth
+    /**
+     * 表达式声明移动事件
+     */
+    document.onmousemove = onMousemove
+    /**
+     * 表达式声明抬起事件
+     */
+    document.onmouseup = onMouseup
     emit('start', e)
   }
 

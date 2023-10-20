@@ -82,6 +82,39 @@ const listData = ref(Array.from({ length: 100 }, () => ({ text: Random.cword(6, 
 ::: CopyCode
 
 ```vue
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { Random } from 'mockjs'
+
+/**
+ * 状态文本
+ */
+const loadMoreText = Object.freeze({
+  nomore: '没有更多数据了',
+  more: '加载更多',
+  loading: '正在加载中...'
+})
+const loadStatus = ref('more')
+
+/**
+ * 生成数组
+ */
+const createArr = (min = 6, max = 14) => Array.from({ length: 100 }, () => ({ text: Random.cword(min, max) }))
+const listData = createArr()
+
+/**
+ * 加载更多
+ */
+const onLoadMore = () => {
+  if (loadStatus.value !== 'more') return
+  loadStatus.value = 'loading'
+  setTimeout(() => {
+    listData.push(...createArr(listData.length))
+    loadStatus.value = 'nomore'
+  }, 1500)
+}
+</script>
+
 <template>
   <me-virtual-list height="300px" :list="listData" :itemHeight="50" @load-more="onLoadMore">
     <template #default="{ item }">
@@ -97,31 +130,7 @@ const listData = ref(Array.from({ length: 100 }, () => ({ text: Random.cword(6, 
     </template>
   </me-virtual-list>
 </template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-import { Random } from 'mockjs'
 
-// 状态文本
-const loadMoreText = Object.freeze({
-  nomore: '没有更多数据了',
-  more: '加载更多',
-  loading: '正在加载中...'
-})
-const loadStatus = ref('more')
-// 生成数组
-const createArr = (min = 6, max = 14) => Array.from({ length: 100 }, () => ({ text: Random.cword(min, max) }))
-const listData = createArr()
-
-// 加载更多
-const onLoadMore = () => {
-  if (loadStatus.value !== 'more') return
-  loadStatus.value = 'loading'
-  setTimeout(() => {
-    listData.push(...createArr(listData.length))
-    loadStatus.value = 'nomore'
-  }, 1500)
-}
-</script>
 <style lang="less" scoped>
 .item {
   width: 100%;
@@ -160,6 +169,16 @@ const onLoadMore = () => {
 ::: CopyCode
 
 ```vue
+<script>
+import { ref } from 'vue'
+import { Random } from 'mockjs'
+
+/**
+ * 列表数据
+ */
+const listData = ref(Array.from({ length: 100 }, () => ({ text: Random.cword(14, 50) })))
+</script>
+
 <template>
   <me-virtual-list height="300px" :list="listData" @load-more="onLoadMore(list)">
     <template #default="{ item }">
@@ -172,12 +191,7 @@ const onLoadMore = () => {
     </template>
   </me-virtual-list>
 </template>
-<script>
-import { ref } from 'vue'
-import { Random } from 'mockjs'
 
-const listData = ref(Array.from({ length: 100 }, () => ({ text: Random.cword(14, 50) }))) // 列表数据
-</script>
 <style lang="less" scoped>
 .item {
   width: 100%;

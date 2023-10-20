@@ -32,15 +32,19 @@ app.mount('#app')
 
 ::: CopyCode
 
-```html
-<template>
-  <me-progress-bar v-model="progress" type="line"></me-progress-bar>
-</template>
+```vue
 <script lang="ts" setup>
-  import { ref } from 'vue'
+import { ref } from 'vue'
 
-  const progress = ref(0) // 进度条值
+/**
+ * 进度条值
+ */
+const progress = ref(0)
 </script>
+
+<template>
+  <me-progress-bar v-model="progress" type="line" />
+</template>
 ```
 
 :::
@@ -52,15 +56,8 @@ app.mount('#app')
 
 ::: CopyCode
 
-```vue
-<template>
-  <me-progress-bar v-model="progress" type="line" :size="10" :text-show="false"></me-progress-bar>
-</template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const progress = ref(0) // 进度条值
-</script>
+```html
+<me-progress-bar v-model="progress" type="line" :size="10" :text-show="false" />
 ```
 
 :::
@@ -72,15 +69,8 @@ const progress = ref(0) // 进度条值
 
 ::: CopyCode
 
-```vue
-<template>
-  <me-progress-bar v-model="progress" type="line" background="linear-gradient(90deg, #8af2ba, #1e57f5)" active-color="#f66" padding="0 25px"></me-progress-bar>
-</template>
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const progress = ref(0) // 进度条值
-</script>
+```html
+<me-progress-bar v-model="progress" type="line" background="linear-gradient(90deg, #8af2ba, #1e57f5)" active-color="#f66" padding="0 25px" />
 ```
 
 :::

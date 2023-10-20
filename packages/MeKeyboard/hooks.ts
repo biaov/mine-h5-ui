@@ -44,19 +44,32 @@ export const usePadding = (props: Readonly<Props>, emit: Emits) => {
    * 改变页面 padding
    */
   const setPadding = () => {
-    // 判断是否可设置padding
+    /**
+     * 判断是否可设置 padding
+     */
     if (props.isPadding) {
-      // 判断是否处于激活状态
+      /**
+       * 判断是否处于激活状态
+       */
       if (props.visible) {
-        document.body.className += ' me-keyboard-padding' // 设置className
+        /**
+         * 设置 className
+         */
+        document.body.className += ' me-keyboard-padding'
       } else {
         /**
          * 获取 className
          */
         const { className } = document.body
         let index: number | undefined = className.indexOf('me-keyboard-padding')
-        index = index > 0 ? index : undefined // 判断是否存在padding
-        document.body.className = className.slice(0, index) // 设置className
+        /**
+         * 判断是否存在 padding
+         */
+        index = index > 0 ? index : undefined
+        /**
+         * 设置 className
+         */
+        document.body.className = className.slice(0, index)
       }
     }
   }
@@ -70,12 +83,16 @@ export const usePadding = (props: Readonly<Props>, emit: Emits) => {
 
   onMounted(() => {
     setPadding()
-    // 点击非键盘区域
+    /**
+     * 点击非键盘区域
+     */
     Bind(document, 'click', clickDocument)
   })
 
   onUnmounted(() => {
-    // document 移除绑定点击事件
+    /**
+     * document 移除绑定点击事件
+     */
     Unbind(document, 'click', clickDocument)
   })
 

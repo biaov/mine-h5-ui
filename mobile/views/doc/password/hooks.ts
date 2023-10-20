@@ -22,7 +22,10 @@ export const useHandle = () => {
    * 点击删除按钮
    */
   const onDelete = (item: ChildListItem) => {
-    item.value && (item.value = item.value.split('').slice(0, -1).join('')) // 判断是否为空
+    /**
+     * 判断是否为空
+     */
+    item.value && (item.value = item.value.split('').slice(0, -1).join(''))
   }
 
   /**

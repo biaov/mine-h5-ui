@@ -32,7 +32,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-count-down :time="2*60*60*1000"></me-count-down>
+<me-count-down :time="2*60*60*1000" />
 ```
 
 :::
@@ -44,7 +44,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```html
-<me-count-down :time="2*60*60*1000" format="hh:mm:ss:ms"></me-count-down>
+<me-count-down :time="2*60*60*1000" format="hh:mm:ss:ms" />
 ```
 
 :::

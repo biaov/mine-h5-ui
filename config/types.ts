@@ -1,12 +1,12 @@
 import type MarkdownIt from 'markdown-it'
 
 /**
- * vite-plugin-md 配置
+ * markdown vite 配置
  */
-export interface VitePluginMdOptions {
+export interface MarkdownViteOptions {
   markdownItOptions?: MarkdownIt.Options
-  markdownItSetup?: (MarkdownIt: MarkdownIt) => void
-  wrapperClasses?: string | string[]
+  markdownItSetup?: (MarkdownIt: MarkdownIt) => void | Promise<void>
+  wrapperClasses?: string | string[] | undefined | null | ((id: string, code: string) => string | string[] | undefined | null)
 }
 
 /**

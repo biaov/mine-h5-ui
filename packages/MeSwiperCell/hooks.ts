@@ -39,7 +39,10 @@ export const useHandMove = () => {
   const onTouchstart = (e: TouchEvent) => {
     initialValue = currentValue.value
     isActive.value = false
-    startX = e.changedTouches[0].clientX // 获取初始位置
+    /**
+     * 获取初始位置
+     */
+    startX = e.changedTouches[0].clientX
   }
 
   /**
@@ -54,7 +57,10 @@ export const useHandMove = () => {
      * 移动位置
      */
     const diffX = initialValue + currentX - startX
-    currentValue.value = diffX < -maxDistance.value ? -maxDistance.value : diffX > 0 ? 0 : diffX // 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+    /**
+     * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+     */
+    currentValue.value = diffX < -maxDistance.value ? -maxDistance.value : diffX > 0 ? 0 : diffX
   }
 
   /**
@@ -71,7 +77,9 @@ export const useHandMove = () => {
      */
     const diffX = currentX - startX
 
-    // 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽，等于 0 不滑动
+    /**
+     * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+     */
     if (diffX > 0) {
       currentValue.value = diffX > minDistance ? 0 : -maxDistance.value
     } else if (diffX < 0) {
@@ -92,7 +100,10 @@ export const useHandMove = () => {
      * 移动位置
      */
     const diffX = initialValue + currentX - startX
-    currentValue.value = diffX < -maxDistance.value ? -maxDistance.value : diffX > 0 ? 0 : diffX // 判断是否大于0,大于0:向右拖拽,小于0:向左拖拽
+    /**
+     * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
+     */
+    currentValue.value = diffX < -maxDistance.value ? -maxDistance.value : diffX > 0 ? 0 : diffX
   }
 
   /**
@@ -109,14 +120,22 @@ export const useHandMove = () => {
     const diffX = currentX - startX
     isActive.value = true
 
-    // 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+    /**
+     * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽, 等于 0 不滑动
+     */
     if (diffX > 0) {
       currentValue.value = diffX > minDistance ? 0 : -maxDistance.value
     } else if (diffX < 0) {
       currentValue.value = diffX < -minDistance ? -maxDistance.value : 0
     }
-    document.onmousemove = null // 清理上次的移动事件
-    document.onmouseup = null // 清理上次的抬起事件
+    /**
+     * 清理上次的移动事件
+     */
+    document.onmousemove = null
+    /**
+     * 清理上次的抬起事件
+     */
+    document.onmouseup = null
   }
 
   /**
@@ -124,13 +143,25 @@ export const useHandMove = () => {
    */
   const onMousedown = (e: MouseEvent) => {
     initialValue = currentValue.value
-    startX = e.clientX // 获取x初始位置
-    document.onmousemove = onMousemove // 表达式声明移动事件
-    document.onmouseup = onMouseup // 表达式声明抬起事件
+    /**
+     * 获取 x 初始位置
+     */
+    startX = e.clientX
+    /**
+     * 表达式声明移动事件
+     */
+    document.onmousemove = onMousemove
+    /**
+     * 表达式声明抬起事件
+     */
+    document.onmouseup = onMouseup
   }
 
   onMounted(() => {
-    const { offsetWidth } = hidden.value! // 设置最大滑动距离
+    /**
+     * 设置最大滑动距离
+     */
+    const { offsetWidth } = hidden.value!
     maxDistance.value = offsetWidth
     minDistance = offsetWidth / 4
   })

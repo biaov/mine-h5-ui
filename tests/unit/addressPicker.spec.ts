@@ -30,9 +30,15 @@ describe('MeAddressPicker 地址选择器', () => {
     const viewer = wrapper.find('.me-address-picker')
     const sureBtn = viewer.find('button.sure')
 
-    await sureBtn.trigger('click') // 点击确定按钮
+    /**
+     * 点击确定按钮
+     */
+    await sureBtn.trigger('click')
 
-    expect(wrapper.emitted('sure')).toBeTruthy() // 是否为真
+    /**
+     * 是否为真
+     */
+    expect(wrapper.emitted('sure')).toBeTruthy()
   })
 
   test('事件 cancel', async () => {
@@ -47,9 +53,14 @@ describe('MeAddressPicker 地址选择器', () => {
      */
     const viewer = wrapper.find('.me-address-picker')
     const cancelBtn = viewer.find('button.cancel')
+    /**
+     * 点击取消按钮
+     */
+    await cancelBtn.trigger('click')
 
-    await cancelBtn.trigger('click') // 点击取消按钮
-
-    expect(wrapper.emitted('cancel')).toBeTruthy() // 是否为真
+    /**
+     * 是否为真
+     */
+    expect(wrapper.emitted('cancel')).toBeTruthy()
   })
 })

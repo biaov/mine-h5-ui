@@ -1,7 +1,7 @@
 import type { App } from 'vue'
-import Function from './function' // 封装API
-import BindEvent from './event' // 绑定事件
-import Validator from './validator' // 校验
+import Function from './function'
+import BindEvent from './event'
+import Validator from './validator'
 
 const install = (app: App) => {
   app.config.globalProperties.$Validator = Validator

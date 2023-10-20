@@ -61,8 +61,8 @@ Object.keys(MeAPI).forEach(key => {
 import { getCurrentInstance } from 'vue'
 
 const { $IsLeapyear } = getCurrentInstance().appContext.config.globalProperties
-console.log($IsLeapyear(2020)) // true
-console.log($IsLeapyear(2000)) // true
-console.log($IsLeapyear(1900)) // false
+console.log($IsLeapyear(2020)) // 输出: true
+console.log($IsLeapyear(2000)) // 输出: true
+console.log($IsLeapyear(1900)) // 输出: false
 </script>
 ```

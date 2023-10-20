@@ -45,7 +45,9 @@ export const useSearch = (props: Readonly<Required<Props>>, emit: Emits) => {
     emit('input', e)
   }
 
-  // 监听参数value的变化
+  /**
+   * 监听参数 value 的变化
+   */
   watch(
     () => props.modelValue,
     value => {
@@ -53,7 +55,9 @@ export const useSearch = (props: Readonly<Required<Props>>, emit: Emits) => {
     }
   )
 
-  // 监听输入框的值的变化
+  /**
+   * 监听输入框的值的变化
+   */
   watch(inputVal, value => {
     emit('update:modelValue', value)
   })

@@ -54,7 +54,9 @@ export const useDraw = (props: Readonly<PropsHookParam>, emit: Emits) => {
     ctx.strokeStyle = props.strokeStyle
     ctx.lineWidth = props.lineWidth
 
-    // 移动端
+    /**
+     * 移动端
+     */
     canvas.ontouchstart = e => {
       ctx.moveTo(getTouchPoint(e).x, getTouchPoint(e).y)
       document.ontouchmove = ev => {
@@ -67,7 +69,9 @@ export const useDraw = (props: Readonly<PropsHookParam>, emit: Emits) => {
       }
     }
 
-    // 客户端
+    /**
+     * 客户端
+     */
     canvas.onmousedown = e => {
       ctx.moveTo(getMousePoint(e).x, getMousePoint(e).y)
       document.onmousemove = ev => {
