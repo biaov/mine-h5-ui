@@ -36,3 +36,4 @@ vue.config.js
 RELEASE.md
 deploy.yml
 .ncurc.json
+.log
