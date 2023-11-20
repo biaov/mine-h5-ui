@@ -3,8 +3,9 @@ import { getHighlighter } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
-import type { MarkdownViteOptions, TokenItem } from './types'
 import { resolve } from 'path'
+import type { Options as EslintOptions } from 'vite-plugin-eslint'
+import type { MarkdownViteOptions, TokenItem } from './types'
 
 /**
  * Vite 插件配置
@@ -86,6 +87,7 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
 /**
  * Eslint 配置
  */
-export const eslintConfig = {
+export const eslintConfig: EslintOptions = {
+  lintOnStart: true,
   exclude: ['node_modules']
 }

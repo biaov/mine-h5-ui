@@ -14,12 +14,17 @@
 
 :::TimeLine
 
-## v2.7.2-Latest release
+## v2.7.2 - 最新版本
 
-`2023-00-00`
+`2023-11-20`
 
-- 优化代码
-  - 优化文档
+- 优化
+  - 调整 Markdown 文件 a 标签的样式右 `primary` 主题色改为 `success` 主题色
+  - 调整项目支持 ESM 配置 `{ "type": "module" }`
+- 更新
+  - 更新依赖版本
+    - 更新 `vite@5.x`
+  - 更新 NodeJs Engines 版本至 `v20.x`
 
 ## v2.7.1
 

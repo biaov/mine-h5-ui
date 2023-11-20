@@ -27,7 +27,7 @@ const config: UserConfig = {
     vue(),
     dts({
       entryRoot: input,
-      outDir: outDir,
+      outDir,
       copyDtsFiles: true,
       staticImport: true,
       insertTypesEntry: false,

@@ -49,8 +49,6 @@ export default defineConfig({
      * 输出目录
      */
     outDir: './dist/docs',
-    ssrManifest: false,
-    manifest: false,
     /**
      * 多页面打包
      */
