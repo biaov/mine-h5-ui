@@ -52,7 +52,7 @@ const config = {
       }
     },
     {
-      files: ['**/*.vue', '**/types.ts'],
+      files: ['**/*.vue', '**/types.ts', '**/*.d.ts'],
       rules: {
         /**
          * 禁止未使用的变量, ts 变量
@@ -138,7 +138,12 @@ const config = {
     /**
      * 禁止多个单词名称
      */
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+
+    /**
+     * 禁止包 dependencies
+     */
+    'import/no-extraneous-dependencies': 'off'
   }
 }
 

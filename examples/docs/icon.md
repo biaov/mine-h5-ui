@@ -28,7 +28,7 @@ app.mount('#app')
 
 ## 使用 Iconfont 阿里巴巴矢量图标库
 
-- 引入你的[Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)的项目。
+- 引入你的 [IconFont - 阿里巴巴矢量图标库](https://www.iconfont.cn/) 的项目。
 - 设置 `name` 属性即可。
 
 - 引入 iconfont 图标
@@ -36,7 +36,9 @@ app.mount('#app')
 ::: CopyCode
 
 ```js
-// 线上地址，推荐使用线下文件
+/**
+ * 线上地址, 此地址有可能已过期, 推荐使用线下文件
+ */
 import '//at.alicdn.com/t/font_1774902_nar195smdvf.css'
 ```
 

@@ -10,9 +10,9 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "types": ["vite/client", "node", "vitest/globals"],
-    "baseUrl": "./",
 
     /* 路径别名 */
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./examples/*"],
       "~/*": ["./packages/*"],

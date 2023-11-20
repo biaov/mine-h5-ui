@@ -39,7 +39,7 @@ const addComponent = (arr: Docs[]) => {
        */
       docs.splice(indexArr[0], 1)
     } else {
-      elem.component = () => import(`../docs/${elem.name}.md`)
+      elem.component = () => import(`@/docs/${elem.name}.md`)
     }
   })
 }

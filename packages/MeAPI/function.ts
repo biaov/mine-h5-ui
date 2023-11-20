@@ -35,12 +35,12 @@ export const DeepCopyRA = (arg: any): any => {
   const newValue = IsType('Object', arg)
     ? {}
     : IsType('Array', arg)
-    ? []
-    : IsType('Date', arg)
-    ? new arg.constructor(+arg)
-    : IsType('RegExp', arg) || IsType('Error', arg)
-    ? new arg.constructor(arg)
-    : arg
+      ? []
+      : IsType('Date', arg)
+        ? new arg.constructor(+arg)
+        : IsType('RegExp', arg) || IsType('Error', arg)
+          ? new arg.constructor(arg)
+          : arg
 
   /**
    * 判断是否是数组或对象, 循环遍历

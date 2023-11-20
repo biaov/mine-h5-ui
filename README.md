@@ -14,6 +14,7 @@
   <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://packagephobia.com/badge?p=mine-h5-ui" /></a>
   <a href="https://github.com/biaov/mine-h5-ui/blob/main/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg?logo=Unlicense" /></a>
   <a href="https://github.com/biaov/mine-h5-ui/blob/main/.eslintrc.js"><img src="https://img.shields.io/badge/eslint-prettier-blue?logo=eslint" /></a>
+  <a href="https://vscode.dev/github/biaov/mine-h5-ui"><img src="https://img.shields.io/badge/open-Visual Studio Code-blue?logo=visualstudiocode" /></a>
 </h2>
 
 ## 安装

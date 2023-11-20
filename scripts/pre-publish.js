@@ -1,6 +1,10 @@
-const { writeFileSync, existsSync, unlinkSync, copyFileSync } = require('fs')
-const { resolve } = require('path')
-const packageJson = require('../package.json')
+import { writeFileSync, existsSync, unlinkSync, copyFileSync } from 'fs'
+import { resetPath } from './path.js'
+import packageJson from '../package.json' assert { type: 'json' }
+
+/**
+ * 需要保留的包
+ */
 const needSave = ['vue', 'html2canvas']
 
 /**
@@ -25,23 +29,21 @@ packageJson.scripts = {}
 /**
  * 单独处理逻辑
  */
-switch (process.env.NODE_PRE) {
-  case 'github':
-    packageJson.name = `@biaov/${packageJson.name}`
-    packageJson.publishConfig = { registry: 'https://npm.pkg.github.com/' }
-    break
+if (process.env.NODE_PRE === 'github') {
+  packageJson.name = `@biaov/${packageJson.name}`
+  packageJson.publishConfig = { registry: 'https://npm.pkg.github.com/' }
 }
 
 /**
  * 外层目录
  */
-const outDir = '../dist/packages'
+const outDir = '@/dist/packages'
 
 /**
  * 修改文件
  * 新路径
  */
-const prePackagePath = resolve(__dirname, `${outDir}/package.json`)
+const prePackagePath = resetPath(`${outDir}/package.json`)
 
 /**
  * 删除旧的
@@ -59,8 +61,8 @@ writeFileSync(prePackagePath, JSON.stringify(packageJson, null, 2))
  */
 const copyFiles = ['README.md', 'LICENSE']
 copyFiles.forEach(fileName => {
-  const include = resolve(__dirname, `../${fileName}`)
-  const output = resolve(__dirname, `${outDir}/${fileName}`)
+  const include = resetPath(`@/${fileName}`)
+  const output = resetPath(`${outDir}/${fileName}`)
 
   /**
    * 复制文件

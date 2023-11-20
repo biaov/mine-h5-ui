@@ -4,8 +4,10 @@
  * vue 文件类型声明
  */
 declare module '*.vue' {
-  import { DefineComponent, App } from 'vue'
+  import type { DefineComponent, App } from 'vue'
+
   const component: DefineComponent<{}, {}, unknown> & { install: (app: App) => void }
+
   export default component
 }
 

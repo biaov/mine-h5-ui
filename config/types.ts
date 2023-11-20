@@ -5,7 +5,7 @@ import type MarkdownIt from 'markdown-it'
  */
 export interface MarkdownViteOptions {
   markdownItOptions?: MarkdownIt.Options
-  markdownItSetup?: (MarkdownIt: MarkdownIt) => void | Promise<void>
+  markdownItSetup?: (mdIt: MarkdownIt) => void | Promise<void>
   wrapperClasses?: string | string[] | undefined | null | ((id: string, code: string) => string | string[] | undefined | null)
 }
 
