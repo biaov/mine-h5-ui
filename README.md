@@ -9,12 +9,12 @@
 </p>
 
 <h2 align="center">
-  <a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/npm/v/mine-h5-ui.svg?logo=npm" /></a>
-  <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://img.shields.io/npm/dt/mine-h5-ui?logo=Markdown" /></a>
-  <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://packagephobia.com/badge?p=mine-h5-ui" /></a>
-  <a href="https://github.com/biaov/mine-h5-ui/blob/main/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg?logo=Unlicense" /></a>
-  <a href="https://github.com/biaov/mine-h5-ui/blob/main/.eslintrc.js"><img src="https://img.shields.io/badge/eslint-prettier-blue?logo=eslint" /></a>
-  <a href="https://vscode.dev/github/biaov/mine-h5-ui"><img src="https://img.shields.io/badge/open-Visual Studio Code-blue?logo=visualstudiocode" /></a>
+  <a href="https://mineh5ui.biaov.cn/v2"><img src="https://img.shields.io/npm/v/mine-h5-ui.svg?logo=npm" alt="mine-h5-ui" /></a>
+  <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://img.shields.io/npm/dt/mine-h5-ui?logo=Markdown" alt="mine-h5-ui" /></a>
+  <a href="https://www.npmjs.com/package/mine-h5-ui"><img src="https://packagephobia.com/badge?p=mine-h5-ui" alt="mine-h5-ui" /></a>
+  <a href="https://github.com/biaov/mine-h5-ui/blob/main/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg?logo=Unlicense" alt="mine-h5-ui" /></a>
+  <a href="https://github.com/biaov/mine-h5-ui/blob/main/.eslintrc.js"><img src="https://img.shields.io/badge/eslint-prettier-blue?logo=eslint" alt="mine-h5-ui" /></a>
+  <a href="https://vscode.dev/github/biaov/mine-h5-ui"><img src="https://img.shields.io/badge/open-Visual Studio Code-blue?logo=visualstudiocode" alt="mine-h5-ui" /></a>
 </h2>
 
 ## 安装
@@ -55,7 +55,7 @@ app.mount('#app')
 #### 克隆项目
 
 ```sh
-git clone https://github.com/biaov/mine-h5-ui.git
+git clone https://github.com/biaov/mine-h5-ui.git --depth=1
 ```
 
 #### 安装依赖
