@@ -39,7 +39,7 @@ npm run preview
 ```sh
 npm run pre-publish
 npm publish --tag=beta-v2
-# npm publish [--tag=latest]
+npm publish [--tag=latest]
 ```
 
 - 发布到 Github
