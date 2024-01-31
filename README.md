@@ -15,6 +15,9 @@
   <a href="https://github.com/biaov/MINE-H5-UI/blob/v1/LICENSE"><img src="https://img.shields.io/github/license/biaov/mine-h5-ui.svg?logo=Unlicense" /></a>
 </h2>
 
+> [!warning]
+> v1 版本不在增加任何新的内容，只做 BUG 修复，建议使用 v2 版本
+
 ## 使用文档
 
 - [x] **[😎 MINE-H5-UI@1.x 基于 Vue2.x](https://mineh5ui.biaov.cn/)**
