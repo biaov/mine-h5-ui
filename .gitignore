@@ -3,4 +3,4 @@
 /dist
 format.*
 pnpm-lock.yaml
-.log
+/.log
