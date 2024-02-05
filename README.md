@@ -66,7 +66,7 @@ git clone https://github.com/biaov/mine-h5-ui.git --depth=1
 npm i
 ```
 
-#### 运行项目
+#### 启动项目
 
 ```sh
 npm start
