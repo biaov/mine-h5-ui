@@ -31,9 +31,7 @@ import App from './App.vue'
 import mineh5ui from 'mine-h5-ui'
 import 'mine-h5-ui/styles/index.css'
 
-const app = createApp(App)
-app.use(mineh5ui)
-app.mount('#app')
+createApp(App).use(mineh5ui).mount('#app')
 ```
 
 - 👉 在[快速开始](https://mineh5ui.biaov.cn/v2/doc/start)中查看更多信息。
