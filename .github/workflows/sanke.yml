@@ -2,7 +2,7 @@ name: merge-branch
 
 on:
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 0 * * *'
   push:
     branches:
       - main
