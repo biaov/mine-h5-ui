@@ -10,7 +10,6 @@ export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
    * 当前值
    */
   const currentValue = ref(props.modelValue)
-
   /**
    * 状态改变时触发此方法
    */
@@ -21,7 +20,6 @@ export const useInitSlots = (props: Readonly<Props>, emit: Emits) => {
   }
 
   provide(MeAccordionKey, { name: MeAccordionKey, currentValue, onChange })
-
   /**
    * 监听值的改变
    */

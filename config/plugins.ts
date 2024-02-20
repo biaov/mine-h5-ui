@@ -1,5 +1,5 @@
 import { Options } from '@vitejs/plugin-vue'
-import { getHighlighter } from 'shiki'
+import { getHighlighter, bundledLanguages } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
@@ -32,9 +32,10 @@ export const markdownViteConfig: MarkdownViteOptions = {
     /**
      * 代码高亮
      */
-    const highlighter = await getHighlighter({ theme: 'dark-plus' })
+    const theme = 'dark-plus'
+    const highlighter = await getHighlighter({ themes: [theme], langs: Object.keys(bundledLanguages) })
     md.set({
-      highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang })
+      highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang, theme })
     })
   }
 }
