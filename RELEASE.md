@@ -28,7 +28,7 @@ npm run preview
 
 ## 发布
 
-### 发布文档
+### 上传文档
 
 - fxp 上传 dist/docs 文件夹
 
