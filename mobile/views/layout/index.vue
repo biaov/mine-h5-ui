@@ -44,7 +44,7 @@ const { listData, accordionActive } = useWebData()
       </me-accordion>
     </div>
   </div>
-  <reload-prompt></reload-prompt>
+  <reload-prompt />
 </template>
 
 <style scoped lang="less">

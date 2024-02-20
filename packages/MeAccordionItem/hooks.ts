@@ -46,11 +46,15 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 监听组件状态值的变化
    */
-  watch(isShow, value => {
-    nextTick(() => {
-      curHeight.value = value ? accordionItemCont.value!.offsetHeight : 0
-    })
-  })
+  watch(
+    isShow,
+    value => {
+      nextTick(() => {
+        curHeight.value = value ? accordionItemCont.value!.offsetHeight : 0
+      })
+    },
+    { immediate: true }
+  )
 
   return { accordionItemCont, isShow, curHeight, onClick }
 }

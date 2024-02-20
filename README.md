@@ -31,7 +31,9 @@ import App from './App.vue'
 import mineh5ui from 'mine-h5-ui'
 import 'mine-h5-ui/styles/index.css'
 
-createApp(App).use(mineh5ui).mount('#app')
+const app = createApp(App)
+app.use(mineh5ui)
+app.mount('#app')
 ```
 
 - 👉 在[快速开始](https://mineh5ui.biaov.cn/v2/doc/start)中查看更多信息。
@@ -64,7 +66,7 @@ git clone https://github.com/biaov/mine-h5-ui.git --depth=1
 npm i
 ```
 
-#### 启动项目
+#### 运行项目
 
 ```sh
 npm start

@@ -14,7 +14,22 @@
 
 :::TimeLine
 
-## v2.7.2 - 最新版本
+## v2.7.3 - 最新版本
+
+`2023-02-20`
+
+- 🔥 新增
+  - 新增组合式 API `useStorage` 用于操作 `localStorage` 和 `sessionStorage`
+- ⚙️ 更新
+  - 更新依赖
+    - 更新 `@typescript-eslint/eslint-plugin` 至 `v7.x`
+    - 更新 `@typescript-eslint/parser` 至 `v7.x`
+    - 更新 `gulp-postcss` 至 `v10.x`
+    - 更新 `shiki` 至 `v10.x`
+  - 完善文档
+  - 🐞 修复已知 BUG
+
+## v2.7.2
 
 `2023-11-20`
 
