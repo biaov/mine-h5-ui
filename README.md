@@ -17,6 +17,18 @@
   <a href="https://vscode.dev/github/biaov/mine-h5-ui"><img src="https://img.shields.io/badge/open-Visual Studio Code-blue?logo=visualstudiocode" alt="mine-h5-ui" /></a>
 </h2>
 
+## 特性
+
+- [x] 丰富的模块化组件和工具类 API，50<sup>+</sup> 个组件
+- [x] 支持按需加载，tree-shaking
+- [x] 组件使用文档，使用和更新说明 Markdown
+- [x] 界面实例演示
+- [x] 内置单元测试组件
+- [x] 多页面配置
+- [x] 支持移动端预览
+- [x] 支持 PWA
+- [x] 支持 TypeScript
+
 ## 安装
 
 ```sh
@@ -66,7 +78,7 @@ git clone https://github.com/biaov/mine-h5-ui.git --depth=1
 npm i
 ```
 
-#### 运行项目
+#### 启动项目
 
 ```sh
 npm start
