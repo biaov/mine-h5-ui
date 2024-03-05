@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MePreview from '~/MePreview/index.vue'
 
 describe('MePreview 图片预览', () => {
@@ -13,7 +14,7 @@ describe('MePreview 图片预览', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-preview')
+    const viewer = getViewer(wrapper, MePreview)
 
     expect(viewer.exists()).toBeTruthy()
 

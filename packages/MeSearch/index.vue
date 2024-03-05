@@ -26,7 +26,7 @@ const { onClean, handleBtn } = useBtns(emit)
 <template>
   <!-- 搜索 -->
   <div class="me-search" :style="`border-radius:${radius};background:${background};color:${color};`">
-    <me-icon name="icon-search1" size="15px" color="inherit"></me-icon>
+    <me-icon name="icon-search1" size="15px" color="inherit" />
     <input
       type="search"
       class="input"
@@ -41,7 +41,7 @@ const { onClean, handleBtn } = useBtns(emit)
       :disabled="disabled"
     />
     <transition name="fade">
-      <me-icon name="icon-close" size="16px" color="inherit" @click="onClean" v-if="modelValue"></me-icon>
+      <me-icon name="icon-close" size="16px" color="inherit" @click="onClean" v-if="modelValue" />
     </transition>
     <div class="btn" @click="handleBtn" v-if="btnText">{{ btnText }}</div>
   </div>

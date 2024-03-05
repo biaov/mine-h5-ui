@@ -1,3 +1,5 @@
+import type { Component } from 'vue'
+import type { VueWrapper } from '@vue/test-utils'
 import type { PostMessageReturn, MessageCallback } from './types'
 
 /**
@@ -64,29 +66,10 @@ export const Retarder = (time = 500) =>
     }, time)
   })
 
-export default {
-  /**
-   * 监听消息
-   */
-  MessageEventListener,
-
-  /**
-   * 发送消息
-   */
-  PostMessage,
-
-  /**
-   * 颜色 rgb 转十六进制
-   */
-  RgbToHex,
-
-  /**
-   * 随机数
-   */
-  RandomNum,
-
-  /**
-   * 延迟器
-   */
-  Retarder
+/**
+ * 获取节点
+ */
+export const getViewer = (wrapper: VueWrapper, component: Component) => {
+  const selector = `.${component.name!.replace(/[A-Z]/g, (val, i) => `${i ? '-' : ''}${val.toLowerCase()}`)}`
+  return wrapper.find(selector)
 }

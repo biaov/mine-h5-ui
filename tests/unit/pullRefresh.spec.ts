@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MePullRefresh from '~/MePullRefresh/index.vue'
 
 describe('MePullRefresh 下拉刷新', () => {
@@ -15,7 +16,7 @@ describe('MePullRefresh 下拉刷新', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-pull-refresh')
+    const viewer = getViewer(wrapper, MePullRefresh)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(text)

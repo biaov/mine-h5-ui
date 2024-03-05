@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeCell from '~/MeCell/index.vue'
 
 describe('MeCell 单元格', () => {
@@ -13,7 +14,7 @@ describe('MeCell 单元格', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-cell')
+    const viewer = getViewer(wrapper, MeCell)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(title)
@@ -30,7 +31,7 @@ describe('MeCell 单元格', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-cell')
+    const viewer = getViewer(wrapper, MeCell)
 
     expect(viewer.text()).toBe(value)
   })
@@ -46,7 +47,7 @@ describe('MeCell 单元格', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-cell .me-icon')
+    const viewer = getViewer(wrapper, MeCell).find('.me-icon')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(icon)).toBe(true)
@@ -63,7 +64,7 @@ describe('MeCell 单元格', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-cell')
+    const viewer = getViewer(wrapper, MeCell)
 
     expect(viewer.text()).toBe(placeholder)
   })

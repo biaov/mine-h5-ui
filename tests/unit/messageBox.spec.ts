@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeMessageBox from '~/MeMessageBox/index.vue'
 
 describe('MeMessageBox 弹窗', () => {
@@ -17,7 +17,7 @@ describe('MeMessageBox 弹窗', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-message-box')
+    const viewer = getViewer(wrapper, MeMessageBox)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)

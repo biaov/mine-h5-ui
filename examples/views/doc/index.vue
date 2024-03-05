@@ -7,7 +7,6 @@ import DemoH5 from '@/components/DemoH5'
 import type { PostMessageReturn } from '@/utils/types'
 
 const route = useRoute()
-
 /**
  * 发送消息对象
  */

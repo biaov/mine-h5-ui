@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeInput from '~/MeInput/index.vue'
 
 describe('MeInput 按钮', () => {
@@ -13,7 +14,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input')
+    const viewer = getViewer(wrapper, MeInput)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -34,7 +35,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     expect(viewer.attributes('placeholder')).toBe(placeholder)
   })
@@ -49,7 +50,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     expect(viewer.attributes('readonly')).toBeDefined()
   })
@@ -64,7 +65,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     expect(viewer.attributes('disabled')).toBeDefined()
   })
@@ -80,7 +81,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .label')
+    const viewer = getViewer(wrapper, MeInput).find('.label')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(label)
@@ -97,7 +98,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .label .me-icon')
+    const viewer = getViewer(wrapper, MeInput).find('.label .me-icon')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(labelIcon)).toBe(true)
@@ -114,7 +115,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .me-icon')
+    const viewer = getViewer(wrapper, MeInput).find('.me-icon')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(icon)).toBe(true)
@@ -130,7 +131,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     expect(viewer.attributes('type')).toBe('password')
   })
@@ -145,7 +146,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     expect(viewer.attributes('type')).toBe('text')
   })
@@ -161,7 +162,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .sms')
+    const viewer = getViewer(wrapper, MeInput).find('.sms')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(smsMsg)
@@ -177,7 +178,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .sms')
+    const viewer = getViewer(wrapper, MeInput).find('.sms')
 
     expect(viewer.classes('countdown')).toBe(true)
   })
@@ -192,7 +193,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .sms')
+    const viewer = getViewer(wrapper, MeInput).find('.sms')
 
     await viewer.trigger('click')
 
@@ -209,7 +210,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .me-icon')
+    const viewer = getViewer(wrapper, MeInput).find('.me-icon')
 
     await viewer.trigger('click')
 
@@ -224,7 +225,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     await viewer.trigger('focus')
 
@@ -239,7 +240,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     await viewer.trigger('blur')
 
@@ -254,7 +255,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     await viewer.trigger('change')
 
@@ -269,7 +270,7 @@ describe('MeInput 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-input .input')
+    const viewer = getViewer(wrapper, MeInput).find('.input')
 
     await viewer.trigger('input')
 

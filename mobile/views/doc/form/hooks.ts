@@ -1,4 +1,5 @@
-import { getCurrentInstance, ref } from 'vue'
+import { ref } from 'vue'
+import { MeToast, useValidator } from '@/plugins'
 import initData from './data'
 import type { ListDataItem, SubmitCallBackParams } from './types'
 
@@ -6,12 +7,12 @@ import type { ListDataItem, SubmitCallBackParams } from './types'
  * 操作
  */
 export const useHandle = () => {
-  const { $MeToast, $Validator } = getCurrentInstance()!.appContext.config.globalProperties
+  const vlidator = useValidator()
   /**
    * 列表数据
    */
   const listData = ref<ListDataItem[]>(initData)
-  listData.value[0].rules[1].pattern = $Validator.validPwd
+  listData.value[0].rules[1].pattern = vlidator.password
 
   /**
    * 点击提交按钮
@@ -25,7 +26,7 @@ export const useHandle = () => {
        * form 校验的值
        */
       console.log(value)
-      $MeToast('提交成功')
+      MeToast('提交成功')
     }
   }
 

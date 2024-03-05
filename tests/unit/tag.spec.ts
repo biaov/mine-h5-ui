@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeTag from '~/MeTag/index.vue'
 
 describe('MeTag 标签', () => {
@@ -13,7 +14,7 @@ describe('MeTag 标签', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-tag')
+    const viewer = getViewer(wrapper, MeTag)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes(type)).toBe(true)
@@ -29,7 +30,7 @@ describe('MeTag 标签', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-tag')
+    const viewer = getViewer(wrapper, MeTag)
 
     expect(viewer.classes('plain')).toBe(true)
   })

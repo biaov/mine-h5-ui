@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeSwiperCell from '~/MeSwiperCell/index.vue'
 
 describe('MeSwiperCell 滑动单元格', () => {
@@ -10,7 +11,7 @@ describe('MeSwiperCell 滑动单元格', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-swiper-cell')
+    const viewer = getViewer(wrapper, MeSwiperCell)
 
     expect(viewer.exists()).toBeTruthy()
   })

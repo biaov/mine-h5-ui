@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeDialog from '~/MeDialog/index.vue'
 
 describe('MeDialog 对话框', () => {
@@ -18,7 +18,7 @@ describe('MeDialog 对话框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-dialog')
+    const viewer = getViewer(wrapper, MeDialog)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)
@@ -35,7 +35,7 @@ describe('MeDialog 对话框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-dialog .picker .tips')
+    const viewer = getViewer(wrapper, MeDialog).find('.picker .tips')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(tips)

@@ -12,7 +12,7 @@ const { icons, listData, onClick } = useWebData()
       <div class="label">{{ item.label }}</div>
       <ul class="list-all">
         <li v-for="(it, i) in item.list" :key="i" @click="onClick(it.name)">
-          <me-icon :name="it.name" :color="it.color" :size="it.size"></me-icon>
+          <me-icon :name="it.name" :color="it.color" :size="it.size" />
           <span>{{ it.name }}</span>
         </li>
       </ul>

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeAccordion from '~/MeAccordion/index.vue'
 import MeAccordionItem from '~/MeAccordionItem/index.vue'
 
@@ -16,10 +17,8 @@ describe('MeAccordion 手风琴', () => {
       `,
       components: { MeAccordion, MeAccordionItem }
     })
-    /**
-     * 获取 DOM
-     */
-    const viewer = wrapper.find('.me-accordion')
+
+    const viewer = getViewer(wrapper, MeAccordion)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.findAll('.me-accordion-item').length).toBe(2)
@@ -41,15 +40,12 @@ describe('MeAccordionItem 手风琴项', () => {
       `,
       components: { MeAccordion, MeAccordionItem }
     })
-    /**
-     * 获取 DOM
-     */
-    const viewer = wrapper.find('.me-accordion')
-    const itemEl = viewer.findAll('.me-accordion-item')[0]
+
+    const viewer = getViewer(wrapper, MeAccordion).findAll('.me-accordion-item')[0]
 
     /**
      * 是否存在
      */
-    expect(itemEl.html()).toContain(label)
+    expect(viewer.html()).toContain(label)
   })
 })

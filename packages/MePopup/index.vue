@@ -28,7 +28,7 @@ const { setRadius } = useRadius(props)
   <!-- 弹出层 -->
   <div class="me-popup" :class="{ show: isShow }" :style="`background:rgba(0,0,0,${modal ? 0.7 : 0});--animation-duration:${animationDuration}ms;`" @click="hideMask" v-show="isShowMask">
     <div :class="position" :style="setRadius" @click.stop>
-      <me-icon name="icon-baseline-close-px" size="20px" @click="hideMask" v-if="closeable"></me-icon>
+      <me-icon name="icon-baseline-close-px" size="20px" @click="hideMask" v-if="closeable" />
       <slot></slot>
     </div>
   </div>

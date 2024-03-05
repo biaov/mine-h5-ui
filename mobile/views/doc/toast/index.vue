@@ -12,7 +12,7 @@ const { listData, onClick } = useHandle()
       <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="onClick">
           <span>{{ it.value }}</span>
-          <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+          <me-icon name="icon-right1" size="20px" color="#ccc" />
         </li>
       </ul>
     </li>

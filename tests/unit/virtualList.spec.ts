@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeVirtualList from '~/MeVirtualList/index.vue'
 
 describe('MeVirtualList 虚拟列表', () => {
@@ -17,7 +18,7 @@ describe('MeVirtualList 虚拟列表', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-virtual-list')
+    const viewer = getViewer(wrapper, MeVirtualList)
 
     expect(viewer.exists()).toBeTruthy()
 

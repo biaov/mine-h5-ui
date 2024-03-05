@@ -1,4 +1,4 @@
-import { getCurrentInstance } from 'vue'
+import { MeToast } from '@/plugins'
 import initData from './data'
 import type { ListDataItem, EventMsg } from './types'
 
@@ -6,7 +6,6 @@ import type { ListDataItem, EventMsg } from './types'
  * 操作
  */
 export const useHandle = () => {
-  const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   /**
    * 事件提示语
    */
@@ -27,7 +26,7 @@ export const useHandle = () => {
      * 提示语
      */
     const msg = type === 'notice' ? `你点击了第 ${index + 1} 个公告` : eventMsg[type]
-    $MeToast(msg)
+    MeToast(msg)
   }
 
   return { listData, onClick }

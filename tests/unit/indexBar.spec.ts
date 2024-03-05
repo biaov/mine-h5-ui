@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeIndexBar from '~/MeIndexBar/index.vue'
 
 describe('MeIndexBar 索引栏', () => {
@@ -23,7 +24,7 @@ describe('MeIndexBar 索引栏', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-index-bar')
+    const viewer = getViewer(wrapper, MeIndexBar)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -46,7 +47,7 @@ describe('MeIndexBar 索引栏', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-index-bar .list-cont>li:first-child .list-item>dd:first-of-type')
+    const viewer = getViewer(wrapper, MeIndexBar).find('.list-cont>li:first-child .list-item>dd:first-of-type')
     expect(viewer.exists()).toBeTruthy()
 
     await viewer.trigger('click')

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeLoading from '~/MeLoading/index.vue'
 
 describe('MeLoading 加载', () => {
@@ -12,7 +13,7 @@ describe('MeLoading 加载', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-loading')
+    const viewer = getViewer(wrapper, MeLoading)
 
     expect(viewer.exists()).toBeTruthy()
   })

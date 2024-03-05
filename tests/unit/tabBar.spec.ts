@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeTabBar from '~/MeTabBar/index.vue'
 
 describe('MeTabBar 标签栏', () => {
@@ -23,7 +24,7 @@ describe('MeTabBar 标签栏', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-tab-bar')
+    const viewer = getViewer(wrapper, MeTabBar)
 
     expect(viewer.exists()).toBeTruthy()
 

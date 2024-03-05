@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MePassword from '~/MePassword/index.vue'
 
 describe('MePassword 密码输入框', () => {
@@ -12,7 +13,7 @@ describe('MePassword 密码输入框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-password')
+    const viewer = getViewer(wrapper, MePassword)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('me-password-number')).toBe(true)
@@ -46,7 +47,7 @@ describe('MePassword 密码输入框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-password')
+    const viewer = getViewer(wrapper, MePassword)
 
     expect(viewer.classes(`me-password-${skinType}`)).toBe(true)
   })
@@ -59,7 +60,7 @@ describe('MePassword 密码输入框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-password')
+    const viewer = getViewer(wrapper, MePassword)
 
     await viewer.trigger('click', { stop: true })
 
@@ -74,7 +75,7 @@ describe('MePassword 密码输入框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-password')
+    const viewer = getViewer(wrapper, MePassword)
 
     await viewer.trigger('click', { stop: true })
     await viewer.trigger('click', { stop: true })

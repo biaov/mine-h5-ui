@@ -1,8 +1,4 @@
-# 组合式 API
-
----
-
-> 版本：v2.4.0
+# 组合式 API `v2.4.0`
 
 ## useValidator 校验器
 
@@ -132,4 +128,20 @@ const { setStorage, getStorage, removeStorage } = useStorage()
 // setStorage('name', 'mine-ui') // 存储
 // getStorage('name') // 获取
 // removeStorage('name') // 移除
+```
+
+## useScroll 本地存储 `v2.8.0`
+
+```js
+import { useScroll } from 'mine-h5-ui'
+
+const { scrollTo } = useScroll()
+
+scrollTo(document.body, 0) // 返回顶部
+
+/**
+ * 自定义节点
+ */
+const customDomNode = document.querySelector('.customDomNode')
+scrollTo(customDomNode, 0) // 滚动到指定位置
 ```

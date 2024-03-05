@@ -5,12 +5,7 @@ import { MessageEventListener } from '@/utils/functions'
 import { componentConfig } from '@/config/nav.config'
 import router from './router'
 import App from './App.vue'
-
-import mineh5ui from '~/index'
-import '~/styles/index.less'
-
-// import mineh5ui from '#/es'
-// import '#/styles/index.css'
+import mineh5ui from './plugins'
 
 const app = createApp(App)
 app.component('TimeLine', TimeLine)

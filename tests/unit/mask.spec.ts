@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeMask from '~/MeMask/index.vue'
 
 describe('MeMask 遮罩层', () => {
@@ -16,7 +16,7 @@ describe('MeMask 遮罩层', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-mask')
+    const viewer = getViewer(wrapper, MeMask)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)
@@ -35,7 +35,7 @@ describe('MeMask 遮罩层', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-mask')
+    const viewer = getViewer(wrapper, MeMask)
 
     await viewer.trigger('click')
     await Retarder()

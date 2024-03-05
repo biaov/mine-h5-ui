@@ -41,7 +41,7 @@ app.mount('#app')
       <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="onClick(it)">
           <span v-text="it.value"></span>
-          <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+          <me-icon name="icon-right1" size="20px" color="#ccc" />
           <me-share-sheet v-model:visible="it.visible" :list="it.list" tips="立即分享给好友" @change="onChange" @cancel="onCancel"></me-share-sheet>
         </li>
       </ul>

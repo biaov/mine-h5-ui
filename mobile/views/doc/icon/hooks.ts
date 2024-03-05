@@ -1,5 +1,6 @@
-import { onMounted, ref, getCurrentInstance } from 'vue'
+import { onMounted, ref } from 'vue'
 import ClipboardJS from 'clipboard'
+import { MeToast } from '@/plugins'
 import IconData from './icon'
 import initData from './data'
 import type { ListItem } from './types'
@@ -12,7 +13,6 @@ export const useWebData = () => {
    * 列表所有
    */
   const icons = ref<HTMLUListElement>()
-  const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   let copyText: string
   /**
    * 列表数据
@@ -33,10 +33,10 @@ export const useWebData = () => {
       text: () => copyText
     })
     clipboard.on('success', () => {
-      $MeToast('复制成功')
+      MeToast('复制成功')
     })
     clipboard.on('error', () => {
-      $MeToast('复制失败')
+      MeToast('复制失败')
     })
   })
 

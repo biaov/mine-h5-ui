@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeProgressBar from '~/MeProgressBar/index.vue'
 
 describe('MeProgressBar 进度条', () => {
@@ -14,7 +15,7 @@ describe('MeProgressBar 进度条', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-progress-bar')
+    const viewer = getViewer(wrapper, MeProgressBar)
 
     expect(viewer.exists()).toBeTruthy()
 

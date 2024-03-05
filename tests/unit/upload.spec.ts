@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeUpload from '~/MeUpload/index.vue'
 
 describe('MeUpload 上传', () => {
@@ -14,7 +15,7 @@ describe('MeUpload 上传', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-upload')
+    const viewer = getViewer(wrapper, MeUpload)
 
     expect(viewer.exists()).toBeTruthy()
 

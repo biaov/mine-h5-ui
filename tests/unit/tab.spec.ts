@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeTab from '~/MeTab/index.vue'
 import MeTabItem from '~/MeTabItem/index.vue'
 
@@ -15,7 +15,7 @@ describe('MeTab 标签页', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-tab')
+    const viewer = getViewer(wrapper, MeTab)
 
     expect(viewer.exists()).toBeTruthy()
   })
@@ -45,7 +45,7 @@ describe('MeTabItem 标签页选项', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-tab')
+    const viewer = getViewer(wrapper, MeTab)
     const labelEl = viewer.find('.tabs .tab-item:first-child')
 
     expect(labelEl.exists()).toBeTruthy()

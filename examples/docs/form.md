@@ -42,9 +42,10 @@ app.mount('#app')
   </me-form>
 </template>
 <script lang="ts" setup>
-import { getCurrentInstance, ref } from 'vue'
+import { ref } from 'vue'
+import { useValidator } from 'mine-h5-ui'
 
-const { $Validator } = getCurrentInstance().appContext.config.globalProperties
+const validator = useValidator()
 
 /**
  * 表单数据
@@ -75,7 +76,7 @@ const rules = Object.freeze([
   },
   {
     type: 'password',
-    pattern: $Validator.validPwd,
+    pattern: validator.password,
     message: '密码必须为6-12位数字+字母组合'
   },
   {

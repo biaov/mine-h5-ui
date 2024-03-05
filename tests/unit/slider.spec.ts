@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeSlider from '~/MeSlider/index.vue'
 
 describe('MeSlider 滑块', () => {
@@ -12,7 +13,7 @@ describe('MeSlider 滑块', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-slider')
+    const viewer = getViewer(wrapper, MeSlider)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.attributes('data-disabled')).toBe('true')

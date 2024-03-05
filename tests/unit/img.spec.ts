@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeImg from '~/MeImg/index.vue'
 
 describe('MeImg 图片', () => {
@@ -17,7 +18,7 @@ describe('MeImg 图片', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-img')
+    const viewer = getViewer(wrapper, MeImg)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -37,7 +38,7 @@ describe('MeImg 图片', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-img>span')
+    const viewer = getViewer(wrapper, MeImg).find('span')
 
     expect(viewer.exists()).toBeTruthy()
   })
@@ -53,7 +54,7 @@ describe('MeImg 图片', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-img>img')
+    const viewer = getViewer(wrapper, MeImg).find('img')
 
     expect(viewer.attributes('alt')).toBe(alt)
   })
@@ -68,7 +69,7 @@ describe('MeImg 图片', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-img')
+    const viewer = getViewer(wrapper, MeImg)
 
     await viewer.trigger('click')
 
@@ -85,7 +86,7 @@ describe('MeImg 图片', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-img>img')
+    const viewer = getViewer(wrapper, MeImg).find('img')
 
     await viewer.trigger('load')
 
@@ -102,7 +103,7 @@ describe('MeImg 图片', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-img>img')
+    const viewer = getViewer(wrapper, MeImg).find('img')
 
     await viewer.trigger('error')
 

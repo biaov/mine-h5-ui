@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeActionSheet } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeActionSheet.css'
 
-const app = createApp(App)
-app.use(MeActionSheet)
-app.mount('#app')
+createApp(App).use(MeActionSheet).mount('#app')
 ```
 
 :::

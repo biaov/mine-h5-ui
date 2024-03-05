@@ -5,7 +5,7 @@ import MineHeader from '@/components/MineHeader'
 import ReloadPrompt from '@/components/ReloadPrompt'
 import { useCanvas } from './hooks'
 
-const { GithubAddress } = useGlobalVars()
+const { GithubAddress, libraryInfo } = useGlobalVars()
 
 /**
  * canvas 对象
@@ -26,14 +26,14 @@ onMounted(() => {
       <canvas ref="canvas" class="canvas" width="100%" height="100%"></canvas>
     </div>
     <!-- 头部 -->
-    <mine-header></mine-header>
+    <mine-header />
     <!-- 内容 -->
     <div class="content">
       <div class="logo"><img src="../../assets/logo.svg" alt="mine-h5-ui Logo" /></div>
-      <h1 class="tit">一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库</h1>
+      <h1 class="tit">{{ libraryInfo.description }}</h1>
       <p class="desc">
         如果你还冇心仪的 UI 框架，不妨试试
-        <router-link to="/doc">mine-h5-ui</router-link>
+        <router-link to="/doc">{{ libraryInfo.name }}</router-link>
         ，也许会让你有意外的收获。
       </p>
       <ul class="btns">
@@ -44,7 +44,7 @@ onMounted(() => {
       </ul>
     </div>
   </div>
-  <reload-prompt></reload-prompt>
+  <reload-prompt />
 </template>
 
 <style scoped lang="less">

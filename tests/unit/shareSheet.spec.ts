@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeShareSheet from '~/MeShareSheet/index.vue'
 
 describe('MeShareSheet 分享面板', () => {
@@ -25,7 +25,7 @@ describe('MeShareSheet 分享面板', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-share-sheet')
+    const viewer = getViewer(wrapper, MeShareSheet)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -47,7 +47,7 @@ describe('MeShareSheet 分享面板', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-share-sheet')
+    const viewer = getViewer(wrapper, MeShareSheet)
 
     expect(viewer.classes('show')).toBe(true)
   })

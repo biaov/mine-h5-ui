@@ -14,9 +14,7 @@ import App from './App.vue'
 import { MeButton } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeButton.css'
 
-const app = createApp(App)
-app.use(MeButton)
-app.mount('#app')
+createApp(App).use(MeButton).mount('#app')
 ```
 
 :::

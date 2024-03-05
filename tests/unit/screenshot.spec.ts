@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeScreenshot from '~/MeScreenshot/index.vue'
 
 describe('MeScreenshot 截长图', () => {
@@ -19,7 +20,7 @@ describe('MeScreenshot 截长图', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-screenshot')
+    const viewer = getViewer(wrapper, MeScreenshot)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(testText)
@@ -33,7 +34,7 @@ describe('MeScreenshot 截长图', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-screenshot')
+    const viewer = getViewer(wrapper, MeScreenshot)
 
     await viewer.trigger('click')
 

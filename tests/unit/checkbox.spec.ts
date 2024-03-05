@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeCheckbox from '~/MeCheckbox/index.vue'
 import MeCheckboxGroup from '~/MeCheckboxGroup/index.vue'
 
@@ -14,7 +15,7 @@ describe('MeCheckbox 复选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-checkbox')
+    const viewer = getViewer(wrapper, MeCheckbox)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -35,7 +36,7 @@ describe('MeCheckbox 复选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-checkbox .me-icon')
+    const viewer = getViewer(wrapper, MeCheckbox).find('.me-icon')
 
     expect(viewer.classes(iconSelect)).toBe(true)
   })
@@ -50,7 +51,7 @@ describe('MeCheckbox 复选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-checkbox')
+    const viewer = getViewer(wrapper, MeCheckbox)
 
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
@@ -63,7 +64,7 @@ describe('MeCheckbox 复选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-checkbox')
+    const viewer = getViewer(wrapper, MeCheckbox)
 
     await viewer.trigger('click')
 
@@ -93,7 +94,7 @@ describe('MeCheckboxGroup 复选框组', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-checkbox-group')
+    const viewer = getViewer(wrapper, MeCheckboxGroup)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('inline')).toBe(true)

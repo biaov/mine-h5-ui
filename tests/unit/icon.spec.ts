@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeIcon from '~/MeIcon/index.vue'
 
 describe('MeIcon 图标', () => {
@@ -12,7 +13,7 @@ describe('MeIcon 图标', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-icon')
+    const viewer = getViewer(wrapper, MeIcon)
 
     expect(viewer.exists()).toBeTruthy()
     /**
@@ -31,7 +32,7 @@ describe('MeIcon 图标', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-icon')
+    const viewer = getViewer(wrapper, MeIcon)
 
     await viewer.trigger('click')
 

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeDivider from '~/MeDivider/index.vue'
 
 describe('MeDivider 分割线', () => {
@@ -13,7 +14,7 @@ describe('MeDivider 分割线', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-divider')
+    const viewer = getViewer(wrapper, MeDivider)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(list[0])

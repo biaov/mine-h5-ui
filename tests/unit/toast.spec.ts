@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeToast from '~/MeToast/index.vue'
 
 describe('MeToast 消息提示', () => {
@@ -13,7 +14,7 @@ describe('MeToast 消息提示', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-toast')
+    const viewer = getViewer(wrapper, MeToast)
 
     expect(viewer.exists()).toBeTruthy()
 

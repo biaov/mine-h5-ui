@@ -13,10 +13,7 @@ import { MeAccordion, MeAccordionItem } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeAccordion.css'
 import 'mine-h5-ui/styles/MeAccordionItem.css'
 
-const app = createApp(App)
-app.use(MeAccordion)
-app.use(MeAccordionItem)
-app.mount('#app')
+createApp(App).use(MeAccordion).use(MeAccordionItem).mount('#app')
 ```
 
 :::
@@ -119,6 +116,7 @@ const listData = Object.freeze([
 | 具名插槽 | 说明     | scopedSlots | 版本   |
 | -------- | -------- | ----------- | ------ |
 | default  | 默认名称 | --          | v2.0.0 |
+| label    | 名称     | --          | v2.7.4 |
 
 #### 方法
 

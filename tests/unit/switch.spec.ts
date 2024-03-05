@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeSwitch from '~/MeSwitch/index.vue'
 
 describe('MeSwitch 开关', () => {
@@ -12,7 +13,7 @@ describe('MeSwitch 开关', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-switch')
+    const viewer = getViewer(wrapper, MeSwitch)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.attributes('data-disabled')).toBe('true')
@@ -26,7 +27,7 @@ describe('MeSwitch 开关', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-switch')
+    const viewer = getViewer(wrapper, MeSwitch)
 
     await viewer.trigger('click')
 

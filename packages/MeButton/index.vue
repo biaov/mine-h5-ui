@@ -30,17 +30,17 @@ const { onClick } = useHandler(emit)
   <button
     :type="nativeType"
     :class="[
-      'me-btn',
-      `me-btn-${type}`,
+      'me-button',
+      `me-button-${type}`,
       {
-        'me-btn-plain': plain,
+        'me-button-plain': plain,
         disabled
       }
     ]"
     :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
     @click="onClick"
   >
-    <me-icon :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" v-if="icon"></me-icon>
+    <me-icon :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" v-if="icon" />
     <slot></slot>
   </button>
 </template>

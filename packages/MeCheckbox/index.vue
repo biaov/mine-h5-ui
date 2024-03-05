@@ -29,7 +29,7 @@ const { isChecked, iconName, handleClick } = useHandler(props, emit)
 <template>
   <!-- 复选框 -->
   <div class="me-checkbox" @click="handleClick" :data-checked="isChecked + ''" :data-disabled="disabled + ''">
-    <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize"></me-icon>
+    <me-icon :name="iconName" :color="isChecked ? checkedColor : ''" :size="iconSize" />
     <div class="value">
       <slot></slot>
     </div>

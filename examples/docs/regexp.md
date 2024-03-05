@@ -36,13 +36,13 @@ Object.keys(MeAPI).forEach(key => {
 
 ```vue
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
+import { useValidator } from 'mine-h5-ui'
 
-const { $Validator } = getCurrentInstance().appContext.config.globalProperties
+const validator = useValidator()
 /**
  * 获取规则
  */
-const valid = $Validator.validPhone
+const valid = validator.phone
 console.log(valid) // 输出: /^1[3456789]\d{9}$/
 console.log(valid.test(18888888888)) // 输出: true
 console.log(valid.test(12888888888)) // 输出: false

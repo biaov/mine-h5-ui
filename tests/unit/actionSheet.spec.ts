@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeActionSheet from '~/MeActionSheet/index.vue'
 
 describe('MeActionSheet 动作面板', () => {
@@ -18,10 +18,8 @@ describe('MeActionSheet 动作面板', () => {
     const wrapper = mount(MeActionSheet, {
       props: { list }
     })
-    /**
-     * 获取 DOM
-     */
-    const viewer = wrapper.find('.me-action-sheet')
+
+    const viewer = getViewer(wrapper, MeActionSheet)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.isVisible()).toBe(false)
@@ -37,10 +35,7 @@ describe('MeActionSheet 动作面板', () => {
 
     await Retarder()
 
-    /**
-     * 获取 DOM
-     */
-    const viewer = wrapper.find('.me-action-sheet')
+    const viewer = getViewer(wrapper, MeActionSheet)
 
     expect(viewer.classes('show')).toBe(true)
   })
@@ -52,10 +47,8 @@ describe('MeActionSheet 动作面板', () => {
     const wrapper = mount(MeActionSheet, {
       props: { list, label: 'label' }
     })
-    /**
-     * 获取 DOM
-     */
-    const viewer = wrapper.find('.me-action-sheet')
+
+    const viewer = getViewer(wrapper, MeActionSheet)
 
     expect(viewer.html()).toContain(list[0].label)
   })
