@@ -11,7 +11,7 @@ const { listData, onSure } = useHandle()
       <div class="label">{{ item.label }}</div>
       <div class="li" @click="item.visible = true">
         <span>{{ item.title }}</span>
-        <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+        <me-icon name="icon-right1" size="20px" color="#ccc" />
       </div>
       <me-datetime-picker
         :type="item.type"

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeButton from '~/MeButton/index.vue'
 
 describe('MeButton 按钮', () => {
@@ -13,7 +14,7 @@ describe('MeButton 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-btn')
+    const viewer = getViewer(wrapper, MeButton)
     /**
      * 是否存在组件
      */
@@ -35,11 +36,11 @@ describe('MeButton 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-btn')
+    const viewer = getViewer(wrapper, MeButton)
     /**
      * 是否存在值
      */
-    expect(viewer.classes(`me-btn-${type}`)).toBe(true)
+    expect(viewer.classes(`me-button-${type}`)).toBe(true)
   })
 
   test('属性 plain', () => {
@@ -52,11 +53,11 @@ describe('MeButton 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-btn')
+    const viewer = getViewer(wrapper, MeButton)
     /**
      * 是否存在值
      */
-    expect(viewer.classes('me-btn-plain')).toBe(true)
+    expect(viewer.classes('me-button-plain')).toBe(true)
   })
 
   test('属性 disabled', () => {
@@ -69,7 +70,7 @@ describe('MeButton 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-btn')
+    const viewer = getViewer(wrapper, MeButton)
     /**
      * 是否存在值
      */
@@ -87,7 +88,7 @@ describe('MeButton 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-btn .me-icon')
+    const viewer = getViewer(wrapper, MeButton).find('.me-icon')
     /**
      * 是否存在组件
      */
@@ -108,7 +109,7 @@ describe('MeButton 按钮', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-btn')
+    const viewer = getViewer(wrapper, MeButton)
 
     await viewer.trigger('click')
 

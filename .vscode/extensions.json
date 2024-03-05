@@ -1,4 +1,4 @@
 {
   /* 推荐扩展 */
-  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+  "recommendations": ["Vue.volar"]
 }

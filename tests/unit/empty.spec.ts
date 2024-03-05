@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeEmpty from '~/MeEmpty/index.vue'
 
 describe('MeEmpty 空状态', () => {
@@ -13,7 +14,7 @@ describe('MeEmpty 空状态', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-empty')
+    const viewer = getViewer(wrapper, MeEmpty)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -33,7 +34,7 @@ describe('MeEmpty 空状态', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-empty .img>.iconfont')
+    const viewer = getViewer(wrapper, MeEmpty).find('.img>.iconfont')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('icon-wangluocuowu')).toBe(true)
@@ -50,7 +51,7 @@ describe('MeEmpty 空状态', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-empty .img>img')
+    const viewer = getViewer(wrapper, MeEmpty).find('.img>img')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.attributes('src')).toBe(url)

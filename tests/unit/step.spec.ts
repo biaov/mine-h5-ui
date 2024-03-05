@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeStep from '~/MeStep/index.vue'
 import MeStepItem from '~/MeStepItem/index.vue'
 
@@ -25,7 +26,7 @@ describe('MeStep 步骤条', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-step')
+    const viewer = getViewer(wrapper, MeStep)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('horizontal')).toBe(true)
@@ -47,7 +48,7 @@ describe('MeStep 步骤条', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-step')
+    const viewer = getViewer(wrapper, MeStep)
 
     expect(viewer.classes(direction)).toBe(true)
   })
@@ -91,7 +92,7 @@ describe('MeStepItem 步骤条项', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-step')
+    const viewer = getViewer(wrapper, MeStep)
 
     expect(viewer.exists()).toBeTruthy()
 

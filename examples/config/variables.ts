@@ -1,3 +1,5 @@
+import packageJson from '../../package.json'
+
 /**
  * 全局变量
  */
@@ -12,9 +14,18 @@ export const useGlobalVars = () => {
    */
   const BaseRouter = '/v2/'
 
+  /**
+   * 组件库信息
+   */
+  const libraryInfo = {
+    name: packageJson.name,
+    description: packageJson.description
+  }
+
   return {
     GithubAddress,
-    BaseRouter
+    BaseRouter,
+    libraryInfo
   }
 }
 

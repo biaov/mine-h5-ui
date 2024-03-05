@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeDrag from '~/MeDrag/index.vue'
 
 describe('MeDrag 拖拽', () => {
@@ -36,7 +37,7 @@ describe('MeDrag 拖拽', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-drag')
+    const viewer = getViewer(wrapper, MeDrag)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -56,7 +57,7 @@ describe('MeDrag 拖拽', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find(`.me-drag .item:first-child`)
+    const viewer = getViewer(wrapper, MeDrag).find(`.item:first-child`)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('active')).toBe(true)

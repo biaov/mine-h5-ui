@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeDatetimePicker from '~/MeDatetimePicker/index.vue'
 
 describe('MeDatetimePicker 时间选择器', () => {
@@ -14,7 +15,7 @@ describe('MeDatetimePicker 时间选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-datetime-picker')
+    const viewer = getViewer(wrapper, MeDatetimePicker)
 
     expect(viewer.exists()).toBeTruthy()
   })
@@ -29,7 +30,7 @@ describe('MeDatetimePicker 时间选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.findAll('.me-datetime-picker .bd>li')
+    const viewer = getViewer(wrapper, MeDatetimePicker).findAll('.bd>li')
 
     expect(viewer[0].exists()).toBeTruthy()
     expect(viewer.length).toBe(3)
@@ -49,7 +50,7 @@ describe('MeDatetimePicker 时间选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-datetime-picker .bd>li:first-child>ol>li:first-child')
+    const viewer = getViewer(wrapper, MeDatetimePicker).find('.bd>li:first-child>ol>li:first-child')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(`${year}`)
@@ -69,7 +70,7 @@ describe('MeDatetimePicker 时间选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-datetime-picker .bd>li:first-child>ol>li:last-child')
+    const viewer = getViewer(wrapper, MeDatetimePicker).find('.bd>li:first-child>ol>li:last-child')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(`${year}`)
@@ -85,7 +86,7 @@ describe('MeDatetimePicker 时间选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-datetime-picker .hd .cancel')
+    const viewer = getViewer(wrapper, MeDatetimePicker).find('.hd .cancel')
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -104,7 +105,7 @@ describe('MeDatetimePicker 时间选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-datetime-picker .hd .sure')
+    const viewer = getViewer(wrapper, MeDatetimePicker).find('.hd .sure')
 
     expect(viewer.exists()).toBeTruthy()
 

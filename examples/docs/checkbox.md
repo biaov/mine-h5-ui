@@ -13,10 +13,7 @@ import { MeCheckbox, MeCheckboxGroup } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeCheckbox.css'
 import 'mine-h5-ui/styles/MeCheckboxGroup.css'
 
-const app = createApp(App)
-app.use(MeCheckbox)
-app.use(MeCheckboxGroup)
-app.mount('#app')
+createApp(App).use(MeCheckbox).use(MeCheckboxGroup).mount('#app')
 ```
 
 :::

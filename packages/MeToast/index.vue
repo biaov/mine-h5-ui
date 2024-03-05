@@ -19,7 +19,7 @@ const { isShow, isDestroy, animationDuration } = useShow(props)
 <template>
   <!-- 消息提示 -->
   <div class="me-toast" :class="{ show: isShow }" :style="`background:${bgColor};--animation-duration:${animationDuration}ms;`" v-if="!isDestroy">
-    <me-icon :name="icon" color="#fff" v-if="icon"></me-icon>
+    <me-icon :name="icon" color="#fff" v-if="icon" />
     <span>{{ message }}</span>
   </div>
 </template>

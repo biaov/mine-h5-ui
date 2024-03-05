@@ -31,7 +31,7 @@ const { onClick, onDelete, onComplate } = useHandler(emit)
     <li @click="onComplate" class="complate">完成</li>
     <li @click="onClick(0)">0</li>
     <li @click="onDelete">
-      <me-icon name="icon-delete"></me-icon>
+      <me-icon name="icon-delete" />
     </li>
   </ul>
 </template>

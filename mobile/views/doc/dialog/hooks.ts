@@ -1,4 +1,5 @@
-import { getCurrentInstance, ref } from 'vue'
+import { ref } from 'vue'
+import { MeToast } from '@/plugins'
 import initData from './data'
 import type { ListDataItem, ChildListItem } from './types'
 
@@ -6,7 +7,6 @@ import type { ListDataItem, ChildListItem } from './types'
  * 操作
  */
 export const useHandle = () => {
-  const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   /**
    * 列表数据
    */
@@ -16,14 +16,14 @@ export const useHandle = () => {
    */
   const onCancel = (item: ChildListItem) => {
     item.visible = false
-    $MeToast('你点击了取消按钮')
+    MeToast('你点击了取消按钮')
   }
   /**
    * 点击确定按钮
    */
   const onConfirm = (item: ChildListItem) => {
     item.visible = false
-    $MeToast('你点击了确定按钮')
+    MeToast('你点击了确定按钮')
   }
 
   return { listData, onConfirm, onCancel }

@@ -1,0 +1,63 @@
+/**
+  * @file 空状态
+*/
+
+@import './variable.less';
+
+@keyframes skeleton-animation {
+  0% {
+    transform: translateX(-37.5%);
+  }
+
+  100% {
+    transform: translateX(37.5%);
+  }
+}
+
+.me-skeleton {
+  @height: 20px;
+  display: flex;
+
+  &-avatar {
+    position: relative;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: @bg-con-reduce;
+    overflow: hidden;
+  }
+  &-row {
+    flex-grow: 1;
+    width: 40%;
+  }
+
+  &-title,
+  &-item {
+    position: relative;
+    height: @height;
+    border-radius: @border-radius-default;
+    margin-bottom: 16px;
+    background: @bg-con-reduce;
+    overflow: hidden;
+  }
+  &-item:last-child {
+    margin-bottom: 0;
+  }
+  &.active {
+    .me-skeleton {
+      &-avatar,
+      &-item,
+      &-title {
+        background: transparent;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          inset-inline: -150% -150%;
+          background: linear-gradient(-45deg, @bg-con-reduce 25%, rgba(@bg-con, 50%) 37%, @bg-con-reduce 63%);
+          animation: skeleton-animation 1.2s ease infinite;
+        }
+      }
+    }
+  }
+}

@@ -25,7 +25,7 @@ const { time, btnList, handleStatus, onClick } = useHandle()
     <me-count-down format="hh:mm:ss:ms" v-bind="{ ...handleStatus, time }"></me-count-down>
     <ul class="btn">
       <li v-for="(item, index) in btnList" :key="index" @click="onClick(item)">
-        <me-icon :name="item.icon" size="16px"></me-icon>
+        <me-icon :name="item.icon" size="16px" />
         {{ item.text }}
       </li>
     </ul>

@@ -48,7 +48,7 @@ app.mount('#app')
 
 ```html
 <me-nav-bar title="标题" :left-arrow="false">
-  <me-icon name="icon-search1" size="20px" color="#409eff"></me-icon>
+  <me-icon name="icon-search1" size="20px" color="#409eff" />
 </me-nav-bar>
 ```
 

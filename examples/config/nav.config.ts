@@ -31,6 +31,13 @@ export const guideConfig = [
     }
   },
   {
+    name: 'develop',
+    path: 'develop',
+    meta: {
+      title: '开发指南'
+    }
+  },
+  {
     name: 'logs',
     path: 'logs',
     meta: {
@@ -250,6 +257,13 @@ export const componentConfig = [
         },
         path: 'swiperCell',
         name: 'swiperCell'
+      },
+      {
+        meta: {
+          title: 'FloatButton 悬浮按钮'
+        },
+        path: 'floatButton',
+        name: 'floatButton'
       }
     ]
   },
@@ -383,6 +397,20 @@ export const componentConfig = [
         },
         path: 'error',
         name: 'error'
+      },
+      {
+        meta: {
+          title: 'Guide 引导'
+        },
+        path: 'guide',
+        name: 'guide'
+      },
+      {
+        meta: {
+          title: 'Skeleton 骨架屏'
+        },
+        path: 'skeleton',
+        name: 'skeleton'
       }
     ]
   },

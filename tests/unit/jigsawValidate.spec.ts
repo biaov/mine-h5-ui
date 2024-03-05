@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeJigsawValidate from '~/MeJigsawValidate/index.vue'
 
 describe('MeJigsawValidate 拼图校验', () => {
@@ -14,7 +15,7 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-jigsaw-validate')
+    const viewer = getViewer(wrapper, MeJigsawValidate)
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.html().includes(url)).toBe(true)
   })
@@ -30,7 +31,7 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-jigsaw-validate')
+    const viewer = getViewer(wrapper, MeJigsawValidate)
     expect(viewer.attributes('style')?.includes(`width: ${width};`)).toBe(true)
   })
 
@@ -45,7 +46,7 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-jigsaw-validate')
+    const viewer = getViewer(wrapper, MeJigsawValidate)
     /**
      * img 节点
      */
@@ -69,7 +70,7 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-jigsaw-validate')
+    const viewer = getViewer(wrapper, MeJigsawValidate)
     /**
      * slide 节点
      */
@@ -88,7 +89,7 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-jigsaw-validate')
+    const viewer = getViewer(wrapper, MeJigsawValidate)
     /**
      * tips 节点
      */

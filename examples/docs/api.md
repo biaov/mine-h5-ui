@@ -1,5 +1,4 @@
 [bind]: https://github.com/biaov/mine-h5-ui/blob/main/packages/MeAPI/event.js
-[unbind]: https://github.com/biaov/mine-h5-ui/blob/main/packages/MeAPI/event.js
 
 # API 方法
 

@@ -11,7 +11,7 @@ const { grids, handleLi } = useHandle()
       <me-grid-item v-for="item in grids" :key="item.icon" v-bind="item" @click="handleLi(item)"></me-grid-item>
       <me-grid-item>
         <div class="cust">
-          <me-icon name="icon-love" color="#999" size="28px"></me-icon>
+          <me-icon name="icon-love" color="#999" size="28px" />
           <p>自定义</p>
         </div>
       </me-grid-item>

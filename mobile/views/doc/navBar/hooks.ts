@@ -1,10 +1,9 @@
-import { getCurrentInstance } from 'vue'
+import { MeToast } from '@/plugins'
 
 /**
  * 操作
  */
 export const useHandle = () => {
-  const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   const styles = Object.freeze({
     /**
      * 边框颜色
@@ -32,7 +31,7 @@ export const useHandle = () => {
    * 点击右侧按钮
    */
   const handleClick = (tips: string) => {
-    $MeToast(`你点击了${tips}`)
+    MeToast(`你点击了${tips}`)
   }
 
   return { styles, handleClick }

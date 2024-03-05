@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeSpace from '~/MeSpace/index.vue'
 
 describe('MeSpace 间距', () => {
@@ -12,7 +13,7 @@ describe('MeSpace 间距', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-space')
+    const viewer = getViewer(wrapper, MeSpace)
     expect(viewer.exists()).toBeTruthy()
   })
 
@@ -27,7 +28,7 @@ describe('MeSpace 间距', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-space')
+    const viewer = getViewer(wrapper, MeSpace)
     expect(viewer.classes(direction)).toBeTruthy()
   })
 })

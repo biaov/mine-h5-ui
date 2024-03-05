@@ -4,9 +4,9 @@
 
 @import './variable.less';
 
-.me-btn {
+.me-button {
   // 按钮类型白色字体
-  .me-btn-type-white(@borderColor, @backGround: @color-default, @Color: @color-default) {
+  .me-button-type-white(@borderColor, @backGround: @color-default, @Color: @color-default) {
     color: @Color;
     border-color: @borderColor;
     background: @backGround;
@@ -15,7 +15,7 @@
       color: @Color;
     }
 
-    &.me-btn-plain {
+    &.me-button-plain {
       background: @color-default;
       color: @borderColor;
 
@@ -66,28 +66,28 @@
   }
 
   /* 主题样式 start */
-  &.me-btn-default {
-    .me-btn-type-white(@border-color-default, @color-default, @font-color);
+  &.me-button-default {
+    .me-button-type-white(@border-color-default, @color-default, @font-color);
   }
 
-  &.me-btn-primary {
-    .me-btn-type-white(@color-primary, @color-primary);
+  &.me-button-primary {
+    .me-button-type-white(@color-primary, @color-primary);
   }
 
-  &.me-btn-success {
-    .me-btn-type-white(@color-success, @color-success);
+  &.me-button-success {
+    .me-button-type-white(@color-success, @color-success);
   }
 
-  &.me-btn-info {
-    .me-btn-type-white(@color-info, @color-info);
+  &.me-button-info {
+    .me-button-type-white(@color-info, @color-info);
   }
 
-  &.me-btn-warning {
-    .me-btn-type-white(@color-warning, @color-warning);
+  &.me-button-warning {
+    .me-button-type-white(@color-warning, @color-warning);
   }
 
-  &.me-btn-danger {
-    .me-btn-type-white(@color-danger, @color-danger);
+  &.me-button-danger {
+    .me-button-type-white(@color-danger, @color-danger);
   }
 
   /* 主题样式 end */

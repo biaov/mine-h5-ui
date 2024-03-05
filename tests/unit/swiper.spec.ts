@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeSwiper from '~/MeSwiper/index.vue'
 import MeSwiperItem from '~/MeSwiperItem/index.vue'
 
@@ -13,7 +14,7 @@ describe('MeSwiper 轮播图', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-swiper')
+    const viewer = getViewer(wrapper, MeSwiper)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -37,7 +38,7 @@ describe('MeSwiperItem 轮播图选项', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-swiper-item')
+    const viewer = getViewer(wrapper, MeSwiperItem)
 
     expect(viewer.exists()).toBeTruthy()
 

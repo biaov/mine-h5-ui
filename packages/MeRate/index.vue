@@ -28,7 +28,7 @@ const { listData, onClick } = useHandler(props, emit)
 <template>
   <!-- 评分机制 -->
   <div class="me-rate" :style="`font-size:${size};`" :data-disabled="disabled">
-    <me-icon v-for="item in listData" :key="item.id" :name="item.state ? iconSelect : icon" size="inherit" :color="item.state ? color : '#949494'" @click="onClick(item)"></me-icon>
+    <me-icon v-for="item in listData" :key="item.id" :name="item.state ? iconSelect : icon" size="inherit" :color="item.state ? color : '#949494'" @click="onClick(item)" />
     <span class="tips" v-if="tips.length > 0 && modelValue > 0" :style="`color:${tipsColor};`">{{ tips[modelValue - 1] }}</span>
   </div>
 </template>

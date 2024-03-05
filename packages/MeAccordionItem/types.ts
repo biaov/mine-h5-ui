@@ -1,4 +1,5 @@
 import type { Ref } from 'vue'
+import { DefaultSlotProp, DefaultSlots } from '../types'
 
 /**
  * 父组件参数
@@ -32,4 +33,11 @@ export interface Props {
    * 下边框颜色
    */
   borderColor?: string
+}
+
+/**
+ * slots
+ */
+export interface Slots extends DefaultSlots {
+  label: DefaultSlotProp
 }

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeMspaint from '~/MeMspaint/index.vue'
 
 describe('MeMspaint 画图', () => {
@@ -14,7 +15,7 @@ describe('MeMspaint 画图', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-mspaint')
+    const viewer = getViewer(wrapper, MeMspaint)
     expect(viewer.attributes('width')).toBe(width)
   })
   test('属性 height', () => {
@@ -28,7 +29,7 @@ describe('MeMspaint 画图', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-mspaint')
+    const viewer = getViewer(wrapper, MeMspaint)
     expect(viewer.attributes('height')).toBe(height)
   })
   test('属性 background', () => {
@@ -42,7 +43,7 @@ describe('MeMspaint 画图', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-mspaint')
+    const viewer = getViewer(wrapper, MeMspaint)
     let htmlValue = ''
     viewer
       .attributes('style')

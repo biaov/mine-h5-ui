@@ -8,7 +8,7 @@
     </a>
 </p>
 <h2 align="center">mine-h5-ui</h2>
-<p align="center">一款轻量级、模块化基于 VUE 的 H5 前端 UI 组件库</p>
+<p align="center">一款轻量级、模块化基于 Vue3.x 的 H5 前端 UI 组件库</p>
 
 ## 温馨提示 😊
 

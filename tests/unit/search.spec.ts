@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeSearch from '~/MeSearch/index.vue'
 
 describe('MeSearch 搜索', () => {
@@ -15,7 +16,7 @@ describe('MeSearch 搜索', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-search')
+    const viewer = getViewer(wrapper, MeSearch)
 
     expect(viewer.exists()).toBeTruthy()
 

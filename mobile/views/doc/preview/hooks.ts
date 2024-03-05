@@ -1,4 +1,5 @@
-import { getCurrentInstance, ref } from 'vue'
+import { ref } from 'vue'
+import { MePreview } from '@/plugins'
 import initData from './data'
 import type { ListDataItem } from './types'
 
@@ -6,7 +7,6 @@ import type { ListDataItem } from './types'
  * 操作
  */
 export const useHandler = () => {
-  const { $MePreview } = getCurrentInstance()!.appContext.config.globalProperties
   /**
    * 列表数据
    */
@@ -16,7 +16,7 @@ export const useHandler = () => {
    * 点击图片预览
    */
   const onPreview = (item: ListDataItem) => {
-    $MePreview(item)
+    MePreview(item)
   }
 
   return { listData, onPreview }

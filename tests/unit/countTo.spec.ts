@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeCountTo from '~/MeCountTo/index.vue'
 
 describe('MeCountTo 数字滚动', () => {
@@ -18,7 +18,7 @@ describe('MeCountTo 数字滚动', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-count-to')
+    const viewer = getViewer(wrapper, MeCountTo)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(`${endValue}`)
@@ -35,7 +35,7 @@ describe('MeCountTo 数字滚动', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-count-to')
+    const viewer = getViewer(wrapper, MeCountTo)
 
     expect(viewer.text()).toBe(`${startValue}`)
   })
@@ -53,7 +53,7 @@ describe('MeCountTo 数字滚动', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-count-to')
+    const viewer = getViewer(wrapper, MeCountTo)
 
     expect(viewer.text()).toBe(`${endValue}`)
   })
@@ -71,7 +71,7 @@ describe('MeCountTo 数字滚动', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-count-to')
+    const viewer = getViewer(wrapper, MeCountTo)
 
     expect(viewer.text()).toBe('1,000')
   })

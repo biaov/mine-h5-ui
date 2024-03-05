@@ -1,8 +1,8 @@
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute, onBeforeRouteLeave } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
 import { componentConfig } from '@/config/nav.config'
-import { useStorage } from '~/index'
+import { useStorage } from '@/plugins'
 
 /**
  * 页面数据
@@ -18,9 +18,12 @@ export const useWebData = () => {
   const postMsg = PostMessage(window.parent!)
   postMsg && postMsg.send(path)
 
-  onBeforeRouteLeave(() => {
+  const setAccordionActive = () => {
     setStorage('accordionActive', accordionActive.value)
-  })
+  }
+
+  onBeforeRouteLeave(setAccordionActive)
+  watch(accordionActive, setAccordionActive)
 
   return { listData, accordionActive }
 }

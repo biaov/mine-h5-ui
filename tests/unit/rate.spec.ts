@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeRate from '~/MeRate/index.vue'
 
 describe('MeRate 评分', () => {
@@ -13,7 +14,7 @@ describe('MeRate 评分', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-rate')
+    const viewer = getViewer(wrapper, MeRate)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -67,7 +68,7 @@ describe('MeRate 评分', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-rate')
+    const viewer = getViewer(wrapper, MeRate)
 
     expect(viewer.attributes('data-disabled')).toBe('true')
   })

@@ -1,4 +1,4 @@
-import { getCurrentInstance } from 'vue'
+import { MeToast, MeMessageBox } from '@/plugins'
 import initData from './data'
 import type { ListDataItem } from './types'
 
@@ -6,7 +6,6 @@ import type { ListDataItem } from './types'
  * 操作
  */
 export const useHandle = () => {
-  const { $MeMessageBox, $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   /**
    * 列表数据
    */
@@ -16,11 +15,11 @@ export const useHandle = () => {
    * 删除按钮
    */
   const onDelete = () => {
-    $MeMessageBox.confirm({
+    MeMessageBox.confirm({
       tips: '警告',
       message: '你确定要删除此项吗？',
       onOk() {
-        $MeToast('删除成功')
+        MeToast('删除成功')
       }
     })
   }
@@ -29,7 +28,7 @@ export const useHandle = () => {
    * 点击收藏按钮
    */
   const onCollect = () => {
-    $MeToast('收藏成功')
+    MeToast('收藏成功')
   }
 
   return { listData, onDelete, onCollect }

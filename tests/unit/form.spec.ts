@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeForm from '~/MeForm/index.vue'
 
 describe('MeForm 表单', () => {
@@ -10,7 +11,7 @@ describe('MeForm 表单', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-form')
+    const viewer = getViewer(wrapper, MeForm)
 
     expect(viewer.exists()).toBeTruthy()
 

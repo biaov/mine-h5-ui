@@ -12,7 +12,7 @@ const { listData, onClick, onEnd } = useHandle()
       <me-screenshot :allow-down="list.allowDown" :image-name="list.imageName" :start="list.start" @click="onClick(list)" @end="onEnd">
         <div class="desc-cell">
           <span>{{ list.text }}</span>
-          <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+          <me-icon name="icon-right1" size="20px" color="#ccc" />
         </div>
       </me-screenshot>
     </li>

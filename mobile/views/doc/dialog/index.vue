@@ -12,7 +12,7 @@ const { listData, onConfirm, onCancel } = useHandle()
       <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="it.visible = true">
           <span>{{ it.value }}</span>
-          <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+          <me-icon name="icon-right1" size="20px" color="#ccc" />
           <me-dialog v-model:visible="it.visible" tips="提示">
             <div class="text">
               走在斑马线上的好处：

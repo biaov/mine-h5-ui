@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
 import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Debounce, FormatThousand, Locked, AddZero, Calculation, GenerateRandom, Retarder } from '../MeAPI/function'
 import { storageInstance } from './enums.ts'
-import type { StorageType } from './types.ts'
+import type { StorageType, ScrollAnimationOption } from './types.ts'
 /**
  * 校验
  * @example
@@ -119,8 +119,8 @@ export const useUtils = () => ({
  * const [visible, setVisible] = useVisible()
  * ```
  */
-export const useVisible = () => {
-  const visible = ref(false)
+export const useVisible = (initVisible = false) => {
+  const visible = ref(initVisible)
 
   const setVisible = (value: boolean) => {
     visible.value = value
@@ -160,4 +160,42 @@ export const useStorage = () => {
   }
 
   return { setStorage, getStorage, removeStorage }
+}
+
+/**
+ * 滚动动画
+ * @example
+ * ```ts
+ * import { useScroll } from 'mine-h5-ui'
+
+ * const { scrollTo } = useScroll()
+ * scrollTo(document.body, 0) // 返回顶部
+ * const customDomNode = document.querySelector('.customDomNode') // 自定义节点
+ * scrollTo(customDomNode, 0) // 滚动到指定位置
+ * ```
+ */
+export const useScroll = ({ duration = 300 }: ScrollAnimationOption = {}) => {
+  const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
+    t /= d / 2
+    if (t < 1) return (c / 2) * t * t + b
+    t--
+    return (-c / 2) * (t * (t - 2) - 1) + b
+  }
+
+  const scrollTo = (node: Element, to: number) => {
+    const start = node.scrollTop
+    const change = to - start
+    const increment = 20
+    let currentTime = 0
+
+    const animateScroll = () => {
+      currentTime += increment
+      node.scrollTop = easeInOutQuad(currentTime, start, change, duration)
+      currentTime < duration && requestAnimationFrame(animateScroll)
+    }
+
+    animateScroll()
+  }
+
+  return { scrollTo }
 }

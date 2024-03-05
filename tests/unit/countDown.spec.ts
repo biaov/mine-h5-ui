@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MeCountDown from '~/MeCountDown/index.vue'
 
 describe('MeCountDown 倒计时', () => {
@@ -15,7 +15,7 @@ describe('MeCountDown 倒计时', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-count-down')
+    const viewer = getViewer(wrapper, MeCountDown)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text().replace(/\s+/g, '')).toBe('02时00分00秒')
@@ -31,7 +31,7 @@ describe('MeCountDown 倒计时', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-count-down')
+    const viewer = getViewer(wrapper, MeCountDown)
 
     expect(viewer.text().replace(/\s+/g, '')).toBe('00天02时00分00秒0毫秒')
   })

@@ -37,6 +37,7 @@ export { MeMessageBox } from './MeMessageBox' // 弹出框-JS
 export { MeDialog } from './MeDialog' // 对话框
 export { MeShareSheet } from './MeShareSheet' // 分享面板
 export { MeSwiperCell } from './MeSwiperCell' // 滑动单元格
+export { MeFloatButton } from './MeFloatButton' // 悬浮按钮
 /* 反馈组件 end */
 
 /* 导航组件 start */
@@ -64,6 +65,8 @@ export { MeSwiperItem } from './MeSwiperItem' // 轮播图选项
 export { MeTag } from './MeTag' // 标签
 export { MeCountTo } from './MeCountTo' // 数字滚动
 export { MeError } from './MeError' // 页面错误
+export { MeGuide } from './MeGuide' // 引导
+export { MeSkeleton } from './MeSkeleton' // 骨架屏
 /* 展示组件 end */
 
 /* 业务组件 start */

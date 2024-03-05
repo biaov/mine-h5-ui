@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeCountTo } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeCountTo.css'
 
-const app = createApp(App)
-app.use(MeCountTo)
-app.mount('#app')
+createApp(App).use(MeCountTo).mount('#app')
 ```
 
 :::

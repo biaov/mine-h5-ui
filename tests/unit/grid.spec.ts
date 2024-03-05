@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeGrid from '~/MeGrid/index.vue'
 import MeGridItem from '~/MeGridItem/index.vue'
 
@@ -24,7 +25,7 @@ describe('MeGrid 宫格', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-grid')
+    const viewer = getViewer(wrapper, MeGrid)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -58,7 +59,7 @@ describe('MeGridItem 宫格项', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-grid-item .iconfont')
+    const viewer = getViewer(wrapper, MeGridItem).find('.iconfont')
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('icon-github')).toBe(true)
@@ -79,7 +80,7 @@ describe('MeGridItem 宫格项', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-grid-item')
+    const viewer = getViewer(wrapper, MeGridItem)
     const descEl = viewer.find('.desc')
 
     expect(descEl.exists()).toBeTruthy()

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeNoticeBar from '~/MeNoticeBar/index.vue'
 
 describe('MeNoticeBar 公告栏', () => {
@@ -14,7 +15,7 @@ describe('MeNoticeBar 公告栏', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-notice-bar')
+    const viewer = getViewer(wrapper, MeNoticeBar)
 
     expect(viewer.exists()).toBeTruthy()
 

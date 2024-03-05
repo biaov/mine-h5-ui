@@ -14,7 +14,31 @@
 
 :::TimeLine
 
-## v2.7.3 - 最新版本
+## v2.8.1 - 最新版本
+
+`2024-03-05`
+
+- 🔥 新增组件
+  - [新增引导组件](/v2/doc/guide)
+  - [新增悬浮按钮组件](/v2/doc/floatButton)
+  - [新增骨架屏组件](/v2/doc/skeleton)
+- 新增组合式 API
+  - [新增 useScroll](/v2/doc/composable)
+- 🔥 新增开发指南(/v2/doc/develop)
+- ⚙️ 更新
+  - 手风琴组件 MeAccordionItem 增加 `slot=label` 插槽
+  - 更新组件的使用文档
+  - 优化项目在使用组件或组合式 API 时由 getCurrentInstance 中获取改为直接从组件库获取的体验
+  - 更新项目依赖版本
+  - 组合式 API `useVisible` 增加初始化参数
+  - 简化文档里的按需引入方式
+  - 优化单元测试获取节点
+  - 更新依赖 `vue-tsc` 由 `1.x` 升级为 `2.x`
+- 🐞 修复已知 BUG
+  - 修复 MeLoading 组件设置大小不生效问题
+  - 修复移动端点击出现蓝色背景问题
+
+## v2.7.3
 
 `2024-02-20`
 

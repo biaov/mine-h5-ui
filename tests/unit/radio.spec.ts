@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeRadio from '~/MeRadio/index.vue'
 import MeRadioGroup from '~/MeRadioGroup/index.vue'
 
@@ -13,7 +14,7 @@ describe('MeRadio 单选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-radio')
+    const viewer = getViewer(wrapper, MeRadio)
 
     expect(viewer.exists()).toBeTruthy()
 
@@ -65,7 +66,7 @@ describe('MeRadio 单选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-radio')
+    const viewer = getViewer(wrapper, MeRadio)
 
     expect(viewer.attributes('data-disabled')).toBe('true')
   })
@@ -78,7 +79,7 @@ describe('MeRadio 单选框', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-radio')
+    const viewer = getViewer(wrapper, MeRadio)
 
     await viewer.trigger('click')
 
@@ -108,7 +109,7 @@ describe('MeRadioGroup 单选框组', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-radio-group')
+    const viewer = getViewer(wrapper, MeRadioGroup)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('inline')).toBe(true)

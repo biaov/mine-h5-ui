@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeKeyboard from '~/MeKeyboard/index.vue'
 
 describe('MeKeyboard 数字键盘', () => {
@@ -12,7 +13,7 @@ describe('MeKeyboard 数字键盘', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-keyboard')
+    const viewer = getViewer(wrapper, MeKeyboard)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)
@@ -29,7 +30,7 @@ describe('MeKeyboard 数字键盘', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-keyboard')
+    const viewer = getViewer(wrapper, MeKeyboard)
 
     expect(viewer.classes(`me-keyboard-${skinType}`)).toBe(true)
   })

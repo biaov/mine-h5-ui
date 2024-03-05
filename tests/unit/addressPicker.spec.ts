@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeAddressPicker from '~/MeAddressPicker/index.vue'
 
 describe('MeAddressPicker 地址选择器', () => {
@@ -12,7 +13,7 @@ describe('MeAddressPicker 地址选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-address-picker')
+    const viewer = getViewer(wrapper, MeAddressPicker)
 
     expect(viewer.exists()).toBeTruthy()
   })
@@ -27,13 +28,12 @@ describe('MeAddressPicker 地址选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-address-picker')
-    const sureBtn = viewer.find('button.sure')
+    const viewer = getViewer(wrapper, MeAddressPicker).find('button.sure')
 
     /**
      * 点击确定按钮
      */
-    await sureBtn.trigger('click')
+    await viewer.trigger('click')
 
     /**
      * 是否为真
@@ -51,12 +51,11 @@ describe('MeAddressPicker 地址选择器', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-address-picker')
-    const cancelBtn = viewer.find('button.cancel')
+    const viewer = getViewer(wrapper, MeAddressPicker).find('button.cancel')
     /**
      * 点击取消按钮
      */
-    await cancelBtn.trigger('click')
+    await viewer.trigger('click')
 
     /**
      * 是否为真

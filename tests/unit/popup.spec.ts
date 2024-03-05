@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { Retarder } from '@/utils/functions'
+import { Retarder, getViewer } from '@/utils/functions'
 import MePopup from '~/MePopup/index.vue'
 
 describe('MePopup 弹出层', () => {
@@ -16,7 +16,7 @@ describe('MePopup 弹出层', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-popup')
+    const viewer = getViewer(wrapper, MePopup)
 
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.classes('show')).toBe(true)
@@ -47,7 +47,7 @@ describe('MePopup 弹出层', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-popup')
+    const viewer = getViewer(wrapper, MePopup)
 
     await viewer.trigger('click')
     await Retarder()

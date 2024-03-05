@@ -12,7 +12,7 @@ const { listData, onChange, onCancel } = useHandle()
       <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" @click="it.visible = true">
           <span>{{ it.value }}</span>
-          <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+          <me-icon name="icon-right1" size="20px" color="#ccc" />
           <me-action-sheet v-model:visible="it.visible" :list="it.list" @cancel="onCancel" @change="onChange"></me-action-sheet>
         </li>
       </ul>

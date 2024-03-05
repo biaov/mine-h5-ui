@@ -11,7 +11,7 @@ const { listData, onSure, onClickItem } = useHandle()
       <div class="label">{{ item.label }}</div>
       <div class="li" @click="onClickItem(item)">
         <span>{{ item.title }}</span>
-        <me-icon name="icon-right1" size="20px" color="#ccc"></me-icon>
+        <me-icon name="icon-right1" size="20px" color="#ccc" />
       </div>
       <me-address-picker v-model="item.value" :visible="item.visible" @cancel="item.visible = false" @sure="onSure(item)"></me-address-picker>
     </li>

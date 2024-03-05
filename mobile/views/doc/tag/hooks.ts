@@ -1,4 +1,4 @@
-import { getCurrentInstance } from 'vue'
+import { MeToast } from '@/plugins'
 import initData from './data'
 import type { ListDataItem } from './types'
 
@@ -6,7 +6,6 @@ import type { ListDataItem } from './types'
  * 操作
  */
 export const useHandle = () => {
-  const { $MeToast } = getCurrentInstance()!.appContext.config.globalProperties
   /**
    * 列表数据
    */
@@ -16,7 +15,7 @@ export const useHandle = () => {
    * 点击关闭按钮
    */
   const onClose = () => {
-    $MeToast('点击关闭按钮')
+    MeToast('点击关闭按钮')
   }
 
   return { listData, onClose }

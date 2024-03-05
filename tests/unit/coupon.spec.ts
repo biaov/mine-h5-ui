@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { getViewer } from '@/utils/functions'
 import MeCoupon from '~/MeCoupon/index.vue'
 
 describe('MeCoupon 优惠券', () => {
@@ -10,7 +11,7 @@ describe('MeCoupon 优惠券', () => {
     /**
      * 获取 DOM
      */
-    const viewer = wrapper.find('.me-coupon')
+    const viewer = getViewer(wrapper, MeCoupon)
 
     expect(viewer.exists()).toBeTruthy()
   })
