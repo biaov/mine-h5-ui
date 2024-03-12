@@ -154,7 +154,6 @@ npm run build
 - `qrcode`: 二维码
 - `vue`: 前端框架
 - `vue-router`: 路由
-- `@rollup/rollup-linux-x64-gnu`: 支持 Linux 环境运行 Rollup
 - `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
 - `@types/qrcode`: `qrcode` 的类型
@@ -192,6 +191,7 @@ npm run build
 - `vite-plugin-pwa`: 生成 PWA 的 Vite 插件
 - `vitest`: JS 测试框架
 - `vue-tsc`: 编译 TS 单文件 Vue 文件的工具
+- `@rollup/rollup-linux-x64-gnu`: 支持 Linux 环境运行 Rollup
 
 ## 贡献者们
 
