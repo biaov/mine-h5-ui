@@ -70,6 +70,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.13.0",
     "@types/mockjs": "^1.0.10",
     "@types/node": "^20.11.26",
     "@types/qrcode": "^1.5.5",
