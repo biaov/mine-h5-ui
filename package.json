@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.8.1",
+  "version": "2.8.2-beta.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -50,7 +50,9 @@
     "url": "https://github.com/biaov/mine-h5-ui/issues"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "engine-strict": true,
+    "provenance": true
   },
   "license": "ISC",
   "contributors": [
@@ -69,10 +71,10 @@
   },
   "devDependencies": {
     "@types/mockjs": "^1.0.10",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.26",
     "@types/qrcode": "^1.5.5",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/compiler-sfc": "^3.4.21",
     "@vue/test-utils": "^2.4.4",
@@ -82,7 +84,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-vue": "^9.22.0",
+    "eslint-plugin-vue": "^9.23.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean": "^0.4.0",
@@ -94,16 +96,16 @@
     "markdown-it-container": "^4.0.0",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.2.5",
-    "rollup-plugin-license": "^3.2.0",
+    "rollup-plugin-license": "^3.3.1",
     "shiki": "^1.1.7",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "unplugin-vue-markdown": "^0.26.0",
-    "vite": "^5.1.5",
+    "vite": "^5.1.6",
     "vite-plugin-dts": "3.7.3",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.19.2",
     "vitest": "^1.3.1",
-    "vue-tsc": "^2.0.4"
+    "vue-tsc": "^2.0.6"
   }
 }

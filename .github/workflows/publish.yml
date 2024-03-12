@@ -1,0 +1,36 @@
+name: Publish Package To NpmJs
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install -g npm
+      - run: npm ci
+      - run: npm run build:theme
+      - run: npm run build:package
+      - run: node scripts/pre-publish.js
+      - run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+      - run: cd ./dist/packages
+      - run: |
+          if [[ "${{ env.VERSION }}" == *"beta"* ]]; then
+            echo "Beta version detected. Executing npm command for beta version."
+            npm publish --tag=beta-v2
+          else
+            echo "Non-beta version detected. Executing default npm command."
+            npm publish
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
