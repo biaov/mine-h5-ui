@@ -154,6 +154,7 @@ npm run build
 - `qrcode`: 二维码
 - `vue`: 前端框架
 - `vue-router`: 路由
+- `@rollup/rollup-linux-x64-gnu`: 支持 Linux 环境运行 Rollup
 - `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
 - `@types/qrcode`: `qrcode` 的类型
