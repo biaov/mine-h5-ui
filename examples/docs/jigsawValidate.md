@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeJigsawValidate } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeJigsawValidate.css'
 
-const app = createApp(App)
-app.use(MeJigsawValidate)
-app.mount('#app')
+createApp(App).use(MeJigsawValidate).mount('#app')
 ```
 
 :::

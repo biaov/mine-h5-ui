@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeShareSheet } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeShareSheet.css'
 
-const app = createApp(App)
-app.use(MeShareSheet)
-app.mount('#app')
+createApp(App).use(MeShareSheet).mount('#app')
 ```
 
 :::

@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeError } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeError.css'
 
-const app = createApp(App)
-app.use(MeError)
-app.mount('#app')
+createApp(App).use(MeError).mount('#app')
 ```
 
 :::

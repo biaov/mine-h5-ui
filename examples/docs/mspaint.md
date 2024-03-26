@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeMspaint } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeMspaint.css'
 
-const app = createApp(App)
-app.use(MeMspaint)
-app.mount('#app')
+createApp(App).use(MeMspaint).mount('#app')
 ```
 
 :::

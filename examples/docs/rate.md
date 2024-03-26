@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeRate } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeRate.css'
 
-const app = createApp(App)
-app.use(MeRate)
-app.mount('#app')
+createApp(App).use(MeRate).mount('#app')
 ```
 
 :::

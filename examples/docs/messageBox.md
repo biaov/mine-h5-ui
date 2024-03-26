@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeMessageBox } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeMessageBox.css'
 
-const app = createApp(App)
-app.use(MeMessageBox)
-app.mount('#app')
+createApp(App).use(MeMessageBox).mount('#app')
 ```
 
 :::

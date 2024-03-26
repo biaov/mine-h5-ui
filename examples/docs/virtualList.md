@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeVirtualList } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeVirtualList.css'
 
-const app = createApp(App)
-app.use(MeVirtualList)
-app.mount('#app')
+createApp(App).use(MeVirtualList).mount('#app')
 ```
 
 :::

@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MePullRefresh } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MePullRefresh.css'
 
-const app = createApp(App)
-app.use(MePullRefresh)
-app.mount('#app')
+createApp(App).use(MePullRefresh).mount('#app')
 ```
 
 :::

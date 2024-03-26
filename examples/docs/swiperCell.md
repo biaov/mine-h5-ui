@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeSwiperCell } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeSwiperCell.css'
 
-const app = createApp(App)
-app.use(MeSwiperCell)
-app.mount('#app')
+createApp(App).use(MeSwiperCell).mount('#app')
 ```
 
 :::

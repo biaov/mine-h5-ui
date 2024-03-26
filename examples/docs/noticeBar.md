@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeNoticeBar } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeNoticeBar.css'
 
-const app = createApp(App)
-app.use(MeNoticeBar)
-app.mount('#app')
+createApp(App).use(MeNoticeBar).mount('#app')
 ```
 
 :::

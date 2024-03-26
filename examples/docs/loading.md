@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeLoading } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeLoading.css'
 
-const app = createApp(App)
-app.use(MeLoading)
-app.mount('#app')
+createApp(App).use(MeLoading).mount('#app')
 ```
 
 :::

@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeSlider } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeSlider.css'
 
-const app = createApp(App)
-app.use(MeSlider)
-app.mount('#app')
+createApp(App).use(MeSlider).mount('#app')
 ```
 
 :::

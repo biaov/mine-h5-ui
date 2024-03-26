@@ -2,8 +2,6 @@
 
 ---
 
-`mine-h5-ui` 常用的图标。
-
 ## 按需引入
 
 ::: CopyCode
@@ -14,9 +12,7 @@ import App from './App.vue'
 import { MeIcon } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeIcon.css'
 
-const app = createApp(App)
-app.use(MeIcon)
-app.mount('#app')
+createApp(App).use(MeIcon).mount('#app')
 ```
 
 :::

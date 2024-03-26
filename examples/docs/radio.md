@@ -13,10 +13,7 @@ import { MeRadio, MeRadioGroup } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeRadio.css'
 import 'mine-h5-ui/styles/MeRadioGroup.css'
 
-const app = createApp(App)
-app.use(MeRadio)
-app.use(MeRadioGroup)
-app.mount('#app')
+createApp(App).use(MeRadio).use(MeRadioGroup).mount('#app')
 ```
 
 :::

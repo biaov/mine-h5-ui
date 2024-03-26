@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeScreenshot } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeScreenshot.css'
 
-const app = createApp(App)
-app.use(MeScreenshot)
-app.mount('#app')
+createApp(App).use(MeScreenshot).mount('#app')
 ```
 
 :::

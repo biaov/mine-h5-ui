@@ -13,10 +13,7 @@ import { MeGrid, MeGridItem } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeGrid.css'
 import 'mine-h5-ui/styles/MeGridItem.css'
 
-const app = createApp(App)
-app.use(MeGrid)
-app.use(MeGridItem)
-app.mount('#app')
+createApp(App).use(MeGrid).use(MeGridItem).mount('#app')
 ```
 
 :::

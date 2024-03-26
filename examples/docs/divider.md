@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeDivider } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeDivider.css'
 
-const app = createApp(App)
-app.use(MeDivider)
-app.mount('#app')
+createApp(App).use(MeDivider).mount('#app')
 ```
 
 :::

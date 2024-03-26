@@ -13,10 +13,7 @@ import { MeStep, MeStepItem } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeStep.css'
 import 'mine-h5-ui/styles/MeStepItem.css'
 
-const app = createApp(App)
-app.use(MeStep)
-app.use(MeStepItem)
-app.mount('#app')
+createApp(App).use(MeStep).use(MeStepItem).mount('#app')
 ```
 
 :::
