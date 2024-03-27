@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeDialog } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeDialog.css'
 
-const app = createApp(App)
-app.use(MeDialog)
-app.mount('#app')
+createApp(App).use(MeDialog).mount('#app')
 ```
 
 :::

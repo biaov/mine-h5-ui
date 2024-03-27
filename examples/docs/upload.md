@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeUpload } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeUpload.css'
 
-const app = createApp(App)
-app.use(MeUpload)
-app.mount('#app')
+createApp(App).use(MeUpload).mount('#app')
 ```
 
 :::

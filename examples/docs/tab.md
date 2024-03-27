@@ -13,10 +13,7 @@ import { MeTab, MeTabItem } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeTab.css'
 import 'mine-h5-ui/styles/MeTabItem.css'
 
-const app = createApp(App)
-app.use(MeTab)
-app.use(MeTabItem)
-app.mount('#app')
+createApp(App).use(MeTab).use(MeTabItem).mount('#app')
 ```
 
 :::

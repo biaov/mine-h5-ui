@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeKeyboard } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeKeyboard.css'
 
-const app = createApp(App)
-app.use(MeKeyboard)
-app.mount('#app')
+const app = createApp(App).use(MeKeyboard).mount('#app')
 ```
 
 :::

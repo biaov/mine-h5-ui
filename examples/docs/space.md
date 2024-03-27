@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeSpace } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeSpace.css'
 
-const app = createApp(App)
-app.use(MeSpace)
-app.mount('#app')
+createApp(App).use(MeSpace).mount('#app')
 ```
 
 :::

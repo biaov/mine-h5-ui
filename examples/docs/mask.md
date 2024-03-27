@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeMask } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeMask.css'
 
-const app = createApp(App)
-app.use(MeMask)
-app.mount('#app')
+createApp(App).use(MeMask).mount('#app')
 ```
 
 :::

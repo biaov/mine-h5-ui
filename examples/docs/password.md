@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MePassword } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MePassword.css'
 
-const app = createApp(App)
-app.use(MePassword)
-app.mount('#app')
+createApp(App).use(MePassword).mount('#app')
 ```
 
 :::

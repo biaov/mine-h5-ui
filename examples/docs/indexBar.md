@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeIndexBar } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeIndexBar.css'
 
-const app = createApp(App)
-app.use(MeIndexBar)
-app.mount('#app')
+createApp(App).use(MeIndexBar).mount('#app')
 ```
 
 :::

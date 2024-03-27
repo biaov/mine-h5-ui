@@ -20,9 +20,7 @@ import App from './App.vue'
 import mineh5ui from 'mine-h5-ui'
 import 'mine-h5-ui/styles/index.css'
 
-const app = createApp(App)
-app.use(mineh5ui)
-app.mount('#app')
+createApp(App).use(mineh5ui).mount('#app')
 ```
 
 :::

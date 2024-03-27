@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeProgressBar } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeProgressBar.css'
 
-const app = createApp(App)
-app.use(MeProgressBar)
-app.mount('#app')
+createApp(App).use(MeProgressBar).mount('#app')
 ```
 
 :::

@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeDatetimePicker } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeDatetimePicker.css'
 
-const app = createApp(App)
-app.use(MeDatetimePicker)
-app.mount('#app')
+createApp(App).use(MeDatetimePicker).mount('#app')
 ```
 
 :::

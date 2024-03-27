@@ -143,10 +143,12 @@ npm run build
 │   ├── RELEASE.md ---------------------------- 发布文档
 │   ├── tsconfig.json ------------------------- TS 配置
 │   ├── vite.config.ts ------------------------ Vite 配置
-│   └── vitest.config.ts ---------------------- Vitest 配置
+└   └── vitest.config.ts ---------------------- Vitest 配置
 ```
 
 ### 依赖解析
+
+#### dependencies
 
 - `clipboard`: 剪切板
 - `html2canvas`: 截屏
@@ -154,6 +156,9 @@ npm run build
 - `qrcode`: 二维码
 - `vue`: 前端框架
 - `vue-router`: 路由
+
+#### devDependencies
+
 - `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
 - `@types/qrcode`: `qrcode` 的类型
@@ -191,6 +196,9 @@ npm run build
 - `vite-plugin-pwa`: 生成 PWA 的 Vite 插件
 - `vitest`: JS 测试框架
 - `vue-tsc`: 编译 TS 单文件 Vue 文件的工具
+
+#### optionalDependencies
+
 - `@rollup/rollup-linux-x64-gnu`: 支持 Linux 环境运行 Rollup
 
 ## 贡献者们

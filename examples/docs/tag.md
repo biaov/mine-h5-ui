@@ -12,9 +12,7 @@ import App from './App.vue'
 import { MeTag } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeTag.css'
 
-const app = createApp(App)
-app.use(MeTag)
-app.mount('#app')
+createApp(App).use(MeTag).mount('#app')
 ```
 
 :::

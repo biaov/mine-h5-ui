@@ -2,8 +2,6 @@
 
 ---
 
-`mine-h5-ui` 常用的弹出层。
-
 ## 按需引入
 
 ::: CopyCode
@@ -14,9 +12,7 @@ import App from './App.vue'
 import { MePopup } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MePopup.css'
 
-const app = createApp(App)
-app.use(MePopup)
-app.mount('#app')
+createApp(App).use(MePopup).mount('#app')
 ```
 
 :::
