@@ -65,7 +65,7 @@ const current = ref(0)
 
 <template>
   <me-drag v-model:list="list" v-model:current="current">
-    <template #default="{ item }">
+    <template #="{ item }">
       <img :src="item.url" alt="img" mode="fill" />
     </template>
   </me-drag>
@@ -91,9 +91,9 @@ const current = ref(0)
 
 ### Slots
 
-| 具名插槽 | 说明     | scopedSlots     | 版本 |
-| -------- | -------- | --------------- | ---- |
-| default  | 默认名称 | { item, index } | --   |
+| 具名插槽 | 说明     | scopedSlots       | 版本 |
+| -------- | -------- | ----------------- | ---- |
+| default  | 默认名称 | `{ item, index }` | --   |
 
 ### 方法
 

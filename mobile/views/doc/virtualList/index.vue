@@ -10,7 +10,7 @@ const { listData, loadMoreText, onLoadMore } = useHandler()
     <li v-for="list in listData" :key="list.id">
       <div class="label">{{ list.label }}</div>
       <me-virtual-list height="300px" :list="list.list" :itemHeight="list.itemHeight" :remain="16" @load-more="onLoadMore(list)">
-        <template #default="{ item }">
+        <template #="{ item }">
           <div class="item" :class="{ auto: list.auto }">
             <p>
               <span>#{{ item.virtualId }}.</span>

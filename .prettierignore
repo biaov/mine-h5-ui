@@ -12,5 +12,4 @@ fonts
 .prettierignore
 .prettierrc
 LICENSE
-package.json
 package-lock.json

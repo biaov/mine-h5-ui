@@ -5,7 +5,10 @@ import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { Options as EslintOptions } from 'vite-plugin-eslint'
+import { eslintBaseConfig } from './eslint.config'
 import type { MarkdownViteOptions, TokenItem } from './types'
+
+const { dirname } = import.meta
 
 /**
  * Vite 插件配置
@@ -79,7 +82,7 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
     ]
   },
   workbox: {
-    globDirectory: resolve(__dirname, '../dist'),
+    globDirectory: resolve(dirname, '../dist/docs'),
     skipWaiting: true,
     clientsClaim: true
   }
@@ -89,6 +92,7 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
  * Eslint 配置
  */
 export const eslintConfig: EslintOptions = {
+  baseConfig: eslintBaseConfig,
   lintOnStart: true,
-  exclude: ['node_modules']
+  exclude: ['node_modules', 'dist', 'fonts']
 }

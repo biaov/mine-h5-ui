@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { MeMessageBox, MeToast } from '~/index'
+import { MeMessageBox, MeToast } from '@/plugins'
 import initData from './data'
 import type { ListDataItem, ChildListItem } from './types'
 

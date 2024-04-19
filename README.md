@@ -98,7 +98,7 @@ npm run build
 ### 目录解析
 
 ```MD
-├── mine-h5-ui --------------------------------- 组件库
+├── mine-h5-ui -------------------------------- 组件库名称
 │   ├── .husky -------------------------------- Git 操作时自动触发脚本
 │   ├── .vscode ------------------------------- VSCode 配置
 │   ├── config -------------------------------- 配置文件
@@ -152,6 +152,7 @@ npm run build
 
 - `clipboard`: 剪切板
 - `html2canvas`: 截屏
+- `mine-tinycss`: 原子化 CSS, 重置样式
 - `mockjs`: 模拟数据
 - `qrcode`: 二维码
 - `vue`: 前端框架
@@ -161,6 +162,7 @@ npm run build
 
 - `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
+- `@types/postcss-pxtorem`: `postcss-pxtorem` 的类型
 - `@types/qrcode`: `qrcode` 的类型
 - `@typescript-eslint/eslint-plugin`: 检测和修复 TS 代码
 - `@typescript-eslint/parser`: 解析 TS 代码并生成抽象语法树（AST），以供 Eslint 进行代码检查
@@ -174,18 +176,13 @@ npm run build
 - `eslint-plugin-import`: 检测和修复 JS 中的模块导入导出问题
 - `eslint-plugin-prettier`: 检测不符合 Prettier 格式的代码
 - `eslint-plugin-vue`: 检测和修复 Vue 代码
-- `gulp`: CSS 构建工具
-- `gulp-autoprefixer`: 使用 Gulp 添加浏览器厂商前缀
-- `gulp-clean`: 使用 Gulp 清理文件
-- `gulp-cssmin`: 使用 Gulp 压缩 CSS 代码
-- `gulp-less`: 使用 Gulp 解析 LESS
-- `gulp-postcss`: 使用 Gulp 添加浏览器厂商前缀等其它操作
+- `autoprefixer`: 使用 Gulp 添加浏览器厂商前缀
 - `husky`: Git 操作时自动触发脚本
+- `jsdom`: 模拟浏览器环境
 - `less`: CSS 预编译器
 - `markdown-it-container`: Markdown 解析器
 - `postcss-pxtorem`: 生成 Rem 的 Postcss 插件
 - `prettier`: 代码格式化
-- `rollup-plugin-license`: 生成版权的 Rollup 插件
 - `shiki`: Markdown 代码高亮
 - `tslib`: TS 库
 - `typescript`: 编程语言

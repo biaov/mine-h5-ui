@@ -8,7 +8,7 @@ import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig } from './co
 import { useGlobalVars } from './examples/config/variables'
 
 const { BaseRouter: base } = useGlobalVars()
-
+const { dirname } = import.meta
 /**
  * 构建配置信息
  */
@@ -28,10 +28,10 @@ export default defineConfig({
      * 路径别名
      */
     alias: {
-      '@': resolve(__dirname, './examples'),
-      '~': resolve(__dirname, './packages'),
-      '^': resolve(__dirname, './mobile'),
-      '#': resolve(__dirname, './dist/packages')
+      '@': resolve(dirname, './examples'),
+      '~': resolve(dirname, './packages'),
+      '^': resolve(dirname, './mobile'),
+      '#': resolve(dirname, './dist/packages')
     }
   },
   css: {
@@ -54,8 +54,8 @@ export default defineConfig({
      */
     rollupOptions: {
       input: {
-        main: resolve(__dirname, './index.html'),
-        mobile: resolve(__dirname, './mobile.html')
+        main: resolve(dirname, './index.html'),
+        mobile: resolve(dirname, './mobile.html')
       }
     }
   }

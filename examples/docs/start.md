@@ -51,6 +51,7 @@ app.mount('#app')
 ::: CopyCode
 
 ```js
+// 所有组件样式
 import 'mine-h5-ui/styles/index.css'
 ```
 
@@ -60,23 +61,12 @@ import 'mine-h5-ui/styles/index.css'
 
 ### Rem 适配
 
-- `mine-h5-ui` 中的样式单位默认使用 `px` 作为单位，如果要使用 `rem` 单位，推荐使用以下两个工具：
-  - [👉postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 `postcss` 插件，用于将单位转化为 `rem`。
-  - [👉amfe-flexible](https://github.com/amfe/lib-flexible) 用于设置 `rem` 基准值。
-- 如果你不要使用以上插件，但是想要 `mine-h5-ui` 中的样式单位使用 `rem` 作为单位，那么在自定义主题中使用以下命令去生成单位为 `rem` 的样式：
+- `mine-h5-ui` 中的样式单位默认使用 `px` 作为单位，如果要使用 `rem` 单位，请引入样式替换为：
 
-::: CopyCode
+```js
+// 所有组件样式
+import 'mine-h5-ui/rem/index.css'
 
-```sh
-npm run build:theme-rem
+// 单个组件样式
+import 'mine-h5-ui/rem/MeButton.css'
 ```
-
-:::
-
-::: CopyCode
-
-```sh
-npm i -S postcss-pxtorem amfe-flexible
-```
-
-:::

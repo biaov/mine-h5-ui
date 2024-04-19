@@ -67,3 +67,11 @@ export type PickRequiredUnion<P, U extends keyof P> = MergeIntersection<Merge<Re
  * 除了提取的属性，其他都是必传属性
  */
 export type PickNotRequiredUnion<P, U extends keyof P> = MergeIntersection<Merge<Pick<P, U>, Required<Omit<P, U>>>>
+
+type NativeType = null | number | string | boolean | symbol | Function
+
+type InferDefault<P, T> = ((props: P) => T & {}) | (T extends NativeType ? T : never)
+
+export type InferDefaults<T> = {
+  [K in keyof T]?: InferDefault<T, T[K]>
+}
