@@ -32,7 +32,7 @@ packageJson.scripts = {}
 /**
  * 单独处理逻辑
  */
-if (process.env.NODE_PRE === 'github') {
+if (`${process.env.NODE_PRE}`.includes('github')) {
   packageJson.name = `@biaov/${packageJson.name}`
   packageJson.publishConfig = { registry: 'https://npm.pkg.github.com/' }
 }
