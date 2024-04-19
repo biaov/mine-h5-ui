@@ -25,6 +25,6 @@ const Toast = (arg: Options) => {
 }
 
 const InToast = Toast as AddComponentNameRecord<typeof Toast>
-InToast.componentName = ToastConstructor.name
+InToast.componentName = ToastConstructor.name as string
 
 export default InToast

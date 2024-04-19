@@ -33,6 +33,6 @@
     /* 校验 */
     "strict": true
   },
-  "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["examples/**/*.ts", "examples/**/*.vue", "mobile/**/*.ts", "mobile/**/*.vue", "tests/**/*.ts", "packages/**/*.ts", "packages/**/*.vue", "typings/shims-vue.d.ts", "package.json"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,5 +1,8 @@
+import type { Linter } from 'eslint'
+
 /**
- * eslint-plugin-vue:https://eslint.vuejs.org/
+ * eslint-plugin-vue: https://eslint.vuejs.org/
+ * configure: https://eslint.org/docs/latest/use/configure/
  */
 
 /**
@@ -10,7 +13,7 @@ const developmentOff = process.env.NODE_ENV === 'development' ? 'off' : 'error'
 /**
  * 配置信息
  */
-const config = {
+export const eslintBaseConfig: Linter.Config = {
   env: {
     browser: true,
     es2021: true,
@@ -143,8 +146,11 @@ const config = {
     /**
      * 禁止包 dependencies
      */
-    'import/no-extraneous-dependencies': 'off'
+    'import/no-extraneous-dependencies': 'off',
+
+    /**
+     * 属性名
+     */
+    'vue/valid-attribute-name': 'off'
   }
 }
-
-module.exports = config

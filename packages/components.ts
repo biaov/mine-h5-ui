@@ -67,6 +67,7 @@ export { MeCountTo } from './MeCountTo' // 数字滚动
 export { MeError } from './MeError' // 页面错误
 export { MeGuide } from './MeGuide' // 引导
 export { MeSkeleton } from './MeSkeleton' // 骨架屏
+export { MeBesselCurve, useMeBesselCurve } from './MeBesselCurve' // 贝塞尔曲线
 /* 展示组件 end */
 
 /* 业务组件 start */

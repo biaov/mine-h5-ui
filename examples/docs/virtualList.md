@@ -34,7 +34,7 @@ createApp(App).use(MeVirtualList).mount('#app')
 ```vue
 <template>
   <me-virtual-list height="300px" :list="listData" :itemHeight="50">
-    <template #default="{ item }">
+    <template #="{ item }">
       <div class="item">
         <p>
           <span><template v-text="`#${item.virtualId}.`"></template></span>
@@ -115,7 +115,7 @@ const onLoadMore = () => {
 
 <template>
   <me-virtual-list height="300px" :list="listData" :itemHeight="50" @load-more="onLoadMore">
-    <template #default="{ item }">
+    <template #="{ item }">
       <div class="item">
         <p>
           <span><template v-text="`#${item.virtualId}.`"></template></span>
@@ -179,7 +179,7 @@ const listData = ref(Array.from({ length: 100 }, () => ({ text: Random.cword(14,
 
 <template>
   <me-virtual-list height="300px" :list="listData" @load-more="onLoadMore(list)">
-    <template #default="{ item }">
+    <template #="{ item }">
       <div class="item">
         <p>
           <span><template v-text="`#${item.virtualId}.`"></template></span>

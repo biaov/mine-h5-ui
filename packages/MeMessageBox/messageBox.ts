@@ -67,6 +67,6 @@ const types: OptionType[] = ['alert', 'confirm', 'prompt', 'custom']
 types.forEach(type => {
   MessageBoxConst[type] = (option: Option | string) => (IsType('string', option) ? MessageBox({ message: option as string }, type) : MessageBox(option as Option, type))
 })
-MessageBoxConst.componentName = MessageBoxConstructor.name
+MessageBoxConst.componentName = MessageBoxConstructor.name as string
 
 export default MessageBoxConst

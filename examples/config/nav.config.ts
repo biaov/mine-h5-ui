@@ -411,6 +411,13 @@ export const componentConfig = [
         },
         path: 'skeleton',
         name: 'skeleton'
+      },
+      {
+        meta: {
+          title: 'BesselCurve 贝塞尔曲线'
+        },
+        path: 'besselCurve',
+        name: 'besselCurve'
       }
     ]
   },

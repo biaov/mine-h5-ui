@@ -13,7 +13,7 @@ const { time, btnList, handleStatus, onClick } = useHandle()
     <me-count-down :time="time" format="hh:mm:ss:ms"></me-count-down>
     <div class="label">自定义样式</div>
     <me-count-down :time="time">
-      <template #default="{ hh, mm, ss }">
+      <template #="{ hh, mm, ss }">
         <span class="block">{{ hh }}</span>
         :
         <span class="block">{{ mm }}</span>

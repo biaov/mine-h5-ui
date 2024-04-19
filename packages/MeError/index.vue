@@ -8,7 +8,7 @@ defineOptions({
 
 defineSlots<DefaultSlots>()
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   visible: false,
   title: '页面错误',
   subtit: '请检查网络是否正常',
@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <!-- 空状态 -->
-  <div v-if="visible" class="me-error" :class="[position, theme]" :style="{ background }">
+  <div v-if="visible" class="me-error" :class="[position, theme]">
     <!-- 图片 -->
     <div class="me-error-img">
       <i :class="`iconfont icon-zhongdaanjianguanli`"></i>

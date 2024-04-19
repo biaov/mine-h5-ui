@@ -5,8 +5,8 @@ const install = (app: App) => {
   /**
    * 注册组件
    */
-  Object.values(components).forEach(value => {
-    value.install(app)
+  Object.values(components as Record<string, any>).forEach(value => {
+    value.install && value.install(app)
   })
 }
 

@@ -30,6 +30,6 @@ const Preview = (arg: Option | string) => {
 }
 
 const InPreview = Preview as AddComponentNameRecord<typeof Preview>
-InPreview.componentName = PreviewConstructor.name
+InPreview.componentName = PreviewConstructor.name as string
 
 export default InPreview

@@ -2,4 +2,3 @@
 /node_modules
 fonts
 /*.ts
-/build/*.ts
