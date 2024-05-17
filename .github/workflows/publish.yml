@@ -21,7 +21,7 @@ jobs:
       - run: npm ci
       - run: npm run build:theme
       - run: npm run build:package
-      - run: node scripts/pre-publish.js
+      - run: npm run pre-publish
       - run: echo "VERSION=" >> $GITHUB_ENV
       - run: |
           VERSION=$(node -p "require('./package.json').version")

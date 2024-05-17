@@ -25,7 +25,7 @@
     "test:unit": "vitest run",
     "test:unit:single": "vitest watch tests/unit/besselCurve.spec.ts",
     "prepare": "husky install",
-    "pre-publish": "node scripts/pre-publish.js && start cmd /k cd ./dist/packages",
+    "pre-publish": "node scripts/pre-publish.js",
     "pre-publish:github": "set NODE_PRE=github && node scripts/pre-publish.js && start cmd /k cd ./dist/packages",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
     "tag": "node scripts/tag.js"
