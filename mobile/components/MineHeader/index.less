@@ -1,10 +1,5 @@
 @height: 50px;
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  width: 100%;
   height: @height;
   border-bottom: 1px solid @border-color-common;
   background: fade(@color-white, 90%);
@@ -17,18 +12,11 @@
   // 返回按钮
   .return {
     .same-height;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 40px;
   }
   // 标题信息
   .tit {
     .me-clamp();
     .same-height;
-    width: 100%;
-    padding: 0 40px;
     color: @font-color;
     font-size: @font-size + 2px;
   }

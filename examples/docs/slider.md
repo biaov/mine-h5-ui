@@ -149,11 +149,11 @@ const sliderValue = ref(30)
 | modelValue(v-model) | 双向绑定滑块的值                | number  | --           | --     | --   |
 | max                 | 范围最大值                      | number  | --           | 100    | --   |
 | min                 | 范围最小值                      | number  | --           | 0      | --   |
-| styles              | 自定义样式，[查看详情](#styles) | Object  | --           | --     | --   |
+| styles              | 自定义样式，[查看详情](#styles-属性) | Object  | --           | --     | --   |
 | is-btn              | 自定义按钮                      | boolean | true / false | false  | --   |
 | disabled            | 禁用状态                        | boolean | true / false | false  | --   |
 
-<h3 id="styles">styles 属性</h3>
+### styles 属性
 
 | 参数    | 说明                           | 类型   | 可选值 | 默认值  | 版本   |
 | ------- | ------------------------------ | ------ | ------ | ------- | ------ |

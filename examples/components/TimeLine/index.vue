@@ -1,8 +1,8 @@
 <template>
   <!-- 时间线 -->
-  <div class="timeline">
-    <div class="dot"></div>
-    <div class="tail"></div>
+  <div class="timeline relative pt-0 pr-0 pb-5 pl-24">
+    <div class="dot z-2 left-0 w-14 h-14"></div>
+    <div class="tail left-6 h-full"></div>
     <div class="cont">
       <slot></slot>
     </div>

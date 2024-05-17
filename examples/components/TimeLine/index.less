@@ -1,6 +1,4 @@
 .timeline {
-  position: relative;
-  padding: 0 0 5px 24px;
   &:first-of-type {
     .dot {
       border-color: @color-danger;
@@ -13,18 +11,12 @@
   }
   .dot {
     .same-position();
-    z-index: 2;
-    left: 0;
-    width: 14px;
-    height: 14px;
     border: 2px solid darken(@border-color-line, 10%);
     border-radius: 50%;
     background-color: @color-white;
   }
   .tail {
     .same-position();
-    left: 6px;
-    height: 100%;
     border-left: 2px solid @border-color-line;
   }
   .cont {

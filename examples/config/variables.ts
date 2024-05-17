@@ -1,32 +1,24 @@
-import packageJson from '../../package.json'
+import pkg from '../../package.json'
 
 /**
- * 全局变量
+ * 基础路由
  */
-export const useGlobalVars = () => {
-  /**
-   * Github 地址
-   */
-  const GithubAddress = 'https://github.com/biaov/mine-h5-ui'
+export const baseRouter = '/v2/'
 
-  /**
-   * 基本路由
-   */
-  const BaseRouter = '/v2/'
+/**
+ * Github 地址
+ */
+export const githubLink = pkg.repository.url
 
-  /**
-   * 组件库信息
-   */
-  const libraryInfo = {
-    name: packageJson.name,
-    description: packageJson.description
-  }
-
-  return {
-    GithubAddress,
-    BaseRouter,
-    libraryInfo
-  }
+/**
+ * 组件库信息
+ */
+export const libraryInfo = {
+  name: pkg.name,
+  description: pkg.description
 }
 
-export default useGlobalVars
+/**
+ * 其它展示文档
+ */
+export const otherDocLink = 'https://wordpress.biaov.cn/mine-h5-ui/'

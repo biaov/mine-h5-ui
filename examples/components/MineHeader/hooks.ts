@@ -1,13 +1,11 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import QRcode from 'qrcode'
-import { useGlobalVars } from '@/config/variables'
+import { baseRouter, githubLink } from '@/config/variables'
 import GithubIcon from '@/assets/icon-github.svg'
 import QrcodeIcon from '@/assets/icon-qrcode.svg'
 
 export const useListData = () => {
-  const { GithubAddress, BaseRouter } = useGlobalVars()
-
   /**
    * 导航列表
    */
@@ -21,7 +19,7 @@ export const useListData = () => {
       text: '组件'
     },
     {
-      href: GithubAddress,
+      href: githubLink,
       url: GithubIcon,
       text: 'Github'
     },
@@ -31,7 +29,7 @@ export const useListData = () => {
     }
   ])
 
-  QRcode.toDataURL(globalThis.location.origin + BaseRouter).then(data => {
+  QRcode.toDataURL(globalThis.location.origin + baseRouter).then(data => {
     navList.value[3].href = data
   })
 

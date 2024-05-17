@@ -21,15 +21,14 @@ jobs:
       - run: npm ci
       - run: npm run build:theme
       - run: npm run build:package
-      - run: node scripts/pre-publish.js
-      - run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
-      - run: cd ./dist/packages
+      - run: npm run pre-publish
+      - run: echo "VERSION=" >> $GITHUB_ENV
       - run: |
-          if [[ "${{ env.VERSION }}" == *"beta"* ]]; then
-            echo "Beta version detected. Executing npm command for beta version."
+          VERSION=$(node -p "require('./package.json').version")
+          cd ./dist/packages
+          if [[ "$VERSION" == *"beta"* ]]; then
             npm publish --tag=beta-v2
           else
-            echo "Non-beta version detected. Executing default npm command."
             npm publish
           fi
         env:

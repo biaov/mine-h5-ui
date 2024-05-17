@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * *'
   push:
     branches:
-      - main
+      - pre-merge/*
 jobs:
   generate:
     permissions: write-all

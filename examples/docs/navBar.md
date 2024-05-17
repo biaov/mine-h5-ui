@@ -103,9 +103,9 @@ const styles = Object.freeze({
 | left-arrow | 左侧按钮箭头显示状态      | boolean | true / false | true   | v2.0.0 |
 | left-text  | 左侧按钮文本              | Array   | --           | --     | v2.0.0 |
 | right-text | 右侧按钮文本              | string  | --           | --     | v2.0.0 |
-| styles     | 组件样式，[详情](#Styles) | Object  | --           | --     | v2.0.0 |
+| styles     | 组件样式，[详情](#styles) | Object  | --           | --     | v2.0.0 |
 
-<h4 id="Styles">Styles</h4>
+#### Styles
 
 | 参数         | 说明         | 类型   | 可选值 | 默认值  | 版本   |
 | ------------ | ------------ | ------ | ------ | ------- | ------ |

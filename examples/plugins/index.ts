@@ -1,3 +1,4 @@
+import 'tailwindcss/tailwind.css'
 import mineh5ui, { MeToast, MeMessageBox, MePreview, useStorage, useValidator, useMeBesselCurve } from '~/index'
 import '~/styles/index.less'
 

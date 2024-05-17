@@ -42,7 +42,6 @@ const config: UserConfig = {
   ],
   build: {
     outDir,
-
     /**
      * 多页面
      */

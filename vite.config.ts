@@ -4,16 +4,17 @@ import { resolve } from 'path'
 import markdownVite from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslint from 'vite-plugin-eslint'
-import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig } from './config/plugins'
-import { useGlobalVars } from './examples/config/variables'
+import tailwindcss from 'tailwindcss'
+import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig, tailwindcssConfig } from './config/plugins'
+import { baseRouter } from './examples/config/variables'
 
-const { BaseRouter: base } = useGlobalVars()
 const { dirname } = import.meta
+
 /**
  * 构建配置信息
  */
 export default defineConfig({
-  base,
+  base: baseRouter,
   plugins: [eslint(eslintConfig), vue(vueConfig), markdownVite(markdownViteConfig), VitePWA(vitePwaConfig)],
 
   /**
@@ -42,6 +43,9 @@ export default defineConfig({
       less: {
         additionalData: `@import "@/styles/variables.less";`
       }
+    },
+    postcss: {
+      plugins: [tailwindcss(tailwindcssConfig())]
     }
   },
   build: {

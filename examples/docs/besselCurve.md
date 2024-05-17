@@ -96,13 +96,13 @@ const list = ref([
 
 | 参数         | 说明         | 类型                                                  | 可选值       | 默认值     | 版本   |
 | ------------ | ------------ | ----------------------------------------------------- | ------------ | ---------- | ------ |
-| list         | 线的坐标数据 | [ListItem[]](#ListItem)                               | --           | []         | v2.9.0 |
+| list         | 线的坐标数据 | [ListItem[]](#listitem)                               | --           | []         | v2.9.0 |
 | direction    | 对齐方式     | `horizontal` / `vertical` / `(horizontal/vertical)[]` | --           | horizontal | v2.9.0 |
 | color        | 线的颜色     | string                                                | --           | #d9d9d9    | v2.9.0 |
 | stroke-width | 线的大小     | number                                                | --           | 1          | v2.9.0 |
 | arrow        | 是否需要箭头 | boolean                                               | true / false | false      | v2.9.0 |
 
-<h4 id="ListItem">ListItem</h4>
+#### ListItem
 
 | 参数  | 说明           | 类型   | 可选值 | 默认值 | 版本   |
 | ----- | -------------- | ------ | ------ | ------ | ------ |

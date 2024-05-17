@@ -46,8 +46,8 @@ export default (
     }
     rect.endPointStyle = {
       ...defaultRect,
-      top: '150px',
-      left: '270px',
+      top: '140px',
+      left: '200px',
       'border-radius': '50%',
       background: '#67c23a'
     }

@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw, Router } from 'vue-router'
-import { useGlobalVars } from '@/config/variables'
+import { baseRouter } from '@/config/variables'
 import docs from './docs'
-
-const { BaseRouter } = useGlobalVars()
 
 /**
  * 路由配置
@@ -32,7 +30,7 @@ const routes: RouteRecordRaw[] = [
  * 路由实例
  */
 const router: Router = createRouter({
-  history: createWebHistory(BaseRouter),
+  history: createWebHistory(baseRouter),
   routes
 })
 

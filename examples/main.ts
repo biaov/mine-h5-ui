@@ -6,7 +6,6 @@ import { componentConfig } from '@/config/nav.config'
 import router from './router'
 import App from './App.vue'
 import mineh5ui from './plugins'
-import 'mine-tinycss'
 
 const app = createApp(App)
 app.component('TimeLine', TimeLine)
