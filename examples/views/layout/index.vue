@@ -1,11 +1,9 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { useGlobalVars } from '@/config/variables'
+import { githubLink, libraryInfo, otherDocLink } from '@/config/variables'
 import MineHeader from '@/components/MineHeader'
 import ReloadPrompt from '@/components/ReloadPrompt'
 import { useCanvas } from './hooks'
-
-const { GithubAddress, libraryInfo } = useGlobalVars()
 
 /**
  * canvas 对象
@@ -21,26 +19,27 @@ onMounted(() => {
   <!-- 首页 -->
   <div class="layout">
     <!-- 背景 -->
-    <div class="bg">
-      <img src="../../assets/windmill.png" class="rotate" alt="windmill" />
-      <canvas ref="canvas" class="canvas" width="100%" height="100%"></canvas>
+    <div class="bg absolute top-0 left-0 z-1 w-screen h-screen">
+      <img src="../../assets/windmill.png" class="rotate absolute top-40 left-0 w-200 h-200 opacity-10" alt="windmill" />
+      <canvas ref="canvas" class="absolute left-0 top-0 w-full h-full" width="100%" height="100%"></canvas>
     </div>
     <!-- 头部 -->
     <mine-header />
     <!-- 内容 -->
-    <div class="content">
-      <div class="logo"><img src="../../assets/logo.svg" alt="mine-h5-ui Logo" /></div>
-      <h1 class="tit">{{ libraryInfo.description }}</h1>
-      <p class="desc">
+    <div class="content relative z-2 text-center">
+      <div class="logo w-220 mx-auto my-0"><img src="../../assets/logo.svg" alt="mine-h5-ui Logo" /></div>
+      <h1 class="tit mt-56 text-30">{{ libraryInfo.description }}</h1>
+      <p class="desc text-18 mx-0 mt-10 mb-50">
         如果你还冇心仪的 UI 框架，不妨试试
-        <router-link to="/doc">{{ libraryInfo.name }}</router-link>
+        <router-link to="/doc" class="inline">{{ libraryInfo.name }}</router-link>
         ，也许会让你有意外的收获。
       </p>
-      <ul class="btns">
+      <ul class="btns flex justify-center">
         <li>
           <router-link to="/doc">开始使用</router-link>
         </li>
-        <li><a :href="GithubAddress" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a :href="githubLink" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a :href="otherDocLink" target="_blank" rel="noopener noreferrer">其它展示文档</a></li>
       </ul>
     </div>
   </div>

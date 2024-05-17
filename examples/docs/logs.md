@@ -14,7 +14,22 @@
 
 :::TimeLine
 
-## v2.9.0 - 最新版本
+## v2.9.2 - 最新版本
+
+`2024-05-17`
+
+- 🔥 新增
+  - 新增 `auto-cli.jsonc` 用于更新依赖版本
+  - 新增 `tailwindcss` 用于生成 CSS 样式内容
+- ⚙️ 更新
+  - 优化文档链接方式
+  - 移除 `.ncurc.json`
+  - `examples` 和 `mobile` 文件夹样式改成 tailwindcss
+  - 更新依赖版本
+  - 代码主题由 `dark-plus` 改为 `github-light`
+- 🐞 修复已知 BUG
+
+## v2.9.0
 
 `2024-04-19`
 

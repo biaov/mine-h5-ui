@@ -6,8 +6,8 @@ const { copyDom, codeCont } = useRefs()
 
 <template>
   <!-- 时间线 -->
-  <div class="copy-code">
-    <div ref="copyDom" class="copy" data-clipboard-action="copy" title="复制"><img src="../../assets/icon-copy-2.png" alt="copy" /></div>
+  <div class="copy-code relative">
+    <div ref="copyDom" class="copy absolute top-5 right-5 w-30 p-5 cursor-pointer" data-clipboard-action="copy" title="复制"><img src="../../assets/icon-copy-2.png" alt="copy" class="w-full" /></div>
     <div ref="codeCont" class="cont">
       <slot></slot>
     </div>

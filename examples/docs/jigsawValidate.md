@@ -139,11 +139,11 @@ const slideStyle = {
 | width      | 图片宽度 | string  | --           | 100%                                 | v2.3.10 |
 | height     | 图片高度 | string  | --           | 300px                                | v2.3.10 |
 | random     | 随机位置 | boolean | true / false | true                                 | v2.3.10 |
-| slideStyle | 滑块样式 | Object  | --           | [slideStyle](#slideStyle)            | v2.3.10 |
+| slideStyle | 滑块样式 | Object  | --           | [slideStyle](#slidestyle)            | v2.3.10 |
 | tips       | 提示语   | string  | --           | 按住左边按钮向右拖动完成上方图像验证 | v2.3.10 |
 | range      | 容错值   | number  | --           | 5                                    | v2.3.10 |
 
-<h3 id="slideStyle">slideStyle</h3>
+### slideStyle
 
 | 参数          | 说明         | 类型   | 可选值 | 默认值  | 版本    |
 | ------------- | ------------ | ------ | ------ | ------- | ------- |

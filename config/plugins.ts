@@ -35,7 +35,8 @@ export const markdownViteConfig: MarkdownViteOptions = {
     /**
      * 代码高亮
      */
-    const theme = 'dark-plus'
+    // const themes = ['github-light', 'github-dark', 'dark-plus', 'light-plus']
+    const theme = 'github-light'
     const highlighter = await getHighlighter({ themes: [theme], langs: Object.keys(bundledLanguages) })
     md.set({
       highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang, theme })
@@ -95,4 +96,25 @@ export const eslintConfig: EslintOptions = {
   baseConfig: eslintBaseConfig,
   lintOnStart: true,
   exclude: ['node_modules', 'dist', 'fonts']
+}
+
+/**
+ * tailwindcss 配置
+ */
+export const tailwindcssConfig = () => {
+  const spacing = {}
+
+  for (let i = 0; i < 1000; i++) {
+    spacing[i] = `${i}px`
+  }
+
+  return {
+    content: ['./examples/**/*.vue', './mobile/**/*.vue'],
+    theme: {
+      spacing,
+      extend: {
+        fontSize: ({ theme }) => theme('spacing')
+      }
+    }
+  }
 }

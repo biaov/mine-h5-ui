@@ -1,32 +1,31 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ReloadPrompt from '@/components/ReloadPrompt'
-import useGlobalVars from '@/config/variables'
+import { libraryInfo } from '@/config/variables'
 import { useWebData } from './hook'
 
 const { listData, accordionActive } = useWebData()
-const { libraryInfo } = useGlobalVars()
 
 /**
  * 列表展示方式
  */
-const showMode = ref('iframe')
+const showMode = ref('default')
 </script>
 
 <template>
   <!-- layout -->
-  <div class="layout">
-    <div class="hd">
-      <h3 class="tit">
-        <img src="../../../examples/assets/logo.svg" alt="mine-h5-ui logo" />
-        <span>{{ libraryInfo.name }}</span>
+  <div class="layout h-screen overflow-y-auto">
+    <div class="hd mb-30">
+      <h3 class="tit flex items-center w-full h-60">
+        <img src="../../../examples/assets/logo.svg" alt="mine-h5-ui" class="logo w-50 mr-15" />
+        <span class="text-26 font-medium">{{ libraryInfo.name }}</span>
       </h3>
       <p class="desc">{{ libraryInfo.description }}</p>
     </div>
     <!-- 列表 -->
     <ul class="list-out" v-if="showMode === 'default'">
       <li v-for="(item, index) in listData" :key="index">
-        <h3 class="tit">{{ item.meta.title }}</h3>
+        <h3 class="tit h-30 leading-[30px]">{{ item.meta.title }}</h3>
         <ul class="list-in">
           <li v-for="(it, i) in item.items" :key="i">
             <router-link :to="{ name: it.name }">

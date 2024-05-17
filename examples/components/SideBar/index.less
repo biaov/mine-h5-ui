@@ -16,21 +16,15 @@
   }
 }
 .side-bar {
-  width: 220px;
-  height: 100%;
   border-right: 1px solid @border-color-common;
-  padding: 15px 0 30px;
-  overflow-y: auto;
   > li {
     .tit {
       .same-height();
       color: lighten(@color-primary, 10%);
       font-size: @font-size;
-      font-weight: 600;
     }
     .list-ct {
       > li {
-        position: relative;
         &.spot::after {
           content: '';
           position: absolute;
@@ -46,8 +40,6 @@
           .same-height(25px);
           color: darken(@font-color-reduce, 5%);
           font-size: @font-size;
-          font-weight: 600;
-          cursor: pointer;
           &.in {
             .same-font();
           }

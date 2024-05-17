@@ -5,9 +5,5 @@ useRegisterSW()
 </script>
 
 <template>
-  <div class="reload-prompt"></div>
+  <div class="reload-prompt hidden"></div>
 </template>
-
-<style scoped lang="less">
-@import './index.less';
-</style>

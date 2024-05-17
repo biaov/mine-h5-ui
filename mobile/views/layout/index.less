@@ -1,9 +1,7 @@
 @padding-15: 15px;
 
 .layout {
-  height: 100vh;
   padding: @padding-15;
-  overflow-y: auto;
   background: @color-white;
   -webkit-tap-highlight-color: transparent;
   .same-padding {
@@ -14,20 +12,9 @@
     font-size: @font-size;
   }
   .hd {
-    margin-bottom: 30px;
     .tit {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 60px;
-      > img {
-        width: 50px;
-        margin-right: 15px;
-      }
       > span {
         color: @font-color;
-        font-size: 26px;
-        font-weight: 500;
       }
     }
     .desc {
@@ -39,8 +26,6 @@
     .tit {
       .same-padding;
       .same-font;
-      height: 30px;
-      line-height: 30px;
     }
     .list-in {
       > li {

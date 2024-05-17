@@ -3,7 +3,6 @@ import { MessageEventListener } from '@/utils/functions'
 import mineh5ui from '@/plugins'
 import App from './App.vue'
 import router from './router'
-import 'mine-tinycss'
 
 const app = createApp(App)
 app.use(mineh5ui)

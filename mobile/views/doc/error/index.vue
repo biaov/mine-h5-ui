@@ -8,7 +8,7 @@ const { onClickSwitch } = useSwitch({ listData })
 <template>
   <!-- 错误 -->
   <div class="btn">
-    <me-button type="primary" @click="onClickSwitch">切换{{ listData[0].position !== 'fixed' ? '正常' : '列表' }}显示</me-button>
+    <me-button type="primary" @click="onClickSwitch">切换{{ listData[0].position === 'fixed' ? '列表' : '正常' }}显示</me-button>
   </div>
   <ul class="error">
     <li v-for="(item, index) in listData" :key="index">

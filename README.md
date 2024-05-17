@@ -152,7 +152,6 @@ npm run build
 
 - `clipboard`: 剪切板
 - `html2canvas`: 截屏
-- `mine-tinycss`: 原子化 CSS, 重置样式
 - `mockjs`: 模拟数据
 - `qrcode`: 二维码
 - `vue`: 前端框架
@@ -185,6 +184,7 @@ npm run build
 - `prettier`: 代码格式化
 - `shiki`: Markdown 代码高亮
 - `tslib`: TS 库
+- `tailwindcss`: 根据 html class 生成样式
 - `typescript`: 编程语言
 - `unplugin-vue-markdown`: 解析 Markdown 文件的 Vite 插件
 - `vite`: 项目构建工具

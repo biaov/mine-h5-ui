@@ -127,7 +127,7 @@ const divider = Object.freeze({
 | line   | 线条样式，[详情](#line) | Object          | --     | [详情](#line) | v2.0.0 |
 | text   | 文本样式，[详情](#text) | Object          | --     | [详情](#text) | v2.0.0 |
 
-<h4 id="line">Line</h4>
+#### Line
 
 | 参数   | 说明     | 类型   | 可选值 | 默认值                  | 版本   |
 | ------ | -------- | ------ | ------ | ----------------------- | ------ |
@@ -135,7 +135,7 @@ const divider = Object.freeze({
 | color  | 线条颜色 | string | --     | #dcdfe6                 | v2.0.0 |
 | size   | 线条大小 | number | --     | list.length < 3 ? 1 : 6 | v2.0.0 |
 
-<h4 id="text">Text</h4>
+#### Text
 
 | 参数  | 说明     | 类型   | 可选值 | 默认值  | 版本   |
 | ----- | -------- | ------ | ------ | ------- | ------ |

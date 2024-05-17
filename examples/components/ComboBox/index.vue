@@ -8,15 +8,15 @@ const { isShow, onClickFrame, onClickItem } = useShowAction(props)
 
 <template>
   <!-- 下拉框 -->
-  <div class="combo-box" @click.stop="onClickFrame">
-    <div class="txt">
+  <div class="combo-box relative cursor-pointer" @click.stop="onClickFrame">
+    <div class="txt w-100 py-5 pr-4 pl-10 flex justify-between items-center">
       <span>{{ list[1].version }}</span>
-      <img src="../../assets/icon-right.png" alt="icon-right.png" :class="{ rotate: isShow }" />
+      <img src="../../assets/icon-right.png" alt="icon-right.png" :class="{ rotate: isShow }" class="w-16 opacity-40" />
     </div>
     <!-- 列表 -->
     <transition name="translate">
-      <ul v-if="isShow" class="dropdown">
-        <li v-for="(item, index) in list" :key="index" @click="onClickItem(item)">{{ item.version }}</li>
+      <ul v-if="isShow" class="dropdown absolute w-100 top-36 left-0 py-6 px-0">
+        <li v-for="(item, index) in list" :key="index" class="w-full h-30 leading-30 px-10 py-0" @click="onClickItem(item)">{{ item.version }}</li>
       </ul>
     </transition>
   </div>
