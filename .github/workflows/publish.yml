@@ -17,15 +17,13 @@ jobs:
         with:
           node-version: '20.12.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install -g npm
-      - run: npm ci
+      - run: npm i
       - run: npm run build:theme
       - run: npm run build:package
       - run: npm run pre-publish
-      - run: echo "VERSION=" >> $GITHUB_ENV
       - run: |
           VERSION=$(node -p "require('./package.json').version")
-          cd ./dist/packages
+          cd dist/packages
           if [[ "$VERSION" == *"beta"* ]]; then
             npm publish --tag=beta-v2
           else
