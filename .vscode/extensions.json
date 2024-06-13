@@ -1,4 +1,4 @@
 {
   /* 推荐扩展 */
-  "recommendations": ["Vue.volar"]
+  "recommendations": ["Vue.volar", "esbenp.prettier-vscode"]
 }
