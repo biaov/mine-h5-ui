@@ -1,20 +1,10 @@
+import type { ModelRef } from 'vue'
 import type { PickNotRequiredUnion } from '../types'
-
-/**
- * emits
- */
-export interface Emits {
-  (event: 'update:modelValue', node: HTMLCanvasElement): void
-}
 
 /**
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue?: HTMLCanvasElement
   /**
    * 宽度
    */
@@ -46,6 +36,11 @@ export interface Props {
 }
 
 /**
- * hook
+ * useDraw
  */
-export type PropsHookParam = PickNotRequiredUnion<Props, 'modelValue'>
+export namespace USEDraw {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    modelValue: ModelRef<HTMLCanvasElement | undefined>
+  }
+}

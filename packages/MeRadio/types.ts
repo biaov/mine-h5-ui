@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { Ref, ModelRef } from 'vue'
 import type { PickNotRequiredUnion } from '../types'
 
 /**
@@ -14,7 +14,6 @@ export interface RadioGroupContext {
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', bool: boolean): void
   (event: 'click'): void
 }
 
@@ -22,10 +21,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 的值
-   */
-  modelValue?: boolean
   /**
    * 单选框索引名称
    */
@@ -60,3 +55,14 @@ export interface Props {
  * hook
  */
 export type PropsHookParam = PickNotRequiredUnion<Props, 'name'>
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<PropsHookParam>
+    emit: Emits
+    isChecked: ModelRef<boolean>
+  }
+}

@@ -1,10 +1,10 @@
 import { ref, watch, nextTick } from 'vue'
-import type { Props, Emits } from './types'
+import type { USEShow } from './types'
 
 /**
  * 操作
  */
-export const useShow = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useShow = ({ visible }: USEShow.Option) => {
   /**
    * 是否显示模态框
    */
@@ -37,12 +37,12 @@ export const useShow = (props: Readonly<Required<Props>>, emit: Emits) => {
     isShow.value = false
     setTimeout(() => {
       isShowMask.value = false
-      emit('update:visible', false)
+      visible.value = false
     }, animationDuration)
   }
 
   watch(
-    () => props.visible,
+    visible,
     value => {
       value ? showMask() : hideMask()
     },

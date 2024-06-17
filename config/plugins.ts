@@ -5,7 +5,7 @@ import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { Options as EslintOptions } from 'vite-plugin-eslint'
-import { eslintBaseConfig } from './eslint.config'
+import { eslintBaseConfig } from '../eslint.config'
 import type { MarkdownViteOptions, TokenItem } from './types'
 
 const { dirname } = import.meta

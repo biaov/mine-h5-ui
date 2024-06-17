@@ -1,10 +1,10 @@
 import { ref, watch, computed, nextTick } from 'vue'
-import type { Props, Emits } from './types'
+import type { Props, USEMask } from './types'
 
 /**
  * mask
  */
-export const useMask = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useMask = ({ emit, visibleModel }: USEMask.Option) => {
   /**
    * 是否显示模态框
    */
@@ -37,13 +37,13 @@ export const useMask = (props: Readonly<Required<Props>>, emit: Emits) => {
     isShow.value = false
     setTimeout(() => {
       isShowMask.value = false
-      emit('update:visible', false)
+      visibleModel.value = false
       emit('cancel')
     }, animationDuration)
   }
 
   watch(
-    () => props.visible,
+    visibleModel,
     value => {
       value ? showMask() : hideMask()
     },

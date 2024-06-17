@@ -78,12 +78,12 @@ createApp(App).use(MePopup).mount('#app')
 
 ### 参数
 
-| 参数      | 说明           | 类型    | 可选值                               | 默认值 | 版本   |
-| --------- | -------------- | ------- | ------------------------------------ | ------ | ------ |
-| visible   | 弹出层显示状态 | boolean | true / false                         | --     | v2.0.0 |
-| position  | 弹窗位置       | string  | center / top / right / bottom / left | center | v2.0.0 |
-| closeable | 关闭图标的显示 | boolean | true / false                         | false  | v2.0.0 |
-| radius    | 弹窗倒角       | string  | --                                   | 0      | v2.0.0 |
+| 参数                     | 说明           | 类型    | 可选值                               | 默认值 | 版本   |
+| ------------------------ | -------------- | ------- | ------------------------------------ | ------ | ------ |
+| visible(v-model:visible) | 弹出层显示状态 | boolean | true / false                         | --     | v2.0.0 |
+| position                 | 弹窗位置       | string  | center / top / right / bottom / left | center | v2.0.0 |
+| closeable                | 关闭图标的显示 | boolean | true / false                         | false  | v2.0.0 |
+| radius                   | 弹窗倒角       | string  | --                                   | 0      | v2.0.0 |
 
 ### Slots
 

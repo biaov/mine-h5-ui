@@ -1,8 +1,9 @@
+import type { ModelRef, Ref } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', value: string | number): void
   (event: 'focus', e: FocusEvent): void
   (event: 'blur', e: FocusEvent): void
   (event: 'change', e: Event): void
@@ -15,10 +16,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * input 绑定值
-   */
-  modelValue?: string | number
   /**
    * 输入框值
    */
@@ -87,4 +84,16 @@ export interface Props {
    * 是否开启倒计时
    */
   smsIs?: boolean
+}
+
+/**
+ * useInput
+ */
+export namespace USEInput {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    sms: Ref<HTMLDivElement | undefined>
+    inputVal: ModelRef<string | number>
+  }
 }

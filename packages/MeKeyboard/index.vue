@@ -10,7 +10,6 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  visible: false,
   skinType: 'gray',
   skinStyle: () => ({
     bgc: '',
@@ -19,14 +18,18 @@ const props = withDefaults(defineProps<Props>(), {
   }),
   isPadding: true
 })
+/**
+ * 数字输入显示状态
+ */
+const visibleModel = defineModel<boolean>('visible', { default: false })
 
-const { isActive } = usePadding(props, emit)
-const { onClick, onDelete, onComplate } = useHandler(emit)
+const { isActive } = usePadding({ props, emit, visibleModel })
+const { onClick, onDelete, onComplate } = useHandler({ emit, visibleModel })
 </script>
 
 <template>
   <!-- 数字键盘 -->
-  <ul class="me-keyboard" :class="`me-keyboard-${skinType} ${visible ? 'show' : ''} ${isActive ? 'me-keyboard-active' : ''}`" @click.stop>
+  <ul class="me-keyboard" :class="`me-keyboard-${skinType} ${visibleModel ? 'show' : ''} ${isActive ? 'me-keyboard-active' : ''}`" @click.stop>
     <li v-for="item in 9" :key="item" @click="onClick(item)">{{ item }}</li>
     <li @click="onComplate" class="complate">完成</li>
     <li @click="onClick(0)">0</li>

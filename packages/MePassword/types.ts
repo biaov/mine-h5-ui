@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', str: string): void
   (event: 'focus', e: MouseEvent): void
   (event: 'blur', e: MouseEvent): void
 }
@@ -11,10 +12,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 的值
-   */
-  modelValue?: string
   /**
    * 输入框模式
    */
@@ -31,4 +28,15 @@ export interface Props {
    * 聚焦状态
    */
   isFocus?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    modelValue: ModelRef<string>
+  }
 }

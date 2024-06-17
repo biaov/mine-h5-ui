@@ -10,7 +10,6 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: 0,
   icon: 'icon-star4',
   iconSelect: 'icon-star3',
   color: '#fed835',
@@ -22,7 +21,9 @@ const props = withDefaults(defineProps<Props>(), {
   size: ''
 })
 
-const { listData, onClick } = useHandler(props, emit)
+const modelValue = defineModel<number>({ default: 0 })
+
+const { listData, onClick } = useHandler({ props, emit, modelValue })
 </script>
 
 <template>

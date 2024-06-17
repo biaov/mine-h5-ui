@@ -9,7 +9,6 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
   type: 'datetime',
   visible: false,
   minDate: () => {
@@ -36,8 +35,13 @@ const props = withDefaults(defineProps<Props>(), {
   }
 })
 
+/**
+ * 拼接的地址
+ */
+const modelValue = defineModel<string>({ default: '' })
+
 const { show, currentValue, listData, distance, duration, filterNumber, getCurNum, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
-const { onCancel, onSure } = useBtns(props, emit, currentValue)
+const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
 </script>
 
 <template>

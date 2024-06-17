@@ -19,8 +19,13 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false
 })
 
-const { inputVal, onKeypress, onFocus, onBlur, onInput, onChange } = useSearch(props, emit)
-const { onClean, handleBtn } = useBtns(emit)
+/**
+ * 输入框的值
+ */
+const inputVal = defineModel<string>()
+
+const { onKeypress, onFocus, onBlur, onInput, onChange } = useSearch(emit)
+const { onClean, handleBtn } = useBtns({ emit, inputVal })
 </script>
 
 <template>

@@ -1,21 +1,16 @@
 import { ref, provide, watch } from 'vue'
 import { MeCheckboxGroupKey } from './token'
-import type { Props, OnChangeParams, Emits } from './types'
+import type { OnChangeParams, USEInitSlots } from './types'
 
 /**
  * 初始化 slots
  */
-export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
-  /**
-   * 当前 value 值
-   */
-  const currentValue = ref([...props.modelValue])
-
+export const useInitSlots = ({ emit, currentValue }: USEInitSlots.Option) => {
   /**
    * 改变 value 的值
    */
   const onChange = ({ name, isChecked }: OnChangeParams) => {
-    const arr = currentValue.value
+    const names = [...currentValue.value]
 
     /**
      * 判断之前是否选中
@@ -24,29 +19,18 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
       /**
        * 取消选中状态
        */
-      arr.splice(arr.indexOf(name), 1)
+      names.splice(names.indexOf(name), 1)
     } else {
       /**
        * 选中状态
        */
-      arr.push(name)
+      names.push(name)
     }
-
-    emit('update:modelValue', currentValue.value)
+    currentValue.value = names
     emit('change', currentValue.value)
   }
 
   provide(MeCheckboxGroupKey, { name: MeCheckboxGroupKey, currentValue, onChange })
-
-  watch(
-    () => props.modelValue,
-    value => {
-      currentValue.value = [...value]
-    },
-    {
-      deep: true
-    }
-  )
 
   return {}
 }

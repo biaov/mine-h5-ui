@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', bool: boolean): void
   (event: 'end'): void
 }
 
@@ -10,10 +11,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * 开始状态
-   */
-  modelValue?: boolean
   /**
    * 开始数字
    */
@@ -30,4 +27,15 @@ export interface Props {
    * 千分符
    */
   thousand?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    modelValue: ModelRef<boolean>
+  }
 }

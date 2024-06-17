@@ -1,12 +1,29 @@
 import { ref, computed, watch } from 'vue'
 import { DeepCopyRA } from '../MeAPI/function'
 import calcSize, { getSymmPoint } from './calcSize'
-import type { Props, CalcSizeName, ListDataItem, AngleToCursorItem, Emits, Point, Distance, Rect, MoveShare, ResizeShare, RotateShare, ScaleShare } from './types'
+import type {
+  Props,
+  CalcSizeName,
+  ListDataItem,
+  AngleToCursorItem,
+  Emits,
+  Point,
+  Distance,
+  Rect,
+  MoveShare,
+  ResizeShare,
+  RotateShare,
+  ScaleShare,
+  USEHandler,
+  USEMove,
+  USEResize,
+  USEScale
+} from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandler = ({ props, emit, listModel, currentModel }: USEHandler.Option) => {
   /**
    * 列表数据
    */
@@ -28,7 +45,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 获取当前 item
    */
-  const getCurItem = computed(() => listData.value[props.current]?.rect ?? {})
+  const getCurItem = computed(() => listData.value[currentModel.value]?.rect ?? {})
 
   /**
    * 获取当前 cursor
@@ -60,14 +77,14 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 更新 list
    */
   const onUpdate = () => {
-    emit('update:list', listData.value)
+    listModel.value = listData.value
   }
 
   /**
    * 点击删除按钮
    */
   const onDelete = () => {
-    listData.value.splice(props.current, 1)
+    listData.value.splice(currentModel.value, 1)
     onUpdate()
     onEmitChange('delete')
   }
@@ -76,11 +93,11 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 点击选中项
    */
   const onClick = (index: number) => {
-    emit('update:current', index)
+    currentModel.value = index
   }
 
   watch(
-    () => props.list,
+    listModel,
     (value: ListDataItem[]) => {
       listData.value = DeepCopyRA(value)
     },
@@ -102,9 +119,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
 /**
  * 移动
  */
-export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
-  const { listData, getCurItem, onEmitChange, onUpdate } = share
-
+export const useMove = ({ listData, getCurItem, onEmitChange, onUpdate, currentModel }: USEMove.Option) => {
   /**
    * 开始坐标
    */
@@ -156,11 +171,11 @@ export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
     /**
      * 矩形移动的距离
      */
-    listData.value[props.current].rect.x = distX
+    listData.value[currentModel.value].rect.x = distX
     /**
      * 矩形移动的距离
      */
-    listData.value[props.current].rect.y = distY
+    listData.value[currentModel.value].rect.y = distY
     onEmitChange('translate')
     onUpdate()
   }
@@ -181,11 +196,11 @@ export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
       /**
        * 矩形移动的距离
        */
-      listData.value[props.current].rect.x = distX
+      listData.value[currentModel.value].rect.x = distX
       /**
        * 矩形移动的距离
        */
-      listData.value[props.current].rect.y = distY
+      listData.value[currentModel.value].rect.y = distY
       onEmitChange('translate')
       onUpdate()
     }
@@ -211,8 +226,7 @@ export const useMove = (props: Readonly<Required<Props>>, share: MoveShare) => {
 /**
  * 调整大小
  */
-export const useResize = (props: Readonly<Required<Props>>, share: ResizeShare) => {
-  const { listData, getCurItem, onEmitChange, onUpdate } = share
+export const useResize = ({ listData, getCurItem, onEmitChange, onUpdate, currentModel }: USEResize.Option) => {
   /**
    * 开始坐标
    */
@@ -276,7 +290,7 @@ export const useResize = (props: Readonly<Required<Props>>, share: ResizeShare) 
     const { x, y } = getDragRect.value!
     resultRect.x -= x
     resultRect.y -= y
-    listData.value[props.current].rect = resultRect
+    listData.value[currentModel.value].rect = resultRect
 
     onUpdate()
     onEmitChange('resize')
@@ -304,7 +318,7 @@ export const useResize = (props: Readonly<Required<Props>>, share: ResizeShare) 
       const { x, y } = getDragRect.value!
       resultRect.x -= x
       resultRect.y -= y
-      Object.assign(listData.value[props.current].rect, resultRect)
+      Object.assign(listData.value[currentModel.value].rect, resultRect)
       onUpdate()
       onEmitChange('resize')
     }
@@ -423,8 +437,7 @@ export const useRotate = (props: Readonly<Required<Props>>, share: RotateShare) 
 /**
  * 双指缩放
  */
-export const useScale = (props: Readonly<Required<Props>>, share: ScaleShare) => {
-  const { listData, getCurItem, onEmitChange, onUpdate } = share
+export const useScale = ({ props, listData, getCurItem, onEmitChange, onUpdate, currentModel }: USEScale.Option) => {
   /**
    * 开始两指距离
    */
@@ -466,10 +479,10 @@ export const useScale = (props: Readonly<Required<Props>>, share: ScaleShare) =>
     const scale = (calcDistance(e.touches) - startTouchDist) / props.scale + 1
     const tempW = w * scale
     const tempH = h * scale
-    listData.value[props.current].rect.x = x + (w - tempW) / 2
-    listData.value[props.current].rect.y = y + (h - tempH) / 2
-    listData.value[props.current].rect.w = tempW
-    listData.value[props.current].rect.h = tempH
+    listData.value[currentModel.value].rect.x = x + (w - tempW) / 2
+    listData.value[currentModel.value].rect.y = y + (h - tempH) / 2
+    listData.value[currentModel.value].rect.w = tempW
+    listData.value[currentModel.value].rect.h = tempH
     onEmitChange('scale')
     onUpdate()
   }

@@ -12,16 +12,18 @@ defineSlots<DefaultSlots>()
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  visible: false,
   disabledClose: false
 })
-
-const { url, onStep } = useHandler(props, emit)
+/**
+ * 显示状态
+ */
+const visibleModel = defineModel<boolean>('visible', { default: false })
+const { url, onStep } = useHandler({ props, emit, visibleModel })
 </script>
 
 <template>
   <!-- 引导 -->
-  <div class="me-guide" @click.stop v-if="visible">
+  <div class="me-guide" @click.stop v-if="visibleModel">
     <img :src="url" class="img" mode="fill" @click="onStep" />
     <slot></slot>
   </div>

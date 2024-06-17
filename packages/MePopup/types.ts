@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:visible', bool: boolean): void
   (event: 'cancel'): void
 }
 
@@ -10,10 +11,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * 是否显示弹出层
-   */
-  visible?: boolean
   /**
    * 是否显示模态框
    */
@@ -30,4 +27,14 @@ export interface Props {
    * 倒角数值
    */
   radius?: string
+}
+
+/**
+ * useMask
+ */
+export namespace USEMask {
+  export interface Option {
+    emit: Emits
+    visibleModel: ModelRef<boolean>
+  }
 }

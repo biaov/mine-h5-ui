@@ -13,7 +13,6 @@ defineSlots<DefaultSlots>()
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: false,
   name: '',
   shape: 'round',
   icon: '',
@@ -23,7 +22,12 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false
 })
 
-const { isChecked, iconName, handleClick } = useHandler(props, emit)
+/**
+ * 是否选中
+ */
+const isChecked = defineModel<boolean>({ default: false })
+
+const { iconName, handleClick } = useHandler({ props, emit, isChecked })
 </script>
 
 <template>

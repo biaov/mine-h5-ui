@@ -8,13 +8,14 @@ defineOptions({
 
 const emit = defineEmits<Emits>()
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   visible: false,
   tips: '立即分享给好友'
 })
 
-const { isShowMask, isShow, hideMask, animationDuration } = useShow(props, emit)
-const { onLi, onCancel } = useBtns(emit)
+const visibleModel = defineModel<boolean>('visible', { default: false })
+const { isShowMask, isShow, hideMask, animationDuration } = useShow(visibleModel)
+const { onLi, onCancel } = useBtns({ emit, visibleModel })
 </script>
 
 <template>

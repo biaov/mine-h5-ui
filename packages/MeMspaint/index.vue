@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import { useDraw } from './hooks'
-import type { Props, Emits } from './types'
+import type { Props } from './types'
 
 defineOptions({
   name: 'MeMspaint'
 })
-
-const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
   width: '200px',
@@ -17,7 +15,11 @@ const props = withDefaults(defineProps<Props>(), {
   lineWidth: 1,
   visible: true
 })
-const { canvasRef, getBorder } = useDraw(props, emit)
+/**
+ * canvas 节点
+ */
+const modelValue = defineModel<HTMLCanvasElement>()
+const { canvasRef, getBorder } = useDraw({ props, modelValue })
 </script>
 
 <template>

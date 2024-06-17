@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { Ref, ModelRef } from 'vue'
 
 // onChange 参数
 export interface OnChangeParams {
@@ -10,7 +10,6 @@ export interface OnChangeParams {
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', arr: (string | number)[]): void
   (event: 'change', arr: (string | number)[]): void
 }
 
@@ -19,12 +18,17 @@ export interface Emits {
  */
 export interface Props {
   /**
-   * v-model 值
-   */
-  modelValue?: (string | number)[]
-
-  /**
    * 排列方向, vertical | horizontal
    */
   direction?: string
+}
+
+/**
+ * useInitSlots
+ */
+export namespace USEInitSlots {
+  export interface Option {
+    emit: Emits
+    currentValue: ModelRef<(string | number)[]>
+  }
 }

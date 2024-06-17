@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', name: string | number): void
   (event: 'change', name: string | number): void
 }
 
@@ -11,11 +12,17 @@ export interface Emits {
  */
 export interface Props {
   /**
-   * v-model 值
-   */
-  modelValue?: string | number
-  /**
    * 排列方向,
    */
   direction?: 'vertical' | 'horizontal'
+}
+
+/**
+ * useInitSlots
+ */
+export namespace USEInitSlots {
+  export interface Option {
+    emit: Emits
+    currentValue: ModelRef<string | number>
+  }
 }

@@ -1,3 +1,5 @@
+import type { ModelRef } from 'vue'
+
 /**
  * props list
  */
@@ -11,7 +13,6 @@ export interface ListItem {
  * emits
  */
 export interface Emits {
-  (event: 'update:visible', bool: boolean): void
   (event: 'change', e: ListItem): void
   (event: 'cancel', e: MouseEvent): void
 }
@@ -21,10 +22,6 @@ export interface Emits {
  */
 export interface Props {
   /**
-   * v-model:visible 绑定值
-   */
-  visible?: boolean
-  /**
    * 提示文本
    */
   tips?: string
@@ -32,4 +29,14 @@ export interface Props {
    * 数据列表
    */
   list: ListItem[]
+}
+
+/**
+ * useBtns
+ */
+export namespace USEBtns {
+  export interface Option {
+    emit: Emits
+    visibleModel: ModelRef<boolean>
+  }
 }

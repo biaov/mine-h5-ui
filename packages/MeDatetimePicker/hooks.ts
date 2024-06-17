@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { IsLeapyear } from '../MeAPI/function'
-import type { Props, TypeIds, ListDataItem, Emits } from './types'
+import type { Props, TypeIds, ListDataItem, Emits, USEBtns } from './types'
 
 /**
  * 实际移动思路: 通过触摸到移动中的距离, 来设置滚动的距离
@@ -502,7 +502,7 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
 /**
  * 按钮
  */
-export const useBtns = (props: Readonly<Props>, emit: Emits, currentValue: number[]) => {
+export const useBtns = ({ props, emit, currentValue, modelValue }: USEBtns.Option) => {
   /**
    * 点击取消按钮
    */
@@ -539,7 +539,7 @@ export const useBtns = (props: Readonly<Props>, emit: Emits, currentValue: numbe
 
       return prev + separator + val
     }, '')
-    emit('update:modelValue', str.slice(1))
+    modelValue.value = str.slice(1)
     emit('sure', currentValue)
   }
 

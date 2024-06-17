@@ -1,3 +1,5 @@
+import type { ModelRef } from 'vue'
+
 /**
  * type 值
  */
@@ -20,7 +22,6 @@ export interface ListDataItem {
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', str: string): void
   (event: 'cancel'): void
   (event: 'sure', arr: number[]): void
 }
@@ -29,10 +30,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue?: string
   /**
    * 时间类型
    */
@@ -49,4 +46,16 @@ export interface Props {
    * 最大值
    */
   maxDate?: Date
+}
+
+/**
+ * useBtns
+ */
+export namespace USEBtns {
+  export interface Option {
+    props: Readonly<Props>
+    emit: Emits
+    currentValue: number[]
+    modelValue: ModelRef<string>
+  }
 }

@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', bool: boolean): void
   (event: 'refresh'): void
 }
 
@@ -11,10 +12,6 @@ export interface Emits {
  */
 export interface Props {
   /**
-   * v-model 绑定值
-   */
-  modelValue: boolean
-  /**
    * 自定义状态文本
    */
   loadText?: string[]
@@ -22,4 +19,14 @@ export interface Props {
    * 是否要显示加载图标
    */
   loadIcon?: boolean
+}
+
+/**
+ * useHandMove
+ */
+export namespace USEHandMove {
+  export interface Option {
+    emit: Emits
+    modelValue: ModelRef<boolean>
+  }
 }

@@ -16,8 +16,9 @@ const props = withDefaults(defineProps<Props>(), {
   loadText: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功'],
   loadIcon: true
 })
+const modelValue = defineModel<boolean>({ default: false })
 
-const { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props, emit)
+const { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove({ emit, modelValue })
 </script>
 
 <template>

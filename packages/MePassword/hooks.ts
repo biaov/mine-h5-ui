@@ -1,15 +1,14 @@
 /* eslint-disable no-restricted-syntax */
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import type { Props, Emits } from './types'
+import type { USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
-  const clampValue = props.modelValue.slice(0, props.num)
-
-  emit('update:modelValue', clampValue)
+export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
+  const clampValue = modelValue.value.slice(0, props.num)
+  modelValue.value = clampValue
 
   /**
    * 传入数据转化为数组
@@ -64,8 +63,8 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 设置数组变化
    */
   const updateList = () => {
-    const curClampValue = props.modelValue.slice(0, props.num)
-    emit('update:modelValue', curClampValue)
+    const curClampValue = modelValue.value.slice(0, props.num)
+    modelValue.value = curClampValue
     /**
      * 传入数据转化为数组
      */
@@ -109,7 +108,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 监听 value 的变化
    */
-  watch(() => props.modelValue, updateList)
+  watch(modelValue, updateList)
 
   /**
    * 监听是否聚焦状态

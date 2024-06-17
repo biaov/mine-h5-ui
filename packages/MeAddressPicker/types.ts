@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', str: string): void
   (event: 'cancel'): void
   (event: 'sure', currentValue: string[]): void
 }
@@ -12,10 +13,6 @@ export interface Emits {
  */
 export interface Props {
   /**
-   * v-model 绑定值
-   */
-  modelValue?: string
-  /**
    * 是否显示时间选择器
    */
   visible?: boolean
@@ -23,4 +20,16 @@ export interface Props {
    * 分割符
    */
   separator?: string
+}
+
+/**
+ * useBtns
+ */
+export namespace USEBtns {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    currentValue: string[]
+    modelValue: ModelRef<string>
+  }
 }

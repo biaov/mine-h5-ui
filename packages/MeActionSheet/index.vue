@@ -7,15 +7,18 @@ defineOptions({
 })
 
 const emit = defineEmits<Emits>()
-
-const props = withDefaults(defineProps<Props>(), {
-  visible: false,
+withDefaults(defineProps<Props>(), {
   index: 'id',
   label: 'value'
 })
 
-const { isShowMask, isShow, hideMask, animationDuration } = useShowSheet(props, emit)
-const { onLi, onCancel } = useBtns(emit)
+/**
+ * 是否显示
+ */
+const visibleModel = defineModel<boolean>('visible', { default: false })
+
+const { isShowMask, isShow, hideMask, animationDuration } = useShowSheet({ visibleModel })
+const { onLi, onCancel } = useBtns({ emit, visibleModel })
 </script>
 
 <template>

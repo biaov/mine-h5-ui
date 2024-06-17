@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { Ref, ModelRef } from 'vue'
 import type { DefaultSlotProp } from '../types'
 
 /**
@@ -117,22 +117,12 @@ export interface ScaleShare extends Share {
  */
 export interface Emits {
   (event: 'change', list: ListDataItem[], type: string): void
-  (event: 'update:list', list: ListDataItem[]): void
-  (event: 'update:current', index: number): void
 }
 
 /**
  * props
  */
 export interface Props {
-  /**
-   * 选中项
-   */
-  current?: number
-  /**
-   * 列表数据
-   */
-  list?: ListDataItem[]
   /**
    * 容器宽度
    */
@@ -165,3 +155,44 @@ export interface Props {
 export interface Slots {
   default: (props: { item: ListDataItem; index: number }) => ReturnType<DefaultSlotProp>
 }
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    listModel: ModelRef<ListDataItem[]>
+    currentModel: ModelRef<number>
+  }
+}
+
+/**
+ * useMove
+ */
+export namespace USEMove {
+  export interface Option extends MoveShare {
+    currentModel: ModelRef<number>
+  }
+}
+
+/**
+ * useResize
+ */
+export namespace USEResize {
+  export interface Option extends ResizeShare {
+    currentModel: ModelRef<number>
+  }
+}
+
+/**
+ * useScale
+ */
+export namespace USEScale {
+  export interface Option extends ScaleShare {
+    props: Readonly<Required<Props>>
+    currentModel: ModelRef<number>
+  }
+}
+

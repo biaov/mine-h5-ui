@@ -1,3 +1,5 @@
+import type { ModelRef } from 'vue'
+
 /**
  * prop styles
  */
@@ -20,7 +22,6 @@ export type PropStyles = {
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', num: number): void
   (event: 'start', e: TouchEvent | MouseEvent): void
   (event: 'move', e: TouchEvent | MouseEvent): void
   (event: 'end', e: TouchEvent | MouseEvent): void
@@ -30,10 +31,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue?: number
   /**
    * 最大值
    */
@@ -54,4 +51,15 @@ export interface Props {
    * 自定义按钮状态
    */
   isBtn?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    modelValue: ModelRef<number>
+  }
 }

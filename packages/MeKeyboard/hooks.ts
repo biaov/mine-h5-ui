@@ -1,11 +1,11 @@
 import { onMounted, watch, ref, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
-import type { Props, Emits } from './types'
+import type { USEPadding, USEHandler } from './types'
 
 /**
  * 点击操作
  */
-export const useHandler = (emit: Emits) => {
+export const useHandler = ({ emit, visibleModel }: USEHandler.Option) => {
   /**
    * 点击数字
    */
@@ -24,7 +24,7 @@ export const useHandler = (emit: Emits) => {
    * 点击完成按钮
    */
   const onComplate = (e: MouseEvent) => {
-    emit('update:visible', false)
+    visibleModel.value = false
     emit('complate', e)
   }
 
@@ -34,7 +34,7 @@ export const useHandler = (emit: Emits) => {
 /**
  * 页面 padding
  */
-export const usePadding = (props: Readonly<Props>, emit: Emits) => {
+export const usePadding = ({ props, emit, visibleModel }: USEPadding.Option) => {
   /**
    * 是否处于激活状态
    */
@@ -51,7 +51,7 @@ export const usePadding = (props: Readonly<Props>, emit: Emits) => {
       /**
        * 判断是否处于激活状态
        */
-      if (props.visible) {
+      if (visibleModel.value) {
         /**
          * 设置 className
          */
@@ -78,7 +78,7 @@ export const usePadding = (props: Readonly<Props>, emit: Emits) => {
    * 点击 Document
    */
   const clickDocument = () => {
-    emit('update:visible', false)
+    visibleModel.value = false
   }
 
   onMounted(() => {
@@ -96,7 +96,7 @@ export const usePadding = (props: Readonly<Props>, emit: Emits) => {
     Unbind(document, 'click', clickDocument)
   })
 
-  watch(() => props.visible, setPadding)
+  watch(visibleModel, setPadding)
 
   return { isActive }
 }
