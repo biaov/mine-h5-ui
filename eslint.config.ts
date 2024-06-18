@@ -60,7 +60,11 @@ export const eslintBaseConfig: Linter.Config = {
         /**
          * 禁止未使用的变量, ts 变量
          */
-        'no-unused-vars': 'off'
+        'no-unused-vars': 'off',
+        /**
+         * 重复变量
+         */
+        'no-shadow': 'off'
       }
     }
   ],

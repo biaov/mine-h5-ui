@@ -33,7 +33,7 @@ const { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmo
       @mousedown.prevent="onMousedown"
     >
       <div class="hd" :style="`transform:scale(${scale});`">
-        <me-loading type="circle" v-if="loadIcon && activeState === 2"></me-loading>
+        <me-loading v-if="loadIcon && activeState === 2"></me-loading>
         {{ loadText[activeState] }}
       </div>
       <slot></slot>

@@ -157,12 +157,18 @@ export interface Slots {
 }
 
 /**
+ * 基础配置
+ */
+interface BaseOption {
+  props: Readonly<Required<Props>>
+  emit: Emits
+}
+
+/**
  * useHandler
  */
 export namespace USEHandler {
-  export interface Option {
-    props: Readonly<Required<Props>>
-    emit: Emits
+  export interface Option extends BaseOption {
     listModel: ModelRef<ListDataItem[]>
     currentModel: ModelRef<number>
   }
@@ -190,9 +196,7 @@ export namespace USEResize {
  * useScale
  */
 export namespace USEScale {
-  export interface Option extends ScaleShare {
-    props: Readonly<Required<Props>>
+  export interface Option extends ScaleShare, Pick<BaseOption, 'props'> {
     currentModel: ModelRef<number>
   }
 }
-

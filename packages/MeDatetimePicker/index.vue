@@ -66,10 +66,7 @@ const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
             @mousedown.prevent="onMousedown($event, item.id)"
           >
             <!-- 移动的区域 -->
-            <ol
-              :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`"
-              v-if="Array.isArray(item.list)"
-            >
+            <ol :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`">
               <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
             </ol>
           </li>

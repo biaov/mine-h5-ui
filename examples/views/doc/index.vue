@@ -39,17 +39,17 @@ const changeFrameRouter = (frame: HTMLIFrameElement) => {
   <!-- 文档 -->
   <div class="doc">
     <!-- 头部 -->
-    <mine-header></mine-header>
+    <mine-header />
     <!-- 内容 -->
     <div class="content">
       <!-- 菜单列表 -->
-      <side-bar></side-bar>
+      <side-bar />
       <div class="md">
         <!-- 使用文档 -->
-        <router-view></router-view>
+        <router-view />
       </div>
-      <!-- H5演示 -->
-      <demo-h5 @getframe="changeFrameRouter"></demo-h5>
+      <!-- H5 演示 -->
+      <demo-h5 @getframe="changeFrameRouter" />
     </div>
   </div>
 </template>
