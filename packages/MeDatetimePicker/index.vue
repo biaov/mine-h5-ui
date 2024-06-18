@@ -67,7 +67,12 @@ const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
           >
             <!-- 移动的区域 -->
             <ol :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`">
-              <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
+              <template v-if="Array.isArray(item.list)">
+                <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
+              </template>
+              <template v-else>
+                <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
+              </template>
             </ol>
           </li>
         </template>

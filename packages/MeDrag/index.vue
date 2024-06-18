@@ -28,7 +28,7 @@ const listModel = defineModel<ListDataItem[]>('list', { default: () => [] })
  */
 const currentModel = defineModel<number>('current', { default: -1 })
 
-const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler({ props, emit, listModel, currentModel })
+const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler({ emit, listModel, currentModel })
 const share = { getCurItem, onEmitChange, onUpdate }
 const { onTouchstart, onTouchmove, onMousedown } = useMove({ ...share, listData, currentModel })
 const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize({ ...share, listData, currentModel })
