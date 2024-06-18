@@ -34,7 +34,7 @@ export const useHandler = ({ emit, visibleModel }: USEHandler.Option) => {
 /**
  * 页面 padding
  */
-export const usePadding = ({ props, emit, visibleModel }: USEPadding.Option) => {
+export const usePadding = ({ props, visibleModel }: USEPadding.Option) => {
   /**
    * 是否处于激活状态
    */

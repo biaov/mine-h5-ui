@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { IsLeapyear } from '../MeAPI/function'
-import type { Props, TypeIds, ListDataItem, Emits, USEBtns } from './types'
+import type { Props, TypeIds, ListDataItem, USEBtns } from './types'
 
 /**
  * 实际移动思路: 通过触摸到移动中的距离, 来设置滚动的距离

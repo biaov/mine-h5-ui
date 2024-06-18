@@ -1,4 +1,4 @@
-import { ref, provide, onMounted, watch, computed } from 'vue'
+import { ref, provide, onMounted, computed } from 'vue'
 import type { LabelName } from '../MeTabItem/types'
 import { MeTabKey } from './token'
 import type { USEInitSlots } from './types'

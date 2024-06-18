@@ -1,6 +1,6 @@
 import { ref, watch, inject } from 'vue'
 import { MeRadioGroupKey } from '../MeRadioGroup/token'
-import type { USEHandler, RadioGroupContext, Emits } from './types'
+import type { USEHandler, RadioGroupContext } from './types'
 
 /**
  * 操作

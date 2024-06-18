@@ -59,7 +59,6 @@ export namespace USEHandler {
 export namespace USEPadding {
   export interface Option {
     props: Readonly<Props>
-    emit: Emits
     visibleModel: ModelRef<boolean>
   }
 }

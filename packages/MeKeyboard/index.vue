@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
  */
 const visibleModel = defineModel<boolean>('visible', { default: false })
 
-const { isActive } = usePadding({ props, emit, visibleModel })
+const { isActive } = usePadding({ props, visibleModel })
 const { onClick, onDelete, onComplate } = useHandler({ emit, visibleModel })
 </script>
 

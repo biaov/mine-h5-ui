@@ -168,7 +168,7 @@ interface BaseOption {
  * useHandler
  */
 export namespace USEHandler {
-  export interface Option extends BaseOption {
+  export interface Option extends Pick<BaseOption, 'emit'> {
     listModel: ModelRef<ListDataItem[]>
     currentModel: ModelRef<number>
   }

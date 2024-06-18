@@ -1,4 +1,4 @@
-import { ref, provide, watch } from 'vue'
+import { provide } from 'vue'
 import { MeCheckboxGroupKey } from './token'
 import type { OnChangeParams, USEInitSlots } from './types'
 

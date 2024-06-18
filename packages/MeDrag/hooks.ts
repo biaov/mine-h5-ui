@@ -1,29 +1,12 @@
 import { ref, computed, watch } from 'vue'
 import { DeepCopyRA } from '../MeAPI/function'
 import calcSize, { getSymmPoint } from './calcSize'
-import type {
-  Props,
-  CalcSizeName,
-  ListDataItem,
-  AngleToCursorItem,
-  Emits,
-  Point,
-  Distance,
-  Rect,
-  MoveShare,
-  ResizeShare,
-  RotateShare,
-  ScaleShare,
-  USEHandler,
-  USEMove,
-  USEResize,
-  USEScale
-} from './types'
+import type { Props, CalcSizeName, ListDataItem, AngleToCursorItem, Point, Distance, Rect, RotateShare, USEHandler, USEMove, USEResize, USEScale } from './types'
 
 /**
  * 操作
  */
-export const useHandler = ({ props, emit, listModel, currentModel }: USEHandler.Option) => {
+export const useHandler = ({ emit, listModel, currentModel }: USEHandler.Option) => {
   /**
    * 列表数据
    */

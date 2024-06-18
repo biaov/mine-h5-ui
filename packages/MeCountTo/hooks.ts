@@ -1,6 +1,6 @@
 import { watch, computed, ref } from 'vue'
 import { FormatThousand } from '../MeAPI/function'
-import type { Props, Emits, USEHandler } from './types'
+import type { USEHandler } from './types'
 
 /**
  * 操作

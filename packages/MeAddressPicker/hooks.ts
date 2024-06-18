@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import { ref } from 'vue'
 import areaData from './area'
-import type { USEBtns, Props } from './types'
+import type { USEBtns } from './types'
 
 const AreaData = areaData as Record<string, Record<string, string>>
 

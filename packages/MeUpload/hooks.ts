@@ -1,6 +1,6 @@
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import Validator from '../MeAPI/validator'
-import type { Props, ListDataItem, Emits, USEHandler } from './types'
+import type { ListDataItem, USEHandler } from './types'
 
 /**
  * 操作
