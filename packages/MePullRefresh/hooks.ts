@@ -1,10 +1,10 @@
 import { ref, watch } from 'vue'
-import type { Props, Emits } from './types'
+import type { USEHandMove } from './types'
 
 /**
  * 移动列
  */
-export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandMove = ({ emit, modelValue }: USEHandMove.Option) => {
   /**
    * 加载状态
    */
@@ -41,7 +41,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 是否可触发
      */
-    if (props.modelValue) return
+    if (modelValue.value) return
 
     /**
      * 获取初始位置
@@ -64,7 +64,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 是否可触发
      */
-    if (props.modelValue) return
+    if (modelValue.value) return
 
     /**
      * 计算位置
@@ -93,7 +93,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 是否可触发
      */
-    if (props.modelValue) return
+    if (modelValue.value) return
 
     const distY = e.changedTouches[0].clientY - startY
     /**
@@ -108,7 +108,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
       activeState.value = 2
       transY.value = showValue.value
       scale.value = 1
-      emit('update:modelValue', true)
+      modelValue.value = true
       emit('refresh')
     } else {
       activeState.value = 0
@@ -124,7 +124,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 是否可触发
      */
-    if (props.modelValue) return
+    if (modelValue.value) return
 
     /**
      * 计算位置
@@ -153,7 +153,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 是否可触发
      */
-    if (props.modelValue) return
+    if (modelValue.value) return
 
     const distY = e.clientY - startY
     /**
@@ -168,7 +168,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
       activeState.value = 2
       transY.value = showValue.value
       scale.value = 1
-      emit('update:modelValue', true)
+      modelValue.value = true
       emit('refresh')
     } else {
       activeState.value = 0
@@ -193,7 +193,7 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 是否可触发
      */
-    if (props.modelValue) return
+    if (modelValue.value) return
 
     /**
      * 获取初始位置
@@ -220,23 +220,20 @@ export const useHandMove = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 监听 value 变化
    */
-  watch(
-    () => props.modelValue,
-    value => {
+  watch(modelValue, value => {
+    /**
+     * 是否可滑动
+     */
+    if (!value) {
+      activeState.value = 3
       /**
-       * 是否可滑动
+       * 延迟关闭
        */
-      if (!value) {
-        activeState.value = 3
-        /**
-         * 延迟关闭
-         */
-        setTimeout(() => {
-          transY.value = 0
-          scale.value = 0
-        }, 600)
-      }
+      setTimeout(() => {
+        transY.value = 0
+        scale.value = 0
+      }, 600)
     }
-  )
+  })
   return { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown }
 }

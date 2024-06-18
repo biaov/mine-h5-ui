@@ -1,19 +1,15 @@
+import type { ModelRef } from 'vue'
 /**
  * emits
  */
 export interface Emits {
   (event: 'click', e: MouseEvent): void
-  (event: 'update:modelValue', bool: boolean): void
 }
 
 /**
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue?: boolean
   /**
    * 自定义大小
    */
@@ -34,4 +30,15 @@ export interface Props {
    * 禁用状态
    */
   disabled?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    isActived: ModelRef<boolean>
+  }
 }

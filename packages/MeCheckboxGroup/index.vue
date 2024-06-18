@@ -11,12 +11,16 @@ defineSlots<DefaultSlots>()
 
 const emit = defineEmits<Emits>()
 
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: () => [],
+withDefaults(defineProps<Props>(), {
   direction: 'vertical'
 })
 
-useInitSlots(props, emit)
+/**
+ * 子元素 name 集合
+ */
+const currentValue = defineModel<(string | number)[]>({ default: () => [] })
+
+useInitSlots({ emit, currentValue })
 </script>
 
 <template>

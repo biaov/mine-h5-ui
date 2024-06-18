@@ -1,10 +1,10 @@
 import { ref, watch } from 'vue'
-import type { Props, Emits } from './types'
+import type { USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
   /**
    * 当前 value 值
    */
@@ -29,7 +29,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 设置当前偏移 value 值
      */
-    currentValue.value = 100 + props.min - props.modelValue
+    currentValue.value = 100 + props.min - modelValue.value
   }
 
   /**
@@ -43,7 +43,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 保存第一次的 value 参数值
      */
-    changeValue = props.modelValue
+    changeValue = modelValue.value
     /**
      * 获取元素整体宽度
      */
@@ -71,7 +71,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
      */
     afterVal = diffX > 0 ? (afterVal > props.max ? props.max : afterVal) : afterVal < props.min ? props.min : afterVal
-    emit('update:modelValue', afterVal)
+    modelValue.value = afterVal
     emit('move', e)
   }
 
@@ -102,7 +102,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 判断是否大于 0, 大于 0: 向右拖拽, 小于 0: 向左拖拽
      */
     afterVal = diffX > 0 ? (afterVal > props.max ? props.max : afterVal) : afterVal < props.min ? props.min : afterVal
-    emit('update:modelValue', afterVal)
+    modelValue.value = afterVal
     emit('move', e)
   }
 
@@ -132,7 +132,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 保存第一次的 value 参数值
      */
-    changeValue = props.modelValue
+    changeValue = modelValue.value
     /**
      * 获取元素整体宽度
      */
@@ -148,12 +148,9 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     emit('start', e)
   }
 
-  watch(
-    () => props.modelValue,
-    () => {
-      !props.disabled && handleCurrent()
-    }
-  )
+  watch(modelValue, () => {
+    !props.disabled && handleCurrent()
+  })
 
   handleCurrent()
 

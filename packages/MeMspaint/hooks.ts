@@ -1,10 +1,10 @@
 import { ref, onMounted, computed } from 'vue'
-import type { PropsHookParam, Emits } from './types'
+import type { USEDraw } from './types'
 
 /**
  * 绘制
  */
-export const useDraw = (props: Readonly<PropsHookParam>, emit: Emits) => {
+export const useDraw = ({ props, modelValue }: USEDraw.Option) => {
   /**
    * canvas 节点
    */
@@ -49,7 +49,7 @@ export const useDraw = (props: Readonly<PropsHookParam>, emit: Emits) => {
      * 节点
      */
     const canvas = canvasRef.value!
-    emit('update:modelValue', canvas)
+    modelValue.value = canvas
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
     ctx.strokeStyle = props.strokeStyle
     ctx.lineWidth = props.lineWidth

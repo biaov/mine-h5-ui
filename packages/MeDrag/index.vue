@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useHandler, useMove, useResize, useRotate, useScale } from './hooks'
-import { Props, Emits, Slots } from './types'
+import { Props, Emits, Slots, ListDataItem } from './types'
 
 defineOptions({
   name: 'MeDrag'
@@ -11,8 +11,6 @@ defineSlots<Slots>()
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  current: -1,
-  list: () => [],
   width: '300px',
   height: '300px',
   theme: '#f56c6c',
@@ -21,12 +19,21 @@ const props = withDefaults(defineProps<Props>(), {
   scale: 100
 })
 
-const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler(props, emit)
+/**
+ * 列表数据
+ */
+const listModel = defineModel<ListDataItem[]>('list', { default: () => [] })
+/**
+ * 选中项
+ */
+const currentModel = defineModel<number>('current', { default: -1 })
+
+const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler({ emit, listModel, currentModel })
 const share = { getCurItem, onEmitChange, onUpdate }
-const { onTouchstart, onTouchmove, onMousedown } = useMove(props, { ...share, listData })
-const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize(props, { ...share, listData })
+const { onTouchstart, onTouchmove, onMousedown } = useMove({ ...share, listData, currentModel })
+const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize({ ...share, listData, currentModel })
 const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
-const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listData })
+const { onTouchstartWrap, onTouchmoveWrap } = useScale({ props, ...share, listData, currentModel })
 </script>
 
 <template>
@@ -36,7 +43,7 @@ const { onTouchstartWrap, onTouchmoveWrap } = useScale(props, { ...share, listDa
       v-for="(item, index) in listData"
       :key="index"
       class="item"
-      :class="{ active: index === current }"
+      :class="{ active: index === currentModel }"
       :style="`top:${item.rect.y}px;left:${item.rect.x}px;width:${item.rect.w}px;height:${item.rect.h}px;transform:rotate(${item.rect.r}deg);--theme:${theme};--themeText:${themeText};`"
       @touchstart="onTouchstart"
       @touchmove="onTouchmove"

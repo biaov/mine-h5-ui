@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', value: string | number): void
   (event: 'change', value: string | number): void
 }
 
@@ -10,10 +11,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue: string | number
   /**
    * 未聚焦时的颜色
    */
@@ -26,4 +23,14 @@ export interface Props {
    * 位移边框颜色
    */
   lineColor?: string
+}
+
+/**
+ * useInitSlots
+ */
+export namespace USEInitSlots {
+  export interface Option {
+    emit: Emits
+    currentValue: ModelRef<string | number>
+  }
 }

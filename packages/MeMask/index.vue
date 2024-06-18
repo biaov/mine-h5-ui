@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useHandler } from './hooks'
-import type { Props, Emits, Slots } from './types'
+import type { Props, Slots } from './types'
 
 defineOptions({
   name: 'MeMask'
@@ -8,14 +8,12 @@ defineOptions({
 
 defineSlots<Slots>()
 
-const emit = defineEmits<Emits>()
-
 const props = withDefaults(defineProps<Props>(), {
-  visible: false,
   maskClose: false
 })
+const visibleModel = defineModel<boolean>('visible', { default: false })
 
-const { isShowMask, isShow, clickMask, animationDuration } = useHandler(props, emit)
+const { isShowMask, isShow, clickMask, animationDuration } = useHandler({ props, visibleModel })
 </script>
 
 <template>

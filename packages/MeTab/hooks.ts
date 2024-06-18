@@ -1,12 +1,12 @@
-import { ref, provide, onMounted, watch, computed } from 'vue'
+import { ref, provide, onMounted, computed } from 'vue'
 import type { LabelName } from '../MeTabItem/types'
 import { MeTabKey } from './token'
-import type { Props, Emits } from './types'
+import type { USEInitSlots } from './types'
 
 /**
  * 初始化 slot
  */
-export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useInitSlots = ({ emit, currentValue }: USEInitSlots.Option) => {
   /**
    * 下活动线位移计算方式
    * 思路：当前活动item的一半宽度 + 前面的所有宽度
@@ -30,7 +30,6 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 过渡动画时间
    */
   const duration = ref(0)
-  const currentValue = ref(props.modelValue)
 
   /**
    * 计算初始移动值
@@ -47,9 +46,9 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 点击不是活动项
      */
-    if (name !== props.modelValue) {
+    if (name !== currentValue.value) {
       duration.value = 0.4
-      emit('update:modelValue', name)
+      currentValue.value = name
       emit('change', name)
     }
   }
@@ -64,23 +63,13 @@ export const useInitSlots = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 当前索引
    */
-  const curIndex = computed(() => tabList.value.findIndex(item => item.name === props.modelValue))
+  const curIndex = computed(() => tabList.value.findIndex(item => item.name === currentValue.value))
 
   provide(MeTabKey, { name: MeTabKey, currentValue, getLabelName })
 
   onMounted(() => {
     initTranslateX()
   })
-
-  /**
-   * 监听 modelValue 值
-   */
-  watch(
-    () => props.modelValue,
-    value => {
-      currentValue.value = value
-    }
-  )
 
   return { tabsDom, tabList, transX, duration, curIndex, onClick }
 }

@@ -1,3 +1,5 @@
+import type { ModelRef } from 'vue'
+
 /**
  * 列表项目
  */
@@ -10,7 +12,6 @@ export interface ListDataItem {
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', id: number): void
   (event: 'change'): void
 }
 
@@ -18,10 +19,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue?: number
   /**
    * 自定义未选中图标
    */
@@ -58,4 +55,15 @@ export interface Props {
    * 评分大小
    */
   size?: string
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    modelValue: ModelRef<number>
+  }
 }

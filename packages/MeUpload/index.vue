@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import MeIcon from '../MeIcon/index.vue'
 import { useHandler } from './hooks'
-import type { Props, Emits } from './types'
+import type { Props, Emits, ListDataItem } from './types'
 
 defineOptions({
   name: 'MeUpload'
@@ -21,8 +21,11 @@ const props = withDefaults(defineProps<Props>(), {
   afterRead: () => true,
   beforeDelete: () => true
 })
-
-const { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler(props, emit)
+/**
+ * 列表数据
+ */
+const listData = defineModel<ListDataItem[]>({ default: () => [] })
+const { curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler({ props, emit, listData })
 </script>
 
 <template>

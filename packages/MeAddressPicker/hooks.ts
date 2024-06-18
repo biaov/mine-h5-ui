@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import { ref } from 'vue'
 import areaData from './area'
-import type { Emits, Props } from './types'
+import type { USEBtns } from './types'
 
 const AreaData = areaData as Record<string, Record<string, string>>
 
@@ -467,7 +467,7 @@ export const useHandMove = () => {
 /**
  * 按钮
  */
-export const useBtns = (props: Readonly<Required<Props>>, emit: Emits, currentValue: string[]) => {
+export const useBtns = ({ props, emit, currentValue, modelValue }: USEBtns.Option) => {
   /**
    * 点击取消按钮
    */
@@ -480,7 +480,7 @@ export const useBtns = (props: Readonly<Required<Props>>, emit: Emits, currentVa
    */
   const onSure = () => {
     const str = currentValue.reduce((prev, elem, i) => prev + (i === 0 ? '' : props.separator) + elem, '')
-    emit('update:modelValue', str)
+    modelValue.value = str
     emit('sure', currentValue)
   }
 

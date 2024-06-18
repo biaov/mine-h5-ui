@@ -1,10 +1,10 @@
 import { ref, watch, nextTick } from 'vue'
-import type { Props, Emits } from './types'
+import type { USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandler = ({ props, visibleModel }: USEHandler.Option) => {
   /**
    * 是否显示模态框
    */
@@ -37,7 +37,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     isShow.value = false
     setTimeout(() => {
       isShowMask.value = false
-      emit('update:visible', false)
+      visibleModel.value = false
     }, animationDuration)
   }
 
@@ -52,7 +52,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 监听是否显示弹出层参数
    */
   watch(
-    () => props.visible,
+    visibleModel,
     value => {
       value ? showMask() : hideMask()
     },

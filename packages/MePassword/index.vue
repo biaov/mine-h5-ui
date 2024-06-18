@@ -9,14 +9,17 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
   type: 'password',
   num: 6,
   skinType: 'white',
   isFocus: false
 })
 
-const { listData, handleClick } = useHandler(props, emit)
+/**
+ * 输入的值
+ */
+const modelValue = defineModel<string>({ default: '' })
+const { listData, handleClick } = useHandler({ props, emit, modelValue })
 </script>
 
 <template>

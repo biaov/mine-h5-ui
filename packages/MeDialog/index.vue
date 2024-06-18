@@ -9,14 +9,16 @@ defineOptions({
 
 defineSlots<DefaultSlots>()
 
-const emit = defineEmits<Emits>()
-
-const props = withDefaults(defineProps<Props>(), {
-  visible: false,
+withDefaults(defineProps<Props>(), {
   tips: '提示'
 })
 
-const { isShowMask, isShow, hideMask, animationDuration } = useShow(props, emit)
+/**
+ * 显示状态
+ */
+const visible = defineModel<boolean>('visible', { default: false })
+
+const { isShowMask, isShow, hideMask, animationDuration } = useShow({ visible })
 </script>
 
 <template>

@@ -13,14 +13,17 @@ defineSlots<DefaultSlots>()
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  visible: false,
   modal: true,
   position: 'center',
   closeable: false,
   radius: ''
 })
 
-const { isShow, isShowMask, hideMask, animationDuration } = useMask(props, emit)
+/**
+ * 是否显示弹出层
+ */
+const visibleModel = defineModel<boolean>('visible', { default: false })
+const { isShow, isShowMask, hideMask, animationDuration } = useMask({ emit, visibleModel })
 const { setRadius } = useRadius(props)
 </script>
 

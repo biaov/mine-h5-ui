@@ -7,15 +7,18 @@ defineOptions({
 })
 
 const emit = defineEmits<Emits>()
-
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
   visible: false,
   separator: '-'
 })
 
+/**
+ * 完整地址
+ */
+const modelValue = defineModel<string>({ default: '' })
+
 const { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove()
-const { onCancel, onSure } = useBtns(props, emit, currentValue)
+const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
 </script>
 
 <template>

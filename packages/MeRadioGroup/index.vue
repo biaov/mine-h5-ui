@@ -11,12 +11,15 @@ defineSlots<DefaultSlots>()
 
 const emit = defineEmits<Emits>()
 
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
+withDefaults(defineProps<Props>(), {
   direction: 'vertical'
 })
 
-useInitSlots(props, emit)
+/**
+ * 当前 value 值
+ */
+const currentValue = defineModel<string | number>({ default: '' })
+useInitSlots({ emit, currentValue })
 </script>
 
 <template>

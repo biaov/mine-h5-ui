@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "private": false,
   "author": {
     "name": "biaov",
@@ -66,18 +66,18 @@
     "html2canvas": "^1.4.1",
     "mockjs": "^1.1.0",
     "qrcode": "^1.5.3",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
   },
   "devDependencies": {
     "@types/mockjs": "^1.0.10",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.14.4",
     "@types/postcss-pxtorem": "^6.0.3",
     "@types/qrcode": "^1.5.5",
-    "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.9.0",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "@vue/compiler-sfc": "^3.4.27",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/compiler-sfc": "^3.4.29",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
@@ -87,24 +87,24 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-vue": "^9.26.0",
     "husky": "^9.0.11",
-    "jsdom": "^24.0.0",
+    "jsdom": "^24.1.0",
     "less": "^4.2.0",
     "markdown-it-container": "^4.0.0",
     "postcss-pxtorem": "^6.1.0",
-    "prettier": "^3.2.5",
-    "shiki": "^1.5.2",
-    "tailwindcss": "^3.4.3",
-    "tslib": "^2.6.2",
+    "prettier": "^3.3.2",
+    "shiki": "^1.7.0",
+    "tailwindcss": "^3.4.4",
+    "tslib": "^2.6.3",
     "typescript": "^5.4.5",
     "unplugin-vue-markdown": "^0.26.2",
-    "vite": "^5.2.11",
+    "vite": "^5.3.1",
     "vite-plugin-dts": "^3.9.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.20.0",
     "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.19"
+    "vue-tsc": "^2.0.21"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.17.2"
+    "@rollup/rollup-linux-x64-gnu": "^4.18.0"
   }
 }

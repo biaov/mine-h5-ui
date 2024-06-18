@@ -17,7 +17,8 @@ const props = withDefaults(defineProps<Props>(), {
   lineColor: '#f56c6c'
 })
 
-const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots(props, emit)
+const currentValue = defineModel<string | number>({ default: '' })
+const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots({ emit, currentValue })
 </script>
 
 <template>

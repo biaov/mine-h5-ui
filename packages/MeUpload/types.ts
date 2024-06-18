@@ -1,3 +1,5 @@
+import type { ModelRef } from 'vue'
+
 /**
  * listData
  */
@@ -23,8 +25,6 @@ export type BeforeDelete = (item: ListDataItem) => boolean
  * emits
  */
 export interface Emits {
-  (event: 'update:fileList', list: ListDataItem[]): void
-  (event: 'update:file-list', list: ListDataItem[]): void
   (event: 'change', list: ListDataItem[]): void
 }
 
@@ -32,10 +32,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model:fileList 绑定值
-   */
-  fileList?: ListDataItem[]
   /**
    * 图片是否可预览
    */
@@ -72,4 +68,15 @@ export interface Props {
    * 文件删除前钩子函数
    */
   beforeDelete?: BeforeDelete
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    listData: ModelRef<ListDataItem[]>
+  }
 }

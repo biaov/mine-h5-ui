@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useInitSlots } from './hooks'
-import type { Props, Emits } from './types'
+import type { Emits } from './types'
 
 defineOptions({
   name: 'MeAccordion'
@@ -11,9 +11,12 @@ defineSlots<DefaultSlots>()
 
 const emit = defineEmits<Emits>()
 
-const props = defineProps<Props>()
+/**
+ * 当前子元素选中的聚焦值
+ */
+const currentValue = defineModel<string | number>()
 
-useInitSlots(props, emit)
+useInitSlots({ emit, currentValue })
 </script>
 
 <template>

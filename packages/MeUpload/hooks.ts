@@ -1,15 +1,11 @@
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import Validator from '../MeAPI/validator'
-import type { Props, ListDataItem, Emits } from './types'
+import type { ListDataItem, USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
-  /**
-   * 列表数据
-   */
-  const listData = ref<ListDataItem[]>(props.fileList)
+export const useHandler = ({ props, emit, listData }: USEHandler.Option) => {
   /**
    * 全屏预览图片当前索引
    */
@@ -41,8 +37,6 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
        * 删除
        */
       listData.value.splice(index, 1)
-      emit('update:fileList', listData.value)
-      emit('update:file-list', listData.value)
       emit('change', listData.value)
     }
   }
@@ -147,19 +141,6 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
       startTimer()
     }
   }
-
-  /**
-   * 监听列表数据
-   */
-  watch(
-    () => props.fileList,
-    value => {
-      listData.value = value
-    },
-    {
-      deep: true
-    }
-  )
 
   return { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview }
 }

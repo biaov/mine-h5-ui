@@ -1,11 +1,5 @@
+import type { ModelRef } from 'vue'
 import type { DefaultSlotProp } from '../types'
-
-/**
- * emits
- */
-export interface Emits {
-  (event: 'update:visible', bool: boolean): void
-}
 
 /**
  * props
@@ -34,4 +28,14 @@ interface DefaultSlotsProps {
  */
 export interface Slots {
   default: (props: DefaultSlotsProps) => ReturnType<DefaultSlotProp>
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Props>
+    visibleModel: ModelRef<boolean>
+  }
 }

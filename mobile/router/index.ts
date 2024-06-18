@@ -8,7 +8,7 @@ import docs from './docs'
 const routes: RouteRecordRaw[] = [
   {
     path: '/:pathMatch(.*)*',
-    redirect: { name: 'Layout' }
+    redirect: { name: 'Layout', params: {} }
   },
   {
     path: '/',
@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/doc',
     component: () => import(`^/views/doc/index.vue`),
-    children: docs as any[]
+    children: docs
   }
 ]
 

@@ -17,7 +17,11 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false
 })
 
-const { isActived, background, handleClick } = useHandler(props, emit)
+/**
+ * 激活状态
+ */
+const isActived = defineModel<boolean>({ default: false })
+const { background, handleClick } = useHandler({ props, emit, isActived })
 </script>
 
 <template>

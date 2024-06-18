@@ -9,13 +9,17 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: true,
   startValue: 0,
   duration: 1500,
   thousand: false
 })
 
-const { comValue } = useHandler(props, emit)
+/**
+ * 开始状态
+ */
+const modelValue = defineModel<boolean>({ default: true })
+
+const { comValue } = useHandler({ props, emit, modelValue })
 </script>
 
 <template>

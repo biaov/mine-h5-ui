@@ -44,7 +44,7 @@ createApp(App).use(MeMask).mount('#app')
 ```vue
 <template>
   <me-mask v-model:visible="visible" mask-close>
-    <me-loading type="circle2" color="#f56c6c" size="100px">
+    <me-loading color="#f56c6c" size="100px">
       <div class="text">加载中...</div>
     </me-loading>
   </me-mask>

@@ -1,5 +1,5 @@
 import { Ref, ref, onMounted, watch } from 'vue'
-import type { Props, Emits } from './types'
+import type { Props, Emits, USEInput } from './types'
 
 /**
  * 短信验证码
@@ -47,15 +47,12 @@ export const useIcon = (props: Readonly<Required<Props>>, emit: Emits, inputType
 /**
  * 输入框
  */
-export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref<HTMLDivElement | undefined>) => {
+export const useInput = ({ props, emit, sms, inputVal }: USEInput.Option) => {
   /**
    * label 标签
    */
   const inputLabel = ref<HTMLDivElement>()
-  /**
-   * 输入框值
-   */
-  const inputVal = ref<string | number>('')
+
   /**
    * 输入框 type 值
    */
@@ -131,22 +128,6 @@ export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref
   })
 
   /**
-   * 监听参数 value 的变化
-   */
-  watch(
-    () => props.modelValue,
-    value => {
-      /**
-       * 设置 value
-       */
-      inputVal.value = value
-    },
-    {
-      immediate: true
-    }
-  )
-
-  /**
    * 监听输入框的值的变化
    */
   watch(inputVal, (value, oldValue) => {
@@ -154,7 +135,6 @@ export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref
      * 判断是否为整数输入并设置 value
      */
     props.digit && !/^\d*$/g.test(value as string) && (inputVal.value = +oldValue)
-    emit('update:modelValue', value)
   })
 
   /**
@@ -172,7 +152,6 @@ export const useInput = (props: Readonly<Required<Props>>, emit: Emits, sms: Ref
 
   return {
     inputLabel,
-    inputVal,
     inputType,
     paddingLeft,
     paddingRight,

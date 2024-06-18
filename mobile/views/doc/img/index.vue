@@ -23,7 +23,7 @@ const { isShowMask, listData, onLoad, onError } = useWebData()
       </li>
     </ul>
     <me-mask :visible="isShowMask">
-      <me-loading type="circle2" color="#f56c6c" size="100px">
+      <me-loading color="#f56c6c" size="100px">
         <div class="text">加载中...</div>
       </me-loading>
     </me-mask>

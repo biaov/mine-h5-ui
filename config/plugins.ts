@@ -5,7 +5,7 @@ import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { Options as EslintOptions } from 'vite-plugin-eslint'
-import { eslintBaseConfig } from './eslint.config'
+import { eslintBaseConfig } from '../eslint.config'
 import type { MarkdownViteOptions, TokenItem } from './types'
 
 const { dirname } = import.meta
@@ -103,9 +103,11 @@ export const eslintConfig: EslintOptions = {
  */
 export const tailwindcssConfig = () => {
   const spacing = {}
+  const zIndex = {}
 
   for (let i = 0; i < 1000; i++) {
     spacing[i] = `${i}px`
+    i < 10 && (zIndex[i] = i)
   }
 
   return {
@@ -113,7 +115,8 @@ export const tailwindcssConfig = () => {
     theme: {
       spacing,
       extend: {
-        fontSize: ({ theme }) => theme('spacing')
+        fontSize: ({ theme }) => theme('spacing'),
+        zIndex
       }
     }
   }

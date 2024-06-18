@@ -12,7 +12,6 @@ defineSlots<Partial<DefaultSlots>>()
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: 0,
   max: 100,
   min: 0,
   styles: () => ({
@@ -24,7 +23,8 @@ const props = withDefaults(defineProps<Props>(), {
   isBtn: false
 })
 
-const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler(props, emit)
+const modelValue = defineModel<number>({ default: 0 })
+const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandler({ props, emit, modelValue })
 </script>
 
 <template>

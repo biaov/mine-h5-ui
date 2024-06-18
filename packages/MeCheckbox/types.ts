@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { Ref, ModelRef } from 'vue'
 import { OnChangeParams } from '../MeCheckboxGroup/types'
 
 /**
@@ -14,7 +14,6 @@ export interface CheckboxGroupContext {
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', bool: boolean): void
   (event: 'click', e: MouseEvent): void
 }
 
@@ -22,10 +21,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 的值
-   */
-  modelValue?: boolean
   /**
    *  单选框索引名称
    */
@@ -54,4 +49,15 @@ export interface Props {
    * 禁用状态
    */
   disabled?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    isChecked: ModelRef<boolean>
+  }
 }

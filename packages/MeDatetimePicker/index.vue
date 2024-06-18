@@ -9,7 +9,6 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
   type: 'datetime',
   visible: false,
   minDate: () => {
@@ -36,8 +35,13 @@ const props = withDefaults(defineProps<Props>(), {
   }
 })
 
+/**
+ * 拼接的地址
+ */
+const modelValue = defineModel<string>({ default: '' })
+
 const { show, currentValue, listData, distance, duration, filterNumber, getCurNum, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props)
-const { onCancel, onSure } = useBtns(props, emit, currentValue)
+const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
 </script>
 
 <template>
@@ -62,11 +66,13 @@ const { onCancel, onSure } = useBtns(props, emit, currentValue)
             @mousedown.prevent="onMousedown($event, item.id)"
           >
             <!-- 移动的区域 -->
-            <ol
-              :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`"
-              v-if="Array.isArray(item.list)"
-            >
-              <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
+            <ol :style="`transform:translateY(${distance[show.indexOf(item.id)]}px);transition-property:${duration > 0 ? 'all' : 'none'};transition-duration: ${duration}ms;`">
+              <template v-if="Array.isArray(item.list)">
+                <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
+              </template>
+              <template v-else>
+                <li v-for="(num, i) in item.list" :key="i">{{ filterNumber(getCurNum(item.id, num)) }}</li>
+              </template>
             </ol>
           </li>
         </template>

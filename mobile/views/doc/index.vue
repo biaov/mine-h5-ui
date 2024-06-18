@@ -11,7 +11,7 @@ const { title } = useRouteHandler()
     <!-- 头部 -->
     <mine-header>{{ title }}</mine-header>
     <!-- 内容 -->
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 

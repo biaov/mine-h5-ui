@@ -1,16 +1,12 @@
 import { ref, watch, inject } from 'vue'
 import { MeCheckboxGroupKey } from '../MeCheckboxGroup/token'
-import type { Props, CheckboxGroupContext, Emits } from './types'
+import type { CheckboxGroupContext, USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandler = ({ props, emit, isChecked }: USEHandler.Option) => {
   const { name, currentValue, onChange } = inject(MeCheckboxGroupKey, {} as CheckboxGroupContext)
-  /**
-   * 是否选中
-   */
-  const isChecked = ref(props.modelValue)
   /**
    * 图标名称
    */
@@ -43,7 +39,6 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
          * 改变当前状态
          */
         isChecked.value = !isChecked.value
-        emit('update:modelValue', !isChecked.value)
       }
 
       emit('click', e)
@@ -55,7 +50,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 设置状态
    */
   const setStatus = () => {
-    isChecked.value = name === MeCheckboxGroupKey ? currentValue.value.includes(props.name) : props.modelValue
+    isChecked.value = name === MeCheckboxGroupKey ? currentValue.value.includes(props.name) : isChecked.value
     setIcon()
   }
 
@@ -64,13 +59,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 监听数据绑定
    */
-  watch(
-    () => props.modelValue,
-    value => {
-      isChecked.value = value
-      setIcon()
-    }
-  )
+  watch(isChecked, setIcon)
 
   /**
    * 监听状态值的改变

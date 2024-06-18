@@ -10,7 +10,6 @@ defineOptions({
 const emit = defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: '',
   type: 'text',
   placeholder: '请输入...',
   readonly: false,
@@ -29,9 +28,12 @@ const props = withDefaults(defineProps<Props>(), {
   smsColor: '',
   smsIs: false
 })
-
+/**
+ * 输入框值
+ */
+const inputVal = defineModel<string>({ default: '' })
 const { sms, handleSMS } = useSms(props, emit)
-const { inputLabel, inputVal, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput(props, emit, sms)
+const { inputLabel, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput({ props, emit, sms, inputVal })
 const { handleIcon } = useIcon(props, emit, inputType)
 </script>
 

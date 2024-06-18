@@ -1,3 +1,4 @@
+import type { RouteRecordRaw } from 'vue-router'
 import { componentConfig } from '@/config/nav.config'
 import type { Docs } from './types'
 
@@ -46,4 +47,4 @@ const addComponent = (arr: Docs[]) => {
 addComponent(docs)
 const exportDocs = docs
 
-export default exportDocs
+export default exportDocs as unknown[] as RouteRecordRaw[]

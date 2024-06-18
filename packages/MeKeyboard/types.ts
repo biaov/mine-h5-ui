@@ -1,3 +1,5 @@
+import type { ModelRef } from 'vue'
+
 /**
  * props SkinStyleValue
  */
@@ -20,7 +22,6 @@ export interface SkinStyleValue {
  * emits
  */
 export interface Emits {
-  (event: 'update:visible', bool: boolean): void
   (event: 'click', num: number): void
   (event: 'delete', e: MouseEvent): void
   (event: 'complate', e: MouseEvent): void
@@ -28,10 +29,6 @@ export interface Emits {
 
 // props
 export interface Props {
-  /**
-   * 数字输入显示状态
-   */
-  visible?: boolean
   /**
    * 系统皮肤样式
    */
@@ -44,4 +41,24 @@ export interface Props {
    * 是否动态改变 padding
    */
   isPadding?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    emit: Emits
+    visibleModel: ModelRef<boolean>
+  }
+}
+
+/**
+ * usePadding
+ */
+export namespace USEPadding {
+  export interface Option {
+    props: Readonly<Props>
+    visibleModel: ModelRef<boolean>
+  }
 }

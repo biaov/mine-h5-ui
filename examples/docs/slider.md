@@ -144,14 +144,14 @@ const sliderValue = ref(30)
 
 ### 参数
 
-| 参数                | 说明                            | 类型    | 可选值       | 默认值 | 版本 |
-| ------------------- | ------------------------------- | ------- | ------------ | ------ | ---- |
-| modelValue(v-model) | 双向绑定滑块的值                | number  | --           | --     | --   |
-| max                 | 范围最大值                      | number  | --           | 100    | --   |
-| min                 | 范围最小值                      | number  | --           | 0      | --   |
+| 参数                | 说明                                 | 类型    | 可选值       | 默认值 | 版本 |
+| ------------------- | ------------------------------------ | ------- | ------------ | ------ | ---- |
+| modelValue(v-model) | 双向绑定滑块的值                     | number  | --           | --     | --   |
+| max                 | 范围最大值                           | number  | --           | 100    | --   |
+| min                 | 范围最小值                           | number  | --           | 0      | --   |
 | styles              | 自定义样式，[查看详情](#styles-属性) | Object  | --           | --     | --   |
-| is-btn              | 自定义按钮                      | boolean | true / false | false  | --   |
-| disabled            | 禁用状态                        | boolean | true / false | false  | --   |
+| is-btn              | 自定义按钮                           | boolean | true / false | false  | --   |
+| disabled            | 禁用状态                             | boolean | true / false | false  | --   |
 
 ### styles 属性
 

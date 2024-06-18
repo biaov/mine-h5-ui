@@ -1,10 +1,10 @@
 import { ref, watch } from 'vue'
-import type { Props, ListDataItem, Emits } from './types'
+import type { ListDataItem, USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
   /**
    * 列表样式
    */
@@ -18,7 +18,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 判断是否为只读 / 禁用 / 选中状态
      */
     if ((state && !listData.value[id].state) || props.disabled || props.readonly) return
-    emit('update:modelValue', id)
+    modelValue.value = id
     emit('change')
     /**
      * 循环遍历设置状态值的改变
@@ -36,11 +36,11 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
      * 循环遍历设置状态值的改变
      */
     listData.value.forEach(elem => {
-      elem.state = elem.id <= props.modelValue
+      elem.state = elem.id <= modelValue.value
     })
   }
 
-  watch(() => props.modelValue, setStatus)
+  watch(modelValue, setStatus)
 
   setStatus()
 

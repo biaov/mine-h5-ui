@@ -1,11 +1,11 @@
 import { watch, computed, ref } from 'vue'
 import { FormatThousand } from '../MeAPI/function'
-import type { Props, Emits } from './types'
+import type { USEHandler } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
   /**
    * 当前值
    */
@@ -41,7 +41,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
       if (elapsed < props.duration) {
         window.requestAnimationFrame(startCurAnimate)
       } else {
-        emit('update:modelValue', false)
+        modelValue.value = false
         emit('end')
       }
     }
@@ -53,7 +53,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 监听开始状态
    */
   watch(
-    () => props.modelValue,
+    modelValue,
     value => {
       value && startAnimate()
     },

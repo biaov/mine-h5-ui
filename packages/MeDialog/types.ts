@@ -1,20 +1,25 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
-export interface Emits {
-  (event: 'update:visible', bool: boolean): void
-}
+export interface Emits {}
 
 /**
  * props
  */
 export interface Props {
   /**
-   * v-model 绑定值
-   */
-  visible?: boolean
-  /**
    * 提示文本
    */
   tips?: string
+}
+
+/**
+ * useShow
+ */
+export namespace USEShow {
+  export interface Option {
+    visible: ModelRef<boolean>
+  }
 }

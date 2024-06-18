@@ -1,10 +1,10 @@
 import { ref, watch, nextTick } from 'vue'
-import type { Props, ListItem, Emits } from './types'
+import type { ListItem, USEBtns, USEShowSheet } from './types'
 
 /**
  * 显示
  */
-export const useShowSheet = (props: Readonly<Required<Props>>, emit: Emits) => {
+export const useShowSheet = ({ visibleModel }: USEShowSheet.Option) => {
   /**
    * 是否显示模态框
    */
@@ -37,7 +37,7 @@ export const useShowSheet = (props: Readonly<Required<Props>>, emit: Emits) => {
     isShow.value = false
     setTimeout(() => {
       isShowMask.value = false
-      emit('update:visible', false)
+      visibleModel.value = false
     }, animationDuration)
   }
 
@@ -45,7 +45,7 @@ export const useShowSheet = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 监听是否显示弹出层参数
    */
   watch(
-    () => props.visible,
+    visibleModel,
     value => {
       value ? showMask() : hideMask()
     },
@@ -60,12 +60,12 @@ export const useShowSheet = (props: Readonly<Required<Props>>, emit: Emits) => {
 /**
  * 按钮
  */
-export const useBtns = (emit: Emits) => {
+export const useBtns = ({ emit, visibleModel }: USEBtns.Option) => {
   /**
    * 点击列表
    */
   const onLi = (item: ListItem) => {
-    emit('update:visible', false)
+    visibleModel.value = false
     emit('change', item)
   }
 
@@ -73,7 +73,7 @@ export const useBtns = (emit: Emits) => {
    * 点击取消按钮
    */
   const onCancel = (e: MouseEvent) => {
-    emit('update:visible', false)
+    visibleModel.value = false
     emit('cancel', e)
   }
 

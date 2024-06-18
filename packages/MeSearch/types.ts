@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:modelValue', str: string): void
   (event: 'click'): void
   (event: 'search'): void
   (event: 'focus', e: FocusEvent): void
@@ -15,10 +16,6 @@ export interface Emits {
  * props
  */
 export interface Props {
-  /**
-   * v-model 绑定值
-   */
-  modelValue: string
   /**
    * 占位符
    */
@@ -47,4 +44,14 @@ export interface Props {
    * 是否禁用输入框
    */
   disabled?: boolean
+}
+
+/**
+ * useBtns
+ */
+export namespace USEBtns {
+  export interface Option {
+    emit: Emits
+    inputVal: ModelRef<string | undefined>
+  }
 }

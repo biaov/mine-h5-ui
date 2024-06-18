@@ -1,8 +1,9 @@
+import type { ModelRef } from 'vue'
+
 /**
  * emits
  */
 export interface Emits {
-  (event: 'update:visible', bool: boolean): void
   (event: 'step', index: number): void
   (event: 'finish'): void
 }
@@ -12,10 +13,6 @@ export interface Emits {
  */
 export interface Props {
   /**
-   * 显示状态
-   */
-  visible?: boolean
-  /**
    * 引导图片数据
    */
   list: string[]
@@ -23,4 +20,15 @@ export interface Props {
    * 禁止完成关闭
    */
   disabledClose?: boolean
+}
+
+/**
+ * useHandler
+ */
+export namespace USEHandler {
+  export interface Option {
+    props: Readonly<Required<Props>>
+    emit: Emits
+    visibleModel: ModelRef<boolean>
+  }
 }
