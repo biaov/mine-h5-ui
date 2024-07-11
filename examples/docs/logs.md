@@ -24,7 +24,7 @@
 
 ## v2.9.3
 
-`2024-06-18`
+`2024-07-11`
 
 - ⚙️ `auto-cli.jsonc` 更换为 `auto-cli.yml`
 - ⚙️ 更新 `.vscode/extensions.json` 的新增插件
