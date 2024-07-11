@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 /**
  * 列表数据
  */
-const listData = defineModel<ListDataItem[]>({ default: () => [] })
+const listData = defineModel<ListDataItem[]>('fileList', { default: () => [] })
 const { curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHandler({ props, emit, listData })
 </script>
 
