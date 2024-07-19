@@ -17,7 +17,7 @@
   },
   "description": "mine-h5-ui",
   "engines": {
-    "node": ">=16"
+    "node": ">=20.12"
   },
   "keywords": [
     "mine-h5-ui",
