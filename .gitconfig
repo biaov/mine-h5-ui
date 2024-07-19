@@ -1,0 +1,6 @@
+[alias]
+amend = "!f() { \
+    MESSAGE_FILE=.git/COMMIT_EDITMSG && \
+    echo \"(catMESSAGE_FILE)\\nThis is an appended message.\" > MESSAGE_FILE && \
+    git commit --amend --reuse-message=MESSAGE_FILE; \
+}; f"
