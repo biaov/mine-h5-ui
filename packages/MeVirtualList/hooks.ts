@@ -117,7 +117,8 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 设置 ref
    */
-  const setItemRef = (el?: Element) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const setItemRef = (el: any) => {
     el && (nodes[+(el as CustomRef<Element>).dataset.index] = el as HTMLLIElement)
   }
 
