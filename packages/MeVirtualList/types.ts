@@ -48,3 +48,9 @@ export interface Slots {
   default: (props: { item: Record<string, any> }) => ReturnType<DefaultSlotProp>
   more: DefaultSlotProp
 }
+
+export type CustomRef<T> = T & {
+  dataset: {
+    index: number
+  }
+}

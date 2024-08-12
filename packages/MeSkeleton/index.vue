@@ -26,7 +26,7 @@ withDefaults(defineProps<Props>(), {
     <div class="me-skeleton-avatar" :style="{ width: avatarSize, height: avatarSize }" v-if="avatar"></div>
     <div class="me-skeleton-row">
       <div class="me-skeleton-title" :style="{ width: titleWidth }" v-if="title"></div>
-      <div class="me-skeleton-item" v-for="(item, index) in row" :key="item" :style="{ width: Array.isArray(rowWidth) ? rowWidth[index] ?? '100%' : rowWidth }"></div>
+      <div class="me-skeleton-item" v-for="(item, index) in row" :key="item" :style="{ width: Array.isArray(rowWidth) ? (rowWidth[index] ?? '100%') : rowWidth }"></div>
     </div>
   </div>
   <slot v-else></slot>

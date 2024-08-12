@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
 import { useShow } from './hooks'
-import type { Props, Emits } from './types'
+import type { Props } from './types'
 
 defineOptions({
   name: 'MeDialog'

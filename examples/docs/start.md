@@ -14,7 +14,7 @@
 
 ::: CopyCode
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import mineh5ui from 'mine-h5-ui'
@@ -31,7 +31,7 @@ createApp(App).use(mineh5ui).mount('#app')
 
 ::: CopyCode
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeButton } from 'mine-h5-ui'

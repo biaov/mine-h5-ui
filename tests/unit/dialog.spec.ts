@@ -24,7 +24,7 @@ describe('MeDialog 对话框', () => {
     expect(viewer.classes('show')).toBe(true)
   })
 
-  test('属性 tips', () => {
+  test('属性 tips', async () => {
     const tips = '提示文本'
     /**
      * 向组件里传参
@@ -36,7 +36,6 @@ describe('MeDialog 对话框', () => {
      * 获取 DOM
      */
     const viewer = getViewer(wrapper, MeDialog).find('.picker .tips')
-
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.text()).toBe(tips)
   })

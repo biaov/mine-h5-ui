@@ -11,7 +11,7 @@ defineSlots<DefaultSlots>()
 
 const emit = defineEmits<Emits>()
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   color: '#949494',
   activeColor: '#494949',
   lineColor: '#f56c6c'

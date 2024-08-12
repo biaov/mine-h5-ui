@@ -6,7 +6,7 @@
 
 ::: CopyCode
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeKeyboard } from 'mine-h5-ui'

@@ -13,7 +13,7 @@ const { validThousand, validThousandFloat } = Validator
  *
  * console.log(MeAPI.IsType('string', '123')) // 输出: true
  */
-export const IsType = (type: string, value: any): boolean => Object.prototype.toString.call(value).slice(8, -1).toLowerCase() === type.toLowerCase()
+export const IsType = (type: string, value: unknown): boolean => Object.prototype.toString.call(value).slice(8, -1).toLowerCase() === type.toLowerCase()
 
 /**
  * 深拷贝变量-递归算法(recursive algorithm)
@@ -25,7 +25,8 @@ export const IsType = (type: string, value: any): boolean => Object.prototype.to
  *
  * console.log(MeAPI.DeepCopyRA({ a: 1 })) // 输入: { a: 1 }
  */
-export const DeepCopyRA = (arg: any): any => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const DeepCopyRA = (arg: any) => {
   /**
    * 判断是否是对象
    * 判断是否是数组

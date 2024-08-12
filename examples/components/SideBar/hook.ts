@@ -10,7 +10,7 @@ export const useWebData = () => {
   Object.keys(NavData).forEach(title => {
     sidebarList.push({
       title,
-      children: (NavData as any)[title]
+      children: NavData[title as keyof typeof NavData]
     })
   })
 

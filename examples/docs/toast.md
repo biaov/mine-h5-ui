@@ -6,7 +6,7 @@
 
 ::: CopyCode
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeToast } from 'mine-h5-ui'
@@ -29,7 +29,7 @@ createApp(App).use(MeToast).mount('#app')
 
 ::: CopyCode
 
-```js
+```ts
 import { MeToast } from 'mine-h5-ui'
 
 MeToast('显示信息')

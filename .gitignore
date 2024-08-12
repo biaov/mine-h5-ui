@@ -1,6 +1,7 @@
 /node_modules
 .DS_Store
 /dist
-format.*
+/format.*
 pnpm-lock.yaml
 .log
+.bak

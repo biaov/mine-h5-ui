@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { ref } from 'vue'
 import areaData from './area'
 import type { USEBtns } from './types'

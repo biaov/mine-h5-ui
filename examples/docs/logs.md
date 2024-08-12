@@ -14,7 +14,24 @@
 
 :::TimeLine
 
-## v2.9.4 - 最新版本
+## v2.10.0 - 最新版本
+
+`2024-08-12`
+
+- 🔥 新增 [showLoading](/v2/showLoading) 加载提示组件
+- 🔥 新增 `git push` 时执行单元测试
+- 🔥 新增依赖 @eslint/js, globals, typescript-eslint
+- ⚙️ 更新依赖版本
+- ⚙️ 更新文档
+- ⚙️ 更新 vite-plugin-dts 由 `3.x` 升级到 `4.x`
+- ⚙️ 更新 @types/node 由 `20.x` 升级到 `22.x`
+- ⚙️ 更新 eslint 由 `8.x` 升级到 `9.x`
+- ⚙️ 更新 `eslint9.x` 的新配置
+- ⚙️ 移除依赖 @typescript-eslint/parser, @typescript-eslint/eslint-plugin, eslint-config-airbnb-base, eslint-config-prettier, eslint-plugin-import
+- 🐞 修复代码格式错误
+- 🐞 修复 button 文档链接问题
+
+## v2.9.4
 
 `2024-07-11`
 

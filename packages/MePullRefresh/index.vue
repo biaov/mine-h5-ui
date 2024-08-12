@@ -12,7 +12,7 @@ defineSlots<DefaultSlots>()
 
 const emit = defineEmits<Emits>()
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   loadText: () => ['下拉即可刷新...', '释放即可刷新...', '加载中...', '刷新成功'],
   loadIcon: true
 })
