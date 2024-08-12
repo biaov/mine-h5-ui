@@ -28,7 +28,6 @@ export const useCanvas = (canvas: Ref<HTMLCanvasElement | undefined>) => {
   canvasDom.height = globalThis.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
   const a = canvasDom.width
   const c = canvasDom.height
-  let u: Array<ListItem | ForItem>
   const r = canvasDom.getContext('2d') as CanvasRenderingContext2D
   const xx = globalThis.requestAnimationFrame
   const w = Math.random
@@ -91,7 +90,7 @@ export const useCanvas = (canvas: Ref<HTMLCanvasElement | undefined>) => {
       max: 6e3
     })
   }
-  u = [...s, y]
+  const u = [...s, y]
   start()
   return {}
 }

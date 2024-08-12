@@ -6,7 +6,7 @@
 
 ::: CopyCode
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeIcon } from 'mine-h5-ui'

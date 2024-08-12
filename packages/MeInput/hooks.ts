@@ -81,7 +81,7 @@ export const useInput = ({ props, emit, sms, inputVal }: USEInput.Option) => {
       /**
        * 设置 input 右侧 padding
        */
-      paddingRight.value = !props.smsMsg ? 10 : sms.value?.offsetWidth!
+      paddingRight.value = !props.smsMsg ? 10 : (sms.value as HTMLDivElement).offsetWidth
     } else {
       /**
        * 设置 input 左侧 padding

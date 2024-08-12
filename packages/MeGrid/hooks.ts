@@ -12,8 +12,8 @@ export const useInitSlots = (props: Readonly<Required<Props>>) => {
   provide(MeGridKey, { name: MeGridKey, params })
 
   onMounted(() => {
-    const gridItems: NodeListOf<HTMLDivElement> = grid.value?.querySelectorAll('.me-grid-item')!
-    gridItems?.forEach((elem, i) => {
+    const gridItems = (grid.value as HTMLDivElement).querySelectorAll('.me-grid-item') as NodeListOf<HTMLDivElement>
+    gridItems.forEach((elem, i) => {
       elem.style.borderTopWidth = `${+(i < props.cols)}px`
       elem.style.borderLeftWidth = `${+(i % props.cols === 0)}px`
     })

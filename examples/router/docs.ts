@@ -46,7 +46,7 @@ const addComponent = (arr: Docs[]) => {
 }
 
 Object.keys(NavConfig).forEach(elem => {
-  docs = [...docs, ...(NavConfig as any)[elem]]
+  docs = [...docs, ...NavConfig[elem as keyof typeof NavConfig]]
 })
 
 addComponent(docs)

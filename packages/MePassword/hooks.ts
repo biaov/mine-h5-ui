@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
 import type { USEHandler } from './types'

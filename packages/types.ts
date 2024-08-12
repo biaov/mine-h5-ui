@@ -34,7 +34,7 @@ export type AddComponentNameRecord<T> = T & ComponentNameRecord
 /**
  * 默认插槽参数
  */
-export type DefaultSlotProp = (props: {}) => unknown
+export type DefaultSlotProp = (props: Record<string, any>) => any
 
 /**
  * 默认插槽类型

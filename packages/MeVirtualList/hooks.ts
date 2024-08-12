@@ -1,6 +1,6 @@
 import { ref, computed, watch, nextTick } from 'vue'
 import { Throttle } from '../MeAPI/function'
-import type { Props, Emits } from './types'
+import type { Props, Emits, CustomRef } from './types'
 
 /**
  * 操作
@@ -17,6 +17,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 列表数据
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const listData = ref<Record<string, any>[]>([])
   /**
    * 开始数据索引
@@ -116,8 +117,8 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 设置 ref
    */
-  const setItemRef = (el: any) => {
-    el && (nodes[+el.dataset.index] = el as HTMLLIElement)
+  const setItemRef = (el?: Element) => {
+    el && (nodes[+(el as CustomRef<Element>).dataset.index] = el as HTMLLIElement)
   }
 
   /**

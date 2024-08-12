@@ -1,11 +1,9 @@
 import { Options } from '@vitejs/plugin-vue'
-import { getHighlighter, bundledLanguages } from 'shiki'
+import { getSingletonHighlighter, bundledLanguages } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
-import type { Options as EslintOptions } from 'vite-plugin-eslint'
-import { eslintBaseConfig } from '../eslint.config'
 import type { MarkdownViteOptions, TokenItem } from './types'
 
 const { dirname } = import.meta
@@ -37,7 +35,7 @@ export const markdownViteConfig: MarkdownViteOptions = {
      */
     // const themes = ['github-light', 'github-dark', 'dark-plus', 'light-plus']
     const theme = 'github-light'
-    const highlighter = await getHighlighter({ themes: [theme], langs: Object.keys(bundledLanguages) })
+    const highlighter = await getSingletonHighlighter({ themes: [theme], langs: Object.keys(bundledLanguages) })
     md.set({
       highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang, theme })
     })
@@ -92,8 +90,7 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
 /**
  * Eslint 配置
  */
-export const eslintConfig: EslintOptions = {
-  baseConfig: eslintBaseConfig,
+export const eslintConfig = {
   lintOnStart: true,
   exclude: ['node_modules', 'dist', 'fonts']
 }

@@ -9,7 +9,7 @@ defineOptions({
 
 const emit = defineEmits<Emits>()
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   placeholder: '请搜索',
   btnText: '',
   align: 'left',

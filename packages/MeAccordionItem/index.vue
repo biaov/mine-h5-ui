@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import type { DefaultSlots } from '../types'
 import { useHandler } from './hooks'
 import type { Props, Emits, Slots } from './types'
 

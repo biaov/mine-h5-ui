@@ -32,6 +32,7 @@ export { MeForm } from './MeForm' // 表单
 export { MeActionSheet } from './MeActionSheet' // 动作面板
 export { MeToast } from './MeToast' // 消息提示-JS
 export { MeLoading } from './MeLoading' // 加载
+export { MeShowLoading, MeHideLoading } from './MeShowLoading' // 加载提示框
 export { MeMask } from './MeMask' // 遮罩层
 export { MeMessageBox } from './MeMessageBox' // 弹出框-JS
 export { MeDialog } from './MeDialog' // 对话框

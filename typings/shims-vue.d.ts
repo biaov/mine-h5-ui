@@ -1,15 +1,4 @@
-/// <reference types="vue/macros-global" />
-
-/**
- * vue 文件类型声明
- */
-declare module '*.vue' {
-  import type { DefineComponent, App } from 'vue'
-
-  const component: DefineComponent<{}, {}, unknown> & { install: (app: App) => void }
-
-  export default component
-}
+/// <reference types="vite/client" />
 
 /**
  * pwa

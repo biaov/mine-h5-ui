@@ -225,6 +225,13 @@ export const componentConfig = [
       },
       {
         meta: {
+          title: 'ShowLoading 加载提示框'
+        },
+        path: 'showLoading',
+        name: 'showLoading'
+      },
+      {
+        meta: {
           title: 'Mask 遮罩层'
         },
         path: 'mask',

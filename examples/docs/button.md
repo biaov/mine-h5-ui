@@ -6,7 +6,7 @@
 
 ::: CopyCode
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import { MeButton } from 'mine-h5-ui'
@@ -73,7 +73,7 @@ createApp(App).use(MeButton).mount('#app')
 
 ### 图标按钮
 
-- 通过 `icon` 属性设置按钮图标，支持[MeIcon](/doc/icon) 组件里的所有图标，也可以传入[Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)，前提你要引入你具有的素材图标。
+- 通过 `icon` 属性设置按钮图标，支持[MeIcon](/v2/doc/icon) 组件里的所有图标，也可以传入[Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)，前提你要引入你具有的素材图标。
 
 ::: CopyCode
 

@@ -38,7 +38,7 @@ npm i mine-h5-ui
 
 ### 使用
 
-```js
+```ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import mineh5ui from 'mine-h5-ui'
@@ -159,22 +159,19 @@ npm run build
 
 #### devDependencies
 
+- `@eslint/js`: Eslint js 解析器
 - `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
 - `@types/postcss-pxtorem`: `postcss-pxtorem` 的类型
 - `@types/qrcode`: `qrcode` 的类型
-- `@typescript-eslint/eslint-plugin`: 检测和修复 TS 代码
-- `@typescript-eslint/parser`: 解析 TS 代码并生成抽象语法树（AST），以供 Eslint 进行代码检查
 - `@vitejs/plugin-vue`: Vite 解析 Vue 文件
 - `@vue/compiler-sfc`: 编译 Vue 单文件组件
 - `@vue/test-utils`: 单元测试和集成测试
 - `autoprefixer`: 添加浏览器厂商前缀
 - `eslint`: 代码检查工具
-- `eslint-config-airbnb-base`: airbnb-base 代码编写规范
-- `eslint-config-prettier`: 将 Prettier 规则集成到 ESlint 检查中
-- `eslint-plugin-import`: 检测和修复 JS 中的模块导入导出问题
 - `eslint-plugin-prettier`: 检测不符合 Prettier 格式的代码
 - `eslint-plugin-vue`: 检测和修复 Vue 代码
+- `globals`: 全局类型，Node 和 Browser
 - `autoprefixer`: 使用 Gulp 添加浏览器厂商前缀
 - `husky`: Git 操作时自动触发脚本
 - `jsdom`: 模拟浏览器环境
@@ -186,6 +183,7 @@ npm run build
 - `tslib`: TS 库
 - `tailwindcss`: 根据 html class 生成样式
 - `typescript`: 编程语言
+- `typescript-eslint`: TS 的 Eslint 解析器
 - `unplugin-vue-markdown`: 解析 Markdown 文件的 Vite 插件
 - `vite`: 项目构建工具
 - `vite-plugin-dts`: 生成 `.d.ts` 文件的 Vite 插件

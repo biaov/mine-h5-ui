@@ -1,5 +1,12 @@
 {
-  /* 保存时自动格式化 */
   "editor.formatOnSave": true,
-  "editor.unicodeHighlight.nonBasicASCII": false
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.trailingComma": "none",
+  "files.eol": "\n"
 }

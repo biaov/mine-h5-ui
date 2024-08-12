@@ -1,5 +1,4 @@
 import type { ModelRef } from 'vue'
-import type { PickNotRequiredUnion } from '../types'
 
 /**
  * props
