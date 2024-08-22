@@ -51,8 +51,8 @@ createApp(App).use(mineh5ui).mount('#app')
 
 ### 使用文档
 
-- [x] **[😎 mine-h5-ui@1.x 基于 Vue2.x](https://mineh5ui.biaov.cn/)**
 - [x] **[😎 mine-h5-ui@2.x 基于 Vue3.x](https://mineh5ui.biaov.cn/v2)**
+- [x] **[😎 mine-h5-ui@1.x 基于 Vue2.x](https://mineh5ui.biaov.cn/)**
 
 ### 演示地址
 
