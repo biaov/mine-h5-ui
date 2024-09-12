@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
 import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Debounce, FormatThousand, Locked, AddZero, Calculation, GenerateRandom, Retarder } from '../MeAPI/function'
 import { storageInstance } from './enums.ts'
-import type { StorageType, ScrollAnimationOption } from './types.ts'
+import type { StorageType, ScrollAnimationOption, USELocked } from './types'
 /**
  * 校验
  * @example
@@ -198,4 +198,29 @@ export const useScroll = ({ duration = 300 }: ScrollAnimationOption = {}) => {
   }
 
   return { scrollTo }
+}
+
+/**
+ * 重复点击锁
+ * @example
+ * ```js
+  import { useLocked } from 'mine-h5-ui'
+
+  const onClick = useLocked(async () => {
+    // 业务操作
+    // ...
+  })
+ * ```
+ */
+export const useLocked = (handler: USELocked.Option): USELocked.Option => {
+  let locked = false
+  return async (...args) => {
+    if (locked) return
+    locked = true
+    try {
+      await handler(...args)
+    } finally {
+      locked = false
+    }
+  }
 }
