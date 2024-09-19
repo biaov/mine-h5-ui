@@ -1,4 +1,3 @@
 echo "" >>"$1"
 echo "Co-authored-by: biaov <biaov2017@qq.com>" >>"$1"
 echo "Co-authored-by: biaov2017 <biao2017@qq.com>" >>"$1"
-echo "Co-authored-by: biaov2018 <biaov2017@qq.com>" >>"$1"

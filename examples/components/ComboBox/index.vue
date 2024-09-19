@@ -9,9 +9,9 @@ const { isShow, onClickFrame, onClickItem } = useShowAction(props)
 <template>
   <!-- 下拉框 -->
   <div class="combo-box relative cursor-pointer" @click.stop="onClickFrame">
-    <div class="txt w-100 py-5 pr-4 pl-10 flex justify-between items-center">
+    <div class="txt w-100 py-5 pr-4 pl-10 flex justify-between items-center transition">
       <span>{{ list[1].version }}</span>
-      <img src="../../assets/icon-right.png" alt="icon-right.png" :class="{ rotate: isShow }" class="w-16 opacity-40" />
+      <img src="../../assets/icon-right.png" alt="icon-right.png" :class="{ 'rotate-90': isShow }" class="w-16 opacity-40 transition" />
     </div>
     <!-- 列表 -->
     <transition name="translate">

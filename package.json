@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -67,43 +67,44 @@
     "html2canvas": "^1.4.1",
     "mockjs": "^1.1.0",
     "qrcode": "^1.5.4",
-    "vue": "^3.4.37",
-    "vue-router": "^4.4.3"
+    "vue": "^3.5.6",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.10.0",
     "@types/mockjs": "^1.0.10",
-    "@types/node": "^22.2.0",
+    "@types/node": "^22.5.5",
     "@types/postcss-pxtorem": "^6.0.3",
     "@types/qrcode": "^1.5.5",
-    "@vitejs/plugin-vue": "^5.1.2",
-    "@vue/compiler-sfc": "^3.4.37",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/compiler-sfc": "^3.5.6",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.9.0",
+    "eslint": "^9.10.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.27.0",
+    "eslint-plugin-vue": "^9.28.0",
     "globals": "^15.9.0",
-    "husky": "^9.1.4",
-    "jsdom": "^24.1.1",
+    "husky": "^9.1.6",
+    "jsdom": "^25.0.0",
     "less": "^4.2.0",
     "markdown-it-container": "^4.0.0",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.3.3",
-    "shiki": "^1.12.1",
-    "tailwindcss": "^3.4.9",
-    "tslib": "^2.6.3",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.1",
+    "shiki": "^1.17.7",
+    "tailwindcss": "^3.4.12",
+    "tslib": "^2.7.0",
+    "typescript": "~5.5.4",
+    "typescript-eslint": "^8.6.0",
     "unplugin-vue-markdown": "^0.26.2",
-    "vite": "^5.4.0",
-    "vite-plugin-dts": "^4.0.2",
+    "vite": "^5.4.6",
+    "vite-plugin-dts": "^4.2.1",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-pwa": "^0.20.1",
-    "vitest": "^2.0.5",
-    "vue-tsc": "^2.0.29"
+    "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^2.1.1",
+    "vue-tsc": "^2.1.6"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.20.0"
+    "@rollup/rollup-linux-x64-gnu": "^4.22.0"
   }
 }

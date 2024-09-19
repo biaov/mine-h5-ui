@@ -145,3 +145,28 @@ scrollTo(document.body, 0) // 返回顶部
 const customDomNode = document.querySelector('.customDomNode')
 scrollTo(customDomNode, 0) // 滚动到指定位置
 ```
+
+## useLocked 重复点击锁 `v2.11.0`
+
+- useLocked 传入函数必须是一个异步函数
+- 同步函数不用加锁
+
+```js
+import { useLocked } from 'mine-h5-ui'
+
+const onClick = useLocked(async () => {
+  // 业务操作
+  // ...
+})
+```
+
+## useLocked 随机 ID `v2.11.0`
+
+- 可选参数进制
+
+```ts
+import { useId } from 'mine-h5-ui'
+
+console.log(useId()) // 1726733454868gl3vkrbuf9
+console.log(useId(16)) // 17267336100211ca549007f31
+```

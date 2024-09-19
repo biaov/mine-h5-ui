@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    "types": ["node", "vitest/globals"],
+    "types": ["vite/client", "node", "vitest/globals"],
 
     /* 路径别名 */
     "baseUrl": "./",
