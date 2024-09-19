@@ -9,9 +9,9 @@ defineProps<Props>()
   <ul class="nav-list flex items-center">
     <li v-for="(item, index) in list" :key="index">
       <template v-if="item.text === 'qrcode'">
-        <div class="qrcode relative cursor-pointer">
+        <div class="qrcode relative cursor-pointer group">
           <img :src="item.url" class="w-20 my-0 mr-10 ml-4" alt="icon" />
-          <div class="dropdown absolute top-40 right-0 z-20 flex items-center w-165 h-0 rounded-md pr-5 opacity-0 overflow-hidden">
+          <div class="dropdown absolute top-40 right-0 z-20 flex items-center w-165 h-0 rounded-md pr-5 opacity-0 overflow-hidden group-hover:opacity-100 group-hover:h-140">
             <img :src="item.href" alt="qrcode" class="w-140 h-140" />
             <span class="block w-20">移动端展示</span>
           </div>

@@ -159,3 +159,14 @@ const onClick = useLocked(async () => {
   // ...
 })
 ```
+
+## useLocked 随机 ID `v2.11.0`
+
+- 可选参数进制
+
+```ts
+import { useId } from 'mine-h5-ui'
+
+console.log(useId()) // 1726733454868gl3vkrbuf9
+console.log(useId(16)) // 17267336100211ca549007f31
+```
