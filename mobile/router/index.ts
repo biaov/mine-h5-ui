@@ -1,5 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw, Router } from 'vue-router'
-import { baseRouter } from '@/config/variables'
+import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw, Router } from 'vue-router'
 import docs from './docs'
 
 /**
@@ -26,7 +25,7 @@ const routes: RouteRecordRaw[] = [
  * 路由实例
  */
 const router: Router = createRouter({
-  history: createWebHistory(baseRouter),
+  history: createWebHistory(import.meta.env.VITE_BASE_ROUTER),
   routes
 })
 

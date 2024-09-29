@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
 import MineHeader from '@/components/MineHeader'
@@ -33,11 +34,18 @@ const changeFrameRouter = (frame: HTMLIFrameElement) => {
   postMessage = PostMessage(frame.contentWindow as Window)
   navigateTo(route.path)
 }
+const isMobile = ref(false)
+const onMobileState = () => {
+  isMobile.value = globalThis.innerWidth < 1200
+}
+onMobileState()
+window.addEventListener('resize', onMobileState)
 </script>
 
 <template>
   <!-- 文档 -->
-  <div class="doc">
+  <demo-h5 full v-if="isMobile" @getframe="changeFrameRouter" />
+  <div class="doc" v-else>
     <!-- 头部 -->
     <mine-header />
     <!-- 内容 -->

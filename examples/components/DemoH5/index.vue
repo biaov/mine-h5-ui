@@ -1,18 +1,26 @@
 <script lang="ts" setup>
-import { baseRouter } from '@/config/variables'
 import { useFrames } from './hooks'
-import type { Emits } from './types'
+import type { Emits, Props } from './types'
 
 const emit = defineEmits<Emits>()
+withDefaults(defineProps<Props>(), {
+  full: false
+})
+
 const { mobileIframe, onFrameLoad } = useFrames(emit)
+const { VITE_BASE_ROUTER } = import.meta.env
 </script>
 
 <template>
   <!-- H5演示 -->
-  <div class="demo-h5 relative w-360 h-780 p-10">
-    <div class="bg-demo w-full h-full px-16 py-100"><iframe ref="mobileIframe" :src="`${baseRouter}mobile.html`" width="100%" height="100%" frameborder="0" @load="onFrameLoad"></iframe></div>
+  <div class="w-full h-screen" v-if="full">
+    <iframe ref="mobileIframe" :src="`${VITE_BASE_ROUTER}mobile.html`" width="100%" height="100%" frameborder="0" @load="onFrameLoad"></iframe>
+  </div>
+  <div class="demo-h5 relative w-360 h-780 p-10" v-else>
+    <div class="bg-demo w-full h-full px-16 py-100"><iframe ref="mobileIframe" :src="`${VITE_BASE_ROUTER}mobile.html`" width="100%" height="100%" frameborder="0" @load="onFrameLoad"></iframe></div>
   </div>
 </template>
+
 <style scoped lang="less">
 @import './index.less';
 </style>

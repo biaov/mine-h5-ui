@@ -135,7 +135,7 @@ each(@modes, {
 
 /* vue过渡动画 start*/
 // 透明过渡
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
@@ -145,9 +145,20 @@ each(@modes, {
   transition: opacity 0.4s;
 }
 
-// 从下弹出过渡
+// 缩放动画
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.4s ease;
+}
 
-.translate-enter,
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+// 从下弹出过渡
+.translate-enter-from,
 .translate-leave-to {
   transform: translateY(100%);
   opacity: 0;
@@ -183,7 +194,7 @@ each(@modes, {
   transition: transform 0.4s;
 }
 
-.slide-enter {
+.slide-enter-from {
   transform: translateY(100%);
 }
 

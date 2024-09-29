@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ReloadPrompt from '@/components/ReloadPrompt'
-import { libraryInfo } from '@/config/variables'
+import { libraryInfo } from '@/config/package'
 import { useWebData } from './hook'
 
 const { listData, accordionActive } = useWebData()

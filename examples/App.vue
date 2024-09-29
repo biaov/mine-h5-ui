@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import { baseRouter } from '@/config/variables'
 
 onMounted(() => {
-  globalThis.innerWidth < 1200 && (globalThis.location.href = `${globalThis.location.origin}${baseRouter}mobile.html`)
+  // globalThis.innerWidth < 1200 && (globalThis.location.href = `${globalThis.location.origin}${import.meta.env.VITE_BASE_ROUTER}mobile.html`)
 })
 </script>
 

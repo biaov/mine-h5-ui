@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { githubLink, libraryInfo, otherDocLink } from '@/config/variables'
+import { githubLink, libraryInfo } from '@/config/package'
 import MineHeader from '@/components/MineHeader'
 import ReloadPrompt from '@/components/ReloadPrompt'
 import { useCanvas } from './hooks'
@@ -39,7 +39,7 @@ onMounted(() => {
           <router-link to="/doc">开始使用</router-link>
         </li>
         <li><a :href="githubLink" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a :href="otherDocLink" target="_blank" rel="noopener noreferrer">其它展示文档</a></li>
+        <li><a href="https://wordpress.biaov.cn/mine-h5-ui/" target="_blank" rel="noopener noreferrer">其它展示文档</a></li>
       </ul>
     </div>
   </div>

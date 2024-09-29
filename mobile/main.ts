@@ -9,7 +9,7 @@ app.use(mineh5ui)
 app.use(router)
 app.mount('#mine-h5-ui')
 
-// 接收数据
+// // 接收数据
 MessageEventListener(path => {
   app.config.globalProperties.$router.push({ path })
 })

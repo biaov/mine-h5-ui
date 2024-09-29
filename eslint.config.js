@@ -41,6 +41,10 @@ export default [
        * 禁止未使用的变量
        */
       'no-unused-vars': developmentOff,
+      /**
+       * 禁止未使用的变量
+       */
+      '@typescript-eslint/no-unused-vars': developmentOff,
 
       /**
        * 禁止 console

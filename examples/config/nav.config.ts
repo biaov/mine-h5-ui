@@ -425,6 +425,13 @@ export const componentConfig = [
         },
         path: 'besselCurve',
         name: 'besselCurve'
+      },
+      {
+        meta: {
+          title: 'ColorPicker 颜色选择器'
+        },
+        path: 'colorPicker',
+        name: 'colorPicker'
       }
     ]
   },

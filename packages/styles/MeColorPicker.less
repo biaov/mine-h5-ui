@@ -1,0 +1,57 @@
+/**
+  * @file 颜色选择器
+*/
+
+@import './common/vars.less';
+
+.me-color-picker {
+  position: relative;
+  display: inline-flex;
+  &-inner {
+    @radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid @border-color-default;
+    border-radius: @radius;
+    padding: 3px;
+    transition: all 0.2s ease;
+    &:hover {
+      border-color: var(--color);
+    }
+    .inner-block {
+      width: var(--size);
+      height: var(--size);
+      background: var(--color);
+      border-radius: @radius;
+    }
+    .inner-label {
+      margin: 0 5px 0 8px;
+      color: @font-color;
+    }
+  }
+  &-dropdown {
+    position: fixed;
+    left: 0;
+    top: calc(100% + 10px);
+    width: 260px;
+    height: 260px;
+    border-radius: 8px;
+    padding: 12px;
+    background: @bg-default;
+    transform-origin: 0% 0%;
+    box-shadow: @shadow;
+    &::before {
+      content: '';
+      position: absolute;
+      top: var(--arrow-y);
+      left: var(--arrow-x);
+      width: var(--arrow-size);
+      height: var(--arrow-size);
+      transform: rotate(45deg);
+      box-shadow: @shadow;
+      background: @bg-default;
+      clip-path: polygon(-30px -30px, 40px -30px, -30px 40px);
+    }
+  }
+}
