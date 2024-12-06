@@ -70,6 +70,7 @@ export { MeGuide } from './MeGuide' // 引导
 export { MeSkeleton } from './MeSkeleton' // 骨架屏
 export { MeBesselCurve, useMeBesselCurve } from './MeBesselCurve' // 贝塞尔曲线
 export { MeColorPicker } from './MeColorPicker' // 颜色选择器
+export { MeTextAnimation } from './MeTextAnimation' // 文本动画
 /* 展示组件 end */
 
 /* 业务组件 start */

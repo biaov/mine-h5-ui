@@ -15,7 +15,7 @@ const env = loadEnv('development', './')
  */
 export default defineConfig({
   base: env.VITE_BASE_ROUTER,
-  plugins: [eslint(eslintConfig), vue(vueConfig), markdownVite(markdownViteConfig), VitePWA(vitePwaConfig)],
+  plugins: [/* eslint(eslintConfig), */ vue(vueConfig), markdownVite(markdownViteConfig), VitePWA(vitePwaConfig)],
 
   /**
    * 服务配置

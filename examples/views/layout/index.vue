@@ -28,18 +28,18 @@ onMounted(() => {
     <!-- 内容 -->
     <div class="content relative z-2 text-center">
       <div class="logo w-220 mx-auto my-0"><img src="../../assets/logo.svg" alt="mine-h5-ui Logo" /></div>
-      <h1 class="tit mt-56 text-30">{{ libraryInfo.description }}</h1>
-      <p class="desc text-18 mx-0 mt-10 mb-50">
+      <h1 class="tit mt-56 text-30 px-20">{{ libraryInfo.description }}</h1>
+      <p class="desc text-18 mx-0 mt-10 mb-50 px-20 uppercase">
         如果你还冇心仪的 UI 框架，不妨试试
         <router-link to="/doc" class="inline">{{ libraryInfo.name }}</router-link>
         ，也许会让你有意外的收获。
       </p>
-      <ul class="btns flex justify-center">
+      <ul class="btns flex justify-center gap-x-30 px-20 max-md:flex-wrap max-md:gap-y-20 capitalize">
         <li>
           <router-link to="/doc">开始使用</router-link>
         </li>
-        <li><a :href="githubLink" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://wordpress.biaov.cn/mine-h5-ui/" target="_blank" rel="noopener noreferrer">其它展示文档</a></li>
+        <li><a :href="githubLink" target="_blank" rel="noopener noreferrer">gitHub</a></li>
+        <li><a href="https://wordpress.biaov.cn/mine-h5-ui/" target="_blank" rel="noopener noreferrer">markdown 文档</a></li>
       </ul>
     </div>
   </div>

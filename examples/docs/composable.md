@@ -170,3 +170,17 @@ import { useId } from 'mine-h5-ui'
 console.log(useId()) // 1726733454868gl3vkrbuf9
 console.log(useId(16)) // 17267336100211ca549007f31
 ```
+
+## useColorTransform 颜色转换 `v2.12.0`
+
+- 颜色转换
+- 第一个参数是需要转换的值，第二个参数是数组，由什么转化成什么
+
+```ts
+import { useColorTransform } from 'mine-h5-ui'
+
+const rgb = useColorTransform('#ff6600', ['hex', 'rgb'])
+console.log(rgb) // [255, 102, 0]
+```
+
+## useMoveHandle 移动操作处理 `v2.12.0`

@@ -15,6 +15,7 @@
     opacity: 0.1;
   }
 }
+
 // 浮动中
 @keyframes floating {
   0% {
@@ -24,6 +25,7 @@
     transform: translateY(15px);
   }
 }
+
 .layout {
   background: linear-gradient(180deg, rgba(#ecf6fb, 1), rgba(#ecf6fb, 0.8), rgba(#ecf6fb, 0.6));
   .bg {
@@ -61,7 +63,6 @@
         text-align: center;
         box-shadow: 0 2px 12px 0 @box-shadow-default;
         transition: all 0.4s;
-        margin-right: 30px;
         cursor: pointer;
         &:last-child {
           margin-right: 0;
@@ -107,6 +108,15 @@
           z-index: 1;
           color: @color-white;
           font-size: @font-size-large;
+        }
+      }
+    }
+  }
+  @media (max-width: 765px) {
+    .content {
+      .btns {
+        li {
+          width: 100%;
         }
       }
     }

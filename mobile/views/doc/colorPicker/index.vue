@@ -8,7 +8,7 @@ const { listData } = useWebData()
   <!-- 滑块 -->
   <ul class="color-picker">
     <li v-for="(item, index) in listData" :key="index">
-      <div class="label" style="height: 400px">{{ item.label }}</div>
+      <div class="label" style="height: 100px">{{ item.label }}</div>
       <me-color-picker v-model="item.props.value" v-if="item.props.customShow">
         <div class="w-100 h-40 text-white" :style="{ background: item.props.value }">{{ item.props.value }}</div>
       </me-color-picker>

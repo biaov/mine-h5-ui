@@ -17,3 +17,24 @@ export namespace USELocked {
   export type Option = (...args: unknown[]) => Promise<unknown | void>
   export type ReturnResult = (...args: unknown[]) => Promise<unknown | void>
 }
+
+/**
+ * useColorTransform
+ */
+export namespace USEColorTransform {
+  export interface Option {
+    type: ('rgb' | 'hex' | 'hsb')[]
+  }
+}
+
+/**
+ * useMoveHandle
+ */
+export namespace USEMoveHandle {
+  export type OptionEvent = Pick<MouseEvent, 'x' | 'y' | 'type'>
+  export interface Option {
+    start(e: OptionEvent): void | unknown
+    move(e: OptionEvent): void | unknown
+    end(e: OptionEvent): void | unknown
+  }
+}

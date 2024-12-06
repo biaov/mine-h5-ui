@@ -1,8 +1,10 @@
 import { ref } from 'vue'
 import { Bind, Unbind } from '../MeAPI/event'
 import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Debounce, FormatThousand, Locked, AddZero, Calculation, GenerateRandom, Retarder } from '../MeAPI/function'
-import { storageInstance } from './enums.ts'
-import type { StorageType, ScrollAnimationOption, USELocked } from './types'
+import { storageInstance, colorMode } from './enums.ts'
+import type { StorageType, ScrollAnimationOption, USELocked, USEColorTransform, USMoveHandle } from './types'
+import type { Mutable } from '../types'
+
 /**
  * 校验
  * @example
@@ -214,11 +216,11 @@ export const useScroll = ({ duration = 300 }: ScrollAnimationOption = {}) => {
  */
 export const useLocked = (handler: USELocked.Option): USELocked.Option => {
   let locked = false
-  return async (...args) => {
+  return async function (this: unknown, ...args) {
     if (locked) return
     locked = true
     try {
-      await handler(...args)
+      await handler.apply(this, args)
     } finally {
       locked = false
     }
@@ -236,3 +238,211 @@ export const useLocked = (handler: USELocked.Option): USELocked.Option => {
  * ```
  */
 export const useId = (binary = 32) => +new Date() + Math.random().toString(binary).slice(2)
+
+const hsbToRgb = ([h, s, v]: number[]) => {
+  h = (h / 360) * 6
+  s = s / 100
+  v = v / 100
+
+  const i = Math.floor(h)
+  const f = h - i
+  const p = v * (1 - s)
+  const q = v * (1 - f * s)
+  const t = v * (1 - (1 - f) * s)
+  const mod = i % 6
+  const r = [v, q, p, p, t, v][mod]
+  const g = [t, v, v, q, p, p][mod]
+  const b = [p, p, t, v, v, q][mod]
+
+  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]
+}
+
+const rgbToHsb = ([r, g, b]: (string | number)[]) => {
+  r = +r / 255
+  g = +g / 255
+  b = +b / 255
+  let h
+  let s: number
+  let v: number
+  const min = Math.min(r, g, b)
+  v = Math.max(r, g, b)
+  const max = v
+  const difference = max - min
+
+  if (max == min) {
+    h = 0
+  } else {
+    switch (max) {
+      case r:
+        h = (g - b) / difference + (g < b ? 6 : 0)
+        break
+      case g:
+        h = 2 + (b - r) / difference
+        break
+      case b:
+        h = 4 + (r - g) / difference
+        break
+    }
+    h = Math.round((h as number) * 60)
+  }
+  if (max == 0) {
+    s = 0
+  } else {
+    s = 1 - min / max
+  }
+  s = Math.round(s * 100)
+  v = Math.round(v * 100)
+  return [h, s, v]
+}
+
+const hexToRgb = (hex: string) =>
+  hex
+    .slice(1)
+    .match(/../g)!
+    .map(hex => parseInt(hex, 16))
+
+const rgbToHex = (rgb: number[]) => `${rgb.reduce((prev, item) => prev + item.toString(16).padStart(2, '0'), '#')}`
+
+/**
+ * 颜色值互转
+ * @example
+ * ```ts
+ * import { useColorTransform } from 'mine-h5-ui'
+ *
+ * const rgb = useColorTransform('#ff6600', ['hex', 'rgb'])
+ * console.log(rgb) // rgb(255, 102, 0)
+ * ```
+ */
+export const useColorTransform = <T = string | (string | number)[]>(value: T, [sourceType, targetType]: USEColorTransform.Option['type']): T => {
+  if (!(sourceType && targetType)) return value
+  if (sourceType === targetType) return value
+  let result: string | (string | number)[]
+  let rgbBefore: number[]
+
+  switch (sourceType) {
+    case colorMode.hex:
+      if (!/^#[0-9a-zA-Z]{6}$/.test(`${value}`)) throw new Error(`${value} 颜色值错误或不全`)
+      rgbBefore = hexToRgb(value as string)
+      break
+    case colorMode.rgb:
+      rgbBefore = value as number[]
+      break
+    case colorMode.hsb:
+      const hsb = (value as string).match(/\d+/g)
+      if (!hsb) throw new Error(`${value} 不是一个 hsb 格式`)
+      rgbBefore = hsbToRgb(hsb.map(Number))
+      break
+    default:
+      throw new Error(`${sourceType} 色彩模式错误`)
+  }
+
+  switch (targetType) {
+    case colorMode.hex:
+      result = rgbToHex(rgbBefore)
+      break
+    case colorMode.rgb:
+      result = `rgb(${rgbBefore.join()})`
+      break
+    case colorMode.hsb:
+      result = `hsb(${rgbToHsb(rgbBefore).join()})`
+      break
+    default:
+      throw new Error(`${targetType} 色彩模式错误`)
+  }
+
+  return result as T
+}
+
+/**
+ * 移动操作处理
+ * 鼠标按下, 移动, 抬起
+ * 触摸开始, 移动, 结束
+ * @example
+ * ```ts
+ * import { useMoveHandle } from 'mine-h5-ui'
+ * const nodeRef = useTemplateRef('demo')
+ *
+ * interface OptionEvent {
+ *    x: number
+ *    y: number
+ *    type: string
+ * }
+ *
+ * const option = {
+ *    start(e: OptionEvent){
+ *      console.log(e) // { x: 0, y: 0, type: 'touchstart' }
+ *    },
+ *    move(e: OptionEvent){
+ *      console.log(e) // { x: 0, y: 0, type: 'touchdown' }
+ *    },
+ *    end(e: OptionEvent){
+ *      console.log(e) // { x: 0, y: 0, type: 'touchend' }
+ *    }
+ * }
+ *
+ * useMoveHandle(nodeRef.value, option)
+ * ```
+ */
+export const useMoveHandle = (nodeRef: HTMLElement, option: Partial<USMoveHandle.Option>) => {
+  let isStart = false
+  /**
+   * 获取位置
+   */
+
+  const getPosition = (e: TouchEvent | MouseEvent) => {
+    let x: number
+    let y: number
+    const type = e.type
+    if (type === 'touchend') {
+      x = (e as TouchEvent).changedTouches[0].clientX
+      y = (e as TouchEvent).changedTouches[0].clientY
+    } else if (type.startsWith('touch')) {
+      x = (e as TouchEvent).touches[0].clientX
+      y = (e as TouchEvent).touches[0].clientY
+    } else {
+      x = (e as MouseEvent).clientX
+      y = (e as MouseEvent).clientY
+    }
+
+    return { x, y, type }
+  }
+  /**
+   * 移动处理
+   */
+  const moveHandle = (e: TouchEvent | MouseEvent) => {
+    option.move?.(getPosition(e))
+  }
+
+  /**
+   * 结束处理
+   */
+  const endHandle = (e: TouchEvent | MouseEvent) => {
+    document.removeEventListener('mousemove', moveHandle)
+    document.removeEventListener('mouseup', endHandle)
+    document.removeEventListener('touchmove', moveHandle)
+    document.removeEventListener('touchend', endHandle)
+
+    isStart = false
+
+    option.end?.(getPosition(e))
+  }
+
+  /**
+   * 开始处理
+   */
+  const startHandle = (e: TouchEvent | MouseEvent) => {
+    if (isStart) return
+    e.preventDefault()
+    document.addEventListener('mousemove', moveHandle)
+    document.addEventListener('mouseup', endHandle)
+    document.addEventListener('touchmove', moveHandle)
+    document.addEventListener('touchend', endHandle)
+
+    isStart = true
+
+    option.start?.(getPosition(e))
+  }
+
+  nodeRef.addEventListener('mousedown', startHandle, { passive: false })
+  nodeRef.addEventListener('touchstart', startHandle, { passive: false })
+}
