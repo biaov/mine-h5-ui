@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, useTemplateRef } from 'vue'
 import { useMoveHandle } from '../MeComposable'
-import type { USEMoveHandle } from '../MeComposable/types'
+import type { USEMoveHandle } from '../MeComposable'
 import type { Slide } from './types'
 import { pxToPercentage, rangeInside } from './utils'
 
@@ -21,7 +21,7 @@ const setPoint = ({ sx, ex, iw, width }: Slide.SetPointOption) => {
   let x = pxToPercentage(iw + moveX, width)
   x = Math.round(rangeInside(x, 0, 100))
   if (sx === ex) return
-  progress.value = x
+  progress.value = Math.round(x)
 }
 
 let startRect: Omit<Slide.SetPointOption, 'ex'> | null = null

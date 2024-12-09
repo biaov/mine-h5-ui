@@ -52,14 +52,19 @@ export interface Emits {}
  */
 export interface Props {
   /**
-   * 标签
+   * 过滤文本
    */
-  label?: string
+  filterText?: (option: DefineModelOption.ModelValue) => string
 
   /**
    * 大小
    */
   size?: 'default' | 'large' | 'small'
+
+  /**
+   * 显示文本
+   */
+  showText?: boolean
 }
 
 export interface ModelValueOption {

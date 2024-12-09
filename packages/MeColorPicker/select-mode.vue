@@ -26,13 +26,27 @@ const onUpdateAlpha = (alpha: string | number) => {
   setModelValue(modelValue, { alpha: +alpha })
 }
 
+const onUpdateModeSelect = () => {
+  const { value: oldValue } = modelValue.value
+  const { value } = modeSelect
+  if (value.length !== 6 || oldValue.slice(1) === modeSelect.value) return
+  setModelValue(modelValue, { value: `#${value}` })
+}
+
 watch(
   parseValue,
   ([one, two, three]) => {
-    if (modelValue.value.type !== colorType.hex) {
-      const value = `${modelValue.value.type}(${one},${two},${three})`
-      setModelValue(modelValue, { value })
+    const { type, value: oldValue } = modelValue.value
+    let value: string | null = null
+    switch (type) {
+      case colorType.rgb:
+        value = `${type}(${one},${two},${three})`
+        break
+      case colorType.hsb:
+        value = `${type}(${one},${two}%,${three}%)`
+        break
     }
+    value && oldValue !== value && setModelValue(modelValue, { value })
   },
   {
     deep: true,
@@ -72,7 +86,7 @@ watch(
       </transition>
     </div>
     <div class="color-mode__input" :class="{ group: modelValue.type !== colorType.hex }">
-      <ComInput v-model="modeSelect" prefix="#" v-if="modelValue.type === colorType.hex" />
+      <ComInput v-model="modeSelect" prefix="#" v-if="modelValue.type === colorType.hex" @update:modelValue="onUpdateModeSelect" />
       <template v-else-if="modelValue.type === colorType.hsb">
         <ComInput v-model="parseValue[0]" :range="[0, 359]" />
         <ComInput v-model="parseValue[1]" suffix="%" :range="[0, 100]" />

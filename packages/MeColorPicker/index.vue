@@ -10,7 +10,8 @@ defineOptions({ name })
 const solts = defineSlots<Partial<DefaultSlots>>()
 const props = withDefaults(defineProps<Props>(), {
   size: 'default',
-  label: ''
+  filterText: (value: DefineModelOption.ModelValue) => value.value,
+  showText: false
 })
 const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
 
@@ -25,7 +26,7 @@ const { sizeValue } = useSize(props)
     <slot></slot>
     <div :class="`${name}-inner`" :style="`--color:${showColor};--size:${sizeValue.size}px;fontSize:${sizeValue.fontSize}px;`" v-if="!solts.default">
       <div class="inner-block"></div>
-      <div class="inner-label" v-if="label">{{ label }}</div>
+      <div class="inner-label" v-if="showText">{{ filterText(modelValue) }}</div>
     </div>
   </div>
   <DropDown v-model="modelValue" v-model:visible="dropdown" :rect="colorRect" :duration="400" />

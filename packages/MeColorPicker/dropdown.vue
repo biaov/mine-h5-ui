@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, useTemplateRef, watch } from 'vue'
-import { useColorTransform } from '../MeComposable'
+import { useColorTransform, useSameTarget } from '../MeComposable'
 import CompSlide from './slide.vue'
 import SelectMode from './select-mode.vue'
 import { name, getDefaultValue } from './config'
@@ -75,6 +75,8 @@ const onClose = () => {
   visible.value = false
 }
 
+const { onClick, onMousedown, onMouseup } = useSameTarget(onClose)
+
 const progress = ref({
   entity: {
     value: 0,
@@ -116,7 +118,7 @@ watch(
     progress.value.opacity.value = newValue.alpha
     progress.value.opacity.dotBg = rgbToRgba(rgb, progress.value.opacity.value)
     progress.value.opacity.bg = `linear-gradient(90deg, transparent 0%, ${rgb} 100%)`
-    bgBox.value = rgb
+    bgBox.value = rgb.replace(')', `,${newValue.alpha / 100}`)
   },
   { immediate: true, deep: true }
 )
@@ -125,7 +127,7 @@ const onUpdateAlpha = (alpha: number) => setModelValue(modelValue, { alpha })
 </script>
 <template>
   <transition name="fade">
-    <div :class="`${name}-mask`" @click="onClose" v-if="visible">
+    <div :class="`${name}-mask`" @click="onClick" @mousedown="onMousedown" @mouseup="onMouseup" v-if="visible">
       <div :class="`${name}-dropdown`" :style="getStyle" @click.stop>
         <ColorPanel v-model="colorPanel" @update:modelValue="onUpdateColorPanel" :background="progress.entity.dotBg" />
         <div class="progress-box">
