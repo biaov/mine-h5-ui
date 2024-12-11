@@ -7,6 +7,7 @@ export * from './types'
  * 触摸开始, 移动, 结束
  * @example
  * ```ts
+ * import { useTemplateRef } from 'vue'
  * import { useMoveHandle } from 'mine-h5-ui'
  * const nodeRef = useTemplateRef('demo')
  *

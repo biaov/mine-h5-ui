@@ -160,7 +160,7 @@ const onClick = useLocked(async () => {
 })
 ```
 
-## useLocked 随机 ID `v2.11.0`
+## useId 随机 ID `v2.11.0`
 
 - 可选参数进制
 
@@ -184,3 +184,39 @@ console.log(rgb) // [255, 102, 0]
 ```
 
 ## useMoveHandle 移动操作处理 `v2.12.0`
+
+```ts
+import { useTemplateRef } from 'vue'
+import { useMoveHandle } from 'mine-h5-ui'
+const nodeRef = useTemplateRef('demo')
+
+interface OptionEvent {
+  x: number
+  y: number
+  type: string
+}
+
+const option = {
+  start(e: OptionEvent) {
+    console.log(e) // { x: 0, y: 0, type: 'touchstart' }
+  },
+  move(e: OptionEvent) {
+    console.log(e) // { x: 0, y: 0, type: 'touchdown' }
+  },
+  end(e: OptionEvent) {
+    console.log(e) // { x: 0, y: 0, type: 'touchend' }
+  }
+}
+
+useMoveHandle(nodeRef.value, option)
+```
+
+## useSameTarget 相同的目标节点 `v2.12.0`
+
+```ts
+import { useSameTarget } from 'mine-h5-ui'
+
+const { onClick, onMousedown, onMouseup } = useSameTarget((e: PointerEvent) => {
+  console.log(e) // PointerEvent {isTrusted: true, _vts: 1733714310245, pointerId: 1, width: 1, height: 1, …}
+})
+```

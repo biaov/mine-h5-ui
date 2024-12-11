@@ -17,6 +17,7 @@ const formatValue = (value: string | number) => {
   const [min, max] = props.range
   min && +value < min && (value = `${min}`)
   max && +value > max && (value = `${max}`)
+  value && props.range.length && (value = Math.round(+value))
   return value
 }
 

@@ -1,11 +1,15 @@
+import type { MeColorPickerType } from '@/plugins'
+
 /**
  * 列表项
  */
 export interface ListDataItem {
   label: string
+  customShow?: boolean
+  size?: string[]
   props: {
-    value: string
-    customShow?: boolean
-    labelShow?: boolean
+    value?: MeColorPickerType.ModelValue
+    showText?: boolean
+    filterText?: (value: MeColorPickerType.ModelValue) => string
   }
 }

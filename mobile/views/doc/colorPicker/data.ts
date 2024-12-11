@@ -4,12 +4,32 @@ export default [
     props: {
       value: undefined
     }
-  }
-  /* {
-    label: '自定义文本',
+  },
+  {
+    label: '大小',
+    size: ['small', 'default', 'large'],
+    props: {}
+  },
+  {
+    label: '显示文案',
     props: {
-      value: '',
-      labelShow: true
+      value: undefined,
+      showText: true
     }
-  } */
+  },
+  {
+    label: '自定义文案',
+    props: {
+      value: undefined,
+      showText: true,
+      filterText: () => '自定义文案'
+    }
+  },
+  {
+    label: '自定义展示',
+    customShow: true,
+    props: {
+      value: undefined
+    }
+  }
 ]

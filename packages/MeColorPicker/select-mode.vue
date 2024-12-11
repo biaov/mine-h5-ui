@@ -23,7 +23,7 @@ const onSelect = ({ value }: ColorTypeOptionItem) => {
 }
 
 const onUpdateAlpha = (alpha: string | number) => {
-  setModelValue(modelValue, { alpha: +alpha })
+  setModelValue(modelValue, { alpha: Math.round(+alpha) })
 }
 
 const onUpdateModeSelect = () => {

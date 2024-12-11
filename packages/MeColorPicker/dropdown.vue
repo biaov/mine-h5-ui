@@ -123,7 +123,7 @@ watch(
   { immediate: true, deep: true }
 )
 
-const onUpdateAlpha = (alpha: number) => setModelValue(modelValue, { alpha })
+const onUpdateAlpha = (alpha: number) => setModelValue(modelValue, { alpha: Math.round(+alpha) })
 </script>
 <template>
   <transition name="fade">

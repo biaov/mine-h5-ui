@@ -25,89 +25,93 @@ createApp(App).use(ColorPicker).mount('#app')
 
 ### 基础用法
 
-- 通过属性 `list` 来设置组件的内容，如果不设置则为无文本分割线，默认为空数组。
+- 通过 `v-model` 来进行双向绑定，可以为 undefined
+
+```ts
+interface ModelValue {
+  /**
+   * 色彩类型
+   */
+  type: 'hex' | 'rgb' | 'hsb'
+  /**
+   * 颜色值, 默认为: #409eff
+   */
+  value: string
+  /**
+   * 透明度, 0 - 100
+   */
+  alpha: number
+}
+```
 
 ::: CopyCode
 
 ```html
-<me-divider :list="['缥缈']" />
+<me-color-picker v-model="modelValue" />
 ```
 
 :::
 
-### 设置文本位置
+### 大小
 
-- 通过属性 `left` 或者 `right` 来设置组件的位置，默认居中。
+- 通过属性 `size` 来控制显示的大小, 默认为 default
 
 ::: CopyCode
 
 ```html
-<me-divider :list="['青衣']" :left="20" />
+<me-color-picker size="default" />
 ```
 
 :::
 
-### 自定义样式
+### 显示文案
 
-- 通过属性 `line` 或者 `text` 分别来设置组件的线条样式、文本样式，默认值点击 [Line](#line) 和 [Text](#text) 查看。
+- 通过属性 `showText` 来控制文案是否显示, 默认为 false
 
 ::: CopyCode
 
-```vue
-<script lang="ts" setup>
-/**
- * 分割线
- */
-const divider = Object.freeze({
-  list: ['流影'],
-  line: {
-    width: 4,
-    color: '#F06B51',
-    radius: 4
-  },
-  text: {
-    color: '#FFA18F',
-    size: 16
-  }
-})
-</script>
-
-<template>
-  <me-divider v-bind="divider" />
-</template>
+```html
+<me-color-picker v-model="modelValue" show-text />
 ```
 
 :::
 
-### 多边形
+### 自定义文案
 
-- 通过属性 `width` 和 `height` 来设置组件的大小。
-- 通过属性 `origin` 来设置组件的旋转元素 Y 轴的基点位置。
+- 通过属性 `filterText` 来过滤文案内容。
 
 ::: CopyCode
 
 ```vue
-<script lang="ts" setup>
-/**
- * 分割线
- */
-const divider = Object.freeze({
-  list: ['羽裳', '轩辕', '紫萱'],
-  width: 100,
-  height: 100,
-  origin: 41,
-  line: {
-    width: 6,
-    color: '#f60'
-  },
-  text: {
-    color: '#f66'
-  }
-})
-</script>
 <template>
-  <me-divider v-bind="divider" />
+  <me-color-picker v-model="modelValue" show-text :filter-text="filterText" />
 </template>
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface ModelValue {
+  type: 'hex' | 'rgb' | 'hsb'
+  value: string
+  alpha: number
+}
+
+const modelValue = ref<ModelValue>()
+const filterText = (record: ModelValue) => '自定义文案'
+</script>
+```
+
+:::
+
+### 自定义展示
+
+- 通过插槽来展示自定义内容 slot。
+
+::: CopyCode
+
+```html
+<me-color-picker v-model="modelValue">
+  <div class="custom-content">自定义内容</div>
+</me-color-picker>
 ```
 
 :::
@@ -116,31 +120,37 @@ const divider = Object.freeze({
 
 ### 参数
 
-| 参数   | 说明                    | 类型            | 可选值 | 默认值        | 版本   |
-| ------ | ----------------------- | --------------- | ------ | ------------- | ------ |
-| list   | 线条数和文本            | `Array<string>` | --     | [ ]           | v2.0.0 |
-| left   | 距离左边的距离          | number          | --     | --            | v2.0.0 |
-| right  | 距离右边的距离          | number          | --     | --            | v2.0.0 |
-| width  | 宽度                    | number          | --     | 100%          | v2.0.0 |
-| height | 高度                    | number          | --     | 24            | v2.0.0 |
-| origin | 旋转元素 Y 轴的基点位置 | number          | --     | center        | v2.0.0 |
-| line   | 线条样式，[详情](#line) | Object          | --     | [详情](#line) | v2.0.0 |
-| text   | 文本样式，[详情](#text) | Object          | --     | [详情](#text) | v2.0.0 |
+| 参数       | 说明         | 类型                          | 可选值                        | 默认值    | 版本    |
+| ---------- | ------------ | ----------------------------- | ----------------------------- | --------- | ------- |
+| v-model    | 颜色内容     | [ModelValue](#modelvalue)     | --                            | --        | v2.12.0 |
+| size       | 大小         | string                        | `small` / `default` / `large` | `default` | v2.12.0 |
+| showText   | 文案显示状态 | bolean                        | true / false                  | false     | v2.12.0 |
+| filterText | 文案过滤方法 | (value: ModelValue) => string | --                            | --        | v2.12.0 |
 
-#### Line
+#### ModelValue
 
-| 参数   | 说明     | 类型   | 可选值 | 默认值                  | 版本   |
-| ------ | -------- | ------ | ------ | ----------------------- | ------ |
-| radius | 线条倒角 | number | --     | list.length < 3 ? 0 : 6 | v2.0.0 |
-| color  | 线条颜色 | string | --     | #dcdfe6                 | v2.0.0 |
-| size   | 线条大小 | number | --     | list.length < 3 ? 1 : 6 | v2.0.0 |
+```ts
+interface ModelValue {
+  /**
+   * 色彩类型
+   */
+  type: 'hex' | 'rgb' | 'hsb'
+  /**
+   * 颜色值, 默认为: #409eff
+   */
+  value: string
+  /**
+   * 透明度, 0 - 100
+   */
+  alpha: number
+}
+```
 
-#### Text
+#### Slots
 
-| 参数  | 说明     | 类型   | 可选值 | 默认值  | 版本   |
-| ----- | -------- | ------ | ------ | ------- | ------ |
-| color | 文本颜色 | string | --     | #494949 | v2.0.0 |
-| size  | 文本大小 | number | --     | 14      | v2.0.0 |
+| 具名插槽 | 说明     | scopedSlots | 版本    |
+| -------- | -------- | ----------- | ------- |
+| default  | 默认名称 | --          | v2.12.0 |
 
 ### 方法
 

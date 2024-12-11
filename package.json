@@ -23,7 +23,7 @@
     "build:package": "vite build --config scripts/package.vite.ts",
     "preview": "vite preview",
     "test:unit": "vitest run",
-    "test:unit:single": "vitest dev tests/unit/dialog.spec.ts",
+    "test:unit:single": "vitest dev tests/unit/colorPicker.spec.ts",
     "prepare": "husky",
     "pre-publish": "node scripts/pre-publish.js",
     "pre-publish:github": "set NODE_PRE=github && node scripts/pre-publish.js && start cmd /k cd ./dist/packages",

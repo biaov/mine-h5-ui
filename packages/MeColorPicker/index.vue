@@ -4,18 +4,19 @@ import { useHandler, useSize, useRender } from './hooks'
 import type { Props, DefineModelOption } from './types'
 import { name, getDefaultValue } from './config'
 import DropDown from './dropdown.vue'
+import { colorType } from './enums'
 
 defineOptions({ name })
 
 const solts = defineSlots<Partial<DefaultSlots>>()
 const props = withDefaults(defineProps<Props>(), {
   size: 'default',
-  filterText: (value: DefineModelOption.ModelValue) => value.value,
+  filterText: ({ value, type, alpha }: DefineModelOption.ModelValue) => (type === colorType.hex ? value : value.replace(')', `,${alpha / 100})`)),
   showText: false
 })
 const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
 
-const { colorRect, dropdown, onToggle } = useHandler({ modelValue })
+const { colorRect, dropdown, onToggle } = useHandler()
 const { showColor } = useRender({ modelValue })
 const { sizeValue } = useSize(props)
 </script>

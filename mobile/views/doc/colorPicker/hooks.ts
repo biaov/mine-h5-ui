@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { useColorTransform } from '@/plugins'
 import initData from './data'
 import type { ListDataItem } from './types'
 
@@ -10,6 +11,11 @@ export const useWebData = () => {
    * 列表数据
    */
   const listData = ref<ListDataItem[]>(initData)
+  const filterColor = (item: ListDataItem) => {
+    if (!item.customShow) return
+    if (!item.props.value) return '#409eff'
+    return useColorTransform(item.props.value.value, [item.props.value.type, 'rgb'])
+  }
 
-  return { listData }
+  return { listData, filterColor }
 }

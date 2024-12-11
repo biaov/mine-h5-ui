@@ -1,14 +1,14 @@
 import { watch, ref, computed, createVNode, render, useTemplateRef } from 'vue'
 import { useColorTransform } from '../MeComposable'
-import type { USEHandler, Props, DefineModelOption, USERender, DropDown } from './types'
+import type { Props, DefineModelOption, USERender, DropDown } from './types'
 import { colorType } from './enums'
-import { getDefaultValue } from './config'
+import { getDefaultValue, presetSize } from './config'
 import { rgbToRgba } from './utils'
 
 /**
  * 操作
  */
-export const useHandler = ({ modelValue }: USEHandler.Option) => {
+export const useHandler = () => {
   const dropdown = ref(false)
   const colorRef = useTemplateRef<HTMLDivElement>('colorRef')
   const colorRect = ref<DropDown.Props['rect']>()
@@ -25,21 +25,7 @@ export const useHandler = ({ modelValue }: USEHandler.Option) => {
  * 大小
  */
 export const useSize = (props: Readonly<Required<Props>>) => {
-  const preset = {
-    small: {
-      size: 16,
-      fontSize: 12
-    },
-    default: {
-      size: 24,
-      fontSize: 14
-    },
-    large: {
-      size: 32,
-      fontSize: 16
-    }
-  }
-  const sizeValue = computed(() => preset[props.size])
+  const sizeValue = computed(() => presetSize[props.size])
 
   return { sizeValue }
 }
