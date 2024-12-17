@@ -16,7 +16,7 @@
 
 ## v2.12.0 - 最新版本
 
-`2024-12-17`
+`2024-12-18`
 
 - 🔥 新增[颜色选择器 MeColorPicker](/v2/doc/datetimePicker) 组件
 - 🔥 新增[文案滑动动画 MeTextAnimation](/v2/doc/textAnimation) 组件
