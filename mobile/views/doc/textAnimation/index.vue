@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useHandle } from './hooks'
+import { useWebData } from './hooks'
 
-const { listData, onChange, onClick } = useHandle()
+const { listData } = useWebData()
 </script>
 
 <template>
@@ -9,7 +9,7 @@ const { listData, onChange, onClick } = useHandle()
   <ul class="checkbox">
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
-      <me-text-animation />
+      <me-text-animation v-bind="item.props" />
     </li>
   </ul>
 </template>

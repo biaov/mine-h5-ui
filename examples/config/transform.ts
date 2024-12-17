@@ -24,7 +24,7 @@ const firstToRoute = (data: string[]) =>
 /**
  * 二级转换
  */
-const secondToRoute = (data: Record<string, string[]>) =>
+export const secondToRoute = (data: Record<string, string[]>) =>
   Object.entries(data).map(([key, value]) => {
     const items = value.map(title => {
       const path = titleToPath(title)

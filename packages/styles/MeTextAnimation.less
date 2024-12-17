@@ -4,5 +4,56 @@
 
 @import './common/vars.less';
 
+@keyframes clip-inset {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
 .me-text-animation {
+  .text {
+    text-anchor: middle;
+    font-size: var(--view-box-size);
+    stroke-width: 1;
+    stroke: var(--color);
+    fill: var(--color);
+    font-family: var(--family);
+  }
+
+  .cover {
+    animation: clip-inset 1s linear infinite;
+    fill: var(--background);
+    stroke: var(--color);
+  }
+
+  --angle: 90deg;
+  --color-base: transparent;
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+
+  @keyframes borderRotate {
+    100% {
+      --angle: 450deg;
+    }
+  }
+
+  .border {
+    width: calc(var(--width) * 1px + 10px);
+    height: calc(var(--height) * 1px + 3px);
+    background: var(--background);
+    border: 1px solid transparent;
+    border-image: conic-gradient(from var(--angle), var(--color-base), var(--color) 0.06turn, var(--color) 0.23turn, var(--color-base) 0.25turn) 10;
+    animation: borderRotate 2.5s linear infinite forwards;
+    color: var(--color);
+    font-size: calc(var(--size) * 1px);
+    line-height: 1.1;
+    text-align: center;
+  }
 }

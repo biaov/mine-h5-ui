@@ -1,6 +1,6 @@
 import type { ModelRef } from 'vue'
 import { hsbKey } from './enums'
-import type { HSBToRect, DefineModelOption } from './types'
+import type { HSBToRect } from './types'
 
 /**
  * rgb 提取数字

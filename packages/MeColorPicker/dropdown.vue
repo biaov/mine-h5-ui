@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, useTemplateRef, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useColorTransform, useSameTarget } from '../MeComposable'
 import CompSlide from './slide.vue'
 import SelectMode from './select-mode.vue'
@@ -9,7 +9,6 @@ import { colorType, hsbKey } from './enums'
 import { hsbToRect, rgbToRgba, rgbExtractNum, setModelValue } from './utils'
 import ColorPanel from './color-panel.vue'
 
-const emit = defineEmits<DropDown.Emits>()
 const props = withDefaults(defineProps<DropDown.Props>(), {
   duration: 400,
   rect: () => ({

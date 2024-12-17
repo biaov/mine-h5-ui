@@ -111,9 +111,11 @@ export const useColorTransform = <T = string | (string | number)[]>(value: T, [s
       rgbBefore = rgbExtractNum(value as string, true)
       break
     case colorMode.hsb:
-      const hsb = rgbExtractNum<number>(value as string, true)
-      if (!hsb) throw new Error(`${value} 不是一个 hsb 格式`)
-      rgbBefore = hsbToRgb(hsb)
+      {
+        const hsb = rgbExtractNum<number>(value as string, true)
+        if (!hsb) throw new Error(`${value} 不是一个 hsb 格式`)
+        rgbBefore = hsbToRgb(hsb)
+      }
       break
     default:
       throw new Error(`${sourceType} 色彩模式错误`)
@@ -127,8 +129,10 @@ export const useColorTransform = <T = string | (string | number)[]>(value: T, [s
       result = `rgb(${rgbBefore.join()})`
       break
     case colorMode.hsb:
-      const [h, s, b] = rgbToHsb(rgbBefore)
-      result = `hsb(${h},${s}%,${b}%)`
+      {
+        const [h, s, b] = rgbToHsb(rgbBefore)
+        result = `hsb(${h},${s}%,${b}%)`
+      }
       break
     default:
       throw new Error(`${targetType} 色彩模式错误`)

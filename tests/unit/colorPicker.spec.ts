@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { Retarder, getViewer } from '@/utils/functions'
+import { getViewer } from '@/utils/functions'
 import MeColorPicker from '~/MeColorPicker/index.vue'
 import { presetSize } from '~/MeColorPicker/config'
 
-describe('MeColorPicker 对话框', () => {
+describe('MeColorPicker 颜色选择器', () => {
   test('组件是否存在', async () => {
     /**
      * 向组件里传参

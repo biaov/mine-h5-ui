@@ -40,7 +40,7 @@ export default [
       /**
        * 禁止未使用的变量
        */
-      'no-unused-vars': developmentOff,
+      'no-unused-vars': 'off',
       /**
        * 禁止未使用的变量
        */

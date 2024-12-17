@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { getViewer } from '@/utils/functions'
 import MeGuide from '~/MeGuide/index.vue'
 
-describe('MeGuide 遮罩层', () => {
+describe('MeGuide 引导', () => {
   const list = ['https://dummyimage.com/750x1334/f60/fff&text=1', 'https://dummyimage.com/750x1334/f60/fff&text=1']
 
   test('属性 visible', async () => {

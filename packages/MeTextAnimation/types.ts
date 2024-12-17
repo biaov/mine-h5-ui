@@ -1,9 +1,4 @@
 /**
- * props nativeType
- */
-export type NativeType = 'button' | 'submit' | 'reset'
-
-/**
  * emits
  */
 export interface Emits {
@@ -11,40 +6,31 @@ export interface Emits {
 }
 
 /**
- * 按钮类型
- */
-export type ButtonType = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
-
-/**
  * props
  */
 export interface Props {
   /**
-   * 原生 type
+   * 动画类型
    */
-  nativeType?: NativeType
+  type?: string
   /**
-   * 宽度
+   * 字体大小
    */
-  width?: string
+  size?: number
   /**
-   * 类型
+   * 字体
    */
-  type?: ButtonType
-  /**
-   * 是否朴素按钮
-   */
-  plain?: boolean
-  /**
-   * 是否禁用
-   */
-  disabled?: boolean
-  /**
-   * 图标
-   */
-  icon?: string
+  family?: string
   /**
    * 颜色
    */
   color?: string
+  /**
+   * 背景色
+   */
+  background?: string
+  /**
+   * 文本
+   */
+  text: string
 }

@@ -89,9 +89,6 @@ export namespace USEHandler {
  * dropdown
  */
 export namespace DropDown {
-  export interface Emits {
-    (event: 'change', bool: boolean): void
-  }
   export interface Props {
     duration?: number
     rect?: {

@@ -7,7 +7,7 @@ import type { HandleClick } from './types'
  * import { useSameTarget } from 'mine-h5-ui'
  *
  * const { onClick, onMousedown, onMouseup } = useSameTarget((e: PointerEvent) => {
- *   console.log(e) // PointerEvent {isTrusted: true, _vts: 1733714310245, pointerId: 1, width: 1, height: 1, …}
+ *   console.log(e) // PointerEvent{ isTrusted: true, _vts: 1733714310245, pointerId: 1, width: 1, height: 1,…}
  * })
  * ```
  */

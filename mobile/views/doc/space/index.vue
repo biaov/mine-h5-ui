@@ -10,7 +10,7 @@ const { listData } = useData()
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
       <me-space v-bind="{ size: item.size, direction: item.direction }">
-        <div class="item" v-for="item in 3">{{ item }}</div>
+        <div class="item" v-for="item in 3" :key="item">{{ item }}</div>
       </me-space>
     </li>
   </ul>

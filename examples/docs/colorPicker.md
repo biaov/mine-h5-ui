@@ -12,7 +12,7 @@ import App from './App.vue'
 import { MeColorPicker } from 'mine-h5-ui'
 import 'mine-h5-ui/styles/MeColorPicker.css'
 
-createApp(App).use(ColorPicker).mount('#app')
+createApp(App).use(MeColorPicker).mount('#app')
 ```
 
 :::

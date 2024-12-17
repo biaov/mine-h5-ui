@@ -2,9 +2,9 @@
  * 颜色类型
  */
 export const colorType = {
-  hex: 'hex' as 'hex',
-  rgb: 'rgb' as 'rgb',
-  hsb: 'hsb' as 'hsb',
+  hex: 'hex' as const,
+  rgb: 'rgb' as const,
+  hsb: 'hsb' as const,
   options() {
     return [
       {

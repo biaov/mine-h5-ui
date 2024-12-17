@@ -220,3 +220,12 @@ const { onClick, onMousedown, onMouseup } = useSameTarget((e: PointerEvent) => {
   console.log(e) // PointerEvent {isTrusted: true, _vts: 1733714310245, pointerId: 1, width: 1, height: 1, …}
 })
 ```
+
+## useCssVar 对象转 CSS 变量 `v2.12.0`
+
+```ts
+import { useCssVar } from 'mine-h5-ui'
+
+console.log(useCssVar({ width: '100px' })) // { --width: '100px' }
+console.log(useCssVar({ fontSize: '100px' })) // { --font-size: '100px' }
+```
