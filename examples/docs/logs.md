@@ -27,7 +27,6 @@
 - 🔥 新增 [useCssVar](/v2/doc/composable) 对象转 CSS 变量
 - 🔥 新增依赖 `vi-canvas-mock` 用于处理单元测试 canvas 问题
 - ⚙️ 更新依赖版本
-- ⚙️ 更新依赖 `vite` 由 `5.x` -> `6.x`
 - ⚙️ 优化 `useLocked` 方法 this 指向问题
 - ⚙️ 优化 api 导出
 - ⚙️ 拆分 MeComposable 里面的方法

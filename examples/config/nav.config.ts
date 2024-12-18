@@ -7,4 +7,5 @@ Object.entries(routesJson).forEach(([key, value]) => {
 })
 
 export const componentConfig = navConfig['组件'] as ReturnType<typeof secondToRoute>
+
 export default navConfig

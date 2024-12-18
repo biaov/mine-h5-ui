@@ -2,7 +2,10 @@
  * 标题转路径
  */
 const titleToPath = (title: string) => {
-  const [name] = title.split(' ')
+  const group = title.split(' ')
+  const [name] = group
+
+  if (group.includes('API')) return name === 'API' ? 'api' : 'composable'
   return name[0].toLowerCase() + name.slice(1)
 }
 
@@ -28,6 +31,7 @@ export const secondToRoute = (data: Record<string, string[]>) =>
   Object.entries(data).map(([key, value]) => {
     const items = value.map(title => {
       const path = titleToPath(title)
+      console.log(title, '--', path)
       return {
         meta: {
           title
