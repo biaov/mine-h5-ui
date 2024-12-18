@@ -1,0 +1,57 @@
+{
+  "指南": ["introduce 介绍", "install 安装", "start 快速开始", "theme 自定义主题", "develop 开发指南", "logs 更新日志"],
+  "组件": {
+    "基础组件": ["Button 按钮", "Icon 图标", "Img 图片", "Popup 弹出层", "Cell 单元格", "Space 间距"],
+    "表单组件": [
+      "Input 按钮",
+      "Radio 单选框",
+      "Checkbox 复选框",
+      "Switch 开关",
+      "Keyboard 数字键盘",
+      "Password 密码输入框",
+      "Search 搜索",
+      "Rate 评分",
+      "Slider 滑块",
+      "DatetimePicker 时间选择器",
+      "AddressPicker 地址选择器",
+      "Upload 上传",
+      "Form 表单"
+    ],
+    "反馈组件": [
+      "ActionSheet 动作面板",
+      "Toast 消息提示",
+      "Loading 加载",
+      "ShowLoading 加载提示框",
+      "Mask 遮罩层",
+      "MessageBox 弹出框",
+      "Dialog 对话框",
+      "ShareSheet 分享面板",
+      "SwiperCell 滑动单元格",
+      "FloatButton 悬浮按钮"
+    ],
+    "导航组件": ["Grid 宫格", "IndexBar 索引栏", "NavBar 导航栏", "Tab 标签页", "TabBar 标签栏", "PullRefresh 下拉刷新"],
+    "展示组件": [
+      "ProgressBar 进度条",
+      "Accordion 手风琴",
+      "CountDown 倒计时",
+      "Divider 分割线",
+      "Empty 空状态",
+      "Preview 图片预览",
+      "NoticeBar 公告栏",
+      "Swiper 轮播图",
+      "Tag 标签",
+      "CountTo 数字滚动",
+      "Error 错误",
+      "Guide 引导",
+      "Skeleton 骨架屏",
+      "BesselCurve 贝塞尔曲线",
+      "ColorPicker 颜色选择器",
+      "TextAnimation 文案动画"
+    ],
+    "业务组件": ["VirtualList 虚拟列表", "Screenshot 截长图", "Step 步骤条", "Drag 拖拽", "Coupon 优惠券", "Mspaint 画图", "JigsawValidate 拼图校验"]
+  },
+  "封装": {
+    "样式封装": ["Style 样式类"],
+    "方法封装": ["API 方法", "RegExp 正则校验", "组合式 API"]
+  }
+}

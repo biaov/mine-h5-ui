@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { getViewer } from '@/utils/functions'
 import MeShowLoading from '~/MeShowLoading/index.vue'
 
-describe('MeShowLoading 消息提示', () => {
+describe('MeShowLoading 加载提示框', () => {
   test('属性 message', async () => {
     const message = '提示语'
     /**

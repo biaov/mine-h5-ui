@@ -11,6 +11,7 @@
 @color-info: #909399;
 @color-warning: #e6a23c;
 @color-danger: #f56c6c;
+@color-disabled: rgba(0, 0, 0, 0.25);
 
 // 内容
 @bg-default: #fff;
@@ -22,13 +23,19 @@
 @bg-item: #ededed;
 @bg-con-reduce: rgba(@bg-con, 36%);
 
+// 透明层
+@bg-img-opacity: conic-gradient(rgba(0, 0, 0, 0.06) 0 25%, transparent 0 50%, rgba(0, 0, 0, 0.06) 0 75%, transparent 0);
+
 // 边框
 @border-color-default: #dcdfe6;
-@border-radius-default: 4px;
 @border-password: #9b9bb4;
 @border-password-white-active: #e85555;
 @border-password-dark-active: #33d0e1;
 @border-popup: #c8c7cc;
+@border-black: #333;
+@border-radius-default: 4px;
+@border-radius-super: 999999px;
+@border-radius-circle: 50%;
 
 // 字体
 @font-color: #494949;
@@ -51,3 +58,14 @@
 
 // 常规 padding
 @padding-default: 0 15px;
+// 阴影
+@shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+@shadow-circle-sm:inset 0 0 1px 0 rgba(0, 0, 0, 0.25),
+0 0 0 1px rgba(0, 0, 0, 0.06);
+@shadow-box-secondary:
+  0 6px 16px 0 rgba(0, 0, 0, 0.08),
+  0 3px 6px -4px rgba(0, 0, 0, 0.12),
+  0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+// 动画
+@animation-hover: all 0.3s ease;

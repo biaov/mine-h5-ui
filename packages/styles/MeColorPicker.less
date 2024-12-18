@@ -1,0 +1,311 @@
+/**
+  * @file 颜色选择器
+*/
+
+@import './common/vars.less';
+
+@gap: 12px;
+@color-mode-gap: 8px;
+
+// input.vue
+.input-box() {
+  .input-box {
+    @icon-size: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: @font-size-min;
+    flex: 1;
+    .input {
+      display: block;
+      width: 100%;
+      height: @color-mode-height;
+      line-height: @color-mode-height;
+      padding: 0 calc(@color-mode-gap / 2);
+      border: 1px solid @border-color-default;
+      border-radius: @border-radius-default;
+      text-transform: uppercase;
+      outline: none;
+      &:focus {
+        border-color: @color-primary;
+      }
+    }
+    .prefix-tag,
+    .suffix-tag {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: @icon-size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: @color-disabled;
+      font-size: @font-size-min;
+    }
+    .prefix-tag {
+      left: 0;
+    }
+    .suffix-tag {
+      right: 0;
+    }
+
+    &.prefix {
+      .input {
+        padding-left: @icon-size;
+      }
+    }
+    &.suffix {
+      .input {
+        padding-right: @icon-size;
+      }
+    }
+  }
+}
+
+// slide.vue
+.slide() {
+  .slide {
+    @slide-size: 8px;
+    position: relative;
+    width: 100%;
+    height: @slide-size;
+    border-radius: @border-radius-super;
+    cursor: pointer;
+    &.opacity {
+      background-image: @bg-img-opacity;
+      background-size: @slide-size @slide-size;
+    }
+    .circle-dot {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      border: 2px solid @color-default;
+      border-radius: 50%;
+      box-shadow: @shadow-circle-sm;
+      &::after {
+        @border-width: 1px;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(100% + @border-width * 2);
+        height: calc(100% + @border-width * 2);
+        transform: translate(-50%, -50%);
+        border: 1px solid @border-color-default;
+        border-radius: @border-radius-circle;
+      }
+    }
+  }
+}
+
+// select-mode.vue
+.color-mode() {
+  .color-mode {
+    @color-mode-height: 24px;
+    width: 100%;
+    height: @color-mode-height;
+    display: flex;
+    align-items: center;
+    &__select {
+      position: relative;
+      margin-right: @color-mode-gap;
+      flex-shrink: 0;
+      .item-wrap {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .text {
+          color: @font-color;
+          font-size: @font-size-min;
+          text-transform: uppercase;
+        }
+        .iconfont {
+          transform: rotate(90deg);
+          color: @color-disabled;
+          font-size: @font-size;
+        }
+        .disabled {
+          color: @color-disabled;
+        }
+      }
+      .child-dropdown {
+        position: absolute;
+        top: @color-mode-height;
+        left: 0;
+        z-index: 10;
+        width: 68px;
+        padding: calc(@color-mode-gap / 2);
+        border-radius: @border-radius-default;
+        background: @color-default;
+        overflow: hidden;
+        box-shadow: @shadow-box-secondary;
+
+        &--mask {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 9;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          height: 30px;
+          padding: 0 12px;
+          color: @font-color;
+          font-size: @font-size-min;
+          cursor: pointer;
+          text-transform: uppercase;
+          transition: @animation-hover;
+          &:hover {
+            background: @bg-color;
+          }
+          &.active {
+            background: rgba(@color-primary, 10%);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    &__input {
+      width: 50%;
+      flex: 1;
+      &.group {
+        display: flex;
+        align-items: center;
+        gap: calc(@color-mode-gap / 2);
+      }
+    }
+    &__input-number {
+      flex-shrink: 0;
+      width: 44px;
+      margin-left: calc(@color-mode-gap / 2);
+    }
+    .input-box();
+  }
+}
+
+// color-panel.vue
+.color-panel() {
+  .color-panel {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    border-radius: @border-radius-default;
+    margin-bottom: @gap;
+    overflow: hidden;
+    cursor: pointer;
+    background-image: linear-gradient(0deg, #000, transparent), linear-gradient(90deg, #fff, transparent);
+
+    &__btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      transform: translate(-50%, -50%);
+      border: 2px solid @color-default;
+      border-radius: @border-radius-super;
+      box-shadow: @shadow-circle-sm;
+    }
+  }
+}
+
+// dropdown.vue
+.dropdown() {
+  position: fixed;
+  left: 0;
+  top: calc(100% + 10px);
+  width: 260px;
+  height: 260px;
+  border-radius: 8px;
+  padding: @gap;
+  background: @bg-default;
+  box-shadow: @shadow-box-secondary;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: var(--arrow-y);
+    left: var(--arrow-x);
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    transform: var(--arrow-deg);
+    box-shadow: @shadow;
+    background: @bg-default;
+    clip-path: polygon(-30px -30px, 40px -30px, -30px 40px);
+    transform-origin: 0% 0%;
+  }
+  .color-panel();
+  .progress-box {
+    display: flex;
+    gap: @gap;
+    width: 100%;
+    height: 28px;
+    margin-bottom: @gap;
+    &__group {
+      .slide();
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &__block {
+      width: 28px;
+      height: 100%;
+      aspect-ratio: 1/1;
+      border-radius: @border-radius-default;
+      background-image: @bg-img-opacity;
+      background-size: 50% 50%;
+    }
+  }
+  .color-mode();
+}
+
+.me-color-picker {
+  position: relative;
+  display: inline-flex;
+
+  &-inner {
+    @radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid @border-color-default;
+    border-radius: @radius;
+    padding: 3px;
+    transition: all 0.2s ease;
+    &:hover {
+      border-color: var(--color);
+    }
+    .inner-block {
+      width: var(--size);
+      height: var(--size);
+      background: var(--color);
+      border-radius: @radius;
+    }
+    .inner-label {
+      margin: 0 5px 0 8px;
+      color: @font-color;
+    }
+  }
+  &-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: transparent;
+  }
+  &-dropdown {
+    .dropdown();
+  }
+}

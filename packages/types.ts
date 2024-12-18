@@ -75,3 +75,17 @@ type InferDefault<P, T> = ((props: P) => T & {}) | (T extends NativeType ? T : n
 export type InferDefaults<T> = {
   [K in keyof T]?: InferDefault<T, T[K]>
 }
+
+/**
+ * 提取枚举里面的基础类型
+ */
+export type ExtractEnums<T> = keyof {
+  [K in keyof T as T[K] extends string | number | boolean ? K : never]: T[K]
+}
+
+/**
+ * 移除 readonly
+ */
+export type Mutable<T> = {
+  -readonly [key in keyof T]: T[key]
+}

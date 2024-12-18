@@ -1,3 +1,5 @@
+import type { VNode, RendererNode, RendererElement } from 'vue'
+
 /**
  * props
  */
@@ -11,3 +13,14 @@ export interface Props {
    */
   direction?: 'horizontal' | 'vertical'
 }
+
+/**
+ *  VNodes item
+ */
+export type VNodeItem = VNode<
+  RendererNode,
+  RendererElement,
+  {
+    [key: string]: any
+  }
+>

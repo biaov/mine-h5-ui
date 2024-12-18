@@ -185,6 +185,7 @@ npm run build
 - `typescript`: 编程语言
 - `typescript-eslint`: TS 的 Eslint 解析器
 - `unplugin-vue-markdown`: 解析 Markdown 文件的 Vite 插件
+- `vi-canvas-mock`: 处理单元测试 canvas 问题
 - `vite`: 项目构建工具
 - `vite-plugin-dts`: 生成 `.d.ts` 文件的 Vite 插件
 - `vite-plugin-eslint`: 检查代码格式的 Vite 插件

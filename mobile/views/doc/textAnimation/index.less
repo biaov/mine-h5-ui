@@ -1,0 +1,24 @@
+.checkbox {
+  cursor: pointer;
+  > li {
+    margin-bottom: 10px;
+    .label {
+      width: 100%;
+      margin-bottom: 10px;
+      color: @font-color-reduce;
+      font-size: @font-size-min;
+    }
+    .same-margin {
+      margin-bottom: 20px;
+    }
+    > :deep(.me-checkbox) {
+      .same-margin;
+    }
+    :deep(.me-checkbox-group) {
+      .same-margin;
+      .me-checkbox[data-disabled='true'] {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

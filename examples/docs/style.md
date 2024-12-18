@@ -65,6 +65,7 @@ import 'mine-h5-ui/styles/style.css'
 | me-inline-block     | 行内块居中                                   | v2.3.5  |
 | me-animation-cursor | animation 光标动画                           | v2.3.5  |
 | me-throttle         | 节流                                         | v2.3.10 |
+| me-bg-opacity       | 透明背景                                     | v2.12.0 |
 
 | 属性名                         | 说明         | class 类名 | 说明 | 版本   |
 | ------------------------------ | ------------ | ---------- | ---- | ------ |

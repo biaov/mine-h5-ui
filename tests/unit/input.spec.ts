@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { getViewer } from '@/utils/functions'
 import MeInput from '~/MeInput/index.vue'
 
-describe('MeInput 按钮', () => {
+describe('MeInput 输入框', () => {
   test('属性 type', () => {
     const type = 'search'
     /**

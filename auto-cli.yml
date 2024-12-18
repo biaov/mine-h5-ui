@@ -1,1 +1,1 @@
-reject: ['typescript']
+reject: ['typescript', 'vite']

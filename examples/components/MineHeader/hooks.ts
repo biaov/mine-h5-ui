@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import QRcode from 'qrcode'
-import { baseRouter, githubLink } from '@/config/variables'
+import {  githubLink } from '@/config/package'
 import GithubIcon from '@/assets/icon-github.svg'
 import QrcodeIcon from '@/assets/icon-qrcode.svg'
 
@@ -29,7 +29,7 @@ export const useListData = () => {
     }
   ])
 
-  QRcode.toDataURL(globalThis.location.origin + baseRouter).then(data => {
+  QRcode.toDataURL(globalThis.location.origin + import.meta.env.VITE_BASE_ROUTER).then(data => {
     navList.value[3].href = data
   })
 

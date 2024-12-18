@@ -4,7 +4,7 @@
 
 ## 按需引入
 
-:::CopyCode
+::: CopyCode
 
 ```js
 import Vue from 'vue'
@@ -25,7 +25,7 @@ Vue.use(MeDrag)
 
 - 通过属性 `list` 来设置组件的列表数据。
 
-:::CopyCode
+::: CopyCode
 
 ```vue
 <script lang="ts" setup>

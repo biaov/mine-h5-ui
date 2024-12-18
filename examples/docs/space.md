@@ -1,4 +1,4 @@
-# Space 间距
+# Space 间距 `v2.3.8`
 
 ---
 
@@ -31,9 +31,7 @@ createApp(App).use(MeSpace).mount('#app')
 
 ```html
 <me-space size="10px">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
+  <div v-for="item in 3">{{ item }}</div>
 </me-space>
 ```
 
@@ -47,9 +45,7 @@ createApp(App).use(MeSpace).mount('#app')
 
 ```html
 <me-space direction="vertical">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
+  <div v-for="item in 3">{{ item }}</div>
 </me-space>
 ```
 

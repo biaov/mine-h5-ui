@@ -160,7 +160,7 @@ const onClick = useLocked(async () => {
 })
 ```
 
-## useLocked 随机 ID `v2.11.0`
+## useId 随机 ID `v2.11.0`
 
 - 可选参数进制
 
@@ -169,4 +169,63 @@ import { useId } from 'mine-h5-ui'
 
 console.log(useId()) // 1726733454868gl3vkrbuf9
 console.log(useId(16)) // 17267336100211ca549007f31
+```
+
+## useColorTransform 颜色转换 `v2.12.0`
+
+- 颜色转换
+- 第一个参数是需要转换的值，第二个参数是数组，由什么转化成什么
+
+```ts
+import { useColorTransform } from 'mine-h5-ui'
+
+const rgb = useColorTransform('#ff6600', ['hex', 'rgb'])
+console.log(rgb) // [255, 102, 0]
+```
+
+## useMoveHandle 移动操作处理 `v2.12.0`
+
+```ts
+import { useTemplateRef } from 'vue'
+import { useMoveHandle } from 'mine-h5-ui'
+const nodeRef = useTemplateRef('demo')
+
+interface OptionEvent {
+  x: number
+  y: number
+  type: string
+}
+
+const option = {
+  start(e: OptionEvent) {
+    console.log(e) // { x: 0, y: 0, type: 'touchstart' }
+  },
+  move(e: OptionEvent) {
+    console.log(e) // { x: 0, y: 0, type: 'touchdown' }
+  },
+  end(e: OptionEvent) {
+    console.log(e) // { x: 0, y: 0, type: 'touchend' }
+  }
+}
+
+useMoveHandle(nodeRef.value, option)
+```
+
+## useSameTarget 相同的目标节点 `v2.12.0`
+
+```ts
+import { useSameTarget } from 'mine-h5-ui'
+
+const { onClick, onMousedown, onMouseup } = useSameTarget((e: PointerEvent) => {
+  console.log(e) // PointerEvent {isTrusted: true, _vts: 1733714310245, pointerId: 1, width: 1, height: 1, …}
+})
+```
+
+## useCssVar 对象转 CSS 变量 `v2.12.0`
+
+```ts
+import { useCssVar } from 'mine-h5-ui'
+
+console.log(useCssVar({ width: '100px' })) // { --width: '100px' }
+console.log(useCssVar({ fontSize: '100px' })) // { --font-size: '100px' }
 ```
