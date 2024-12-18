@@ -44,7 +44,8 @@
     "typings/shims-vue.d.ts",
     "package.json",
     "tests/vitest.setup.ts",
-    "tests/jest-canvas-mock.ts"
+    "tests/jest-canvas-mock.ts",
+    "tests/ui/vite.config.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }

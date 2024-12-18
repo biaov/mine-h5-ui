@@ -164,6 +164,7 @@ npm run build
 - `@types/node`: `node` 的类型
 - `@types/postcss-pxtorem`: `postcss-pxtorem` 的类型
 - `@types/qrcode`: `qrcode` 的类型
+- `@types/selenium-webdriver`: `selenium-webdriver` 的类型
 - `@vitejs/plugin-vue`: Vite 解析 Vue 文件
 - `@vue/compiler-sfc`: 编译 Vue 单文件组件
 - `@vue/test-utils`: 单元测试和集成测试
@@ -179,6 +180,7 @@ npm run build
 - `markdown-it-container`: Markdown 解析器
 - `postcss-pxtorem`: 生成 Rem 的 Postcss 插件
 - `prettier`: 代码格式化
+- `selenium-webdriver`: Web UI 自动化测试
 - `shiki`: Markdown 代码高亮
 - `tslib`: TS 库
 - `tailwindcss`: 根据 html class 生成样式
@@ -187,6 +189,7 @@ npm run build
 - `unplugin-vue-markdown`: 解析 Markdown 文件的 Vite 插件
 - `vi-canvas-mock`: 处理单元测试 canvas 问题
 - `vite`: 项目构建工具
+- `vite-node`: 执行 ts 文件
 - `vite-plugin-dts`: 生成 `.d.ts` 文件的 Vite 插件
 - `vite-plugin-eslint`: 检查代码格式的 Vite 插件
 - `vite-plugin-pwa`: 生成 PWA 的 Vite 插件
