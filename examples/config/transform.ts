@@ -31,7 +31,6 @@ export const secondToRoute = (data: Record<string, string[]>) =>
   Object.entries(data).map(([key, value]) => {
     const items = value.map(title => {
       const path = titleToPath(title)
-      console.log(title, '--', path)
       return {
         meta: {
           title
