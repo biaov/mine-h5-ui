@@ -95,26 +95,4 @@ export const eslintConfig = {
   exclude: ['node_modules', 'dist', 'fonts']
 }
 
-/**
- * tailwindcss 配置
- */
-export const tailwindcssConfig = () => {
-  const spacing = {}
-  const zIndex = {}
 
-  for (let i = 0; i < 1000; i++) {
-    spacing[i] = `${i}px`
-    i < 10 && (zIndex[i] = i)
-  }
-
-  return {
-    content: ['./examples/**/*.vue', './mobile/**/*.vue'],
-    theme: {
-      spacing,
-      extend: {
-        fontSize: ({ theme }) => theme('spacing'),
-        zIndex
-      }
-    }
-  }
-}
