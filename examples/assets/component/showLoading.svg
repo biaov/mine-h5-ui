@@ -1,6 +1,48 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <style>
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+
+    .animation {
+      animation: loading 1s steps(12) infinite;
+      transform-origin: center;
+    }
+  </style>
+  <rect width="120" height="120" rx="6" fill="rgba(0,0,0,0.4)" />
+  <g class="animation">
+    <g transform="translate(37 37)">
+      <path id="路径_20" data-name="路径 20" d="M0,0H46V46H0Z" fill="none" />
+      <rect id="矩形_50" data-name="矩形 50" width="3.265" height="9.328" rx="1.632" transform="translate(21.368 4.664)"
+        fill="#e9e9e9" />
+      <rect id="矩形_51" data-name="矩形 51" width="3.265" height="9.328" rx="1.632"
+        transform="translate(30.8 6.348) rotate(30)" fill="#989697" />
+      <rect id="矩形_52" data-name="矩形 52" width="3.265" height="9.328" rx="1.632"
+        transform="translate(38.02 12.373) rotate(60)" fill="#9b999a" />
+      <rect id="矩形_53" data-name="矩形 53" width="3.265" height="9.328" rx="1.632"
+        transform="translate(41.336 21.368) rotate(90)" fill="#a3a1a2" />
+      <rect id="矩形_54" data-name="矩形 54" width="3.265" height="9.328" rx="1.632"
+        transform="translate(39.652 30.8) rotate(120)" fill="#aba9aa" />
+      <rect id="矩形_55" data-name="矩形 55" width="3.265" height="9.328" rx="1.632"
+        transform="translate(33.628 38.02) rotate(150)" fill="#b2b2b2" />
+      <rect id="矩形_56" data-name="矩形 56" width="3.265" height="9.328" rx="1.632"
+        transform="translate(24.632 41.336) rotate(180)" fill="#bab8b9" />
+      <rect id="矩形_57" data-name="矩形 57" width="3.265" height="9.328" rx="1.632"
+        transform="translate(15.199 39.652) rotate(-150)" fill="#c2c0c1" />
+      <rect id="矩形_58" data-name="矩形 58" width="3.265" height="9.328" rx="1.632"
+        transform="translate(7.98 33.627) rotate(-120)" fill="#cbcbcb" />
+      <rect id="矩形_59" data-name="矩形 59" width="3.265" height="9.328" rx="1.632"
+        transform="translate(4.664 24.632) rotate(-90)" fill="#d2d2d2" />
+      <rect id="矩形_60" data-name="矩形 60" width="3.265" height="9.328" rx="1.632"
+        transform="translate(6.348 15.2) rotate(-60)" fill="#dadada" />
+      <rect id="矩形_61" data-name="矩形 61" width="3.265" height="9.328" rx="1.632"
+        transform="translate(12.373 7.98) rotate(-30)" fill="#e2e2e2" />
+    </g>
+  </g>
 </svg>

@@ -1,6 +1,139 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="308" height="266"
+  viewBox="0 0 308 266">
+  <defs>
+    <filter id="矩形_40" x="0" y="0" width="308" height="266" filterUnits="userSpaceOnUse">
+      <feOffset dy="-2" input="SourceAlpha" />
+      <feGaussianBlur result="blur" />
+      <feFlood flood-color="#f6f6f6" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.902" />
+      <stop offset="1" stop-color="#fff" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#fff" stop-opacity="0.902" />
+    </linearGradient>
+  </defs>
+  <g id="datetimePicker" transform="translate(-845 -422)">
+    <g transform="matrix(1, 0, 0, 1, 845, 422)" filter="url(#矩形_40)">
+      <g id="矩形_40-2" data-name="矩形 40" transform="translate(0 2)" fill="#fff" stroke="rgba(112,112,112,0.1)"
+        stroke-width="1">
+        <path d="M20,0H288a20,20,0,0,1,20,20V264a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z" stroke="none" />
+        <path d="M20,.5H288A19.5,19.5,0,0,1,307.5,20V263a.5.5,0,0,1-.5.5H1a.5.5,0,0,1-.5-.5V20A19.5,19.5,0,0,1,20,.5Z"
+          fill="none" />
+      </g>
+    </g>
+    <text id="取消" transform="translate(865 453)" fill="rgba(0,0,0,0.3)" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="0" y="0">取消</tspan>
+    </text>
+    <text id="确定" transform="translate(1109 453)" fill="#409eff" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="0" y="0">确定</tspan>
+    </text>
+    <line id="直线_2" data-name="直线 2" x2="40" transform="translate(979.5 440.5)" fill="none" stroke="#707070"
+      stroke-width="1" />
+    <g id="组_25" data-name="组 25">
+      <g id="组_23" data-name="组 23">
+        <rect id="矩形_41" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24" data-name="组 24">
+        <text id="_2024" data-name="2024" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-14.074" y="0">2024</tspan>
+        </text>
+        <text id="_01" data-name="01" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">01</tspan>
+        </text>
+        <text id="_01-2" data-name="01" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">01</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="组_26" data-name="组 26" transform="translate(0 44)">
+      <g id="组_23-2" data-name="组 23">
+        <rect id="矩形_41-2" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-2" data-name="组 24">
+        <text id="_2025" data-name="2025" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-14.074" y="0">2025</tspan>
+        </text>
+        <text id="_02" data-name="02" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">02</tspan>
+        </text>
+        <text id="_02-2" data-name="02" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">02</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="组_28" data-name="组 28" transform="translate(0 132)">
+      <g id="组_23-3" data-name="组 23">
+        <rect id="矩形_41-3" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-3" data-name="组 24">
+        <text id="_2027" data-name="2027" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-14.074" y="0">2027</tspan>
+        </text>
+        <text id="_04" data-name="04" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">04</tspan>
+        </text>
+        <text id="_04-2" data-name="04" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">04</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="组_29" data-name="组 29" transform="translate(0 176)">
+      <g id="组_23-4" data-name="组 23">
+        <rect id="矩形_41-4" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-4" data-name="组 24">
+        <text id="_2028" data-name="2028" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-14.074" y="0">2028</tspan>
+        </text>
+        <text id="_05" data-name="05" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">05</tspan>
+        </text>
+        <text id="_05-2" data-name="05" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">05</tspan>
+        </text>
+      </g>
+    </g>
+    <rect id="矩形_42" data-name="矩形 42" width="306" height="110" transform="translate(846 468)"
+      fill="url(#linear-gradient)" />
+    <path id="路径_12" data-name="路径 12" d="M0,0H306V110H0Z" transform="translate(846 578)"
+      fill="url(#linear-gradient-2)" />
+    <g id="组_27" data-name="组 27" transform="translate(0 88)">
+      <g id="组_23-5" data-name="组 23">
+        <rect id="矩形_41-5" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-5" data-name="组 24">
+        <text id="_2026" data-name="2026" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-14.074" y="0">2026</tspan>
+        </text>
+        <text id="_03" data-name="03" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">03</tspan>
+        </text>
+        <text id="_03-2" data-name="03" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-7.037" y="0">03</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
 </svg>

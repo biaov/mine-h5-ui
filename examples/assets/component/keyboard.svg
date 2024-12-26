@@ -1,6 +1,89 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="308" height="236" viewBox="0 0 308 236">
+  <g id="keyboard" transform="translate(-25 -128)">
+    <rect id="矩形_18" data-name="矩形 18" width="308" height="236" transform="translate(25 128)"
+      fill="rgba(214,217,222,0.3)" />
+    <g id="组_10" data-name="组 10">
+      <rect id="矩形_19" data-name="矩形 19" width="92.16" height="46" rx="6" transform="translate(35 138)" fill="#fff" />
+      <text id="_1" data-name="1" transform="translate(77 164)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">1</tspan>
+      </text>
+    </g>
+    <g id="组_11" data-name="组 11">
+      <rect id="矩形_23" data-name="矩形 23" width="92.16" height="46" rx="6" transform="translate(133 138)" fill="#fff" />
+      <text id="_2" data-name="2" transform="translate(175 166)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">2</tspan>
+      </text>
+    </g>
+    <g id="组_12" data-name="组 12">
+      <rect id="矩形_27" data-name="矩形 27" width="92.16" height="46" rx="6" transform="translate(231 138)" fill="#fff" />
+      <text id="_3" data-name="3" transform="translate(273 166)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">3</tspan>
+      </text>
+    </g>
+    <g id="组_15" data-name="组 15">
+      <rect id="矩形_20" data-name="矩形 20" width="92.16" height="46" rx="6" transform="translate(35 192)" fill="#fff" />
+      <text id="_4" data-name="4" transform="translate(77 220)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">4</tspan>
+      </text>
+    </g>
+    <g id="组_14" data-name="组 14">
+      <rect id="矩形_24" data-name="矩形 24" width="92.16" height="46" rx="6" transform="translate(133 192)" fill="#fff" />
+      <text id="_5" data-name="5" transform="translate(175 220)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">5</tspan>
+      </text>
+    </g>
+    <g id="组_13" data-name="组 13">
+      <rect id="矩形_28" data-name="矩形 28" width="92.16" height="46" rx="6" transform="translate(231 192)" fill="#fff" />
+      <text id="_6" data-name="6" transform="translate(273 220)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">6</tspan>
+      </text>
+    </g>
+    <g id="组_16" data-name="组 16">
+      <rect id="矩形_21" data-name="矩形 21" width="92.16" height="46" rx="6" transform="translate(36 246)" fill="#fff" />
+      <text id="_7" data-name="7" transform="translate(78 274)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">7</tspan>
+      </text>
+    </g>
+    <g id="组_17" data-name="组 17">
+      <rect id="矩形_25" data-name="矩形 25" width="92.16" height="46" rx="6" transform="translate(133 246)" fill="#fff" />
+      <text id="_8" data-name="8" transform="translate(175 274)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">8</tspan>
+      </text>
+    </g>
+    <g id="组_18" data-name="组 18">
+      <rect id="矩形_29" data-name="矩形 29" width="92.16" height="46" rx="6" transform="translate(231 246)" fill="#fff" />
+      <text id="_9" data-name="9" transform="translate(273 274)" fill="rgba(0,0,0,0.99)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">9</tspan>
+      </text>
+    </g>
+    <g id="组_20" data-name="组 20">
+      <rect id="矩形_26" data-name="矩形 26" width="92.16" height="46" rx="6" transform="translate(133 300)" fill="#fff" />
+      <text id="_0" data-name="0" transform="translate(175 328)" font-size="14"
+        font-family="MicrosoftSansSerif, Microsoft Sans Serif">
+        <tspan x="0" y="0">0</tspan>
+      </text>
+    </g>
+    <g id="组_21" data-name="组 21">
+      <rect id="矩形_22" data-name="矩形 22" width="92.16" height="46" rx="6" transform="translate(35 300)" fill="#fff" />
+      <text id="完成" transform="translate(67 329)" font-size="14" font-family="YuGothicUI-Regular, Yu Gothic UI">
+        <tspan x="0" y="0">完成</tspan>
+      </text>
+    </g>
+    <g id="组_19" data-name="组 19">
+      <rect id="矩形_30" data-name="矩形 30" width="92.16" height="46" rx="6" transform="translate(230.8 300)"
+        fill="#fff" />
+      <path id="delete"
+        d="M19.46,128H7.413L0,136.34l7.413,8.34H19.46a2.78,2.78,0,0,0,2.78-2.78V130.78A2.78,2.78,0,0,0,19.46,128Zm.927,13.9a.928.928,0,0,1-.927.927H8.246L2.48,136.34l5.766-6.487H19.46a.928.928,0,0,1,.927.927Zm-3.052-3.435a.927.927,0,1,1-1.287,1.333l-.023-.023L13.9,137.651l-2.125,2.125a.927.927,0,0,1-1.31-1.31l2.125-2.125-2.125-2.125a.927.927,0,0,1,1.288-1.333l.023.023,2.125,2.125,2.125-2.125a.927.927,0,1,1,1.31,1.311l-2.125,2.125Z"
+        transform="translate(262.76 187)" />
+    </g>
+  </g>
 </svg>

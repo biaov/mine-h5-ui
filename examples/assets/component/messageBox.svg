@@ -1,6 +1,34 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="308" height="220" viewBox="0 0 308 220">
+  <g id="messageBox" transform="translate(-1114 -438)">
+    <g id="mask" transform="translate(232 -94.977)">
+      <rect id="矩形_62" data-name="矩形 62" width="308" height="220" transform="translate(882 532.977)"
+        fill="rgba(0,0,0,0.4)" />
+    </g>
+    <rect id="矩形_63" data-name="矩形 63" width="264" height="130" rx="8" transform="translate(1136 483)" fill="#fff" />
+    <text id="提示" transform="translate(1253 513)" fill="rgba(0,0,0,0.65)" font-size="16"
+      font-family="YuGothicUI-Regular, Yu Gothic UI">
+      <tspan x="0" y="0">提示</tspan>
+    </text>
+    <text id="你认为作者帅吗_" data-name="你认为作者帅吗？" transform="translate(1212 544)" fill="rgba(0,0,0,0.85)" font-size="14"
+      font-family="YuGothicUI-Regular, Yu Gothic UI">
+      <tspan x="0" y="0">你</tspan>
+      <tspan y="0" font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">认为</tspan>
+      <tspan y="0">作者</tspan>
+      <tspan y="0" font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">帅吗</tspan>
+      <tspan y="0">？</tspan>
+    </text>
+    <rect id="矩形_64" data-name="矩形 64" width="264" height="44" transform="translate(1136 569)" fill="none" />
+    <rect id="矩形_65" data-name="矩形 65" width="132" height="44" transform="translate(1268 569)" fill="none" />
+    <text id="看不清" transform="translate(1181 597)" fill="rgba(0,0,0,0.45)" font-size="14"
+      font-family="YuGothicUI-Regular, Yu Gothic UI">
+      <tspan x="0" y="0">看不清</tspan>
+    </text>
+    <text id="作者真帅" transform="translate(1306 597)" fill="#409eff" font-size="14"
+      font-family="YuGothicUI-Regular, Yu Gothic UI">
+      <tspan x="0" y="0">作者真</tspan>
+      <tspan y="0" font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">帅</tspan>
+    </text>
+    <path id="路径_21" data-name="路径 21" d="M0,0H264" transform="translate(1136 569.5)" fill="none"
+      stroke="rgba(112,112,112,0.3)" stroke-width="1" />
+  </g>
 </svg>

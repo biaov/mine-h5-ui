@@ -1,6 +1,51 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="190" viewBox="0 0 300 190">
+  <g id="form" transform="translate(-14 -400)">
+    <g id="组_33" data-name="组 33">
+      <g id="矩形_45" data-name="矩形 45" transform="translate(14 400)" fill="#fff" stroke="rgba(112,112,112,0.3)"
+        stroke-width="1">
+        <rect width="296" height="40" rx="2" stroke="none" />
+        <rect x="0.5" y="0.5" width="295" height="39" rx="1.5" fill="none" />
+      </g>
+      <text id="用户名" transform="translate(24 426)" fill="rgba(0,0,0,0.5)" font-size="15"
+        font-family="YuGothicUI-Regular, Yu Gothic UI">用户名</text>
+      <text id="请输入用户名" transform="translate(84 426)" fill="rgba(0,0,0,0.3)" font-size="15"
+        font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">请输入用户名</text>
+    </g>
+    <g id="组_34" data-name="组 34" transform="translate(0 50)">
+      <g id="矩形_45-2" data-name="矩形 45" transform="translate(14 400)" fill="#fff" stroke="rgba(112,112,112,0.3)"
+        stroke-width="1">
+        <rect width="296" height="40" rx="2" stroke="none" />
+        <rect x="0.5" y="0.5" width="295" height="39" rx="1.5" fill="none" />
+      </g>
+      <text id="密码" transform="translate(24 426)" fill="rgba(0,0,0,0.5)" font-size="15"
+        font-family="YuGothicUI-Regular, Yu Gothic UI">密码</text>
+      <text id="请输入6-12位数字_字母组合" data-name="请输入6-12位数字+字母组合" transform="translate(84 426)" fill="rgba(0,0,0,0.3)"
+        font-size="15" font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">请输入6-12位数字+字母组合</text>
+    </g>
+    <g id="组_35" data-name="组 35" transform="translate(0 100)">
+      <g id="矩形_45-3" data-name="矩形 45" transform="translate(14 400)" fill="#fff" stroke="rgba(112,112,112,0.3)"
+        stroke-width="1">
+        <rect width="296" height="40" rx="2" stroke="none" />
+        <rect x="0.5" y="0.5" width="295" height="39" rx="1.5" fill="none" />
+      </g>
+      <text id="请输入短信验证码" transform="translate(24 426)" fill="rgba(0,0,0,0.3)" font-size="15"
+        font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">请输入短信验证码</text>
+      <text id="短信验证码" transform="translate(227 426)" fill="rgba(0,0,0,0.5)" font-size="15"
+        font-family="YuGothicUI-Regular, Yu Gothic UI">短信验证码</text>
+    </g>
+    <g id="组_36" data-name="组 36">
+      <rect id="矩形_45-4" data-name="矩形 45" width="300" height="40" rx="2" transform="translate(14 550)"
+        fill="#409eff" />
+      <text id="提交" transform="translate(150 576)" fill="#fff" font-size="14"
+        font-family="MicrosoftYaHei, Microsoft YaHei">提交</text>
+    </g>
+    <g id="AK-IN_闭眼" transform="translate(218.837 311.424)">
+      <path id="路径_17" data-name="路径 17"
+        d="M158.367,159.065l1.2,1.149a3.084,3.084,0,0,0,.1-.731,3.118,3.118,0,0,0-3.115-3.115,3.071,3.071,0,0,0-.86.136l1.2,1.144a1.869,1.869,0,0,1,1.481,1.417Zm-.956,3.4-1.195-1.144a1.868,1.868,0,0,1-1.486-1.42l-1.2-1.148a3.073,3.073,0,0,0,3.88,3.712Zm-7.345-10.281a.623.623,0,0,0-.862.9l14.328,13.705a.623.623,0,0,0,.862-.9Z"
+        transform="translate(-85.254)" fill="rgba(0,0,0,0.3)" />
+      <path id="路径_18" data-name="路径 18"
+        d="M71.3,194.459a9.265,9.265,0,0,1-8.077-5.528c0-.012-.007-.022-.011-.034a.24.24,0,0,0-.006-.026.2.2,0,0,1-.006-.024v-.008a.359.359,0,0,1,.011-.043c0-.009.007-.016.009-.025a9.978,9.978,0,0,1,2.378-3.218l-.9-.862a11.157,11.157,0,0,0-2.621,3.587.613.613,0,0,0-.044.115.327.327,0,0,0-.012.031.422.422,0,0,0-.032.15c-.016.073-.031.218-.031.218a.534.534,0,0,0,0,.122s.014.262.021.288l.088.265a10.492,10.492,0,0,0,9.232,6.27,9.333,9.333,0,0,0,3.954-.933l-.971-.946A7.963,7.963,0,0,1,71.3,194.459Zm9.345-5.6a.814.814,0,0,0-.025-.217,1.04,1.04,0,0,0-.04-.211l-.016-.04a.649.649,0,0,0-.031-.084A10.52,10.52,0,0,0,71.3,182a9.292,9.292,0,0,0-3.952.916l.971.928a7.967,7.967,0,0,1,2.982-.6,9.248,9.248,0,0,1,8.074,5.523.115.115,0,0,0,0,.016.135.135,0,0,0,0,.017c0,.025.006.049.009.062s0,.025-.007.038l0,.009c0,.008-.006.017-.008.027A9.977,9.977,0,0,1,77,192.15l.9.863a11.079,11.079,0,0,0,2.609-3.57.656.656,0,0,0,.055-.135c0-.012.009-.023.013-.034a.545.545,0,0,0,.034-.163h0A1.267,1.267,0,0,0,80.64,188.855Z"
+        transform="translate(0 -29.37)" fill="rgba(0,0,0,0.3)" />
+    </g>
+  </g>
 </svg>
