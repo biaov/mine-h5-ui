@@ -1,4 +1,4 @@
-# SwiperCell 滑动单元格
+# SwipeCell 滑动单元格
 
 ---
 
@@ -9,10 +9,10 @@
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { MeSwiperCell } from 'mine-h5-ui'
-import 'mine-h5-ui/styles/MeSwiperCell.css'
+import { MeSwipeCell } from 'mine-h5-ui'
+import 'mine-h5-ui/styles/MeSwipeCell.css'
 
-createApp(App).use(MeSwiperCell).mount('#app')
+createApp(App).use(MeSwipeCell).mount('#app')
 ```
 
 :::

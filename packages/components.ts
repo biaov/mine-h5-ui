@@ -37,7 +37,7 @@ export * from './MeMask' // 遮罩层
 export * from './MeMessageBox' // 弹出框-JS
 export * from './MeDialog' // 对话框
 export * from './MeShareSheet' // 分享面板
-export * from './MeSwiperCell' // 滑动单元格
+export * from './MeSwipeCell' // 滑动单元格
 export * from './MeFloatButton' // 悬浮按钮
 /* 反馈组件 end */
 
