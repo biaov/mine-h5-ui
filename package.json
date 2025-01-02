@@ -23,7 +23,7 @@
     "build:package": "vite build --config scripts/package.vite.ts",
     "preview": "vite preview",
     "test:unit": "vitest run",
-    "test:unit:single": "vitest dev tests/unit/textAnimation.spec.ts",
+    "test:unit:single": "vitest dev tests/unit/indexBar.spec.ts",
     "test:ui": "vite-node ./tests/ui/index.ts",
     "prepare": "husky",
     "pre-publish": "node scripts/pre-publish.js",

@@ -1,6 +1,31 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100">
+  <g id="swipeCell" transform="translate(-372 -727)">
+    <g id="组_49" data-name="组 49">
+      <path id="路径_33" data-name="路径 33" d="M0,0H300V40H0Z" transform="translate(372 727)" fill="#f6f6f6" />
+      <text id="向左滑动显示删除按钮" transform="translate(472 754)" fill="#494949" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-80" y="0">向左滑动显示删除按钮</tspan>
+      </text>
+    </g>
+    <path id="路径_33-2" data-name="路径 33" d="M0,0H300V40H0Z" transform="translate(372 787)" fill="#f6f6f6" />
+    <text id="显示删除按钮" transform="translate(420 814)" fill="#494949" font-size="16"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-48" y="0">显示删除按钮</tspan>
+    </text>
+    <rect id="矩形_68" data-name="矩形 68" width="80" height="40" transform="translate(592 787)" fill="#f56c6c" />
+    <g id="组_50" data-name="组 50" transform="translate(0 1)">
+      <g id="delete" transform="translate(537.5 732)">
+        <path id="路径_34" data-name="路径 34"
+          d="M76.75,80.5a.749.749,0,0,1-.75-.75V71.5a.75.75,0,0,1,1.5,0v8.25A.749.749,0,0,1,76.75,80.5Zm-4.5,0a.749.749,0,0,1-.75-.75V71.5a.75.75,0,0,1,1.5,0v8.25A.749.749,0,0,1,72.25,80.5Zm12-12.75H80.5v-1.5A2.244,2.244,0,0,0,78.267,64H70.75a2.253,2.253,0,0,0-2.25,2.25v1.5H64.75a.75.75,0,0,0,0,1.5h19.5a.75.75,0,0,0,0-1.5ZM70,66.25a.751.751,0,0,1,.75-.75h7.517a.733.733,0,0,1,.733.75v1.5H70Z"
+          fill="#fff" />
+        <path id="路径_35" data-name="路径 35"
+          d="M204.815,365.781h-10.5a2.253,2.253,0,0,1-2.25-2.25V352.27a.75.75,0,0,1,1.5,0v11.261a.751.751,0,0,0,.75.75h10.5a.75.75,0,0,0,.75-.75V352.3a.75.75,0,1,1,1.5,0v11.23A2.253,2.253,0,0,1,204.815,365.781Z"
+          transform="translate(-125.063 -280.781)" fill="#fff" />
+      </g>
+      <text id="删除" transform="translate(646 813)" fill="#fff" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-16" y="0">删除</tspan>
+      </text>
+    </g>
+  </g>
 </svg>

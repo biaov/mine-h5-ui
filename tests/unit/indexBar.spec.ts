@@ -37,6 +37,21 @@ describe('MeIndexBar 索引栏', () => {
     expect(listContEl.length > 0).toBeTruthy()
   })
 
+  test('属性 range', () => {
+    const range = 5
+    /**
+     * 向组件里传参
+     */
+    const wrapper = mount(MeIndexBar, {
+      props: { range }
+    })
+    /**
+     * 获取 DOM
+     */
+    const listRightEl = getViewer(wrapper, MeIndexBar).findAll('.list-rt>li')
+    expect(listRightEl.filter(elem => elem.isVisible()).length).toBe(range)
+  })
+
   test('事件 click', async () => {
     /**
      * 向组件里传参

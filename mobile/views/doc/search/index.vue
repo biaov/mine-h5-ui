@@ -20,7 +20,7 @@ const { listData, onSearch, onClick } = useHandle()
         :disabled="item.disabled"
         @search="onSearch"
         @click="onClick"
-      ></me-search>
+      />
     </li>
   </ul>
 </template>

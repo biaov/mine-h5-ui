@@ -13,7 +13,7 @@ const { hidden, maxDistance, currentValue, isActive, } = useHandMove()
 
 <template>
   <!-- 滑动单元格 -->
-  <div class="me-swiper-cell">
+  <div class="me-swipe-cell">
     <div class="swiper" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`"
       ref="swiperEventRef" @click.prevent.stop>
       <!-- 内容 -->

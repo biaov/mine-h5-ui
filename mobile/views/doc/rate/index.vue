@@ -21,7 +21,7 @@ const { listData, onChange } = useHandle()
         :tips-color="item.tipsColor"
         :size="item.size"
         @change="onChange(item)"
-      ></me-rate>
+      />
     </li>
   </ul>
 </template>

@@ -35,7 +35,7 @@ createApp(App).use(MeSwipeCell).mount('#app')
 ```vue
 <template>
   <!-- 滑动单元格 -->
-  <me-swiper-cell>
+  <me-swipe-cell>
     <template #content>
       <h3 class="tit">向左滑动显示删除按钮</h3>
     </template>
@@ -44,7 +44,7 @@ createApp(App).use(MeSwipeCell).mount('#app')
         <me-button type="danger" icon="icon-delete1" @click="onDelete">删除</me-button>
       </div>
     </template>
-  </me-swiper-cell>
+  </me-swipe-cell>
 </template>
 <script lang="ts" setup>
 import { MeMessageBox, MeToast } from 'mine-h5-ui'
@@ -63,7 +63,7 @@ const onDelete = () => {
 }
 </script>
 <style scoped lang="less">
-.me-swiper-cell {
+.me-swipe-cell {
   .tit {
     height: 40px;
     line-height: 40px;

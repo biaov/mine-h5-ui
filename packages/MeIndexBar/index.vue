@@ -2,30 +2,29 @@
 import CountryData from './countryData'
 import { useScroll, useBtns } from './hooks'
 import type { Props, Emits } from './types'
+import { name } from './config'
 
-defineOptions({
-  name: 'MeIndexBar'
-})
+defineOptions({ name })
 
 const emit = defineEmits<Emits>()
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   list: () => CountryData,
-  topHeight: '50px'
+  range: 10
 })
 
-const { curLetter, listCont } = useScroll()
+const { curLetter, listCont, filterShow, onClickBadge } = useScroll(props)
 const { handleLi } = useBtns(emit)
 </script>
 
 <template>
   <!-- 索引栏 -->
-  <div class="me-index-bar">
-    <!-- 顶部固定项 -->
-    <div class="top" v-show="curLetter" :style="`height:${topHeight};line-height:${topHeight};`">{{ curLetter }}</div>
+  <div :class="name" ref="indexBarRef">
     <!-- 右侧列表值 -->
     <ul class="list-rt">
-      <li v-for="item in list" :key="item.name" :class="{ on: item.name === curLetter }">{{ item.name }}</li>
+      <template v-for="(item, index) in list" :key="item.name">
+        <li :class="{ on: item.name === curLetter }" @click="onClickBadge(item, index)" v-show="filterShow(index)">{{ item.name }}</li>
+      </template>
     </ul>
     <!-- 内容列表 -->
     <ul class="list-cont" ref="listCont">

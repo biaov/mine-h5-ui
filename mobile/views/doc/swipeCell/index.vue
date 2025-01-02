@@ -6,10 +6,10 @@ const { listData, onDelete, onCollect } = useHandle()
 
 <template>
   <!-- 滑动单元格 -->
-  <ul class="swiper-cell">
+  <ul class="swipe-cell">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
-      <me-swiper-cell>
+      <me-swipe-cell>
         <template #content>
           <h3 class="tit">{{ item.liText }}</h3>
         </template>
@@ -19,7 +19,7 @@ const { listData, onDelete, onCollect } = useHandle()
             <me-button type="success" icon="icon-aixinD" @click="onCollect" v-if="item.width > 100">收藏</me-button>
           </div>
         </template>
-      </me-swiper-cell>
+      </me-swipe-cell>
     </li>
   </ul>
 </template>

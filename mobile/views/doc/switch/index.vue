@@ -17,7 +17,7 @@ const { listData, onClick } = useHandle()
         :disabled="item.disabled"
         :async="item.async"
         @click="onClick(item)"
-      ></me-switch>
+      />
     </li>
   </ul>
 </template>
