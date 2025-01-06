@@ -1,6 +1,48 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="242" height="68" viewBox="0 0 242 68">
+  <g id="tabBar" transform="translate(-1506 -705)">
+    <g id="组_58" data-name="组 58" transform="translate(19)">
+      <rect id="矩形_74" data-name="矩形 74" width="54" height="68" transform="translate(1612 705)" fill="none" />
+      <text id="功能" transform="translate(1639 758)" fill="#949494" font-size="12"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-12" y="0">功能</tspan>
+      </text>
+      <path id="功能管理"
+        d="M109.227,97.454a.918.918,0,0,1,.918-.919h6.45a.918.918,0,0,1,.918.919v6.45a.918.918,0,0,1-.918.919h-6.45a.918.918,0,0,1-.918-.919ZM123.1,96.216a.918.918,0,0,1,1.3,0l4.561,4.561a.919.919,0,0,1,0,1.3l-4.561,4.561a.918.918,0,0,1-1.3,0l-4.561-4.561a.918.918,0,0,1,0-1.3Zm-3.328,12.114a.918.918,0,0,1,.919-.918h6.45a.918.918,0,0,1,.919.918v6.45a.918.918,0,0,1-.919.918h-6.45a.918.918,0,0,1-.919-.918v-6.45Zm-10.543,0a.918.918,0,0,1,.918-.918h6.45a.918.918,0,0,1,.918.918v6.45a.918.918,0,0,1-.918.918h-6.45a.918.918,0,0,1-.918-.918v-6.45Z"
+        transform="translate(1519.773 623.053)" fill="#949494" />
+    </g>
+    <g id="组_57" data-name="组 57" transform="translate(29)">
+      <rect id="矩形_75" data-name="矩形 75" width="54" height="68" transform="translate(1665 705)" fill="none" />
+      <text id="用户" transform="translate(1692 758)" fill="#949494" font-size="12"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-12" y="0">用户</tspan>
+      </text>
+      <path id="图片"
+        d="M64.933,127.224v17.19h20v-17.19Zm14.519,3.958a1.589,1.589,0,1,1-1.589,1.589A1.589,1.589,0,0,1,79.452,131.182Zm3.147,10.9H67.269v-4.774l3.281-4.477,5.637,7.045,4.388-2.906,2.025,2.043Z"
+        transform="translate(1617.313 593.776)" fill="#949494" />
+    </g>
+    <g id="组_60" data-name="组 60">
+      <rect id="矩形_72" data-name="矩形 72" width="54" height="68" transform="translate(1506 705)" fill="none" />
+      <text id="首页" transform="translate(1533 758)" fill="rgba(64,158,255,0.5)" font-size="12"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-12" y="0">首页</tspan>
+      </text>
+      <path id="home" d="M81.272,71.272V64.908H77.636v2.728L74,64,64,74h1.819V84h5.455V75.819H76.73V84h5.455V74H84Z"
+        transform="translate(1459 655)" fill="#409eff" />
+    </g>
+    <g id="组_59" data-name="组 59" transform="translate(10)">
+      <rect id="矩形_73" data-name="矩形 73" width="54" height="68" transform="translate(1559 705)" fill="none" />
+      <text id="图片-2" data-name="图片" transform="translate(1584 758)" fill="#949494" font-size="12"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-12" y="0">图片</tspan>
+      </text>
+      <g id="user" transform="translate(1575.962 717)">
+        <path id="路径_41" data-name="路径 41"
+          d="M303.566,71.14m-6.166,0c0,2.949,2.761,5.34,6.166,5.34s6.166-2.391,6.166-5.34-2.761-5.34-6.166-5.34S297.4,68.191,297.4,71.14Z"
+          transform="translate(-293.539 -65.8)" fill="#949494" />
+        <path id="路径_42" data-name="路径 42"
+          d="M161.518,491.042c-.219-3.286-2.139-5.878-4.57-5.851a.9.9,0,0,0-.408.1,12.935,12.935,0,0,1-9.878,0,.935.935,0,0,0-.411-.1c-2.226,0-4.246,2.644-4.57,5.851-.276,3.259-.014,5.866,4.57,5.851h10.7c4.135.05,4.962-2.505,4.57-5.851Z"
+          transform="translate(-141.605 -472.809)" fill="#949494" />
+      </g>
+    </g>
+  </g>
 </svg>

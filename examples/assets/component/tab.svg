@@ -1,6 +1,23 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="194" viewBox="0 0 260 194">
+  <g id="tab" transform="translate(-1202 -738)">
+    <g id="矩形_70" data-name="矩形 70" transform="translate(1202 738)" fill="none" stroke="rgba(112,112,112,0.1)"
+      stroke-width="1">
+      <rect width="260" height="194" stroke="none" />
+      <rect x="0.5" y="0.5" width="259" height="193" fill="none" />
+    </g>
+    <text id="标签一" transform="translate(1237 768)" fill="#494949" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-18" y="0">标签一</tspan>
+    </text>
+    <text id="标签二" transform="translate(1292 768)" fill="rgba(73,73,73,0.5)" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-18" y="0">标签二</tspan>
+    </text>
+    <line id="直线_3" data-name="直线 3" x2="36" transform="translate(1219.5 775.5)" fill="none" stroke="#409eff"
+      stroke-width="1" />
+    <text id="内容一" transform="translate(1237 809)" fill="#494949" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-18" y="0">内容一</tspan>
+    </text>
+  </g>
 </svg>

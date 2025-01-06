@@ -39,7 +39,7 @@ const filterList = computed(() =>
       <li v-for="(item, index) in filterList" :key="index" class="mb-32">
         <div class="title flex items-center gap-8 mb-12 text-20 font-bold">
           {{ item.meta.title }}
-          <me-tag :text="item.items.length" plain />
+          <me-tag :text="`${item.items.length}`" plain />
         </div>
         <div class="flex flex-wrap gap-y-24 -ml-10 -mr-10">
           <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }" class="w-1/4 px-12">

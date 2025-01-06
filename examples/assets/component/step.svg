@@ -1,6 +1,19 @@
-<svg t="1735005157245" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2794"
-  width="128" height="128">
-  <path
-    d="M928 128H96C42.98 128 0 170.98 0 224v576c0 53.02 42.98 96 96 96h832c53.02 0 96-42.98 96-96V224c0-53.02-42.98-96-96-96z m-12 672H108a12 12 0 0 1-12-12V236a12 12 0 0 1 12-12h808a12 12 0 0 1 12 12v552a12 12 0 0 1-12 12zM256 304c-44.182 0-80 35.818-80 80s35.818 80 80 80 80-35.818 80-80-35.818-80-80-80zM192 704h640v-160l-175.03-175.03c-9.372-9.372-24.568-9.372-33.942 0L384 608l-79.03-79.03c-9.372-9.372-24.568-9.372-33.942 0L192 608v96z"
-    p-id="2795" fill="#409eff"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="155" height="27" viewBox="0 0 155 27">
+  <g id="step" transform="translate(-863 -1087)">
+    <path id="路径_57" data-name="路径 57" d="M0,0H124" transform="translate(878.5 1090.5)" fill="none" stroke="#ccc" stroke-width="1" />
+    <path id="路径_58" data-name="路径 58" d="M3.5,0A3.5,3.5,0,1,1,0,3.5,3.5,3.5,0,0,1,3.5,0Z" transform="translate(875 1087)" fill="#67c23a" />
+    <circle id="椭圆_12" data-name="椭圆 12" cx="3.5" cy="3.5" r="3.5" transform="translate(917 1087)" fill="#ccc" />
+    <circle id="椭圆_13" data-name="椭圆 13" cx="3.5" cy="3.5" r="3.5" transform="translate(959 1087)" fill="#ccc" />
+    <circle id="椭圆_14" data-name="椭圆 14" cx="3.5" cy="3.5" r="3.5" transform="translate(1000 1087)" fill="#ccc" />
+    <text id="待支付" transform="translate(878 1111)" fill="#67c23a" font-size="10" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-15" y="0">待支付</tspan></text>
+    <text id="待发货" transform="translate(920 1111)" fill="#949494" font-size="10" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-15" y="0">待发货</tspan></text>
+    <text id="待收货" transform="translate(961 1111)" fill="#949494" font-size="10" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-15" y="0">待收货</tspan></text>
+  <text id="已完成" transform="translate(1003 1111)" fill="#949494" font-size="10" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-15" y="0">已完成</tspan></text>
+    <path
+      id="success"
+      d="M131.674,289.575a.141.141,0,0,0-.2.006l-1.88,2-1.027-1.012a.141.141,0,1,0-.2.2l1.13,1.113h0a.134.134,0,0,0,.03.019.117.117,0,0,0,.015.009.143.143,0,0,0,.052.01.138.138,0,0,0,.054-.011.144.144,0,0,0,.016-.01.136.136,0,0,0,.031-.021v0h0l1.979-2.107A.141.141,0,0,0,131.674,289.575Z"
+      transform="translate(748.673 799.963)"
+      fill="#fff"
+    />
+  </g>
 </svg>

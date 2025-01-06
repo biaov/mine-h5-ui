@@ -14,11 +14,11 @@ const { time, btnList, handleStatus, onClick } = useHandle()
     <div class="label">自定义样式</div>
     <me-count-down :time="time">
       <template #="{ hh, mm, ss }">
-        <span class="block">{{ hh }}</span>
+        <span class="unit">{{ hh }}</span>
         :
-        <span class="block">{{ mm }}</span>
+        <span class="unit">{{ mm }}</span>
         :
-        <span class="block">{{ ss }}</span>
+        <span class="unit">{{ ss }}</span>
       </template>
     </me-count-down>
     <div class="label">手动控制</div>

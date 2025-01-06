@@ -15,6 +15,8 @@ const Preview = (arg: Option | string) => {
     options.url = arg as string
   } else if (!IsType('Object', arg)) {
     throw new Error(`${arg} is not object`)
+  } else {
+    Object.assign(options, arg)
   }
 
   /**
