@@ -2,11 +2,14 @@
 import { useWebData } from './hook'
 
 const { sidebarList } = useWebData()
+const onScroll = (e: any) => {
+  console.log(e.target.scrollTop, '---')
+}
 </script>
 
 <template>
   <!-- H5演示 -->
-  <ul class="side-bar w-280 h-full px-0 pt-20 pb-30 pl-20 overflow-y-auto">
+  <ul class="side-bar w-280 h-full px-0 pt-20 pb-30 pl-20 overflow-y-auto" @scroll="onScroll">
     <!-- 一级列表 -->
     <li v-for="(item, index) in sidebarList" :key="index">
       <template v-if="item.children?.length">

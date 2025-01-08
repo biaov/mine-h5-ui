@@ -1,30 +1,38 @@
-import { Builder, Browser, By, Key, until } from 'selenium-webdriver'
-import { loadEnv } from 'vite'
+// import { Builder, Browser, By, until } from 'selenium-webdriver'
+// import type { WebDriver } from 'selenium-webdriver'
+// import { loadEnv } from 'vite'
+// import { errorLog, loadDirTest } from './utils'
+// import { sleepTime } from './config'
 
-const sleepTime = 2000
-const env = loadEnv('development', './')
+import * as allTest from './tests'
+// const env = loadEnv('development', './')
+// const driver = await new Builder().forBrowser(Browser.CHROME).build()
+// const dirs = ['site', 'components']
+// const testGroup = dirs.map(dir => loadDirTest(dir)).flat()
+console.log(allTest)
 
-const driver = await new Builder().forBrowser(Browser.CHROME).build()
+// // 启动服务
+// const server = `http://127.0.0.1:${env.VITE_PORT}/` // 服务地址
+// try {
+//   await driver.get(server)
+// } catch {
+//   errorLog(`请检查 ${server} 是否启动`)
+//   await driver.quit()
+// }
 
-const catalogClickTest = async () => {
-  const catalogSelector = By.css('.side-bar')
-  await driver.wait(until.elementLocated(catalogSelector), 6000) // 等待最多 10 秒
-  const sidebar = await driver.findElement(catalogSelector)
-  await driver.sleep(sleepTime)
-  // driver.actions().scroll(0, 0, 0, 200, sidebar).perform()
-  await driver.actions().sendKeys(Key.PAGE_DOWN).perform()
-}
-
-try {
-  await driver.get(`http://127.0.0.1:${env.VITE_PORT}/`)
-
-  const elementSelector = By.css('.btns li:first-child') // 替换为实际的选择器
-  await driver.wait(until.elementLocated(elementSelector), 6000) // 等待最多 10 秒
-  await driver.sleep(sleepTime)
-  await driver.findElement(elementSelector).click()
-  await catalogClickTest()
-} catch (error) {
-  console.log(error)
-} finally {
-  // await driver.quit()
-}
+// // 执行操作
+// try {
+//   const elementSelector = By.css('.btns li:first-child') // 替换为实际的选择器
+//   await driver.wait(until.elementLocated(elementSelector), 6000) // 等待最多 10 秒
+//   await driver.sleep(sleepTime)
+//   await driver.findElement(elementSelector).click()
+//   await Promise.all(
+//     testGroup.map(async item => {
+//       await item.default(driver)
+//       await driver.sleep(sleepTime)
+//       return true
+//     })
+//   )
+// } catch (error) {
+//   console.log(error)
+// }

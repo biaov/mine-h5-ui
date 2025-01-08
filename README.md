@@ -94,7 +94,7 @@ npm run build
 
 ### 技术栈
 
-- `Vite` + `Vue3.x` + `TypeScript` + `Less` + `Gulp` + `Vitest`
+- `Vite` + `Vue3.x` + `TypeScript` + `Less` + `Vitest` + `NodeJs` + `Markdown` + `selenium`
 
 ### 目录解析
 
@@ -142,6 +142,7 @@ npm run build
 │   ├── package.json -------------------------- 依赖包配置文件
 │   ├── README.md ----------------------------- 项目文档
 │   ├── RELEASE.md ---------------------------- 发布文档
+│   ├── tailwind.config.ts -------------------- Tailwindcss 配置
 │   ├── tsconfig.json ------------------------- TS 配置
 │   ├── vite.config.ts ------------------------ Vite 配置
 └   └── vitest.config.ts ---------------------- Vitest 配置
