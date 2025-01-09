@@ -1,11 +1,6 @@
+import { By, until } from 'selenium-webdriver'
 import type { Actions, WebElement, WebDriver } from 'selenium-webdriver'
-
-interface USEScrollOption {
-  direction?: 'down' | 'up'
-  length?: number
-  driver?: WebDriver
-  elem?: WebElement
-}
+import type { OptionApi, findAllReturn, USEScrollOption } from './types'
 
 /**
  * 过滤 actions
@@ -26,7 +21,6 @@ export const useScroll = async ({ direction = 'down', length = 10, driver, elem 
     })
   )
 }
-
 /**
  * 错误日志
  */
@@ -35,11 +29,10 @@ export const errorLog = (text: string) => {
   const reset = '\x1b[0m' // 重置颜色
   console.log(red + text + reset) // 打印日志
 }
-
 /**
- * 加载测试内容
+ * 查找节点
  */
-export const loadDirTest = (dir: string) => {
-  // const result = import.meta.glob(`./${dir}/**.test.ts`, { eager: true }) as Record<string, { default: (driver: WebDriver) => Promise<void> }>
-  // return Object.values(result)
+export const findAll = async <T extends OptionApi = 'findElement'>(selector: By[], driver: WebDriver, api: OptionApi = 'findElement') => {
+  await Promise.all(selector.map(elem => driver.wait(until.elementLocated(elem), 6000)))
+  return (await Promise.all(selector.map(elem => driver[api](elem)))) as findAllReturn<T>[]
 }

@@ -52,7 +52,7 @@ window.addEventListener('resize', onMobileState)
     <div class="content flex">
       <!-- 菜单列表 -->
       <side-bar />
-      <div class="md w-1/2 h-full p-15 grow overflow-y-auto">
+      <div class="md w-1/2 h-full p-15 grow overflow-y-auto doc-view">
         <!-- 使用文档 -->
         <router-view />
       </div>

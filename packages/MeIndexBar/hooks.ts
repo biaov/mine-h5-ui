@@ -68,11 +68,12 @@ export const useScroll = (props: Required<Props>) => {
   })
   onMounted(() => {
     arrLi = listCont.value!.children
-    indexBarRef.value!.addEventListener('scroll', onScroll)
+    indexBarRef.value && indexBarRef.value.addEventListener('scroll', onScroll)
   })
 
   onUnmounted(() => {
-    indexBarRef.value!.removeEventListener('scroll', onScroll)
+    // 路由切换过快会导致 indexBarRef.value 不存在
+    indexBarRef.value && indexBarRef.value.removeEventListener('scroll', onScroll)
   })
 
   const onClickBadge = (item: ListItem, index: number) => {
