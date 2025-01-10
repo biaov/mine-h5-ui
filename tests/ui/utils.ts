@@ -1,6 +1,6 @@
 import { By, until } from 'selenium-webdriver'
 import type { Actions, WebElement, WebDriver } from 'selenium-webdriver'
-import type { OptionApi, findAllReturn, USEScrollOption } from './types'
+import type { OptionApi, USEScrollOption } from './types'
 
 /**
  * 过滤 actions
@@ -32,7 +32,25 @@ export const errorLog = (text: string) => {
 /**
  * 查找节点
  */
-export const findAll = async <T extends OptionApi = 'findElement'>(selector: By[], driver: WebDriver, api: OptionApi = 'findElement') => {
-  await Promise.all(selector.map(elem => driver.wait(until.elementLocated(elem), 6000)))
-  return (await Promise.all(selector.map(elem => driver[api](elem)))) as findAllReturn<T>[]
+export const findAll = async <T = WebElement>(selector: By | By[], driver: WebDriver, api: OptionApi = 'findElement') => {
+  if (Array.isArray(selector)) {
+    await Promise.all(selector.map(elem => driver.wait(until.elementLocated(elem), 6000)))
+    return (await Promise.all(selector.map(elem => driver[api](elem)))) as T
+  } else {
+    await driver.wait(until.elementLocated(selector), 6000)
+    return (await driver[api](selector)) as T
+  }
 }
+
+/**
+ * 依次执行异步操作
+ */
+
+export const useTaskQueue = <T>(tasks: T[], busFn: (value: T) => Promise<void>) =>
+  tasks.reduce(
+    (prev, item) =>
+      prev.then(async () => {
+        await busFn(item)
+      }),
+    Promise.resolve()
+  )
