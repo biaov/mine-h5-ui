@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40">
+  <g id="input" transform="translate(-1288 -43)">
+    <g id="路径_16" data-name="路径 16" transform="translate(1288 43)" fill="none">
+      <path d="M5,0H195a5,5,0,0,1,5,5V35a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0Z" stroke="none" />
+      <path
+        d="M 5 1 C 2.794387817382813 1 1 2.794395446777344 1 5 L 1 35 C 1 37.20560455322266 2.794387817382813 39 5 39 L 195 39 C 197.2056121826172 39 199 37.20560455322266 199 35 L 199 5 C 199 2.794395446777344 197.2056121826172 1 195 1 L 5 1 M 5 0 L 195 0 C 197.7614135742188 0 200 2.238578796386719 200 5 L 200 35 C 200 37.76142120361328 197.7614135742188 40 195 40 L 5 40 C 2.23858642578125 40 0 37.76142120361328 0 35 L 0 5 C 0 2.238578796386719 2.23858642578125 0 5 0 Z"
+        stroke="none" fill="rgba(112,112,112,0.3)" />
+    </g>
+    <text id="请输入..." transform="translate(1303 70)" fill="rgba(0,0,0,0.3)" font-size="15"
+      font-family="MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI">
+      <tspan x="0" y="0">请输</tspan>
+      <tspan y="0" font-family="YuGothicUI-Regular, Yu Gothic UI">入</tspan>
+      <tspan y="0" font-family="MicrosoftSansSerif, Microsoft Sans Serif">...</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 110 56" width="58" height="27" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes clip-inset {
+      0% {
+        clip-path: inset(0 0 0 0);
+      }
+
+      100% {
+        clip-path: inset(0 0 0 100%);
+      }
+    }
+    .text {
+      text-anchor: middle;
+      font-size: 50px;
+      stroke-width: 1;
+      stroke: #409eff;
+      fill: #409eff;
+    }
+    .cover {
+      animation: clip-inset 1s linear infinite;
+      fill: #fff;
+      stroke: #409eff;
+    }
+  </style>
+  <text x="50%" y="50%" class="text" dominant-baseline="central">演示</text>
+  <text x="50%" y="50%" class="text cover" dominant-baseline="central">演示</text>
+</svg>

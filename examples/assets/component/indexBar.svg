@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="163" viewBox="0 0 160 163">
+  <g id="indexBar" transform="translate(-1012 -680)">
+    <circle id="椭圆_4" data-name="椭圆 4" cx="13" cy="13" r="13" transform="translate(1131 761)" fill="#409eff" />
+    <g id="组_56" data-name="组 56" transform="translate(1)">
+      <text id="A" transform="translate(1143 721)" fill="#949494" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-5.629" y="0">A</tspan>
+      </text>
+      <text id="B" transform="translate(1143 751)" fill="#949494" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-5.02" y="0">B</tspan>
+      </text>
+      <text id="C" transform="translate(1143 780)" fill="#fff" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-5.352" y="0">C</tspan>
+      </text>
+      <text id="D" transform="translate(1143 810)" fill="#949494" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-6.094" y="0">D</tspan>
+      </text>
+      <text id="E" transform="translate(1143 839)" fill="#949494" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-4.398" y="0">E</tspan>
+      </text>
+    </g>
+    <path id="路径_40" data-name="路径 40" d="M0,0H160V20H0Z" transform="translate(1012 681)" fill="#eee" />
+    <text id="A-2" data-name="A" transform="translate(1028 697)" fill="#949494" font-size="16"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-5.629" y="0">A</tspan>
+    </text>
+  </g>
+</svg>

@@ -26,7 +26,7 @@
       "MessageBox 弹出框",
       "Dialog 对话框",
       "ShareSheet 分享面板",
-      "SwiperCell 滑动单元格",
+      "SwipeCell 滑动单元格",
       "FloatButton 悬浮按钮"
     ],
     "导航组件": ["Grid 宫格", "IndexBar 索引栏", "NavBar 导航栏", "Tab 标签页", "TabBar 标签栏", "PullRefresh 下拉刷新"],

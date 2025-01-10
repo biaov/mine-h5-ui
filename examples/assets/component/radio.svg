@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="61.062" viewBox="0 0 89 61.062">
+  <g id="radio" transform="translate(-1550 -27)">
+    <path id="original"
+      d="M77.171,65.411A11.59,11.59,0,1,1,65.582,77a11.6,11.6,0,0,1,11.59-11.59m0-1.449A13.038,13.038,0,1,0,90.21,77,13.038,13.038,0,0,0,77.171,63.962Z"
+      transform="translate(1485.867 -36.962)" fill="rgba(0,0,0,0.3)" />
+    <path id="original_-_副本" data-name="original - 副本"
+      d="M78.167,64.021A13.031,13.031,0,1,0,91.2,77.052,13.031,13.031,0,0,0,78.167,64.021Zm8.413,9.473-10.1,10.1a1.3,1.3,0,0,1-1.843,0l-5.212-5.211a1.3,1.3,0,1,1,1.843-1.843l4.29,4.29,9.177-9.176a1.3,1.3,0,0,1,1.843,1.843Z"
+      transform="translate(1484.864 -2.021)" fill="#409eff" />
+    <text id="未选中" transform="translate(1594 46)" fill="#494949" font-size="15"
+      font-family="MicrosoftYaHeiUI, Microsoft YaHei UI">
+      <tspan x="0" y="0">未选中</tspan>
+    </text>
+    <text id="选中" transform="translate(1594 81)" fill="#494949" font-size="15"
+      font-family="MicrosoftYaHeiUI, Microsoft YaHei UI">
+      <tspan x="0" y="0">选中</tspan>
+    </text>
+  </g>
+</svg>

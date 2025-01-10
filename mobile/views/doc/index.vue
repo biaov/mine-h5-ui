@@ -2,16 +2,20 @@
 import MineHeader from '^/components/MineHeader'
 import { useRouteHandler } from './hooks'
 
-const { title } = useRouteHandler()
+const { routeTitle } = useRouteHandler()
 </script>
 
 <template>
   <!-- 文档 -->
-  <div class="docs">
+  <div class="docs pt-75 pb-15 px-15 min-h-screen flex flex-col">
     <!-- 头部 -->
-    <mine-header>{{ title }}</mine-header>
+    <mine-header>{{ routeTitle }}</mine-header>
     <!-- 内容 -->
-    <router-view />
+    <router-view #="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 

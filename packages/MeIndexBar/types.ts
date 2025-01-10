@@ -31,7 +31,7 @@ export interface Props {
    */
   list?: ListItem[]
   /**
-   * 自定义顶部定位高度
+   * 显示范围数量
    */
-  topHeight?: string
+  range?: number
 }

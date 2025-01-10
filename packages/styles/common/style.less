@@ -169,6 +169,18 @@ each(@modes, {
   transition: all 0.4s;
 }
 
+// 横向动画
+.translate-x-enter-from,
+.translate-x-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.translate-x-enter-active,
+.translate-x-leave-active {
+  transition: all 0.4s;
+}
+
 // 轮播图
 .slider-enter-to {
   transition: transform 1s ease;

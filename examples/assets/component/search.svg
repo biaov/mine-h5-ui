@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="40" viewBox="0 0 220 40">
+  <g id="search" transform="translate(-373 -213)">
+    <rect id="矩形_37" data-name="矩形 37" width="220" height="40" rx="4" transform="translate(373 213)" fill="#f6f6f6" />
+    <path id="close"
+      d="M7.849,6.924,6.183,5.258a.654.654,0,0,0-.925.925L6.924,7.849,5.258,9.514a.654.654,0,0,0,.925.925L7.849,8.774l1.666,1.666a.654.654,0,0,0,.925-.925L8.774,7.849l1.666-1.666a.654.654,0,0,0-.925-.925Zm0,8.774A7.849,7.849,0,1,1,15.7,7.849,7.857,7.857,0,0,1,7.849,15.7Zm0-14.39A6.541,6.541,0,1,0,14.39,7.849,6.548,6.548,0,0,0,7.849,1.308Z"
+      transform="translate(562.3 225)" fill="rgba(0,0,0,0.3)" />
+    <g id="search-2" data-name="search" transform="translate(388 225)">
+      <path id="路径_10" data-name="路径 10"
+        d="M57.637,64.073a6.437,6.437,0,1,1,6.437-6.436A6.444,6.444,0,0,1,57.637,64.073Zm0-12A5.565,5.565,0,1,0,63.2,57.637,5.571,5.571,0,0,0,57.637,52.072Z"
+        transform="translate(-51.2 -51.2)" fill="rgba(0,0,0,0.3)" />
+      <path id="路径_11" data-name="路径 11"
+        d="M677.177,677.613a.437.437,0,0,1-.309-.128l-4.243-4.243a.436.436,0,0,1,.617-.617l4.243,4.243a.436.436,0,0,1-.308.745Z"
+        transform="translate(-661.915 -661.915)" fill="rgba(0,0,0,0.3)" />
+    </g>
+    <text id="请输入" transform="translate(417 238)" fill="rgba(0,0,0,0.3)" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="0" y="0">请输入</tspan>
+    </text>
+  </g>
+</svg>

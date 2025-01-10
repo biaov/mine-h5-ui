@@ -34,30 +34,23 @@ const props = withDefaults(defineProps<Props>(), {
   range: 5
 })
 const { jigsawImgRef, dragPoint, missingPoint, crossPoint, imgRect } = useImgRect(props)
-const { moveX, openAnimation, onTouchstart, onTouchmove, onTouchend, onMousedown, onAnimationend } = useSlider(props, emit, { dragPoint, missingPoint })
+const { moveX, openAnimation, onAnimationend } = useSlider(props, emit, { dragPoint, missingPoint })
 </script>
 
 <template>
   <!-- 拼图校验 -->
   <div class="me-jigsaw-validate" :style="`width:${width};`">
-    <div class="jigsaw-img" :style="`height:${height};--x:${missingPoint.x}px;--y:${crossPoint.y}px;--point-width:${crossPoint.width}px;--url:url(${url});`" ref="jigsawImgRef">
-      <div
-        class="jigsaw-img-point"
-        :class="{ animation: openAnimation }"
-        :style="`left:${dragPoint.x + moveX}px;background-position:-${missingPoint.x}px -${crossPoint.y}px;background-size:${imgRect.width}px ${imgRect.height}px;`"
-      ></div>
+    <div class="jigsaw-img"
+      :style="`height:${height};--x:${missingPoint.x}px;--y:${crossPoint.y}px;--point-width:${crossPoint.width}px;--url:url(${url});`"
+      ref="jigsawImgRef">
+      <div class="jigsaw-img-point" :class="{ animation: openAnimation }"
+        :style="`left:${dragPoint.x + moveX}px;background-position:-${missingPoint.x}px -${crossPoint.y}px;background-size:${imgRect.width}px ${imgRect.height}px;`">
+      </div>
     </div>
     <div class="jigsaw-slide" :style="`height:${slideStyle.height};background:${slideStyle.background};`">
-      <div
-        class="slide-dot"
-        :class="{ animation: openAnimation }"
-        :style="`left:${moveX}px;background:${slideStyle.dotBackground};`"
-        @transitionend="onAnimationend"
-        @touchstart="onTouchstart"
-        @touchmove="onTouchmove"
-        @touchend="onTouchend"
-        @mousedown="onMousedown"
-      ></div>
+      <div class="slide-dot" :class="{ animation: openAnimation }"
+        :style="`left:${moveX}px;background:${slideStyle.dotBackground};`" ref="slideDotRef"
+        @transitionend="onAnimationend"></div>
       <div class="slide-tips" :style="`color:${slideStyle.tips};`">{{ tips }}</div>
     </div>
   </div>

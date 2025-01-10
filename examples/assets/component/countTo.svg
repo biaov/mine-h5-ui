@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="16" viewBox="0 0 44 16">
+  <style>
+    .demo {
+      fill: #494949;
+      font-size: 12;
+      transform: translate(0, 13px);
+    }
+  </style>
+  <text class="demo">
+    100000
+    <animate attributeName="visibility" values="visible;hidden;hidden" dur="3s" repeatCount="indefinite" />
+  </text>
+  <text class="demo">
+    333333
+    <animate attributeName="visibility" values="hidden;visible;hidden" dur="3s" repeatCount="indefinite" />
+  </text>
+  <text class="demo">
+    666666
+    <animate attributeName="visibility" values="hidden;hidden;visible" dur="3s" repeatCount="indefinite" />
+  </text>
+</svg>

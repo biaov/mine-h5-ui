@@ -25,7 +25,7 @@ MessageEventListener(path => {
   if (path === '/') {
     componentConfig.some(item => item.items.some(it => routePath.includes(it.path))) &&
       $router.push({
-        path: '/doc/introduce'
+        path: '/doc/overview'
       })
   } else if (path.includes('/doc') && routePath !== path) {
     $router.push({

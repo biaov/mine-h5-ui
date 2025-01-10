@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72.486" height="43.489"
+  viewBox="0 0 72.486 43.489">
+  <defs>
+    <filter id="路径_9" x="0" y="0" width="43.489" height="43.489" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feFlood flood-opacity="0.161" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g id="switch" transform="translate(-1791.866 -38.148)">
+    <g id="矩形_17" data-name="矩形 17" transform="translate(1797.352 40)" fill="none" stroke="rgba(112,112,112,0.3)"
+      stroke-width="1">
+      <rect width="67" height="33" rx="16.5" stroke="none" />
+      <rect x="0.5" y="0.5" width="66" height="32" rx="16" fill="none" />
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1791.87, 38.15)" filter="url(#路径_9)">
+      <path id="路径_9-2" data-name="路径 9"
+        d="M253.044,354.078A12.744,12.744,0,1,1,240.3,341.333a12.744,12.744,0,0,1,12.744,12.744Z"
+        transform="translate(-218.56 -335.33)" fill="#fff" />
+    </g>
+  </g>
+</svg>

@@ -1,4 +1,6 @@
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onMounted, useTemplateRef } from 'vue'
+import { useMoveHandle } from '../MeComposable'
+import type { USEMoveHandle } from '../MeComposable'
 import type { Props, Emits, XPoint, ShareData, ImgRect } from './types'
 
 /**
@@ -65,85 +67,7 @@ export const useSlider = (props: Readonly<Required<Props>>, emit: Emits, { dragP
    * 移动距离
    */
   const moveX = ref(0)
-
-  /**
-   * 操作开始
-   */
-  const handleStart = <T extends Touch | MouseEvent>({ clientX }: T) => {
-    openAnimation.value = false
-    startX = clientX
-  }
-
-  /**
-   * 操作移动
-   */
-  const handleMove = <T extends Touch | MouseEvent>({ clientX }: T) => {
-    moveX.value = clientX - startX
-  }
-
-  /**
-   * 操作结束
-   */
-  const handleEnd = <T extends Touch | MouseEvent>({ clientX }: T) => {
-    /**
-     * 拖拽点 x
-     */
-    const dx = dragPoint.value.x
-    /**
-     * 缺失点 x
-     */
-    const mx = missingPoint.value.x
-    /**
-     * 当前位移
-     */
-    const curX = clientX - startX
-    /**
-     * 验证结果
-     */
-    const resultBool = Math.abs(dx + curX - mx) < props.range
-
-    if (resultBool) {
-      moveX.value = mx - dx
-    } else {
-      moveX.value = 0
-      openAnimation.value = true
-    }
-
-    emit('change', resultBool)
-  }
-
-  /**
-   * 手指触摸开始
-   */
-  const onTouchstart = (e: TouchEvent) => {
-    handleStart(e.changedTouches[0])
-  }
-
-  /**
-   * 手指触摸移动
-   */
-  const onTouchmove = (e: TouchEvent) => {
-    handleMove(e.changedTouches[0])
-  }
-
-  /**
-   * 手指触摸离开
-   */
-  const onTouchend = (e: TouchEvent) => {
-    handleEnd(e.changedTouches[0])
-  }
-
-  /**
-   * 点击滑块
-   */
-  const onMousedown = (e: MouseEvent) => {
-    handleStart(e)
-    document.onmousemove = handleMove
-    document.onmouseup = ev => {
-      handleEnd(ev)
-      document.onmousemove = document.onmouseup = null
-    }
-  }
+  const slideDotRef = useTemplateRef<HTMLElement>('slideDotRef')
 
   /**
    * 动画结束
@@ -152,5 +76,46 @@ export const useSlider = (props: Readonly<Required<Props>>, emit: Emits, { dragP
     openAnimation.value = false
   }
 
-  return { openAnimation, moveX, onTouchstart, onTouchmove, onTouchend, onMousedown, onAnimationend }
+  const moveOption = {
+    start({ x }: USEMoveHandle.OptionEvent) {
+      openAnimation.value = false
+      startX = x
+    },
+    move({ x }: USEMoveHandle.OptionEvent) {
+      moveX.value = x - startX
+    },
+    end({ x }: USEMoveHandle.OptionEvent) {
+      /**
+       * 拖拽点 x
+       */
+      const dx = dragPoint.value.x
+      /**
+       * 缺失点 x
+       */
+      const mx = missingPoint.value.x
+      /**
+       * 当前位移
+       */
+      const curX = x - startX
+      /**
+       * 验证结果
+       */
+      const resultBool = Math.abs(dx + curX - mx) < props.range
+
+      if (resultBool) {
+        moveX.value = mx - dx
+      } else {
+        moveX.value = 0
+        openAnimation.value = true
+      }
+
+      emit('change', resultBool)
+    }
+  }
+
+  onMounted(() => {
+    useMoveHandle(slideDotRef.value!, moveOption)
+  })
+
+  return { openAnimation, moveX, onAnimationend }
 }

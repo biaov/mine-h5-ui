@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" viewBox="0 0 140 40">
+  <g id="space" transform="translate(-1090 -43)">
+    <rect id="矩形_13" data-name="矩形 13" width="40" height="40" transform="translate(1090 43)" fill="#f56c6c" />
+    <rect id="矩形_14" data-name="矩形 14" width="40" height="40" transform="translate(1140 43)" fill="#f56c6c" />
+    <rect id="矩形_15" data-name="矩形 15" width="40" height="40" transform="translate(1190 43)" fill="#f56c6c" />
+    <text id="_1" data-name="1" transform="translate(1104 72)" fill="#fff" font-size="20"
+      font-family="SegoeUI-Bold, Segoe UI" font-weight="700">
+      <tspan x="0" y="0">1</tspan>
+    </text>
+    <text id="_2" data-name="2" transform="translate(1154 72)" fill="#fff" font-size="20"
+      font-family="SegoeUI-Bold, Segoe UI" font-weight="700">
+      <tspan x="0" y="0">2</tspan>
+    </text>
+    <text id="_3" data-name="3" transform="translate(1204 72)" fill="#fff" font-size="20"
+      font-family="SegoeUI-Bold, Segoe UI" font-weight="700">
+      <tspan x="0" y="0">3</tspan>
+    </text>
+  </g>
+</svg>

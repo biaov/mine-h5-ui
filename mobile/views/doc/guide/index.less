@@ -20,6 +20,14 @@
           color: @font-color;
           font-size: @font-size;
         }
+        @media (max-width: 310px) {
+          :deep(.me-guide img) {
+            width: calc(100% * 1.2);
+            height: calc(100% * 1.2);
+            max-width: calc(100% * 1.5);
+            transform: translateY(-0px);
+          }
+        }
       }
     }
   }

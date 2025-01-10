@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" height="68" viewBox="0 0 160 68">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0" x2="1" y2="0.4" gradientUnits="objectBoundingBox">
+      <stop offset="0.2" stop-color="#ccc" />
+      <stop offset="0.5" stop-color="#dadada" />
+      <stop offset="1" stop-color="#ccc" />
+    </linearGradient>
+  </defs>
+  <g id="skeleton" transform="translate(-357 -1285)">
+    <rect width="160" height="16" rx="3" transform="translate(357 1285)" fill="#ccc" />
+    <rect width="30" height="16" transform="translate(317 1285)" fill="url(#linear-gradient)">
+      <animateTransform attributeName="transform" begin="0s" dur="2s" type="translate" from="317 1285" to="517 1285" repeatCount="indefinite" />
+    </rect>
+    <rect width="160" height="16" rx="3" transform="translate(357 1311)" fill="#ccc" />
+    <rect width="30" height="16" transform="translate(317 1311)" fill="url(#linear-gradient)" class="animation2">
+      <animateTransform attributeName="transform" begin="0.5s" dur="1s" type="translate" from="317 1311" to="517 1311" repeatCount="indefinite" />
+    </rect>
+    <rect width="160" height="16" rx="3" transform="translate(357 1337)" fill="#ccc" />
+    <rect width="40" height="16" transform="translate(317 1337)" fill="url(#linear-gradient)" class="animation3">
+      <animateTransform attributeName="transform" begin="1s" dur="1.4s" type="translate" from="317 1337" to="517 1337" repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg>

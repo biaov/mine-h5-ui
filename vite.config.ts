@@ -5,7 +5,7 @@ import markdownVite from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslint from 'vite-plugin-eslint'
 import tailwindcss from 'tailwindcss'
-import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig, tailwindcssConfig } from './config/plugins'
+import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig } from './config/plugins'
 
 const { dirname } = import.meta
 
@@ -22,7 +22,7 @@ export default defineConfig({
    */
   server: {
     host: '0.0.0.0',
-    port: 3333
+    port: +env.VITE_PORT
   },
   resolve: {
     /**
@@ -45,7 +45,7 @@ export default defineConfig({
       }
     },
     postcss: {
-      plugins: [tailwindcss(tailwindcssConfig())]
+      plugins: [tailwindcss()]
     }
   },
   build: {

@@ -25,6 +25,8 @@ export interface SidebarChildItem extends Partial<Pick<SidebarItem, 'name' | 'pa
  * 导航类型
  */
 export interface SidebarListItem {
-  title: string
-  children: SidebarChildItem[]
+  name?: string
+  meta?: SidebarMeta
+  title?: string
+  children?: SidebarChildItem[]
 }

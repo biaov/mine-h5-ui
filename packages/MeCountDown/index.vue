@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import { useCountdown } from './hooks'
 import type { Props, Emits, Slots } from './types'
+import { name } from './config'
 
-defineOptions({
-  name: 'MeCountDown'
-})
+defineOptions({ name })
 
 defineSlots<Slots>()
 
@@ -23,7 +22,7 @@ const { formatAfter } = useCountdown(props, emit)
 
 <template>
   <!-- 倒计时 -->
-  <div class="me-count-down">
+  <div :class="name">
     <slot :DD="formatAfter.DD" :hh="formatAfter.hh" :mm="formatAfter.mm" :ss="formatAfter.ss" :ms="formatAfter.ms">
       <template v-if="formatAfter.DD !== undefined">{{ formatAfter.DD }} 天</template>
       <template v-if="formatAfter.hh !== undefined">{{ formatAfter.hh }} 时</template>

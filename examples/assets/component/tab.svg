@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="194" viewBox="0 0 260 194">
+  <g id="tab" transform="translate(-1202 -738)">
+    <g id="矩形_70" data-name="矩形 70" transform="translate(1202 738)" fill="none" stroke="rgba(112,112,112,0.1)"
+      stroke-width="1">
+      <rect width="260" height="194" stroke="none" />
+      <rect x="0.5" y="0.5" width="259" height="193" fill="none" />
+    </g>
+    <text id="标签一" transform="translate(1237 768)" fill="#494949" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-18" y="0">标签一</tspan>
+    </text>
+    <text id="标签二" transform="translate(1292 768)" fill="rgba(73,73,73,0.5)" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-18" y="0">标签二</tspan>
+    </text>
+    <line id="直线_3" data-name="直线 3" x2="36" transform="translate(1219.5 775.5)" fill="none" stroke="#409eff"
+      stroke-width="1" />
+    <text id="内容一" transform="translate(1237 809)" fill="#494949" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-18" y="0">内容一</tspan>
+    </text>
+  </g>
+</svg>

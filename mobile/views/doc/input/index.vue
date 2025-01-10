@@ -30,7 +30,7 @@ const { listData, onSMS, onIcon } = useHandlerInput()
             @click-icon="onIcon(it)"
             :readonly="it.readonly"
             :disabled="it.disabled"
-          ></me-input>
+          />
         </li>
       </ul>
     </li>

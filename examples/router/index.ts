@@ -18,10 +18,17 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/doc',
     redirect: {
-      name: 'introduce'
+      name: 'overview'
     },
     component: () => import(`@/views/doc/index.vue`),
-    children: docs
+    children: [
+      ...docs,
+      {
+        path: 'overview',
+        name: 'overview',
+        component: () => import(`@/views/doc/overview.vue`)
+      }
+    ]
   }
 ]
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="157" viewBox="0 0 220 157">
+  <g id="jigsawValidate" transform="translate(-1406 -1036)">
+    <rect id="矩形_95" data-name="矩形 95" width="220" height="127" transform="translate(1406 1036)" fill="#67c23a" />
+    <rect id="矩形_96" data-name="矩形 96" width="220" height="30" transform="translate(1406 1163)" fill="#f1f1f1" />
+    <text id="按住左边按钮向右拖动完成上方图像验证" transform="translate(1531 1183)" fill="#494949" font-size="10" font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-90" y="0">按住左边按钮向右拖动完成上方图像验证</tspan>
+    </text>
+    <rect id="矩形_97" data-name="矩形 97" width="30" height="30" transform="translate(1406 1163)" fill="#409eff" />
+    <g id="矩形_98" data-name="矩形 98" transform="translate(1439 1086)" fill="#67c23a" stroke="#fff" stroke-width="1">
+      <rect width="30" height="30" stroke="none" />
+      <rect x="0.5" y="0.5" width="29" height="29" fill="none" />
+    </g>
+    <rect id="矩形_99" data-name="矩形 99" width="30" height="30" transform="translate(1564 1086)" fill="rgba(0,0,0,0.2)" />
+  </g>
+</svg>

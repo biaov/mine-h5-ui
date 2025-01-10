@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="40" viewBox="0 0 260 40">
+  <g id="navBar" transform="translate(-1205 -678)">
+    <g id="矩形_69" data-name="矩形 69" transform="translate(1205 678)" fill="#fff" stroke="rgba(112,112,112,0.1)"
+      stroke-width="1">
+      <rect width="260" height="40" stroke="none" />
+      <rect x="0.5" y="0.5" width="259" height="39" fill="none" />
+    </g>
+    <path id="left"
+      d="M260.358,69.868l.013-.014-.013-.015,4.611-5.011-.695-.755-5.305,5.766.013.015-.013.014,5.305,5.766.695-.755Z"
+      transform="translate(958.823 627.927)" fill="#949494" />
+    <text id="返回" transform="translate(1245 703)" fill="#949494" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-12" y="0">返回</tspan>
+    </text>
+    <text id="标题" transform="translate(1335 703)" fill="#494949" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-12" y="0">标题</tspan>
+    </text>
+  </g>
+</svg>

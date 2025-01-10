@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78"
+  viewBox="0 0 78 78">
+  <defs>
+    <filter id="椭圆_3" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feFlood flood-opacity="0.161" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g id="floatButton" transform="translate(-450 -906)">
+    <g id="组_51" data-name="组 51" transform="translate(459 915)">
+      <g transform="matrix(1, 0, 0, 1, -9, -9)" filter="url(#椭圆_3)">
+        <circle id="椭圆_3-2" data-name="椭圆 3" cx="30" cy="30" r="30" transform="translate(9 9)" fill="#fff" />
+      </g>
+      <text id="按钮" transform="translate(30 37)" fill="#494949" font-size="16"
+        font-family="MicrosoftYaHei, Microsoft YaHei">
+        <tspan x="-16" y="0">按钮</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

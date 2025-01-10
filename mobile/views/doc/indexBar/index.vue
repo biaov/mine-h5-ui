@@ -6,8 +6,8 @@ const { onClick } = useClick()
 
 <template>
   <!-- 索引栏 -->
-  <div class="index-bar">
-    <me-index-bar @click="onClick"></me-index-bar>
+  <div class="index-bar flex-grow h-100">
+    <me-index-bar @click="onClick" />
   </div>
 </template>
 

@@ -13,15 +13,8 @@ const { listData, onSure } = useHandle()
         <span>{{ item.title }}</span>
         <me-icon name="icon-right1" size="20px" color="#ccc" />
       </div>
-      <me-datetime-picker
-        :type="item.type"
-        v-model="item.value"
-        :visible="item.visible"
-        :min-date="item.minDate"
-        :max-date="item.maxDate"
-        @cancel="item.visible = false"
-        @sure="onSure(item)"
-      ></me-datetime-picker>
+      <me-datetime-picker :type="item.type" v-model="item.value" :visible="item.visible" :min-date="item.minDate"
+        :max-date="item.maxDate" @cancel="item.visible = false" @sure="onSure(item)" />
     </li>
   </ul>
 </template>

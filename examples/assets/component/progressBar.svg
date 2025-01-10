@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="21" viewBox="0 0 280 21">
+  <g id="progressBar" transform="translate(-1499 -713)">
+    <path id="路径_43" data-name="路径 43" d="M4,0H276a4,4,0,0,1,0,8H4A4,4,0,0,1,4,0Z" transform="translate(1499 720)"
+      fill="#ccc" />
+    <rect id="矩形_77" data-name="矩形 77" width="193" height="8" rx="4" transform="translate(1499 720)" fill="#409eff" />
+    <circle id="椭圆_5" data-name="椭圆 5" cx="10.5" cy="10.5" r="10.5" transform="translate(1679 713)" fill="#409eff" />
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="209" height="242" viewBox="0 0 209 242">
+  <g id="drag" transform="translate(-1097 -1136)">
+    <g id="组_69" data-name="组 69" transform="translate(239 7)">
+      <rect id="矩形_81" data-name="矩形 81" width="200" height="200" transform="translate(863 1134)" fill="#409eff" />
+      <text id="_1" data-name="1" transform="translate(960.086 1266)" fill="#fff" font-size="80" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-23.457" y="0">1</tspan></text>
+    </g>
+    <g id="矩形_81-2" data-name="矩形 81" transform="translate(1102 1141)" fill="none" stroke="#f56c6c" stroke-width="1" stroke-dasharray="2 1">
+      <rect width="200" height="200" stroke="none" />
+      <rect x="0.5" y="0.5" width="199" height="199" fill="none" />
+    </g>
+    <circle id="椭圆_15" data-name="椭圆 15" cx="6" cy="6" r="6" transform="translate(1294 1136)" fill="#f56c6c" />
+    <circle id="椭圆_16" data-name="椭圆 16" cx="6" cy="6" r="6" transform="translate(1097 1136)" fill="#f56c6c" />
+    <circle id="椭圆_17" data-name="椭圆 17" cx="6" cy="6" r="6" transform="translate(1097 1334)" fill="#f56c6c" />
+    <circle id="椭圆_18" data-name="椭圆 18" cx="6" cy="6" r="6" transform="translate(1294 1334)" fill="#f56c6c" />
+    <circle id="椭圆_19" data-name="椭圆 19" cx="12" cy="12" r="12" transform="translate(1190 1354)" fill="#f56c6c" />
+    <rect id="矩形_89" data-name="矩形 89" width="16" height="5" rx="1" transform="translate(1194 1139)" fill="#f56c6c" />
+    <rect id="矩形_90" data-name="矩形 90" width="16" height="5" rx="1" transform="translate(1194 1338)" fill="#f56c6c" />
+    <rect id="矩形_91" data-name="矩形 91" width="16" height="5" rx="1" transform="translate(1304.5 1233) rotate(90)" fill="#f56c6c" />
+    <rect id="矩形_92" data-name="矩形 92" width="16" height="5" rx="1" transform="translate(1105 1233) rotate(90)" fill="#f56c6c" />
+    <g id="loading_flat" transform="translate(1195 1359)">
+      <path
+        id="路径_59"
+        data-name="路径 59"
+        d="M81.359,77.491a6.746,6.746,0,1,1,5.226-11.04,6.844,6.844,0,0,1,.613.889.613.613,0,0,1-1.061.613,5.52,5.52,0,1,0-1.472,7.176.613.613,0,1,1,.739.979l0,0A6.746,6.746,0,0,1,81.359,77.491Z"
+        transform="translate(-74.634 -63.998)"
+        fill="#fff"
+      />
+      <path
+        id="路径_60"
+        data-name="路径 60"
+        d="M732.29,172.134l2.656-2.165a.307.307,0,0,1,.5.27l-.245,2.41a.307.307,0,0,1-.334.276h0l-2.41-.245a.307.307,0,0,1-.159-.546Z"
+        transform="translate(-722.271 -168.307)"
+        fill="#fff"
+      />
+    </g>
+    <path id="close" d="M217.333,213.736l-.4-.4-1.6,1.6-1.6-1.6-.4.4,1.6,1.6-1.6,1.6.4.4,1.6-1.6,1.6,1.6.4-.4-1.6-1.6Z" transform="translate(1084.667 926.667)" fill="#fff" />
+  </g>
+</svg>

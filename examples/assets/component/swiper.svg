@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="301" height="174" viewBox="0 0 301 174">
+  <g id="swiper" transform="translate(-14 -1192)">
+    <rect id="矩形_81" data-name="矩形 81" width="301" height="174" transform="translate(14 1192)" fill="#409eff" />
+    <g id="组_68" data-name="组 68" transform="translate(37 10)">
+      <circle id="椭圆_6" data-name="椭圆 6" cx="2" cy="2" r="2" transform="translate(114 1337)" fill="#67c23a" />
+      <circle id="椭圆_7" data-name="椭圆 7" cx="2" cy="2" r="2" transform="translate(122 1337)" fill="#ccc" />
+      <circle id="椭圆_8" data-name="椭圆 8" cx="2" cy="2" r="2" transform="translate(130 1337)" fill="#ccc" />
+      <circle id="椭圆_9" data-name="椭圆 9" cx="2" cy="2" r="2" transform="translate(138 1337)" fill="#ccc" />
+    </g>
+    <text id="_1" data-name="1" transform="translate(165 1311)" fill="#fff" font-size="80"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-23.457" y="0">1</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="134" height="181" viewBox="0 0 134 181">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#409eff" stop-opacity="0.502" />
+      <stop offset="1" stop-color="#67c23a" stop-opacity="0.502" />
+    </linearGradient>
+  </defs>
+  <g id="virtualList" transform="translate(-822 -1088.871)">
+    <g id="矩形_88" data-name="矩形 88" transform="translate(822 1088.871)" fill="none" stroke="rgba(204,204,204,0.3)" stroke-width="1">
+      <rect width="134" height="181" stroke="none" />
+      <rect x="0.5" y="0.5" width="133" height="180" fill="none" />
+    </g>
+    <path id="路径_56" data-name="路径 56" d="M5,0a5,5,0,0,1,5,5V35A5,5,0,0,1,0,35V5A5,5,0,0,1,5,0Z" transform="translate(945 1090)" fill="url(#linear-gradient)" />
+  </g>
+</svg>

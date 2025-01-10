@@ -4,7 +4,7 @@ import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
 import MineHeader from '@/components/MineHeader'
 import SideBar from '@/components/SideBar'
-import DemoH5 from '@/components/DemoH5'
+import MineMobile from '@/components/MineMobile'
 import type { PostMessageReturn } from '@/utils/types'
 
 const route = useRoute()
@@ -44,20 +44,20 @@ window.addEventListener('resize', onMobileState)
 
 <template>
   <!-- 文档 -->
-  <demo-h5 full v-if="isMobile" @getframe="changeFrameRouter" />
-  <div class="doc" v-else>
+  <mine-mobile full v-if="isMobile" @getframe="changeFrameRouter" />
+  <div class="doc pt-60" v-else>
     <!-- 头部 -->
     <mine-header />
     <!-- 内容 -->
-    <div class="content">
+    <div class="content flex">
       <!-- 菜单列表 -->
       <side-bar />
-      <div class="md">
+      <div class="md w-1/2 h-full p-15 grow overflow-y-auto doc-view">
         <!-- 使用文档 -->
         <router-view />
       </div>
       <!-- H5 演示 -->
-      <demo-h5 @getframe="changeFrameRouter" />
+      <mine-mobile @getframe="changeFrameRouter" />
     </div>
   </div>
 </template>

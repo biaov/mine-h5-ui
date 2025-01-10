@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="18.385" viewBox="0 0 200 18.385">
+  <g id="cell" transform="translate(-852 -73.615)">
+    <path id="ARROW"
+      d="M312.83,198.245a.355.355,0,0,0,.5,0l5.337-5.337a.355.355,0,0,0,0-.5l-5.337-5.337a.356.356,0,1,0-.5.5l5.085,5.085-5.085,5.085a.355.355,0,0,0,0,.5Z"
+      transform="translate(728.646 -113.35)" fill="rgba(35,31,32,0.3)" />
+    <line id="直线_1" data-name="直线 1" x2="200" transform="translate(852 91.5)" fill="none" stroke="rgba(112,112,112,0.3)"
+      stroke-width="1" />
+  </g>
+</svg>

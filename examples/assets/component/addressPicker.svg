@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="308" height="266"
+  viewBox="0 0 308 266">
+  <defs>
+    <filter id="矩形_40" x="0" y="0" width="308" height="266" filterUnits="userSpaceOnUse">
+      <feOffset dy="-2" input="SourceAlpha" />
+      <feGaussianBlur result="blur" />
+      <feFlood flood-color="#f6f6f6" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.902" />
+      <stop offset="1" stop-color="#fff" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#fff" stop-opacity="0.902" />
+    </linearGradient>
+  </defs>
+  <g id="addressPicker" transform="translate(-845 -422)">
+    <g transform="matrix(1, 0, 0, 1, 845, 422)" filter="url(#矩形_40)">
+      <g id="矩形_40-2" data-name="矩形 40" transform="translate(0 2)" fill="#fff" stroke="rgba(112,112,112,0.1)"
+        stroke-width="1">
+        <path d="M20,0H288a20,20,0,0,1,20,20V264a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z" stroke="none" />
+        <path d="M20,.5H288A19.5,19.5,0,0,1,307.5,20V263a.5.5,0,0,1-.5.5H1a.5.5,0,0,1-.5-.5V20A19.5,19.5,0,0,1,20,.5Z"
+          fill="none" />
+      </g>
+    </g>
+    <text id="取消" transform="translate(865 453)" fill="rgba(0,0,0,0.3)" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="0" y="0">取消</tspan>
+    </text>
+    <text id="确定" transform="translate(1109 453)" fill="#409eff" font-size="12"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="0" y="0">确定</tspan>
+    </text>
+    <line id="直线_2" data-name="直线 2" x2="40" transform="translate(979.5 440.5)" fill="none" stroke="#707070"
+      stroke-width="1" />
+    <g id="组_25" data-name="组 25">
+      <g id="组_23" data-name="组 23">
+        <rect id="矩形_41" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24" data-name="组 24">
+        <text id="河南省" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">河南省</tspan>
+        </text>
+        <text id="邵东县" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">邵东县</tspan>
+        </text>
+        <text id="湘潭市" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">湘潭市</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="组_26" data-name="组 26" transform="translate(0 44)">
+      <g id="组_23-2" data-name="组 23">
+        <rect id="矩形_41-2" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-2" data-name="组 24">
+        <text id="湖北省" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">湖北省</tspan>
+        </text>
+        <text id="新邵县" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">新邵县</tspan>
+        </text>
+        <text id="衡阳市" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">衡阳市</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="组_28" data-name="组 28" transform="translate(0 132)">
+      <g id="组_23-3" data-name="组 23">
+        <rect id="矩形_41-3" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-3" data-name="组 24">
+        <text id="广东省" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">广东省</tspan>
+        </text>
+        <text id="隆回县" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">隆回县</tspan>
+        </text>
+        <text id="岳阳市" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">岳阳市</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="组_29" data-name="组 29" transform="translate(1 176)">
+      <g id="组_23-4" data-name="组 23">
+        <rect id="矩形_41-4" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-4" data-name="组 24">
+        <text id="广西壮族自治区" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-42" y="0">广西壮族自治区</tspan>
+        </text>
+        <text id="洞口县" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">洞口县</tspan>
+        </text>
+        <text id="常德市" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">常德市</tspan>
+        </text>
+      </g>
+    </g>
+    <rect id="上遮罩区" width="306" height="110" transform="translate(846 468)" fill="url(#linear-gradient)" />
+    <path id="下遮罩区" d="M0,0H306V110H0Z" transform="translate(846 578)" fill="url(#linear-gradient-2)" />
+    <g id="组_27" data-name="组 27" transform="translate(0 88)">
+      <g id="组_23-5" data-name="组 23">
+        <rect id="矩形_41-5" data-name="矩形 41" width="265" height="44" transform="translate(866 467)" fill="#fff" />
+      </g>
+      <g id="组_24-5" data-name="组 24">
+        <text id="湖南省" transform="translate(887 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">湖南省</tspan>
+        </text>
+        <text id="邵阳县" transform="translate(1117 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">邵阳县</tspan>
+        </text>
+        <text id="邵阳市" transform="translate(1006 494)" fill="#707070" font-size="12"
+          font-family="MicrosoftYaHei, Microsoft YaHei">
+          <tspan x="-18" y="0">邵阳市</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

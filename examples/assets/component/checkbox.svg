@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="61" viewBox="0 0 89 61">
+  <g id="checkbox" transform="translate(-1677 -28)">
+    <text id="未选中" transform="translate(1721 47)" fill="#494949" font-size="15"
+      font-family="MicrosoftYaHeiUI, Microsoft YaHei UI">
+      <tspan x="0" y="0">未选中</tspan>
+    </text>
+    <path id="original_-_副本" data-name="original - 副本"
+      d="M151.111,128H130.889A2.889,2.889,0,0,0,128,130.889v20.222A2.889,2.889,0,0,0,130.889,154h20.222A2.889,2.889,0,0,0,154,151.111V130.889A2.889,2.889,0,0,0,151.111,128Zm-13,20.222L130.889,141l2.037-2.037,5.186,5.171,10.963-10.963,2.037,2.051Z"
+      transform="translate(1549 -65)" fill="#409eff" />
+    <path id="original"
+      d="M151.111,130.889v20.222H130.889V130.889h20.222m0-2.889H130.889A2.9,2.9,0,0,0,128,130.889v20.222A2.9,2.9,0,0,0,130.889,154h20.222A2.9,2.9,0,0,0,154,151.111V130.889A2.9,2.9,0,0,0,151.111,128Z"
+      transform="translate(1549 -100)" fill="rgba(0,0,0,0.3)" />
+    <text id="选中" transform="translate(1721 82)" fill="#494949" font-size="15"
+      font-family="MicrosoftYaHeiUI, Microsoft YaHei UI">
+      <tspan x="0" y="0">选中</tspan>
+    </text>
+  </g>
+</svg>
