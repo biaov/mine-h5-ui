@@ -25,7 +25,7 @@ try {
   await driver.get(testPath)
 } catch {
   console.log()
-  errorLog(`请检查 ${server} 是否启动`)
+  errorLog(`请检查 ${testPath} 是否启动`)
   console.log()
   await driver.quit()
 }
