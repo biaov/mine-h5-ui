@@ -3,7 +3,6 @@ import { loadEnv } from 'vite'
 import { errorLog } from './utils'
 import { sleepTime } from './config'
 import * as tests from './tests'
-import server from './server'
 import { useTaskQueue } from './utils'
 
 /**

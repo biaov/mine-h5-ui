@@ -7,8 +7,6 @@ import eslint from 'vite-plugin-eslint'
 import tailwindcss from 'tailwindcss'
 import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig } from './config/plugins'
 
-const { dirname } = import.meta
-
 const env = loadEnv('development', './')
 /**
  * 构建配置信息
@@ -29,10 +27,11 @@ export default defineConfig({
      * 路径别名
      */
     alias: {
-      '@': resolve(dirname, './examples'),
-      '~': resolve(dirname, './packages'),
-      '^': resolve(dirname, './mobile'),
-      '#': resolve(dirname, './dist/packages')
+      '@': resolve(import.meta.dirname, './examples'),
+      '~': resolve(import.meta.dirname, './packages'),
+      '^': resolve(import.meta.dirname, './mobile'),
+      '#': resolve(import.meta.dirname, './dist/packages'),
+      tailwindcss: resolve('node_modules/tailwindcss')
     }
   },
   css: {
@@ -58,8 +57,8 @@ export default defineConfig({
      */
     rollupOptions: {
       input: {
-        main: resolve(dirname, './index.html'),
-        mobile: resolve(dirname, './mobile.html')
+        main: resolve(import.meta.dirname, './index.html'),
+        mobile: resolve(import.meta.dirname, './mobile.html')
       }
     }
   }

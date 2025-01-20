@@ -1,9 +1,5 @@
 <template>
-  <router-view #="{ Component }">
-    <transition name="translate-x">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  <router-view />
 </template>
 
 <style lang="less">
