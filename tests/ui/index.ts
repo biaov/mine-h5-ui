@@ -4,6 +4,7 @@ import { errorLog } from './utils'
 import { sleepTime } from './config'
 import * as tests from './tests'
 import { useTaskQueue } from './utils'
+// import server from './server'
 
 /**
  * 环境变量
@@ -19,6 +20,7 @@ const testPath = `http://127.0.0.1:${env.VITE_PORT}/`
  * 启动服务
  */
 const driver = await new Builder().forBrowser(Browser.CHROME).build()
+// const driver = await server()
 
 try {
   await driver.get(testPath)
@@ -39,14 +41,6 @@ try {
     await item(driver)
     await driver.sleep(sleepTime)
   })
-  // Object.values(tests).reduce(
-  //   (prev, item) =>
-  //     prev.then(async () => {
-  //       await item(driver)
-  //       await driver.sleep(sleepTime)
-  //     }),
-  //   Promise.resolve()
-  // )
 } catch (error) {
   console.log(error)
 }
