@@ -1,7 +1,7 @@
 import { Options } from '@vitejs/plugin-vue'
 import { getSingletonHighlighter, bundledLanguages } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
-import type MarkdownIt from 'markdown-it'
+import type { MarkdownItAsync } from 'markdown-it-async'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { MarkdownViteOptions, TokenItem } from './types'
@@ -13,7 +13,7 @@ const { dirname } = import.meta
  */
 export const markdownViteConfig: MarkdownViteOptions = {
   wrapperClasses: 'md-wrap',
-  markdownItSetup: async (md: MarkdownIt) => {
+  markdownItSetup: async (md: MarkdownItAsync) => {
     /**
      * 时间线
      */
@@ -94,5 +94,3 @@ export const eslintConfig = {
   lintOnStart: true,
   exclude: ['node_modules', 'dist', 'fonts']
 }
-
-

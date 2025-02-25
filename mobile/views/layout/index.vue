@@ -19,7 +19,7 @@ const showMode = ref('default')
       <div class="hd mb-30">
         <h3 class="tit flex items-center w-full h-60">
           <img src="../../../examples/assets/logo.svg" alt="mine-h5-ui" class="logo w-50 mr-15" />
-          <span class="text-26 font-medium">{{ libraryInfo.name }}</span>
+          <span class="text-[26px] font-medium">{{ libraryInfo.name }}</span>
         </h3>
         <p class="desc">{{ libraryInfo.description }}</p>
       </div>

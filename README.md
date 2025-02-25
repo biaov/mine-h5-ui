@@ -163,6 +163,7 @@ npm run build
 
 - `@eslint/js`: Eslint js 解析器
 - `@types/mockjs`: `mockjs` 的类型
+- `@tailwindcss/vite`: Vite 中配置 Tailwindcss
 - `@types/node`: `node` 的类型
 - `@types/postcss-pxtorem`: `postcss-pxtorem` 的类型
 - `@types/qrcode`: `qrcode` 的类型

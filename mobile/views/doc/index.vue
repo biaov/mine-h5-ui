@@ -11,11 +11,7 @@ const { routeTitle } = useRouteHandler()
     <!-- 头部 -->
     <mine-header>{{ routeTitle }}</mine-header>
     <!-- 内容 -->
-    <router-view #="{ Component }">
-      <transition name="fade">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <router-view />
   </div>
 </template>
 

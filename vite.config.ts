@@ -4,10 +4,8 @@ import { resolve } from 'path'
 import markdownVite from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslint from 'vite-plugin-eslint'
-import tailwindcss from 'tailwindcss'
+import tailwindcss from '@tailwindcss/vite'
 import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig } from './config/plugins'
-
-const { dirname } = import.meta
 
 const env = loadEnv('development', './')
 /**
@@ -15,7 +13,7 @@ const env = loadEnv('development', './')
  */
 export default defineConfig({
   base: env.VITE_BASE_ROUTER,
-  plugins: [eslint(eslintConfig), vue(vueConfig), markdownVite(markdownViteConfig), VitePWA(vitePwaConfig)],
+  plugins: [tailwindcss(), eslint(eslintConfig), vue(vueConfig), markdownVite(markdownViteConfig), VitePWA(vitePwaConfig)],
 
   /**
    * 服务配置
@@ -29,10 +27,10 @@ export default defineConfig({
      * 路径别名
      */
     alias: {
-      '@': resolve(dirname, './examples'),
-      '~': resolve(dirname, './packages'),
-      '^': resolve(dirname, './mobile'),
-      '#': resolve(dirname, './dist/packages')
+      '@': resolve(import.meta.dirname, './examples'),
+      '~': resolve(import.meta.dirname, './packages'),
+      '^': resolve(import.meta.dirname, './mobile'),
+      '#': resolve(import.meta.dirname, './dist/packages')
     }
   },
   css: {
@@ -43,9 +41,6 @@ export default defineConfig({
       less: {
         additionalData: `@import "@/styles/vars.less";`
       }
-    },
-    postcss: {
-      plugins: [tailwindcss()]
     }
   },
   build: {
@@ -58,8 +53,8 @@ export default defineConfig({
      */
     rollupOptions: {
       input: {
-        main: resolve(dirname, './index.html'),
-        mobile: resolve(dirname, './mobile.html')
+        main: resolve(import.meta.dirname, './index.html'),
+        mobile: resolve(import.meta.dirname, './mobile.html')
       }
     }
   }

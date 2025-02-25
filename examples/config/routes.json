@@ -15,7 +15,8 @@
       "DatetimePicker 时间选择器",
       "AddressPicker 地址选择器",
       "Upload 上传",
-      "Form 表单"
+      "Form 表单",
+      "Calendar 日历"
     ],
     "反馈组件": [
       "ActionSheet 动作面板",
