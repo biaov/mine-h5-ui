@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css'
 export * from '~/index'
 export { default } from '~/index'
 import '~/styles/index.less'

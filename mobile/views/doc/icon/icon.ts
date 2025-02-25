@@ -1,4 +1,7 @@
 export default [
+  'icon-left-double',
+  'icon-right-double',
+  'icon-qipao',
   'icon-close1',
   'icon-dot',
   'icon-notice',

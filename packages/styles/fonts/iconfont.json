@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "28046149",
+      "name": "left-double",
+      "font_class": "left-double",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "28046150",
+      "name": "right-double",
+      "font_class": "right-double",
+      "unicode": "e6f7",
+      "unicode_decimal": 59127
+    },
+    {
+      "icon_id": "28046151",
+      "name": "left",
+      "font_class": "left",
+      "unicode": "e6f8",
+      "unicode_decimal": 59128
+    },
+    {
+      "icon_id": "28046152",
+      "name": "right",
+      "font_class": "right1",
+      "unicode": "e6f9",
+      "unicode_decimal": 59129
+    },
+    {
+      "icon_id": "1027",
+      "name": "气泡",
+      "font_class": "qipao",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
       "icon_id": "4650799",
       "name": "重大案件管理",
       "font_class": "zhongdaanjianguanli",
@@ -419,13 +454,6 @@
       "unicode_decimal": 58914
     },
     {
-      "icon_id": "1001281",
-      "name": "left",
-      "font_class": "left",
-      "unicode": "e63b",
-      "unicode_decimal": 58939
-    },
-    {
       "icon_id": "1346617",
       "name": "close",
       "font_class": "close",
@@ -466,13 +494,6 @@
       "font_class": "warning",
       "unicode": "e66b",
       "unicode_decimal": 58987
-    },
-    {
-      "icon_id": "13253829",
-      "name": "right",
-      "font_class": "right1",
-      "unicode": "e60e",
-      "unicode_decimal": 58894
     },
     {
       "icon_id": "9785618",
