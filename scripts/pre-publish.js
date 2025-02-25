@@ -1,6 +1,6 @@
 import { writeFileSync, existsSync, unlinkSync, copyFileSync } from 'fs'
 import { resolve } from 'path'
-import packageJson from '../package.json' assert { type: 'json' }
+import packageJson from '../package.json' with { type: 'json' }
 
 /**
  * 需要保留的包
