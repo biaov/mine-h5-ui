@@ -5,17 +5,15 @@ import pxtorem from 'postcss-pxtorem'
 import autoprefixer from 'autoprefixer'
 import type { AcceptedPlugin } from 'postcss'
 
-const { dirname } = import.meta
-
 /**
  * 入口文件
  */
-const input = resolve(dirname, '../packages/styles')
+const input = resolve(import.meta.dirname, '../packages/styles')
 
 /**
  * 输出文件
  */
-let outDir = resolve(dirname, '../dist/packages/styles')
+let outDir = resolve(import.meta.dirname, '../dist/packages/styles')
 const ignoreDirs = ['fonts', 'common']
 const entry = readdirSync(input)
   .filter(name => !ignoreDirs.includes(name))

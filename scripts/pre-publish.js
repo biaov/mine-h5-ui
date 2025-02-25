@@ -2,8 +2,6 @@ import { writeFileSync, existsSync, unlinkSync, copyFileSync } from 'fs'
 import { resolve } from 'path'
 import packageJson from '../package.json' assert { type: 'json' }
 
-const { dirname } = import.meta
-
 /**
  * 需要保留的包
  */
@@ -40,7 +38,7 @@ if (`${process.env.NODE_PRE}`.includes('github')) {
 /**
  * 外层目录
  */
-const outDir = resolve(dirname, '../dist/packages')
+const outDir = resolve(import.meta.dirname, '../dist/packages')
 
 /**
  * 修改文件
@@ -65,7 +63,7 @@ writeFileSync(prePackagePath, JSON.stringify(packageJson, null, 2))
 const copyFiles = ['README.md', 'LICENSE']
 
 copyFiles.forEach(name => {
-  const include = resolve(dirname, `../${name}`)
+  const include = resolve(import.meta.dirname, `../${name}`)
   const output = resolve(outDir, name)
 
   copyFileSync(include, output)

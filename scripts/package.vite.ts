@@ -6,17 +6,15 @@ import dts from 'vite-plugin-dts'
 import pkg from '../package.json'
 import { eslintConfig } from '../config/plugins'
 
-const { dirname } = import.meta
-
 /**
  * 入口文件
  */
-const input = resolve(dirname, '../packages')
+const input = resolve(import.meta.dirname, '../packages')
 
 /**
  * 输出文件
  */
-const outDir = resolve(dirname, '../dist/packages/es')
+const outDir = resolve(import.meta.dirname, '../dist/packages/es')
 
 /**
  * 配置信息

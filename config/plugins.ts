@@ -6,8 +6,6 @@ import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { MarkdownViteOptions, TokenItem } from './types'
 
-const { dirname } = import.meta
-
 /**
  * Vite 插件配置
  */
@@ -81,7 +79,7 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
     ]
   },
   workbox: {
-    globDirectory: resolve(dirname, '../dist/docs'),
+    globDirectory: resolve(import.meta.dirname, '../dist/docs'),
     skipWaiting: true,
     clientsClaim: true
   }
