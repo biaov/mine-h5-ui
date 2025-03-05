@@ -46,6 +46,6 @@
     "tests/vitest.setup.ts",
     "tests/jest-canvas-mock.ts",
     "tests/ui/vite.config.ts"
-, "examples/styles/tailwind.config.js"  ],
+  ],
   "exclude": ["node_modules", "dist"]
 }

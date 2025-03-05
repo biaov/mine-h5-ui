@@ -14,7 +14,13 @@
 
 :::TimeLine
 
-## v2.14.0 - 最新版本
+## v2.14.2 - 最新版本
+
+- ⚙️ 优化 tailwindcss 的使用
+- ⚙️ 更新依赖版本
+- 🐞 修复日历组件 (MeCalendar) 星期对应问题
+
+## v2.14.0
 
 - 🔥 新增组件 [MeCalendar](/v2/doc/calendar)
 - 🔥 新增依赖 `@tailwindcss/vite`
@@ -28,6 +34,7 @@
 - ⚙️ 更新依赖 `shiki` 由 `1.x` -> `3.x`
 - ⚙️ 更新依赖 `tailwindcss` 由 `3.x` -> `4.x`
 - ⚙️ 移除文档路由切换动画，增加切换效率
+- ⚙️ 移除 tailwind.config.js 文件
 
 ## v2.13.0
 
