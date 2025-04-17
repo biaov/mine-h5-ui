@@ -6,17 +6,18 @@
 
 .me-button {
   // 按钮类型白色字体
-  .me-button-type-white(@borderColor, @backGround: @color-default, @Color: @color-default) {
+  .me-button-type-white(@borderColor, @backGround: var(--me-text-white), @Color: var(--me-text-white)) {
     color: @Color;
     border-color: @borderColor;
     background: @backGround;
+    @borderColor-reduce: color-mix(in srgb, @borderColor 20%, white);
 
     .me-icon {
       color: @Color;
     }
 
     &.me-button-plain {
-      background: @color-default;
+      background: var(--me-text-white);
       color: @borderColor;
 
       .me-icon {
@@ -24,20 +25,20 @@
       }
 
       &.disabled {
-        color: lighten(@borderColor, 20%);
-        background: lighten(@color-default, 20%);
+        color: @borderColor-reduce;
+        background: color-mix(in srgb, var(--me-text-white), white 20%);
 
         .me-icon {
-          color: lighten(@borderColor, 20%);
+          color: @borderColor-reduce;
         }
       }
     }
 
     &.disabled {
-      @color-lighten-20: lighten(@Color, 20%);
+      @color-lighten-20: color-mix(in srgb, @Color, white 20%);
       color: @color-lighten-20;
-      border-color: lighten(@borderColor, 20%);
-      background: lighten(@backGround, 20%);
+      border-color: @borderColor-reduce;
+      background: color-mix(in srgb, @Color, white 20%) color-mix(in srgb, @backGround, #fff 20%);
       cursor: not-allowed;
 
       .me-icon {
@@ -54,10 +55,10 @@
   height: 40px;
   line-height: 38px;
   border: 1px solid transparent;
-  border-radius: @border-radius-default;
+  border-radius: var(--me-border-radius-default);
   padding: 0 15px;
   text-align: center;
-  font-size: @font-size;
+  font-size: var(--me-text-md);
   font-style: normal;
   outline: none;
 
@@ -67,27 +68,27 @@
 
   /* 主题样式 start */
   &.me-button-default {
-    .me-button-type-white(@border-color-default, @color-default, @font-color);
+    .me-button-type-white(var(--me-border-default), var(--me-text-white), var(--me-text-main));
   }
 
   &.me-button-primary {
-    .me-button-type-white(@color-primary, @color-primary);
+    .me-button-type-white(var(--me-text-primary), var(--me-text-primary));
   }
 
   &.me-button-success {
-    .me-button-type-white(@color-success, @color-success);
+    .me-button-type-white(var(--me-text-success), var(--me-text-success));
   }
 
   &.me-button-info {
-    .me-button-type-white(@color-info, @color-info);
+    .me-button-type-white(var(--me-text-info), var(--me-text-info));
   }
 
   &.me-button-warning {
-    .me-button-type-white(@color-warning, @color-warning);
+    .me-button-type-white(var(--me-text-warning), var(--me-text-warning));
   }
 
   &.me-button-danger {
-    .me-button-type-white(@color-danger, @color-danger);
+    .me-button-type-white(var(--me-text-danger), var(--me-text-danger));
   }
 
   /* 主题样式 end */

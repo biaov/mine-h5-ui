@@ -6,13 +6,13 @@
 
 .me-step-item {
   @list: {
-    success: @color-success;
-    primary: @color-primary;
-    warning: @color-warning;
-    danger: @color-danger;
+    success: var(--me-text-success);
+    primary: var(--me-text-primary);
+    warning: var(--me-text-warning);
+    danger: var(--me-text-danger);
   };
   position: relative;
-  color: @font-color-reduce;
+  color: var(--me-text-main-reduce);
   .dot {
     position: absolute;
     z-index: 2;
@@ -21,9 +21,9 @@
     align-items: center;
     width: 20px;
     height: 20px;
-    background: @bg-default;
+    background: var(--me-bg-white);
     color: inherit;
-    font-size: @font-size;
+    font-size: var(--me-text-md);
     .iconfont {
       color: inherit;
       font-size: inherit;
@@ -32,11 +32,11 @@
   .line {
     position: absolute;
     z-index: 1;
-    background: lighten(@font-color-light, 10%);
+    background: lighten(var(--me-text-light), 10%);
   }
   .text {
     color: inherit;
-    font-size: @font-size-min;
+    font-size: var(--me-text-sm);
   }
   &.active {
     each(@list,{

@@ -14,8 +14,8 @@
   .same-height();
   display: flex;
   width: 100%;
-  background: @bg-color;
-  color: @font-color;
+  background: var(--me-bg-default);
+  color: var(--me-text-main);
 
   // 图标
   .me-icon {
@@ -35,7 +35,7 @@
     outline: none;
     background: transparent;
     color: inherit;
-    font-size: @font-size;
+    font-size: var(--me-text-md);
     appearance: none;
 
     &::-webkit-input-placeholder {
@@ -56,6 +56,6 @@
     background: transparent;
     text-align: center;
     color: inherit;
-    font-size: @font-size;
+    font-size: var(--me-text-md);
   }
 }

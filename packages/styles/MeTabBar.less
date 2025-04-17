@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  border-top: 1px solid @border-color-default;
-  background: @bg-default;
+  border-top: 1px solid var(--me-border-default);
+  background: var(--me-bg-white);
 
   > li {
     flex-grow: 1;
@@ -18,20 +18,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: @font-color;
+    color: var(--me-text-main);
 
     // 图标
     .icon {
       position: relative;
       color: inherit;
-      font-size: @font-size-min*2 - 2px;
+      font-size: var(--me-text-sm) * 2 - 2px;
 
       // 相同的位置
       .same-position {
         position: absolute;
         top: 0;
         right: 0;
-        background: @color-danger;
+        background: var(--me-text-danger);
       }
 
       // 点
@@ -47,11 +47,11 @@
       em {
         .same-position;
         min-width: 16px;
-        border-radius: @border-radius-default * 4;
+        border-radius: calc(var(--me-border-radius-default) * 4);
         padding: 0 3px;
         text-align: center;
-        color: @color-default;
-        font-size: @font-size-min;
+        color: var(--me-text-white);
+        font-size: var(--me-text-sm);
         font-style: normal;
         transform: translateX(50%);
       }
@@ -66,11 +66,11 @@
     // 文本
     .txt {
       color: inherit;
-      font-size: @font-size;
+      font-size: var(--me-text-md);
     }
 
     &.selected {
-      color: @color-primary;
+      color: var(--me-text-primary);
     }
   }
 }

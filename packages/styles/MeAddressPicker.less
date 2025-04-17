@@ -10,8 +10,8 @@
   left: 0;
   width: 100%;
   border-radius: 30px 30px 0 0;
-  background: @color-default;
-  box-shadow: 0 -2px 0px @bg-color;
+  background: var(--me-text-white);
+  box-shadow: 0 -2px 0px var(--me-bg-default);
   overflow: hidden;
 
   // 头部
@@ -28,17 +28,17 @@
       height: 44px;
       line-height: 44px;
       background: transparent;
-      font-size: @font-size;
+      font-size: var(--me-text-md);
       outline: none;
 
       // 取消按钮
       &.cancel {
-        color: @font-color-reduce;
+        color: var(--me-text-main-reduce);
       }
 
       // 确定按钮
       &.sure {
-        color: @color-primary;
+        color: var(--me-text-primary);
       }
     }
 
@@ -46,7 +46,7 @@
     .line {
       width: 40px;
       height: 0;
-      border-bottom: 2px solid @font-color-reduce;
+      border-bottom: 2px solid var(--me-text-main-reduce);
       border-radius: 2px;
       padding-top: 15px;
     }
@@ -72,7 +72,7 @@
       right: 15px;
       z-index: 3;
       height: 44px;
-      border: 0px solid lighten(@border-color-default, 6%);
+      border: 0px solid color-mix(in srgb, var(--me-border-default), #fff 6%);
       border-width: 1px 0;
       transform: translateY(-50%);
     }
@@ -109,8 +109,8 @@
           width: 100%;
           height: 44px;
           line-height: 44px;
-          color: @font-color;
-          font-size: @font-size;
+          color: var(--me-text-main);
+          font-size: var(--me-text-md);
         }
       }
     }

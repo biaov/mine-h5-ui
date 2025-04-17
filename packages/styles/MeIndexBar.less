@@ -10,10 +10,10 @@
   height: 100%;
   overflow-y: auto;
   // 相同的高度
-  .same-height(@height: 36px, @bgc: @bg-default) {
+  .same-height(@height: 36px, @bgc: var(--me-bg-white)) {
     height: @height;
     line-height: @height;
-    padding: @padding-default;
+    padding: var(--me-p-default);
     background: @bgc;
   }
 
@@ -30,14 +30,14 @@
       align-items: center;
       width: 24px;
       height: 24px;
-      border-radius: @border-radius-circle;
-      color: @font-color-reduce;
-      font-size: @font-size-min;
+      border-radius: var(--me-border-radius-circle);
+      color: var(--me-text-main-reduce);
+      font-size: var(--me-text-sm);
       cursor: pointer;
 
       &.on {
-        color: @font-color-white;
-        background: @color-primary;
+        color: var(--me-text-white);
+        background: var(--me-text-primary);
       }
     }
   }
@@ -46,16 +46,16 @@
   .list-cont {
     .list-item {
       dt {
-        .same-height(36px, @bg-item);
-        color: @font-color-password;
-        font-size: @font-size;
+        .same-height(36px, var(--me-bg-item));
+        color: var(--me-text-password);
+        font-size: var(--me-text-md);
       }
 
       dd {
         .same-height(44px);
         border-bottom: 1px solid #ccc;
-        color: @font-color-password;
-        font-size: @font-size;
+        color: var(--me-text-password);
+        font-size: var(--me-text-md);
       }
     }
   }

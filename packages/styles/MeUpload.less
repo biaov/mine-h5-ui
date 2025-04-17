@@ -48,7 +48,7 @@
       height: 20px;
       line-height: 20px;
       border-radius: 50%;
-      background: @color-default;
+      background: var(--me-text-white);
       text-align: center;
     }
   }
@@ -58,7 +58,7 @@
     .same-position;
     .same-size;
     margin-bottom: 10px;
-    background: @bg-img;
+    background: var(--me-bg-img);
 
     .me-icon {
       position: absolute;
@@ -86,14 +86,14 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: fade(@bg-pull, 80%);
+    background: color-mix(in srgb, var(--me-bg-black) 80%, transparent);
 
     .num {
       height: 60px;
       line-height: 60px;
       text-align: center;
-      color: @color-default;
-      font-size: @font-size;
+      color: var(--me-text-white);
+      font-size: var(--me-text-md);
     }
 
     // 轮播图

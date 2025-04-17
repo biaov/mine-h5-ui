@@ -23,12 +23,12 @@
     > li {
       position: relative;
       width: 100%;
-      height: @btn-height;
-      line-height: @btn-height;
-      background: @bg-popup;
+      height: var(--me-h-btn);
+      line-height: var(--me-h-btn);
+      background: var(--me-bg-popup);
       text-align: center;
-      color: @font-color;
-      font-size: @font-size;
+      color: var(--me-text-main);
+      font-size: var(--me-text-md);
       overflow: hidden;
 
       &::after {
@@ -38,24 +38,24 @@
         bottom: 0px;
         width: 100%;
         height: 1px;
-        background: @border-popup;
+        background: var(--me-border-popup);
       }
 
       // 第一个
       &:first-child {
-        border-radius: @border-radius-default @border-radius-default 0 0;
+        border-radius: var(--me-border-radius-default) var(--me-border-radius-default) 0 0;
       }
 
       // 倒数第二个
       &:nth-last-child(2) {
-        border-radius: 0 0 @border-radius-default @border-radius-default;
+        border-radius: 0 0 var(--me-border-radius-default) var(--me-border-radius-default);
         margin-bottom: 10px;
       }
 
       // 最后一个
       &:last-child {
-        border-radius: @border-radius-default;
-        color: @font-color-reduce;
+        border-radius: var(--me-border-radius-default);
+        color: var(--me-text-main-reduce);
       }
     }
   }

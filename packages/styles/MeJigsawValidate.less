@@ -20,8 +20,8 @@
         left: @left;
         width: var(--point-width);
         height: var(--point-width);
-        border: 1px solid @border-color-default;
-        border-radius: @border-radius-default;
+        border: 1px solid var(--me-border-default);
+        border-radius: var(--me-border-radius-default);
       }
       &::before {
         .point(var(--x));
@@ -39,7 +39,7 @@
       position: relative;
       width: 100%;
       height: 40px;
-      background: @bg-color;
+      background: var(--me-bg-default);
       overflow: hidden;
       .slide {
         &-dot {
@@ -48,7 +48,7 @@
           left: 0;
           width: 40px;
           height: 100%;
-          background: @color-primary;
+          background: var(--me-text-primary);
         }
         &-tips {
           display: flex;
@@ -56,9 +56,9 @@
           align-items: center;
           width: 100%;
           height: 100%;
-          padding: @padding-default;
-          color: @font-color;
-          font-size: @font-size-min;
+          padding: var(--me-p-default);
+          color: var(--me-text-main);
+          font-size: var(--me-text-sm);
           user-select: none;
         }
       }

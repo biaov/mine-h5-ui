@@ -8,13 +8,13 @@
   @day-px: 12px;
   @day-py: 8px;
   width: 280px;
-  background: @bg-default;
-  box-shadow: @shadow;
+  background: var(--me-bg-white);
+  box-shadow: var(--me-shadow);
   transition: 0.3s opacity ease;
   opacity: 0;
-  border-radius: @border-radius-default;
-  color: @font-color;
-  font-size: @font-size;
+  border-radius: var(--me-border-radius-default);
+  color: var(--me-text-main);
+  font-size: var(--me-text-md);
   position: relative;
   z-index: 100;
   &-mask {
@@ -37,24 +37,24 @@
     &-box {
       width: 24px;
       height: 24px;
-      border-radius: @border-radius-default;
+      border-radius: var(--me-border-radius-default);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: @font-color;
-      font-size: @font-size;
-      border-radius: @border-radius-default;
+      color: var(--me-text-main);
+      font-size: var(--me-text-md);
+      border-radius: var(--me-border-radius-default);
       border: 1px solid transparent;
       &.selected {
         background: var(--theme) !important;
         border-color: var(--theme);
-        color: @color-default;
+        color: var(--me-text-white);
       }
       &.today {
         border-color: var(--theme);
       }
       &.disabled {
-        color: @color-disabled;
+        color: var(--me-text-disabled);
       }
       &.fixed {
         background: transparent !important;
@@ -62,7 +62,7 @@
     }
     &:hover {
       .item-box {
-        background: @bg-con-reduce;
+        background: var(--me-bg-con-reduce);
       }
     }
   }
@@ -71,7 +71,7 @@
     align-items: center;
     width: 100%;
     height: 40px;
-    border-bottom: 1px solid @border-color-default;
+    border-bottom: 1px solid var(--me-border-default);
     padding: 0 @day-py;
     .icon {
       display: flex;
@@ -81,11 +81,11 @@
       height: 100%;
 
       .me-icon {
-        color: @font-color-reduce !important;
+        color: var(--me-text-main-reduce) !important;
       }
       &:hover {
         .me-icon {
-          color: @font-color !important;
+          color: var(--me-text-main) !important;
         }
       }
     }

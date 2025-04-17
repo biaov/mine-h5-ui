@@ -22,7 +22,7 @@
     position: relative;
     margin-right: 10px;
     border-radius: 50%;
-    background: @bg-con-reduce;
+    background: var(--me-bg-con-reduce);
     overflow: hidden;
   }
   &-row {
@@ -34,9 +34,9 @@
   &-item {
     position: relative;
     height: @height;
-    border-radius: @border-radius-default;
+    border-radius: var(--me-border-radius-default);
     margin-bottom: 16px;
-    background: @bg-con-reduce;
+    background: var(--me-bg-con-reduce);
     overflow: hidden;
   }
   &-item:last-child {
@@ -54,7 +54,7 @@
           top: 0;
           bottom: 0;
           inset-inline: -150% -150%;
-          background: linear-gradient(-45deg, @bg-con-reduce 25%, rgba(@bg-con, 50%) 37%, @bg-con-reduce 63%);
+          background: linear-gradient(-45deg, var(--me-bg-con-reduce) 25%, color-mix(in srgb, var(--me-bg-gray) 50%, transparent) 37%, var(--me-bg-con-reduce) 63%);
           animation: skeleton-animation 1.2s ease infinite;
         }
       }
