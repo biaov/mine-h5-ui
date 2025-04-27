@@ -1,5 +1,5 @@
 /**
-  * @file 步骤条选项
+  * 步骤条选项
 */
 
 @import './common/vars.less';
@@ -32,7 +32,8 @@
   .line {
     position: absolute;
     z-index: 1;
-    background: lighten(var(--me-text-light), 10%);
+
+    background: color-mix(in srgb, var(--me-text-light), #fff 10%);
   }
   .text {
     color: inherit;

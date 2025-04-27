@@ -1,5 +1,5 @@
 /**
-  * @file 评分
+  * 评分
 */
 
 @import './common/vars.less';
@@ -17,7 +17,7 @@
   &[data-disabled='true'] {
     .tips,
     .me-icon {
-      color: lighten(var(--me-text-main-reduce), 10%) !important;
+      color: color-mix(in srgb, var(--me-text-main-reduce), #fff 10%) !important;
     }
   }
 

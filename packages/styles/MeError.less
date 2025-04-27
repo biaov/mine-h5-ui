@@ -1,5 +1,5 @@
 /**
-  * @file 错误
+  * 错误
 */
 
 @import './common/vars.less';
@@ -36,7 +36,7 @@
         color: var(--me-text-white);
       }
       .text-subtit {
-        color: rgba(var(--me-text-white), 80%);
+        color: color-mix(in srgb, var(--me-text-white) 80%, transparent);
       }
     }
   }
@@ -44,7 +44,7 @@
     margin-bottom: 20px;
     color: var(--me-text-danger);
     .iconfont {
-      font-size: var(--me-text-large) * 8;
+      font-size: calc(var(--me-text-large) * 8);
     }
   }
   &-text {

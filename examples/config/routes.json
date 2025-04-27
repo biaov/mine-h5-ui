@@ -49,7 +49,7 @@
       "ColorPicker 颜色选择器",
       "TextAnimation 文案动画"
     ],
-    "业务组件": ["VirtualList 虚拟列表", "Screenshot 截长图", "Step 步骤条", "Drag 拖拽", "Coupon 优惠券", "Mspaint 画图", "JigsawValidate 拼图校验", "TurnPage 仿真翻页"]
+    "业务组件": ["VirtualList 虚拟列表", "Screenshot 截长图", "Step 步骤条", "Drag 拖拽", "Coupon 优惠券", "Mspaint 画图", "JigsawValidate 拼图校验", "Captcha 图片验证器", "TurnPage 仿真翻页"]
   },
   "封装": {
     "样式封装": ["Style 样式类"],

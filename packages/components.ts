@@ -1,5 +1,5 @@
 /**
- * @file 组件入口文件 - 此入口都含有 install 方法，用于全局注册
+ * 组件入口文件 - 此入口都含有 install 方法，用于全局注册
  */
 /* 基础组件 start */
 export * from './MeButton' // 按钮

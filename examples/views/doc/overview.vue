@@ -33,7 +33,7 @@ const filterList = computed(() =>
   <!-- 组件总览 -->
   <div class="overview flex flex-col gap-y-24">
     <h2 class="text-2xl font-bold border-bottom border-gray-200">Overview 组件总览</h2>
-    <p class="text-sm text-gray-600">以下是 MINE-H5-UI 提供的所有组件。</p>
+    <p class="text-sm text-gray-600">以下是 <span class="text-[#67c23a] font-bold">MINE-H5-UI</span> 提供的所有组件。</p>
     <me-search v-model="keyword" placeholder="搜索组件" />
     <ul class="p-12">
       <li v-for="(item, index) in filterList" :key="index" class="mb-32">

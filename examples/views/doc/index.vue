@@ -49,7 +49,7 @@ window.addEventListener('resize', onMobileState)
     <!-- 头部 -->
     <mine-header />
     <!-- 内容 -->
-    <div class="content flex">
+    <div class="content flex max-w-1600 mx-auto">
       <!-- 菜单列表 -->
       <side-bar />
       <div class="md w-1/2 h-full p-15 grow overflow-y-auto doc-view">
