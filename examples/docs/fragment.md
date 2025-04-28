@@ -1,4 +1,4 @@
-# JigsawValidate 拼图校验
+# Fragment 图片碎片化
 
 ---
 
@@ -9,10 +9,10 @@
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { MeJigsawValidate } from 'mine-h5-ui'
-import 'mine-h5-ui/styles/MeJigsawValidate.css'
+import { MeFragment } from 'mine-h5-ui'
+import 'mine-h5-ui/styles/MeFragment.css'
 
-createApp(App).use(MeJigsawValidate).mount('#app')
+createApp(App).use(MeFragment).mount('#app')
 ```
 
 :::

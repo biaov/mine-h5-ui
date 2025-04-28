@@ -1,21 +1,21 @@
 import { mount } from '@vue/test-utils'
 import { getViewer } from '@/utils/functions'
-import MeJigsawValidate from '~/MeJigsawValidate/index.vue'
+import MeFragment from '~/MeFragment/index.vue'
 
-describe('MeJigsawValidate 拼图校验', () => {
+describe('MeFragment 图片碎片', () => {
   const url = 'https://biaov.cn/logo.svg'
 
   test('属性 url', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeJigsawValidate, {
+    const wrapper = mount(MeFragment, {
       props: { url }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeJigsawValidate)
+    const viewer = getViewer(wrapper, MeFragment)
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.html().includes(url)).toBe(true)
   })
@@ -25,13 +25,13 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeJigsawValidate, {
+    const wrapper = mount(MeFragment, {
       props: { url, width }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeJigsawValidate)
+    const viewer = getViewer(wrapper, MeFragment)
     expect(viewer.attributes('style')?.includes(`width: ${width};`)).toBe(true)
   })
 
@@ -40,13 +40,13 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeJigsawValidate, {
+    const wrapper = mount(MeFragment, {
       props: { url, height }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeJigsawValidate)
+    const viewer = getViewer(wrapper, MeFragment)
     /**
      * img 节点
      */
@@ -64,13 +64,13 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeJigsawValidate, {
+    const wrapper = mount(MeFragment, {
       props: { url, slideStyle }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeJigsawValidate)
+    const viewer = getViewer(wrapper, MeFragment)
     /**
      * slide 节点
      */
@@ -83,13 +83,13 @@ describe('MeJigsawValidate 拼图校验', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeJigsawValidate, {
+    const wrapper = mount(MeFragment, {
       props: { url, tips }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeJigsawValidate)
+    const viewer = getViewer(wrapper, MeFragment)
     /**
      * tips 节点
      */

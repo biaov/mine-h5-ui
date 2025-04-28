@@ -3,7 +3,7 @@ import { useImgRect, useSlider } from './hooks'
 import type { Props, Emits } from './types'
 
 defineOptions({
-  name: 'MeJigsawValidate'
+  name: 'MeFragment'
 })
 
 const emit = defineEmits<Emits>()
@@ -38,7 +38,7 @@ const { moveX, openAnimation, onAnimationend } = useSlider(props, emit, { dragPo
 </script>
 
 <template>
-  <!-- 拼图校验 -->
+  <!-- 图片碎片化 -->
   <div class="me-jigsaw-validate" :style="`width:${width};`">
     <div class="jigsaw-img"
       :style="`height:${height};--x:${missingPoint.x}px;--y:${crossPoint.y}px;--point-width:${crossPoint.width}px;--url:url(${url});`"

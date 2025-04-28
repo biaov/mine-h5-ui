@@ -82,7 +82,9 @@ export * from './MeStepItem' // 步骤条选项
 export * from './MeDrag' // 拖拽
 export * from './MeCoupon' // 优惠券
 export * from './MeMspaint' // 画图
-export * from './MeJigsawValidate' // 拼图校验
+export * from './MeCaptcha' // 图片验证器
+export * from './MeFragment' // 图片碎片化
+export * from './MeTurnPage' // 仿真翻页
 /* 业务组件 end */
 
 /* API start */

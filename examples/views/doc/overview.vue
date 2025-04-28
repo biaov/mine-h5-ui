@@ -7,7 +7,7 @@ const assets = import.meta.glob('@/assets/component/*.svg', { eager: true })
 
 const overviewList = componentConfig.map(item => {
   const items = item.items.map(subItem => {
-    const path = ((assets[`/examples/assets/component/${subItem.name}.svg`] as { default: unknown })?.default as string) ?? 'https://dummyimage.com/300x180/f9fafb'
+    const path = ((assets[`/examples/assets/component/${subItem.name}.svg`] as { default: unknown })?.default as string) ?? 'https://dummyimage.com/300x180/f9fafb/f9fafb'
 
     return { ...subItem, path }
   })

@@ -3,8 +3,18 @@
  */
 export interface ListDataItem {
   label: string
-  text: string
-  type?: string
-  iconName?: string
-  url?: string
+  visible: boolean
+  statusCode?: number
+  item: {
+    id: number
+    bgElem: {
+      url: string
+      size: number[]
+    }
+    elem: {
+      initPos: number[]
+      url: string
+      size: number[]
+    }
+  }
 }

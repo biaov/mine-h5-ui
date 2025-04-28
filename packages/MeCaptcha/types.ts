@@ -4,35 +4,19 @@ import type { Ref } from 'vue'
  * emits
  */
 export interface Emits {
-  (event: 'change', resultBool: boolean): void
-}
-
-/**
- * slideStyle
- */
-export interface SlideStyle {
-  height: string
-  background: string
-  dotBackground: string
-  tips: string
-}
-
-interface SizeType {
-  width: number
-  height: number
+  (event: 'check', [x, y]: number[]): void
+  (event: 'refresh'): void
 }
 
 interface DataPropsType {
-  bgImg: {
+  bgElem: {
     url: string
-    size: SizeType
+    size: number[]
   }
-  sprite: {
-    initPosition: {
-      x: number
-      y: number
-    }
-    size: SizeType
+  elem: {
+    initPos: number[]
+    url: string
+    size: number[]
   }
 }
 
@@ -41,34 +25,15 @@ interface DataPropsType {
  */
 export interface Props {
   /**
-   * 显示状态
-   */
-  visible: boolean
-  /**
    * 图片宽度
    */
-  data?: DataPropsType
+  item?: DataPropsType
 }
 
 /**
- * 横向点
- */
-export interface XPoint {
-  x: number
-}
-
-/**
- * shareData
+ * 共享数据
  */
 export interface ShareData {
-  dragPoint: Ref<XPoint>
-  missingPoint: Ref<XPoint>
-}
-
-/**
- * imgRect
- */
-export interface ImgRect {
-  width: number
-  height: number
+  visible: Ref<boolean>
+  statusCode: Ref<number>
 }

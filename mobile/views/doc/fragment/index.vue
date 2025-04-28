@@ -5,11 +5,11 @@ const { listData, onChange } = useData()
 </script>
 
 <template>
-  <!-- 拼图校验 -->
-  <ul class="jigsaw-validate">
+  <!-- 图片碎片化 -->
+  <ul class="fragment">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
-      <me-jigsaw-validate v-bind="item" @change="onChange"></me-jigsaw-validate>
+      <me-fragment v-bind="item" @change="onChange"></me-fragment>
     </li>
   </ul>
 </template>

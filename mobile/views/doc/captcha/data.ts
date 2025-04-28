@@ -1,23 +1,70 @@
-import url from '^/assets/empty.png'
+import f01 from './static/start01.png'
+import f02 from './static/start02.png'
+import f03 from './static/start03.png'
+import b01 from './static/end01.png'
+import b02 from './static/end02.png'
+import b03 from './static/end03.png'
+
+export const resultList = [
+  {
+    result: [257, 179]
+  },
+  {
+    result: [464, 251]
+  },
+  {
+    result: [495, 105]
+  }
+].map((item, index) => ({ ...item, id: index + 1 }))
+
+const list = [
+  {
+    bgElem: {
+      url: b01,
+      size: [672, 390]
+    },
+    elem: {
+      initPos: [20, 179],
+      url: f01,
+      size: [120, 120]
+    }
+  },
+  {
+    bgElem: {
+      url: b02,
+      size: [672, 390]
+    },
+    elem: {
+      initPos: [20, 251],
+      url: f02,
+      size: [120, 120]
+    }
+  },
+  {
+    bgElem: {
+      url: b03,
+      size: [672, 390]
+    },
+    elem: {
+      initPos: [20, 105],
+      url: f03,
+      size: [120, 120]
+    }
+  }
+].map((item, index) => ({ ...item, id: index + 1 }))
+
+export const getInitData = (id?: number) => {
+  if (!id) return list[0]
+  let newIndnex = list.findIndex(item => item.id === id) + 1
+  newIndnex >= list.length && (newIndnex -= list.length)
+  return list[newIndnex]
+}
 
 export default [
   {
     label: '基础用法',
-    text: '暂无数据'
-  },
-  {
-    label: '错误类型',
-    type: 'network',
-    text: '一帘清雨，垂下了一汪泪，一份缠绵，揉断了心碎。'
-  },
-  {
-    label: '自定义图标',
-    iconName: 'Loading',
-    text: '快乐很简单，就是春天的鲜花，夏天的绿荫，秋天的野果，冬天的漫天飞雪。'
-  },
-  {
-    label: '自定义图片',
-    url,
-    text: '用心聆听，深深呼吸，烟花雨，梨花月，寄一缕风的香魂，远离喧嚣。'
+    visible: false,
+    statusCode: 0,
+    item: list[~~(Math.random() * list.length)]
   }
 ]

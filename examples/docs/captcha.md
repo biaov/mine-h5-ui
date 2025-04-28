@@ -1,6 +1,17 @@
-# MeCaptcha 图片验证器
+# MeCaptcha 图片验证器 `v2.15.0`
 
 ---
+
+## 原理
+
+- API 请求获取组件的初始化显示信息
+- 前端获取拖拽到指定位置的信息
+- API 请求验证接口，传递指定位置的信息，后端验证是否通过，根据验证结果显示验证成功或验证失败信息
+  - 验证通过后，显示验证成功的信息，并存储验证成功的信息关键字段，用于后续的表单提交
+  - 验证失败后，显示验证失败的信息
+    - 验证过期
+    - 位置错误
+    - 已使用过等等
 
 ## 按需引入
 
@@ -25,24 +36,29 @@ createApp(App).use(MeCaptcha).mount('#app')
 
 ### 基础用法
 
-- 通过属性 `time` 来设置组件的倒计时间，单位为毫秒 (ms)。
+- 通过属性 `visible` 来设置组件的显示，默认为 false
+- 通过属性 `item` 来设置组件的显示
 
 ::: CopyCode
 
 ```html
-<me-count-down :time="2*60*60*1000" />
-```
-
-:::
-
-### 毫秒级渲染
-
-- 通过属性 `format` 来设置组件的格式，完整格式为 `DD:hh:mm:ss:ms`,默认格式为 `hh:mm:ss`。
-
-::: CopyCode
-
-```html
-<me-count-down :time="2*60*60*1000" format="hh:mm:ss:ms" />
+<script setup lang="ts">
+  const visible = ref(false)
+  const item = {
+    bgElem: {
+      url: '', // 背景图
+      size: [] // [宽度, 高度]
+    },
+    elem: {
+      initPos: [], // [x, y]
+      url: '', // 元素图
+      size: [] // [宽度, 高度]
+    }
+  }
+</script>
+<template>
+  <me-captcha v-model:visible="visible" :item="item" />
+</template>
 ```
 
 :::
@@ -51,23 +67,31 @@ createApp(App).use(MeCaptcha).mount('#app')
 
 ### 参数
 
-| 参数      | 说明                                | 类型    | 可选值       | 默认值   | 版本   |
-| --------- | ----------------------------------- | ------- | ------------ | -------- | ------ |
-| time      | 倒计时的时间，单位毫秒(ms)          | number  | --           | --       | v2.0.0 |
-| format    | 显示格式，完整格式 `DD:hh:mm:ss:ms` | string  | --           | hh:mm:ss | v2.0.0 |
-| isStart   | 是否开始                            | boolean | true / false | false    | v2.0.0 |
-| isSuspend | 是否暂停                            | boolean | true / false | false    | v2.0.0 |
-| isReset   | 是否重置                            | boolean | true / false | false    | v2.0.0 |
+| 参数               | 说明     | 类型                  | 可选值                          | 默认值 | 版本    |
+| ------------------ | -------- | --------------------- | ------------------------------- | ------ | ------- |
+| v-model:visible    | 显示状态 | true / false          | --                              | false  | v2.15.0 |
+| v-model:statusCode | 状态码   | number                | 1: 成功 / 2: 校验错误 / 3: 过期 | --     | v2.15.0 |
+| item               | 显示信息 | [ItemData](#itemdata) | --                              | --     | v2.15.0 |
 
-#### Slots
+#### ItemData
 
-| 具名插槽 | 说明     | scopedSlots                  | 版本   |
-| -------- | -------- | ---------------------------- | ------ |
-| default  | 默认名称 | `{ hh: "", ms: "", ss: "" }` | v2.0.0 |
+```ts
+interface ItemData {
+  bgElem: {
+    url: string // 背景图
+    size: number[] // [宽度, 高度]
+  }
+  elem: {
+    initPos: number[] // [x, y]
+    url: string // 元素图
+    size: number[] // [宽度, 高度]
+  }
+}
+```
 
 ### 方法
 
-| 方法名   | 说明                   | 回调参数     | 版本   |
-| -------- | ---------------------- | ------------ | ------ |
-| end      | 倒计时结束时触发的事件 | --           | v2.3.5 |
-| progress | 倒计时进行时触发的事件 | time: number | v2.3.5 |
+| 方法名  | 说明                     | 回调参数         | 版本    |
+| ------- | ------------------------ | ---------------- | ------- |
+| check   | 拖拽结束后的验证触发事件 | [x, y]: number[] | v2.15.0 |
+| refresh | 点击刷新按钮触发事件     | --               | v2.15.0 |
