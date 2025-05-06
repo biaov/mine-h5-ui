@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import { watch } from 'vue'
 import { useHandler } from './hooks'
-import type { Props } from './types'
+import type { Props, DefineSlots } from './types'
 
 defineOptions({
   name: 'MeSpace'
@@ -11,7 +12,10 @@ const props = withDefaults(defineProps<Props>(), {
   direction: 'horizontal'
 })
 
-const { spaceRef } = useHandler(props)
+const slots = defineSlots<DefineSlots>()
+
+const { spaceRef, onRender } = useHandler(props)
+watch(() => slots.default(), onRender, { immediate: true })
 </script>
 
 <template>

@@ -229,3 +229,12 @@ import { useCssVar } from 'mine-h5-ui'
 console.log(useCssVar({ width: '100px' })) // { --width: '100px' }
 console.log(useCssVar({ fontSize: '100px' })) // { --font-size: '100px' }
 ```
+
+## useImgInfo 获取图片信息 `v2.15.0`
+
+```ts
+import { useImgInfo } from 'mine-h5-ui'
+
+const { width, height } = useImgInfo('https://图片地址')
+console.log(width, height) // 100 100
+```

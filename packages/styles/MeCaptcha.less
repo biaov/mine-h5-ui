@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--me-bg-mask);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,17 +39,17 @@
     padding: 10px;
     width: 330px;
     min-height: 320px;
-    background: #fff;
+    background: var(--me-bg-white);
     .captcha-tips {
-      color: #999;
-      font-size: 13px;
+      color: var(--me-text-main-reduce);
+      font-size: var(--me-text-sm);
       height: 15px;
     }
     .captcha-title {
       align-items: center;
       display: flex;
       height: 40px;
-      font-size: 18px;
+      font-size: calc(var(--me-text-large) + 2px);
     }
     .captcha-close {
       width: 22px;
@@ -86,15 +86,15 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background: rgba(0, 0, 0, 0.6);
+          background: var(--me-bg-mask);
           &-img {
             width: 30px;
             height: 30px;
             margin-bottom: 10px;
           }
           &-text {
-            color: #2cd000;
-            font-size: 14px;
+            color: var(--me-text-success);
+            font-size: var(--me-text-md);
           }
         }
       }
@@ -131,8 +131,8 @@
       align-items: center;
       margin-top: 5px;
       &__left {
-        color: #ec1313;
-        font-size: 15px;
+        color: var(--me-text-danger);
+        font-size: var(--me-text-large);
       }
       &__right {
         height: 20px;

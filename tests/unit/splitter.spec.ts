@@ -1,21 +1,21 @@
 import { mount } from '@vue/test-utils'
 import { getViewer } from '@/utils/functions'
-import MeFragment from '~/MeFragment/index.vue'
+import MeSplitter from '~/MeSplitter/index.vue'
 
-describe('MeFragment 图片碎片', () => {
+describe('MeSplitter 图片碎片', () => {
   const url = 'https://biaov.cn/logo.svg'
 
   test('属性 url', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeFragment, {
+    const wrapper = mount(MeSplitter, {
       props: { url }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeFragment)
+    const viewer = getViewer(wrapper, MeSplitter)
     expect(viewer.exists()).toBeTruthy()
     expect(viewer.html().includes(url)).toBe(true)
   })
@@ -25,13 +25,13 @@ describe('MeFragment 图片碎片', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeFragment, {
+    const wrapper = mount(MeSplitter, {
       props: { url, width }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeFragment)
+    const viewer = getViewer(wrapper, MeSplitter)
     expect(viewer.attributes('style')?.includes(`width: ${width};`)).toBe(true)
   })
 
@@ -40,13 +40,13 @@ describe('MeFragment 图片碎片', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeFragment, {
+    const wrapper = mount(MeSplitter, {
       props: { url, height }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeFragment)
+    const viewer = getViewer(wrapper, MeSplitter)
     /**
      * img 节点
      */
@@ -64,13 +64,13 @@ describe('MeFragment 图片碎片', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeFragment, {
+    const wrapper = mount(MeSplitter, {
       props: { url, slideStyle }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeFragment)
+    const viewer = getViewer(wrapper, MeSplitter)
     /**
      * slide 节点
      */
@@ -83,13 +83,13 @@ describe('MeFragment 图片碎片', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeFragment, {
+    const wrapper = mount(MeSplitter, {
       props: { url, tips }
     })
     /**
      * 获取 DOM
      */
-    const viewer = getViewer(wrapper, MeFragment)
+    const viewer = getViewer(wrapper, MeSplitter)
     /**
      * tips 节点
      */

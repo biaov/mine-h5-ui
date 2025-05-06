@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { getViewer, Retarder } from '@/utils/functions'
+import { getViewer } from '@/utils/functions'
 import MeCaptcha from '~/MeCaptcha/index.vue'
 
 describe('MeCaptcha 图片验证器', () => {

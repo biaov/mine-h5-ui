@@ -83,7 +83,7 @@ export * from './MeDrag' // 拖拽
 export * from './MeCoupon' // 优惠券
 export * from './MeMspaint' // 画图
 export * from './MeCaptcha' // 图片验证器
-export * from './MeFragment' // 图片碎片化
+export * from './MeSplitter' // 图片分割器
 export * from './MeTurnPage' // 仿真翻页
 /* 业务组件 end */
 

@@ -1,4 +1,4 @@
-import { useSlots, onMounted, h, ref, render } from 'vue'
+import { h, ref, render, nextTick } from 'vue'
 import type { Props, VNodeItem } from './types'
 
 /**
@@ -24,11 +24,13 @@ export const useHandler = (props: Readonly<Required<Props>>) => {
    * space 节点
    */
   const spaceRef = ref<HTMLDivElement>()
-  onMounted(() => {
-    const slots = useSlots().default?.() || []
-    const extraChildren = vnodeGroup(slots)
-    render(h('div', { class: `me-space ${props.direction}` }, extraChildren), spaceRef.value as Element)
-  })
 
-  return { spaceRef }
+  const onRender = (slots: VNodeItem[]) => {
+    nextTick(() => {
+      const extraChildren = vnodeGroup(slots)
+      render(h('div', { class: `me-space ${props.direction}` }, extraChildren), spaceRef.value as Element)
+    })
+  }
+
+  return { spaceRef, onRender }
 }

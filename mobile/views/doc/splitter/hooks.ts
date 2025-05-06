@@ -1,5 +1,4 @@
 import { ref } from 'vue'
-import { MeToast } from '@/plugins'
 import initData from './data'
 import type { ListDataItem } from './types'
 
@@ -11,13 +10,14 @@ export const useData = () => {
    * 列表数据
    */
   const listData = ref<ListDataItem[]>(initData)
-
-  /**
-   * 改变
-   */
-  const onChange = (e: boolean) => {
-    e && MeToast('验证通过')
+  let timer: NodeJS.Timeout
+  const onClickItem = (item: ListDataItem) => {
+    item.openAnimation = false
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      item.openAnimation = true
+    }, 100)
   }
 
-  return { listData, onChange }
+  return { listData, onClickItem }
 }

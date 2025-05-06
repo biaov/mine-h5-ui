@@ -1,0 +1,27 @@
+/**
+  * 图片分割器
+*/
+
+@import './common/vars.less';
+@import './animation.less';
+
+.me-splitter {
+  position: relative;
+  &-canvas {
+    position: fixed;
+    top: -99999px;
+    left: -99999px;
+    width: 100%;
+    height: 100%;
+  }
+  &-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation-duration: 2s;
+  }
+  &-placeholder {
+    opacity: 0;
+  }
+}
