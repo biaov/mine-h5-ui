@@ -16,7 +16,7 @@ export const useImgInfo = (
 }> => {
   if (!url) throw new Error('URL 必传')
   return new Promise((resolve, reject) => {
-    let image = new Image()
+    const image = new Image()
     image.src = url
     image.onerror = reject
     image.onload = () => {

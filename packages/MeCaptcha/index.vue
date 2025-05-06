@@ -43,7 +43,7 @@ const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { 
         </div>
         <div class="captcha-footer">
           <div class="captcha-footer__left">{{ [2, 3].includes(statusCode) ? '验证错误，请重试' : '' }}</div>
-          <img :src="assets.refresh" class="captcha-footer__right" @click="onRefresh"></img>
+          <img :src="assets.refresh" class="captcha-footer__right" @click="onRefresh" />
         </div>
       </div>
     </div>
