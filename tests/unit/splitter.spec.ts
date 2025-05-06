@@ -1,9 +1,11 @@
 import { mount } from '@vue/test-utils'
-import { getViewer } from '@/utils/functions'
+import { getViewer, Retarder, renderImage } from '@/utils/functions'
 import MeSplitter from '~/MeSplitter/index.vue'
 
+renderImage()
+
 describe('MeSplitter 图片碎片', () => {
-  const url = 'https://biaov.cn/logo.svg'
+  const url = 'https://dummyimage.com/600x600/f60'
 
   test('属性 url', () => {
     /**
@@ -20,8 +22,23 @@ describe('MeSplitter 图片碎片', () => {
     expect(viewer.html().includes(url)).toBe(true)
   })
 
-  test('属性 width', () => {
-    const width = '100px'
+  test('属性 openAnimation', async () => {
+    /**
+     * 向组件里传参
+     */
+    const wrapper = mount(MeSplitter, {
+      props: { url, openAnimation: true }
+    })
+    await Retarder(50)
+    /**
+     * 获取 DOM
+     */
+    const viewer = getViewer(wrapper, MeSplitter)
+    expect(viewer.html().includes('animate__')).toBe(true)
+  })
+
+  test('属性 width', async () => {
+    const width = '500px'
     /**
      * 向组件里传参
      */
@@ -32,11 +49,12 @@ describe('MeSplitter 图片碎片', () => {
      * 获取 DOM
      */
     const viewer = getViewer(wrapper, MeSplitter)
-    expect(viewer.attributes('style')?.includes(`width: ${width};`)).toBe(true)
+    const renderWidth = getComputedStyle(viewer.element).getPropertyValue('width')
+    expect(renderWidth).toBe(width)
   })
 
-  test('属性 height', () => {
-    const height = '100px'
+  test('属性 height', async () => {
+    const height = '500px'
     /**
      * 向组件里传参
      */
@@ -47,53 +65,37 @@ describe('MeSplitter 图片碎片', () => {
      * 获取 DOM
      */
     const viewer = getViewer(wrapper, MeSplitter)
-    /**
-     * img 节点
-     */
-    const imgNode = viewer.find('.jigsaw-img')
-    expect(imgNode.attributes('style')?.includes(`height: ${height};`)).toBe(true)
+    const renderHeight = getComputedStyle(viewer.element).getPropertyValue('height')
+    expect(renderHeight).toBe(height)
   })
 
-  test('属性 slideStyle', () => {
-    const slideStyle = {
-      height: '30px',
-      background: 'radial-gradient(circle farthest-corner at 100% 0, #3eabff 0%, #3369e7 100%)',
-      dotBackground: 'radial-gradient(circle farthest-corner at 100% 0, #f09c33, #ff00aa)',
-      tips: '#fff'
-    }
+  test('属性 gutter', async () => {
+    const row = 5
+    const cols = 4
+
     /**
      * 向组件里传参
      */
     const wrapper = mount(MeSplitter, {
-      props: { url, slideStyle }
+      props: { url, gutter: [row, cols] }
     })
+    await Retarder(50)
     /**
      * 获取 DOM
      */
     const viewer = getViewer(wrapper, MeSplitter)
-    /**
-     * slide 节点
-     */
-    const slideNode = viewer.find('.jigsaw-slide')
-    expect(slideNode.attributes('style')?.includes(`height: ${slideStyle.height};`)).toBe(true)
+    const imgs = viewer.findAll(`.${MeSplitter.name}-img`)
+    expect(imgs.length).toBe(row * cols)
   })
 
-  test('属性 tips', () => {
-    const tips = '这是一段提示文字'
+  test('事件 load', async () => {
     /**
      * 向组件里传参
      */
     const wrapper = mount(MeSplitter, {
-      props: { url, tips }
+      props: { url }
     })
-    /**
-     * 获取 DOM
-     */
-    const viewer = getViewer(wrapper, MeSplitter)
-    /**
-     * tips 节点
-     */
-    const tipsNode = viewer.find('.slide-tips')
-    expect(tipsNode.text()).toBe(tips)
+    await Retarder(50)
+    expect(wrapper.emitted('load')).toBeDefined()
   })
 })

@@ -6,7 +6,7 @@ export default [
     url
   },
   {
-    label: '开启合并动画',
+    label: '开启动画',
     url,
     openAnimation: true,
     switchAnimation: true

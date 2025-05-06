@@ -479,6 +479,7 @@ export const useHandle = (props: Readonly<Props>, emit: Emits) => {
       }
 
       const base64 = onDrawImg(result, canvas, ctx)
+
       return {
         // ...result,
         base64,

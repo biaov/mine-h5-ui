@@ -9,3 +9,5 @@ export type PostMessageReturn = {
  * MessageEventListener Callback
  */
 export type MessageCallback = (data: string) => void
+
+export type ImageConstructor = new (width?: number | undefined, height?: number | undefined) => HTMLImageElement

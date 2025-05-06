@@ -35,7 +35,7 @@ createApp(App).use(MeSplitter).mount('#app')
 
 :::
 
-### 开启合并动画
+### 开启动画
 
 - 通过属性 `open-animation` 来设置组件的动画是否开启，默认为 `false`。
 
