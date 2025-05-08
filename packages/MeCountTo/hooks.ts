@@ -1,5 +1,4 @@
 import { watch, computed, ref } from 'vue'
-import { FormatThousand } from '../MeAPI/function'
 import type { USEHandler } from './types'
 
 /**
@@ -10,7 +9,7 @@ export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
    * 当前值
    */
   const curValue = ref(props.startValue)
-  const comValue = computed(() => (props.thousand ? FormatThousand(curValue.value) : curValue.value))
+  const comValue = computed(() => (props.thousand ? curValue.value.toLocaleString() : curValue.value))
 
   /**
    * 开始动画

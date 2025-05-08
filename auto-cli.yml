@@ -1,1 +1,1 @@
-reject: ['eslint-plugin-vue']
+reject: []

@@ -1,4 +1,4 @@
-# Splitter 图片分割器
+# Splitter 图片分割器 `v2.15.0`
 
 ---
 
@@ -105,7 +105,7 @@ createApp(App).use(MeSplitter).mount('#app')
 
 | 方法名 | 说明           | 回调参数                | 版本    |
 | ------ | -------------- | ----------------------- | ------- |
-| load   | 数据加载完触发 | value: Base64DataItem[] | ^2.15.0 |
+| load   | 数据加载完触发 | value: Base64DataItem[] | v2.15.0 |
 
 ```ts
 interface Base64DataItem {

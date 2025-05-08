@@ -84,10 +84,6 @@ const {
    */
   debounce,
   /**
-   * 格式化千位符
-   */
-  formatThousand,
-  /**
    * 锁定
    */
   locked,
