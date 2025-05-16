@@ -81,11 +81,11 @@ export const useComputeStyle = ({ point, width, height }: USEComputeStyle.Option
   let df = point2D(0, 0)
   let tr = point2D(0, 0)
   const oblique = Math.round(Math.sqrt(width ** 2 + height ** 2)) // 斜边
-  let o = initData(point.corner) // 起始点
-  let top = point.corner[0] === 't' // 是否上边
-  let left = point.corner[1] === 'l' // 是否左边
-  let PI = Math.PI // π
-  let A90 = PI / 2 // 90 度的弧度值
+  const o = initData(point.corner) // 起始点
+  const top = point.corner[0] === 't' // 是否上边
+  const left = point.corner[1] === 'l' // 是否左边
+  const PI = Math.PI // π
+  const A90 = PI / 2 // 90 度的弧度值
 
   const rotate = (degrees: number) => ` rotate(${degrees}deg) `
 

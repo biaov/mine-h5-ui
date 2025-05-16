@@ -26,5 +26,5 @@ export type VNodeItem = VNode<
 >
 
 export interface DefineSlots {
-  default(): VNodeItem[]
+  default: () => VNodeItem[]
 }

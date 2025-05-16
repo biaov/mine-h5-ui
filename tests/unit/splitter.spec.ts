@@ -1,8 +1,7 @@
 import { mount } from '@vue/test-utils'
-import { getViewer, Retarder, renderImage } from '@/utils/functions'
+import { getViewer, Retarder } from '@/utils/functions'
 import MeSplitter from '~/MeSplitter/index.vue'
 
-renderImage()
 
 describe('MeSplitter 图片碎片', () => {
   const url = 'https://dummyimage.com/600x600/f60'

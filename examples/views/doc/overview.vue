@@ -15,6 +15,11 @@ const overviewList = componentConfig.map(item => {
 })
 
 /**
+ * 是否包含关键字
+ */
+const hasKeyword = (value: string) => value.toLowerCase().includes(keyword.value.toLowerCase())
+
+/**
  * 搜索关键字
  */
 const keyword = ref('')
@@ -22,7 +27,7 @@ const filterList = computed(() =>
   overviewList
     .map(item => {
       let { items } = item
-      keyword.value !== '' && (items = item.items.filter(subItem => subItem.meta.title.toLowerCase().includes(keyword.value.toLowerCase())))
+      keyword.value !== '' && (items = item.items.filter(subItem => hasKeyword(subItem.meta.title) || hasKeyword(subItem.name)))
       return { ...item, items }
     })
     .filter(item => item.items.length)
@@ -42,7 +47,8 @@ const filterList = computed(() =>
           <me-tag :text="`${item.items.length}`" plain />
         </div>
         <div class="flex flex-wrap gap-y-24 -ml-10 -mr-10">
-          <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }" class="w-1/4 px-12">
+          <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }"
+            class="w-1/4 px-12">
             <mine-card :title="subItem.meta.title" class="bg-gray-50 hover:bg-white">
               <img :src="subItem.path" class="max-w-full max-h-full" />
             </mine-card>

@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
 import type { VueWrapper } from '@vue/test-utils'
-import type { PostMessageReturn, MessageCallback, ImageConstructor } from './types'
+import type { PostMessageReturn, MessageCallback } from './types'
 
 /**
  * 监听消息
@@ -72,25 +72,4 @@ export const Retarder = (time = 500) =>
 export const getViewer = (wrapper: VueWrapper, component: Component) => {
   const selector = `.${component.name!.replace(/[A-Z]/g, (val, i) => `${i ? '-' : ''}${val.toLowerCase()}`)}`
   return wrapper.find(selector)
-}
-
-/**
- * 渲染图片对象
- */
-export const renderImage = () => {
-  global.Image = class extends Image {
-    onload: () => void
-    width: number
-    height: number
-
-    constructor(option = { w: 500, h: 500 }) {
-      super()
-      this.width = option.w
-      this.height = option.h
-      this.onload = () => {}
-      setTimeout(() => {
-        this.onload()
-      }, 50)
-    }
-  } as unknown as ImageConstructor
 }

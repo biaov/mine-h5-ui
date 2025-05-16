@@ -1,5 +1,3 @@
-import type { DefaultSlots } from '../types'
-
 /**
  * emits
  */

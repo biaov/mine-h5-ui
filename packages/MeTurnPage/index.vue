@@ -6,7 +6,7 @@ import { name } from './config'
 defineOptions({ name })
 
 
-const emit = defineEmits<Emits>()
+defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props<T>>(), {
   width: 300,

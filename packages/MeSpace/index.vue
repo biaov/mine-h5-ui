@@ -15,7 +15,9 @@ const props = withDefaults(defineProps<Props>(), {
 const slots = defineSlots<DefineSlots>()
 
 const { spaceRef, onRender } = useHandler(props)
-watch(() => slots.default(), onRender, { immediate: true })
+
+
+watch(slots.default, onRender, { immediate: true })
 </script>
 
 <template>

@@ -1,15 +1,20 @@
+import { createVNode } from 'vue'
 import { mount } from '@vue/test-utils'
-import { getViewer } from '@/utils/functions'
+import { getViewer, Retarder } from '@/utils/functions'
 import MeSpace from '~/MeSpace/index.vue'
 
 describe('MeSpace 间距', () => {
-  test('属性 size', () => {
+  const slots = { default: createVNode('div') }
+
+  test('属性 size', async () => {
     /**
      * 向组件里传参
      */
     const wrapper = mount(MeSpace, {
-      props: { size: '20px' }
+      props: { size: '20px' },
+      slots
     })
+    await Retarder()
     /**
      * 获取 DOM
      */
@@ -17,14 +22,16 @@ describe('MeSpace 间距', () => {
     expect(viewer.exists()).toBeTruthy()
   })
 
-  test('属性 direction', () => {
+  test('属性 direction', async () => {
     const direction = 'vertical'
     /**
      * 向组件里传参
      */
     const wrapper = mount(MeSpace, {
-      props: { direction }
+      props: { direction },
+      slots
     })
+    await Retarder()
     /**
      * 获取 DOM
      */

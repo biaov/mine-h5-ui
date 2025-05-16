@@ -1,7 +1,4 @@
-import Validator from './validator'
 import type { DTCallback, LockedCallback, ThrottleBack, DebounceBack, LockedBack, FormatData, IsLocked, FormatTimeBack, CalculationBack } from './types'
-
-const { validThousand, validThousandFloat } = Validator
 
 /**
  * 变量类型判断
