@@ -9,7 +9,11 @@ const { listData } = useHandler()
   <ul class="turn-page">
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
-      <me-turn-page />
+      <me-turn-page v-bind="item">
+        <template #="{ item }">
+          <div class="content">{{ item.text }}</div>
+        </template>
+      </me-turn-page>
     </li>
   </ul>
 </template>
