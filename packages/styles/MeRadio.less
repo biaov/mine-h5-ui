@@ -1,5 +1,5 @@
 /**
-  * @file 单选框
+  * 单选框
 */
 
 @import './common/vars.less';
@@ -7,7 +7,7 @@
 .me-radio {
   // aria设置样式
   .color-important {
-    color: lighten(@font-color-reduce, 10%) !important;
+    color: color-mix(in srgb, var(--me-text-main-reduce), #fff 10%) !important;
   }
 
   display: flex;
@@ -34,13 +34,13 @@
   // 图标样式
   .me-icon {
     margin: 0 4px -2px 0;
-    color: @color-primary;
+    color: var(--me-text-primary);
     transition: color 0.2s;
   }
 
   // value值样式
   .value {
-    color: @font-color;
-    font-size: @font-size-large;
+    color: var(--me-text-main);
+    font-size: var(--me-text-large);
   }
 }

@@ -1,5 +1,5 @@
 /**
-  * @file 加载
+  * 加载
 */
 
 @import './common/vars.less';
@@ -17,8 +17,8 @@
 
 .me-loading {
   text-align: center;
-  color: @font-color;
-  font-size: @font-size;
+  color: var(--me-text-main);
+  font-size: var(--me-text-md);
   &-animation {
     display: inline-block;
     vertical-align: middle;
@@ -30,8 +30,8 @@
       vertical-align: -0.15em;
       fill: currentColor;
       overflow: hidden;
-      color: @font-color-light;
-      font-size: @font-size-icon;
+      color: var(--me-text-light);
+      font-size: var(--me-text-icon);
     }
   }
   &-dot {

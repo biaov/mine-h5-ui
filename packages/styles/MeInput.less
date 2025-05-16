@@ -1,15 +1,15 @@
 /**
-  * @file 输入框
+  * 输入框
 */
 
 @import './common/vars.less';
 
 .me-input {
   @height-40: 40px;
-  @color-reduce: lighten(@font-color-reduce, 20%);
+  @color-reduce: color-mix(in srgb, var(--me-text-main-reduce), #fff 20%);
 
   // 聚焦样式
-  .input-focus(@border-color: darken(@border-color-default, 20%)) {
+  .input-focus(@border-color: color-mix(in srgb,var(--me-border-default),#000 20%)) {
     .input:focus {
       border-color: @border-color;
       caret-color: @border-color;
@@ -17,7 +17,7 @@
   }
 
   // 相同块状样式
-  .same-block(@color: @font-color-reduce, @size: @font-size) {
+  .same-block(@color: var(--me-text-main-reduce), @size: var(--me-text-md)) {
     position: absolute;
     top: 0;
     padding: 0 10px;
@@ -28,7 +28,7 @@
   }
 
   // 相同右侧内容样式
-  .same-right-content(@color: @color-reduce, @size: @font-size-min) {
+  .same-right-content(@color: @color-reduce, @size: var(--me-text-sm)) {
     .same-block(@color, @size);
     right: 0;
   }
@@ -40,20 +40,20 @@
     width: 100%;
     height: @height-40;
     line-height: @height-40 - 2;
-    border: 1px solid @border-color-default;
-    border-radius: @border-radius-default;
+    border: 1px solid var(--me-border-default);
+    border-radius: var(--me-border-radius-default);
     padding: 0 10px;
     // transition: all 0.4s;
     outline: none;
-    color: @font-color;
-    font-size: @font-size;
+    color: var(--me-text-main);
+    font-size: var(--me-text-md);
 
     &::-webkit-input-placeholder {
-      color: lighten(@font-color, 50%);
+      color: color-mix(in srgb, var(--me-text-main), #fff 50%);
     }
 
     &[readyonly]:focus {
-      border-color: @border-color-default !important;
+      border-color: var(--me-border-default) !important;
       color: @color-reduce !important;
     }
 
@@ -75,12 +75,12 @@
 
   // 图标样式
   > .me-icon {
-    .same-right-content(@size: @font-size-large+2);
+    .same-right-content(@size: calc(var(--me-text-large) + 2));
   }
 
   // 短信验证码样式
   .sms {
-    .same-right-content(@color: @font-color);
+    .same-right-content(@color: var(--me-text-main));
 
     &.countdown {
       color: @color-reduce !important;
@@ -93,19 +93,19 @@
   }
 
   &.me-input-primary {
-    .input-focus(@color-primary);
+    .input-focus(var(--me-text-primary));
   }
 
   &.me-input-success {
-    .input-focus(@color-success);
+    .input-focus(var(--me-text-success));
   }
 
   &.me-input-warning {
-    .input-focus(@color-warning);
+    .input-focus(var(--me-text-warning));
   }
 
   &.me-input-danger {
-    .input-focus(@color-danger);
+    .input-focus(var(--me-text-danger));
   }
 
   /* 主题样式 end */

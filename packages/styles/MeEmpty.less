@@ -1,5 +1,5 @@
 /**
-  * @file 空状态
+  * 空状态
 */
 
 @import './common/vars.less';
@@ -17,8 +17,8 @@
     text-align: center;
 
     i {
-      color: @font-color-light;
-      font-size: @font-size-icon*4;
+      color: var(--me-text-light);
+      font-size: calc(var(--me-text-icon) * 4);
     }
 
     img {
@@ -30,7 +30,7 @@
   .txt {
     height: 30px;
     line-height: 22px;
-    color: @font-color-reduce;
-    font-size: @font-size;
+    color: var(--me-text-main-reduce);
+    font-size: var(--me-text-md);
   }
 }

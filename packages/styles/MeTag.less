@@ -1,16 +1,16 @@
 /**
-  * @file 标签
+  * 标签
 */
 
 @import './common/vars.less';
 
 .me-tag {
   @list: {
-    primary: @color-primary;
-    success: @color-success;
-    info: @color-info;
-    warning: @color-warning;
-    danger: @color-danger;
+    primary: var(--me-text-primary);
+    success: var(--me-text-success);
+    info: var(--me-text-info);
+    warning: var(--me-text-warning);
+    danger: var(--me-text-danger);
   };
 
   display: inline-block;
@@ -18,18 +18,18 @@
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 0 10px;
-  color: @font-color;
-  font-size: @font-size-min;
+  color: var(--me-text-main);
+  font-size: var(--me-text-sm);
 
   each(@list, {
       &.@{key} {
         background:@value;
         border-color:@value;
-        color:@font-color-white;
+        color:var(--me-text-white);
 
         // 空心
         &.plain {
-          background:@bg-default  !important;
+          background:var(--me-bg-white)  !important;
           color:@value;
         }
       }

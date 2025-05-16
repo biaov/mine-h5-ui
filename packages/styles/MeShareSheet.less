@@ -1,5 +1,5 @@
 /**
-  * @file 分享面板
+  * 分享面板
 */
 
 @import './common/vars.less';
@@ -12,7 +12,7 @@
     left: 0;
     transform: translateY(100%);
     width: 100%;
-    border-radius: @border-radius-default*5 @border-radius-default*5 0 0;
+    border-radius: calc(var(--me-border-radius-default) * 5) calc(var(--me-border-radius-default) * 5) 0 0;
     padding: 0;
 
     &.show {
@@ -23,8 +23,8 @@
     .tips {
       line-height: 50px;
       text-align: center;
-      color: @font-color;
-      font-size: @font-size;
+      color: var(--me-text-main);
+      font-size: var(--me-text-md);
     }
 
     // 列表
@@ -32,7 +32,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      border-bottom: 10px solid fade(@border-color-default, 50%);
+      border-bottom: 10px solid color-mix(in srgb, var(--me-border-default) 50%, transparent);
       padding: 15px;
 
       &:after {
@@ -42,7 +42,7 @@
 
       > li {
         width: 33.33%;
-        border: solid fade(@border-color-default, 50%);
+        border: solid color-mix(in srgb, var(--me-border-default) 50%, transparent);
         border-width: 0 1px 1px 0;
         padding: 15px;
         text-align: center;
@@ -62,8 +62,8 @@
           display: block;
           margin: 0 auto 5px;
           text-align: center;
-          color: @font-color;
-          font-size: @font-size*3;
+          color: var(--me-text-main);
+          font-size: calc(var(--me-text-md) * 3);
         }
 
         // 描述文本
@@ -71,8 +71,8 @@
           .me-clamp();
           display: block;
           width: 100%;
-          color: @font-color-reduce;
-          font-size: @font-size;
+          color: var(--me-text-main-reduce);
+          font-size: var(--me-text-md);
         }
       }
     }
@@ -84,8 +84,8 @@
       line-height: 40px;
       text-align: center;
       outline: none;
-      color: @font-color-reduce;
-      font-size: @font-size;
+      color: var(--me-text-main-reduce);
+      font-size: var(--me-text-md);
     }
   }
 }

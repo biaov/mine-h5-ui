@@ -71,7 +71,7 @@ export const useHandler = (props: Required<Props>) => {
    * 计算曲线路径
    */
   const calcBesselCurve = () => {
-    const list = JSON.parse(JSON.stringify(props.list)) as ListItem[]
+    const list = structuredClone(props.list)
     if (!list.length) {
       lines.value = []
       return

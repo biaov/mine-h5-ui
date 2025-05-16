@@ -1,5 +1,5 @@
 /**
-  * @file 公告栏
+  * 公告栏
 */
 
 @import './common/vars.less';
@@ -10,7 +10,7 @@
   width: 100%;
   height: 40px;
   border-radius: 4px;
-  background: @bg-color;
+  background: var(--me-bg-default);
 
   // 相同的样式
   .same-li {
@@ -19,7 +19,7 @@
     height: 100%;
     white-space: nowrap;
     color: inherit;
-    font-size: @font-size;
+    font-size: var(--me-text-md);
   }
 
   // 公告内容
@@ -37,7 +37,7 @@
       left: 0;
       display: flex;
       height: 100%;
-      color: @font-color;
+      color: var(--me-text-main);
 
       > li {
         .same-li;
@@ -49,7 +49,7 @@
     &-vertical {
       .same-li;
       width: 100%;
-      color: @font-color;
+      color: var(--me-text-main);
 
       > span {
         .me-clamp();
@@ -68,16 +68,16 @@
 
     // 前面
     &-preappend {
-      color: @color-danger;
+      color: var(--me-text-danger);
     }
 
     // 后面
     &-append {
-      color: @border-popup;
+      color: var(--me-border-popup);
     }
 
     > i {
-      font-size: @font-size-delete;
+      font-size: var(--me-text-delete);
     }
   }
 }

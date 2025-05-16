@@ -1,5 +1,5 @@
 /**
-  * @file 滑块
+  * 滑块
 */
 
 @import './common/vars.less';
@@ -17,7 +17,7 @@
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background: @bg-con;
+    background: var(--me-bg-gray);
     overflow: hidden;
 
     > span {
@@ -25,7 +25,7 @@
       width: 100%;
       height: 100%;
       transform: translateX(-100%);
-      background: @color-primary;
+      background: var(--me-text-primary);
     }
   }
 

@@ -1,5 +1,5 @@
 /**
-  * @file 手风琴选项
+  * 手风琴选项
 */
 
 @import './common/vars.less';
@@ -11,19 +11,19 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    border-bottom: 1px solid @border-color-default;
+    border-bottom: 1px solid var(--me-border-default);
 
     > h3 {
-      color: @font-color;
-      font-size: @font-size;
+      color: var(--me-text-main);
+      font-size: var(--me-text-md);
       font-weight: 600;
     }
 
     > i {
       transition: transform 0.4s;
       transform: rotate(0deg);
-      color: @font-color-reduce;
-      font-size: @font-size;
+      color: var(--me-text-main-reduce);
+      font-size: var(--me-text-md);
 
       &.open {
         transform: rotate(90deg);
@@ -38,8 +38,8 @@
 
     > div {
       padding: 5px 0;
-      color: @font-color-reduce;
-      font-size: @font-size;
+      color: var(--me-text-main-reduce);
+      font-size: var(--me-text-md);
     }
   }
 }

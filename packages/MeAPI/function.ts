@@ -1,7 +1,4 @@
-import Validator from './validator'
 import type { DTCallback, LockedCallback, ThrottleBack, DebounceBack, LockedBack, FormatData, IsLocked, FormatTimeBack, CalculationBack } from './types'
-
-const { validThousand, validThousandFloat } = Validator
 
 /**
  * 变量类型判断
@@ -313,32 +310,6 @@ export const Debounce = (fn: DTCallback, time = 300): DebounceBack => {
 }
 
 /**
- * 格式化千位符
- * @param { number } num - 需要转换的数字
- * @returns { string } - 转换后的字符串
- * @example
- * import { MeAPI } from 'mine-h5-ui'
- *
- * console.log(MeAPI.FormatThousand(1000)) // 输出: 1,000
- */
-export const FormatThousand = (num: number): string => {
-  /**
-   * 数字校验
-   */
-  if (!IsType('number', num)) throw new Error(`${num} is not number`)
-
-  /**
-   * 数字转字符串
-   */
-  const numStr = String(num)
-
-  /**
-   * 返回替换值
-   */
-  return numStr.replace(numStr.includes('.') ? validThousandFloat : validThousand, '$1,')
-}
-
-/**
  * 锁定
  * @param { LockedCallback } fn - 回调函数
  * @param { number } [time=5000] - 超时自动关闭
@@ -522,10 +493,6 @@ export default {
    * 防抖
    */
   Debounce,
-  /**
-   * 格式化千位符
-   */
-  FormatThousand,
   /**
    * 锁定
    */

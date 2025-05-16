@@ -1,5 +1,5 @@
 /**
- * @file 组件入口文件 - 此入口都含有 install 方法，用于全局注册
+ * 组件入口文件 - 此入口都含有 install 方法，用于全局注册
  */
 /* 基础组件 start */
 export * from './MeButton' // 按钮
@@ -82,7 +82,9 @@ export * from './MeStepItem' // 步骤条选项
 export * from './MeDrag' // 拖拽
 export * from './MeCoupon' // 优惠券
 export * from './MeMspaint' // 画图
-export * from './MeJigsawValidate' // 拼图校验
+export * from './MeCaptcha' // 图片验证器
+export * from './MeSplitter' // 图片分割器
+export * from './MeTurnPage' // 仿真翻页
 /* 业务组件 end */
 
 /* API start */

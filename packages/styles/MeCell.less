@@ -1,5 +1,5 @@
 /**
-  * @file 单元格
+  * 单元格
 */
 
 @import './common/vars.less';
@@ -11,7 +11,7 @@
   align-items: center;
   border-bottom: 1px solid transparent;
   &.bottom {
-    border-bottom: 1px solid @border-color-default;
+    border-bottom: 1px solid var(--me-border-default);
   }
 
   .lf,
@@ -21,8 +21,8 @@
   }
 
   .lf {
-    color: @font-color;
-    font-size: @font-size;
+    color: var(--me-text-main);
+    font-size: var(--me-text-md);
     .me-icon {
       margin-right: 5px;
       color: var(--icon-color);
@@ -30,16 +30,16 @@
   }
 
   .rt {
-    color: @font-color;
-    font-size: @font-size;
+    color: var(--me-text-main);
+    font-size: var(--me-text-md);
 
     .placeholder {
-      color: @font-color-light;
+      color: var(--me-text-light);
     }
     .me-icon {
       margin-left: 5px;
-      color: @font-color-light;
-      font-size: @font-size-large;
+      color: var(--me-text-light);
+      font-size: var(--me-text-large);
     }
   }
 }

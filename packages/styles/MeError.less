@@ -1,5 +1,5 @@
 /**
-  * @file 错误
+  * 错误
 */
 
 @import './common/vars.less';
@@ -19,37 +19,37 @@
     z-index: 9;
   }
   &.light {
-    background: @bg-default;
+    background: var(--me-bg-white);
     .me-error-text {
       .text-title {
-        color: @font-color;
+        color: var(--me-text-main);
       }
       .text-subtit {
-        color: @font-color-reduce;
+        color: var(--me-text-main-reduce);
       }
     }
   }
   &.dark {
-    background: @bg-pull;
+    background: var(--me-bg-black);
     .me-error-text {
       .text-title {
-        color: @font-color-white;
+        color: var(--me-text-white);
       }
       .text-subtit {
-        color: rgba(@font-color-white, 80%);
+        color: color-mix(in srgb, var(--me-text-white) 80%, transparent);
       }
     }
   }
   &-img {
     margin-bottom: 20px;
-    color: @color-danger;
+    color: var(--me-text-danger);
     .iconfont {
-      font-size: @font-size-large * 8;
+      font-size: calc(var(--me-text-large) * 8);
     }
   }
   &-text {
     text-align: center;
-    font-size: @font-size-large;
+    font-size: var(--me-text-large);
 
     .text-title {
       margin-bottom: 10px;

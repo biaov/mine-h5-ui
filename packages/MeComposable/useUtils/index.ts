@@ -1,4 +1,4 @@
-import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Debounce, FormatThousand, Locked, AddZero, Calculation, GenerateRandom, Retarder } from '../../MeAPI/function'
+import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Debounce, Locked, AddZero, Calculation, GenerateRandom, Retarder } from '../../MeAPI/function'
 
 /**
  * 工具函数
@@ -6,7 +6,7 @@ import { IsType, DeepCopyRA, IsLeapyear, FormatTime, CountDown, Throttle, Deboun
  * ```ts
  * import { useUtils } from 'mine-h5-ui'
  *
- * const { varType, cloneDeep, isLeapyear, formatTime, countDown, throttle, debounce, formatThousand, locked, addZero, calculation, generateRandom, retarder } = useUtils()
+ * const { varType, cloneDeep, isLeapyear, formatTime, countDown, throttle, debounce, locked, addZero, calculation, generateRandom, retarder } = useUtils()
  * console.log(varType.isString('')) // 输出: true
  * ```
  */
@@ -39,10 +39,6 @@ export const useUtils = () => ({
    * 防抖
    */
   debounce: Debounce,
-  /**
-   * 格式化千位符
-   */
-  formatThousand: FormatThousand,
   /**
    * 锁定
    */

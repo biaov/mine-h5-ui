@@ -1,26 +1,26 @@
 /**
-  * @file 导航栏
+  * 导航栏
 */
 
 @import './common/vars.less';
 
 .me-nav-bar {
   position: relative;
-  height: @btn-height;
-  border-bottom: 1px solid @border-color-default;
-  background: @bg-default;
+  height: var(--me-h-btn);
+  border-bottom: 1px solid var(--me-border-default);
+  background: var(--me-bg-white);
 
   // 相同的位置
   .same-position {
     position: absolute;
     top: 0;
-    height: @btn-height;
+    height: var(--me-h-btn);
   }
 
   // 相同的高度
   .same-height {
     height: 100%;
-    line-height: @btn-height;
+    line-height: var(--me-h-btn);
   }
 
   // 左侧按钮
@@ -28,18 +28,18 @@
     .same-position;
     .same-height;
     left: 0;
-    padding: @padding-default;
-    color: @font-color-reduce;
+    padding: var(--me-p-default);
+    color: var(--me-text-main-reduce);
 
     i {
       padding-right: 5px;
       color: inherit;
-      font-size: @font-size-large;
+      font-size: var(--me-text-large);
     }
 
     span {
       color: inherit;
-      font-size: @font-size;
+      font-size: var(--me-text-md);
     }
   }
 
@@ -47,8 +47,8 @@
   .tit {
     .same-height;
     text-align: center;
-    color: @font-color;
-    font-size: @font-size;
+    color: var(--me-text-main);
+    font-size: var(--me-text-md);
   }
 
   // 右侧按钮
@@ -58,9 +58,9 @@
 
     .btn {
       .same-height;
-      padding: @padding-default;
-      color: @font-color-reduce;
-      font-size: @font-size;
+      padding: var(--me-p-default);
+      color: var(--me-text-main-reduce);
+      font-size: var(--me-text-md);
     }
   }
 }

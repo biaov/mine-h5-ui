@@ -41,7 +41,7 @@ export const viewBoxSize = 50
  * 合并默认和传参
  */
 export const mergeDefaultWithProps = (param: Props) => {
-  const option = JSON.parse(JSON.stringify(param))
+  const option = structuredClone(param)
 
   option.type = typeGroup.some(option.type) ? option.type : typeGroup.default
   option.size ||= 24

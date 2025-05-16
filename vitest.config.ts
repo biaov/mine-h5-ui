@@ -11,7 +11,7 @@ export default mergeConfig(
       globals: true,
       include: ['tests/**/*.spec.ts'],
       environment: 'jsdom',
-      setupFiles: ['vi-canvas-mock']
+      setupFiles: ['vi-canvas-mock', './tests/setup.ts']
     }
   })
 )

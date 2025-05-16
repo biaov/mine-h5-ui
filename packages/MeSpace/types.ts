@@ -24,3 +24,7 @@ export type VNodeItem = VNode<
     [key: string]: any
   }
 >
+
+export interface DefineSlots {
+  default: () => VNodeItem[]
+}

@@ -1,5 +1,5 @@
 /**
-  * @file 开关
+  * 开关
 */
 
 @import './common/vars.less';
@@ -12,7 +12,7 @@
   border-radius: 1em;
   box-sizing: content-box;
   transition: all 0.4s;
-  font-size: @font-size-max;
+  font-size: var(--me-text-max);
 
   // 圆球样式
   .round {
@@ -23,7 +23,7 @@
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    background: @color-default;
+    background: var(--me-text-white);
     box-shadow:
       0 3px 1px 0 rgba(0, 0, 0, 0.05),
       0 2px 2px 0 rgba(0, 0, 0, 0.1),
@@ -33,7 +33,7 @@
 
   // 选中样式
   &.me-switch-on {
-    background: @color-primary;
+    background: var(--me-text-primary);
 
     .round {
       transform: translateX(100%);

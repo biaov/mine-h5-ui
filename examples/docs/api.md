@@ -43,7 +43,6 @@ Object.keys(MeAPI).forEach(key => {
 | DeepCopyRA     | 深拷贝变量-递归算法 | v2.0.0 |
 | Throttle       | 节流                | v2.0.0 |
 | Debounce       | 防抖                | v2.0.0 |
-| FormatThousand | 格式化千位符        | v2.0.0 |
 | Locked         | 锁定                | v2.0.0 |
 | AddZero        | 加 0 补位           | v2.0.0 |
 | Calculation    | 加减乘除运算        | v2.0.0 |

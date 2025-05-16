@@ -1,20 +1,20 @@
 /**
-  * @file 进度条
+  * 进度条
 */
 
 @import './common/vars.less';
 
 .me-progress-bar {
   // 相同的文本
-  .same-text(@font-color: @font-color-white) {
+  .same-text(@fontColor: var(--me-text-white)) {
     line-height: 20px;
     white-space: nowrap;
-    color: @font-color;
-    font-size: @font-size-min;
+    color: @fontColor;
+    font-size: var(--me-text-sm);
   }
 
   // 相同的位置
-  .same-position(@bgc: @color-primary) {
+  .same-position(@bgc: var(--me-text-primary)) {
     position: absolute;
     top: 50%;
     left: 0%;
@@ -31,7 +31,7 @@
     .txt {
       .same-position();
       .same-text();
-      border-radius: @border-radius-default*2;
+      border-radius: calc(var(--me-border-radius-default) * 2);
       padding: 0 4px;
     }
 
@@ -47,14 +47,14 @@
       width: 100%;
       height: 4px;
       border-radius: 10px;
-      background: @bg-con;
+      background: var(--me-bg-gray);
       overflow: hidden;
 
       > span {
         display: block;
         width: 100%;
         height: 100%;
-        background: @color-primary;
+        background: var(--me-text-primary);
         transform: translateX(-100%);
       }
     }
@@ -77,7 +77,7 @@
 
     .txt {
       .same-position(transparent);
-      .same-text(@color-primary);
+      .same-text(var(--me-text-primary));
       left: 50%;
     }
   }

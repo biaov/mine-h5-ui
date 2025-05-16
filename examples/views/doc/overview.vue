@@ -7,12 +7,17 @@ const assets = import.meta.glob('@/assets/component/*.svg', { eager: true })
 
 const overviewList = componentConfig.map(item => {
   const items = item.items.map(subItem => {
-    const path = ((assets[`/examples/assets/component/${subItem.name}.svg`] as { default: unknown })?.default as string) ?? 'https://dummyimage.com/300x180/f9fafb'
+    const path = ((assets[`/examples/assets/component/${subItem.name}.svg`] as { default: unknown })?.default as string) ?? 'https://dummyimage.com/300x180/f9fafb/f9fafb'
 
     return { ...subItem, path }
   })
   return { ...item, items }
 })
+
+/**
+ * 是否包含关键字
+ */
+const hasKeyword = (value: string) => value.toLowerCase().includes(keyword.value.toLowerCase())
 
 /**
  * 搜索关键字
@@ -22,7 +27,7 @@ const filterList = computed(() =>
   overviewList
     .map(item => {
       let { items } = item
-      keyword.value !== '' && (items = item.items.filter(subItem => subItem.meta.title.toLowerCase().includes(keyword.value.toLowerCase())))
+      keyword.value !== '' && (items = item.items.filter(subItem => hasKeyword(subItem.meta.title) || hasKeyword(subItem.name)))
       return { ...item, items }
     })
     .filter(item => item.items.length)
@@ -33,7 +38,7 @@ const filterList = computed(() =>
   <!-- 组件总览 -->
   <div class="overview flex flex-col gap-y-24">
     <h2 class="text-2xl font-bold border-bottom border-gray-200">Overview 组件总览</h2>
-    <p class="text-sm text-gray-600">以下是 MINE-H5-UI 提供的所有组件。</p>
+    <p class="text-sm text-gray-600">以下是 <span class="text-[#67c23a] font-bold">MINE-H5-UI</span> 提供的所有组件。</p>
     <me-search v-model="keyword" placeholder="搜索组件" />
     <ul class="p-12">
       <li v-for="(item, index) in filterList" :key="index" class="mb-32">
@@ -42,7 +47,8 @@ const filterList = computed(() =>
           <me-tag :text="`${item.items.length}`" plain />
         </div>
         <div class="flex flex-wrap gap-y-24 -ml-10 -mr-10">
-          <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }" class="w-1/4 px-12">
+          <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }"
+            class="w-1/4 px-12">
             <mine-card :title="subItem.meta.title" class="bg-gray-50 hover:bg-white">
               <img :src="subItem.path" class="max-w-full max-h-full" />
             </mine-card>
