@@ -1,4 +1,3 @@
-import { toRaw } from 'vue'
 import type { CalcSizeName, Point, Rect, Option, ResizeGroup } from './types'
 
 /**
