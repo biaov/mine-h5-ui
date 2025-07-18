@@ -1,3 +1,4 @@
+import { toRaw } from 'vue'
 import type { Props } from './types'
 
 /**
@@ -41,7 +42,7 @@ export const viewBoxSize = 50
  * 合并默认和传参
  */
 export const mergeDefaultWithProps = (param: Props) => {
-  const option = structuredClone(param)
+  const option = structuredClone(toRaw(param))
 
   option.type = typeGroup.some(option.type) ? option.type : typeGroup.default
   option.size ||= 24
