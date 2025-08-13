@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { watch } from 'vue'
 import type { DefaultSlots } from '../types'
 import { useHandler, useSize, useRender } from './hooks'
 import type { Props, DefineModelOption } from './types'
@@ -15,6 +16,11 @@ const props = withDefaults(defineProps<Props>(), {
   showText: false
 })
 const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
+const defineValue = defineModel<string>('value', { default: getDefaultValue().value })
+
+watch(modelValue, value => {
+  value && (defineValue.value = value.value)
+}, { immediate: true, deep: true })
 
 const { colorRect, dropdown, onToggle } = useHandler()
 const { showColor } = useRender({ modelValue })
@@ -23,9 +29,11 @@ const { sizeValue } = useSize(props)
 
 <template>
   <!-- 颜色选择器 -->
-  <div :class="name" ref="colorRef" @click="onToggle">
+  <div :class="name" ref="colorNode" @click="onToggle">
     <slot></slot>
-    <div :class="`${name}-inner`" :style="`--color:${showColor};--size:${sizeValue.size}px;fontSize:${sizeValue.fontSize}px;`" v-if="!solts.default">
+    <div :class="`${name}-inner`"
+      :style="`--color:${showColor};--size:${sizeValue.size}px;fontSize:${sizeValue.fontSize}px;`"
+      v-if="!solts.default">
       <div class="inner-block"></div>
       <div class="inner-label" v-if="showText">{{ filterText(modelValue) }}</div>
     </div>

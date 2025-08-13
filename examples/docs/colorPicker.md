@@ -120,12 +120,13 @@ const filterText = (record: ModelValue) => '自定义文案'
 
 ### 参数
 
-| 参数       | 说明         | 类型                          | 可选值                        | 默认值    | 版本    |
-| ---------- | ------------ | ----------------------------- | ----------------------------- | --------- | ------- |
-| v-model    | 颜色内容     | [ModelValue](#modelvalue)     | --                            | --        | v2.12.0 |
-| size       | 大小         | string                        | `small` / `default` / `large` | `default` | v2.12.0 |
-| showText   | 文案显示状态 | bolean                        | true / false                  | false     | v2.12.0 |
-| filterText | 文案过滤方法 | (value: ModelValue) => string | --                            | --        | v2.12.0 |
+| 参数          | 说明             | 类型                          | 可选值                        | 默认值    | 版本    |
+| ------------- | ---------------- | ----------------------------- | ----------------------------- | --------- | ------- |
+| v-model       | 颜色内容         | [ModelValue](#modelvalue)     | --                            | --        | v2.12.0 |
+| v-model:value | 颜色内容的具体值 | string                        | --                            | --        | v2.15.2 |
+| size          | 大小             | string                        | `small` / `default` / `large` | `default` | v2.12.0 |
+| showText      | 文案显示状态     | bolean                        | true / false                  | false     | v2.12.0 |
+| filterText    | 文案过滤方法     | (value: ModelValue) => string | --                            | --        | v2.12.0 |
 
 #### ModelValue
 

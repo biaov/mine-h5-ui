@@ -1,7 +1,14 @@
 import { writeFileSync, existsSync, unlinkSync, copyFileSync } from 'fs'
 import { resolve } from 'path'
-import packageJson from '../package.json' with { type: 'json' }
+import pkg from '../package.json' with { type: 'json' }
 
+const packageJson = pkg as unknown as {
+  name: string
+  publishConfig: Record<string, string>
+  dependencies: Record<string, string>
+  devDependencies: Record<string, string>
+  scripts: Record<string, string>
+}
 /**
  * 需要保留的包
  */
@@ -10,7 +17,7 @@ const needSave = ['vue', 'html2canvas']
 /**
  * 新开发依赖
  */
-const newDependencies = {}
+const newDependencies: Record<string, string> = {}
 
 /**
  * 添加需要的依赖

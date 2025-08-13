@@ -11,7 +11,7 @@ withDefaults(defineProps<Slide.Props>(), {
   color: ''
 })
 const progress = defineModel({ default: 0 })
-const slideRef = useTemplateRef<HTMLDivElement>('slideRef')
+const slideRef = useTemplateRef<HTMLDivElement>('slideNode')
 
 /**
  * 设置点的位置
@@ -48,7 +48,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="slide" :class="{ opacity }" :style="{ background }" ref="slideRef">
+  <div class="slide" :class="{ opacity }" :style="{ background }" ref="slideNode">
     <div class="circle-dot" :style="`left:${progress}%;background:${color};`"></div>
   </div>
 </template>

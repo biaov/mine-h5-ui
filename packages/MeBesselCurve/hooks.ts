@@ -1,4 +1,4 @@
-import { ref, onMounted, watch, computed, nextTick } from 'vue'
+import { ref, onMounted, watch, computed, nextTick, toRaw } from 'vue'
 import { useUtils } from '../MeComposable'
 import type { InferDefaults } from '../types'
 import type { Props, ListItem, Direction, CalcTargetRef } from './types'
@@ -71,7 +71,7 @@ export const useHandler = (props: Required<Props>) => {
    * 计算曲线路径
    */
   const calcBesselCurve = () => {
-    const list = structuredClone(props.list)
+    const list = structuredClone(props.list.map(toRaw))
     if (!list.length) {
       lines.value = []
       return
