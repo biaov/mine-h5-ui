@@ -19,7 +19,7 @@ const { handleLi } = useBtns(emit)
 
 <template>
   <!-- 索引栏 -->
-  <div :class="name" ref="indexBarRef">
+  <div :class="name" ref="indexBarNode">
     <!-- 右侧列表值 -->
     <ul class="list-rt">
       <template v-for="(item, index) in list" :key="item.name">

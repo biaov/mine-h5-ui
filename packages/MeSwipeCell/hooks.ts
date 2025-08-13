@@ -6,7 +6,7 @@ import type { USEMoveHandle } from '../MeComposable'
  * 移动列
  */
 export const useHandMove = () => {
-  const swiperEventRef = useTemplateRef<HTMLElement>('swiperEventRef')
+  const swiperEventRef = useTemplateRef<HTMLElement>('swiperEventNode')
   /**
    * hidden 节点
    */

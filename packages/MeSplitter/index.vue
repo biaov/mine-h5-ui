@@ -25,7 +25,7 @@ const { getStyle } = useStyle(props)
   <!-- 图片分割器 -->
   <div :class="name" :style="getStyle">
     <img :src="url" :class="`${name}-placeholder`" :style="getStyle" />
-    <canvas :class="`${name}-canvas`" ref="canvasRef"></canvas>
+    <canvas :class="`${name}-canvas`" ref="canvasNode"></canvas>
     <img v-for="(item, index) in base64Data" :key="index" :src="item.base64"
       :class="`${name}-img ${openAnimation ? item.animation : ''}`" :style="getStyle" />
   </div>

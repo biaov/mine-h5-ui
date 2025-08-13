@@ -7,7 +7,7 @@ export const useHandle = (props: Readonly<Props>, emit: Emits) => {
   /**
    * canvas 节点元素
    */
-  const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
+  const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasNode')
   /**
    * 碎片最小尺寸
    */

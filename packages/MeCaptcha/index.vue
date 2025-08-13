@@ -36,7 +36,7 @@ const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { 
             </div>
           </div>
           <div class="captcha-slide">
-            <div class="captcha-slide-move" :style="`left: ${moveX}px;`" ref="captchaSlideMoveRef">
+            <div class="captcha-slide-move" :style="`left: ${moveX}px;`" ref="captchaSlideMoveNode">
               <img :src="assets.lines" class="line" />
             </div>
           </div>

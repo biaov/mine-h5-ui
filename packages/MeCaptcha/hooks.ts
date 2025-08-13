@@ -36,7 +36,7 @@ export const useSlide = (props: Readonly<Props>, emit: Emits, { visible, statusC
    * 移动距离
    */
   const moveX = ref(0)
-  const captchaSlideMoveRef = useTemplateRef<HTMLElement>('captchaSlideMoveRef')
+  const captchaSlideMoveRef = useTemplateRef<HTMLElement>('captchaSlideMoveNode')
 
   const moveOption = {
     start({ x }: USEMoveHandle.OptionEvent) {

@@ -5,7 +5,7 @@ import type { Props, CityItem, Emits, ListItem } from './types'
  * 初始化数据
  */
 export const useScroll = (props: Required<Props>) => {
-  const indexBarRef = useTemplateRef<HTMLElement>('indexBarRef')
+  const indexBarRef = useTemplateRef<HTMLElement>('indexBarNode')
   /**
    * 当前字母
    */
