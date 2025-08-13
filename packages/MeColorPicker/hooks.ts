@@ -10,7 +10,7 @@ import { rgbToRgba } from './utils'
  */
 export const useHandler = () => {
   const dropdown = ref(false)
-  const colorRef = useTemplateRef<HTMLDivElement>('colorRef')
+  const colorRef = useTemplateRef<HTMLDivElement>('colorNode')
   const colorRect = ref<DropDown.Props['rect']>()
   const onToggle = () => {
     const { width, height, x, y } = colorRef.value!.getBoundingClientRect()!

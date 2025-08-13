@@ -15,7 +15,7 @@ let startRect: Omit<ColorPanel.SetPointOption, 'ex' | 'ey'> | null = null
 /**
  * color-panel ref
  */
-const colorPanelRef = useTemplateRef<HTMLDivElement>('colorPanelRef')
+const colorPanelRef = useTemplateRef<HTMLDivElement>('colorPanelNode')
 
 /**
  * 设置点的位置
@@ -55,7 +55,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="color-panel" :style="`background-color:${background};`" ref="colorPanelRef">
+  <div class="color-panel" :style="`background-color:${background};`" ref="colorPanelNode">
     <div class="color-panel__btn" :style="`left:${point.x}%;top:${point.y}%;`"></div>
   </div>
 </template>
