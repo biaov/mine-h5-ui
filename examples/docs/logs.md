@@ -223,8 +223,6 @@
 
 `2024-02-20`
 
-- 🔥 新增
-  - 新增组合式 API `useStorage` 用于操作 `localStorage` 和 `sessionStorage`
 - ⚙️ 更新
   - 更新依赖
     - 更新 `@typescript-eslint/eslint-plugin` 至 `v7.x`

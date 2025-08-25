@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.15.3",
+  "version": "2.15.5-ssr",
   "private": false,
   "author": {
     "name": "biaov",
@@ -30,7 +30,8 @@
     "pre-publish:github": "set NODE_PRE=github && node --experimental-strip-types scripts/pre-publish.ts && start cmd /k cd ./dist/packages",
     "lint": "eslint --fix ./**",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
-    "tag": "node --experimental-strip-types scripts/tag.ts"
+    "tag": "node --experimental-strip-types scripts/tag.ts",
+    "release": "npm publish --tag=ssr"
   },
   "types": "es/index.d.ts",
   "engines": {
@@ -54,7 +55,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "engine-strict": true,
-    "provenance": true
+    "provenance": false
   },
   "license": "ISC",
   "contributors": [

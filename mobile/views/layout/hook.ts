@@ -2,13 +2,17 @@ import { ref, watch } from 'vue'
 import { useRoute, onBeforeRouteLeave } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
 import { componentConfig } from '@/config/nav.config'
-import { useStorage } from '@/plugins'
 
 /**
  * 页面数据
  */
 export const useWebData = () => {
-  const { setStorage, getStorage } = useStorage()
+  const setStorage = (key: string, value: string) => {
+    localStorage.setItem(key, value)
+  }
+  const getStorage = (key: string) => {
+    return localStorage.getItem(key)
+  }
   /**
    * 当前活动值
    */

@@ -7,7 +7,7 @@ export interface Emits {
 }
 
 /**
- * props
+ * propsq
  */
 export interface Props {
   /**

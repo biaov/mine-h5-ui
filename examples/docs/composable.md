@@ -114,18 +114,6 @@ import { useVisible } from 'mine-h5-ui'
 const [visible, setVisible] = useVisible()
 ```
 
-## useStorage 本地存储 `v2.7.3`
-
-```js
-import { useStorage } from 'mine-h5-ui'
-
-const { setStorage, getStorage, removeStorage } = useStorage()
-
-// setStorage('name', 'mine-ui') // 存储
-// getStorage('name') // 获取
-// removeStorage('name') // 移除
-```
-
 ## useScroll 本地存储 `v2.8.0`
 
 ```js
