@@ -1,11 +1,10 @@
 import { h, ref, render, nextTick, Fragment } from 'vue'
-import type { ComponentInternalInstance } from 'vue'
-import type { Props, VNodeItem } from './types'
+import type { VNodeItem } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>, instance: ComponentInternalInstance) => {
+export const useHandler = () => {
   /**
    * 收集节点
    */
