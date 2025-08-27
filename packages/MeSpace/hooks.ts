@@ -1,10 +1,11 @@
-import { h, ref, render, nextTick } from 'vue'
+import { h, ref, render, nextTick, Fragment } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
 import type { Props, VNodeItem } from './types'
 
 /**
  * 操作
  */
-export const useHandler = (props: Readonly<Required<Props>>) => {
+export const useHandler = (props: Readonly<Required<Props>>, instance: ComponentInternalInstance) => {
   /**
    * 收集节点
    */
@@ -24,13 +25,11 @@ export const useHandler = (props: Readonly<Required<Props>>) => {
    * space 节点
    */
   const spaceRef = ref<HTMLDivElement>()
-
   const onRender = (slots: VNodeItem[]) => {
     nextTick(() => {
       const extraChildren = vnodeGroup(slots)
-      render(h('div', { class: `me-space ${props.direction}` }, extraChildren), spaceRef.value as Element)
+      render(h(Fragment, extraChildren), spaceRef.value as Element)
     })
   }
-
   return { spaceRef, onRender }
 }

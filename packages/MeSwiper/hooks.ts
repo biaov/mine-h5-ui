@@ -1,4 +1,4 @@
-import { ref, provide, watch, onMounted, onUnmounted } from 'vue'
+import { ref, provide, watch, onMounted, onUnmounted, computed } from 'vue'
 import { MeSwiperKey } from './token'
 import type { PropsHookParam, Emits } from './types'
 
@@ -303,4 +303,20 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
   onUnmounted(closeAnimate)
 
   return { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown }
+}
+
+/**
+ * 样式
+ */
+export const useStyle = (props: Readonly<PropsHookParam>) => {
+  const className = ref('')
+  const renderStyle = computed(() => {
+    const style: Record<string, string> = { 'border-radius': `${props.radius}px` }
+    if (!props.height) return style
+    className.value = 'me-swiper-full-screen'
+    style.height = parseInt(`${props.height}`) === props.height ? `${props.height}px` : (props.height as string)
+    return style
+  })
+
+  return { renderStyle, className }
 }

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { watch } from 'vue'
+import { watch, getCurrentInstance, h } from 'vue'
 import { useHandler } from './hooks'
 import type { Props, DefineSlots } from './types'
 
@@ -14,13 +14,14 @@ const props = withDefaults(defineProps<Props>(), {
 
 const slots = defineSlots<DefineSlots>()
 
-const { spaceRef, onRender } = useHandler(props)
-
+const instance = getCurrentInstance()
+const { spaceRef, onRender } = useHandler(props, instance!)
 
 watch(slots.default, onRender, { immediate: true })
+
 </script>
 
 <template>
   <!-- 间距 -->
-  <div ref="spaceRef" :style="`--size:${size};`"></div>
+  <div ref="spaceRef" :style="`--size:${size};`" class="me-space" :class="direction"></div>
 </template>
