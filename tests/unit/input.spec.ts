@@ -276,4 +276,20 @@ describe('MeInput 输入框', () => {
 
     expect(wrapper.emitted('input')).toBeDefined()
   })
+
+  test('属性 maxlength', async () => {
+    const modelValue = '测试最大值'
+    const maxlength = 2
+    /**
+     * 向组件里传参
+     */
+    const wrapper = mount(MeInput, {
+      props: { maxlength, modelValue }
+    })
+    /**
+     * 获取 DOM
+     */
+    const viewer = getViewer(wrapper, MeInput).find('.input')
+    expect((viewer.element as unknown as { value: string }).value).toBe(modelValue.slice(0, maxlength))
+  })
 })

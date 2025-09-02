@@ -109,26 +109,28 @@ createApp(App).use(MeInput).mount('#app')
 
 ### 参数
 
-| 参数                | 说明           | 类型             | 可选值                                                                   | 默认值    | 版本   |
-| ------------------- | -------------- | ---------------- | ------------------------------------------------------------------------ | --------- | ------ |
-| modelValue(v-model) | 输入框默认值   | [string, number] | --                                                                       | --        | v2.0.0 |
-| type                | 输入框类型     | string           | 原生 input 类型                                                          | text      | v2.0.0 |
-| placeholder         | 输入框占位符   | string           | --                                                                       | 请输入... | v2.0.0 |
-| label               | 输入框标签     | string           | --                                                                       | --        | v2.0.0 |
-| label-width         | 标签宽度       | string           | --                                                                       | --        | v2.0.0 |
-| label-align         | 标签对齐方式   | string           | auto / left / right / center / justify / start / end / initial / inherit | left      | v2.0.0 |
-| label-color         | 标签颜色       | string           | --                                                                       | --        | v2.0.0 |
-| label-icon          | 标签图标       | string           | --                                                                       | --        | v2.0.0 |
-| focus-type          | 聚焦类型       | string           | default / primary / success / warning / danger                           | default   | v2.0.0 |
-| focus-color         | 聚焦自定义颜色 | string           | --                                                                       | --        | v2.0.0 |
-| icon                | 图标按钮       | string           | --                                                                       | --        | v2.0.0 |
-| password            | 密码输入框     | boolean          | true / false                                                             | false     | v2.0.0 |
-| digit               | 整数输入框     | boolean          | true / false                                                             | false     | v2.0.0 |
-| sms-msg             | 短信验证码信息 | string           | --                                                                       | --        | v2.0.0 |
-| sms-color           | 短信验证码颜色 | string           | --                                                                       | --        | v2.0.0 |
-| sms-is              | 是否开启倒计时 | boolean          | true / false                                                             | false     | v2.0.0 |
-| readonly            | 只读           | boolean          | true / false                                                             | false     | v2.0.0 |
-| disabled            | 禁用           | boolean          | true / false                                                             | false     | v2.0.0 |
+| 参数                | 说明           | 类型             | 可选值                                                                   | 默认值    | 版本    |
+| ------------------- | -------------- | ---------------- | ------------------------------------------------------------------------ | --------- | ------- |
+| modelValue(v-model) | 输入框默认值   | [string, number] | --                                                                       | --        | v2.0.0  |
+| type                | 输入框类型     | string           | 原生 input 类型                                                          | text      | v2.0.0  |
+| placeholder         | 输入框占位符   | string           | --                                                                       | 请输入... | v2.0.0  |
+| label               | 输入框标签     | string           | --                                                                       | --        | v2.0.0  |
+| label-width         | 标签宽度       | string           | --                                                                       | --        | v2.0.0  |
+| label-align         | 标签对齐方式   | string           | auto / left / right / center / justify / start / end / initial / inherit | left      | v2.0.0  |
+| label-color         | 标签颜色       | string           | --                                                                       | --        | v2.0.0  |
+| label-icon          | 标签图标       | string           | --                                                                       | --        | v2.0.0  |
+| focus-type          | 聚焦类型       | string           | default / primary / success / warning / danger                           | default   | v2.0.0  |
+| focus-color         | 聚焦自定义颜色 | string           | --                                                                       | --        | v2.0.0  |
+| icon                | 图标按钮       | string           | --                                                                       | --        | v2.0.0  |
+| password            | 密码输入框     | boolean          | true / false                                                             | false     | v2.0.0  |
+| digit               | 整数输入框     | boolean          | true / false                                                             | false     | v2.0.0  |
+| sms-msg             | 短信验证码信息 | string           | --                                                                       | --        | v2.0.0  |
+| sms-color           | 短信验证码颜色 | string           | --                                                                       | --        | v2.0.0  |
+| sms-is              | 是否开启倒计时 | boolean          | true / false                                                             | false     | v2.0.0  |
+| readonly            | 只读           | boolean          | true / false                                                             | false     | v2.0.0  |
+| disabled            | 禁用           | boolean          | true / false                                                             | false     | v2.0.0  |
+| maxlength           | 最大长度       | number           | --                                                                       | 999       | v2.15.4 |
+| minlength           | 最小长度       | number           | --                                                                       | 0         | v2.15.4 |
 
 ### 方法
 

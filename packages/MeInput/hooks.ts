@@ -130,12 +130,17 @@ export const useInput = ({ props, emit, sms, inputVal }: USEInput.Option) => {
   /**
    * 监听输入框的值的变化
    */
-  watch(inputVal, (value, oldValue) => {
-    /**
-     * 判断是否为整数输入并设置 value
-     */
-    props.digit && !/^\d*$/g.test(value as string) && (inputVal.value = +oldValue)
-  })
+  watch(
+    inputVal,
+    (value, oldValue) => {
+      value && (inputVal.value = `${value}`.slice(0, props.maxlength))
+      /**
+       * 判断是否为整数输入并设置 value
+       */
+      props.digit && !/^\d*$/g.test(value as string) && (inputVal.value = +(oldValue as string) || 0)
+    },
+    { immediate: true }
+  )
 
   /**
    * 监听短信校验状态

@@ -84,6 +84,15 @@ export interface Props {
    * 是否开启倒计时
    */
   smsIs?: boolean
+
+  /**
+   * 最大长度
+   */
+  maxlength?: number
+  /**
+   * 最小长度
+   */
+  minlength?: number
 }
 
 /**
