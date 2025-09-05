@@ -261,7 +261,7 @@ export const Throttle = (fn: DTCallback, time = 1000): ThrottleBack => {
    */
   let timer: NodeJS.Timeout | null = null
 
-  return (e: Event) => {
+  return (e?: Event) => {
     !timer &&
       (timer = setTimeout(() => {
         /**
@@ -295,7 +295,7 @@ export const Debounce = (fn: DTCallback, time = 300): DebounceBack => {
    */
   let timer: NodeJS.Timeout | undefined
 
-  return (e: Event) => {
+  return (e?: Event) => {
     /**
      * 清理之前的操作
      */
