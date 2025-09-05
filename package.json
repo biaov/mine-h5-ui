@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.15.6-ssr",
+  "version": "2.15.4-ssr.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -31,7 +31,7 @@
     "lint": "eslint --fix ./**",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
     "tag": "node --experimental-strip-types scripts/tag.ts",
-    "release": "npm publish --tag=ssr"
+    "release": "cd dist/packages && npm publish --tag=ssr"
   },
   "types": "es/index.d.ts",
   "engines": {
