@@ -31,7 +31,7 @@
     "lint": "eslint --fix ./**",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
     "tag": "node --experimental-strip-types scripts/tag.ts",
-    "release": "cd dist/packages && npm publish --tag=ssr"
+    "release": "npm run pre-publish && cd dist/packages && npm publish --tag=ssr"
   },
   "types": "es/index.d.ts",
   "engines": {
