@@ -27,6 +27,7 @@ export * from './MeAddressPicker' // 地址选择器
 export * from './MeUpload' // 上传
 export * from './MeForm' // 表单
 export * from './MeCalendar' // 日历
+export * from './MeStepper' // 步进器
 /* 表单组件 end */
 
 /* 反馈组件 start */

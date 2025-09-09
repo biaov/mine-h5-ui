@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.15.4-ssr.0",
+  "version": "2.16.0-ssr",
   "private": false,
   "author": {
     "name": "biaov",
@@ -23,7 +23,7 @@
     "build:package": "vite build --config scripts/package.vite.ts",
     "preview": "vite preview",
     "test:unit": "vitest run",
-    "test:unit:single": "vitest dev tests/unit/input.spec.ts",
+    "test:unit:single": "vitest dev tests/unit/stepper.spec.ts",
     "test:ui": "vite-node ./tests/ui/index.ts",
     "prepare": "husky",
     "pre-publish": "node --experimental-strip-types scripts/pre-publish.ts",
@@ -69,23 +69,23 @@
     "html2canvas": "^1.4.1",
     "mockjs": "^1.1.0",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.20",
+    "vue": "^3.5.21",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.34.0",
-    "@tailwindcss/vite": "^4.1.12",
+    "@eslint/js": "^9.35.0",
+    "@tailwindcss/vite": "^4.1.13",
     "@types/mockjs": "^1.0.10",
-    "@types/node": "^24.3.0",
+    "@types/node": "^24.3.1",
     "@types/postcss-pxtorem": "^6.1.0",
     "@types/qrcode": "^1.5.5",
     "@types/selenium-webdriver": "^4.1.28",
     "@vitejs/plugin-vue": "^6.0.1",
-    "@vue/compiler-sfc": "^3.5.20",
+    "@vue/compiler-sfc": "^3.5.21",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-vue": "^10.4.0",
     "globals": "^16.3.0",
@@ -96,14 +96,14 @@
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.6.2",
     "selenium-webdriver": "^4.35.0",
-    "shiki": "^3.12.1",
-    "tailwindcss": "^4.1.12",
+    "shiki": "^3.12.2",
+    "tailwindcss": "^4.1.13",
     "tslib": "^2.8.1",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.41.0",
+    "typescript-eslint": "^8.43.0",
     "unplugin-vue-markdown": "^29.1.0",
     "vi-canvas-mock": "^1.0.0",
-    "vite": "^7.1.4",
+    "vite": "^7.1.5",
     "vite-node": "^3.2.4",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-eslint": "^1.8.1",
@@ -112,6 +112,6 @@
     "vue-tsc": "^3.0.6"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.50.0"
+    "@rollup/rollup-linux-x64-gnu": "^4.50.1"
   }
 }

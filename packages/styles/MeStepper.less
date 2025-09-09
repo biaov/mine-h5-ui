@@ -1,0 +1,46 @@
+/**
+  * 步进器
+*/
+
+@import './common/vars.less';
+
+.me-stepper {
+  @borderColor: var(--border-color, var(--me-border-default));
+  @color: var(--color, var(--me-text-main));
+  display: inline-flex;
+  color: @color;
+  border: 1px solid @borderColor;
+  border-radius: var(--border-radius, var(--me-border-radius-default));
+  cursor: pointer;
+  font-size: var(--font-size);
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    height: 100%;
+    flex-shrink: 0;
+    &[disabled='true'] {
+      cursor: not-allowed;
+      color: var(--disabled-color, var(--me-text-light));
+    }
+  }
+  .input {
+    text-align: center;
+    outline: none;
+    border-left: 1px solid @borderColor;
+    border-right: 1px solid @borderColor;
+    width: var(--input-width);
+  }
+  &[disabled='true'] {
+    @disabledColor: var(--disabled-color, var(--me-text-light));
+    color: @disabledColor;
+    cursor: not-allowed;
+    .input {
+      cursor: not-allowed;
+      border-left-color: @disabledColor;
+      border-right-color: @disabledColor;
+    }
+  }
+}
