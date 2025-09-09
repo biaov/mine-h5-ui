@@ -14,7 +14,18 @@
 
 :::TimeLine
 
-## v2.15.0 - 最新版本
+## v2.16.0 - 最新版本
+
+`2025-09-09`
+
+- 🔥 组件 `MeSwiper` 支持满屏
+- 🔥 新增[步进器组件 MeStepper](/v2/doc/stepper)
+- ⚙️ 优化组件 `MeSpace` 去掉冗余 div 层级
+- ⚙️ 组件 `MeInput` 新增属性 `maxlength`
+- ⚙️ 更新 Debounce 和 Throttle 函数的参数为可选
+- ⚙️ 更新依赖版本
+
+## v2.15.0
 
 `2025-05-16`
 

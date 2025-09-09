@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { DefaultSlots } from '../types'
-import { useHandMove } from './hooks'
+import { useHandMove, useStyle } from './hooks'
 import type { Props, Emits } from './types'
 
 defineOptions({
@@ -19,19 +19,14 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown } = useHandMove(props, emit)
+const { className, renderStyle } = useStyle(props)
+
 </script>
 
 <template>
   <!-- 轮播图 -->
-  <div
-    class="me-swiper"
-    :style="`height:${height}px;border-radius:${radius}px;`"
-    ref="swiperDom"
-    @touchstart.prevent="onTouchstart"
-    @touchmove="onTouchmove"
-    @touchend="onTouchend"
-    @mousedown.prevent="onMousedown"
-  >
+  <div class="me-swiper" :class="className" :style="renderStyle" ref="swiperDom" @touchstart.prevent="onTouchstart"
+    @touchmove="onTouchmove" @touchend="onTouchend" @mousedown.prevent="onMousedown">
     <div class="imgs" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`">
       <slot></slot>
     </div>

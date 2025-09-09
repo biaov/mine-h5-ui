@@ -7,20 +7,20 @@ defineOptions({
   name: 'MeSpace'
 })
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   size: '10px',
   direction: 'horizontal'
 })
 
 const slots = defineSlots<DefineSlots>()
 
-const { spaceRef, onRender } = useHandler(props)
-
+const { spaceRef, onRender } = useHandler()
 
 watch(slots.default, onRender, { immediate: true })
+
 </script>
 
 <template>
   <!-- 间距 -->
-  <div ref="spaceRef" :style="`--size:${size};`"></div>
+  <div ref="spaceRef" :style="`--size:${size};`" class="me-space" :class="direction"></div>
 </template>

@@ -1,7 +1,7 @@
 /**
  * 防抖节流回调函数
  */
-export type DTCallback = (e: Event) => void
+export type DTCallback = (e?: Event) => void
 
 /**
  * 加锁回调函数
@@ -11,12 +11,12 @@ export type LockedCallback = (e?: Event, fn?: (value: boolean) => void) => void
 /**
  * 节流返回值
  */
-export type ThrottleBack = (e: Event) => void
+export type ThrottleBack = (e?: Event) => void
 
 /**
  * 防抖返回值
  */
-export type DebounceBack = (e: Event) => void
+export type DebounceBack = (e?: Event) => void
 
 /**
  * 加锁返回值

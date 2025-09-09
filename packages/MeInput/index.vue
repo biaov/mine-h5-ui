@@ -26,7 +26,9 @@ const props = withDefaults(defineProps<Props>(), {
   digit: false,
   smsMsg: '',
   smsColor: '',
-  smsIs: false
+  smsIs: false,
+  minlength: 0,
+  maxlength: 999
 })
 /**
  * 输入框值
@@ -50,12 +52,14 @@ const { handleIcon } = useIcon(props, emit, inputType)
       class="input"
       :placeholder="placeholder"
       :style="`${isFocus && `border-color:${focusColor};`};padding-right:${paddingRight}px;padding-left:${paddingLeft}px;`"
+      :minlength="minlength"
+      :maxlength="maxlength"
+      :readonly="readonly"
+      :disabled="disabled"
       @focus="onFocus"
       @blur="onBlur"
       @change="onChange"
       @input="onInput"
-      :readonly="readonly"
-      :disabled="disabled"
     />
     <me-icon :name="inputType == 'password' ? 'icon-in_biyan' : 'icon-in_zhengyan'" @click="handleIcon" v-if="password" />
     <me-icon :name="icon" @click="handleIcon" v-else />

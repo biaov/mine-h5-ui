@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="0 0 220 60">
+  <g id="stepper" transform="translate(-1177 -1504)">
+    <g id="矩形_100" data-name="矩形 100" transform="translate(1177 1504)" fill="#fff" stroke="#dcdfe6"
+      stroke-linecap="round" stroke-width="1">
+      <rect width="220" height="60" rx="4" stroke="none" />
+      <rect x="0.5" y="0.5" width="219" height="59" rx="3.5" fill="none" />
+    </g>
+    <g id="矩形_101" data-name="矩形 101" transform="translate(1237 1504)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+      <rect width="100" height="60" stroke="none" />
+      <rect x="0.5" y="0.5" width="99" height="59" fill="none" />
+    </g>
+    <g id="组_70" data-name="组 70" transform="translate(1203 1370)">
+      <path id="路径_64" data-name="路径 64"
+        d="M476.267,176h-2a.236.236,0,0,1-.267-.267V152.267a.236.236,0,0,1,.267-.267h2a.236.236,0,0,1,.267.267v23.467A.236.236,0,0,1,476.267,176Z"
+        transform="translate(-311.267)" fill="#494949" />
+      <path id="路径_65" data-name="路径 65"
+        d="M174.667,476.533h-22.4a.236.236,0,0,1-.267-.267v-2a.236.236,0,0,1,.267-.267h23.467a.236.236,0,0,1,.267.267v2a.236.236,0,0,1-.267.267Z"
+        transform="translate(0 -311.267)" fill="#494949" />
+    </g>
+    <path id="路径_66" data-name="路径 66"
+      d="M167.8,474H144.262a.262.262,0,0,0-.262.262v1.961a.262.262,0,0,0,.262.262H167.8a.262.262,0,0,0,.262-.262v-1.961A.262.262,0,0,0,167.8,474Z"
+      transform="translate(1050.939 1059)" fill="#494949" />
+    <text id="_2" data-name="2" transform="translate(1287 1544)" fill="#494949" font-size="24"
+      font-family="MicrosoftYaHei, Microsoft YaHei">
+      <tspan x="-7.037" y="0">2</tspan>
+    </text>
+  </g>
+</svg>
