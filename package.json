@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui",
-  "version": "2.16.0-ssr",
+  "version": "2.16.1-ssr.0",
   "private": false,
   "author": {
     "name": "biaov",
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite -m development",
-    "build": "npm run build:docs && npm run build:theme && npm run build:theme:rem && npm run build:package",
+    "build": "npm run build:theme && npm run build:theme:rem && npm run build:package",
     "build:docs": "vite build",
     "build:theme": "vite build --config scripts/theme.vite.ts",
     "build:theme:rem": "set rem=1 && vite build --config scripts/theme.vite.ts",
