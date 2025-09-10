@@ -20,7 +20,7 @@ import type { USELocked } from './types'
   })
  * ```
  */
-export const useLocked = (handler: USELocked.Option, validHandler?: () => Promise<boolean>): USELocked.Option => {
+export const useLocked = (handler: USELocked.Option, validHandler?: () => Promise<boolean | undefined>): USELocked.Option => {
   let locked = false
   return async function (this: unknown, ...args) {
     if (validHandler && !(await validHandler())) return
