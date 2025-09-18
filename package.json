@@ -76,7 +76,7 @@
     "@eslint/js": "^9.35.0",
     "@tailwindcss/vite": "^4.1.13",
     "@types/mockjs": "^1.0.10",
-    "@types/node": "^24.3.1",
+    "@types/node": "^24.5.2",
     "@types/postcss-pxtorem": "^6.1.0",
     "@types/qrcode": "^1.5.5",
     "@types/selenium-webdriver": "^4.1.28",
@@ -87,9 +87,9 @@
     "eslint": "^9.35.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-vue": "^10.4.0",
-    "globals": "^16.3.0",
+    "globals": "^16.4.0",
     "husky": "^9.1.7",
-    "jsdom": "^26.1.0",
+    "jsdom": "^27.0.0",
     "less": "^4.4.1",
     "markdown-it-container": "^4.0.0",
     "postcss-pxtorem": "^6.1.0",
@@ -99,18 +99,18 @@
     "tailwindcss": "^4.1.13",
     "tslib": "^2.8.1",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.43.0",
+    "typescript-eslint": "^8.44.0",
     "unplugin-vue-markdown": "^29.1.0",
     "vi-canvas-mock": "^1.0.0",
-    "vite": "^7.1.5",
+    "vite": "^7.1.6",
     "vite-node": "^3.2.4",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^1.0.3",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.6"
+    "vue-tsc": "^3.0.7"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.50.1"
+    "@rollup/rollup-linux-x64-gnu": "^4.50.2"
   }
 }
