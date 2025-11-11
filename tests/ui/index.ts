@@ -1,4 +1,4 @@
-import { By, until, Browser, Builder } from 'selenium-webdriver'
+import { By, until } from 'selenium-webdriver'
 import { loadEnv } from 'vite'
 import { errorLog, useTaskQueue } from './utils'
 import { sleepTime } from './config'
