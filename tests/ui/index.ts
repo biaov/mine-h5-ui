@@ -3,7 +3,7 @@ import { loadEnv } from 'vite'
 import { errorLog, useTaskQueue } from './utils'
 import { sleepTime } from './config'
 import * as tests from './tests'
-// import server from './server'
+import server from './server'
 
 /**
  * 环境变量
@@ -18,8 +18,7 @@ const testPath = `http://127.0.0.1:${env.VITE_PORT}/`
 /**
  * 启动服务
  */
-const driver = await new Builder().forBrowser(Browser.CHROME).build()
-// const driver = await server()
+const driver = await server()
 
 try {
   await driver.get(testPath)

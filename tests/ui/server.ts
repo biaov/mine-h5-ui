@@ -6,4 +6,9 @@ const options = new Chrome.Options()
 options.addArguments('--ignore-certificate-errors')
 options.addArguments('--ignore-ssl-errors')
 
-export default () => new Builder().forBrowser(Browser.CHROME).setChromeService(new Chrome.ServiceBuilder(chromeDriverPath)).setChromeOptions(options).build() // 启动服务
+// 启动服务
+export default () => {
+  const builder = new Builder().forBrowser(Browser.CHROME)
+  import.meta.env.VITE_CHROME_DRIVER_PATH && builder.setChromeService(new Chrome.ServiceBuilder(chromeDriverPath)).setChromeOptions(options)
+  return builder.build()
+}
