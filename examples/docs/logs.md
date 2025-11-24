@@ -14,7 +14,19 @@
 
 :::TimeLine
 
-## v2.16.0 - 最新版本
+## v2.17.0 - 最新版本
+
+`2025-00-00`
+
+- 🔥 新增组件 [MeTextarea 文本域](/v2/doc/textarea)
+- 🔥 新增组件 [MePagination 分页器](/v2/doc/pagination)
+- 🐞 修复 `MeStepper` 组件兼容性问题
+- 🐞 修复重置样式的影响
+- ⚙️ `useLocked` 新增业务处理方法
+- ⚙️ 更新 `vitest` 由 `3.x` -> `4.x`
+- ⚙️ 版本更新
+
+## v2.16.0
 
 `2025-09-09`
 

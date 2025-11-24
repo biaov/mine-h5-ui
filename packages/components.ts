@@ -12,6 +12,7 @@ export * from './MeSpace' // 间距
 
 /* 表单组件 start */
 export * from './MeInput' // 输入框
+export * from './MeTextarea' // 文本域
 export * from './MeRadio' // 单选框
 export * from './MeRadioGroup' // 单选框组
 export * from './MeCheckbox' // 复选框
@@ -52,6 +53,7 @@ export * from './MeTab' // 标签页
 export * from './MeTabItem' // 标签选项
 export * from './MeTabBar' // 标签栏
 export * from './MePullRefresh' // 下拉刷新
+export * from './MePagination' // 下拉刷新
 /* 导航组件 end */
 
 /* 展示组件 start */

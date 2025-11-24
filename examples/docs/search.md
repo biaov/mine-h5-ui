@@ -149,3 +149,9 @@ const btnCancel = () => {
 | input  | 输入框输入时触发的事件                    | event: Event | v2.3.5 |
 | change | 输入框内容发生改变时触发的事件            | event: Event | v2.3.5 |
 | blur   | 输入框移除焦点时触发的事件                | event: Event | v2.3.5 |
+
+### 样式变量
+
+| 名称               | 默认值 | 描述 | 版本    |
+| ------------------ | ------ | ---- | ------- |
+| --me-search-height | 40px   | 高度 | v2.17.0 |
