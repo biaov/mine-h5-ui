@@ -16,7 +16,9 @@
   }
 }
 .side-bar {
-  border-right: 1px solid @border-color-common;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   > li {
     .tit {
       .same-height();

@@ -7,7 +7,7 @@ const { routeTitle } = useRouteHandler()
 
 <template>
   <!-- 文档 -->
-  <div class="docs pt-75 pb-15 px-15 min-h-screen flex flex-col">
+  <div class="docs pt-75 pb-15 px-15 min-h-screen flex flex-col bg-white">
     <!-- 头部 -->
     <mine-header>{{ routeTitle }}</mine-header>
     <!-- 内容 -->

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted, ref, useTemplateRef } from 'vue'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
 import MineHeader from '@/components/MineHeader'
@@ -49,15 +49,19 @@ window.addEventListener('resize', onMobileState)
     <!-- 头部 -->
     <mine-header />
     <!-- 内容 -->
-    <div class="content flex max-w-1920 mx-auto">
+    <div class="content relative h-full">
       <!-- 菜单列表 -->
-      <side-bar />
-      <div class="md w-1/2 h-full p-15 grow overflow-y-auto doc-view">
+      <div class="fixed top-0 left-0 pt-60 h-full content__sidebar">
+        <side-bar />
+      </div>
+      <div class="w-full p-24 pr-423 pl-304">
         <!-- 使用文档 -->
         <router-view />
       </div>
       <!-- H5 演示 -->
-      <mine-mobile @getframe="changeFrameRouter" />
+      <div class="fixed top-0 right-0 pt-60 content__mobile">
+        <mine-mobile @getframe="changeFrameRouter" />
+      </div>
     </div>
   </div>
 </template>

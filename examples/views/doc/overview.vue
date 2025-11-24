@@ -43,21 +43,19 @@ const filterList = computed(() =>
       <span class="text-[#67c23a] font-bold">MINE-H5-UI</span>
       提供的所有组件。
     </p>
-    <me-search v-model="keyword" placeholder="搜索组件" class="sticky top-0 h-60 leading-60" />
-    <ul class="p-12">
-      <li v-for="(item, index) in filterList" :key="index" class="mb-32">
-        <div class="title flex items-center gap-8 mb-12 text-xl font-bold">
-          {{ item.meta.title }}
-          <me-tag :text="`${item.items.length}`" plain />
-        </div>
-        <div class="flex flex-wrap gap-y-24 -ml-10 -mr-10">
-          <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }" class="w-1/4 px-12">
-            <mine-card :title="subItem.meta.title" class="bg-gray-50 hover:bg-white">
-              <img :src="subItem.path" class="max-w-full max-h-full" />
-            </mine-card>
-          </router-link>
-        </div>
-      </li>
-    </ul>
+    <me-search v-model="keyword" placeholder="搜索组件" class="sticky top-0 h-60 leading-60 bg-white rounded-sm shadow" />
+    <div v-for="(item, index) in filterList" :key="index" class="mb-32 bg-white p-24 rounded-md">
+      <div class="title flex items-center gap-8 mb-12 text-xl font-bold">
+        {{ item.meta.title }}
+        <me-tag :text="`${item.items.length}`" plain />
+      </div>
+      <div class="grid grid-cols-2 2xl:grid-cols-4 xl:grid-cols-3 gap-24">
+        <router-link v-for="(subItem, subIndex) in item.items" :key="subIndex" :to="{ name: subItem.name }" class="">
+          <mine-card :title="subItem.meta.title" class="bg-gray-50 hover:bg-white">
+            <img :src="subItem.path" class="max-w-full max-h-full" />
+          </mine-card>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>

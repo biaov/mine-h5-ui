@@ -20,11 +20,15 @@
 
 - 🔥 新增组件 [MeTextarea 文本域](/v2/doc/textarea)
 - 🔥 新增组件 [MePagination 分页器](/v2/doc/pagination)
+- 🔥 新增 [useFormState](/v2/doc/composable) 表单状态管理
 - 🐞 修复 `MeStepper` 组件兼容性问题
 - 🐞 修复重置样式的影响
 - ⚙️ `useLocked` 新增业务处理方法
 - ⚙️ 更新 `vitest` 由 `3.x` -> `4.x`
 - ⚙️ 版本更新
+- ⚙️ 完善全局样式变量文档
+- ⚙️ 调整文档整体布局和样式
+- 🐞 修复文档路径问题
 
 ## v2.16.0
 
