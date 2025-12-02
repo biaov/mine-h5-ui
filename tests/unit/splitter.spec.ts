@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils'
 import { getViewer, Retarder } from '@/utils/functions'
 import MeSplitter from '~/MeSplitter/index.vue'
 
-
 describe('MeSplitter 图片碎片', () => {
   const url = 'https://dummyimage.com/600x600/f60'
 

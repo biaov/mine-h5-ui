@@ -17,7 +17,6 @@ const slots = defineSlots<DefineSlots>()
 const { spaceRef, onRender } = useHandler()
 
 watch(slots.default, onRender, { immediate: true })
-
 </script>
 
 <template>

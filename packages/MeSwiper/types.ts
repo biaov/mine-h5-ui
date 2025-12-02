@@ -22,7 +22,7 @@ export interface Props {
   /**
    * 组件高度
    */
-  height?: number|string
+  height?: number | string
   /**
    * 指示点
    */

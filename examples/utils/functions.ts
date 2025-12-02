@@ -60,10 +60,8 @@ export const RandomNum = (min = 0, max = 255) => ~~(Math.random() * (max - min +
  * @returns { Promise<boolean> } Promise
  */
 export const Retarder = (time = 500) =>
-  new Promise<boolean>(resolve => {
-    setTimeout(() => {
-      resolve(true)
-    }, time)
+  new Promise(resolve => {
+    setTimeout(resolve, time)
   })
 
 /**

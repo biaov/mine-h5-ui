@@ -22,7 +22,7 @@ describe('MeStepper 步进器', () => {
       props: { modelValue: 100, max }
     })
     const inputEl = getViewer(wrapper, MeStepper).find('input')
-    
+
     expect(+inputEl.element.value).toBe(max)
   })
 
@@ -116,7 +116,7 @@ describe('MeStepper 步进器', () => {
       props: { fontSize }
     })
     const viewer = getViewer(wrapper, MeStepper)
-    
+
     expect(getComputedStyle(viewer.element).getPropertyValue('--font-size')).toBe(fontSize)
   })
 })

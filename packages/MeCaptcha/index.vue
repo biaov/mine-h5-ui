@@ -27,8 +27,7 @@ const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { 
         <img :src="assets.close" class="captcha-close" @click="onClose" />
         <div class="captcha-rect" :class="{ animation: rectAni }">
           <div class="captcha-img-rect" v-if="imgRect">
-            <img :src="item?.elem?.url" class="img-start"
-              :style="`width: ${imgRect.w}px; height: ${imgRect.h}rpx;top: ${imgRect.y}px;left: ${moveX}px;`" />
+            <img :src="item?.elem?.url" class="img-start" :style="`width: ${imgRect.w}px; height: ${imgRect.h}rpx;top: ${imgRect.y}px;left: ${moveX}px;`" />
             <img :src="item?.bgElem?.url" class="img-end" />
             <div class="captcha-success" v-if="statusCode === 1">
               <img :src="assets.success" class="captcha-success-img" />
@@ -48,5 +47,4 @@ const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { 
       </div>
     </div>
   </transition>
-
 </template>

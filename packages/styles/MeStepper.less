@@ -21,7 +21,7 @@
     aspect-ratio: 1/1;
     height: 100%;
     flex-shrink: 0;
-    &[disabled='true'] {
+    &.me-disabled {
       cursor: not-allowed;
       color: var(--disabled-color, var(--me-text-light));
     }
@@ -33,10 +33,11 @@
     border-right: 1px solid @borderColor;
     width: var(--input-width);
   }
-  &[disabled='true'] {
+  &.me-disabled {
     @disabledColor: var(--disabled-color, var(--me-text-light));
     color: @disabledColor;
     cursor: not-allowed;
+    border-color: @disabledColor;
     .input {
       cursor: not-allowed;
       border-left-color: @disabledColor;

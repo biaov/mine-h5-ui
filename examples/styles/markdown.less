@@ -150,17 +150,19 @@
   }
 
   table {
-    display: block;
+    display: table;
     width: 100%;
-    background: @color-white;
     color: @font-color;
     font-size: @font-size;
     border-collapse: collapse;
     overflow: auto;
     margin-bottom: 30px;
+    tbody {
+      background: @color-white;
+    }
 
     .same {
-      border: 1px solid #dcdfe6;
+      border: 1px solid rgba(0, 0, 0, 0.02);
       padding: 15px;
       text-align: left;
       font-size: @font-size-min*1.1;

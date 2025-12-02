@@ -141,13 +141,13 @@ const listData = Object.freeze([
 
 #### 参数
 
-| 参数   | 说明     | 类型    | 可选值       | 默认值 | 版本   |
-| ------ | -------- | ------- | ------------ | ------ | ------ | ------- |
-| loop   | 自动     | boolean | true / false | false  | v2.0.0 |
-| delay  | 延迟时间 | number  | --           | 3000   | v2.0.0 |
-| height | 组件高度 | number  | string       | --     | --     | v2.15.4 |
-| dot    | 指示点   | boolean | true / false | false  | v2.0.0 |
-| radius | 倒角     | number  | --           | 4      | v2.0.0 |
+| 参数   | 说明     | 类型    | 可选值       | 默认值 | 版本    |
+| ------ | -------- | ------- | ------------ | ------ | ------- |
+| loop   | 自动     | boolean | true / false | false  | v2.0.0  |
+| delay  | 延迟时间 | number  | --           | 3000   | v2.0.0  |
+| height | 组件高度 | number  | string       | --     | v2.15.4 |
+| dot    | 指示点   | boolean | true / false | false  | v2.0.0  |
+| radius | 倒角     | number  | --           | 4      | v2.0.0  |
 
 #### Slots
 
@@ -159,11 +159,13 @@ const listData = Object.freeze([
 
 #### 方法
 
-| 方法名 | 说明               | 回调参数              | 版本   |
-| ------ | ------------------ | --------------------- | ------ |
-| change | 轮播滚动改变时触发 | `name:CallbackParams` | v2.3.5 |
+| 方法名 | 说明               | 回调参数               | 版本   |
+| ------ | ------------------ | ---------------------- | ------ |
+| change | 轮播滚动改变时触发 | `name: CallbackParams` | v2.3.5 |
 
-- `CallbackParams:string|number`
+```ts
+type CallbackParams = string | number
+```
 
 ### MeSwiperItem
 

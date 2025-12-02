@@ -9,15 +9,7 @@ const { listData, onClick } = useHandle()
   <ul class="switch">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
-      <me-switch
-        v-model="item.value"
-        :size="item.size"
-        :active-color="item.activeColor"
-        :inactive-color="item.inactiveColor"
-        :disabled="item.disabled"
-        :async="item.async"
-        @click="onClick(item)"
-      />
+      <me-switch v-model="item.value" :size="item.size" :active-color="item.activeColor" :inactive-color="item.inactiveColor" :disabled="item.disabled" :async="item.async" @click="onClick(item)" />
     </li>
   </ul>
 </template>
