@@ -1,9 +1,18 @@
 import { Builder, Browser } from 'selenium-webdriver'
 import Chrome from 'selenium-webdriver/chrome.js'
 
-const chromeDriverPath = 'C:/Users/Administrator/.cache/selenium/chromedriver/win64/133.0.6943.53/chromedriver.exe'
+/**
+ * chrome 驱动路径
+ * 注意：此版本得与本地安装的 chrome 浏览器版本一致
+ */
+const chromeDriverPath = 'C:/Users/Administrator/.cache/selenium/chromedriver/win64/142.0.7444.135/chromedriver.exe'
 const options = new Chrome.Options()
 options.addArguments('--ignore-certificate-errors')
 options.addArguments('--ignore-ssl-errors')
 
-export default () => new Builder().forBrowser(Browser.CHROME).setChromeService(new Chrome.ServiceBuilder(chromeDriverPath)).setChromeOptions(options).build() // 启动服务
+// 启动服务
+export default () => {
+  const builder = new Builder().forBrowser(Browser.CHROME)
+  import.meta.env.VITE_CHROME_DRIVER_PATH && builder.setChromeService(new Chrome.ServiceBuilder(chromeDriverPath)).setChromeOptions(options)
+  return builder.build()
+}

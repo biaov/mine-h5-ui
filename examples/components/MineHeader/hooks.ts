@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import QRcode from 'qrcode'
-import {  githubLink } from '@/config/package'
+import { githubLink } from '@/config/package'
 import GithubIcon from '@/assets/icon-github.svg'
 import QrcodeIcon from '@/assets/icon-qrcode.svg'
 

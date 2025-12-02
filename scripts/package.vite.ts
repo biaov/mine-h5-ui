@@ -55,7 +55,7 @@ const config: UserConfig = {
           name: 'rollup-plugin-banner',
           banner: `/*!
           * ${pkg.name} v${pkg.version}
-          * Copyright (c) ${new Date().getFullYear()} ${pkg.author.name}
+          * 版权所有@${pkg.author.name}
           * @license MIT
           */`
         }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="405" height="262" viewBox="0 0 405 262">
+  <g id="textarea" transform="translate(-1460 -1447)">
+    <rect id="矩形_103" data-name="矩形 103" width="405" height="262" transform="translate(1460 1447)" fill="none"/>
+    <g id="矩形_102" data-name="矩形 102" transform="translate(1488 1478)" fill="#fff" stroke="#ccc" stroke-width="1">
+      <rect width="350" height="200" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="349" height="199" rx="3.5" fill="none"/>
+    </g>
+    <text id="请输入" transform="translate(1519 1501)" fill="#ccc" font-size="12" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-18" y="0">请输入</tspan></text>
+    <text id="_0_20" data-name="0 / 20" transform="translate(1803 1655)" fill="#ccc" font-size="12" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-16.67" y="0">0 / 20</tspan></text>
+  </g>
+</svg>

@@ -222,3 +222,34 @@ import { useImgInfo } from 'mine-h5-ui'
 const { width, height } = useImgInfo('https://图片地址')
 console.log(width, height) // 100 100
 ```
+
+## useFormState 表单状态管理 `v2.17.0`
+
+```ts
+import { useFormState, MeToast } from 'mine-h5-ui'
+
+const { formState, setFormState, setFormRules, validFormState, resetFormState } = useFormState(
+  {
+    name: undefined,
+    mobile: undefined
+  },
+  MeToast // 表单验证错误提示
+)
+
+setFormRules({
+  name: { required: true, message: '请输入姓名' },
+  mobile: {
+    required: true,
+    message: '请输入手机号',
+    validator: (val: string) => {
+      if (!/^1[3-9]\d{9}$/.test(val)) return Promise.reject('请输入正确的手机号')
+      return Promise.resolve()
+    }
+  }
+})
+
+const handleSubmit = async () => {
+  if (!(await validFormState())) return
+  // 业务请求, ...
+}
+```

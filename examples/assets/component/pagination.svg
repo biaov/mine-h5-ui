@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="416" height="60" viewBox="0 0 416 60">
+  <g id="pagination" transform="translate(-1196 -1529)">
+    <rect id="矩形_100" data-name="矩形 100" width="416" height="60" transform="translate(1196 1529)" fill="#fff"/>
+    <g id="组_70" data-name="组 70" transform="translate(-231)">
+      <g id="矩形_101" data-name="矩形 101" transform="translate(1547 1529)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+        <rect width="60" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="59" height="59" fill="none"/>
+      </g>
+      <text id="_2" data-name="2" transform="translate(1577 1569)" fill="#494949" font-size="24" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-7.037" y="0">2</tspan></text>
+    </g>
+    <g id="组_73" data-name="组 73" transform="translate(-172)">
+      <g id="矩形_101-2" data-name="矩形 101" transform="translate(1547 1529)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+        <rect width="60" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="59" height="59" fill="none"/>
+      </g>
+      <text id="_3" data-name="3" transform="translate(1577 1569)" fill="#494949" font-size="24" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-7.037" y="0">3</tspan></text>
+    </g>
+    <g id="组_74" data-name="组 74" transform="translate(-113)">
+      <g id="矩形_101-3" data-name="矩形 101" transform="translate(1547 1529)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+        <rect width="60" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="59" height="59" fill="none"/>
+      </g>
+      <text id="_4" data-name="4" transform="translate(1577 1569)" fill="#494949" font-size="24" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-7.037" y="0">4</tspan></text>
+    </g>
+    <g id="组_75" data-name="组 75" transform="translate(-54)">
+      <g id="矩形_101-4" data-name="矩形 101" transform="translate(1547 1529)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+        <rect width="60" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="59" height="59" fill="none"/>
+      </g>
+      <text id="_5" data-name="5" transform="translate(1577 1569)" fill="#494949" font-size="24" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-7.037" y="0">5</tspan></text>
+    </g>
+    <g id="组_72" data-name="组 72" transform="translate(-351)">
+      <g id="矩形_101-5" data-name="矩形 101" transform="translate(1547 1529)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+        <rect width="60" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="59" height="59" fill="none"/>
+      </g>
+      <path id="left" d="M262.119,77.212l.03-.032-.03-.033,10.454-11.362L271,64.073,258.969,77.147l.03.033-.03.032L271,90.285l1.575-1.712Z" transform="translate(1311.031 1481.927)" fill="#dcdfe6"/>
+    </g>
+    <g id="组_76" data-name="组 76" transform="translate(5)">
+      <g id="矩形_101-6" data-name="矩形 101" transform="translate(1547 1529)" fill="#fff" stroke="#dcdfe6" stroke-width="1">
+        <rect width="60" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="59" height="59" fill="none"/>
+      </g>
+      <path id="left-2" data-name="left" d="M262.119,77.212l.03-.032-.03-.033,10.454-11.362L271,64.073,258.969,77.147l.03.033-.03.032L271,90.285l1.575-1.712Z" transform="translate(1842.573 1636.285) rotate(180)" fill="#409eff"/>
+    </g>
+    <g id="组_71" data-name="组 71" transform="translate(-71)">
+      <rect id="矩形_104" data-name="矩形 104" width="60" height="60" transform="translate(1327 1529)" fill="#409eff"/>
+      <text id="_1" data-name="1" transform="translate(1357 1570)" fill="#fff" font-size="24" font-family="MicrosoftYaHei, Microsoft YaHei"><tspan x="-7.037" y="0">1</tspan></text>
+    </g>
+  </g>
+</svg>

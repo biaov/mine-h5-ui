@@ -1,9 +1,17 @@
 .doc {
   .content {
+    @padding: calc((100% - 1920px) / 2);
     height: calc(100vh - 60px);
     border-top: @boder-common;
-    .md {
-      border-right: @boder-common;
+
+    @media screen and (min-width: 1920px) {
+      padding: 0 @padding;
+      .content__sidebar {
+        left: @padding;
+      }
+      .content__mobile {
+        right: @padding;
+      }
     }
   }
 }

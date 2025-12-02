@@ -1,0 +1,41 @@
+/**
+  * 文本域
+*/
+
+@import './common/vars.less';
+
+.me-textarea {
+  position: relative;
+  .textarea {
+    display: block;
+    @color-reduce: color-mix(in srgb, var(--me-textarea-disabled-color, var(--me-text-main-reduce)), #fff 80%);
+    @color-reduce-color: color-mix(in srgb, var(--me-textarea-disabled-color, var(--me-text-main-reduce)), #fff 60%);
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--me-textarea-border-color, var(--me-border-default));
+    border-radius: var(--me-textarea-border-radius, var(--me-border-radius-default));
+    min-height: var(--me-textarea-min-height, 150px);
+    padding: var(--me-textarea-padding, 10px);
+    color: var(--me-textarea-color, var(--me-text-main));
+    font-size: var(--me-textarea-font-size, var(--me-text-md));
+    &::-webkit-input-placeholder {
+      color: var(--me-textarea-placholder-color, color-mix(in srgb, var(--me-text-main), #fff 50%));
+    }
+    &:focus {
+      border-color: var(--me-textarea-focus-border-color, var(--me-border-default));
+    }
+    &[disabled] {
+      border-color: var(--me-textarea-disabled-border-color, @color-reduce) !important;
+      color: var(--me-textarea-disabled-color, @color-reduce-color) !important;
+      cursor: not-allowed;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    right: var(--me-textarea-count-right, 10px);
+    bottom: var(--me-textarea-count-bottom, 5px);
+    color: var(--me-textarea-count-color, var(--me-text-main-reduce));
+    font-size: var(--me-textarea-count-font-size, var(--me-text-sm));
+  }
+}

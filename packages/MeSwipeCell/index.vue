@@ -8,14 +8,13 @@ defineOptions({
 
 defineSlots<Slots>()
 
-const { hidden, maxDistance, currentValue, isActive, } = useHandMove()
+const { hidden, maxDistance, currentValue, isActive } = useHandMove()
 </script>
 
 <template>
   <!-- 滑动单元格 -->
   <div class="me-swipe-cell">
-    <div class="swiper" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`"
-      ref="swiperEventNode" @click.prevent.stop>
+    <div class="swiper" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`" ref="swiperEventNode" @click.prevent.stop>
       <!-- 内容 -->
       <div class="swiper__content">
         <slot name="content"></slot>

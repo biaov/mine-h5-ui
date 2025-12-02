@@ -5,13 +5,15 @@
 @import './common/vars.less';
 
 .me-search {
+  @height: var(--me-search-height, 40px);
   // 相同的高度
-  .same-height(@height: 40px) {
-    height: @height;
-    line-height: @height;
+  .same-height() {
+    height: inherit;
+    line-height: inherit;
   }
 
-  .same-height();
+  height: @height;
+  line-height: @height;
   display: flex;
   width: 100%;
   background: var(--me-bg-default);
