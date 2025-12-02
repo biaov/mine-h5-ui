@@ -3,13 +3,13 @@ import { ref } from 'vue'
 interface Rule {
   required?: boolean
   message?: string
-  validator?: (val: any) => Promise<any>
+  validator?: <T>(val?: T) => Promise<void | string>
 }
 
 /**
  * 表单状态管理
  */
-export const useFormState = <T extends Record<string, any>>(initState?: T, errorMsg?: (message?: string) => void) => {
+export const useFormState = <T extends Record<string, unknown>>(initState?: T, errorMsg?: (message?: string) => void) => {
   /**
    * 初始化表单状态
    */

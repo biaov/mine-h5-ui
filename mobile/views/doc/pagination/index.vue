@@ -1,41 +1,27 @@
-<script lang="ts" setup>
-import { useHandlerInput } from './hooks'
-
-const { listData, onSMS, onIcon } = useHandlerInput()
-</script>
-
 <template>
-  <!-- 输入框 -->
-  <ul class="input">
-    <li v-for="item in listData" :key="item.id">
+  <!-- 分页器 -->
+  <ul class="pagination">
+    <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
-      <ul class="list-all">
-        <li v-for="it in item.list" :key="it.id">
-          <me-input
-            v-model="it.value"
-            :placeholder="it.placeholder"
-            :label="it.label"
-            :label-width="it.labelWidth"
-            :label-color="it.labelColor"
-            :label-icon="it.labelIcon"
-            :focus-type="it.focusType"
-            :focus-color="it.focusColor"
-            :icon="it.icon"
-            :digit="it.digit"
-            :password="it.password"
-            :sms-msg="it.smsMsg"
-            :sms-color="it.smsColor"
-            :sms-is="it.smsIs"
-            @click-sms="onSMS(it)"
-            @click-icon="onIcon(it)"
-            :readonly="it.readonly"
-            :disabled="it.disabled"
-          />
-        </li>
-      </ul>
+      <me-pagination v-model="item.value" v-bind="item.prop" v-if="item.custom">
+        <template #prev>
+          <me-icon name="icon-left" color="inherit" size="16px" />
+        </template>
+        <template #next>
+          <me-icon name="icon-right1" color="inherit" size="16px" />
+        </template>
+      </me-pagination>
+      <me-pagination v-model="item.value" v-bind="item.prop" v-else />
     </li>
   </ul>
 </template>
+
+<script lang="ts" setup>
+import { ref } from 'vue'
+import data from './data'
+
+const listData = ref(data)
+</script>
 
 <style scoped lang="less">
 @import './index.less';

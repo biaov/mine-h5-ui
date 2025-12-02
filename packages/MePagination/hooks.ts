@@ -1,169 +1,57 @@
-import { Ref, ref, onMounted, watch } from 'vue'
-import type { Props, Emits, USEInput } from './types'
+import { computed, ModelRef } from 'vue'
+import type { Props } from './types'
 
 /**
- * 短信验证码
+ * 分页器
  */
-export const useSms = (props: Readonly<Required<Props>>, emit: Emits) => {
-  /**
-   * label 标签
-   */
-  const sms = ref<HTMLDivElement>()
+export const usePagination = (props: Required<Props>, current: ModelRef<number>) => {
+  const maxShowCount = 5
+  const totalSize = computed(() => Math.ceil(props.total / props.pageSize))
+  const filterItems = computed(() => {
+    let tempCurrent = current.value
+    const currentMax = totalSize.value - maxShowCount / 2 // 临时最大值
+    current.value > currentMax && (tempCurrent = Math.ceil(currentMax))
 
-  /**
-   * 点击短信验证码
-   */
-  const handleSMS = (e: MouseEvent) => {
-    /**
-     * 判断是否处于倒计时状态
-     */
-    !props.smsIs && emit('click-sms', e)
-  }
-
-  return { sms, handleSMS }
-}
-
-/**
- * 图标
- */
-export const useIcon = (props: Readonly<Required<Props>>, emit: Emits, inputType: Ref<string>) => {
-  /**
-   * 点击图标
-   */
-  const handleIcon = (e: MouseEvent) => {
-    /**
-     * 判断是否是密码输入框
-     */
-    if (props.password) {
-      inputType.value = inputType.value === 'password' ? 'text' : 'password'
-    } else {
-      emit('click-icon', e)
-    }
-  }
-
-  return { handleIcon }
-}
-
-/**
- * 输入框
- */
-export const useInput = ({ props, emit, sms, inputVal }: USEInput.Option) => {
-  /**
-   * label 标签
-   */
-  const inputLabel = ref<HTMLDivElement>()
-
-  /**
-   * 输入框 type 值
-   */
-  const inputType = ref(props.digit ? 'text' : props.password ? 'password' : props.type)
-  /**
-   * label 宽度
-   */
-  const paddingLeft = ref(0)
-  /**
-   * span 宽度
-   */
-  const paddingRight = ref(0)
-  /**
-   * 是否聚焦
-   */
-  const isFocus = ref(false)
-
-  /**
-   * 设置输入框的 padding
-   */
-  const setInputPadding = (type: number) => {
-    /**
-     *  type, 0: 左侧, 1: 右侧
-     */
-    if (type === 1) {
-      /**
-       * 设置 input 右侧 padding
-       */
-      paddingRight.value = !props.smsMsg ? 10 : (sms.value as HTMLDivElement).offsetWidth
-    } else {
-      /**
-       * 设置 input 左侧 padding
-       */
-      paddingLeft.value = !props.label ? 10 : Math.max(parseFloat(props.labelWidth || '0'), inputLabel.value?.offsetWidth!)
-    }
-  }
-
-  /**
-   * 输入框聚焦
-   */
-  const onFocus = (e: FocusEvent) => {
-    isFocus.value = !isFocus.value
-    emit('focus', e)
-  }
-
-  /**
-   * 输入框失去焦点
-   */
-  const onBlur = (e: FocusEvent) => {
-    isFocus.value = !isFocus.value
-    emit('blur', e)
-  }
-
-  /**
-   * 输入框 change 事件
-   */
-  const onChange = (e: Event) => {
-    isFocus.value = !isFocus.value
-    emit('change', e)
-  }
-
-  /**
-   * 输入框 input 事件
-   */
-  const onInput = (e: Event) => {
-    isFocus.value = !isFocus.value
-    emit('input', e)
-  }
-
-  onMounted(() => {
-    setInputPadding(0)
-    setInputPadding(1)
+    const showCount = Math.min(maxShowCount, totalSize.value) // 显示数量
+    let start = Math.ceil(tempCurrent - 2.5) // 开始索引
+    start < 1 && (start = 1) // 开始索引最少为 1
+    // 生成列表项
+    const items = Array.from({ length: showCount }, (_, i) => {
+      const index = i + start
+      if (props.ellipsis && Math.abs(current.value - index) > 1 && (!i || i === showCount - 1)) return '···'
+      return index
+    })
+    return items
   })
 
   /**
-   * 监听输入框的值的变化
+   * 点击项
    */
-  watch(
-    inputVal,
-    (value, oldValue) => {
-      value && (inputVal.value = `${value}`.slice(0, props.maxlength))
-      /**
-       * 判断是否为整数输入并设置 value
-       */
-      props.digit && !/^\d*$/g.test(value as string) && (inputVal.value = +(oldValue as string) || 0)
-    },
-    { immediate: true }
-  )
-
-  /**
-   * 监听短信校验状态
-   */
-  watch(
-    () => props.smsIs,
-    () => {
-      /**
-       * 设置 input 的 padding
-       */
-      setInputPadding(1)
+  const onClickItem = (item: number | string, index?: number) => {
+    let newCurrent = current.value
+    switch (item) {
+      case 'prev':
+        newCurrent--
+        break
+      case 'next':
+        newCurrent++
+        break
+      case '···':
+        newCurrent += index ? 2 : -2
+        break
+      default:
+        if (item === current.value) return
+        newCurrent = item as number
+        break
     }
-  )
+    newCurrent <= 0 && (newCurrent = 1)
+    newCurrent > totalSize.value && (newCurrent = totalSize.value)
+    current.value = newCurrent
+  }
 
   return {
-    inputLabel,
-    inputType,
-    paddingLeft,
-    paddingRight,
-    isFocus,
-    onFocus,
-    onBlur,
-    onChange,
-    onInput
+    totalSize,
+    filterItems,
+    onClickItem
   }
 }

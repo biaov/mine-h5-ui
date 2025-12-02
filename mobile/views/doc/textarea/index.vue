@@ -1,6 +1,6 @@
 <template>
   <!-- 文本域 -->
-  <ul class="input">
+  <ul class="textarea">
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
       <me-textarea v-bind="item.prop" v-model="item.value" />

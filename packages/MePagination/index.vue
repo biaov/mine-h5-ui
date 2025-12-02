@@ -1,68 +1,42 @@
 <script lang="ts" setup>
-import MeIcon from '../MeIcon/index.vue'
-import { useSms, useIcon, useInput } from './hooks'
-import type { Props, Emits } from './types'
+import { usePagination } from './hooks'
+import { name } from './config'
+import type { Props, Slots } from './types'
 
-defineOptions({
-  name: 'MePagination'
-})
-
-const emit = defineEmits<Emits>()
+defineOptions({ name })
 
 const props = withDefaults(defineProps<Props>(), {
-  type: 'text',
-  placeholder: '请输入...',
-  readonly: false,
-  disabled: false,
-  label: '',
-  labelWidth: '',
-  labelAlign: 'left',
-  labelColor: '',
-  labelIcon: '',
-  focusType: 'default',
-  focusColor: '',
-  icon: '',
-  password: false,
-  digit: false,
-  smsMsg: '',
-  smsColor: '',
-  smsIs: false,
-  minlength: 0,
-  maxlength: 999
+  total: 0,
+  pageSize: 10,
+  mode: 'default',
+  ellipsis: false,
+  prevText: '上一页',
+  nextText: '下一页',
+  disabled: false
 })
+
 /**
  * 输入框值
  */
-const inputVal = defineModel<string>({ default: '' })
-const { sms, handleSMS } = useSms(props, emit)
-const { inputLabel, inputType, paddingLeft, paddingRight, isFocus, onFocus, onBlur, onChange, onInput } = useInput({ props, emit, sms, inputVal })
-const { handleIcon } = useIcon(props, emit, inputType)
+const current = defineModel<number>({ default: 1 })
+const slot = defineSlots<Slots>()
+const { totalSize, filterItems, onClickItem } = usePagination(props, current)
 </script>
 
 <template>
-  <!-- 输入框 -->
-  <div class="me-input" :class="`me-input-${focusType}`">
-    <div class="label" :style="`width:${labelWidth};text-align-last:${labelAlign};color:${labelColor};`" ref="inputLabel" v-if="label">
-      <me-icon :name="labelIcon" :color="labelColor" size="inherit" v-if="labelIcon" />
-      {{ label }}
-    </div>
-    <input
-      :type="inputType"
-      v-model="inputVal"
-      class="input"
-      :placeholder="placeholder"
-      :style="`${isFocus && `border-color:${focusColor};`};padding-right:${paddingRight}px;padding-left:${paddingLeft}px;`"
-      :minlength="minlength"
-      :maxlength="maxlength"
-      :readonly="readonly"
-      :disabled="disabled"
-      @focus="onFocus"
-      @blur="onBlur"
-      @change="onChange"
-      @input="onInput"
-    />
-    <me-icon :name="inputType == 'password' ? 'icon-in_biyan' : 'icon-in_zhengyan'" @click="handleIcon" v-if="password" />
-    <me-icon :name="icon" @click="handleIcon" v-else />
-    <span class="sms" :class="{ countdown: smsIs }" v-if="!password && smsMsg" @click="handleSMS" ref="sms" :style="`color:${smsColor};`">{{ smsMsg }}</span>
-  </div>
+  <!-- 分页器 -->
+  <ul :class="{ [name]: true, [`${name}--disabled`]: disabled }">
+    <li :class="`${name}__item ${name}__item--prev ${current === 1 ? name + '__item--disabled' : ''}`" v-if="prevText" @click="onClickItem('prev')">
+      <slot name="prev" v-if="slot.prev"></slot>
+      <template v-else>{{ prevText }}</template>
+    </li>
+    <li :class="`${name}__item ${name}__item--simple`" v-if="mode === 'simple'">{{ current }}/{{ totalSize }}</li>
+    <template v-else>
+      <li :class="`${name}__item ${current === item ? name + '__item--active' : ''}`" v-for="(item, index) in filterItems" :key="index" @click="onClickItem(item, index)">{{ item }}</li>
+    </template>
+    <li :class="`${name}__item ${name}__item--next ${current === totalSize ? name + '__item--disabled' : ''}`" v-if="nextText" @click="onClickItem('next')">
+      <slot name="next" v-if="slot.next"></slot>
+      <template v-else>{{ nextText }}</template>
+    </li>
+  </ul>
 </template>

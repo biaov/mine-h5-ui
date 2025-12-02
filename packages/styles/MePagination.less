@@ -5,5 +5,54 @@
 @import './common/vars.less';
 
 .me-pagination {
-  
+  display: flex;
+  height: var(--me-pagination-height, 40px);
+  user-select: none;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: var(--me-pagination-item-width, 40px);
+    padding: var(--me-pagination-padding, 0 4px);
+    border: 1px solid var(--me-pagination-border-color, var(--me-border-default));
+    color: var(--me-pagination-text-color, var(--me-text-primary));
+    font-size: var(--me-pagination-font-size, var(--me-text-md));
+    margin-left: -1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover,
+    &--active {
+      background-color: var(--me-pagination-active-bg-color, var(--me-text-primary));
+      color: var(--me-pagination-active-text-color, var(--me-text-white));
+      border-color: var(--me-pagination-active-border-color, var(--me-text-primary));
+    }
+    &--simple {
+      background: transparent !important;
+      color: var(--me-pagination-text-color, var(--me-text-primary)) !important;
+      border-color: var(--me-pagination-border-color, var(--me-border-default)) !important;
+    }
+    &--disabled {
+      background: transparent !important;
+      color: var(--me-pagination-disabled-text-color, var(--me-text-disabled)) !important;
+      border-color: var(--me-pagination-disabled-border-color, var(--me-border-default)) !important;
+      cursor: not-allowed;
+    }
+    &--prev,
+    &--next {
+      padding: var(--me-pagination-padding, 0 12px);
+    }
+  }
+  &--disabled {
+    cursor: not-allowed;
+    .me-pagination__item {
+      pointer-events: none;
+      background: transparent !important;
+      color: var(--me-pagination-disabled-text-color, var(--me-text-disabled)) !important;
+      border-color: var(--me-pagination-disabled-border-color, var(--me-border-default)) !important;
+      cursor: not-allowed;
+    }
+  }
 }

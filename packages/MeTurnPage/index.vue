@@ -5,7 +5,6 @@ import { name } from './config'
 
 defineOptions({ name })
 
-
 defineEmits<Emits>()
 
 const props = withDefaults(defineProps<Props<T>>(), {
@@ -26,12 +25,10 @@ const { getItemStyle, wrapStyle, fwrapStyle, itemStyle, shadowStyle, turnItemSty
   <div :class="name" :style="getStyle" ref="turnPage">
     <div class="turn" :style="fwrapStyle" v-if="list.length > 1">
       <div class="turn-item" :style="turnItemStyle">
-        <div class="turn-item-shadow" :style="turnShadowStyle">
-        </div>
+        <div class="turn-item-shadow" :style="turnShadowStyle"></div>
       </div>
     </div>
-    <div class="item" v-for="(item, index) in list" :key="index" :class="{ active: index === current }"
-      :style="getItemStyle(index)">
+    <div class="item" v-for="(item, index) in list" :key="index" :class="{ active: index === current }" :style="getItemStyle(index)">
       <div class="item-rotate" :style="showValue(index, wrapStyle)">
         <div class="item-content" :style="showValue(index, itemStyle)">
           <slot :item="item" :index="index"></slot>

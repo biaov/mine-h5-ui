@@ -1,7 +1,7 @@
 # 样式变量
 
 ```less
- // 文本颜色
+// 文本颜色
 --me-text-white: #fff;
 --me-text-primary: #409eff;
 --me-text-success: #67c23a;

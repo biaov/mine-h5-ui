@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref, useTemplateRef } from 'vue'
+import { ref } from 'vue'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import { PostMessage } from '@/utils/functions'
 import MineHeader from '@/components/MineHeader'
