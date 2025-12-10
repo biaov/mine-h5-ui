@@ -12,8 +12,8 @@ const { listData, targetRef } = useWebData()
       <ul class="list-all">
         <li v-for="it in item.list" :key="it.id" class="relative w-fill">
           <me-bessel-curve v-bind="it" :list="it.rect ? [it.rect] : []" />
-          <div class="absolute" :style="it.startPointStyle" :ref="e => targetRef(e as Element, it, 'start')"></div>
-          <div class="absolute" :style="it.endPointStyle" :ref="e => targetRef(e as Element, it, 'end')"></div>
+          <div :ref="e => targetRef(e as Element, it, 'start')" class="absolute" :style="it.startPointStyle"></div>
+          <div :ref="e => targetRef(e as Element, it, 'end')" class="absolute" :style="it.endPointStyle"></div>
         </li>
       </ul>
     </li>

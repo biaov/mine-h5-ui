@@ -22,13 +22,13 @@ const { getItemStyle, wrapStyle, fwrapStyle, itemStyle, shadowStyle, turnItemSty
 
 <template>
   <!-- 倒计时 -->
-  <div :class="name" :style="getStyle" ref="turnPage">
-    <div class="turn" :style="fwrapStyle" v-if="list.length > 1">
+  <div ref="turnPage" :class="name" :style="getStyle">
+    <div v-if="list.length > 1" class="turn" :style="fwrapStyle">
       <div class="turn-item" :style="turnItemStyle">
         <div class="turn-item-shadow" :style="turnShadowStyle"></div>
       </div>
     </div>
-    <div class="item" v-for="(item, index) in list" :key="index" :class="{ active: index === current }" :style="getItemStyle(index)">
+    <div v-for="(item, index) in list" :key="index" class="item" :class="{ active: index === current }" :style="getItemStyle(index)">
       <div class="item-rotate" :style="showValue(index, wrapStyle)">
         <div class="item-content" :style="showValue(index, itemStyle)">
           <slot :item="item" :index="index"></slot>

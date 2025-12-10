@@ -24,12 +24,12 @@ const { className, renderStyle } = useStyle(props)
 
 <template>
   <!-- 轮播图 -->
-  <div class="me-swiper" :class="className" :style="renderStyle" ref="swiperDom" @touchstart.prevent="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend" @mousedown.prevent="onMousedown">
+  <div ref="swiperDom" class="me-swiper" :class="className" :style="renderStyle" @touchstart.prevent="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend" @mousedown.prevent="onMousedown">
     <div class="imgs" :class="{ active: isActive }" :style="`transform:translateX(${currentValue}px);`">
       <slot></slot>
     </div>
     <!-- 指示点 -->
-    <ul class="dot" v-if="dot">
+    <ul v-if="dot" class="dot">
       <li v-for="(_, index) in dots" :key="index" :class="{ on: dotIndex === index }"></li>
     </ul>
   </div>

@@ -42,13 +42,13 @@ const { handleIcon } = useIcon(props, emit, inputType)
 <template>
   <!-- 输入框 -->
   <div class="me-input" :class="`me-input-${focusType}`">
-    <div class="label" :style="`width:${labelWidth};text-align-last:${labelAlign};color:${labelColor};`" ref="inputLabel" v-if="label">
-      <me-icon :name="labelIcon" :color="labelColor" size="inherit" v-if="labelIcon" />
+    <div v-if="label" ref="inputLabel" class="label" :style="`width:${labelWidth};text-align-last:${labelAlign};color:${labelColor};`">
+      <me-icon v-if="labelIcon" :name="labelIcon" :color="labelColor" size="inherit" />
       {{ label }}
     </div>
     <input
-      :type="inputType"
       v-model="inputVal"
+      :type="inputType"
       class="input"
       :placeholder="placeholder"
       :style="`${isFocus && `border-color:${focusColor};`};padding-right:${paddingRight}px;padding-left:${paddingLeft}px;`"
@@ -61,8 +61,8 @@ const { handleIcon } = useIcon(props, emit, inputType)
       @change="onChange"
       @input="onInput"
     />
-    <me-icon :name="inputType == 'password' ? 'icon-in_biyan' : 'icon-in_zhengyan'" @click="handleIcon" v-if="password" />
-    <me-icon :name="icon" @click="handleIcon" v-else />
-    <span class="sms" :class="{ countdown: smsIs }" v-if="!password && smsMsg" @click="handleSMS" ref="sms" :style="`color:${smsColor};`">{{ smsMsg }}</span>
+    <me-icon v-if="password" :name="inputType == 'password' ? 'icon-in_biyan' : 'icon-in_zhengyan'" @click="handleIcon" />
+    <me-icon v-else :name="icon" @click="handleIcon" />
+    <span v-if="!password && smsMsg" ref="sms" class="sms" :class="{ countdown: smsIs }" :style="`color:${smsColor};`" @click="handleSMS">{{ smsMsg }}</span>
   </div>
 </template>

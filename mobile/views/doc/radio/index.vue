@@ -9,7 +9,7 @@ const { listData, onChange, onClick } = useHandle()
   <ul class="radio">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
-      <me-radio-group v-model="item.value" @change="onChange" :direction="item.direction" v-if="item.list.length > 1">
+      <me-radio-group v-if="item.list.length > 1" v-model="item.value" :direction="item.direction" @change="onChange">
         <me-radio
           v-for="it in item.list"
           :key="it.id"

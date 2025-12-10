@@ -25,14 +25,14 @@ const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots({
   <!-- 标签页 -->
   <div class="me-tab">
     <!-- 标签组 -->
-    <div class="tabs" ref="tabsDom">
+    <div ref="tabsDom" class="tabs">
       <div
-        class="tab-item"
         v-for="item in tabList"
         :key="item.name"
+        class="tab-item"
         :class="{ active: modelValue === item.name }"
-        @click="onClick(item)"
         :style="`color:${modelValue === item.name ? activeColor : color};`"
+        @click="onClick(item)"
       >
         {{ item.label }}
       </div>

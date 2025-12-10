@@ -26,10 +26,10 @@ const { listData, onSMS, onIcon } = useHandlerInput()
             :sms-msg="it.smsMsg"
             :sms-color="it.smsColor"
             :sms-is="it.smsIs"
-            @click-sms="onSMS(it)"
-            @click-icon="onIcon(it)"
             :readonly="it.readonly"
             :disabled="it.disabled"
+            @click-sms="onSMS(it)"
+            @click-icon="onIcon(it)"
           />
         </li>
       </ul>

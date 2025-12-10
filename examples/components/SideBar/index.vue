@@ -27,7 +27,7 @@ const { sidebarList } = useWebData()
           </li>
         </ul>
       </template>
-      <router-link class="tit tit-link font-semibold" :to="{ name: item.name }" :title="item.meta?.title" v-else>{{ item.meta?.title }}</router-link>
+      <router-link v-else class="tit tit-link font-semibold" :to="{ name: item.name }" :title="item.meta?.title">{{ item.meta?.title }}</router-link>
     </li>
   </ul>
 </template>

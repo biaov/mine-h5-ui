@@ -42,8 +42,8 @@ const onBlur = () => {
 </script>
 <template>
   <div class="input-box" :class="{ prefix, suffix }">
-    <div class="prefix-tag" v-if="prefix">{{ prefix }}</div>
+    <div v-if="prefix" class="prefix-tag">{{ prefix }}</div>
     <input type="text" :value="inputValue" class="input" @input="onInput" @blur="onBlur" />
-    <div class="suffix-tag" v-if="suffix">{{ suffix }}</div>
+    <div v-if="suffix" class="suffix-tag">{{ suffix }}</div>
   </div>
 </template>

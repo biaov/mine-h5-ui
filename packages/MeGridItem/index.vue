@@ -23,10 +23,10 @@ const { widthValue, borderColor, handleClick } = useHandler(emit)
 
 <template>
   <!-- 宫格选项 -->
-  <div class="me-grid-item" @click="handleClick" :style="`width:${widthValue}%;border-color:${borderColor};`">
-    <i class="iconfont icon" :class="icon" :style="`color:${iconColor};`" v-if="icon"></i>
-    <span class="desc" :style="`color:${textColor};`" v-if="text">{{ text }}</span>
-    <div class="custom" v-if="!icon && !text">
+  <div class="me-grid-item" :style="`width:${widthValue}%;border-color:${borderColor};`" @click="handleClick">
+    <i v-if="icon" class="iconfont icon" :class="icon" :style="`color:${iconColor};`"></i>
+    <span v-if="text" class="desc" :style="`color:${textColor};`">{{ text }}</span>
+    <div v-if="!icon && !text" class="custom">
       <slot></slot>
     </div>
   </div>

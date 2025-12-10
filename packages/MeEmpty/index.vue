@@ -25,8 +25,8 @@ const { icon } = useIconName(props)
   <div class="me-empty" :style="`min-height:${height}px;`">
     <!-- 图片 -->
     <div class="img">
-      <img :src="url" alt="empty" v-if="url" />
-      <i :class="`iconfont icon-${icon}`" v-else></i>
+      <img v-if="url" :src="url" alt="empty" />
+      <i v-else :class="`iconfont icon-${icon}`"></i>
     </div>
     <!-- 文本 -->
     <div class="txt">

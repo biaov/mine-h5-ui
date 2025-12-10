@@ -18,7 +18,7 @@ const { isShowMask, isShow, clickMask, animationDuration } = useHandler({ props,
 
 <template>
   <!-- 遮罩层 -->
-  <div class="me-mask" :class="{ show: isShow }" @click="clickMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
+  <div v-show="isShowMask" class="me-mask" :class="{ show: isShow }" :style="`--animation-duration:${animationDuration}ms;`" @click="clickMask">
     <slot :class="{ on: isShow }" @click.stop></slot>
   </div>
 </template>

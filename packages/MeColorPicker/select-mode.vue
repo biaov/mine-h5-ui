@@ -86,7 +86,7 @@ watch(
       </transition>
     </div>
     <div class="color-mode__input" :class="{ group: modelValue.type !== colorType.hex }">
-      <ComInput v-model="modeSelect" prefix="#" v-if="modelValue.type === colorType.hex" @update:modelValue="onUpdateModeSelect" />
+      <ComInput v-if="modelValue.type === colorType.hex" v-model="modeSelect" prefix="#" @update:model-value="onUpdateModeSelect" />
       <template v-else-if="modelValue.type === colorType.hsb">
         <ComInput v-model="parseValue[0]" :range="[0, 359]" />
         <ComInput v-model="parseValue[1]" suffix="%" :range="[0, 100]" />
@@ -99,7 +99,7 @@ watch(
       </template>
     </div>
     <div class="color-mode__input-number">
-      <ComInput v-model="modelValue.alpha" :range="[0, 100]" suffix="%" @update:modelValue="onUpdateAlpha" />
+      <ComInput v-model="modelValue.alpha" :range="[0, 100]" suffix="%" @update:model-value="onUpdateAlpha" />
     </div>
   </div>
 </template>

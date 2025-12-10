@@ -2,11 +2,5 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.unicodeHighlight.nonBasicASCII": false,
-  "prettier.tabWidth": 2,
-  "prettier.useTabs": false,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.trailingComma": "none",
   "files.eol": "\n"
 }

@@ -24,10 +24,10 @@ const { listData, handleClick } = useHandler({ props, emit, modelValue })
 
 <template>
   <!-- 密码/数字输入框 -->
-  <ul class="me-password" :class="`me-password-${skinType}${type === 'number' ? ' me-password-number' : ''}`" v-show="listData.length > 0" @click.stop="handleClick">
+  <ul v-show="listData.length > 0" class="me-password" :class="`me-password-${skinType}${type === 'number' ? ' me-password-number' : ''}`" @click.stop="handleClick">
     <li v-for="item in listData" :key="item.id" :class="{ active: item.state }">
       <span v-if="type === 'number'">{{ item.value }}</span>
-      <i class="iconfont icon-dian" v-else-if="item.value !== ''"></i>
+      <i v-else-if="item.value !== ''" class="iconfont icon-dian"></i>
     </li>
   </ul>
 </template>

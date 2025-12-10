@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<DropDown.Props>(), {
     y: 0
   })
 })
-const visible = defineModel('visible', { default: false })
+const visible = defineModel<boolean>('visible', { default: false })
 const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
 
 /**
@@ -126,13 +126,13 @@ const onUpdateAlpha = (alpha: number) => setModelValue(modelValue, { alpha: Math
 </script>
 <template>
   <transition name="fade">
-    <div :class="`${name}-mask`" @click="onClick" @mousedown="onMousedown" @mouseup="onMouseup" v-if="visible">
+    <div v-if="visible" :class="`${name}-mask`" @click="onClick" @mousedown="onMousedown" @mouseup="onMouseup">
       <div :class="`${name}-dropdown`" :style="getStyle" @click.stop>
-        <ColorPanel v-model="colorPanel" @update:modelValue="onUpdateColorPanel" :background="progress.entity.dotBg" />
+        <ColorPanel v-model="colorPanel" :background="progress.entity.dotBg" @update:model-value="onUpdateColorPanel" />
         <div class="progress-box">
           <div class="progress-box__group">
-            <CompSlide v-model="progress.entity.value" :color="progress.entity.dotBg" opacity :background="progress.entity.bg" @update:modelValue="onUpdateColorPanel" />
-            <CompSlide v-model="modelValue.alpha" :color="progress.opacity.dotBg" opacity :background="progress.opacity.bg" @update:modelValue="onUpdateAlpha" />
+            <CompSlide v-model="progress.entity.value" :color="progress.entity.dotBg" opacity :background="progress.entity.bg" @update:model-value="onUpdateColorPanel" />
+            <CompSlide v-model="modelValue.alpha" :color="progress.opacity.dotBg" opacity :background="progress.opacity.bg" @update:model-value="onUpdateAlpha" />
           </div>
           <div class="progress-box__block" :style="{ backgroundColor: bgBox }"></div>
         </div>

@@ -23,7 +23,7 @@ const showMode = ref('default')
       <p class="desc">{{ libraryInfo.description }}</p>
     </div>
     <!-- 列表 -->
-    <ul class="list-out" v-if="showMode === 'default'">
+    <ul v-if="showMode === 'default'" class="list-out">
       <li v-for="(item, index) in listData" :key="index">
         <h3 class="tit h-30 leading-[30px]">{{ item.meta.title }}</h3>
         <ul class="list-in">
@@ -36,7 +36,7 @@ const showMode = ref('default')
         </ul>
       </li>
     </ul>
-    <div class="list-out" v-else-if="showMode === 'iframe'">
+    <div v-else-if="showMode === 'iframe'" class="list-out">
       <me-accordion v-model="accordionActive" class="cursor-pointer">
         <me-accordion-item v-for="(item, index) in listData" :key="index" :label="item.meta.title" :name="index">
           <ul class="list-in">

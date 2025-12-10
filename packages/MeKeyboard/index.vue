@@ -31,7 +31,7 @@ const { onClick, onDelete, onComplate } = useHandler({ emit, visibleModel })
   <!-- 数字键盘 -->
   <ul class="me-keyboard" :class="`me-keyboard-${skinType} ${visibleModel ? 'show' : ''} ${isActive ? 'me-keyboard-active' : ''}`" @click.stop>
     <li v-for="item in 9" :key="item" @click="onClick(item)">{{ item }}</li>
-    <li @click="onComplate" class="complate">完成</li>
+    <li class="complate" @click="onComplate">完成</li>
     <li @click="onClick(0)">0</li>
     <li @click="onDelete">
       <me-icon name="icon-delete" />

@@ -35,7 +35,7 @@ const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = use
     <!-- 拖拽div -->
     <div class="drag" :style="`left:${100 - currentValue}%;`" @touchstart.prevent="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend" @mousedown.prevent="onMousedown">
       <!-- 圆点 -->
-      <span class="round" v-if="!isBtn"></span>
+      <span v-if="!isBtn" class="round"></span>
       <!-- 自定义按钮 -->
       <slot v-else></slot>
     </div>

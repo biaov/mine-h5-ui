@@ -22,7 +22,7 @@ const { onClick, onLoad, onError } = useImgEvent(emit)
 <template>
   <!-- 图片 -->
   <div class="me-img" @click="onClick">
-    <img :src="src" width="40px" height="40px" :alt="alt" v-if="!fill" :style="`width:${width};height:${height};border-radius:${radius};`" @load="onLoad" @error="onError" />
-    <span :style="`width:${width};height:${height};border-radius:${radius};background:url(${src}) no-repeat center;background-size:${fill};`" v-else></span>
+    <img v-if="!fill" :src="src" width="40px" height="40px" :alt="alt" :style="`width:${width};height:${height};border-radius:${radius};`" @load="onLoad" @error="onError" />
+    <span v-else :style="`width:${width};height:${height};border-radius:${radius};background:url(${src}) no-repeat center;background-size:${fill};`"></span>
   </div>
 </template>

@@ -3,7 +3,7 @@
   <ul class="pagination">
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
-      <me-pagination v-model="item.value" v-bind="item.prop" v-if="item.custom">
+      <me-pagination v-if="item.custom" v-model="item.value" v-bind="item.prop">
         <template #prev>
           <me-icon name="icon-left" color="inherit" size="16px" />
         </template>
@@ -11,7 +11,7 @@
           <me-icon name="icon-right1" color="inherit" size="16px" />
         </template>
       </me-pagination>
-      <me-pagination v-model="item.value" v-bind="item.prop" v-else />
+      <me-pagination v-else v-model="item.value" v-bind="item.prop" />
     </li>
   </ul>
 </template>

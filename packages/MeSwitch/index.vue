@@ -26,7 +26,7 @@ const { background, handleClick } = useHandler({ props, emit, isActived })
 
 <template>
   <!-- 开关 -->
-  <div class="me-switch" :class="{ 'me-switch-on': isActived }" :data-disabled="disabled" @click="handleClick" :style="`font-size:${size};background:${background};`">
+  <div class="me-switch" :class="{ 'me-switch-on': isActived }" :data-disabled="disabled" :style="`font-size:${size};background:${background};`" @click="handleClick">
     <span class="round"></span>
   </div>
 </template>

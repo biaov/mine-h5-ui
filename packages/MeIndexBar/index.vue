@@ -19,15 +19,15 @@ const { handleLi } = useBtns(emit)
 
 <template>
   <!-- 索引栏 -->
-  <div :class="name" ref="indexBarNode">
+  <div ref="indexBarNode" :class="name">
     <!-- 右侧列表值 -->
     <ul class="list-rt">
       <template v-for="(item, index) in list" :key="item.name">
-        <li :class="{ on: item.name === curLetter }" @click="onClickBadge(item, index)" v-show="filterShow(index)">{{ item.name }}</li>
+        <li v-show="filterShow(index)" :class="{ on: item.name === curLetter }" @click="onClickBadge(item, index)">{{ item.name }}</li>
       </template>
     </ul>
     <!-- 内容列表 -->
-    <ul class="list-cont" ref="listCont">
+    <ul ref="listCont" class="list-cont">
       <li v-for="item in list" :key="item.name">
         <dl class="list-item">
           <dt>{{ item.name }}</dt>

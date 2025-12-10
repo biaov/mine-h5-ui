@@ -20,22 +20,22 @@ const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { 
 <template>
   <!-- 图片验证器 -->
   <transition name="fade">
-    <div :class="name" v-if="visible">
+    <div v-if="visible" :class="name">
       <div :class="`${name}-content`">
         <div class="captcha-tips">安全验证</div>
         <div class="captcha-title">拖动下方滑块完成拼图</div>
         <img :src="assets.close" class="captcha-close" @click="onClose" />
         <div class="captcha-rect" :class="{ animation: rectAni }">
-          <div class="captcha-img-rect" v-if="imgRect">
+          <div v-if="imgRect" class="captcha-img-rect">
             <img :src="item?.elem?.url" class="img-start" :style="`width: ${imgRect.w}px; height: ${imgRect.h}rpx;top: ${imgRect.y}px;left: ${moveX}px;`" />
             <img :src="item?.bgElem?.url" class="img-end" />
-            <div class="captcha-success" v-if="statusCode === 1">
+            <div v-if="statusCode === 1" class="captcha-success">
               <img :src="assets.success" class="captcha-success-img" />
               <div class="captcha-success-text">验证成功!</div>
             </div>
           </div>
           <div class="captcha-slide">
-            <div class="captcha-slide-move" :style="`left: ${moveX}px;`" ref="captchaSlideMoveNode">
+            <div ref="captchaSlideMoveNode" class="captcha-slide-move" :style="`left: ${moveX}px;`">
               <img :src="assets.lines" class="line" />
             </div>
           </div>

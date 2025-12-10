@@ -25,14 +25,14 @@ const { canvasRef, getBorder } = useDraw({ props, modelValue })
 <template>
   <!-- 画图 -->
   <canvas
-    class="me-mspaint"
     v-bind="{ width: parseInt(width), height: parseInt(height) }"
+    ref="canvasRef"
+    class="me-mspaint"
     :style="{
       width,
       height,
       background,
       border: getBorder
     }"
-    ref="canvasRef"
   ></canvas>
 </template>

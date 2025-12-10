@@ -19,9 +19,9 @@ const { accordionItemCont, isShow, curHeight, onClick } = useHandler(props, emit
   <!-- 手风琴选项 -->
   <div class="me-accordion-item">
     <!-- 头部区域 -->
-    <div class="hd" @click="onClick" :style="`border-bottom-color:${borderColor};`">
+    <div class="hd" :style="`border-bottom-color:${borderColor};`" @click="onClick">
       <h3 v-if="label">{{ label }}</h3>
-      <slot name="label" v-else></slot>
+      <slot v-else name="label"></slot>
       <i class="iconfont icon-right1" :class="{ open: isShow }"></i>
     </div>
     <!-- 内容区域 -->

@@ -47,7 +47,7 @@ const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
 <template>
   <!-- 时间选择器 -->
   <transition name="translate">
-    <div class="me-datetime-picker" v-if="visible">
+    <div v-if="visible" class="me-datetime-picker">
       <!-- 头部按钮 -->
       <div class="hd">
         <button type="button" class="cancel" @click="onCancel">取消</button>
@@ -58,8 +58,8 @@ const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
       <ul class="bd">
         <template v-for="item in listData">
           <li
-            :key="item.id"
             v-if="show.includes(item.id)"
+            :key="item.id"
             @touchstart.prevent="onTouchstart($event, item.id)"
             @touchmove="onTouchmove($event, item.id)"
             @touchend="onTouchend($event, item.id)"

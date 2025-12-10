@@ -19,7 +19,7 @@ const { grid } = useInitSlots(props)
 
 <template>
   <!-- 宫格 -->
-  <div class="me-grid" ref="grid">
+  <div ref="grid" class="me-grid">
     <slot></slot>
   </div>
 </template>

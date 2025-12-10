@@ -3,9 +3,9 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import markdownVite from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
-import eslint from 'vite-plugin-eslint'
+import eslint from 'vite-plugin-eslint2'
 import tailwindcss from '@tailwindcss/vite'
-import { markdownViteConfig, vueConfig, vitePwaConfig, eslintConfig } from './config/plugins'
+import { markdownViteConfig, vitePwaConfig } from './config/plugins'
 
 const env = loadEnv('development', './')
 /**
@@ -13,7 +13,19 @@ const env = loadEnv('development', './')
  */
 export default defineConfig({
   base: env.VITE_BASE_ROUTER,
-  plugins: [tailwindcss(), eslint(eslintConfig), vue(vueConfig), markdownVite(markdownViteConfig), VitePWA(vitePwaConfig)],
+  plugins: [
+    tailwindcss(),
+    eslint({
+      dev: true,
+      build: true,
+      exclude: ['node_modules', 'dist', 'fonts']
+    }),
+    vue({
+      include: [/\.vue$/, /\.md$/]
+    }),
+    markdownVite(markdownViteConfig),
+    VitePWA(vitePwaConfig)
+  ],
 
   /**
    * 服务配置

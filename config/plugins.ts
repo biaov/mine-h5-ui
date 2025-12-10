@@ -1,4 +1,3 @@
-import { Options } from '@vitejs/plugin-vue'
 import { getSingletonHighlighter, bundledLanguages } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
 import type { MarkdownItAsync } from 'markdown-it-async'
@@ -41,13 +40,6 @@ export const markdownViteConfig: MarkdownViteOptions = {
 }
 
 /**
- * Vue 插件配置
- */
-export const vueConfig: Options = {
-  include: [/\.vue$/, /\.md$/]
-}
-
-/**
  * Pwa 配置
  */
 export const vitePwaConfig: Partial<VitePWAOptions> = {
@@ -83,12 +75,4 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
     skipWaiting: true,
     clientsClaim: true
   }
-}
-
-/**
- * Eslint 配置
- */
-export const eslintConfig = {
-  lintOnStart: true,
-  exclude: ['node_modules', 'dist', 'fonts']
 }

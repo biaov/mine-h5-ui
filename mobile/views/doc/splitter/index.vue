@@ -9,7 +9,7 @@ const { listData, onClickItem } = useData()
   <ul class="splitter">
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
-      <me-button type="primary" class="mb-10" @click="onClickItem(item)" v-if="item.switchAnimation">运行动画</me-button>
+      <me-button v-if="item.switchAnimation" type="primary" class="mb-10" @click="onClickItem(item)">运行动画</me-button>
       <div class="splitter-rect">
         <me-splitter v-bind="item" />
       </div>

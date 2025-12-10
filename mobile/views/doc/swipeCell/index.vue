@@ -16,7 +16,7 @@ const { listData, onDelete, onCollect } = useHandle()
         <template #hidden>
           <div class="btns" :style="`width:${item.width}px;`">
             <me-button type="danger" icon="icon-delete1" @click="onDelete">删除</me-button>
-            <me-button type="success" icon="icon-aixinD" @click="onCollect" v-if="item.width > 100">收藏</me-button>
+            <me-button v-if="item.width > 100" type="success" icon="icon-aixinD" @click="onCollect">收藏</me-button>
           </div>
         </template>
       </me-swipe-cell>
