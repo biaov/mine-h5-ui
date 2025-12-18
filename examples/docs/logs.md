@@ -234,7 +234,7 @@
   - [新增 useScroll](/v2/doc/composable)
 - 🔥 新增开发指南(/v2/doc/develop)
 - ⚙️ 更新
-  - 手风琴组件 MeAccordionItem 增加 `slot=label` 插槽
+  - 手风琴组件 MeCollapseItem 增加 `slot=label` 插槽
   - 更新组件的使用文档
   - 优化项目在使用组件或组合式 API 时由 getCurrentInstance 中获取改为直接从组件库获取的体验
   - 更新项目依赖版本

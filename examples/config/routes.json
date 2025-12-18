@@ -35,7 +35,7 @@
     "导航组件": ["Grid 宫格", "IndexBar 索引栏", "NavBar 导航栏", "Tab 标签页", "TabBar 标签栏", "PullRefresh 下拉刷新", "Pagination 分页器"],
     "展示组件": [
       "ProgressBar 进度条",
-      "Accordion 手风琴",
+      "Collapse 折叠面板",
       "CountDown 倒计时",
       "Divider 分割线",
       "Empty 空状态",

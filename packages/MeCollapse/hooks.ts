@@ -1,5 +1,5 @@
 import { provide } from 'vue'
-import { MeAccordionKey } from './token'
+import { MeCollapseKey } from './token'
 import type { USEInitSlots } from './types'
 
 /**
@@ -15,7 +15,7 @@ export const useInitSlots = ({ emit, currentValue }: USEInitSlots.Option) => {
     emit('change', value)
   }
 
-  provide(MeAccordionKey, { name: MeAccordionKey, currentValue, onChange })
+  provide(MeCollapseKey, { name: MeCollapseKey, currentValue, onChange })
 
   return {}
 }

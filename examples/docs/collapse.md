@@ -1,4 +1,4 @@
-# Accordion 手风琴
+# Collapse 折叠面板
 
 ---
 
@@ -9,11 +9,11 @@
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { MeAccordion, MeAccordionItem } from 'mine-h5-ui'
-import 'mine-h5-ui/styles/MeAccordion.css'
-import 'mine-h5-ui/styles/MeAccordionItem.css'
+import { MeCollapse, MeCollapseItem } from 'mine-h5-ui'
+import 'mine-h5-ui/styles/MeCollapse.css'
+import 'mine-h5-ui/styles/MeCollapseItem.css'
 
-createApp(App).use(MeAccordion).use(MeAccordionItem).mount('#app')
+createApp(App).use(MeCollapse).use(MeCollapseItem).mount('#app')
 ```
 
 :::
@@ -26,19 +26,19 @@ createApp(App).use(MeAccordion).use(MeAccordionItem).mount('#app')
 
 ### 基础用法
 
-- 通过 `v-model` 来绑定 `MeAccordion` 组件的当前状态。
-- 通过属性 `label` 和属性 `index` 来设置 `MeAccordionItem` 组件的标题和索引，默认值分别为 `""` 和当前索引。
+- 通过 `v-model` 来绑定 `MeCollapse` 组件的当前状态。
+- 通过属性 `label` 和属性 `index` 来设置 `MeCollapseItem` 组件的标题和索引，默认值分别为 `""` 和当前索引。
 
 ::: CopyCode
 
 ```vue
 <template>
   <div class="label">基础用法</div>
-  <me-accordion v-model="accordionActive">
-    <me-accordion-item v-for="(item, index) in listData" :key="index" :label="item.title" :name="index">
+  <me-collapse v-model="collapseActive">
+    <me-collapse-item v-for="(item, index) in listData" :key="index" :label="item.title" :name="index">
       <div v-html="item.html"></div>
-    </me-accordion-item>
-  </me-accordion>
+    </me-collapse-item>
+  </me-collapse>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -46,7 +46,7 @@ import { ref } from 'vue'
 /**
  * 当前活动值
  */
-const accordionActive = ref('')
+const collapseActive = ref('')
 const listData = Object.freeze([
   {
     title: '《桐花》',
@@ -81,7 +81,7 @@ const listData = Object.freeze([
   color: #949494;
   font-size: 14px-min;
 }
-.me-accordion-item {
+.me-collapse-item {
   .hd {
     cursor: pointer;
   }
@@ -101,7 +101,7 @@ const listData = Object.freeze([
 
 ## API
 
-### MeAccordion
+### MeCollapse
 
 #### 参数
 
@@ -111,7 +111,7 @@ const listData = Object.freeze([
 
 #### Slots
 
-- ⚠ 注意：此插槽只接 `MeAccordionItem` 组件。
+- ⚠ 注意：此插槽只接 `MeCollapseItem` 组件。
 
 | 具名插槽 | 说明     | scopedSlots | 版本   |
 | -------- | -------- | ----------- | ------ |
@@ -124,7 +124,7 @@ const listData = Object.freeze([
 | ------ | -------------------------- | ----------------------- | ------ |
 | change | 点击列表头部项时触发的事件 | value: [string, number] | v2.3.5 |
 
-### MeAccordionItem
+### MeCollapseItem
 
 #### 参数
 

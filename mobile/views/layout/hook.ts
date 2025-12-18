@@ -12,18 +12,18 @@ export const useWebData = () => {
   /**
    * 当前活动值
    */
-  const accordionActive = ref(getStorage('accordionActive') ?? -1)
+  const collapseActive = ref(getStorage('collapseActive') ?? -1)
   const listData = Object.freeze(componentConfig)
   const { path } = useRoute()
   const postMsg = PostMessage(window.parent!)
   postMsg && postMsg.send(path)
 
-  const setAccordionActive = () => {
-    setStorage('accordionActive', accordionActive.value)
+  const setCollapseActive = () => {
+    setStorage('collapseActive', collapseActive.value)
   }
 
-  onBeforeRouteLeave(setAccordionActive)
-  watch(accordionActive, setAccordionActive)
+  onBeforeRouteLeave(setCollapseActive)
+  watch(collapseActive, setCollapseActive)
 
-  return { listData, accordionActive }
+  return { listData, collapseActive }
 }
