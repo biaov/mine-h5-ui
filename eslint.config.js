@@ -2,7 +2,6 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
-import prettier from 'eslint-plugin-prettier'
 import eslintConfigPrettier from 'eslint-config-prettier'
 
 const developmentOff = process.env.NODE_ENV === 'development' ? 'off' : 'error'
@@ -15,12 +14,6 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
-  {
-    files: ['**/*.{js,ts,vue}'],
-    plugins: {
-      prettier
-    }
-  },
   eslintConfigPrettier,
   {
     languageOptions: {

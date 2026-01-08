@@ -5,7 +5,7 @@ import markdownVite from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslint from 'vite-plugin-eslint2'
 import tailwindcss from '@tailwindcss/vite'
-import { markdownViteConfig, vitePwaConfig } from './config/plugins'
+import { markdownViteConfig, vitePwaConfig, eslintConfig } from './config/plugins'
 
 const env = loadEnv('development', './')
 /**
@@ -15,11 +15,7 @@ export default defineConfig({
   base: env.VITE_BASE_ROUTER,
   plugins: [
     tailwindcss(),
-    eslint({
-      dev: true,
-      build: true,
-      exclude: ['node_modules', 'dist', 'fonts']
-    }),
+    eslint(eslintConfig),
     vue({
       include: [/\.vue$/, /\.md$/]
     }),

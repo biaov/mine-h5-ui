@@ -160,7 +160,6 @@ npm run build
 
 #### devDependencies
 
-- `@eslint/eslintrc`: Eslint 配置文件
 - `@eslint/js`: Eslint js 解析器
 - `@tailwindcss/vite`: Vite 中配置 Tailwindcss
 - `@types/markdown-it-container`: `markdown-it-container` 的类型
