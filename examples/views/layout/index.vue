@@ -27,7 +27,7 @@ onMounted(() => {
     <mine-header />
     <!-- 内容 -->
     <div class="content relative z-2 text-center">
-      <div class="logo w-220 mx-auto my-0"><img src="../../assets/logo.svg" alt="mine-h5-ui Logo" /></div>
+      <div class="w-220 mx-auto my-0"><img src="../../assets/logo.svg" alt="mine-h5-ui" /></div>
       <h1 class="tit mt-56 text-3xl px-20">{{ libraryInfo.description }}</h1>
       <p class="desc text-lg mx-0 mt-10 mb-50 px-20 uppercase">
         如果你还冇心仪的 UI 框架，不妨试试
