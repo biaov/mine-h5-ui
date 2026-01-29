@@ -28,7 +28,7 @@ const showMode = ref('default')
         <h3 class="tit h-30 leading-30">{{ item.meta.title }}</h3>
         <ul class="list-in">
           <li v-for="(it, i) in item.items" :key="i" class="mb-10">
-            <router-link :to="{ name: it.name }" class="flex justify-between w-full h-40 leading-[40px] rounded-full hover:flex hover:!bg-sky-50 transition-all">
+            <router-link :to="{ name: it.name }" class="flex justify-between w-full h-40 leading-40 rounded-full hover:flex hover:bg-sky-50! transition-all">
               <span>{{ it.meta.title }}</span>
               <me-icon name="icon-right1" size="20px" color="rgba(34,34,34,0.2)" />
             </router-link>
@@ -41,7 +41,7 @@ const showMode = ref('default')
         <me-collapse-item v-for="(item, index) in listData" :key="index" :label="item.meta.title" :name="index">
           <ul class="list-in">
             <li v-for="(it, i) in item.items" :key="i" class="mb-10">
-              <router-link :to="{ name: it.name }" class="flex justify-between w-full h-40 leading-40 rounded-full hover:flex hover:!bg-sky-50 transition-all">
+              <router-link :to="{ name: it.name }" class="flex justify-between w-full h-40 leading-40 rounded-full hover:flex hover:bg-sky-50! transition-all">
                 <span>{{ it.meta.title }}</span>
                 <me-icon name="icon-right1" size="20px" color="rgba(34,34,34,0.2)" />
               </router-link>
