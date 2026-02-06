@@ -38,7 +38,7 @@ const { onTouchstartWrap, onTouchmoveWrap } = useScale({ props, ...share, listDa
 
 <template>
   <!-- 拖拽 -->
-  <div class="me-drag" ref="dragRef" :style="`width:${width};height:${height};`" @click="onClick(-1)" @touchstart="onTouchstartWrap" @touchmove="onTouchmoveWrap">
+  <div ref="dragRef" class="me-drag" :style="`width:${width};height:${height};`" @click="onClick(-1)" @touchstart="onTouchstartWrap" @touchmove="onTouchmoveWrap">
     <div
       v-for="(item, index) in listData"
       :key="index"
@@ -52,9 +52,9 @@ const { onTouchstartWrap, onTouchmoveWrap } = useScale({ props, ...share, listDa
     >
       <!-- 缩放按钮 -->
       <div
-        class="resize"
         v-for="(it, i) in angleToCursor"
         :key="it.cursor"
+        class="resize"
         :class="[it.cursor, getCursor(i)]"
         @touchstart.stop="onResizeTouchstart"
         @touchmove.stop="onResizeTouchmove($event, it)"

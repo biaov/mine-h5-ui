@@ -32,15 +32,15 @@ const { onClickLeft, onClickRight } = useHandler(emit)
   <!-- 导航栏 -->
   <div class="me-nav-bar" :style="`background:${styles.background};border-bottom-color:${styles.borderColor};`">
     <!-- 左侧按钮 -->
-    <div class="lf" @click="onClickLeft" :style="`color:${styles.leftColor};`">
-      <i class="iconfont icon-left" v-if="leftArrow"></i>
+    <div class="lf" :style="`color:${styles.leftColor};`" @click="onClickLeft">
+      <i v-if="leftArrow" class="iconfont icon-left"></i>
       <span>{{ leftText }}</span>
     </div>
     <!-- 中间标题 -->
     <h2 class="tit" :style="`color:${styles.titleColor};`">{{ title }}</h2>
     <!-- 右侧按钮 -->
     <div class="rt">
-      <div class="btn" v-if="rightText" @click="onClickRight" :style="`color:${styles.rightColor};`">{{ rightText }}</div>
+      <div v-if="rightText" class="btn" :style="`color:${styles.rightColor};`" @click="onClickRight">{{ rightText }}</div>
       <slot v-else></slot>
     </div>
   </div>

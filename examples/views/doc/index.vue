@@ -44,8 +44,8 @@ window.addEventListener('resize', onMobileState)
 
 <template>
   <!-- 文档 -->
-  <mine-mobile full v-if="isMobile" @getframe="changeFrameRouter" />
-  <div class="doc pt-60" v-else>
+  <mine-mobile v-if="isMobile" full @getframe="changeFrameRouter" />
+  <div v-else class="doc pt-60">
     <!-- 头部 -->
     <mine-header />
     <!-- 内容 -->

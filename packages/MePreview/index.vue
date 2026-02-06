@@ -19,7 +19,7 @@ const { isShow, isDestroy, onClose, animationDuration } = useShow()
 
 <template>
   <!-- 图片预览 -->
-  <div class="me-preview" :class="{ show: isShow }" :style="`z-index:${zIndex};background:${background};--animation-duration:${animationDuration}ms;`" @click="onClose" v-if="!isDestroy">
+  <div v-if="!isDestroy" class="me-preview" :class="{ show: isShow }" :style="`z-index:${zIndex};background:${background};--animation-duration:${animationDuration}ms;`" @click="onClose">
     <img class="img" :src="url" alt="preview-img" />
     <slot></slot>
   </div>

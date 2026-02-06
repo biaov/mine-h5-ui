@@ -22,7 +22,7 @@ const { screenshotRef, onClick } = useHandler(props, emit)
 
 <template>
   <!-- 截长图 -->
-  <div class="me-screenshot" ref="screenshotRef" @click="onClick">
+  <div ref="screenshotRef" class="me-screenshot" @click="onClick">
     <slot></slot>
   </div>
 </template>

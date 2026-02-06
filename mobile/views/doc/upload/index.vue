@@ -9,7 +9,7 @@ const { listData } = useWebData()
   <ul class="upload">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
-      <me-upload :max-count="item.maxCount" :max-size="item.maxSize" :multiple="item.multiple" :deletable="item.deletable" v-model:fileList="item.fileList"></me-upload>
+      <me-upload v-model:file-list="item.fileList" :max-count="item.maxCount" :max-size="item.maxSize" :multiple="item.multiple" :deletable="item.deletable"></me-upload>
     </li>
   </ul>
 </template>

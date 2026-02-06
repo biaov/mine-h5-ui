@@ -14,7 +14,7 @@ const { styles, handleClick } = useHandle()
       <me-icon name="icon-search1" size="20px" color="#409eff" @click="handleClick('搜索')" />
     </me-nav-bar>
     <div class="label">自定义样式</div>
-    <me-nav-bar title="标题" left-text="返回" right-text="自定义" @click-left="handleClick('返回')" v-bind="{ styles }" @click-right="handleClick('自定义')"></me-nav-bar>
+    <me-nav-bar title="标题" left-text="返回" right-text="自定义" v-bind="{ styles }" @click-left="handleClick('返回')" @click-right="handleClick('自定义')"></me-nav-bar>
   </div>
 </template>
 

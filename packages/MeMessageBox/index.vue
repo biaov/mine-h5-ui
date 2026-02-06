@@ -24,16 +24,16 @@ const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } 
 
 <template>
   <!-- 弹出框 -->
-  <div class="me-message-box" :class="{ show: isShow }" @click="onCancel" v-if="!isDestroy" :style="`--animation-duration:${animationDuration}ms;`">
+  <div v-if="!isDestroy" class="me-message-box" :class="{ show: isShow }" :style="`--animation-duration:${animationDuration}ms;`" @click="onCancel">
     <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
       <h3 class="tips">{{ tips }}</h3>
       <!-- Alert 弹出框 / Confirm 确认框 -->
-      <div class="text" v-if="['alert', 'confirm'].includes(type)">{{ message }}</div>
+      <div v-if="['alert', 'confirm'].includes(type)" class="text">{{ message }}</div>
       <!-- Prompt 输入框 -->
-      <div class="prompt" v-if="type === 'prompt'">
+      <div v-if="type === 'prompt'" class="prompt">
         <label class="label">{{ message }}</label>
-        <input type="text" class="input" v-model="inputValue" />
+        <input v-model="inputValue" type="text" class="input" />
       </div>
       <!-- Custom 自定义框 -->
       <template v-if="type === 'custom'">
@@ -42,7 +42,7 @@ const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } 
       <!-- 操作按钮 -->
       <div class="btn">
         <!-- 取消按钮 -->
-        <button type="button" class="btn-cancel" v-if="type !== 'alert'" @click="onCancel">{{ cancelButtonText }}</button>
+        <button v-if="type !== 'alert'" type="button" class="btn-cancel" @click="onCancel">{{ cancelButtonText }}</button>
         <!-- 确认按钮 -->
         <button type="button" class="btn-confirm" @click="onConfirm">{{ confirmButtonText }}</button>
       </div>

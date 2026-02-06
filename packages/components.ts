@@ -58,8 +58,8 @@ export * from './MePagination' // 下拉刷新
 
 /* 展示组件 start */
 export * from './MeProgressBar' // 进度条
-export * from './MeAccordion' // 手风琴
-export * from './MeAccordionItem' // 手风琴选项
+export * from './MeCollapse' // 折叠面板
+export * from './MeCollapseItem' // 折叠面板选项
 export * from './MeCountDown' // 倒计时
 export * from './MeDivider' // 分割线
 export * from './MeEmpty' // 空状态

@@ -1,0 +1,13 @@
+{
+  "htmlSelfClosing": "if-multiple", // 只对非 void 元素强制双标签
+  "singleQuote": true, // 单引号
+  "semi": false, // 不使用分号
+  "printWidth": 200, // 每行字符长度限制
+  "arrowParens": "avoid", // 箭头函数参数只有一个时，省略括号
+  "bracketSpacing": true, // 大括号内有空格
+  "trailingComma": "none", // 数组和对象最后一个元素后不添加逗号
+  "tabWidth": 2, // 缩进空格数
+  "useTabs": false, // 不使用 Tab 缩进
+  "endOfLine": "auto", // 自动换行符
+  "htmlWhitespaceSensitivity": "ignore" // 忽略 HTML 标签中的空格敏感度
+}

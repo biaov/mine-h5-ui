@@ -1,7 +1,7 @@
 import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import eslint from 'vite-plugin-eslint'
+import eslint from 'vite-plugin-eslint2'
 import dts from 'vite-plugin-dts'
 import pkg from '../package.json'
 import { eslintConfig } from '../config/plugins'

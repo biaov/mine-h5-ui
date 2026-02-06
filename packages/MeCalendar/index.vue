@@ -24,7 +24,7 @@ const { showAnimation, destroy, onClose } = useShow({ visible }, initData)
 
 <template>
   <!-- 日历 -->
-  <div :class="[name, showAnimation ? 'show' : '']" :style="getStyle" ref="calendarRef" @click.stop v-if="destroy">
+  <div v-if="destroy" ref="calendarRef" :class="[name, showAnimation ? 'show' : '']" :style="getStyle" @click.stop>
     <div class="calendar-year">
       <view class="icon" @click="onYearItem(-1)">
         <me-icon name="icon-left-double" size="18px" />
@@ -44,17 +44,17 @@ const { showAnimation, destroy, onClose } = useShow({ visible }, initData)
       </view>
     </div>
     <div class="calendar-week">
-      <div class="item" v-for="item in week" :key="item">
+      <div v-for="item in week" :key="item" class="item">
         <div class="item-box fixed">{{ item }}</div>
       </div>
     </div>
     <div class="calendar-day">
-      <div class="item" v-for="(item, index) in days" :key="index" @click="onDayItem(item, index)">
+      <div v-for="(item, index) in days" :key="index" class="item" @click="onDayItem(item, index)">
         <div class="item-box" :class="{ disabled: item.disabled, selected: item.selected, today: item.today }">
           {{ item.value }}
         </div>
       </div>
     </div>
   </div>
-  <div :class="`${name}-mask`" @click.stop="onClose" v-if="destroy"></div>
+  <div v-if="destroy" :class="`${name}-mask`" @click.stop="onClose"></div>
 </template>

@@ -31,14 +31,14 @@ const { getStyle } = useStyle(props)
   <div class="me-cell" :class="{ bottom }" :style="getStyle" @click="onClick">
     <div class="lf">
       <slot name="left">
-        <me-icon :name="icon" size="20px" v-if="icon" />
+        <me-icon v-if="icon" :name="icon" size="20px" />
         <span>{{ title }}</span>
       </slot>
     </div>
     <div class="rt">
       <slot name="right">
         <span :class="{ placeholder }">{{ value || placeholder }}</span>
-        <me-icon name="icon-right1" v-if="arrow" />
+        <me-icon v-if="arrow" name="icon-right1" />
       </slot>
     </div>
   </div>

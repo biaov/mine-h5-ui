@@ -40,7 +40,7 @@ const { onClick } = useHandler(emit)
     :style="`width:${width}; color:${type === 'default' || plain ? color : '#fff'}; background:${!plain ? color : '#fff'}; border-color:${color};`"
     @click="onClick"
   >
-    <me-icon :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" v-if="icon" />
+    <me-icon v-if="icon" :name="icon" :color="`${type === 'default' || plain ? color : '#fff'}`" size="16px" />
     <slot></slot>
   </button>
 </template>

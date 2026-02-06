@@ -21,9 +21,9 @@ useName(props)
 <template>
   <!-- 轮播图 -->
   <div class="me-swiper-item" :style="`background:${background};`">
-    <img class="img" :src="url" alt="banner" v-if="url" draggable="false" />
+    <img v-if="url" class="img" :src="url" alt="banner" draggable="false" />
     <slot>
-      <div class="text" v-if="text">{{ text }}</div>
+      <div v-if="text" class="text">{{ text }}</div>
     </slot>
   </div>
 </template>

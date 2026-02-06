@@ -1,16 +1,16 @@
 import { ref, watch, inject, nextTick } from 'vue'
-import { MeAccordionKey } from '../MeAccordion/token'
-import type { Props, AccordionContext, Emits } from './types'
+import { MeCollapseKey } from '../MeCollapse/token'
+import type { Props, CollapseContext, Emits } from './types'
 
 /**
  * 操作
  */
 export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
-  const { name, currentValue, onChange } = inject(MeAccordionKey, {} as AccordionContext)
+  const { name, currentValue, onChange } = inject(MeCollapseKey, {} as CollapseContext)
   /**
    * cont 节点
    */
-  const accordionItemCont = ref<HTMLDivElement>()
+  const collapseItemCont = ref<HTMLDivElement>()
   /**
    * 显示状态
    */
@@ -24,7 +24,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
    * 设置下标数据
    */
   const setData = () => {
-    isShow.value = name === MeAccordionKey && props.name === currentValue.value
+    isShow.value = name === MeCollapseKey && props.name === currentValue.value
   }
 
   /**
@@ -34,7 +34,7 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     /**
      * 向父组件传递数据
      */
-    name === MeAccordionKey && onChange(props.name)
+    name === MeCollapseKey && onChange(props.name)
     emit('click', e)
   }
 
@@ -50,11 +50,11 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     isShow,
     value => {
       nextTick(() => {
-        curHeight.value = value ? accordionItemCont.value!.offsetHeight : 0
+        curHeight.value = value ? collapseItemCont.value!.offsetHeight : 0
       })
     },
     { immediate: true }
   )
 
-  return { accordionItemCont, isShow, curHeight, onClick }
+  return { collapseItemCont, isShow, curHeight, onClick }
 }

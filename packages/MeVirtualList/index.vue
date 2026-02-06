@@ -30,7 +30,7 @@ const { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef } = 
     <div class="scroll-bar" :style="`height:${scrollBarHeight}px;`"></div>
     <!-- 列表 -->
     <ul class="list-scroll" :style="`transform:translateY(${scrollTranslateY}px);`">
-      <li v-for="item in renderData" :key="item.virtualId" :data-index="item.virtualId" :ref="setItemRef">
+      <li v-for="item in renderData" :key="item.virtualId" :ref="setItemRef" :data-index="item.virtualId">
         <slot :item="item"></slot>
       </li>
     </ul>

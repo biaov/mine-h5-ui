@@ -2,17 +2,19 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
-import prettier from 'eslint-plugin-prettier'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 const developmentOff = process.env.NODE_ENV === 'development' ? 'off' : 'error'
 
 export default [
   {
-    files: ['**/*.{js,ts,vue}'],
-    plugins: {
-      prettier
-    }
+    ignores: ['node_modules', 'dist', '**/fonts/**']
   },
+
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+  eslintConfigPrettier,
   {
     languageOptions: {
       globals: {
@@ -32,9 +34,6 @@ export default [
       }
     }
   },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...pluginVue.configs['flat/essential'],
   {
     rules: {
       /**
@@ -147,7 +146,25 @@ export default [
       /**
        * 强类型
        */
-      '@typescript-eslint/no-non-null-asserted-optional-chain': 'off'
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
+      /**
+       * 不必要的和可能令人困惑的 <template>
+       */
+      'vue/no-lone-template': 'off',
+      /**
+       * 禁止使用 v-html
+       */
+      'vue/no-v-html': 'off',
+      /**
+       * 属性连字符
+       */
+      'vue/attribute-hyphenation': [
+        'error',
+        'always',
+        {
+          ignoreTags: ['slot']
+        }
+      ]
     }
   },
   {
@@ -175,8 +192,5 @@ export default [
     rules: {
       'no-console': 'off'
     }
-  },
-  {
-    ignores: ['node_modules', 'dist', '**/fonts/**']
   }
 ]

@@ -11,7 +11,7 @@ defineProps<Props>()
 <template>
   <!-- 加载提示框 -->
   <transition name="fade">
-    <div class="me-show-loading" v-if="visible">
+    <div v-if="visible" class="me-show-loading">
       <div class="content">
         <img src="./loading-turn.svg" alt="loading-turn" class="icon" />
         <span class="text">{{ message }}</span>

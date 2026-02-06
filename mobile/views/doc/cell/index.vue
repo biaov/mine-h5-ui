@@ -9,7 +9,7 @@ const { listData, onClick } = useHandle()
   <ul class="cell">
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
-      <me-cell v-bind="item" @click="onClick(index)" v-if="item.slot">
+      <me-cell v-if="item.slot" v-bind="item" @click="onClick(index)">
         <template #left>
           <div class="title">自定义标题</div>
           <div class="tag">标签</div>
@@ -18,7 +18,7 @@ const { listData, onClick } = useHandle()
           <div class="desc">自定义右侧内容</div>
         </template>
       </me-cell>
-      <me-cell v-bind="item" @click="onClick(index)" v-else></me-cell>
+      <me-cell v-else v-bind="item" @click="onClick(index)"></me-cell>
     </li>
   </ul>
 </template>

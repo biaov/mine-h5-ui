@@ -36,14 +36,14 @@ const { onClick, onClickPreappend, onClickAppend } = useBtns(emit)
     <!-- 滚动公告 -->
     <div class="notice">
       <!-- 水平动画 -->
-      <ul class="notice-horizontal" :style="`left:${left}px;color:${color};`" ref="noticeList" v-if="scroll === 'horizontal'">
+      <ul v-if="scroll === 'horizontal'" ref="noticeList" class="notice-horizontal" :style="`left:${left}px;color:${color};`">
         <li v-for="(item, index) in listData" :key="index" @click="onClick(index)">
           <span>{{ item }}</span>
         </li>
       </ul>
       <!-- 垂直动画 -->
-      <transition name="slide" mode="out-in" v-else>
-        <div class="notice-vertical" :key="listIndex" @click="onClick(listIndex)" :style="`color:${color};`">
+      <transition v-else name="slide" mode="out-in">
+        <div :key="listIndex" class="notice-vertical" :style="`color:${color};`" @click="onClick(listIndex)">
           <span>{{ listData[listIndex] }}</span>
         </div>
       </transition>

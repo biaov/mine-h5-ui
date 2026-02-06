@@ -33,21 +33,21 @@ const { onClean, handleBtn } = useBtns({ emit, inputVal })
   <div class="me-search" :style="`border-radius:${radius};background:${background};color:${color};`">
     <me-icon name="icon-search1" size="15px" color="inherit" />
     <input
+      v-model="inputVal"
       type="search"
       class="input"
-      v-model="inputVal"
+      :placeholder="placeholder"
+      :style="`text-align:${align};`"
+      :disabled="disabled"
       @focus="onFocus"
       @blur="onBlur"
       @keypress="onKeypress"
       @input="onInput"
       @change="onChange"
-      :placeholder="placeholder"
-      :style="`text-align:${align};`"
-      :disabled="disabled"
     />
     <transition name="fade">
-      <me-icon name="icon-close" size="16px" color="inherit" @click="onClean" v-if="modelValue" />
+      <me-icon v-if="modelValue" name="icon-close" size="16px" color="inherit" @click="onClean" />
     </transition>
-    <div class="btn" @click="handleBtn" v-if="btnText">{{ btnText }}</div>
+    <div v-if="btnText" class="btn" @click="handleBtn">{{ btnText }}</div>
   </div>
 </template>

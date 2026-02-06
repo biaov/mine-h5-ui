@@ -14,7 +14,24 @@
 
 :::TimeLine
 
-## v2.17.0 - 最新版本
+## v2.17.1 - 最新版本
+
+`2026-02-06`
+
+- ⚙️ 插件 `vite-plugin-eslint` 更改为 `vite-plugin-eslint2`
+- ⚙️ 调整 eslint 配置
+- ⚙️ eslint 由 `flat/essential` 调整为 `flat/recommended` 配置
+- ⚙️ 增加 `eslint-config-prettier` 插件防止 Eslint 与 Prettier 冲突
+- ⚙️ 更新依赖版本
+- ⚙️ 依赖 `@types/node` 由 `^24.x` -> `^25.x`
+- ⚙️ 依赖 `@types/markdown-it-container` 由 `^2.x` -> `^4.x`
+- ⚙️ 依赖 `vue-router` 由 `^2.x` -> `^4.x`
+- ⚙️ 依赖 `jsdom` 由 `^27.x` -> `^28.x`
+- ⚙️ `Accordion 手风琴` 组件更改为 `Collapse 折叠面板` 组件
+- ⚙️ 移除依赖 `@eslint/eslintrc`
+- ⚙️ 移除依赖 `eslint-plugin-prettier`
+
+## v2.17.0
 
 `2025-12-02`
 
@@ -234,7 +251,7 @@
   - [新增 useScroll](/v2/doc/composable)
 - 🔥 新增开发指南(/v2/doc/develop)
 - ⚙️ 更新
-  - 手风琴组件 MeAccordionItem 增加 `slot=label` 插槽
+  - 手风琴组件 MeCollapseItem 增加 `slot=label` 插槽
   - 更新组件的使用文档
   - 优化项目在使用组件或组合式 API 时由 getCurrentInstance 中获取改为直接从组件库获取的体验
   - 更新项目依赖版本

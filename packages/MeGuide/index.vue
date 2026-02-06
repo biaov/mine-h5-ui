@@ -23,7 +23,7 @@ const { url, onStep } = useHandler({ props, emit, visibleModel })
 
 <template>
   <!-- 引导 -->
-  <div class="me-guide" @click.stop v-if="visibleModel">
+  <div v-if="visibleModel" class="me-guide" @click.stop>
     <img :src="url" class="img" mode="fill" @click="onStep" />
     <slot></slot>
   </div>

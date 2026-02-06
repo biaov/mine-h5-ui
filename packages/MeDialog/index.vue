@@ -23,7 +23,7 @@ const { isShowMask, isShow, hideMask, animationDuration } = useShow({ visible })
 
 <template>
   <!-- 对话框 -->
-  <div class="me-dialog" :class="{ show: isShow }" @click="hideMask" v-show="isShowMask" :style="`--animation-duration:${animationDuration}ms;`">
+  <div v-show="isShowMask" class="me-dialog" :class="{ show: isShow }" :style="`--animation-duration:${animationDuration}ms;`" @click="hideMask">
     <div class="picker" :class="{ show: isShow }" @click.stop>
       <!-- 提示语 -->
       <h3 class="tips">{{ tips }}</h3>

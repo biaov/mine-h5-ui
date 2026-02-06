@@ -9,7 +9,7 @@ const { listData, onChange, onClick } = useHandle()
   <ul class="checkbox">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
-      <me-checkbox-group v-model="item.value" @change="onChange" :direction="item.direction" v-if="item.list.length > 1">
+      <me-checkbox-group v-if="item.list.length > 1" v-model="item.value" :direction="item.direction" @change="onChange">
         <me-checkbox
           v-for="it in item.list"
           :key="it.id"

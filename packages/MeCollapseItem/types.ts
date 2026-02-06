@@ -4,7 +4,7 @@ import { DefaultSlotProp, DefaultSlots } from '../types'
 /**
  * 父组件参数
  */
-export interface AccordionContext {
+export interface CollapseContext {
   name: string
   currentValue: Ref<string | number>
   onChange: (name: string | number) => void

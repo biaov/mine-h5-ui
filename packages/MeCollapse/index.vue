@@ -4,7 +4,7 @@ import { useInitSlots } from './hooks'
 import type { Emits } from './types'
 
 defineOptions({
-  name: 'MeAccordion'
+  name: 'MeCollapse'
 })
 
 defineSlots<DefaultSlots>()
@@ -20,8 +20,8 @@ useInitSlots({ emit, currentValue })
 </script>
 
 <template>
-  <!-- 手风琴  -->
-  <div class="me-accordion">
+  <!-- 折叠面板  -->
+  <div class="me-collapse">
     <slot></slot>
   </div>
 </template>

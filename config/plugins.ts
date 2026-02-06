@@ -1,9 +1,9 @@
-import { Options } from '@vitejs/plugin-vue'
 import { getSingletonHighlighter, bundledLanguages } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
-import type { MarkdownItAsync } from 'markdown-it-async'
+import type { MarkdownItAsync, PluginWithParams } from 'markdown-it-async'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
+import type { ESLintPluginUserOptions } from 'vite-plugin-eslint2'
 import type { MarkdownViteOptions, TokenItem } from './types'
 
 /**
@@ -15,7 +15,7 @@ export const markdownViteConfig: MarkdownViteOptions = {
     /**
      * 时间线
      */
-    md.use(MarkdownItContainer, 'TimeLine', {
+    md.use(MarkdownItContainer as unknown as PluginWithParams, 'TimeLine', {
       validate: (params: string): RegExpMatchArray | null => params.trim().match(/^TimeLine\s*(.*)$/),
       render: (tokens: TokenItem[], i: number): string => (tokens[i].nesting === 1 ? `<time-line>` : `</time-line>\n`)
     })
@@ -23,7 +23,7 @@ export const markdownViteConfig: MarkdownViteOptions = {
     /**
      * 复制
      */
-    md.use(MarkdownItContainer, 'CopyCode', {
+    md.use(MarkdownItContainer as unknown as PluginWithParams, 'CopyCode', {
       validate: (params: string): RegExpMatchArray | null => params.trim().match(/^CopyCode\s*(.*)$/),
       render: (tokens: TokenItem[], i: number): string => (tokens[i].nesting === 1 ? `<copy-code>` : `</copy-code>\n`)
     })
@@ -38,13 +38,6 @@ export const markdownViteConfig: MarkdownViteOptions = {
       highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang, theme })
     })
   }
-}
-
-/**
- * Vue 插件配置
- */
-export const vueConfig: Options = {
-  include: [/\.vue$/, /\.md$/]
 }
 
 /**
@@ -86,9 +79,10 @@ export const vitePwaConfig: Partial<VitePWAOptions> = {
 }
 
 /**
- * Eslint 配置
+ * eslint 配置
  */
-export const eslintConfig = {
-  lintOnStart: true,
+export const eslintConfig: ESLintPluginUserOptions = {
+  dev: true,
+  build: true,
   exclude: ['node_modules', 'dist', 'fonts']
 }

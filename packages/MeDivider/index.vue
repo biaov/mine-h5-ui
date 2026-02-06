@@ -27,9 +27,9 @@ const { fieldsetList, curLine } = useHandler(props)
   <div class="me-divider" :style="`width:${width}px;height:${height}px;`">
     <template v-if="fieldsetList.length > 0">
       <fieldset
-        class="fieldset"
         v-for="(item, index) in fieldsetList"
         :key="index"
+        class="fieldset"
         :style="`transform-origin:center ${origin}px;transform:translate(-50%, -50%) rotate(${item.deg}deg);border-top-width:${curLine.size}px;border-top-color:${curLine.color};border-radius: ${curLine.radius}px;`"
         role="presentation"
       >

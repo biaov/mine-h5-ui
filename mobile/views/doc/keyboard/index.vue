@@ -10,10 +10,10 @@ const { listData, onClick, handleNum, onDelete, onComplate } = useHandle()
     <ul class="list">
       <li v-for="item in listData" :key="item.id">
         <div class="label">{{ item.label }}</div>
-        <div class="tit" v-for="it in item.list" :key="it.id" @click.stop="onClick(it)">
+        <div v-for="it in item.list" :key="it.id" class="tit" @click.stop="onClick(it)">
           <span>{{ it.label }}</span>
           <me-icon name="icon-right1" size="20px" color="#ccc" />
-          <me-keyboard v-model:visible="it.value" @complate="onComplate" @click="handleNum" @delete="onDelete" :skin-type="it.skinType" :skin-style="it.skinStyle"></me-keyboard>
+          <me-keyboard v-model:visible="it.value" :skin-type="it.skinType" :skin-style="it.skinStyle" @complate="onComplate" @click="handleNum" @delete="onDelete"></me-keyboard>
         </div>
       </li>
     </ul>

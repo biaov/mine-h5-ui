@@ -7,7 +7,7 @@ const { icons, listData, onClick } = useWebData()
 <template>
   <!-- 图标 -->
   <p class="top-tips">点击图标即可复制名称</p>
-  <ul class="icon" ref="icons" data-clipboard-action="copy">
+  <ul ref="icons" class="icon" data-clipboard-action="copy">
     <li v-for="item in listData" :key="item.id">
       <div class="label">{{ item.label }}</div>
       <ul class="list-all">

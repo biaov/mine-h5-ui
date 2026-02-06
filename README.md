@@ -161,8 +161,9 @@ npm run build
 #### devDependencies
 
 - `@eslint/js`: Eslint js 解析器
-- `@types/mockjs`: `mockjs` 的类型
 - `@tailwindcss/vite`: Vite 中配置 Tailwindcss
+- `@types/markdown-it-container`: `markdown-it-container` 的类型
+- `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
 - `@types/postcss-pxtorem`: `postcss-pxtorem` 的类型
 - `@types/qrcode`: `qrcode` 的类型
@@ -172,7 +173,7 @@ npm run build
 - `@vue/test-utils`: 单元测试和集成测试
 - `autoprefixer`: 添加浏览器厂商前缀
 - `eslint`: 代码检查工具
-- `eslint-plugin-prettier`: 检测不符合 Prettier 格式的代码
+- `eslint-config-prettier`: 禁用 Eslint 中与 Prettier 冲突的规则
 - `eslint-plugin-vue`: 检测和修复 Vue 代码
 - `globals`: 全局类型，Node 和 Browser
 - `autoprefixer`: 使用 Gulp 添加浏览器厂商前缀
@@ -193,7 +194,7 @@ npm run build
 - `vite`: 项目构建工具
 - `vite-node`: 执行 ts 文件
 - `vite-plugin-dts`: 生成 `.d.ts` 文件的 Vite 插件
-- `vite-plugin-eslint`: 检查代码格式的 Vite 插件
+- `vite-plugin-eslint2`: 检查代码格式的 Vite 插件
 - `vite-plugin-pwa`: 生成 PWA 的 Vite 插件
 - `vitest`: JS 测试框架
 - `vue-tsc`: 编译 TS 单文件 Vue 文件的工具

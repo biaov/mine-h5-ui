@@ -32,20 +32,20 @@ const { curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHa
   <!-- 上传图片 -->
   <div class="me-upload" :data-disabled="disabled">
     <!-- 展示图片 -->
-    <div class="imgs" v-for="item in listData" :key="item.id" @click="onPreview(item)">
+    <div v-for="item in listData" :key="item.id" class="imgs" @click="onPreview(item)">
       <img :src="item.url" class="img" alt="图片" />
-      <me-icon name="icon-close" color="#dcdee0" size="16px" @click="onDelete($event, item)" v-if="deletable" />
+      <me-icon v-if="deletable" name="icon-close" color="#dcdee0" size="16px" @click="onDelete($event, item)" />
     </div>
     <!-- 上传按钮 -->
-    <div class="upload" v-if="listData.length < maxCount">
+    <div v-if="listData.length < maxCount" class="upload">
       <me-icon name="icon-xiangji" color="#dcdee0" size="20px" />
-      <input type="file" class="file" :multiple="multiple" @change="onChange" :disabled="disabled" />
+      <input type="file" class="file" :multiple="multiple" :disabled="disabled" @change="onChange" />
     </div>
     <!-- 图片预览 -->
-    <div class="preview" v-if="isPreview" @click="closePreview">
+    <div v-if="isPreview" class="preview" @click="closePreview">
       <div class="num">{{ curNum }} / {{ listData.length }}</div>
       <transition-group tag="ul" name="slider" class="slider">
-        <li v-for="item in listData" :key="item.id" v-show="curNum === item.id"><img :src="item.url" alt="图片" /></li>
+        <li v-for="item in listData" v-show="curNum === item.id" :key="item.id"><img :src="item.url" alt="图片" /></li>
       </transition-group>
     </div>
   </div>

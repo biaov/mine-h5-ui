@@ -20,7 +20,7 @@ const { rect, viewBox } = useHandle(props)
 <template>
   <!-- 文本动画 -->
   <div :class="name" :style="useCssVar(rect)">
-    <svg :viewBox="`0 0 ${viewBox.width} ${viewBox.height}`" :width="rect.width" :height="rect.height" v-if="type === typeGroup.default">
+    <svg v-if="type === typeGroup.default" :viewBox="`0 0 ${viewBox.width} ${viewBox.height}`" :width="rect.width" :height="rect.height">
       <text x="50%" y="50%" class="text" dominant-baseline="central">
         {{ text }}
       </text>

@@ -16,7 +16,7 @@ const { isShow } = useHandler(props)
 
 <template>
   <!-- 标签选项 -->
-  <div class="me-tab-item" v-show="isShow">
+  <div v-show="isShow" class="me-tab-item">
     <slot></slot>
   </div>
 </template>

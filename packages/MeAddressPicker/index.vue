@@ -24,7 +24,7 @@ const { onCancel, onSure } = useBtns({ props, emit, currentValue, modelValue })
 <template>
   <!-- 时间选择器 -->
   <transition name="translate">
-    <div class="me-address-picker" v-if="visible">
+    <div v-if="visible" class="me-address-picker">
       <!-- 头部按钮 -->
       <div class="hd">
         <button type="button" class="cancel" @click="onCancel">取消</button>

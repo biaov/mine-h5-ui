@@ -33,11 +33,11 @@ const { sizeValue } = useSize(props)
 
 <template>
   <!-- 颜色选择器 -->
-  <div :class="name" ref="colorNode" @click="onToggle">
+  <div ref="colorNode" :class="name" @click="onToggle">
     <slot></slot>
-    <div :class="`${name}-inner`" :style="`--color:${showColor};--size:${sizeValue.size}px;fontSize:${sizeValue.fontSize}px;`" v-if="!solts.default">
+    <div v-if="!solts.default" :class="`${name}-inner`" :style="`--color:${showColor};--size:${sizeValue.size}px;fontSize:${sizeValue.fontSize}px;`">
       <div class="inner-block"></div>
-      <div class="inner-label" v-if="showText">{{ filterText(modelValue) }}</div>
+      <div v-if="showText" class="inner-label">{{ filterText(modelValue) }}</div>
     </div>
   </div>
   <DropDown v-model="modelValue" v-model:visible="dropdown" :rect="colorRect" :duration="400" />

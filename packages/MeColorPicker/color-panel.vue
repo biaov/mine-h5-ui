@@ -55,7 +55,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="color-panel" :style="`background-color:${background};`" ref="colorPanelNode">
+  <div ref="colorPanelNode" class="color-panel" :style="`background-color:${background};`">
     <div class="color-panel__btn" :style="`left:${point.x}%;top:${point.y}%;`"></div>
   </div>
 </template>
