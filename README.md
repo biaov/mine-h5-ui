@@ -174,7 +174,6 @@ npm run build
 - `autoprefixer`: 添加浏览器厂商前缀
 - `eslint`: 代码检查工具
 - `eslint-config-prettier`: 禁用 Eslint 中与 Prettier 冲突的规则
-- `eslint-plugin-prettier`: 检测不符合 Prettier 格式的代码
 - `eslint-plugin-vue`: 检测和修复 Vue 代码
 - `globals`: 全局类型，Node 和 Browser
 - `autoprefixer`: 使用 Gulp 添加浏览器厂商前缀
