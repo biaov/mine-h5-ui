@@ -26,7 +26,7 @@
     "test:unit:single": "vitest dev tests/unit/collapse.spec.ts",
     "test:ui": "vite-node ./tests/ui/index.ts",
     "prepare": "husky",
-    "pre-publish": "node --experimental-strip-types scripts/pre-publish.ts",
+    "pre-publish": "node scripts/pre-publish.ts",
     "pre-publish:github": "set NODE_PRE=github && node --experimental-strip-types scripts/pre-publish.ts && start cmd /k cd ./dist/packages",
     "lint": "eslint --fix ./**",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
@@ -34,7 +34,7 @@
   },
   "types": "es/index.d.ts",
   "engines": {
-    "node": ">=24"
+    "node": ">=24.3"
   },
   "keywords": [
     "组件库",
