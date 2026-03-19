@@ -27,10 +27,10 @@
     "test:ui": "vite-node ./tests/ui/index.ts",
     "prepare": "husky",
     "pre-publish": "node scripts/pre-publish.ts",
-    "pre-publish:github": "set NODE_PRE=github && node --experimental-strip-types scripts/pre-publish.ts && start cmd /k cd ./dist/packages",
+    "pre-publish:github": "set NODE_PRE=github && node scripts/pre-publish.ts && start cmd /k cd ./dist/packages",
     "lint": "eslint --fix ./**",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
-    "tag": "node --experimental-strip-types scripts/tag.ts"
+    "tag": "node scripts/tag.ts"
   },
   "types": "es/index.d.ts",
   "engines": {
