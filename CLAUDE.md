@@ -27,11 +27,11 @@ npm run tag                 # 打版本标签
 
 ### 三大部分
 
-| 目录 | 别名 | 说明 |
-|------|------|------|
-| `packages/` | `~/` | 组件库源码，每个组件一个目录 |
+| 目录        | 别名 | 说明                             |
+| ----------- | ---- | -------------------------------- |
+| `packages/` | `~/` | 组件库源码，每个组件一个目录     |
 | `examples/` | `@/` | 桌面端文档站点 (Vite 多页面应用) |
-| `mobile/` | `^/` | 移动端文档预览站点 |
+| `mobile/`   | `^/` | 移动端文档预览站点               |
 
 `dist/packages/` 构建产物使用别名 `#/`。
 
@@ -39,7 +39,7 @@ npm run tag                 # 打版本标签
 
 每个组件目录遵循统一结构（以 `MeButton` 为例）：
 
-```
+```md
 MeButton/
 ├── index.ts       # 入口：import 组件 .vue + addInstall(app) 注册
 ├── hooks.ts       # 组合式逻辑 (事件处理、状态管理等)
@@ -65,6 +65,7 @@ MeButton/
 ### 文档站点路由
 
 文档页面通过 Markdown 自动生成路由：
+
 - `examples/config/routes.json` 定义导航结构
 - `examples/config/nav.config.ts` 解析 JSON 为路由配置
 - `examples/router/docs.ts` 动态 import `examples/docs/*.md` 文件，使用 `unplugin-vue-markdown` 将 Markdown 转为 Vue 组件
