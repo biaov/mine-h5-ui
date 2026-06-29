@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# 读取提交信息
+commit_msg=$(cat "$1")
+
+# 校验提交信息格式
+# 修复缺陷: fix: xxx
+# 新增功能: feat: xxx
+# 新增文档: doc: xxx
+if ! echo "$commit_msg" | grep -qE '^(fix|feat|doc): .+'; then
+  echo ""
+  echo "❌ 提交信息格式不符合规范！"
+  echo ""
+  echo "  修复缺陷格式：fix: xxx"
+  echo "  新增功能格式：feat: xxx"
+  echo "  新增文档格式：doc: xxx"
+  echo ""
+  echo "  示例: fix: 修复登录按钮样式问题"
+  echo ""
+  exit 1
+fi
