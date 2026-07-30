@@ -7,7 +7,7 @@ commit_msg=$(cat "$1")
 # 修复缺陷: fix: xxx
 # 新增功能: feat: xxx
 # 新增文档: doc: xxx
-if ! echo "$commit_msg" | grep -qE '^(fix|feat|doc): .+'; then
+if ! echo "$commit_msg" | grep -qE '^(fix|feat|doc):.+'; then
   echo ""
   echo "❌ 提交信息格式不符合规范！"
   echo ""
