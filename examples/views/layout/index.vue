@@ -27,7 +27,9 @@ onMounted(() => {
     <mine-header />
     <!-- 内容 -->
     <div class="content relative z-2 text-center">
-      <div class="w-220 mx-auto my-0"><img src="../../assets/logo.svg" alt="mine-h5-ui" /></div>
+      <div class="w-220 mx-auto my-0">
+        <img src="../../assets/logo.svg" alt="mine-h5-ui" />
+      </div>
       <h1 class="tit mt-56 text-3xl px-20">{{ libraryInfo.description }}</h1>
       <p class="desc text-lg mx-0 mt-10 mb-50 px-20 uppercase">
         如果你还冇心仪的 UI 框架，不妨试试
@@ -38,8 +40,12 @@ onMounted(() => {
         <li>
           <router-link to="/doc">开始使用</router-link>
         </li>
-        <li><a :href="githubLink" target="_blank" rel="noopener noreferrer">gitHub</a></li>
-        <li><a href="https://wordpress.biaov.cn/mine-h5-ui/" target="_blank" rel="noopener noreferrer">markdown 文档</a></li>
+        <li>
+          <a :href="githubLink" target="_blank" rel="noopener noreferrer">gitHub</a>
+        </li>
+        <li>
+          <a href="https://wordpress.biaov.cn/mine-h5-ui/" target="_blank" rel="noopener noreferrer">markdown 文档</a>
+        </li>
       </ul>
     </div>
   </div>

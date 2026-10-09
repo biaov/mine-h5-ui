@@ -145,7 +145,14 @@ export const useHandle = ({ props, emit, modelValue, visible }: USEHandle.Option
     Array.from({ length: startW }, (_, i) => {
       const newDay = prevTotalDay - i
       const tempDate = `${ny}-${nm}-${newDay}`
-      curDays.push({ y: ny, m: nm, d: newDay, value: addZero(newDay), disabled: true, today: tempDate === nowDate })
+      curDays.push({
+        y: ny,
+        m: nm,
+        d: newDay,
+        value: addZero(newDay),
+        disabled: true,
+        today: tempDate === nowDate
+      })
     })
     /**
      * 当月总天数
@@ -170,7 +177,14 @@ export const useHandle = ({ props, emit, modelValue, visible }: USEHandle.Option
     Array.from({ length: total - curDays.length }, (_, i) => {
       const nd = i + 1
       const tempDate = `${nextY}-${nextM}-${nd}`
-      curDays.push({ y: nextY, m: nextM, d: nd, value: addZero(nd), disabled: true, today: tempDate === nowDate })
+      curDays.push({
+        y: nextY,
+        m: nextM,
+        d: nd,
+        value: addZero(nd),
+        disabled: true,
+        today: tempDate === nowDate
+      })
     })
 
     days.value = curDays
@@ -235,5 +249,14 @@ export const useHandle = ({ props, emit, modelValue, visible }: USEHandle.Option
     emit('change', value)
   })
 
-  return { getStyle, week, dateInfo, days, onYearItem, onMonthItem, onDayItem, initData }
+  return {
+    getStyle,
+    week,
+    dateInfo,
+    days,
+    onYearItem,
+    onMonthItem,
+    onDayItem,
+    initData
+  }
 }

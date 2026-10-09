@@ -23,7 +23,10 @@ const props = withDefaults(defineProps<Props>(), {
  * 是否显示弹出层
  */
 const visibleModel = defineModel<boolean>('visible', { default: false })
-const { isShow, isShowMask, hideMask, animationDuration } = useMask({ emit, visibleModel })
+const { isShow, isShowMask, hideMask, animationDuration } = useMask({
+  emit,
+  visibleModel
+})
 const { setRadius } = useRadius(props)
 </script>
 

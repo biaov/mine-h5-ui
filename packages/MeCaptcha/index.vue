@@ -14,7 +14,10 @@ const props = defineProps<Props>()
 const visible = defineModel<boolean>('visible', { default: false })
 const statusCode = defineModel<number>('statusCode', { default: 0 })
 
-const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { visible, statusCode })
+const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, {
+  visible,
+  statusCode
+})
 </script>
 
 <template>
@@ -41,7 +44,9 @@ const { moveX, imgRect, rectAni, onClose, onRefresh } = useSlide(props, emit, { 
           </div>
         </div>
         <div class="captcha-footer">
-          <div class="captcha-footer__left">{{ [2, 3].includes(statusCode) ? '验证错误，请重试' : '' }}</div>
+          <div class="captcha-footer__left">
+            {{ [2, 3].includes(statusCode) ? '验证错误，请重试' : '' }}
+          </div>
           <img :src="assets.refresh" class="captcha-footer__right" @click="onRefresh" />
         </div>
       </div>

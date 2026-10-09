@@ -269,7 +269,13 @@ export const useResize = ({ listData, getCurItem, onEmitChange, onUpdate, curren
      * 当前触摸点坐标
      */
     const curPoint = { x: clientX, y: clientY }
-    const resultRect = calcSize(item.cursor as CalcSizeName, { startPoint, centerPoint, symmPoint, curPoint, rect: getCurItem.value })
+    const resultRect = calcSize(item.cursor as CalcSizeName, {
+      startPoint,
+      centerPoint,
+      symmPoint,
+      curPoint,
+      rect: getCurItem.value
+    })
     const { x, y } = getDragRect.value!
     resultRect.x -= x
     resultRect.y -= y
@@ -297,7 +303,13 @@ export const useResize = ({ listData, getCurItem, onEmitChange, onUpdate, curren
        * 当前触摸点坐标
        */
       const curPoint = { x: ev.clientX, y: ev.clientY }
-      const resultRect = calcSize(item.cursor as CalcSizeName, { startPoint, centerPoint, symmPoint, curPoint, rect: getCurItem.value })
+      const resultRect = calcSize(item.cursor as CalcSizeName, {
+        startPoint,
+        centerPoint,
+        symmPoint,
+        curPoint,
+        rect: getCurItem.value
+      })
       const { x, y } = getDragRect.value!
       resultRect.x -= x
       resultRect.y -= y
@@ -321,7 +333,13 @@ export const useResize = ({ listData, getCurItem, onEmitChange, onUpdate, curren
     }
   }
 
-  return { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint }
+  return {
+    dragRef,
+    onResizeTouchstart,
+    onResizeTouchmove,
+    onResizeMousedown,
+    getCenterPoint
+  }
 }
 
 /**

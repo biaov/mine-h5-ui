@@ -18,7 +18,10 @@ withDefaults(defineProps<Props>(), {
 })
 
 const currentValue = defineModel<string | number>({ default: '' })
-const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots({ emit, currentValue })
+const { tabsDom, tabList, transX, duration, curIndex, onClick } = useInitSlots({
+  emit,
+  currentValue
+})
 </script>
 
 <template>

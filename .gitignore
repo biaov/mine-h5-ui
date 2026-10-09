@@ -8,3 +8,4 @@ pnpm-lock.yaml
 *.lock
 .git
 .env.local
+!.claude/*

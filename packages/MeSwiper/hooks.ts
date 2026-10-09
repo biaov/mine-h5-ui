@@ -302,7 +302,17 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
   onMounted(updateValue)
   onUnmounted(closeAnimate)
 
-  return { swiperDom, dots, dotIndex, currentValue, isActive, onTouchstart, onTouchmove, onTouchend, onMousedown }
+  return {
+    swiperDom,
+    dots,
+    dotIndex,
+    currentValue,
+    isActive,
+    onTouchstart,
+    onTouchmove,
+    onTouchend,
+    onMousedown
+  }
 }
 
 /**
@@ -311,7 +321,9 @@ export const useHandMove = (props: Readonly<PropsHookParam>, emit: Emits) => {
 export const useStyle = (props: Readonly<PropsHookParam>) => {
   const className = ref('')
   const renderStyle = computed(() => {
-    const style: Record<string, string> = { 'border-radius': `${props.radius}px` }
+    const style: Record<string, string> = {
+      'border-radius': `${props.radius}px`
+    }
     if (!props.height) return style
     className.value = 'me-swiper-full-screen'
     style.height = parseInt(`${props.height}`) === props.height ? `${props.height}px` : (props.height as string)

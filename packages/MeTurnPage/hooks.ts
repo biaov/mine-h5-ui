@@ -28,7 +28,12 @@ const bezier = (p1: Point, p2: Point, p3: Point, p4: Point, t: number) => {
  * 边维最大值
  */
 const initCorner = (corner: string, { width, height }: RectType) =>
-  ({ tl: point2D(width * 2, 0), tr: point2D(-width, 0), bl: point2D(width * 2, height), br: point2D(-width, height) })[corner] as Point
+  ({
+    tl: point2D(width * 2, 0),
+    tr: point2D(-width, 0),
+    bl: point2D(width * 2, height),
+    br: point2D(-width, height)
+  })[corner] as Point
 
 /**
  * 计算样式
@@ -50,7 +55,9 @@ export const useComputeStyle = ({ point, width, height }: USEComputeStyle.Option
       return `color-stop(${start}, ${end})`
     })
 
-    return { 'background-image': `-webkit-gradient(linear, ${p0.x}% ${p0.y}%,  ${p1.x}% ${p1.y}%, ${cols.join(',')} )` }
+    return {
+      'background-image': `-webkit-gradient(linear, ${p0.x}% ${p0.y}%,  ${p1.x}% ${p1.y}%, ${cols.join(',')} )`
+    }
   }
 
   /**
@@ -62,7 +69,12 @@ export const useComputeStyle = ({ point, width, height }: USEComputeStyle.Option
    * 初始化起始点
    */
   const initData = (corner: string, opts = 0) =>
-    ({ tl: point2D(opts, opts), tr: point2D(width - opts, opts), bl: point2D(opts, height - opts), br: point2D(width - opts, height - opts) })[corner] as Point
+    ({
+      tl: point2D(opts, opts),
+      tr: point2D(width - opts, opts),
+      bl: point2D(opts, height - opts),
+      br: point2D(width - opts, height - opts)
+    })[corner] as Point
 
   /**
    * CSS 位移
@@ -294,7 +306,14 @@ export const useComputeStyle = ({ point, width, height }: USEComputeStyle.Option
     height: `${width}px`
   }
 
-  return { wrapStyle, fwrapStyle, itemStyle, shadowStyle, turnItemStyle, turnShadowStyle }
+  return {
+    wrapStyle,
+    fwrapStyle,
+    itemStyle,
+    shadowStyle,
+    turnItemStyle,
+    turnShadowStyle
+  }
 }
 
 /**
@@ -527,7 +546,17 @@ export const useTurnPage = (props: Readonly<Required<Props>>, current: Ref<numbe
     return { zIndex }
   })
 
-  return { getItemStyle, wrapStyle, fwrapStyle, itemStyle, shadowStyle, turnItemStyle, turnShadowStyle, current, showValue }
+  return {
+    getItemStyle,
+    wrapStyle,
+    fwrapStyle,
+    itemStyle,
+    shadowStyle,
+    turnItemStyle,
+    turnShadowStyle,
+    current,
+    showValue
+  }
 }
 
 /**

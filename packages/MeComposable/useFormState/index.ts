@@ -63,5 +63,11 @@ export const useFormState = <T extends Record<string, unknown>>(initState?: T, e
     return true
   }
 
-  return { formState, setFormState, setFormRules, validFormState, resetFormState }
+  return {
+    formState,
+    setFormState,
+    setFormRules,
+    validFormState,
+    resetFormState
+  }
 }

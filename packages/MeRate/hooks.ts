@@ -8,7 +8,12 @@ export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
   /**
    * 列表样式
    */
-  const listData = ref(Array.from({ length: props.count }, (_, i) => ({ id: i + 1, state: false })))
+  const listData = ref(
+    Array.from({ length: props.count }, (_, i) => ({
+      id: i + 1,
+      state: false
+    }))
+  )
 
   /**
    * 点击按钮

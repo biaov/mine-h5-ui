@@ -4,7 +4,7 @@ import type { MarkdownItAsync, PluginWithParams } from 'markdown-it-async'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { ESLintPluginUserOptions } from 'vite-plugin-eslint2'
-import type { MarkdownViteOptions, TokenItem } from './types'
+import type { MarkdownViteOptions, TokenItem } from './types.ts'
 
 /**
  * Vite 插件配置
@@ -33,7 +33,10 @@ export const markdownViteConfig: MarkdownViteOptions = {
      */
     // const themes = ['github-light', 'github-dark', 'dark-plus', 'light-plus']
     const theme = 'github-light'
-    const highlighter = await getSingletonHighlighter({ themes: [theme], langs: Object.keys(bundledLanguages) })
+    const highlighter = await getSingletonHighlighter({
+      themes: [theme],
+      langs: Object.keys(bundledLanguages)
+    })
     md.set({
       highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang, theme })
     })

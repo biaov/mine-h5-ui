@@ -23,7 +23,9 @@ const { handleLi } = useBtns(emit)
     <!-- 右侧列表值 -->
     <ul class="list-rt">
       <template v-for="(item, index) in list" :key="item.name">
-        <li v-show="filterShow(index)" :class="{ on: item.name === curLetter }" @click="onClickBadge(item, index)">{{ item.name }}</li>
+        <li v-show="filterShow(index)" :class="{ on: item.name === curLetter }" @click="onClickBadge(item, index)">
+          {{ item.name }}
+        </li>
       </template>
     </ul>
     <!-- 内容列表 -->

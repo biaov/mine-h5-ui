@@ -129,11 +129,21 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
     () => props.list,
     value => {
       const height = props.itemHeight || 100
-      listData.value = value.map((item, virtualId) => ({ ...item, virtualId, height }))
+      listData.value = value.map((item, virtualId) => ({
+        ...item,
+        virtualId,
+        height
+      }))
       updateHeight()
     },
     { deep: true, immediate: true }
   )
 
-  return { scrollBarHeight, scrollTranslateY, renderData, onScroll, setItemRef }
+  return {
+    scrollBarHeight,
+    scrollTranslateY,
+    renderData,
+    onScroll,
+    setItemRef
+  }
 }

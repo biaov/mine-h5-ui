@@ -23,7 +23,9 @@ describe('MeColorPicker 颜色选择器', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeColorPicker, { props: { modelValue: { type: 'rgb', value, alpha } } })
+    const wrapper = mount(MeColorPicker, {
+      props: { modelValue: { type: 'rgb', value, alpha } }
+    })
     /**
      * 获取 DOM
      */
@@ -62,7 +64,9 @@ describe('MeColorPicker 颜色选择器', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeColorPicker, { props: { filterText: () => text, showText: true } })
+    const wrapper = mount(MeColorPicker, {
+      props: { filterText: () => text, showText: true }
+    })
 
     /**
      * 获取 DOM

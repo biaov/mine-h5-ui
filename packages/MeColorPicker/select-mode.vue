@@ -7,7 +7,9 @@ import type { ColorTypeOptionItem, DefineModelOption } from './types'
 import { rgbExtractNum, setModelValue } from './utils'
 import { getDefaultValue } from './config'
 
-const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
+const modelValue = defineModel<DefineModelOption.ModelValue>({
+  default: getDefaultValue()
+})
 
 const parseValue = ref([0, 0, 0])
 const modeSelect = ref('')
@@ -80,7 +82,9 @@ watch(
         <div v-if="visibleDropdown">
           <div class="child-dropdown--mask" @click="onSetVisibleDropdown(false)"></div>
           <ul class="child-dropdown">
-            <li v-for="(item, index) in colorType.options()" :key="index" class="item" :class="{ active: modelValue.type === item.value }" @click="onSelect(item)">{{ item.value }}</li>
+            <li v-for="(item, index) in colorType.options()" :key="index" class="item" :class="{ active: modelValue.type === item.value }" @click="onSelect(item)">
+              {{ item.value }}
+            </li>
           </ul>
         </div>
       </transition>

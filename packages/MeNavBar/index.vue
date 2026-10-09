@@ -40,7 +40,9 @@ const { onClickLeft, onClickRight } = useHandler(emit)
     <h2 class="tit" :style="`color:${styles.titleColor};`">{{ title }}</h2>
     <!-- 右侧按钮 -->
     <div class="rt">
-      <div v-if="rightText" class="btn" :style="`color:${styles.rightColor};`" @click="onClickRight">{{ rightText }}</div>
+      <div v-if="rightText" class="btn" :style="`color:${styles.rightColor};`" @click="onClickRight">
+        {{ rightText }}
+      </div>
       <slot v-else></slot>
     </div>
   </div>

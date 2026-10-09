@@ -5,7 +5,10 @@ import type { OptionApi, USEScrollOption } from './types'
 /**
  * 过滤 actions
  */
-export const filterActions = (driver: WebDriver) => driver.actions() as Actions & { scroll: (sx: number, sy: number, ex: number, ey: number, elem?: WebElement) => Actions }
+export const filterActions = (driver: WebDriver) =>
+  driver.actions() as Actions & {
+    scroll: (sx: number, sy: number, ex: number, ey: number, elem?: WebElement) => Actions
+  }
 /**
  * 滚动
  */

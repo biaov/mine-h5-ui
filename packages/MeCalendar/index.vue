@@ -50,7 +50,14 @@ const { showAnimation, destroy, onClose } = useShow({ visible }, initData)
     </div>
     <div class="calendar-day">
       <div v-for="(item, index) in days" :key="index" class="item" @click="onDayItem(item, index)">
-        <div class="item-box" :class="{ disabled: item.disabled, selected: item.selected, today: item.today }">
+        <div
+          class="item-box"
+          :class="{
+            disabled: item.disabled,
+            selected: item.selected,
+            today: item.today
+          }"
+        >
           {{ item.value }}
         </div>
       </div>

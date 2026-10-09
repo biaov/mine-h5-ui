@@ -16,7 +16,13 @@ export const useHandler = ({ props, emit, modelValue }: USEHandler.Option) => {
   /**
    * 生成对象
    */
-  const listData = ref(Array.from({ length: props.num }, (_, k) => ({ id: k + 1, value: valueArr[k] || '', state: false })))
+  const listData = ref(
+    Array.from({ length: props.num }, (_, k) => ({
+      id: k + 1,
+      value: valueArr[k] || '',
+      state: false
+    }))
+  )
 
   /**
    * 点击按钮

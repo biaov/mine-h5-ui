@@ -10,7 +10,9 @@ const { listData, filterColor } = useWebData()
     <li v-for="(item, index) in listData" :key="index">
       <div class="label">{{ item.label }}</div>
       <me-color-picker v-if="item.customShow" v-model="item.props.value">
-        <div class="w-100 h-40 text-white flex justify-center items-center uppercase" :style="{ background: filterColor(item) }">{{ item.props.value?.type }}</div>
+        <div class="w-100 h-40 text-white flex justify-center items-center uppercase" :style="{ background: filterColor(item) }">
+          {{ item.props.value?.type }}
+        </div>
       </me-color-picker>
       <template v-else-if="item.size">
         <me-space size="40px">

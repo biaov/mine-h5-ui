@@ -235,5 +235,15 @@ export const useHandMove = ({ emit, modelValue }: USEHandMove.Option) => {
       }, 600)
     }
   })
-  return { activeState, transY, scale, showValue, duration, onTouchstart, onTouchmove, onTouchend, onMousedown }
+  return {
+    activeState,
+    transY,
+    scale,
+    showValue,
+    duration,
+    onTouchstart,
+    onTouchmove,
+    onTouchend,
+    onMousedown
+  }
 }

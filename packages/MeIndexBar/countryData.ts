@@ -102,7 +102,11 @@ const CountryData = [
       { code: 'FI', en: 'Finland', cn: '芬兰' },
       { code: 'FJ', en: 'Fiji', cn: '斐济群岛' },
       { code: 'FK', en: 'Falkland Islands', cn: '马尔维纳斯群岛（福克兰）' },
-      { code: 'FM', en: 'Federated States of Micronesia', cn: '密克罗尼西亚联邦' },
+      {
+        code: 'FM',
+        en: 'Federated States of Micronesia',
+        cn: '密克罗尼西亚联邦'
+      },
       { code: 'FO', en: 'Faroe Islands', cn: '法罗群岛' },
       { code: 'FR', en: 'France', cn: '法国 法国' }
     ]
@@ -124,7 +128,11 @@ const CountryData = [
       { code: 'GP', en: 'Guadeloupe', cn: '瓜德罗普' },
       { code: 'GQ', en: 'Equatorial Guinea', cn: '赤道几内亚' },
       { code: 'GR', en: 'Greece', cn: '希腊' },
-      { code: 'GS', en: 'South Georgia and the South Sandwich Islands', cn: '南乔治亚岛和南桑威奇群岛' },
+      {
+        code: 'GS',
+        en: 'South Georgia and the South Sandwich Islands',
+        cn: '南乔治亚岛和南桑威奇群岛'
+      },
       { code: 'GT', en: 'Guatemala', cn: '危地马拉' },
       { code: 'GU', en: 'Guam', cn: '关岛' },
       { code: 'GW', en: 'Guinea-Bissau', cn: '几内亚比绍' },
@@ -135,7 +143,11 @@ const CountryData = [
     name: 'H',
     cities: [
       { code: 'HK', en: 'Hong Kong', cn: '香港' },
-      { code: 'HM', en: 'Heard Island and McDonald Islands', cn: '赫德岛和麦克唐纳群岛' },
+      {
+        code: 'HM',
+        en: 'Heard Island and McDonald Islands',
+        cn: '赫德岛和麦克唐纳群岛'
+      },
       { code: 'HN', en: 'Honduras', cn: '洪都拉斯' },
       { code: 'HR', en: 'Croatia', cn: '克罗地亚' },
       { code: 'HT', en: 'Haiti', cn: '海地' },
@@ -150,7 +162,11 @@ const CountryData = [
       { code: 'IL', en: 'Israel', cn: '以色列' },
       { code: 'IM', en: 'Isle of Man', cn: '马恩岛' },
       { code: 'IN', en: 'India', cn: '印度' },
-      { code: 'IO', en: 'British Indian Ocean Territory', cn: '英属印度洋领地' },
+      {
+        code: 'IO',
+        en: 'British Indian Ocean Territory',
+        cn: '英属印度洋领地'
+      },
       { code: 'IQ', en: 'Iraq', cn: '伊拉克' },
       { code: 'IR', en: 'Iran', cn: '伊朗' },
       { code: 'IS', en: 'Iceland', cn: '冰岛' },
@@ -291,7 +307,11 @@ const CountryData = [
       { code: 'SG', en: 'Singapore', cn: '新加坡' },
       { code: 'SH', en: 'St. Helena & Dependencies', cn: '圣赫勒拿' },
       { code: 'SI', en: 'Slovenia', cn: '斯洛文尼亚' },
-      { code: 'SJ', en: 'Svalbard and Jan Mayen', cn: '斯瓦尔巴群岛和扬马延岛' },
+      {
+        code: 'SJ',
+        en: 'Svalbard and Jan Mayen',
+        cn: '斯瓦尔巴群岛和扬马延岛'
+      },
       { code: 'SK', en: 'Slovakia', cn: '斯洛伐克' },
       { code: 'SL', en: 'Sierra Leone', cn: '塞拉利昂' },
       { code: 'SM', en: 'San Marino', cn: '圣马力诺' },
@@ -333,7 +353,11 @@ const CountryData = [
       { code: 'US', en: 'United States of America (USA)', cn: '美国' },
       { code: 'UA', en: 'Ukraine', cn: '乌克兰' },
       { code: 'UG', en: 'Uganda', cn: '乌干达' },
-      { code: 'UM', en: 'United States Minor Outlying Islands', cn: '美国本土外小岛屿' },
+      {
+        code: 'UM',
+        en: 'United States Minor Outlying Islands',
+        cn: '美国本土外小岛屿'
+      },
       { code: 'UY', en: 'Uruguay', cn: '乌拉圭' },
       { code: 'UZ', en: 'Uzbekistan', cn: '乌兹别克斯坦' }
     ]
@@ -342,7 +366,11 @@ const CountryData = [
     name: 'V',
     cities: [
       { code: 'VA', en: 'Vatican City (The Holy See)', cn: '梵蒂冈' },
-      { code: 'VC', en: 'St. Vincent & the Grenadines', cn: '圣文森特和格林纳丁斯' },
+      {
+        code: 'VC',
+        en: 'St. Vincent & the Grenadines',
+        cn: '圣文森特和格林纳丁斯'
+      },
       { code: 'VE', en: 'Venezuela', cn: '委内瑞拉' },
       { code: 'VG', en: 'British Virgin Islands', cn: '英属维尔京群岛' },
       { code: 'VI', en: 'United States Virgin Islands', cn: '美属维尔京群岛' },

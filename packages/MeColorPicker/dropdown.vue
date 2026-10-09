@@ -19,7 +19,9 @@ const props = withDefaults(defineProps<DropDown.Props>(), {
   })
 })
 const visible = defineModel<boolean>('visible', { default: false })
-const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
+const modelValue = defineModel<DefineModelOption.ModelValue>({
+  default: getDefaultValue()
+})
 
 /**
  * 下拉区域数据
@@ -112,7 +114,11 @@ watch(
     const x = hsbToRect({ value: s, type: hsbKey.s, reverse: true })
     const y = hsbToRect({ value: b, type: hsbKey.b, reverse: true })
     colorPanel.value = { x, y }
-    progress.value.entity.value = hsbToRect({ value: h, type: hsbKey.h, reverse: true })
+    progress.value.entity.value = hsbToRect({
+      value: h,
+      type: hsbKey.h,
+      reverse: true
+    })
     progress.value.entity.dotBg = `hsl(${h},100%,50%)`
     progress.value.opacity.value = newValue.alpha
     progress.value.opacity.dotBg = rgbToRgba(rgb, progress.value.opacity.value)

@@ -181,19 +181,10 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
     /**
      * 当前拖动值
      */
-    let current = 0
-
-    if ([4, 5].includes(i)) {
-      /**
-       * 判断是否为数值
-       */
-      current = typeof list === 'number' ? count : list[count]
-    } else {
-      /**
-       * 判断是否为数值
-       */
-      current = typeof list === 'number' ? count + 1 : list[count]
-    }
+    /**
+     * 判断是否为数值
+     */
+    const current = [4, 5].includes(i) ? (typeof list === 'number' ? count : list[count]) : typeof list === 'number' ? count + 1 : list[count]
 
     /**
      * 拖动月份且存在日期, 则日期要改变
@@ -308,23 +299,12 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
      * 判断是否处于理想位置, 0 表示理想位置, 不需要再移动到理想位置
      */
     if (surplus !== 0) {
-      let tarDir = 0
       /**
        * 手指向下滑: 不能大于 22（每项的一半高度）
        * 手指向上滑: 不能小于 - 22（每项的一半高度）
        * 手指向上滑动大于 0
        */
-      if (surplus > 0) {
-        /**
-         * 理想移动的距离
-         */
-        tarDir = surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus
-      } else {
-        /**
-         * 理想移动的距离
-         */
-        tarDir = surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
-      }
+      const tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
       /**
        * 获取当前列项的列表内容
        */
@@ -436,23 +416,12 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
        * 判断是否处于理想位置, 0 表示理想位置, 不需要再移动到理想位置
        */
       if (surplus !== 0) {
-        let tarDir = 0
         /**
          * 手指向下滑: 不能大于 22（每项的一半高度）
          * 手指向上滑: 不能小于 - 22（每项的一半高度）
          * 手指向上滑动大于 0
          */
-        if (surplus > 0) {
-          /**
-           * 理想移动的距离
-           */
-          tarDir = surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus
-        } else {
-          /**
-           * 理想移动的距离
-           */
-          tarDir = surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
-        }
+        const tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
         /**
          * 获取当前列项的列表内容
          */
@@ -496,7 +465,19 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
     }
   }
 
-  return { show, currentValue, listData, distance, duration, filterNumber, getCurNum, onTouchstart, onTouchmove, onTouchend, onMousedown }
+  return {
+    show,
+    currentValue,
+    listData,
+    distance,
+    duration,
+    filterNumber,
+    getCurNum,
+    onTouchstart,
+    onTouchmove,
+    onTouchend,
+    onMousedown
+  }
 }
 
 /**
