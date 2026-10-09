@@ -14,7 +14,6 @@
     "types": ["vite/client", "node", "vitest/globals"],
 
     /* 路径别名 */
-    "baseUrl": "./",
     "paths": {
       "@/*": ["./examples/*"],
       "~/*": ["./packages/*"],
@@ -45,7 +44,9 @@
     "package.json",
     "tests/vitest.setup.ts",
     "tests/jest-canvas-mock.ts",
-    "tests/ui/vite.config.ts"
+    "tests/ui/vite.config.ts",
+    "scripts/**/*.ts",
+    "config/**/*.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }

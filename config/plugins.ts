@@ -1,6 +1,6 @@
 import { getSingletonHighlighter, bundledLanguages } from 'shiki'
 import MarkdownItContainer from 'markdown-it-container'
-import type { MarkdownItAsync, PluginWithParams } from 'markdown-it-async'
+import type { MarkdownExit, PluginWithParams } from 'markdown-exit'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { ESLintPluginUserOptions } from 'vite-plugin-eslint2'
@@ -11,7 +11,7 @@ import type { MarkdownViteOptions, TokenItem } from './types.ts'
  */
 export const markdownViteConfig: MarkdownViteOptions = {
   wrapperClasses: 'md-wrap',
-  markdownItSetup: async (md: MarkdownItAsync) => {
+  markdownItSetup: async (md: MarkdownExit) => {
     /**
      * 时间线
      */

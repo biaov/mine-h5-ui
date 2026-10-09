@@ -1,10 +1,10 @@
-import type { MarkdownItAsync } from 'markdown-it-async'
+import type { MarkdownExit } from 'markdown-exit'
 
 /**
  * markdown vite 配置
  */
 export interface MarkdownViteOptions {
-  markdownItSetup?: (MarkdownIt: MarkdownItAsync) => void | Promise<void>
+  markdownItSetup?: (MarkdownIt: MarkdownExit) => void | Promise<void>
   wrapperClasses?: string | string[] | undefined | null | ((id: string, code: string) => string | string[] | undefined | null)
 }
 
