@@ -304,7 +304,7 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
        * 手指向上滑: 不能小于 - 22（每项的一半高度）
        * 手指向上滑动大于 0
        */
-      const tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
+      let tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
       /**
        * 获取当前列项的列表内容
        */
@@ -421,7 +421,7 @@ export const useHandMove = (props: Readonly<Required<Props>>) => {
          * 手指向上滑: 不能小于 - 22（每项的一半高度）
          * 手指向上滑动大于 0
          */
-        const tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
+        let tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
         /**
          * 获取当前列项的列表内容
          */
