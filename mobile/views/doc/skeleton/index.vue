@@ -12,7 +12,9 @@ const { listData, onChange } = useWebData()
       <me-switch v-if="item.rows" v-model="item.visible" @change="onChange(item)">加载完成</me-switch>
       <me-skeleton v-bind="item">
         <template v-if="item.rows">
-          <div v-for="(text, i) in item.rows" :key="i" class="row">{{ text }}</div>
+          <div v-for="(text, i) in item.rows" :key="i" class="row">
+            {{ text }}
+          </div>
         </template>
       </me-skeleton>
     </li>

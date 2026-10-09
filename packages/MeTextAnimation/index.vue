@@ -24,7 +24,9 @@ const { rect, viewBox } = useHandle(props)
       <text x="50%" y="50%" class="text" dominant-baseline="central">
         {{ text }}
       </text>
-      <text x="50%" y="50%" class="text cover" dominant-baseline="central">{{ text }}</text>
+      <text x="50%" y="50%" class="text cover" dominant-baseline="central">
+        {{ text }}
+      </text>
     </svg>
     <div v-else-if="type === typeGroup.border" class="border">{{ text }}</div>
   </div>

@@ -19,7 +19,9 @@ const { listData, loadMoreText, onLoadMore } = useHandler()
           </div>
         </template>
         <template #more>
-          <div v-if="list.loadStatus" class="more">{{ loadMoreText[list.loadStatus] }}</div>
+          <div v-if="list.loadStatus" class="more">
+            {{ loadMoreText[list.loadStatus] }}
+          </div>
         </template>
       </me-virtual-list>
     </li>

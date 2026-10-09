@@ -53,5 +53,12 @@ export const useShow = (props: Readonly<Required<Props>>, emit: Emits) => {
     }, 0)
   })
 
-  return { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration }
+  return {
+    isShow,
+    isDestroy,
+    inputValue,
+    onCancel,
+    onConfirm,
+    animationDuration
+  }
 }

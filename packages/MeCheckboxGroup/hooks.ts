@@ -30,7 +30,11 @@ export const useInitSlots = ({ emit, currentValue }: USEInitSlots.Option) => {
     emit('change', currentValue.value)
   }
 
-  provide(MeCheckboxGroupKey, { name: MeCheckboxGroupKey, currentValue, onChange })
+  provide(MeCheckboxGroupKey, {
+    name: MeCheckboxGroupKey,
+    currentValue,
+    onChange
+  })
 
   return {}
 }

@@ -16,7 +16,9 @@ const { isShow, onClickFrame, onClickItem } = useShowAction(props)
     <!-- 列表 -->
     <transition name="translate">
       <ul v-if="isShow" class="dropdown absolute w-100 top-36 left-0 py-6 px-0">
-        <li v-for="(item, index) in list" :key="index" class="w-full h-30 leading-30 px-10 py-0" @click="onClickItem(item)">{{ item.version }}</li>
+        <li v-for="(item, index) in list" :key="index" class="w-full h-30 leading-30 px-10 py-0" @click="onClickItem(item)">
+          {{ item.version }}
+        </li>
       </ul>
     </transition>
   </div>

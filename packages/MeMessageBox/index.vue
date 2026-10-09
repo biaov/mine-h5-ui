@@ -29,7 +29,9 @@ const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } 
       <!-- 提示语 -->
       <h3 class="tips">{{ tips }}</h3>
       <!-- Alert 弹出框 / Confirm 确认框 -->
-      <div v-if="['alert', 'confirm'].includes(type)" class="text">{{ message }}</div>
+      <div v-if="['alert', 'confirm'].includes(type)" class="text">
+        {{ message }}
+      </div>
       <!-- Prompt 输入框 -->
       <div v-if="type === 'prompt'" class="prompt">
         <label class="label">{{ message }}</label>
@@ -42,9 +44,13 @@ const { isShow, isDestroy, inputValue, onCancel, onConfirm, animationDuration } 
       <!-- 操作按钮 -->
       <div class="btn">
         <!-- 取消按钮 -->
-        <button v-if="type !== 'alert'" type="button" class="btn-cancel" @click="onCancel">{{ cancelButtonText }}</button>
+        <button v-if="type !== 'alert'" type="button" class="btn-cancel" @click="onCancel">
+          {{ cancelButtonText }}
+        </button>
         <!-- 确认按钮 -->
-        <button type="button" class="btn-confirm" @click="onConfirm">{{ confirmButtonText }}</button>
+        <button type="button" class="btn-confirm" @click="onConfirm">
+          {{ confirmButtonText }}
+        </button>
       </div>
     </div>
   </div>

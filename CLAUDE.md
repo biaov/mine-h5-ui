@@ -41,11 +41,11 @@ npm run tag                 # 打版本标签
 
 ```md
 MeButton/
-├── index.ts       # 入口：import 组件 .vue + addInstall(app) 注册
-├── hooks.ts       # 组合式逻辑 (事件处理、状态管理等)
-├── types.ts       # Props / Emits / 枚举类型定义
-├── index.vue      # 组件模板
-└── (index.less)   # 组件样式，位于 packages/styles/MeButton.less
+├── index.ts # 入口：import 组件 .vue + addInstall(app) 注册
+├── hooks.ts # 组合式逻辑 (事件处理、状态管理等)
+├── types.ts # Props / Emits / 枚举类型定义
+├── index.vue # 组件模板
+└── (index.less) # 组件样式，位于 packages/styles/MeButton.less
 ```
 
 - **`addInstall(component)`** (`packages/utils/index.ts`) — 给组件附加 `install(app)` 方法，使其可通过 `app.use()` 全局注册

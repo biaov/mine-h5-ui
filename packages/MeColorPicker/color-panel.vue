@@ -37,7 +37,10 @@ const moveOption = {
     const iw = sx - rx // 触摸位置距离左边的距离
     const ih = sy - ry // 触摸位置位置距离上边的距离
     startRect = { sx, sy, iw, ih, width, height }
-    point.value = { x: pxToPercentage(iw, width), y: pxToPercentage(ih, height) }
+    point.value = {
+      x: pxToPercentage(iw, width),
+      y: pxToPercentage(ih, height)
+    }
   },
   move: ({ x: ex, y: ey }: USEMoveHandle.OptionEvent) => {
     if (!startRect) return

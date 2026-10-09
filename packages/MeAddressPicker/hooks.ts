@@ -269,23 +269,12 @@ export const useHandMove = () => {
      * 判断是否处于理想位置, 0 表示理想位置, 不需要再移动到理想位置
      */
     if (surplus !== 0) {
-      let tarDir = 0
       /**
        * 手指向下滑: 不能大于 22（每项的一半高度）
        * 手指向上滑: 不能小于 - 22（每项的一半高度）
        * 手指向上滑动大于 0
        */
-      if (surplus > 0) {
-        /**
-         * 理想移动的距离
-         */
-        tarDir = surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus
-      } else {
-        /**
-         * 理想移动的距离
-         */
-        tarDir = surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
-      }
+      const tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
 
       /**
        * 获取当前列项的列表内容
@@ -399,23 +388,12 @@ export const useHandMove = () => {
        * 判断是否处于理想位置, 0 表示理想位置, 不需要再移动到理想位置
        */
       if (surplus !== 0) {
-        let tarDir = 0
         /**
          * 手指向下滑: 不能大于 22（每项的一半高度）
          * 手指向上滑: 不能小于 - 22（每项的一半高度）
          * 手指向上滑动大于 0
          */
-        if (surplus > 0) {
-          /**
-           * 理想移动的距离
-           */
-          tarDir = surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus
-        } else {
-          /**
-           * 理想移动的距离
-           */
-          tarDir = surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
-        }
+        const tarDir = surplus > 0 ? (surplus > 44 / 2 ? oldDist + (44 - surplus) : oldDist - surplus) : surplus < -44 / 2 ? oldDist - (44 + surplus) : oldDist - surplus
 
         /**
          * 获取当前列项的列表内容
@@ -460,7 +438,16 @@ export const useHandMove = () => {
   }
   setCity()
 
-  return { listData, distance, duration, currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown }
+  return {
+    listData,
+    distance,
+    duration,
+    currentValue,
+    onTouchstart,
+    onTouchmove,
+    onTouchend,
+    onMousedown
+  }
 }
 
 /**

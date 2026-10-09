@@ -17,7 +17,9 @@ withDefaults(defineProps<Props>(), {
  */
 const visibleModel = defineModel<boolean>('visible', { default: false })
 
-const { isShowMask, isShow, hideMask, animationDuration } = useShowSheet({ visibleModel })
+const { isShowMask, isShow, hideMask, animationDuration } = useShowSheet({
+  visibleModel
+})
 const { onLi, onCancel } = useBtns({ emit, visibleModel })
 </script>
 
@@ -25,7 +27,9 @@ const { onLi, onCancel } = useBtns({ emit, visibleModel })
   <!-- 动作面板 -->
   <div v-show="isShowMask" class="me-action-sheet" :class="{ show: isShow }" :style="`--animation-duration:${animationDuration}ms;`" @click="hideMask">
     <ul class="list-li" :class="{ on: isShow }" @click.stop>
-      <li v-for="item in list" :key="item[index]" @click.stop="onLi(item)">{{ item[label] }}</li>
+      <li v-for="item in list" :key="item[index]" @click.stop="onLi(item)">
+        {{ item[label] }}
+      </li>
       <li @click.stop="onCancel">取消</li>
     </ul>
   </div>

@@ -31,7 +31,9 @@ const { currentValue, onTouchstart, onTouchmove, onTouchend, onMousedown } = use
   <!-- 滑块 -->
   <div class="me-slider" :data-disabled="disabled">
     <!-- 颜色线条 -->
-    <p class="line" :style="`height:${styles.height};border-radius:${styles.radius};`"><span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span></p>
+    <p class="line" :style="`height:${styles.height};border-radius:${styles.radius};`">
+      <span :style="`background:${styles.lineBgc};transform:translateX(-${currentValue}%);`"></span>
+    </p>
     <!-- 拖拽div -->
     <div class="drag" :style="`left:${100 - currentValue}%;`" @touchstart.prevent="onTouchstart" @touchmove="onTouchmove" @touchend="onTouchend" @mousedown.prevent="onMousedown">
       <!-- 圆点 -->

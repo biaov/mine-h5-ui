@@ -33,7 +33,10 @@ export const markdownViteConfig: MarkdownViteOptions = {
      */
     // const themes = ['github-light', 'github-dark', 'dark-plus', 'light-plus']
     const theme = 'github-light'
-    const highlighter = await getSingletonHighlighter({ themes: [theme], langs: Object.keys(bundledLanguages) })
+    const highlighter = await getSingletonHighlighter({
+      themes: [theme],
+      langs: Object.keys(bundledLanguages)
+    })
     md.set({
       highlight: (code: string, lang: string) => highlighter.codeToHtml(code, { lang, theme })
     })

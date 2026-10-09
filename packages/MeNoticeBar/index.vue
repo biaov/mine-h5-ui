@@ -49,6 +49,8 @@ const { onClick, onClickPreappend, onClickAppend } = useBtns(emit)
       </transition>
     </div>
     <!-- 后面图标 -->
-    <div class="icon icon-append" :style="`color:${appendColor};`" @click="onClickAppend"><i :class="`iconfont icon-${appendIcon}`"></i></div>
+    <div class="icon icon-append" :style="`color:${appendColor};`" @click="onClickAppend">
+      <i :class="`iconfont icon-${appendIcon}`"></i>
+    </div>
   </div>
 </template>

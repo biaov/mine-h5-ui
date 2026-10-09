@@ -30,10 +30,22 @@ const currentModel = defineModel<number>('current', { default: -1 })
 
 const { listData, angleToCursor, getCursor, onDelete, onClick, getCurItem, onEmitChange, onUpdate } = useHandler({ emit, listModel, currentModel })
 const share = { getCurItem, onEmitChange, onUpdate }
-const { onTouchstart, onTouchmove, onMousedown } = useMove({ ...share, listData, currentModel })
+const { onTouchstart, onTouchmove, onMousedown } = useMove({
+  ...share,
+  listData,
+  currentModel
+})
 const { dragRef, onResizeTouchstart, onResizeTouchmove, onResizeMousedown, getCenterPoint } = useResize({ ...share, listData, currentModel })
-const { onRotateTouchmove, onRotateMousedown } = useRotate(props, { ...share, getCenterPoint })
-const { onTouchstartWrap, onTouchmoveWrap } = useScale({ props, ...share, listData, currentModel })
+const { onRotateTouchmove, onRotateMousedown } = useRotate(props, {
+  ...share,
+  getCenterPoint
+})
+const { onTouchstartWrap, onTouchmoveWrap } = useScale({
+  props,
+  ...share,
+  listData,
+  currentModel
+})
 </script>
 
 <template>
@@ -62,9 +74,13 @@ const { onTouchstartWrap, onTouchmoveWrap } = useScale({ props, ...share, listDa
         @mousedown.stop="onResizeMousedown($event, it)"
       ></div>
       <!-- 删除按钮 -->
-      <div class="delete flex-center" @click="onDelete"><i class="iconfont icon-baseline-close-px"></i></div>
+      <div class="delete flex-center" @click="onDelete">
+        <i class="iconfont icon-baseline-close-px"></i>
+      </div>
       <!-- 旋转按钮 -->
-      <div class="rotate flex-center" @touchstart.stop @touchmove.stop="onRotateTouchmove" @touchend.stop @mousedown.stop="onRotateMousedown"><i class="iconfont icon-loading_flat"></i></div>
+      <div class="rotate flex-center" @touchstart.stop @touchmove.stop="onRotateTouchmove" @touchend.stop @mousedown.stop="onRotateMousedown">
+        <i class="iconfont icon-loading_flat"></i>
+      </div>
       <slot :item="item" :index="index"></slot>
     </div>
   </div>

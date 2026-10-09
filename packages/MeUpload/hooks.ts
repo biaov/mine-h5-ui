@@ -142,5 +142,13 @@ export const useHandler = ({ props, emit, listData }: USEHandler.Option) => {
     }
   }
 
-  return { listData, curNum, isPreview, onDelete, closePreview, onChange, onPreview }
+  return {
+    listData,
+    curNum,
+    isPreview,
+    onDelete,
+    closePreview,
+    onChange,
+    onPreview
+  }
 }

@@ -15,8 +15,12 @@ const props = withDefaults(defineProps<Props>(), {
   filterText: ({ value, type, alpha }: DefineModelOption.ModelValue) => (type === colorType.hex ? value : value.replace(')', `,${alpha / 100})`)),
   showText: false
 })
-const modelValue = defineModel<DefineModelOption.ModelValue>({ default: getDefaultValue() })
-const defineValue = defineModel<string>('value', { default: getDefaultValue().value })
+const modelValue = defineModel<DefineModelOption.ModelValue>({
+  default: getDefaultValue()
+})
+const defineValue = defineModel<string>('value', {
+  default: getDefaultValue().value
+})
 
 watch(
   modelValue,
@@ -37,7 +41,9 @@ const { sizeValue } = useSize(props)
     <slot></slot>
     <div v-if="!solts.default" :class="`${name}-inner`" :style="`--color:${showColor};--size:${sizeValue.size}px;fontSize:${sizeValue.fontSize}px;`">
       <div class="inner-block"></div>
-      <div v-if="showText" class="inner-label">{{ filterText(modelValue) }}</div>
+      <div v-if="showText" class="inner-label">
+        {{ filterText(modelValue) }}
+      </div>
     </div>
   </div>
   <DropDown v-model="modelValue" v-model:visible="dropdown" :rect="colorRect" :duration="400" />

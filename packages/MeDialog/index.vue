@@ -18,7 +18,9 @@ withDefaults(defineProps<Props>(), {
  */
 const visible = defineModel<boolean>('visible', { default: false })
 
-const { isShowMask, isShow, hideMask, animationDuration } = useShow({ visible })
+const { isShowMask, isShow, hideMask, animationDuration } = useShow({
+  visible
+})
 </script>
 
 <template>

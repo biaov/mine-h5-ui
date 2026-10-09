@@ -32,7 +32,9 @@ const { totalSize, filterItems, onClickItem } = usePagination(props, current)
     </li>
     <li v-if="mode === 'simple'" :class="`${name}__item ${name}__item--simple`">{{ current }}/{{ totalSize }}</li>
     <template v-else>
-      <li v-for="(item, index) in filterItems" :key="index" :class="`${name}__item ${current === item ? name + '__item--active' : ''}`" @click="onClickItem(item, index)">{{ item }}</li>
+      <li v-for="(item, index) in filterItems" :key="index" :class="`${name}__item ${current === item ? name + '__item--active' : ''}`" @click="onClickItem(item, index)">
+        {{ item }}
+      </li>
     </template>
     <li v-if="nextText" :class="`${name}__item ${name}__item--next ${current === totalSize ? name + '__item--disabled' : ''}`" @click="onClickItem('next')">
       <slot v-if="slot.next" name="next"></slot>

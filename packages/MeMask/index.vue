@@ -13,7 +13,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const visibleModel = defineModel<boolean>('visible', { default: false })
 
-const { isShowMask, isShow, clickMask, animationDuration } = useHandler({ props, visibleModel })
+const { isShowMask, isShow, clickMask, animationDuration } = useHandler({
+  props,
+  visibleModel
+})
 </script>
 
 <template>

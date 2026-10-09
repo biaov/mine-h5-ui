@@ -24,6 +24,8 @@ const { isActive, parentProps } = useHandler(props)
     <!-- 线 -->
     <div class="line" :style="`background:${isActive ? parentProps.activeColor : parentProps.color};`"></div>
     <!-- 文本 -->
-    <div class="text" :style="`color:${isActive ? parentProps.activeColor : parentProps.color};`"><slot></slot></div>
+    <div class="text" :style="`color:${isActive ? parentProps.activeColor : parentProps.color};`">
+      <slot></slot>
+    </div>
   </div>
 </template>

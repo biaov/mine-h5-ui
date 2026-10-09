@@ -16,11 +16,21 @@ export const useHandle = (props: Props) => {
 
   const rect = computed(() => {
     const mergeRect = mergeDefaultWithProps(props)
-    const containerRect = calcViewBox({ text: mergeRect.text, size: mergeRect.size, family: mergeRect.family })
+    const containerRect = calcViewBox({
+      text: mergeRect.text,
+      size: mergeRect.size,
+      family: mergeRect.family
+    })
     return { ...mergeRect, ...containerRect, viewBoxSize: `${viewBoxSize}px` }
   })
 
-  const viewBox = computed(() => calcViewBox({ text: props.text, size: viewBoxSize, family: rect.value.family }))
+  const viewBox = computed(() =>
+    calcViewBox({
+      text: props.text,
+      size: viewBoxSize,
+      family: rect.value.family
+    })
+  )
 
   return { rect, viewBox }
 }

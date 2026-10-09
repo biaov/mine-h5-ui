@@ -48,7 +48,9 @@ describe('MeCalendar 日历', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeCalendar, { props: { visible, style: `position:${position};` } })
+    const wrapper = mount(MeCalendar, {
+      props: { visible, style: `position:${position};` }
+    })
     /**
      * 获取 DOM
      */
@@ -60,7 +62,9 @@ describe('MeCalendar 日历', () => {
     /**
      * 向组件里传参
      */
-    const wrapper = mount(MeCalendar, { props: { visible: true, closable: true } })
+    const wrapper = mount(MeCalendar, {
+      props: { visible: true, closable: true }
+    })
     /**
      * 获取 DOM
      */

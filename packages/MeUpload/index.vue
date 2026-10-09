@@ -45,7 +45,9 @@ const { curNum, isPreview, onDelete, closePreview, onChange, onPreview } = useHa
     <div v-if="isPreview" class="preview" @click="closePreview">
       <div class="num">{{ curNum }} / {{ listData.length }}</div>
       <transition-group tag="ul" name="slider" class="slider">
-        <li v-for="item in listData" v-show="curNum === item.id" :key="item.id"><img :src="item.url" alt="图片" /></li>
+        <li v-for="item in listData" v-show="curNum === item.id" :key="item.id">
+          <img :src="item.url" alt="图片" />
+        </li>
       </transition-group>
     </div>
   </div>

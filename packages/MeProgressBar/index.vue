@@ -27,9 +27,13 @@ const { curText, curPosi } = useCounts(props)
   <div class="me-progress-bar" :style="`padding:${padding};`">
     <!-- 线型进度条 -->
     <div v-if="type === 'line'" class="line" :style="`width:${width};`">
-      <h3 v-if="textShow" class="txt" :style="`left:${modelValue}%;background:${activeColor};color:${textColor};`">{{ curText }}</h3>
+      <h3 v-if="textShow" class="txt" :style="`left:${modelValue}%;background:${activeColor};color:${textColor};`">
+        {{ curText }}
+      </h3>
       <span v-else class="dot" :style="`width:${size + 8}px;height:${size + 8}px;left:${modelValue}%;background:${activeColor};`"></span>
-      <p class="line" :style="`height:${size}px; background:${backgorund};`"><span :style="`background:${activeColor}; transform:translateX(${modelValue - 100}%)`"></span></p>
+      <p class="line" :style="`height:${size}px; background:${backgorund};`">
+        <span :style="`background:${activeColor}; transform:translateX(${modelValue - 100}%)`"></span>
+      </p>
     </div>
     <!-- 环形进度条 -->
     <div v-else class="circle" :style="`width:${width};height:${width};`">
@@ -42,7 +46,9 @@ const { curText, curPosi } = useCounts(props)
           :stroke-width="`${10 * size}px`"
         ></path>
       </svg>
-      <div v-if="textShow" class="txt" :style="`color:${textColor};`">{{ curText }}</div>
+      <div v-if="textShow" class="txt" :style="`color:${textColor};`">
+        {{ curText }}
+      </div>
     </div>
   </div>
 </template>
