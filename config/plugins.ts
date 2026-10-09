@@ -4,7 +4,7 @@ import type { MarkdownItAsync, PluginWithParams } from 'markdown-it-async'
 import { VitePWAOptions } from 'vite-plugin-pwa'
 import { resolve } from 'path'
 import type { ESLintPluginUserOptions } from 'vite-plugin-eslint2'
-import type { MarkdownViteOptions, TokenItem } from './types'
+import type { MarkdownViteOptions, TokenItem } from './types.ts'
 
 /**
  * Vite 插件配置

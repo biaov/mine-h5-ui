@@ -5,7 +5,7 @@ import markdownVite from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslint from 'vite-plugin-eslint2'
 import tailwindcss from '@tailwindcss/vite'
-import { markdownViteConfig, vitePwaConfig, eslintConfig } from './config/plugins'
+import { markdownViteConfig, vitePwaConfig, eslintConfig } from './config/plugins.ts'
 
 const env = loadEnv('development', './')
 /**
