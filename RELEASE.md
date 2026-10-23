@@ -38,6 +38,8 @@ npm run preview
 
 ```sh
 npm run pre-publish
+# nrm use npm
+# npm login
 npm publish --tag=beta-v2
 npm publish [--tag=latest]
 ```

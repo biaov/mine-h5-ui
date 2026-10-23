@@ -79,7 +79,6 @@ export * from './MeTextAnimation' // 文本动画
 
 /* 业务组件 start */
 export * from './MeVirtualList' // 虚拟列表
-export * from './MeScreenshot' // 截长图
 export * from './MeStep' // 步骤条
 export * from './MeStepItem' // 步骤条选项
 export * from './MeDrag' // 拖拽

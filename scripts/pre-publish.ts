@@ -12,7 +12,7 @@ const packageJson = pkg as unknown as {
 /**
  * 需要保留的包
  */
-const needSave = ['vue', 'html2canvas']
+const needSave = ['vue']
 
 /**
  * 新开发依赖

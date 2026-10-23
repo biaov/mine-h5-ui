@@ -152,7 +152,6 @@ npm run build
 #### dependencies
 
 - `clipboard`: 剪切板
-- `html2canvas`: 截屏
 - `mockjs`: 模拟数据
 - `qrcode`: 二维码
 - `vue`: 前端框架
