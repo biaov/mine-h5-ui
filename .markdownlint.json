@@ -1,0 +1,10 @@
+{
+  "MD013": {
+    "line_length": 200,
+    "code_blocks": false,
+    "tables": false
+  },
+  "MD033": {
+    "allowed_elements": ["p", "a", "img", "sup"]
+  }
+}
