@@ -7,7 +7,7 @@ import { pxToPercentage, rangeInside } from './utils'
 
 defineProps<ColorPanel.Props>()
 
-const point = defineModel<ColorPanel.ModelValue>({ default: { x: 0, y: 0 } })
+const point = defineModel<ColorPanel.ModelValue>({ default: () => ({ x: 0, y: 0 }) })
 /**
  * 开始区域
  */

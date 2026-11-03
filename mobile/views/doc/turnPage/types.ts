@@ -1,5 +1,5 @@
 export interface childListItem {
-  text: string
+  text: string | number
 }
 
 /**

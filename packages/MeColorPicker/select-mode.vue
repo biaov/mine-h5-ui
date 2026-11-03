@@ -8,7 +8,7 @@ import { rgbExtractNum, setModelValue } from './utils'
 import { getDefaultValue } from './config'
 
 const modelValue = defineModel<DefineModelOption.ModelValue>({
-  default: getDefaultValue()
+  default: () => getDefaultValue()
 })
 
 const parseValue = ref([0, 0, 0])

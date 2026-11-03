@@ -153,7 +153,6 @@ npm run build
 
 - `clipboard`: 剪切板
 - `html2canvas`: 截屏
-- `mockjs`: 模拟数据
 - `qrcode`: 二维码
 - `vue`: 前端框架
 - `vue-router`: 路由
@@ -163,9 +162,7 @@ npm run build
 - `@eslint/js`: Eslint js 解析器
 - `@tailwindcss/vite`: Vite 中配置 Tailwindcss
 - `@types/markdown-it-container`: `markdown-it-container` 的类型
-- `@types/mockjs`: `mockjs` 的类型
 - `@types/node`: `node` 的类型
-- `@types/postcss-pxtorem`: `postcss-pxtorem` 的类型
 - `@types/qrcode`: `qrcode` 的类型
 - `@types/selenium-webdriver`: `selenium-webdriver` 的类型
 - `@vitejs/plugin-vue`: Vite 解析 Vue 文件
@@ -181,7 +178,7 @@ npm run build
 - `jsdom`: 模拟浏览器环境
 - `less`: CSS 预编译器
 - `markdown-it-container`: Markdown 解析器
-- `postcss-pxtorem`: 生成 Rem 的 Postcss 插件
+- `postcss-px-to-viewport-8-plugin`: 生成 VW 的 Postcss 插件
 - `prettier`: 代码格式化
 - `selenium-webdriver`: Web UI 自动化测试
 - `shiki`: Markdown 代码高亮

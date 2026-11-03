@@ -59,14 +59,18 @@ import 'mine-h5-ui/styles/index.css'
 
 ## 进阶用法
 
-### Rem 适配
+### VW 适配
 
-- `mine-h5-ui` 中的样式单位默认使用 `px` 作为单位，如果要使用 `rem` 单位，请引入样式替换为：
+- `mine-h5-ui` 中的样式单位默认使用 `px`，设计稿基准为 `375px`。如果需要按视口宽度等比缩放，请将样式替换为 `vw` 版本：
 
 ```js
 // 所有组件样式
-import 'mine-h5-ui/rem/index.css'
+import 'mine-h5-ui/vw/index.css'
 
 // 单个组件样式
-import 'mine-h5-ui/rem/MeButton.css'
+import 'mine-h5-ui/vw/MeButton.css'
 ```
+
+- `vw` 版本无需引入 `flexible.js`，也无需设置 `html` 根字号。
+- `1px` 边框及 `1px` 以下的数值仍保持 `px`，以保证细线清晰。
+- 通过 Props 传入的尺寸（如 `MeImg` 的 `width`）不会自动转换，需要等比缩放时请传入 `vw` 值。

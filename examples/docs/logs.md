@@ -14,7 +14,38 @@
 
 :::TimeLine
 
-## v2.17.1 - 最新版本
+## v2.19.0 - 最新版本
+
+`2026-11-03`
+
+- 🔥 新增 `vw` 适配产物，设计基准 `375px`，无需运行时
+- ⚙️ 使用 `postcss-px-to-viewport-8-plugin` 替换 `postcss-pxtorem`
+- ⚙️ 新增 `build:theme:vw` 构建命令，移除 `build:theme:rem`
+- ⚙️ 移除 `rem` 适配产物，请改用 `mine-h5-ui/vw/*`
+- ⚙️ 构建脚本改用 `--mode vw`，不再依赖 Windows 的 `set` 命令
+- ⚙️ 优化胶囊圆角与离屏定位的 hack 值
+- ⚙️ 更新日志支持「查看更多」折叠
+- ⚙️ 修复文档构建警告，移除 `mockjs` 依赖
+- 🐞 修复 `MeColorPicker`、`MeFloatButton` 类型声明错误
+- ⚙️ 更新依赖版本
+
+## v2.18.0
+
+`2026-10-09`
+
+- ⚙️ `jsdom` 由 `28.x` -> `30.x`
+- ⚙️ `@types/node` 由 `25.x` -> `26.x`
+- ⚙️ `unplugin-vue-markdown` 由 `30.x` -> `32.x`
+- ⚙️ `vite-plugin-dts` 由 `4.x` -> `5.x`
+- ⚙️ `vite` 由 `7.x` -> `8.x`
+- ⚙️ `vite-node` 由 `5.x` -> `6.x`
+- ⚙️ `typescript` 由 `5.x` -> `7.x`
+- ⚙️ `vitest` 由 `4.x` -> `5.x`
+- ⚙️ `vite-plugin-pwa` 由 `1.x` -> `2.x`
+- ⚙️ 更新依赖版本
+- ⚙️ 更新 node 版本为 `>=24.18.0`
+
+## v2.17.1
 
 `2026-02-06`
 

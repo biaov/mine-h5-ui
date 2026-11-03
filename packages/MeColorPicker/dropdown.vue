@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<DropDown.Props>(), {
 })
 const visible = defineModel<boolean>('visible', { default: false })
 const modelValue = defineModel<DefineModelOption.ModelValue>({
-  default: getDefaultValue()
+  default: () => getDefaultValue()
 })
 
 /**
