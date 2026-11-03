@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import eslint from 'vite-plugin-eslint2'
 import dts from 'vite-plugin-dts'
-import pkg from '../package.json'
-import { eslintConfig } from '../config/plugins'
+import pkg from '../package.json' with { type: 'json' }
+import { eslintConfig } from '../config/plugins.ts'
 
 /**
  * 入口文件
@@ -44,6 +44,12 @@ const config: UserConfig = {
      * 多页面
      */
     rollupOptions: {
+      /**
+       * 关闭插件耗时警告
+       */
+      checks: {
+        bundlerTimings: false
+      },
       external: ['vue'],
       output: {
         preserveModules: true,

@@ -16,7 +16,8 @@ export const useHandler = (props: Readonly<Required<Pick<Props, 'type' | 'scroll
 
   const scrollTop = ref(props.scrollTop)
 
-  const onScroll = (e: Event) => {
+  const onScroll = (e?: Event) => {
+    if (!e) return
     setVisible((e.target as Element).scrollTop >= scrollTop.value)
   }
 

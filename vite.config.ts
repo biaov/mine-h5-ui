@@ -59,7 +59,13 @@ export default defineConfig({
     /**
      * 多页面打包
      */
-    rollupOptions: {
+    rolldownOptions: {
+      /**
+       * 关闭插件耗时警告
+       */
+      checks: {
+        bundlerTimings: false
+      },
       input: {
         main: resolve(import.meta.dirname, './index.html'),
         mobile: resolve(import.meta.dirname, './mobile.html')

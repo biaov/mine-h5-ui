@@ -1,8 +1,16 @@
 import { ref } from 'vue'
-import { Random } from 'mockjs'
 import { RandomNum, RgbToHex } from '@/utils/functions'
 import initData from './data'
 import type { ListItem } from './types'
+
+/**
+ * 生成占位图
+ * @param { string } background - 背景色
+ */
+const createImage = (background: string) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45"><rect width="45" height="45" fill="${background}"/><text x="22.5" y="22.5" fill="#fff" font-size="20" text-anchor="middle" dominant-baseline="central">M</text></svg>`
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`
+}
 
 /**
  * 操作
@@ -24,7 +32,7 @@ export const useWebData = () => {
     item.list.forEach((it, i) => {
       it.id = i + 1
       const background = RgbToHex(`rgb(${0},${RandomNum(100, 215)},${RandomNum(100, 215)})`)
-      it.src = Random.image('45x45', background, '#fff', 'png', 'M')
+      it.src = createImage(background)
     })
   })
 

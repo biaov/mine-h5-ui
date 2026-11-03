@@ -72,7 +72,8 @@ export const useHandler = (props: Readonly<Required<Props>>, emit: Emits) => {
   /**
    * 滚动
    */
-  let onScroll = (e: Event) => {
+  let onScroll = (e?: Event) => {
+    if (!e) return
     const { scrollTop, clientHeight, scrollHeight } = e.target as HTMLDivElement
 
     if (props.itemHeight) {

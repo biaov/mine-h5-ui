@@ -20,6 +20,12 @@
     border-left: 2px solid @border-color-line;
   }
   .cont {
+    position: relative;
+
+    &.is-collapsed {
+      overflow: hidden;
+    }
+
     :deep(h2) {
       position: relative;
       color: @color-primary;
@@ -35,6 +41,54 @@
         transform: translateY(-50%);
         background: @color-danger;
       }
+    }
+  }
+
+  // 折叠时的底部渐变
+  .fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, @color-white);
+    pointer-events: none;
+  }
+
+  // 查看更多
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 120px;
+    margin: 16px auto 0;
+    padding: 6px 0;
+    border: 1px solid @border-color-line;
+    border-radius: 16px;
+    background: @color-white;
+    color: @color-primary;
+    font-size: @font-size;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: @color-primary;
+    }
+
+    &::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-right: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+      transform: rotate(45deg);
+    }
+
+    &.is-expanded::after {
+      margin-top: 3px;
+      transform: rotate(-135deg);
     }
   }
 }

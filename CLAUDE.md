@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm start                   # 启动开发服务器 (Vite dev)
-npm run build               # 完整构建: 文档站点 + 主题CSS + rem主题 + npm包
+npm run build               # 完整构建: 文档站点 + 主题CSS + vw主题 + npm包
 npm run build:docs          # 仅构建文档站点
 npm run build:package       # 仅构建 npm 包 (ES module)
 npm run lint                # ESLint 检查并自动修复
@@ -75,7 +75,7 @@ MeButton/
 
 1. **npm 包** (`scripts/package.vite.ts`) — Vite library mode，ES 格式，preserveModules，输出到 `dist/packages/es/`
 2. **主题 CSS** (`scripts/theme.vite.ts`) — 每个组件独立 CSS 文件，输出到 `dist/packages/styles/`
-3. **Rem 主题** (`npm run build:theme:rem`) — 同上但通过 `postcss-pxtorem` 转换为 rem 单位
+3. **VW 主题** (`npm run build:theme:vw`) — 同上但通过 `postcss-px-to-viewport-8-plugin` 以 375 设计基准转换为 vw 单位
 4. **文档站点** (`vite build`) — 多页面构建 (index.html + mobile.html)，输出到 `dist/docs/`
 
 ### 样式系统

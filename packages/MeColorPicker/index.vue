@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
   showText: false
 })
 const modelValue = defineModel<DefineModelOption.ModelValue>({
-  default: getDefaultValue()
+  default: () => getDefaultValue()
 })
 const defineValue = defineModel<string>('value', {
   default: getDefaultValue().value

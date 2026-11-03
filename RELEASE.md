@@ -20,6 +20,8 @@ npm run test:unit:single
 npm run build
 ```
 
+- 发布前确认已删除旧的 `dist/packages/rem` 产物（Vite 不会自动清理其他输出目录）
+
 ## 预览
 
 ```sh
