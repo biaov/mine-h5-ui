@@ -7,4 +7,4 @@ if (process.argv[2] === 'r') {
 }
 
 execSync(`git tag v${pkg.version}`)
-execSync(`git push origin v${pkg.version}`)
+execSync(`git push origin refs/tags/v${pkg.version}`)
