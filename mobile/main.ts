@@ -1,11 +1,11 @@
 import { createApp } from 'vue'
 import { MessageEventListener } from '@/utils/functions'
-import mineh5ui from '@/plugins'
+import { setupMineH5UI } from '@/plugins'
 import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
-app.use(mineh5ui)
+setupMineH5UI(app)
 app.use(router)
 app.mount('#mine-h5-ui')
 

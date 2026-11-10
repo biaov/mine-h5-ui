@@ -5,12 +5,12 @@ import { MessageEventListener } from '@/utils/functions'
 import { componentConfig } from '@/config/nav.config'
 import router from './router'
 import App from './App.vue'
-import mineh5ui from './plugins'
+import { setupMineH5UI } from './plugins'
 
 const app = createApp(App)
 app.component('TimeLine', TimeLine)
 app.component('CopyCode', CopyCode)
-app.use(mineh5ui)
+setupMineH5UI(app)
 app.use(router)
 app.mount('#mine-h5-ui')
 
