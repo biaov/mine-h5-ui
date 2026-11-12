@@ -13,7 +13,7 @@ const { sidebarList } = useWebData()
         <h2 class="tit font-semibold">{{ item.title }}</h2>
         <ul class="list-ct">
           <!-- 二级列表 -->
-          <li v-for="(it, i) in item.children" :key="i" :class="{ spot: it.name === 'logs' }" class="relative">
+          <li v-for="(it, i) in item.children" :key="i" :class="{ spot: ['logs', 'mcp'].includes(it.name || '') }" class="relative">
             <router-link v-if="!it.items" class="tit-ct in" :to="{ name: it.name }">{{ it.meta.title }}</router-link>
             <template v-else>
               <h3 class="tit-ct cursor-pointer font-semibold">

@@ -17,6 +17,9 @@ npm run test:ui             # 运行 Selenium Web UI 自动化测试
 npm run preview             # 预览构建后的文档站点
 npm run pre-publish         # 发布前处理 (精简 package.json，复制 README/LICENSE 到 dist)
 npm run tag                 # 打版本标签
+npm run mcp:extract         # 重新提取 MCP 元数据快照
+npm run mcp:check           # 校验 MCP 数据完整性与版本
+npm run mcp:build           # 构建 mine-h5-ui-mcp 包
 ```
 
 **运行单个单元测试**：修改 `package.json` 中 `test:unit:single` 命令的目标文件路径，然后执行 `npm run test:unit:single`。
@@ -95,3 +98,9 @@ MeButton/
 - ESLint 9 flat config (`eslint.config.js`)，集成 `typescript-eslint` + `eslint-plugin-vue` + `eslint-config-prettier`
 - Prettier: 单引号、无分号、尾逗号 none、200 字符宽度
 - Git: pre-push 运行测试，prepare-commit-msg 自动添加 `Co-authored-by: biaov`
+
+### 提交署名
+
+- **默认禁止**在 commit message 或 PR 描述中添加 `Co-Authored-By: Claude Code <noreply@anthropic.com>` 或任何 Claude 署名。
+- 只有在用户在 `.claude/settings.json` 或本次会话中明确配置/要求时，才允许添加。
+- `prepare-commit-msg` 钩子自动添加的 `Co-authored-by: biaov <biaov2017@qq.com>` 属于仓库既有行为，不受此限制。

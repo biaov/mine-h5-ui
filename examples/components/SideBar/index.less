@@ -34,11 +34,13 @@
     }
     .list-ct {
       > li {
-        &.spot::after {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        &.spot a::after {
           content: '';
-          position: absolute;
-          top: 8px;
-          left: 85px;
           width: 8px;
           height: 8px;
           border-radius: 50%;

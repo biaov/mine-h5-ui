@@ -1,0 +1,22 @@
+# 仅发布 dist、README、LICENSE 与 package.json
+# package.json 的 files 字段已做白名单，这里是二次防护
+
+src/
+scripts/
+tests/
+docs/
+方案.md
+
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+*.tsbuildinfo
+
+.github/
+.vscode/
+.claude/
+
+*.tgz
+*.log
+.env
+.env.*

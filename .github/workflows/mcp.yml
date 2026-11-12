@@ -1,0 +1,57 @@
+name: MCP Check & Publish
+
+on:
+  push:
+    branches: [main, release/mcp]
+    tags:
+      - 'v*'
+  pull_request:
+    paths:
+      - 'mcp/**'
+      - 'packages/**'
+      - 'examples/docs/**'
+      - 'examples/config/routes.json'
+      - 'package.json'
+      - '.github/workflows/mcp.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.18.x'
+      - run: npm --prefix mcp ci
+      - run: npm --prefix mcp run check
+      - run: npm --prefix mcp run typecheck
+      - run: npm --prefix mcp run build
+
+  publish:
+    needs: check
+    concurrency:
+      group: mcp-publish
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm --prefix mcp ci
+      - run: npm --prefix mcp run check
+      - run: npm --prefix mcp run typecheck
+      - run: npm --prefix mcp run sync-version
+      - name: Publish to npm
+        working-directory: mcp
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if [[ "$VERSION" == *-* ]]; then
+            npm publish --tag beta
+          else
+            npm publish
+          fi

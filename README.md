@@ -22,6 +22,7 @@
 - [x] 丰富的模块化组件和组合式 API，60<sup>+</sup> 个组件
 - [x] 支持按需加载，`tree-shaking` 优化
 - [x] 完善的组件使用文档和演示示例
+- [x] 提供配套 **MCP 服务**，AI 编码助手可查询组件 API、示例与图标
 - [x] 内置每个组件的单元测试
 - [x] 内置使用文档的 Web UI 自动化测试
 - [x] 多页面配置
@@ -54,6 +55,17 @@ createApp(App).use(mineh5ui).mount('#app')
 
 - [x] **[😎 mine-h5-ui@2.x 基于 Vue3.x](https://mineh5ui.biaov.cn/v2)**
 - [x] **[😎 mine-h5-ui@1.x 基于 Vue2.x](https://mineh5ui.biaov.cn/)**
+
+### MCP 支持
+
+组件库提供配套 MCP 服务，Claude Code、Cursor 等 AI 助手可直接查询组件 API、示例、图标与指南。
+
+```sh
+claude mcp add mine-h5-ui -- npx -y mine-h5-ui-mcp
+```
+
+- 👉 查看 [MCP 支持文档](https://mineh5ui.biaov.cn/v2/doc/mcp)
+- 👉 查看 [mcp/README.md](./mcp/README.md)
 
 ### 演示地址
 
@@ -115,6 +127,7 @@ npm run build
 │   │   ├── views ----------------------------- 组件库文档页面
 │   │   ├── App.vue --------------------------- 组件库文档主页面
 │   │   └── main.ts --------------------------- 组件库文档入口文件
+│   ├── mcp ----------------------------------- MCP 服务（AI 组件查询）
 │   ├── mobile -------------------------------- 移动端组件库文档
 │   │   ├── assets ---------------------------- 静态资源
 │   │   ├── components ------------------------ 组件库文档组件

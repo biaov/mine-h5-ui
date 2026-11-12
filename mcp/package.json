@@ -1,0 +1,68 @@
+{
+  "name": "mine-h5-ui-mcp",
+  "version": "2.19.1",
+  "description": "MCP server for mine-h5-ui component library",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "mine-h5-ui-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=24.x"
+  },
+  "keywords": [
+    "mcp",
+    "mine-h5-ui",
+    "vue",
+    "component-library"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "biaov",
+    "email": "biaov@qq.com",
+    "url": "https://biaov.cn/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biaov/mine-h5-ui.git",
+    "directory": "mcp"
+  },
+  "homepage": "https://github.com/biaov/mine-h5-ui/tree/main/mcp",
+  "bugs": {
+    "url": "https://github.com/biaov/mine-h5-ui/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "engine-strict": true,
+    "provenance": true
+  },
+  "scripts": {
+    "extract": "tsx scripts/extract.ts",
+    "check": "npm run extract && tsx scripts/check-data.ts",
+    "build": "npm run extract && tsup && tsx scripts/copy-data.ts",
+    "dev": "tsx src/index.ts",
+    "sync-version": "tsx scripts/sync-version.ts",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^26.6.6",
+    "@vue/compiler-sfc": "^3.5.45",
+    "markdown-it": "^15.0.3",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}

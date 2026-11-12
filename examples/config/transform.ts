@@ -14,12 +14,12 @@ const titleToPath = (title: string) => {
  */
 const firstToRoute = (data: string[]) =>
   data.map(value => {
-    const [path, title] = value.split(' ')
+    const [path, ...titleParts] = value.split(' ')
     return {
       path,
       name: path,
       meta: {
-        title
+        title: titleParts.join(' ') || path
       }
     }
   })
