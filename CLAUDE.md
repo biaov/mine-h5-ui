@@ -98,3 +98,9 @@ MeButton/
 - ESLint 9 flat config (`eslint.config.js`)，集成 `typescript-eslint` + `eslint-plugin-vue` + `eslint-config-prettier`
 - Prettier: 单引号、无分号、尾逗号 none、200 字符宽度
 - Git: pre-push 运行测试，prepare-commit-msg 自动添加 `Co-authored-by: biaov`
+
+### 提交署名
+
+- **默认禁止**在 commit message 或 PR 描述中添加 `Co-Authored-By: Claude Code <noreply@anthropic.com>` 或任何 Claude 署名。
+- 只有在用户在 `.claude/settings.json` 或本次会话中明确配置/要求时，才允许添加。
+- `prepare-commit-msg` 钩子自动添加的 `Co-authored-by: biaov <biaov2017@qq.com>` 属于仓库既有行为，不受此限制。
