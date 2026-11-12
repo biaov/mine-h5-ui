@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/mine-h5-ui-mcp.svg?logo=npm)](https://www.npmjs.com/package/mine-h5-ui-mcp)
 
-[mine-h5-ui](https://github.com/biaov/mine-h5-ui) 组件库的 MCP（Model Context Protocol）服务，为 Claude Code、Cursor、VS Code 等 AI 编码助手提供组件 API、示例、文档、图标与指南查询。
+[mine-h5-ui](https://github.com/biaov/mine-h5-ui) 组件库的 MCP（Model Context Protocol）服务，为 Claude Code 等 AI 编码助手提供组件 API、示例、文档、图标与指南查询。
 
 已发布到 npm，可直接通过 `npx` 使用，无需预先安装。
 
@@ -18,90 +18,14 @@
 ## 环境要求
 
 - Node.js `>= 24.x`
-- 支持 MCP 的客户端：Claude Code、Cursor、VS Code、Claude Desktop 等
 
-## 安装方式
-
-推荐直接在 MCP 客户端配置中使用 `npx`，无需安装：
-
-```bash
-npx -y mine-h5-ui-mcp
-```
-
-也可以全局安装：
-
-```bash
-npm i -g mine-h5-ui-mcp
-```
-
-或安装到项目开发依赖：
-
-```bash
-npm i -D mine-h5-ui-mcp
-```
-
-注意：安装到项目依赖后，MCP 客户端不会自动使用它，仍需在客户端配置中指定 `command` 与 `args`。日常使用推荐 `npx`。
-
-## 快速开始
-
-### Claude Code
+## 使用
 
 ```bash
 claude mcp add mine-h5-ui -- npx -y mine-h5-ui-mcp
 ```
 
-### Cursor / Claude Desktop
-
-Cursor 写入 `.cursor/mcp.json`，Claude Desktop 写入 `claude_desktop_config.json`：
-
-```json
-{
-  "mcpServers": {
-    "mine-h5-ui": {
-      "command": "npx",
-      "args": ["-y", "mine-h5-ui-mcp"]
-    }
-  }
-}
-```
-
-### VS Code
-
-写入 `.vscode/mcp.json`：
-
-```json
-{
-  "servers": {
-    "mine-h5-ui": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "mine-h5-ui-mcp"]
-    }
-  }
-}
-```
-
-### 本地开发
-
-如果需要调试当前分支或本地修改：
-
-```bash
-npm install --prefix mcp
-npm run mcp:build
-```
-
-然后在 MCP 配置中使用本地入口：
-
-```json
-{
-  "mcpServers": {
-    "mine-h5-ui": {
-      "command": "node",
-      "args": ["D:/path/to/mine-h5-ui/mcp/dist/index.js"]
-    }
-  }
-}
-```
+接入后在 Claude Code 中直接对话即可。
 
 ## 工具
 
@@ -168,7 +92,7 @@ npm run sync-version
 npm publish
 ```
 
-GitHub Actions 工作流在推送 `v*` 标签时执行校验与发布；当 `publishConfig.provenance` 为 `true` 时，会通过 OIDC 自动生成 npm provenance。
+GitHub Actions 工作流在 push 时执行校验与发布；当 `publishConfig.provenance` 为 `true` 时，会通过 OIDC 自动生成 npm provenance。
 
 当前 npm dist-tags 可通过以下命令查看：
 
@@ -189,10 +113,6 @@ npm view mine-h5-ui-mcp dist-tags
 ### 为什么 API 和项目里的组件行为不一致？
 
 请确认 MCP 包版本与业务项目使用的 `mine-h5-ui` 版本一致。
-
-### 可以直接装进业务项目的 devDependencies 吗？
-
-可以。但 MCP 客户端不会自动使用它，仍需要在 Claude Code / Cursor / VS Code 的 MCP 配置中指定 `command` 与 `args`。日常使用直接写 `npx -y mine-h5-ui-mcp` 更简单。
 
 ## License
 
