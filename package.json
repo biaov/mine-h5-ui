@@ -31,6 +31,9 @@
     "lint": "eslint --fix ./**",
     "prettier": "prettier --write '**/*.{ts,js,less,md,json,vue,cjs}'",
     "tag": "node scripts/tag.ts",
+    "mcp:extract": "npm --prefix mcp run extract",
+    "mcp:check": "npm --prefix mcp run check",
+    "mcp:build": "npm --prefix mcp run build",
     "tsc": "tsc --noEmit --watch"
   },
   "types": "es/index.d.ts",
@@ -54,6 +57,7 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
+    "access": "public",
     "engine-strict": true,
     "provenance": true
   },

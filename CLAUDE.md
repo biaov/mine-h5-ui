@@ -17,6 +17,9 @@ npm run test:ui             # 运行 Selenium Web UI 自动化测试
 npm run preview             # 预览构建后的文档站点
 npm run pre-publish         # 发布前处理 (精简 package.json，复制 README/LICENSE 到 dist)
 npm run tag                 # 打版本标签
+npm run mcp:extract         # 重新提取 MCP 元数据快照
+npm run mcp:check           # 校验 MCP 数据完整性与版本
+npm run mcp:build           # 构建 mine-h5-ui-mcp 包
 ```
 
 **运行单个单元测试**：修改 `package.json` 中 `test:unit:single` 命令的目标文件路径，然后执行 `npm run test:unit:single`。

@@ -1,0 +1,72 @@
+name: MCP Check & Publish
+
+on:
+  push:
+    branches: [main, release/mcp]
+    tags:
+      - 'v*'
+  pull_request:
+    paths:
+      - 'mcp/**'
+      - 'packages/**'
+      - 'examples/docs/**'
+      - 'examples/config/routes.json'
+      - 'package.json'
+      - '.github/workflows/mcp.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.x'
+      - run: npm --prefix mcp ci
+      - run: npm --prefix mcp run check
+      - run: npm --prefix mcp run typecheck
+      - run: npm --prefix mcp run build
+
+  publish:
+    needs: check
+    if: startsWith(github.ref, 'refs/tags/v')
+    concurrency:
+      group: mcp-publish
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm --prefix mcp ci
+      - run: npm --prefix mcp run check
+      - run: npm --prefix mcp run typecheck
+      - run: npm --prefix mcp run sync-version
+      - name: Check published version
+        id: version
+        working-directory: mcp
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "$NAME@$VERSION already exists on npm; skipping publish."
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Publish to npm
+        if: steps.version.outputs.published == 'false'
+        working-directory: mcp
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          if [[ "$VERSION" == *-* ]]; then
+            npm publish --tag beta
+          else
+            npm publish
+          fi
