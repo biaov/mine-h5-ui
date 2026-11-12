@@ -47,24 +47,10 @@ jobs:
       - run: npm --prefix mcp run check
       - run: npm --prefix mcp run typecheck
       - run: npm --prefix mcp run sync-version
-      - name: Check published version
-        id: version
-        working-directory: mcp
-        run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "published=true" >> "$GITHUB_OUTPUT"
-            echo "$NAME@$VERSION already exists on npm; skipping publish."
-          else
-            echo "published=false" >> "$GITHUB_OUTPUT"
-          fi
       - name: Publish to npm
-        if: steps.version.outputs.published == 'false'
         working-directory: mcp
         run: |
-          VERSION="${{ steps.version.outputs.version }}"
+          VERSION=$(node -p "require('./package.json').version")
           if [[ "$VERSION" == *-* ]]; then
             npm publish --tag beta
           else
