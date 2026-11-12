@@ -1,6 +1,6 @@
 {
   "name": "mine-h5-ui-mcp",
-  "version": "2.19.0",
+  "version": "2.19.1",
   "description": "MCP server for mine-h5-ui component library",
   "type": "module",
   "private": false,
