@@ -29,7 +29,6 @@ jobs:
 
   publish:
     needs: check
-    if: github.event_name == 'push'
     concurrency:
       group: mcp-publish
       cancel-in-progress: false
