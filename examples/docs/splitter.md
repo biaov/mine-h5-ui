@@ -30,7 +30,7 @@ createApp(App).use(MeSplitter).mount('#app')
 ::: CopyCode
 
 ```html
-<me-splitter url="https://dummyimage.com/400x400/f60" />
+<me-splitter url="https://placehold.co/400x400/f60" />
 ```
 
 :::
@@ -42,7 +42,7 @@ createApp(App).use(MeSplitter).mount('#app')
 ::: CopyCode
 
 ```html
-<me-splitter url="https://dummyimage.com/400x400/f60" open-animation />
+<me-splitter url="https://placehold.co/400x400/f60" open-animation />
 ```
 
 :::
@@ -55,7 +55,7 @@ createApp(App).use(MeSplitter).mount('#app')
 ::: CopyCode
 
 ```html
-<me-splitter url="https://dummyimage.com/400x400/f60" :width="300" :height="264" />
+<me-splitter url="https://placehold.co/400x400/f60" :width="300" :height="264" />
 ```
 
 :::
@@ -67,7 +67,7 @@ createApp(App).use(MeSplitter).mount('#app')
 ::: CopyCode
 
 ```html
-<me-splitter url="https://dummyimage.com/400x400/f60" :gutter="[6, 6]" />
+<me-splitter url="https://placehold.co/400x400/f60" :gutter="[6, 6]" />
 ```
 
 :::
@@ -81,7 +81,7 @@ createApp(App).use(MeSplitter).mount('#app')
 ::: CopyCode
 
 ```html
-<me-splitter url="https://dummyimage.com/400x400/f60" line-color="#f60" :min-size="200" :line-width="4" />
+<me-splitter url="https://placehold.co/400x400/f60" line-color="#f60" :min-size="200" :line-width="4" />
 ```
 
 :::

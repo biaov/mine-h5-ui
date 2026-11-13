@@ -34,7 +34,7 @@ createApp(App).use(MePreview).mount('#app')
 <script lang="ts" setup>
 import { MePreview } from 'mine-h5-ui'
 
-MePreview('https://dummyimage.com/300x300')
+MePreview('https://placehold.co/300x300')
 </script>
 ```
 
@@ -52,7 +52,7 @@ MePreview('https://dummyimage.com/300x300')
 import { MePreview } from 'mine-h5-ui'
 
 MePreview({
-  url: 'https://dummyimage.com/300x300',
+  url: 'https://placehold.co/300x300',
   background: '#fff'
 })
 </script>

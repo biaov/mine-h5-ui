@@ -8,9 +8,9 @@ export default [
     id: 2,
     label: '展示图片并预览',
     fileList: [
-      { id: 1, url: 'https://dummyimage.com/100x100/4BC7F5/fff&text=1' },
-      { id: 2, url: 'https://dummyimage.com/100x100/7A51F5/fff&text=2' },
-      { id: 3, url: 'https://dummyimage.com/100x100/FFB808/fff&text=3' }
+      { id: 1, url: 'https://placehold.co/100x100/4BC7F5/fff&text=1' },
+      { id: 2, url: 'https://placehold.co/100x100/7A51F5/fff&text=2' },
+      { id: 3, url: 'https://placehold.co/100x100/FFB808/fff&text=3' }
     ]
   },
   {

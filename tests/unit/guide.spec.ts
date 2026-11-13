@@ -3,7 +3,7 @@ import { getViewer } from '@/utils/functions'
 import MeGuide from '~/MeGuide/index.vue'
 
 describe('MeGuide 引导', () => {
-  const list = ['https://dummyimage.com/750x1334/f60/fff&text=1', 'https://dummyimage.com/750x1334/f60/fff&text=1']
+  const list = ['https://placehold.co/750x1334/f60/fff&text=1', 'https://placehold.co/750x1334/f60/fff&text=1']
 
   test('属性 visible', async () => {
     /**

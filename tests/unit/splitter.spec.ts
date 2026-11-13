@@ -3,7 +3,7 @@ import { getViewer, Retarder } from '@/utils/functions'
 import MeSplitter from '~/MeSplitter/index.vue'
 
 describe('MeSplitter 图片碎片', () => {
-  const url = 'https://dummyimage.com/600x600/f60'
+  const url = 'https://placehold.co/600x600/f60'
 
   test('属性 url', () => {
     /**

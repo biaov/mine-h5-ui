@@ -30,7 +30,7 @@ createApp(App).use(MeImg).mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" />
 ```
 
 :::
@@ -42,9 +42,9 @@ createApp(App).use(MeImg).mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px" />
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" height="45px" />
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" width="45px" height="45px" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" width="45px" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" height="45px" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" width="45px" height="45px" />
 ```
 
 :::
@@ -57,9 +57,9 @@ createApp(App).use(MeImg).mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="cover" />
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="contain" />
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" fill="50% auto" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" fill="cover" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" fill="contain" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" fill="50% auto" />
 ```
 
 :::
@@ -71,8 +71,8 @@ createApp(App).use(MeImg).mount('#app')
 ::: CopyCode
 
 ```html
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="50%" />
-<me-img src="http://dummyimage.com/45x45/0079cb/fff.png&text=M" radius="6px" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" radius="50%" />
+<me-img src="http://placehold.co/45x45/0079cb/fff.png&text=M" radius="6px" />
 ```
 
 :::

@@ -12,7 +12,7 @@ const overviewList = componentConfig.map(item => {
         assets[`/examples/assets/component/${subItem.name}.svg`] as {
           default: unknown
         }
-      )?.default as string) ?? 'https://dummyimage.com/300x180/f9fafb/f9fafb'
+      )?.default as string) ?? 'https://placehold.co/300x180/f9fafb/f9fafb'
 
     return { ...subItem, path }
   })
