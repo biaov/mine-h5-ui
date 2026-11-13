@@ -2,7 +2,6 @@ name: MCP Check & Publish
 
 on:
   push:
-    branches: [main, release/mcp]
     tags:
       - 'v*'
   pull_request:
