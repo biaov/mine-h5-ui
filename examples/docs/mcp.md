@@ -2,17 +2,11 @@
 
 ---
 
-`mine-h5-ui` 提供配套的 MCP（Model Context Protocol）服务 `mine-h5-ui-mcp`，让 Claude Code、Cursor、VS Code 等 AI 编码助手能够准确查询组件 API、官方示例、图标与指南，减少编造 Props、枚举值和图标名的问题。
+`mine-h5-ui` 提供配套的 MCP（Model Context Protocol）服务 `mine-h5-ui-mcp`，让 Claude Code 等 AI 编码助手能够准确查询组件 API、官方示例、图标与指南，减少编造 Props、枚举值和图标名的问题。
 
-## 前提
+服务已发布到 npm，可直接通过 `npx` 使用，无需预先安装。需要 Node.js `>= 24.x`，服务只读、离线、不执行用户代码。
 
-- Node.js `>= 24.x`
-- 支持 MCP 的客户端：Claude Code、Cursor、VS Code（GitHub Copilot Chat）等
-- MCP 服务只读、不联网、不执行代码
-
-## 安装与接入
-
-### Claude Code
+## 使用
 
 ::: CopyCode
 
@@ -22,86 +16,21 @@ claude mcp add mine-h5-ui -- npx -y mine-h5-ui-mcp
 
 :::
 
-### 通用 JSON 配置
-
-Cursor 写入 `.cursor/mcp.json`，Claude Desktop 写入 `claude_desktop_config.json`：
-
-::: CopyCode
-
-```json
-{
-  "mcpServers": {
-    "mine-h5-ui": {
-      "command": "npx",
-      "args": ["-y", "mine-h5-ui-mcp"]
-    }
-  }
-}
-```
-
-:::
-
-### VS Code
-
-写入 `.vscode/mcp.json`：
-
-::: CopyCode
-
-```json
-{
-  "servers": {
-    "mine-h5-ui": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "mine-h5-ui-mcp"]
-    }
-  }
-}
-```
-
-:::
-
-### 本地开发
-
-如果需要调试当前分支或本地修改：
-
-::: CopyCode
-
-```sh
-npm install --prefix mcp
-npm run mcp:build
-```
-
-:::
-
-然后在 MCP 配置中使用本地入口（Windows 使用正斜杠即可）：
-
-::: CopyCode
-
-```json
-{
-  "mcpServers": {
-    "mine-h5-ui": {
-      "command": "node",
-      "args": ["D:/path/to/mine-h5-ui/mcp/dist/index.js"]
-    }
-  }
-}
-```
-
-:::
+接入后在 Claude Code 中直接对话即可，不需要额外配置。
 
 ## 可用工具
 
-| 工具                     | 说明                                               |
-| ------------------------ | -------------------------------------------------- |
-| `list_components`        | 列出组件与指南目录，可按分类或类型过滤             |
-| `search_components`      | 按中文名、英文名、标签、Props 或示例关键字检索组件 |
-| `get_component_api`      | 获取 Props、Events、Slots、Methods 与类型定义      |
-| `get_component_examples` | 获取官方代码示例，可按场景过滤                     |
-| `get_component_doc`      | 获取原始 Markdown 文档，或其中某个章节             |
-| `search_icons`           | 检索内置图标，返回可直接使用的 `icon-xxx` 名称     |
-| `get_guide`              | 获取安装、主题、API、组合式 API 等指南             |
+| 工具                     | 参数                                         | 说明                                               |
+| ------------------------ | -------------------------------------------- | -------------------------------------------------- |
+| `list_components`        | `category?`、`kind?`                         | 列出组件与指南目录，可按分类或类型过滤             |
+| `search_components`      | `query`、`category?`、`limit?`（默认 8）     | 按中文名、英文名、标签、Props 或示例关键字检索组件 |
+| `get_component_api`      | `component`、`include?`、`include_examples?` | 获取 Props、Events、Slots、Methods 与类型定义      |
+| `get_component_examples` | `component`、`scenario?`、`limit?`（默认 3） | 获取官方代码示例，可按场景过滤                     |
+| `get_component_doc`      | `component`、`section?`                      | 获取原始 Markdown 文档，或其中某个章节             |
+| `search_icons`           | `query?`、`limit?`（默认 20）、`offset?`     | 检索内置图标，返回可直接使用的 `icon-xxx` 名称     |
+| `get_guide`              | `topic`                                      | 获取安装、主题、API、组合式 API 等指南             |
+
+`component` 支持 `MeButton`、`me-button`、`button`、`按钮` 等写法；`get_component_api` 的 `include` 可取 `props`、`events`、`slots`、`methods`、`types`。
 
 ## 可用资源
 
@@ -134,7 +63,7 @@ AI 会按需调用 `search_components`、`get_component_api`、`get_component_ex
 
 ## 数据与版本
 
-- MCP 数据在构建期从组件源码与 `examples/docs` 生成，随包发布为静态 JSON。
+- MCP 数据在构建期从组件源码与 `examples/docs` 生成，随包发布为 `dist/generated/*.json`。
 - MCP 服务运行时不依赖 `mine-h5-ui`，但**业务项目要运行生成的代码，仍需安装 `mine-h5-ui`**。
 - 建议 MCP 包与组件库保持同一版本线，例如都用 `2.19.x`。组件库升级后，重新发布或重新构建 MCP 包即可。
 
