@@ -1,4 +1,5 @@
 import { ref, watch, computed, nextTick } from 'vue'
+import { useNextFrame } from '../MeComposable'
 import type { Props, USEMask } from './types'
 
 /**
@@ -23,10 +24,8 @@ export const useMask = ({ emit, visibleModel }: USEMask.Option) => {
    */
   const showMask = () => {
     isShowMask.value = true
-    nextTick(() => {
-      setTimeout(() => {
-        isShow.value = true
-      }, 0)
+    useNextFrame(() => {
+      isShow.value = true
     })
   }
 

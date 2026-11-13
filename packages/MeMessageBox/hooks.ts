@@ -1,5 +1,6 @@
 import { ref, nextTick } from 'vue'
 import type { Props, Emits } from './types'
+import { useNextFrame } from '../MeComposable'
 
 /**
  * 显示
@@ -46,11 +47,8 @@ export const useShow = (props: Readonly<Required<Props>>, emit: Emits) => {
   const onConfirm = () => {
     closeShow('onOk', props.type === 'prompt' ? inputValue.value : undefined)
   }
-
-  nextTick(() => {
-    setTimeout(() => {
-      isShow.value = true
-    }, 0)
+  useNextFrame(() => {
+    isShow.value = true
   })
 
   return {

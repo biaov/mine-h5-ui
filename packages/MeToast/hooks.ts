@@ -1,5 +1,6 @@
 import { ref, nextTick } from 'vue'
 import type { Props } from './types'
+import { useNextFrame } from '~/MeComposable'
 
 /**
  * 显示
@@ -36,12 +37,9 @@ export const useShow = (props: Readonly<Required<Props>>) => {
       isShow.value && closeShow()
     }, props.durction)
   }
-
-  nextTick(() => {
-    setTimeout(() => {
-      isShow.value = true
-      startShow()
-    }, 0)
+  useNextFrame(() => {
+    isShow.value = true
+    startShow()
   })
 
   return { isShow, isDestroy, animationDuration }

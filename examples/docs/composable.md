@@ -265,3 +265,18 @@ const handleSubmit = async () => {
   // 业务请求, ...
 }
 ```
+
+## useNextFrame 第二帧执行 `v2.20.0`
+
+- 通过双层 `requestAnimationFrame` 等待下一帧完成渲染后，在第二个动画帧执行回调
+- 适合先改状态、再触发过渡动画的场景
+- 不支持 `requestAnimationFrame` 时，降级为双层 `setTimeout`
+
+```ts
+import { useNextFrame } from 'mine-h5-ui'
+
+useNextFrame(() => {
+  // 下一帧执行
+  console.log('next frame')
+})
+```
